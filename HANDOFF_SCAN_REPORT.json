@@ -1,0 +1,41 @@
+{
+  "secret_scan": "PASS",
+  "private_data_scan": "PASS",
+  "method": "Strict source/report allowlist; forbidden file and credential/connection/path pattern scan; review of synthetic test fixtures; public media matched source manifest. No databases or private stores read or copied. Pattern scans do not prove absence of every possible secret.",
+  "reviewed_matches": [
+    [
+      "server/set_admin_password.py",
+      "credential_literal",
+      "getpass prompt, not a credential"
+    ],
+    [
+      "tests/test_v12_reviews.py",
+      "credential_literal",
+      "synthetic unit-test fixture"
+    ],
+    [
+      "tests/test_v12_reviews.py",
+      "credential_literal",
+      "synthetic unit-test fixture"
+    ],
+    [
+      "tests/test_v12_reviews.py",
+      "credential_literal",
+      "synthetic unit-test fixture"
+    ]
+  ],
+  "excluded_categories": [
+    "environment values and operational secrets",
+    "production/customer submissions and unpublished reviews",
+    "private review uploads and original private media",
+    "sessions and cookies",
+    "node_modules",
+    "build output and caches",
+    "local databases and logs",
+    "browser profiles",
+    "SiteAgent internal checkpoints and orchestration",
+    "absolute Windows paths",
+    "raw QA screenshots",
+    "recovery archives"
+  ]
+}

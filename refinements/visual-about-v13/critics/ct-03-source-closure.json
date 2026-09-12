@@ -1,0 +1,43 @@
+{
+  "status": "source_fix_verified_runtime_recheck_pending",
+  "origin": "High CSP failure detected by legacy browser console diagnostics",
+  "method": "No About inline style attributes; source-bound ratios in permitted external CSS; server CSP unchanged",
+  "externalCSSSHA256": "0c3081d1bfc6431778d730e23770f470978d63b1014405f941c2be0b85d3dec5",
+  "ratios": [
+    {
+      "role": "portrait",
+      "desktopRatio": "680/986",
+      "mobileRatio": "640/920"
+    },
+    {
+      "role": "hockey-team",
+      "desktopRatio": "1075/711",
+      "mobileRatio": "640/606"
+    },
+    {
+      "role": "hockey-puck",
+      "desktopRatio": "896/758",
+      "mobileRatio": "640/635"
+    },
+    {
+      "role": "urban",
+      "desktopRatio": "600/800",
+      "mobileRatio": "480/640"
+    },
+    {
+      "role": "gopro",
+      "desktopRatio": "902/902",
+      "mobileRatio": "640/719"
+    },
+    {
+      "role": "boat",
+      "desktopRatio": "960/640",
+      "mobileRatio": "547/717"
+    },
+    {
+      "role": "jetski",
+      "desktopRatio": "640/499",
+      "mobileRatio": "538/525"
+    }
+  ]
+}

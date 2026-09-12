@@ -1,0 +1,92 @@
+{
+  "pass": true,
+  "siteRevision": "4b0ccbc08aecda587aae9600e79352a1829c6de9758de87caffcdaf0821e5414",
+  "sourceRevision": "e1fd7a116c99fa2030fc3b6cebe92aebbf3b69a6926c8f7b3621aaf08da10c8b",
+  "testCount": 465,
+  "widths": [
+    320,
+    360,
+    390,
+    430,
+    768,
+    1024,
+    1280,
+    1440
+  ],
+  "routeWidthContexts": 144,
+  "targetedReports": 15,
+  "targetedContexts": 26,
+  "delayedMediaCases": [
+    {
+      "route": "/en/solutions",
+      "width": 390,
+      "sessionCLS": 0,
+      "maxRectChange": 0,
+      "heldLocalRequests": 1
+    },
+    {
+      "route": "/en",
+      "width": 390,
+      "sessionCLS": 0,
+      "maxRectChange": 0,
+      "heldLocalRequests": 1
+    },
+    {
+      "route": "/solutions",
+      "width": 390,
+      "sessionCLS": 0,
+      "maxRectChange": 0,
+      "heldLocalRequests": 1
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "sessionCLS": 0,
+      "maxRectChange": 0,
+      "heldLocalRequests": 1
+    }
+  ],
+  "diagnosticContexts": 36,
+  "actual200PercentZoomRoutes": 7,
+  "referencedNativeScreenshotsChecked": 362,
+  "aboutBottomCoverage": [
+    {
+      "route": "/about",
+      "width": 390,
+      "nativeViewportSegments": 21,
+      "path": "screenshots/verified/uk-about-390-section-21.png",
+      "scrollY": 13773,
+      "viewportHeight": 900,
+      "documentHeight": 14673
+    },
+    {
+      "route": "/en/about",
+      "width": 390,
+      "nativeViewportSegments": 20,
+      "path": "screenshots/verified/en-about-390-section-20.png",
+      "scrollY": 13562,
+      "viewportHeight": 900,
+      "documentHeight": 14462
+    },
+    {
+      "route": "/about",
+      "width": 1440,
+      "nativeViewportSegments": 14,
+      "path": "screenshots/verified/uk-about-1440-section-14.png",
+      "scrollY": 9296,
+      "viewportHeight": 900,
+      "documentHeight": 10196
+    },
+    {
+      "route": "/en/about",
+      "width": 1440,
+      "nativeViewportSegments": 14,
+      "path": "screenshots/verified/en-about-1440-section-14.png",
+      "scrollY": 9255,
+      "viewportHeight": 900,
+      "documentHeight": 10155
+    }
+  ],
+  "pendingDisabledMessengerScreenshot": "legacy-regression/screenshots/verified/en-messenger-pending-disabled-390-top.png",
+  "limits": "Local Chromium integration checks on an isolated PostgreSQL test schema; no production deployment or real notification. No full WCAG certification or field performance claim."
+}

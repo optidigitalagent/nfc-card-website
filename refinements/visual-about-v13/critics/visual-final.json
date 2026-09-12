@@ -1,0 +1,724 @@
+{
+  "reviewer": "Independent v13 visual/UX critic (/root/v13_visual_critic)",
+  "createdAt": "2026-09-11T13:11:55.501463+00:00",
+  "siteRevision": "4b0ccbc08aecda587aae9600e79352a1829c6de9758de87caffcdaf0821e5414",
+  "sourceRevision": "446a54d0dddac08cb10e0d0bf27f698986861b5812defd8da381b126bb28fec5",
+  "verdict": "ACCEPT_LOCAL_VISUAL_SCOPE",
+  "openCritical": 0,
+  "openHigh": 0,
+  "openMedium": 0,
+  "openFindings": [],
+  "roleCoverage": {
+    "design": "Approved graphite/silver skin and typographic family retained. Catalogue media occupies its frame without dead bands; direct illustration and caption are complete. Larger deliberate headings, compact quote and immediate footer resolve the specified visual issues.",
+    "UX": "Both product pages expose marketplace rails and current-image controls. Lightbox controls, keyboard containment, zoomed touch pan and return behavior are evidenced. Messenger choice is compact, branded and uses native radio semantics; error recovery is coherent.",
+    "responsive": "Eight requested widths have 80 focused contexts and 144 legacy route contexts. No horizontal document overflow, broken image or heading-count anomaly in focused matrix. Native mobile/tablet/desktop inspected, including complete UA home/About sequences and EN counterparts/samples.",
+    "accessibility": "Visible focus and selected states inspected. Current interaction evidence covers keyboard rail Home/End/arrows, modal bidirectional Tab trap/Escape, return/scroll restoration and radio keyboard selection. Independent evidence audit also records seven actual 200% zoom routes and reduced-motion checks; this is scoped review, not a WCAG certification.",
+    "anti-template": "Existing product-specific imagery, physical review-card information, founder story, timeline and authorized photography give the pages a coherent NFC CARD identity. About uses the approved site visual system, rather than importing iADDS styling or generic testimonial filler."
+  },
+  "closedFindings": [
+    {
+      "id": "V13-VIS-MEDIA-RESERVATION",
+      "originalSeverity": "high",
+      "status": "closed",
+      "finding": "Image decode could move catalogue copy by approximately 435px; prior EN mobile CLS 0.271658 was material despite route tests passing.",
+      "resolution": "Intrinsic predecode media ratios reserve the same geometry as decoded assets. All four delayed-image home/catalogue UA/EN cases record zero rectangle change and session CLS 0.",
+      "evidence": [
+        "layout-shift-diagnosis.md",
+        "targeted-regression/delayed-media-en-home.json",
+        "targeted-regression/delayed-media-en-catalog.json",
+        "targeted-regression/delayed-media-uk-home.json",
+        "targeted-regression/delayed-media-uk-catalog.json",
+        "critics/visual-pixel-compatibility.json"
+      ]
+    },
+    {
+      "id": "V13-VIS-ABOUT-H1",
+      "originalSeverity": "medium",
+      "status": "closed",
+      "finding": "Narrow About title left an isolated word.",
+      "resolution": "Original wording preserved, responsive typography produces coherent three-line title at 320/390; hierarchy remains strong.",
+      "evidence": [
+        "legacy-regression/screenshots/verified/uk-about-320-top.png",
+        "legacy-regression/screenshots/verified/uk-about-390-section-01.png"
+      ]
+    },
+    {
+      "id": "V13-UX-ZOOM-PAN",
+      "originalSeverity": "medium",
+      "status": "closed",
+      "finding": "Zoomed image touch-action prevented horizontal pan.",
+      "resolution": "Zoomed image permits both-axis pan; carousel handling is suppressed while zoomed. Genuine touch regression observes scrollLeft 145, and modal keyboard/close/scroll restoration passes.",
+      "evidence": [
+        "targeted-regression/gallery-standard-320.json",
+        "targeted-regression/screenshots/en-standard-lightbox-zoom-touch-pan-320.png"
+      ]
+    },
+    {
+      "id": "V13-VIS-EN-CTA",
+      "originalSeverity": "medium",
+      "status": "closed",
+      "finding": "English mobile final CTA had an isolated last word.",
+      "resolution": "Locale-specific narrow typography keeps original headline in two cohesive lines; UA retains larger heading.",
+      "evidence": [
+        "screenshots/after/en-home-390-ending.png",
+        "screenshots/after/uk-home-390-ending.png"
+      ]
+    },
+    {
+      "id": "V13-UX-MSG-CLEAR",
+      "originalSeverity": "medium",
+      "status": "closed",
+      "finding": "Messenger-specific error remained after a valid native radio choice.",
+      "resolution": "Selecting a messenger clears its own error and aria-invalid while retaining unrelated invalid-field feedback. Focus and single selection remain visible.",
+      "evidence": [
+        "targeted-regression/controls-footer-390.json",
+        "critics/messenger-feedback-boundary.json",
+        "targeted-regression/screenshots/en-messenger-keyboard-selected-390.png"
+      ]
+    },
+    {
+      "id": "V13-QA-ABOUT-TAIL",
+      "originalSeverity": "evidence gap",
+      "status": "closed",
+      "finding": "Earlier lazy-media page sweep did not reach full About mission/footer.",
+      "resolution": "Native sequence recomputes page extent and proves actual bottom. UA390 reaches 13773+900=14673; EN390 reaches 13562+900=14462. Mission, final CTA and complete footer inspected.",
+      "evidence": [
+        "final-test-evidence-audit.json",
+        "legacy-regression/screenshots/verified/uk-about-390-section-21.png",
+        "legacy-regression/screenshots/verified/en-about-390-section-20.png"
+      ]
+    }
+  ],
+  "matrix": {
+    "focusedContexts": 80,
+    "legacyRouteWidthContexts": 144,
+    "widths": [
+      320,
+      360,
+      390,
+      430,
+      768,
+      1024,
+      1280,
+      1440
+    ],
+    "focusedNativePNGs": 512,
+    "pageErrors": 0,
+    "httpErrors": 0,
+    "horizontalOverflowContexts": 0,
+    "brokenImageContexts": 0,
+    "oneH1AllContexts": true,
+    "sourceBoundTestsReported": 465,
+    "targetedReports": 15,
+    "delayedMediaCases": 4,
+    "nativeSequenceByteIdentity": {
+      "count": 129,
+      "identical": 129,
+      "evidence": "critics/visual-pixel-compatibility.json"
+    }
+  },
+  "mobileEnding390": [
+    {
+      "route": "/",
+      "footerHeight": 325.5625,
+      "primaryCenterFraction": 0.5493372334123223,
+      "finalHeight": 455.75
+    },
+    {
+      "route": "/en",
+      "footerHeight": 325.5625,
+      "primaryCenterFraction": 0.5493002073459715,
+      "finalHeight": 455.75
+    }
+  ],
+  "performance": {
+    "maxInitialSessionCLS": 0.045980556604229984,
+    "scope": "Unthrottled local Chromium on shared workstation; not field Core Web Vitals or physical-device certification. Initial session-window CLS is recorded before programmatic component capture. Cumulative shifts across the later capture/state walkthrough are retained separately and are not labelled field CLS. Event Timing is sampled local observation, not complete field INP."
+  },
+  "inspectedNativeImages": [
+    {
+      "path": "legacy-regression/screenshots/verified/uk-home-390-section-01.png",
+      "sha256": "19bf4e40792037162fc9249e18ed62103269976d5acfe84de233e98689b61557",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-home-390-section-01.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-home-390-section-02.png",
+      "sha256": "bd58649776cb86896513c4c7f8d9887ad84fe734e0be97e2b4d009c5fc9cf650",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-home-390-section-02.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-home-390-section-03.png",
+      "sha256": "c374023ba6af9c7d6cf43996f0745b33ca2bf7760ef3d3945638bab9e01385ac",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-home-390-section-03.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-home-390-section-04.png",
+      "sha256": "a61024c0d3448031b2693853ed3606966710dd34039ee47e7eb7594001b89c23",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-home-390-section-04.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-home-390-section-05.png",
+      "sha256": "51dfc6d5c5e9dc434abcc12e97059804f28eceb2b0bf08d82b60e615aee246c1",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-home-390-section-05.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-home-390-section-06.png",
+      "sha256": "7a38391c85c42001d0fdbf9190127bfef069e27c34c3cc0b4e70eda3705d9103",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-home-390-section-06.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-home-390-section-07.png",
+      "sha256": "0d73624b6f63680632904036fbeb501e6b7f854bbc13c93fbc4045fd25cb7b56",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-home-390-section-07.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-home-390-section-08.png",
+      "sha256": "cd40031c5c48d835f98041b3dfdc8e433b8985ce30e5c6ab4867ca400ed8b90f",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-home-390-section-08.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-home-390-section-09.png",
+      "sha256": "dd837d893da20467565bbb4ab1ef723e3f0e3f46d61ab4c76eef467e79236cf9",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-home-390-section-09.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-home-390-section-10.png",
+      "sha256": "83cdf9003a54123e8948440a68e235e456bfd6765d8b11fe8a8cb3113c2cc862",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-home-390-section-10.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-home-390-section-11.png",
+      "sha256": "2abe3857d469cc7d816c035e5d3bf481d0bb019fd0eb32707eebf4b387d9a6ca",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-home-390-section-11.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-home-390-section-12.png",
+      "sha256": "3697e9685010398c4850f8f555ccda91cf47007fef26a523c6f4eeff69a2831b",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-home-390-section-12.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-home-390-section-13.png",
+      "sha256": "35c0b7e100ef43beaa270a29038d666d395562e392dc7def317c43c6c2e3ce21",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-home-390-section-13.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-home-390-section-14.png",
+      "sha256": "2e1a338421edee8a66fbbfad9eb1b3e6f95b5e5171497da3acadb416cf017104",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-home-390-section-14.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-home-390-section-15.png",
+      "sha256": "25ca4edbb855d9447d44857f9e2670cce94dc85d2accd55fc8978ea181fbfc3e",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-home-390-section-15.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-home-390-section-16.png",
+      "sha256": "633530d065f2295f0fa212007b295851d58309c744df95d37657f1fd83be00a8",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-home-390-section-16.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-01.png",
+      "sha256": "bb6c0e9d6c693028c29d3e37b9facd1431eabfac901fed56b40524974dbdd04e",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-01.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-02.png",
+      "sha256": "ba65d18c4453a561c773f6d84e68cd1ca08cd08e8fc856661306f0dd33d0d32c",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-02.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-03.png",
+      "sha256": "191004a7c39edd7ddb4f420edf18a51f4a50202cf64e45349d51099dca18d816",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-03.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-04.png",
+      "sha256": "9c8d0646fb352759c35e3f977c6c226ccd55954f9135936f77877d947292f5f3",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-04.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-05.png",
+      "sha256": "fcd6ce76ae843679f3f971261aef5cfb2ab487fbf34aea95b29d5c730ec803c4",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-05.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-06.png",
+      "sha256": "cd4edae0e1e243a2a7a60fe422eafaaf67b97cfcc09bb909a288c5326ad8f281",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-06.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-07.png",
+      "sha256": "0d551b607f0d0ebc35be6bcdaca53f856151f9451ee7c58762e03d6a503751c9",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-07.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-08.png",
+      "sha256": "45b9b5cd2eedde968bda5f3e3c783dec51b055bc41fec108d0f5d1332aaee151",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-08.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-09.png",
+      "sha256": "ec78abf44f5a3b19bc9be9510ef43723b97fce88210c6244c2c5ce84efffa688",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-09.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-10.png",
+      "sha256": "7ea1451ba59116c1c6e52bf6ec6a950fad2293bd035ae4e9fcfe613f266ea87d",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-10.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-11.png",
+      "sha256": "8a55b364a2e5b6aabcab85eabf18c4f1f59a0d295c2334bd59ef48f1f750de3c",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-11.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-12.png",
+      "sha256": "6e8f6704fd8d994b482fd59c9a2fda438c622e5540b9b1199071034e511ad01e",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-12.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-13.png",
+      "sha256": "1d812a3cfa5a05e197d5f07f6c392c10bbf3a4732902a16c6fc717a7e8d6bfa4",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-13.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-14.png",
+      "sha256": "264a60d5bafd3c240adb39653c7ec1b4b7403e54734dddb73b05c53efd9c1150",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-14.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-15.png",
+      "sha256": "ed47a0d466556bc40e3c2c7ee93c8d467b6fb0f4061a91a62ad6298ba7c39372",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-15.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-16.png",
+      "sha256": "c23a14f20cbfde0a50a4d8307e047b158efb323771f2731e2e20c9d0eda9e6f3",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-16.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-17.png",
+      "sha256": "b98cac360aedaeeb6ddd7188236ea982eefde33bd004e087fbf64086a4b5805b",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-17.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-18.png",
+      "sha256": "dab0e4e01d9d919bb3b8b2aa2fa82bf75f3ad69c29ace770bf6eab47d52dfa5f",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-18.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-19.png",
+      "sha256": "29511e249286dcbe9533af68884c55d7b93e316a218a78f3e14df70853f27765",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-19.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-20.png",
+      "sha256": "05c482b40a03b48c94086f0a45239c83b48d3145f7c2f9fab88e0b3a13433f11",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-20.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-390-section-21.png",
+      "sha256": "7a912661d6ace290f538774508b572380c5d15f2120a3fec20ebdc6f16616870",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-390-section-21.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-1440-section-01.png",
+      "sha256": "d3c4cc08ddffb6f1f510cc959839692c91fe1de58785d0b35a67eab231793ee7",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-1440-section-01.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-1440-section-02.png",
+      "sha256": "0e10765616cfed6c0caeef55920b1323e67f1324280570bdd2c660fa59c49e06",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-1440-section-02.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-1440-section-03.png",
+      "sha256": "3414e3839dc5f624090c952da2b89be350733868e7f5123643740484aeec892e",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-1440-section-03.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-1440-section-04.png",
+      "sha256": "6be1aed5124372988f6c5b8a6e1b1838e595f706058b0910aa8d55dc2e204f92",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-1440-section-04.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-1440-section-05.png",
+      "sha256": "4f5935019dec4cc0ccbc536590b330b280b63b5597f47d68af42c7b8395fd691",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-1440-section-05.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-1440-section-06.png",
+      "sha256": "47149c649dffce9603daef18681017bb05a064d184925663ef560e1a22c20bf8",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-1440-section-06.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-1440-section-07.png",
+      "sha256": "63c546558b0fc1f188fe1537b9642356d8a1b6b6150630b58f6d502e989ba90f",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-1440-section-07.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-1440-section-08.png",
+      "sha256": "1d1a6421120796b2bafac5c93977a44e098e265d9ec2c27eac98ccf69220f492",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-1440-section-08.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-1440-section-09.png",
+      "sha256": "3b291c443b2e08c5536b36fa5b8fa272f98f05aecbe0e57b6cd3fe06255bbf34",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-1440-section-09.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-1440-section-10.png",
+      "sha256": "2e91e4df42463a386c33c780cc2785d802da9b28500f00e0d21305a34a2ff842",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-1440-section-10.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-1440-section-11.png",
+      "sha256": "1e82871512af89931653aa66d50c677556476931f172a74885c013975628cd59",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-1440-section-11.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-1440-section-12.png",
+      "sha256": "4db3f61c4402c63e016c47fb076353a44f4e43bb104e6bc78572edad218bfa75",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-1440-section-12.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-1440-section-13.png",
+      "sha256": "afb7ee90c174a457a0bf87a4956ecceb9244a99393d87957643edb0384691883",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-1440-section-13.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-1440-section-14.png",
+      "sha256": "1db169fbd80064bef443ab95b8c33274e24e91ed327d1c4884fab3b4994bcb25",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/uk-about-1440-section-14.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/en-about-390-section-01.png",
+      "sha256": "3391ebc6977a9f11f1afce0eea30bade76bf1aefb4058b69431f75f8570e7f9b",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/en-about-390-section-01.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/en-about-390-section-02.png",
+      "sha256": "59e341b53363c2796469a26af2b8dbaffb9a331237461993d9a9a634546eafe7",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/en-about-390-section-02.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/en-about-390-section-14.png",
+      "sha256": "800561d0c00eba31092d1b031d4304daf2d3623fc8e470b6ff5ac1d6690a4051",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/en-about-390-section-14.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/en-about-390-section-17.png",
+      "sha256": "92f422d9b4081a6a6ee86906a862d8930eed278e3c45e112f174caf326a43c8e",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/en-about-390-section-17.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/en-about-390-section-18.png",
+      "sha256": "6c3b3661df0617927d715a7b7992a04d0a9ca2af8e044bdcbf713b44f857cc1c",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/en-about-390-section-18.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/en-about-390-section-19.png",
+      "sha256": "118a962d86c05d1a4bc8b0ca5eb0fd114ba25348a1f5498587a15d0b127670d0",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/en-about-390-section-19.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/en-about-390-section-20.png",
+      "sha256": "335ae0a825ff1d0d137c09c638cbac458fe3d9f320e17147c76ffae774e80afd",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/en-about-390-section-20.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/en-about-1440-section-01.png",
+      "sha256": "a2399d6379a4d4a0673801d2a3c6bdc5e222d1aa28867dbf327518fc37cf1eb1",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/en-about-1440-section-01.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/en-about-1440-section-03.png",
+      "sha256": "013db3b338b2c5b2fadab42344d636883e180311b29666b2e7a314ee3e4bdb57",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/en-about-1440-section-03.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/en-about-1440-section-04.png",
+      "sha256": "a9df5363535502d3dae79d05a8c26819cf70683654e4d86d4334bb7bc0e21137",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/en-about-1440-section-04.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/en-about-1440-section-06.png",
+      "sha256": "fced3c0d9eccebca05862f0d29967b4e1ef96dfe612495fdc9293fd2baa1e80b",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/en-about-1440-section-06.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/en-about-1440-section-08.png",
+      "sha256": "719d6e33a899ea561aef61e2baf0b31cebef2e5eaf88b8de198b3d49f0a7c106",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/en-about-1440-section-08.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/en-about-1440-section-10.png",
+      "sha256": "a202ca489495f8de65fd27cb790eecbbbc3cb698c3273fcd9167b663451f5514",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/en-about-1440-section-10.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/en-about-1440-section-12.png",
+      "sha256": "326b2e1bb769e3fda108120caf10657b40cd37f9fcd8e83ab4afc2b5e0ab223e",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/en-about-1440-section-12.png"
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/en-about-1440-section-14.png",
+      "sha256": "359a1f887eeafa2a3ce6874f6ee0c89af6b4ac10da54d071fcdef7118ceca429",
+      "inspection": "Native viewport image visually inspected during c632 review; exact byte identity independently verified against current 4b0ccbc image.",
+      "historicalPath": "history/pre-cls-c632/legacy-regression/screenshots/verified/en-about-1440-section-14.png"
+    },
+    {
+      "path": "screenshots/after/uk-home-390-ending.png",
+      "sha256": "7a0e4382a07c8ba741378dde684e40ae76f57e52ed8ed74ab42b9690dc60e36d",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "screenshots/after/en-home-390-ending.png",
+      "sha256": "7f7bf7b5ae4bd030bbb9696fb554d9cdb885a42745d4e1fc7f611aca2ec267fe",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "screenshots/after/uk-home-390-catalog.png",
+      "sha256": "f99f6338fd42aadfad44ac0da7dd6f1fd2246dfefab16884ee9971183565e39d",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "screenshots/after/uk-home-390-direct.png",
+      "sha256": "8023c2f4a90cc735aeb15f9975853d56fc94585a394a973bd763b6e07ef9a6bd",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "screenshots/after/en-about-390-ending.png",
+      "sha256": "045a3dadd0f163b7a705c6e7c27a62bc39ca859ec453a5e0bfaba76ce388b6f0",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "screenshots/after/uk-order-390-messenger-focus.png",
+      "sha256": "01e24fa4446da8fb388c6b2b963fd7e25c462528663b4e131d7c5c24dd81bccf",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "screenshots/after/uk-home-320-direct.png",
+      "sha256": "7c7dc72dbbabc97677d70447a0cc86c64336b42336aa07e52aecf4dcb16e8f2b",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "screenshots/after/uk-home-320-quote.png",
+      "sha256": "a09b5e7bac078de38b497faf8d6a2459248d48fa9d3fedd0522c45140872d232",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "screenshots/after/uk-home-320-catalog.png",
+      "sha256": "0d97dd5c68acecc6c2c67cc3dfaa25e3b4775799e882b2a80d9d0cf3aa76fa59",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "screenshots/after/uk-about-320-ending.png",
+      "sha256": "a509a72fae35c7a95362e6a3f0c447956b5f6f3011af13005f85a9f9b67c3f1d",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "screenshots/after/uk-home-768-catalog.png",
+      "sha256": "ce4568715c9fd0b63d17cafb9d1bee5ea9b4816628b519e27ea62a70a930e9cf",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "screenshots/after/uk-home-1024-direct.png",
+      "sha256": "8c84cb2be19858a4f0281350f4982bfe7e02968f5609f7505ff782ec66c21469",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "screenshots/after/en-home-1280-ending.png",
+      "sha256": "f8300233cab26bfce7ce6a377a60032e61eceba9af4d7a923d7db58bf36f1e01",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "screenshots/after/uk-home-1024-quote.png",
+      "sha256": "80238b5a9a04a38ce19765bf9269df2dc3c93edc36ecd597c3bc70bbea7d0ca1",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "screenshots/after/uk-home-768-footer.png",
+      "sha256": "ef7c2cbc0180b73b346d3eca098c2992d165d3974e9cbd322e15c5d3b01a2e94",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "screenshots/after/uk-home-1440-ending.png",
+      "sha256": "76ee14a860e985105b5f1033c083a5e4a0e77feb2b1151783ea7e37a8be9af04",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "screenshots/after/en-home-1440-catalog.png",
+      "sha256": "0773c043be3e5926abf740916d147fce90f6cfe1d52cf74ca329ef393ea276b7",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "screenshots/after/en-about-1440-ending.png",
+      "sha256": "359a1f887eeafa2a3ce6874f6ee0c89af6b4ac10da54d071fcdef7118ceca429",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "screenshots/after/uk-home-1440-direct.png",
+      "sha256": "31b53a16cd049b179994397c88795060b450ffc13b941cafa5a5d2ed06c59368",
+      "inspection": "Native component/viewport visually inspected; independently byte-verified identical current candidate."
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-320-top.png",
+      "sha256": "b56974147f992d9a2bde5018545abc6de9fb5e100ee5b2bb44cc53643ac80dd2",
+      "inspection": "Native responsive representative visually inspected in the review cycle; current artifact checked."
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/en-about-360-top.png",
+      "sha256": "74dbd0bb298918869f3621f9653166443018b0ac778f2ccb32aec6d89c6aaf38",
+      "inspection": "Native responsive representative visually inspected in the review cycle; current artifact checked."
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-about-768-top.png",
+      "sha256": "93e059361b848fc3295bbab0c6cab67275e72ddcc0d9bfa4b67a10a576ec4cf4",
+      "inspection": "Native responsive representative visually inspected in the review cycle; current artifact checked."
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/en-about-1024-top.png",
+      "sha256": "d3ca5f41f90729a24a4ee512dd03040315c2ddcc066d7b9fe4f5fb63898215ee",
+      "inspection": "Native responsive representative visually inspected in the review cycle; current artifact checked."
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/uk-solutions-review-card-1280-top.png",
+      "sha256": "63467b2d78e5a1bc7c1f92de5924c82dff0d2451dfce378f1cfb42af945c44b7",
+      "inspection": "Native responsive representative visually inspected in the review cycle; current artifact checked."
+    },
+    {
+      "path": "legacy-regression/screenshots/verified/en-solutions-branded-review-card-430-top.png",
+      "sha256": "dd97ffc04656f6148e7d69a1259bd066906f6a34381e9b8d1b450054ab69f1a8",
+      "inspection": "Native responsive representative visually inspected in the review cycle; current artifact checked."
+    },
+    {
+      "path": "targeted-regression/screenshots/en-final-cta-footer-390.png",
+      "sha256": "4fb406d8719728c5d08a4153ebd3a353d7173894057e33fc1f2f4a8c408b161c",
+      "inspection": "Native interaction-state screenshot visually inspected; current targeted report/source binding checked."
+    },
+    {
+      "path": "targeted-regression/screenshots/uk-final-cta-footer-390.png",
+      "sha256": "fa77e4286177f0c5b516d547a0f3233259aafbbde33ed3343ad7b6552f0d2f45",
+      "inspection": "Native interaction-state screenshot visually inspected; current targeted report/source binding checked."
+    },
+    {
+      "path": "targeted-regression/screenshots/uk-messenger-keyboard-selected-320.png",
+      "sha256": "971a014ae8409ce6620e29bdf0222951612b92bd2d8820711bfcf2a10117ec28",
+      "inspection": "Native interaction-state screenshot visually inspected; current targeted report/source binding checked."
+    },
+    {
+      "path": "targeted-regression/screenshots/en-messenger-keyboard-selected-390.png",
+      "sha256": "511882a170e18272702b29612b2c1586ee86ffeaf77b3cd9ba4f0891b1548c69",
+      "inspection": "Native interaction-state screenshot visually inspected; current targeted report/source binding checked."
+    },
+    {
+      "path": "targeted-regression/screenshots/uk-standard-thumb-selected-320.png",
+      "sha256": "ea21c4b290e5f47ae486363b8174a45b675c5c51ed91cd08f56604c3f0c9b40c",
+      "inspection": "Native interaction-state screenshot visually inspected; current targeted report/source binding checked."
+    },
+    {
+      "path": "targeted-regression/screenshots/en-branded-lightbox-1440.png",
+      "sha256": "6fcdcd2b434eb10ccb3f7d059a67649330959270c47fba4f7b585895648e7543",
+      "inspection": "Native interaction-state screenshot visually inspected; current targeted report/source binding checked."
+    },
+    {
+      "path": "targeted-regression/screenshots/en-standard-lightbox-zoom-touch-pan-320.png",
+      "sha256": "beec532238ac6cdd34dba8fa06897b6e5bb82c69fabad8bee56e856f67d869dc",
+      "inspection": "Native interaction-state screenshot visually inspected; current targeted report/source binding checked."
+    },
+    {
+      "path": "targeted-regression/screenshots/uk-standard-lightbox-390.png",
+      "sha256": "4ab0456a7305449eefd0937dccfa9823403529765bd49c2d5f5131194e0f011f",
+      "inspection": "Native interaction-state screenshot visually inspected; current targeted report/source binding checked."
+    },
+    {
+      "path": "targeted-regression/screenshots/uk-standard-lightbox-zoom-touch-pan-320.png",
+      "sha256": "b454fb375b43e156b3fbb8524e52f898f631e392d7d0f62a66800a3846f39b5b",
+      "inspection": "Native interaction-state screenshot visually inspected; current targeted report/source binding checked."
+    }
+  ],
+  "evidenceReferences": [
+    "after-matrix.json",
+    "final-test-evidence-audit.json",
+    "test-results.json",
+    "performance-observations.json",
+    "candidate-seal.json",
+    "critics/visual-review-initial.md",
+    "critics/visual-review-f611.md",
+    "critics/visual-recheck-c632.md",
+    "capture-interruption.json"
+  ],
+  "limitations": [
+    "Independent critic used native screenshots, source inspection and recorded browser evidence; no browser was launched or app source modified by this critic.",
+    "Acceptance is for the requested local v13 visual/UX/responsive/accessibility scope. It does not independently certify production infrastructure, third-party delivery, other browser engines or physical devices.",
+    "Performance observations are unthrottled local Chromium on a shared workstation. Maximum focused initial session-window CLS is 0.045980556604229984; this is not a claim of blanket zero CLS or field Core Web Vitals. Four causal delayed-media cases are specifically zero.",
+    "Not every generated PNG was individually viewed. Exact inspected native images are listed with SHA-256; 129 sequence-image identities additionally bind prior visual inspection to the corrected current candidate.",
+    "At 320px the compact UA footer is about 343px due to legitimate legal/link wrapping, marginally above the approximate 340px guide; no clipping, unreadable controls or substantive visual defect was found."
+  ]
+}

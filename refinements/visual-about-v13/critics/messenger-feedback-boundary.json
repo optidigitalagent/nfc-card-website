@@ -1,0 +1,10 @@
+{
+  "status": "source_scope_verified",
+  "allowedChanges": [
+    "Gallery mount block",
+    "Messenger change handler feedback cleanup"
+  ],
+  "commerceOtherBytesUnchanged": true,
+  "sourceSHA256": "f165a5bc8d0115c6b2cb0e60b38389f6b7c7a74f8f7778c38eb21a67977036cf",
+  "review": "Pending guard retained; clears only messenger errors after recognized checked radio; preserves validation, payload, event, draft and retry code. Browser error-state rerun remains required."
+}

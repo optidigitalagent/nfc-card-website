@@ -1,0 +1,15 @@
+{
+  "name": "nfc-card-manual-v1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node src/build.mjs",
+    "test": "python scripts/run_tests.py",
+    "qa": "python scripts/run_tests.py --browser-only",
+    "start": "python scripts/start.py",
+    "dev": "python scripts/start.py"
+  },
+  "engines": {
+    "node": ">=22.12"
+  }
+}

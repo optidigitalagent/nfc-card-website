@@ -1,0 +1,48 @@
+{
+  "legacy": [
+    "catalog_view",
+    "product_variant_select",
+    "quantity_select",
+    "product_details_open",
+    "order_start",
+    "order_submit_success",
+    "order_submit_error",
+    "telegram_click",
+    "whatsapp_click",
+    "viber_click",
+    "phone_click",
+    "instagram_click",
+    "language_switch",
+    "founder_story_video_play",
+    "faq_open",
+    "product_row_click",
+    "product_gallery_view",
+    "founder_story_view"
+  ],
+  "commerce": [
+    "catalog_product_open",
+    "product_row_click",
+    "product_variant_select",
+    "product_gallery_view",
+    "product_gallery_slide",
+    "product_details_open",
+    "product_details_expand",
+    "product_cross_sell_click",
+    "sticky_order_cta_view",
+    "sticky_order_cta_click",
+    "messenger_preference_select",
+    "quantity_select",
+    "order_start",
+    "order_submit_success",
+    "order_submit_error"
+  ],
+  "reviews": [
+    "client_reviews_section_view",
+    "client_review_slide_view",
+    "client_review_business_info_open",
+    "client_review_external_link_click",
+    "client_review_submit_open",
+    "client_review_submit_success",
+    "client_review_submit_error"
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "portrait": {
+    "alt": {
+      "uk": "Артем Антонов у кепці біля моря",
+      "en": "Artem Antonov wearing a cap by the sea"
+    },
+    "variants": [
+      {
+        "file": "/assets/media/founder/portrait-desktop.avif",
+        "format": "avif",
+        "role": "desktop",
+        "width": 680,
+        "height": 986
+      },
+      {
+        "file": "/assets/media/founder/portrait-desktop.webp",
+        "format": "webp",
+        "role": "desktop",
+        "width": 680,
+        "height": 986
+      },
+      {
+        "file": "/assets/media/founder/portrait-mobile.avif",
+        "format": "avif",
+        "role": "mobile",
+        "width": 640,
+        "height": 920
+      },
+      {
+        "file": "/assets/media/founder/portrait-mobile.webp",
+        "format": "webp",
+        "role": "mobile",
+        "width": 640,
+        "height": 920
+      }
+    ]
+  },
+  "hockey-team": {
+    "alt": {
+      "uk": "Артем під час хокейного матчу поруч з іншим гравцем",
+      "en": "Artem in a hockey match alongside another player"
+    },
+    "variants": [
+      {
+        "file": "/assets/media/founder/hockey-team-desktop.avif",
+        "format": "avif",
+        "role": "desktop",
+        "width": 1075,
+        "height": 711
+      },
+      {
+        "file": "/assets/media/founder/hockey-team-desktop.webp",
+        "format": "webp",
+        "role": "desktop",
+        "width": 1075,
+        "height": 711
+      },
+      {
+        "file": "/assets/media/founder/hockey-team-mobile.avif",
+        "format": "avif",
+        "role": "mobile",
+        "width": 640,
+        "height": 606
+      },
+      {
+        "file": "/assets/media/founder/hockey-team-mobile.webp",
+        "format": "webp",
+        "role": "mobile",
+        "width": 640,
+        "height": 606
+      }
+    ]
+  },
+  "hockey-puck": {
+    "alt": {
+      "uk": "Артем веде шайбу під час хокейного матчу",
+      "en": "Artem guiding the puck during a hockey match"
+    },
+    "variants": [
+      {
+        "file": "/assets/media/founder/hockey-puck-desktop.avif",
+        "format": "avif",
+        "role": "desktop",
+        "width": 896,
+        "height": 758
+      },
+      {
+        "file": "/assets/media/founder/hockey-puck-desktop.webp",
+        "format": "webp",
+        "role": "desktop",
+        "width": 896,
+        "height": 758
+      },
+      {
+        "file": "/assets/media/founder/hockey-puck-mobile.avif",
+        "format": "avif",
+        "role": "mobile",
+        "width": 640,
+        "height": 635
+      },
+      {
+        "file": "/assets/media/founder/hockey-puck-mobile.webp",
+        "format": "webp",
+        "role": "mobile",
+        "width": 640,
+        "height": 635
+      }
+    ]
+  },
+  "urban": {
+    "alt": {
+      "uk": "Артем на міській прогулянці, кадр на повний зріст",
+      "en": "Full-length photograph of Artem at an urban event"
+    },
+    "variants": [
+      {
+        "file": "/assets/media/founder/urban-desktop.avif",
+        "format": "avif",
+        "role": "desktop",
+        "width": 600,
+        "height": 800
+      },
+      {
+        "file": "/assets/media/founder/urban-desktop.webp",
+        "format": "webp",
+        "role": "desktop",
+        "width": 600,
+        "height": 800
+      },
+      {
+        "file": "/assets/media/founder/urban-mobile.avif",
+        "format": "avif",
+        "role": "mobile",
+        "width": 480,
+        "height": 640
+      },
+      {
+        "file": "/assets/media/founder/urban-mobile.webp",
+        "format": "webp",
+        "role": "mobile",
+        "width": 480,
+        "height": 640
+      }
+    ]
+  },
+  "gopro": {
+    "alt": {
+      "uk": "Артем показує GoPro біля води",
+      "en": "Artem holding a GoPro by the water"
+    },
+    "variants": [
+      {
+        "file": "/assets/media/founder/gopro-desktop.avif",
+        "format": "avif",
+        "role": "desktop",
+        "width": 902,
+        "height": 902
+      },
+      {
+        "file": "/assets/media/founder/gopro-desktop.webp",
+        "format": "webp",
+        "role": "desktop",
+        "width": 902,
+        "height": 902
+      },
+      {
+        "file": "/assets/media/founder/gopro-mobile.avif",
+        "format": "avif",
+        "role": "mobile",
+        "width": 640,
+        "height": 719
+      },
+      {
+        "file": "/assets/media/founder/gopro-mobile.webp",
+        "format": "webp",
+        "role": "mobile",
+        "width": 640,
+        "height": 719
+      }
+    ]
+  },
+  "boat": {
+    "alt": {
+      "uk": "Артем на човні під відкритим небом",
+      "en": "Artem on a boat under the open sky"
+    },
+    "variants": [
+      {
+        "file": "/assets/media/founder/boat-desktop.avif",
+        "format": "avif",
+        "role": "desktop",
+        "width": 960,
+        "height": 640
+      },
+      {
+        "file": "/assets/media/founder/boat-desktop.webp",
+        "format": "webp",
+        "role": "desktop",
+        "width": 960,
+        "height": 640
+      },
+      {
+        "file": "/assets/media/founder/boat-mobile.avif",
+        "format": "avif",
+        "role": "mobile",
+        "width": 547,
+        "height": 717
+      },
+      {
+        "file": "/assets/media/founder/boat-mobile.webp",
+        "format": "webp",
+        "role": "mobile",
+        "width": 547,
+        "height": 717
+      }
+    ]
+  },
+  "jetski": {
+    "alt": {
+      "uk": "Артем на водному мотоциклі біля берега",
+      "en": "Artem on a jet ski near the shore"
+    },
+    "variants": [
+      {
+        "file": "/assets/media/founder/jetski-desktop.avif",
+        "format": "avif",
+        "role": "desktop",
+        "width": 640,
+        "height": 499
+      },
+      {
+        "file": "/assets/media/founder/jetski-desktop.webp",
+        "format": "webp",
+        "role": "desktop",
+        "width": 640,
+        "height": 499
+      },
+      {
+        "file": "/assets/media/founder/jetski-mobile.avif",
+        "format": "avif",
+        "role": "mobile",
+        "width": 538,
+        "height": 525
+      },
+      {
+        "file": "/assets/media/founder/jetski-mobile.webp",
+        "format": "webp",
+        "role": "mobile",
+        "width": 538,
+        "height": 525
+      }
+    ]
+  }
+}

@@ -1,0 +1,424 @@
+{
+  "uk": {
+    "behind": {
+      "eyebrow": "ХТО СТОЇТЬ ЗА NFC CARD",
+      "title": "Проєкт Antonov Digital, який засновник веде особисто",
+      "paragraphs": [
+        "NFC CARD є одним із проєктів Antonov Digital — української AI-native digital company, що створює цифрові продукти, AI-системи, вебрішення та автоматизації.",
+        "У портфелі Antonov Digital — понад 30 digital- та AI-проєктів і близько 50 окремих тестів та експериментів. Ці числа не складаються за категоріями, оскільки частина робіт поєднує веброзробку, AI й автоматизацію.",
+        "Команда зараз складається з Артема Антонова та партнера-розробника, який не розкриває свою особистість. Артем особисто проводить консультації, визначає напрям проєкту, координує реалізацію та перевіряє результат перед передачею клієнту."
+      ],
+      "link": "Історія засновника та компанії"
+    },
+    "founder": {
+      "title": "Артем Антонов — Founder & CEO of Antonov Digital",
+      "paragraphs": [
+        "Артем виріс у Запоріжжі, а пізніше переїхав до Києва. Його шлях у digital почався ще під час навчання в школі — з американського YouTube та ідеї створювати відео без традиційної знімальної команди.",
+        "У 2023 році він скептично ставився до ChatGPT. У вересні 2025 року, працюючи з AI-контентом для YouTube, він уперше системно розібрався в prompting, генеративних інструментах і можливості створювати продукти значно меншою командою.",
+        "Далі були веброзробка, перший клієнтський сайт, автоматизації та власні AI-продукти. Одним із них став Mentium — стартап-платформа з AI-викладачем для вивчення англійської мови.",
+        "Вивчаючи, як AI розвивається у США, Європі та Китаї, Артем побачив розрив між можливостями технології та рівнем її практичного використання в багатьох українських бізнесах. Antonov Digital був створений, щоб скорочувати цей розрив — не просто розповідати про AI, а перетворювати його на готові продукти, контент і робочі системи.",
+        "Сьогодні Артем відповідає за розвиток Antonov Digital, консультації з клієнтами, постановку задач, product- і project-management, AI-напрям, web development і фінальну перевірку результатів."
+      ],
+      "education": "Основою навчання стали школа й самостійне вивчення AI, маркетингу, економіки, контенту, розробки та підприємництва. Артем пройшов один курс з американського YouTube; професійний шлях будує через практику та власні проєкти.",
+      "responsibilityTitle": "Особиста відповідальність",
+      "responsibility": "До початку проєкту Артем особисто вивчає бізнес і готує первинну ідею. Під час реалізації він визначає напрям, координує роботу та показує проміжні матеріали. Перед передачею перевіряє, чи відповідає результат погодженій задачі, строкам, ціні та критеріям якості. Після завершення залишається на звʼязку й цікавиться розвитком проєкту.",
+      "philosophy": [
+        "Для мене Antonov Digital — це бізнес, а бізнес став частиною мого життя. Мені цікаво не просто обмінювати час на оплату, а створювати проєкти, які ростуть, вирішують проблеми й залишають після себе реальну цінність.",
+        "Я хочу показати, що починати можна в будь-якому віці. Важливо не чекати ідеального диплома чи моменту, а вчитися, брати відповідальність і послідовно будувати те, у що віриш."
+      ],
+      "philosophyTitle": "Будувати те, у що віриш",
+      "competenciesTitle": "Від задачі до робочого рішення",
+      "competencies": [
+        {
+          "title": "AI Solution Design & Implementation",
+          "body": "Перетворює бізнес-задачу на робочий AI-процес або продукт."
+        },
+        {
+          "title": "AI-assisted Product & Web Development",
+          "body": "Створює сайти, інтерфейси й digital-продукти з використанням AI."
+        },
+        {
+          "title": "Creative AI Production & Content Direction",
+          "body": "Формує ідеї та контролює виробництво рекламного контенту."
+        },
+        {
+          "title": "AI Workflow Automation",
+          "body": "Проєктує ботів, агентів та автоматизовані процеси."
+        },
+        {
+          "title": "Product & Project Management",
+          "body": "Визначає обсяг, координує реалізацію та відповідає за передачу результату."
+        },
+        {
+          "title": "Client Consulting & Business Development",
+          "body": "Пояснює технологію без складного жаргону та пропонує застосовні ідеї."
+        }
+      ],
+      "timelineTitle": "Шлях у digital",
+      "timeline": [
+        {
+          "title": "2023 — скепсис",
+          "body": "У 2023 році Артем скептично ставився до ChatGPT і не вважав його практичним інструментом. Пізніше власний досвід повністю змінив цю думку."
+        },
+        {
+          "title": "Вересень 2025 — американський YouTube і перше системне знайомство з AI",
+          "body": "Артем почав вивчати створення відео для американського YouTube без необхідності постійно зʼявлятися в кадрі. Саме там він уперше системно працював із prompting і генеративними інструментами."
+        },
+        {
+          "title": "Жовтень 2025 — веброзробка",
+          "body": "AI-експерименти привели до сайтів, інтерфейсів і digital-продуктів."
+        },
+        {
+          "title": "Листопад 2025 — перший клієнтський проєкт",
+          "body": "Першою реальною клієнтською роботою став сайт-меню для ресторану."
+        },
+        {
+          "title": "2026 — власні продукти",
+          "body": "Одним із перших AI-продуктів став Mentium — стартап-платформа з AI-викладачем для вивчення англійської мови."
+        },
+        {
+          "title": "15 серпня 2026 — iADDS",
+          "body": "Окремий напрям рекламного й продуктового AI-контенту."
+        },
+        {
+          "title": "20 серпня 2026 — NFC CARD",
+          "body": "Окремий продукт Antonov Digital для локальних бізнесів."
+        },
+        {
+          "title": "Сьогодні",
+          "body": "Antonov Digital розвиває iADDS, NFC Card, Mentium, веброзробку, SEO, CRM-рішення, автоматизації, персональних AI-агентів та Google Business Profile/Maps."
+        }
+      ],
+      "principlesTitle": "Принципи Antonov Digital",
+      "principles": [
+        {
+          "title": "Починаємо з реальної бізнес-задачі",
+          "body": "Спочатку визначаємо, що має змінитися для бізнесу, і лише після цього обираємо технологію."
+        },
+        {
+          "title": "Пропонуємо ідеї, а не лише виконуємо інструкції",
+          "body": "Клієнт може прийти із задачею, а не з готовим технічним рішенням. Ми аналізуємо її, консультуємо та пропонуємо власний підхід."
+        },
+        {
+          "title": "Не перекладаємо технічну складність на клієнта",
+          "body": "Пояснюємо рішення зрозумілою мовою й беремо на себе реалізацію."
+        },
+        {
+          "title": "Особисто відповідаємо за погоджений результат",
+          "body": "Фіксуємо deliverables, строки, ціну та критерії якості й перевіряємо роботу перед передачею."
+        },
+        {
+          "title": "Працюємо з ownership",
+          "body": "Ставимося до проєкту не як до списку задач, а як до продукту, від якого залежить реальна робота клієнта."
+        },
+        {
+          "title": "Шукаємо сильніше рішення",
+          "body": "Найкраще працюємо з клієнтами, які відкриті до діалогу, нових ідей і спільного розвитку концепції."
+        }
+      ],
+      "hockey": {
+        "title": "Хокей, дисципліна й командна відповідальність",
+        "paragraphs": [
+          "Артем займався хокеєм і грав у команді «Сокіл». Це середовище, де результат залежить не лише від особистої майстерності, а й від дисципліни, швидких рішень та взаємодії всієї команди.",
+          "Той самий принцип він переносить у роботу: кожен учасник має розуміти свою відповідальність, а всі рішення повинні підтримувати спільний результат."
+        ]
+      },
+      "water": {
+        "title": "Вода, рух і цікавість до технологій",
+        "paragraphs": [
+          "Артем любить воду, човни, водні мотоцикли та зйомку на GoPro. Для нього це поєднання руху, швидкості, техніки й можливості побачити звичні речі з нового ракурсу.",
+          "Ця цікавість до нових форматів поступово привела його від створення відео до AI, digital-продуктів і запуску Antonov Digital."
+        ]
+      }
+    },
+    "company": {
+      "title": "Екосистема Antonov Digital",
+      "paragraphs": [
+        "Antonov Digital — українська AI-native digital company, що створює цифрові продукти, AI-системи, вебрішення та автоматизації для бізнесу.",
+        "Ми поєднуємо підприємницьке мислення, розробку, дизайн і сучасні AI-технології. Наше завдання — не просто виконати технічне завдання, а зрозуміти реальну потребу бізнесу, запропонувати сильніше рішення й довести його до готового результату."
+      ],
+      "productParagraphs": [
+        "NFC CARD — digital/physical продукт Antonov Digital для локального бізнесу: NFC-картка, що відкриває форму оцінки та відгуку потрібної Google-точки.",
+        "Review Card має готовий дизайн. Branded Review Card — персональний дизайн із логотипом, кольорами, текстом і погодженим закликом до дії. Перший персональний макет безкоштовний."
+      ],
+      "items": [
+        {
+          "title": "NFC CARD",
+          "body": "Окремий digital/physical продукт Antonov Digital для локального бізнесу."
+        },
+        {
+          "title": "iADDS",
+          "body": "Рекламний і продуктовий AI-контент, а також системи для його виробництва."
+        },
+        {
+          "title": "Mentium",
+          "body": "Стартап-платформа з AI-викладачем для вивчення англійської мови."
+        },
+        {
+          "title": "Web Development",
+          "body": "Розробка сайтів і digital-інтерфейсів."
+        },
+        {
+          "title": "SEO",
+          "body": "Пошукове просування й покращення видимості бізнесу."
+        },
+        {
+          "title": "CRM Solutions",
+          "body": "Налаштування рішень для роботи з клієнтами й заявками."
+        },
+        {
+          "title": "Automation",
+          "body": "Автоматизація повторюваних бізнес-процесів."
+        },
+        {
+          "title": "Personal AI Agents",
+          "body": "Персональні AI-агенти під конкретні задачі."
+        },
+        {
+          "title": "Google Business Profile & Maps",
+          "body": "Створення й налаштування Google-точок і присутності бізнесу в Google Maps."
+        }
+      ]
+    },
+    "why": {
+      "eyebrow": "НАВІЩО NFC CARD",
+      "title": "Коротший шлях до чесного відгуку",
+      "paragraphs": [
+        "Задоволені клієнти не завжди доходять до відгуку. Пошук потрібної Google-точки та зайві кроки можуть відкласти цю дію на потім.",
+        "NFC CARD допомагає запросити відгук у доречний момент: клієнт підносить сумісний смартфон до картки й переходить до інтерфейсу оцінки та написання відгуку.",
+        "Google може попросити увійти в акаунт. Картка не обирає оцінку, не пише текст і не публікує відгук замість клієнта."
+      ],
+      "missionLabel": "Місія",
+      "mission": "Зробити шлях від вдячності клієнта до його власного відгуку простішим і зрозумілішим.",
+      "visionLabel": "Наш підхід",
+      "vision": "Технологія має підтримувати зрозумілий клієнтський шлях. Рішення про оцінку, текст і публікацію залишається за людиною."
+    },
+    "formula": "Одне торкання → форма відгуку. Оцінку, текст і публікацію завжди обирає клієнт.",
+    "labels": {
+      "home": "Головна",
+      "about": "Про нас",
+      "founder": "ІСТОРІЯ ЗАСНОВНИКА",
+      "current": "Поточний продукт",
+      "sibling": "Інший проєкт Antonov Digital",
+      "ctaTitle": "Оберімо картку для вашого бізнесу",
+      "ctaBody": "Готовий дизайн або персональний макет — допоможемо визначитися у переписці.",
+      "cta": "Обрати картку",
+      "contact": "Поставити запитання"
+    },
+    "metadata": {
+      "title": "Про компанію Antonov Digital та Артема Антонова | NFC CARD",
+      "description": "Antonov Digital: Артем Антонов і партнер-розробник, понад 30 digital- та AI-проєктів і близько 50 окремих тестів. Історія, принципи й підхід."
+    }
+  },
+  "en": {
+    "behind": {
+      "eyebrow": "WHO IS BEHIND NFC CARD",
+      "title": "A project by Antonov Digital, led directly by its founder",
+      "paragraphs": [
+        "NFC CARD is one of the ventures developed by Antonov Digital—a Ukrainian AI-native digital company building digital products, AI systems, web solutions and automation.",
+        "Antonov Digital has delivered more than 30 digital and AI projects and completed around 50 additional tests and experiments. The categories are not presented as an additive breakdown because many projects combine web development, AI and automation.",
+        "The current team consists of Artem Antonov and an undisclosed developer partner. Artem personally leads consultations, defines the project direction, coordinates delivery and reviews the final result before it reaches the client."
+      ],
+      "link": "Meet the founder and company"
+    },
+    "founder": {
+      "title": "Artem Antonov — Founder & CEO of Antonov Digital",
+      "paragraphs": [
+        "Artem grew up in Zaporizhzhia and later moved to Kyiv. His path into digital work began while he was still at school, through US YouTube and the idea of producing video without a traditional filming team.",
+        "In 2023, he was sceptical about ChatGPT. By September 2025, while exploring AI-assisted video production, he began working systematically with prompting, generative tools and the possibility of building products with a much smaller team.",
+        "That led to web development, a first client website, automation and original AI products. One of them became Mentium—a startup platform with an AI teacher for English learning.",
+        "By studying how AI was developing in the United States, Europe and China, Artem saw a gap between what the technology could already do and how slowly many Ukrainian businesses were applying it in practice. Antonov Digital was built to close that gap—not merely to talk about AI, but to turn it into finished products, content and working systems.",
+        "Today, Artem is responsible for Antonov Digital’s development, client consultations, project definition, product and project management, AI direction, web development and final quality review."
+      ],
+      "education": "His learning combines school with independent study of AI, marketing, economics, content, development and entrepreneurship. Artem took one course on US YouTube; his professional path is built through practice and his own projects.",
+      "responsibilityTitle": "Personal responsibility",
+      "responsibility": "Before a project begins, Artem personally studies the business and develops an initial idea. During delivery, he defines the direction, coordinates the work and shares intermediate materials. Before handover, he checks the result against the agreed objective, timeline, price and quality criteria. He remains available after completion and follows the project’s progress.",
+      "philosophy": [
+        "For me, Antonov Digital is a business, and business has become part of my life. I am not interested in simply exchanging time for payment—I want to build projects that grow, solve problems and leave real value behind.",
+        "I want to show that it is possible to start at any age. The key is not waiting for the perfect credential or moment, but learning, taking responsibility and consistently building what you believe in."
+      ],
+      "philosophyTitle": "Build what you believe in",
+      "competenciesTitle": "From an objective to a working solution",
+      "competencies": [
+        {
+          "title": "AI Solution Design & Implementation",
+          "body": "Turns a business objective into a working AI process or product."
+        },
+        {
+          "title": "AI-assisted Product & Web Development",
+          "body": "Builds websites, interfaces and digital products with AI."
+        },
+        {
+          "title": "Creative AI Production & Content Direction",
+          "body": "Develops ideas and directs advertising content production."
+        },
+        {
+          "title": "AI Workflow Automation",
+          "body": "Designs bots, agents and automated workflows."
+        },
+        {
+          "title": "Product & Project Management",
+          "body": "Defines scope, coordinates delivery and takes responsibility for handover."
+        },
+        {
+          "title": "Client Consulting & Business Development",
+          "body": "Explains technology without complex jargon and proposes practical ideas."
+        }
+      ],
+      "timelineTitle": "The path into digital",
+      "timeline": [
+        {
+          "title": "2023 — Early scepticism",
+          "body": "In 2023, Artem was sceptical about ChatGPT and did not consider it a practical tool. Hands-on experience later changed that view completely."
+        },
+        {
+          "title": "September 2025 — US YouTube and generative AI",
+          "body": "Artem began studying video creation for US YouTube without needing to appear on camera all the time. This was his first systematic work with prompting and generative tools."
+        },
+        {
+          "title": "October 2025 — Web development",
+          "body": "AI experiments led to websites, interfaces and digital products."
+        },
+        {
+          "title": "November 2025 — First client project",
+          "body": "The first real client project was a digital menu website for a restaurant."
+        },
+        {
+          "title": "2026 — Product development",
+          "body": "One of the first AI products was Mentium, a startup platform with an AI teacher for English learning."
+        },
+        {
+          "title": "15 August 2026 — iADDS",
+          "body": "A dedicated advertising and product AI content venture."
+        },
+        {
+          "title": "20 August 2026 — NFC CARD",
+          "body": "A separate Antonov Digital product for local businesses."
+        },
+        {
+          "title": "Today",
+          "body": "Antonov Digital develops iADDS, NFC Card, Mentium, web development, SEO, CRM solutions, automation, personal AI agents and Google Business Profile/Maps."
+        }
+      ],
+      "principlesTitle": "Antonov Digital principles",
+      "principles": [
+        {
+          "title": "Start with the real business objective",
+          "body": "First, we define what needs to change for the business, and only then select the technology."
+        },
+        {
+          "title": "Propose ideas, not just execute instructions",
+          "body": "Clients can bring an objective without a finished technical solution. We analyse it, consult and propose our own approach."
+        },
+        {
+          "title": "Do not transfer technical complexity to the client",
+          "body": "We explain solutions in clear language and take care of implementation."
+        },
+        {
+          "title": "Take personal responsibility for the agreed result",
+          "body": "We define deliverables, timeline, price and quality criteria and review the work before handover."
+        },
+        {
+          "title": "Work with ownership",
+          "body": "We treat a project as a product that supports the client’s real work, rather than a list of tasks."
+        },
+        {
+          "title": "Look for a stronger solution",
+          "body": "We work best with clients who are open to dialogue, new ideas and developing the concept together."
+        }
+      ],
+      "hockey": {
+        "title": "Hockey, discipline and shared responsibility",
+        "paragraphs": [
+          "Artem played hockey for the Sokol team. It is an environment where results depend not only on individual ability, but also on discipline, fast decisions and coordinated teamwork.",
+          "He brings the same principle into his projects: each participant understands their responsibility, and every decision supports the shared outcome."
+        ]
+      },
+      "water": {
+        "title": "Water, movement and curiosity for technology",
+        "paragraphs": [
+          "Artem enjoys the water, boats, jet skis and filming with a GoPro. It brings together movement, speed, technology and the opportunity to see familiar things from a different angle.",
+          "That curiosity for new formats gradually led him from video creation to AI, digital products and the development of Antonov Digital."
+        ]
+      }
+    },
+    "company": {
+      "title": "The Antonov Digital ecosystem",
+      "paragraphs": [
+        "Antonov Digital is a Ukrainian AI-native digital company building digital products, AI systems, web solutions and business automation.",
+        "We combine entrepreneurial thinking, development, design and modern AI technology. Our role is not limited to executing a specification—we identify the underlying business need, propose a stronger solution and take it through to delivery."
+      ],
+      "productParagraphs": [
+        "NFC CARD is a digital/physical Antonov Digital product for local businesses: an NFC card that opens the rating and review interface for the exact Google business location.",
+        "Review Card comes with a ready-made design. Branded Review Card uses your logo, colours, copy and an agreed call to action. The first personal mockup is free."
+      ],
+      "items": [
+        {
+          "title": "NFC CARD",
+          "body": "A separate digital/physical Antonov Digital product for local businesses."
+        },
+        {
+          "title": "iADDS",
+          "body": "Advertising and product AI content, and systems for its production."
+        },
+        {
+          "title": "Mentium",
+          "body": "A startup platform with an AI teacher for English learning."
+        },
+        {
+          "title": "Web Development",
+          "body": "Website and digital interface development."
+        },
+        {
+          "title": "SEO",
+          "body": "Search optimisation and improved business visibility."
+        },
+        {
+          "title": "CRM Solutions",
+          "body": "Solutions for managing clients and enquiries."
+        },
+        {
+          "title": "Automation",
+          "body": "Automation of recurring business processes."
+        },
+        {
+          "title": "Personal AI Agents",
+          "body": "Personal AI agents designed for specific objectives."
+        },
+        {
+          "title": "Google Business Profile & Maps",
+          "body": "Creating and configuring business profiles and presence on Google Maps."
+        }
+      ]
+    },
+    "why": {
+      "eyebrow": "WHY NFC CARD",
+      "title": "A shorter path to an honest review",
+      "paragraphs": [
+        "Satisfied customers do not always get around to leaving a review. Finding the right Google business location and going through extra steps can leave the task for later.",
+        "NFC CARD helps you ask at the right moment: the customer taps the card with a compatible smartphone and opens the rating and review interface.",
+        "Google may ask the customer to sign in. The card does not select a rating, write the text or publish a review on the customer’s behalf."
+      ],
+      "missionLabel": "Mission",
+      "mission": "Make the path from a customer’s appreciation to their own review simpler and clearer.",
+      "visionLabel": "Our approach",
+      "vision": "Technology should support a clear customer journey. The person keeps control of the rating, text and decision to publish."
+    },
+    "formula": "One tap → review form. The customer always chooses the rating, text and publication.",
+    "labels": {
+      "home": "Home",
+      "about": "About",
+      "founder": "THE FOUNDER STORY",
+      "current": "Current product",
+      "sibling": "Another Antonov Digital project",
+      "ctaTitle": "Find the right card for your business",
+      "ctaBody": "Choose a ready-made design or a personal mockup. We can help you decide in chat.",
+      "cta": "Choose a card",
+      "contact": "Ask a question"
+    },
+    "metadata": {
+      "title": "About Antonov Digital and Artem Antonov | NFC CARD",
+      "description": "Antonov Digital: Artem Antonov and a developer partner, more than 30 digital and AI projects and around 50 additional tests. Our story, principles and approach."
+    }
+  }
+}

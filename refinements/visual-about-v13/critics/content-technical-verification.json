@@ -1,0 +1,373 @@
+{
+  "snapshotFiles": 142,
+  "unchangedCount": 106,
+  "changed": [
+    "Run-Checks.ps1",
+    "site/assets/commerce.js",
+    "site/assets/style.css",
+    "site/contact/index.html",
+    "site/delivery-and-payment/index.html",
+    "site/en/contact/index.html",
+    "site/en/delivery-and-payment/index.html",
+    "site/en/index.html",
+    "site/en/order/index.html",
+    "site/en/privacy/index.html",
+    "site/en/reviews/new/index.html",
+    "site/en/solutions/branded-review-card/index.html",
+    "site/en/solutions/index.html",
+    "site/en/solutions/review-card/index.html",
+    "site/en/terms/index.html",
+    "site/en/thank-you/index.html",
+    "site/en/warranty-and-returns/index.html",
+    "site/index.html",
+    "site/order/index.html",
+    "site/privacy/index.html",
+    "site/reviews/new/index.html",
+    "site/sitemap.xml",
+    "site/solutions/branded-review-card/index.html",
+    "site/solutions/index.html",
+    "site/solutions/review-card/index.html",
+    "site/terms/index.html",
+    "site/thank-you/index.html",
+    "site/warranty-and-returns/index.html",
+    "src/build.mjs",
+    "src/commerce-view.mjs",
+    "src/commerce.js",
+    "src/media-manifest.json",
+    "tests/test_site.py",
+    "tests/test_v12_browser.py",
+    "tests/test_v9.py",
+    "workflow/checkpoint.json"
+  ],
+  "missing": [],
+  "protectedBackendChanged": [],
+  "protectedFrontendChanged": [],
+  "pinnedVerifiedCount": 40,
+  "pinnedDerivativeCount": 28,
+  "contentDiffs": {
+    "uk": [
+      {
+        "path": "/behind/eyebrow",
+        "before": "ХТО СТОЇТЬ ЗА iADDS",
+        "after": "ХТО СТОЇТЬ ЗА NFC CARD"
+      },
+      {
+        "path": "/behind/paragraphs/0",
+        "before": "iADDS є одним із проєктів Antonov Digital — української AI-native digital company, що створює цифрові продукти, AI-системи, вебрішення та автоматизації.",
+        "after": "NFC CARD є одним із проєктів Antonov Digital — української AI-native digital company, що створює цифрові продукти, AI-системи, вебрішення та автоматизації."
+      },
+      {
+        "path": "/founder/timeline/6/title",
+        "before": "20 серпня 2026 — NFC Card",
+        "after": "20 серпня 2026 — NFC CARD"
+      },
+      {
+        "path": "/company/productParagraphs/0",
+        "before": "iADDS — проєкт Antonov Digital, що створює рекламний і продуктовий контент за допомогою AI та розробляє індивідуальні системи для його виробництва.",
+        "after": "NFC CARD — digital/physical продукт Antonov Digital для локального бізнесу: NFC-картка, що відкриває форму оцінки та відгуку потрібної Google-точки."
+      },
+      {
+        "path": "/company/productParagraphs/1",
+        "before": "Ми допомагаємо бізнесу швидше отримувати більше рекламних матеріалів, перевіряти різні ідеї, адаптувати контент для платформ і ринків та зменшувати залежність від складної організації кожної нової зйомки.",
+        "after": "Review Card має готовий дизайн. Branded Review Card — персональний дизайн із логотипом, кольорами, текстом і погодженим закликом до дії. Перший персональний макет безкоштовний."
+      },
+      {
+        "path": "/company/items/0/title",
+        "before": "iADDS",
+        "after": "NFC CARD"
+      },
+      {
+        "path": "/company/items/0/body",
+        "before": "Рекламний і продуктовий AI-контент, а також системи для його виробництва.",
+        "after": "Окремий digital/physical продукт Antonov Digital для локального бізнесу."
+      },
+      {
+        "path": "/company/items/1/title",
+        "before": "NFC Card",
+        "after": "iADDS"
+      },
+      {
+        "path": "/company/items/1/body",
+        "before": "Окремий digital/physical продукт Antonov Digital для локального бізнесу.",
+        "after": "Рекламний і продуктовий AI-контент, а також системи для його виробництва."
+      },
+      {
+        "path": "/why/eyebrow",
+        "before": "ЧОМУ ЗАРАЗ",
+        "after": "НАВІЩО NFC CARD"
+      },
+      {
+        "path": "/why/title",
+        "before": "Реклама більше не повинна починатися зі складної зйомки",
+        "after": "Коротший шлях до чесного відгуку"
+      },
+      {
+        "path": "/why/paragraphs/0",
+        "before": "Раніше для кожного нового рекламного матеріалу бізнесу часто доводилося окремо організовувати студію, моделей або акторів, локацію, світло, продюсування, зйомку та монтаж.",
+        "after": "Задоволені клієнти не завжди доходять до відгуку. Пошук потрібної Google-точки та зайві кроки можуть відкласти цю дію на потім."
+      },
+      {
+        "path": "/why/paragraphs/1",
+        "before": "Сучасний AI може суттєво скоротити частину цих етапів, прискорити виробництво й зробити більше ідей доступними для перевірки. Але самої технології недостатньо: нею потрібно керувати, розуміти продукт, бренд, аудиторію та канал.",
+        "after": "NFC CARD допомагає запросити відгук у доречний момент: клієнт підносить сумісний смартфон до картки й переходить до інтерфейсу оцінки та написання відгуку."
+      },
+      {
+        "path": "/why/paragraphs/2",
+        "before": "iADDS створений, щоб зробити складне виробництво зрозумілим для бізнесу й перетворювати можливості AI на готові рекламні матеріали та робочі системи.",
+        "after": "Google може попросити увійти в акаунт. Картка не обирає оцінку, не пише текст і не публікує відгук замість клієнта."
+      },
+      {
+        "path": "/why/mission",
+        "before": "Допомагати українському бізнесу витрачати менше часу, енергії та виробничих ресурсів на рекламу й контент, використовуючи сучасні AI-технології практично та відповідально.",
+        "after": "Зробити шлях від вдячності клієнта до його власного відгуку простішим і зрозумілішим."
+      },
+      {
+        "path": "/why/vision",
+        "before": "Протягом трьох років iADDS має стати одним із помітних AI-креативних проєктів України: працювати приблизно зі 100 клієнтами, створити спеціалізовану команду й комʼюніті, проводити публічні виступи та реалізовувати кампанії для великих брендів.",
+        "after": "Технологія має підтримувати зрозумілий клієнтський шлях. Рішення про оцінку, текст і публікацію залишається за людиною."
+      },
+      {
+        "path": "/why/visionLabel",
+        "before": "Бачення на наступні три роки",
+        "after": "Наш підхід"
+      },
+      {
+        "path": "/formula",
+        "before": "Більше готового рекламного контенту — швидше, з меншими виробничими витратами та меншим ризиком на старті.",
+        "after": "Одне торкання → форма відгуку. Оцінку, текст і публікацію завжди обирає клієнт."
+      }
+    ],
+    "en": [
+      {
+        "path": "/behind/eyebrow",
+        "before": "WHO IS BEHIND iADDS",
+        "after": "WHO IS BEHIND NFC CARD"
+      },
+      {
+        "path": "/behind/paragraphs/0",
+        "before": "iADDS is one of the ventures developed by Antonov Digital—a Ukrainian AI-native digital company building digital products, AI systems, web solutions and automation.",
+        "after": "NFC CARD is one of the ventures developed by Antonov Digital—a Ukrainian AI-native digital company building digital products, AI systems, web solutions and automation."
+      },
+      {
+        "path": "/founder/timeline/6/title",
+        "before": "20 August 2026 — NFC Card",
+        "after": "20 August 2026 — NFC CARD"
+      },
+      {
+        "path": "/company/productParagraphs/0",
+        "before": "iADDS is a project by Antonov Digital that produces advertising and product content with AI and builds custom systems for scalable content generation.",
+        "after": "NFC CARD is a digital/physical Antonov Digital product for local businesses: an NFC card that opens the rating and review interface for the exact Google business location."
+      },
+      {
+        "path": "/company/productParagraphs/1",
+        "before": "We help businesses produce more creative assets faster, test different ideas, adapt content across platforms and markets, and reduce the production burden behind every new campaign.",
+        "after": "Review Card comes with a ready-made design. Branded Review Card uses your logo, colours, copy and an agreed call to action. The first personal mockup is free."
+      },
+      {
+        "path": "/company/items/0/title",
+        "before": "iADDS",
+        "after": "NFC CARD"
+      },
+      {
+        "path": "/company/items/0/body",
+        "before": "Advertising and product AI content, and systems for its production.",
+        "after": "A separate digital/physical Antonov Digital product for local businesses."
+      },
+      {
+        "path": "/company/items/1/title",
+        "before": "NFC Card",
+        "after": "iADDS"
+      },
+      {
+        "path": "/company/items/1/body",
+        "before": "A separate digital/physical Antonov Digital product for local businesses.",
+        "after": "Advertising and product AI content, and systems for its production."
+      },
+      {
+        "path": "/why/eyebrow",
+        "before": "WHY NOW",
+        "after": "WHY NFC CARD"
+      },
+      {
+        "path": "/why/title",
+        "before": "Advertising no longer has to begin with a complex shoot",
+        "after": "A shorter path to an honest review"
+      },
+      {
+        "path": "/why/paragraphs/0",
+        "before": "Traditionally, every new advertising asset could require a studio, models or actors, a location, lighting, production, filming and editing.",
+        "after": "Satisfied customers do not always get around to leaving a review. Finding the right Google business location and going through extra steps can leave the task for later."
+      },
+      {
+        "path": "/why/paragraphs/1",
+        "before": "Modern AI can reduce many of these production stages, speed up delivery and make more ideas available for testing. Technology alone is not enough, however—it still requires direction, product understanding, brand judgement and channel awareness.",
+        "after": "NFC CARD helps you ask at the right moment: the customer taps the card with a compatible smartphone and opens the rating and review interface."
+      },
+      {
+        "path": "/why/paragraphs/2",
+        "before": "iADDS exists to make this production model understandable for businesses and turn AI capabilities into launch-ready creative assets and practical systems.",
+        "after": "Google may ask the customer to sign in. The card does not select a rating, write the text or publish a review on the customer’s behalf."
+      },
+      {
+        "path": "/why/mission",
+        "before": "Help Ukrainian businesses spend less time, energy and production resources on advertising and content by using modern AI technology in a practical and responsible way.",
+        "after": "Make the path from a customer’s appreciation to their own review simpler and clearer."
+      },
+      {
+        "path": "/why/vision",
+        "before": "Within three years, iADDS aims to become one of Ukraine’s visible AI creative ventures—working with around 100 clients, building a specialised team and community, speaking publicly about the field and producing campaigns for major brands.",
+        "after": "Technology should support a clear customer journey. The person keeps control of the rating, text and decision to publish."
+      },
+      {
+        "path": "/why/visionLabel",
+        "before": "Our ambition for the next three years",
+        "after": "Our approach"
+      },
+      {
+        "path": "/formula",
+        "before": "More launch-ready advertising content—faster, with lower production overhead and less risk at the start.",
+        "after": "One tap → review form. The customer always chooses the rating, text and publication."
+      }
+    ]
+  },
+  "routes": {
+    "uk": {
+      "h1": 1,
+      "canonical": "http://127.0.0.1:8765/about",
+      "hreflang": [
+        [
+          "uk",
+          "http://127.0.0.1:8765/about"
+        ],
+        [
+          "en",
+          "http://127.0.0.1:8765/en/about"
+        ],
+        [
+          "x-default",
+          "http://127.0.0.1:8765/about"
+        ]
+      ],
+      "robots": "noindex,nofollow",
+      "aboutNav": [
+        [
+          "header a[href$=\"/about\"]",
+          2
+        ],
+        [
+          "#mobile-menu a[href$=\"/about\"]",
+          1
+        ],
+        [
+          "footer a[href$=\"/about\"]",
+          1
+        ]
+      ],
+      "founderSequence": [
+        "portrait",
+        "hockey-team",
+        "hockey-puck",
+        "gopro",
+        "jetski",
+        "boat",
+        "urban"
+      ],
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "http://127.0.0.1:8765/#organization",
+          "name": "NFC CARD",
+          "url": "http://127.0.0.1:8765",
+          "logo": "http://127.0.0.1:8765/assets/media/v9/nfc-card-logo-primary.svg",
+          "parentOrganization": {
+            "@type": "Organization",
+            "name": "Antonov Digital"
+          },
+          "telephone": "+380980421619",
+          "sameAs": [
+            "https://t.me/TijGabumG",
+            "https://www.instagram.com/antonovdigital/"
+          ]
+        }
+      ],
+      "mediaCount": 7,
+      "externalMedia": []
+    },
+    "en": {
+      "h1": 1,
+      "canonical": "http://127.0.0.1:8765/en/about",
+      "hreflang": [
+        [
+          "uk",
+          "http://127.0.0.1:8765/about"
+        ],
+        [
+          "en",
+          "http://127.0.0.1:8765/en/about"
+        ],
+        [
+          "x-default",
+          "http://127.0.0.1:8765/about"
+        ]
+      ],
+      "robots": "noindex,nofollow",
+      "aboutNav": [
+        [
+          "header a[href$=\"/about\"]",
+          2
+        ],
+        [
+          "#mobile-menu a[href$=\"/about\"]",
+          1
+        ],
+        [
+          "footer a[href$=\"/about\"]",
+          1
+        ]
+      ],
+      "founderSequence": [
+        "portrait",
+        "hockey-team",
+        "hockey-puck",
+        "gopro",
+        "jetski",
+        "boat",
+        "urban"
+      ],
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "http://127.0.0.1:8765/#organization",
+          "name": "NFC CARD",
+          "url": "http://127.0.0.1:8765",
+          "logo": "http://127.0.0.1:8765/assets/media/v9/nfc-card-logo-primary.svg",
+          "parentOrganization": {
+            "@type": "Organization",
+            "name": "Antonov Digital"
+          },
+          "telephone": "+380980421619",
+          "sameAs": [
+            "https://t.me/TijGabumG",
+            "https://www.instagram.com/antonovdigital/"
+          ]
+        }
+      ],
+      "mediaCount": 7,
+      "externalMedia": []
+    }
+  },
+  "media": {
+    "manifestCount": 59,
+    "publicCount": 59,
+    "missing": [],
+    "extra": [],
+    "privatePublicRows": [],
+    "temporaryPublicRows": [
+      "/assets/media/v11/branded-review-card-neutral-placeholder.svg",
+      "/assets/media/v13/branded-catalog.svg"
+    ],
+    "hashErrors": []
+  }
+}

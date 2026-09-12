@@ -1,0 +1,21 @@
+{
+  "status": "source_fix_verified_runtime_recheck_pending",
+  "origin": "High runtime issue found by root legacy browser QA",
+  "method": "Read-only source and built HTML; app.js remains byte-identical to accepted snapshot",
+  "checks": [
+    {
+      "route": "/about",
+      "htmlSHA256": "71e06343f7f3161de90de192353ee7af706210d906409115c9eb8a0fb9621662",
+      "legacyStoryMatches": 0,
+      "aboutStoryMatches": 1,
+      "anchorAndLabelResolved": true
+    },
+    {
+      "route": "/en/about",
+      "htmlSHA256": "833242d9432d3c5a8b196e19def88a72ac7cd21c4067010c432e6cc9a090e31a",
+      "legacyStoryMatches": 0,
+      "aboutStoryMatches": 1,
+      "anchorAndLabelResolved": true
+    }
+  ]
+}

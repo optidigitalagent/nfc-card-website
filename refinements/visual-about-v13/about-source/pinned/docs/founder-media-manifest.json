@@ -1,0 +1,499 @@
+[
+  {
+    "id": "portrait",
+    "sourceFilename": "founder_close_portrait.png",
+    "sourceSha256": "085c1f3a59f1e498427f8073c4c87f9a97e559a6a7ce5c7190470b6bdc7f804c",
+    "sourceStatus": "owner-supplied-approved",
+    "use": "About introduction only",
+    "altKeys": {
+      "uk": "founder.portrait.uk",
+      "en": "founder.portrait.en"
+    },
+    "privacy": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
+    "metadata": "EXIF/XMP/IPTC stripped",
+    "outputs": [
+      {
+        "file": "/media/founder/portrait-desktop.avif",
+        "format": "avif",
+        "role": "desktop",
+        "width": 680,
+        "height": 986,
+        "bytes": 19588,
+        "crop": {
+          "left": 43,
+          "top": 294,
+          "width": 680,
+          "height": 986
+        }
+      },
+      {
+        "file": "/media/founder/portrait-desktop.webp",
+        "format": "webp",
+        "role": "desktop",
+        "width": 680,
+        "height": 986,
+        "bytes": 36660,
+        "crop": {
+          "left": 43,
+          "top": 294,
+          "width": 680,
+          "height": 986
+        }
+      },
+      {
+        "file": "/media/founder/portrait-mobile.avif",
+        "format": "avif",
+        "role": "mobile",
+        "width": 640,
+        "height": 920,
+        "bytes": 17819,
+        "crop": {
+          "left": 29,
+          "top": 282,
+          "width": 694,
+          "height": 998
+        }
+      },
+      {
+        "file": "/media/founder/portrait-mobile.webp",
+        "format": "webp",
+        "role": "mobile",
+        "width": 640,
+        "height": 920,
+        "bytes": 33132,
+        "crop": {
+          "left": 29,
+          "top": 282,
+          "width": 694,
+          "height": 998
+        }
+      }
+    ]
+  },
+  {
+    "id": "hockey-team",
+    "sourceFilename": "founder_hockey_team_action.png",
+    "sourceSha256": "7f717c45ccb71f9350cd280f533a4e1456ba464d46daf71089cc2180d0a5710e",
+    "sourceStatus": "owner-supplied-approved",
+    "use": "About hockey — teamwork",
+    "altKeys": {
+      "uk": "founder.hockey-team.uk",
+      "en": "founder.hockey-team.en"
+    },
+    "privacy": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
+    "metadata": "EXIF/XMP/IPTC stripped",
+    "outputs": [
+      {
+        "file": "/media/founder/hockey-team-desktop.avif",
+        "format": "avif",
+        "role": "desktop",
+        "width": 1075,
+        "height": 711,
+        "bytes": 34997,
+        "crop": {
+          "left": 77,
+          "top": 59,
+          "width": 1075,
+          "height": 711
+        }
+      },
+      {
+        "file": "/media/founder/hockey-team-desktop.webp",
+        "format": "webp",
+        "role": "desktop",
+        "width": 1075,
+        "height": 711,
+        "bytes": 73894,
+        "crop": {
+          "left": 77,
+          "top": 59,
+          "width": 1075,
+          "height": 711
+        }
+      },
+      {
+        "file": "/media/founder/hockey-team-mobile.avif",
+        "format": "avif",
+        "role": "mobile",
+        "width": 640,
+        "height": 606,
+        "bytes": 21509,
+        "crop": {
+          "left": 282,
+          "top": 42,
+          "width": 832,
+          "height": 788
+        }
+      },
+      {
+        "file": "/media/founder/hockey-team-mobile.webp",
+        "format": "webp",
+        "role": "mobile",
+        "width": 640,
+        "height": 606,
+        "bytes": 45366,
+        "crop": {
+          "left": 282,
+          "top": 42,
+          "width": 832,
+          "height": 788
+        }
+      }
+    ]
+  },
+  {
+    "id": "hockey-puck",
+    "sourceFilename": "founder_hockey_puck_action.png",
+    "sourceSha256": "fbed41c5b3445561fe847f7fffb03fbac49f12e94a83a955541c5259835ff9b2",
+    "sourceStatus": "owner-supplied-approved",
+    "use": "About hockey — concentration",
+    "altKeys": {
+      "uk": "founder.hockey-puck.uk",
+      "en": "founder.hockey-puck.en"
+    },
+    "privacy": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
+    "metadata": "EXIF/XMP/IPTC stripped",
+    "outputs": [
+      {
+        "file": "/media/founder/hockey-puck-desktop.avif",
+        "format": "avif",
+        "role": "desktop",
+        "width": 896,
+        "height": 758,
+        "bytes": 23949,
+        "crop": {
+          "left": 192,
+          "top": 34,
+          "width": 896,
+          "height": 758
+        }
+      },
+      {
+        "file": "/media/founder/hockey-puck-desktop.webp",
+        "format": "webp",
+        "role": "desktop",
+        "width": 896,
+        "height": 758,
+        "bytes": 47084,
+        "crop": {
+          "left": 192,
+          "top": 34,
+          "width": 896,
+          "height": 758
+        }
+      },
+      {
+        "file": "/media/founder/hockey-puck-mobile.avif",
+        "format": "avif",
+        "role": "mobile",
+        "width": 640,
+        "height": 635,
+        "bytes": 16562,
+        "crop": {
+          "left": 346,
+          "top": 34,
+          "width": 781,
+          "height": 775
+        }
+      },
+      {
+        "file": "/media/founder/hockey-puck-mobile.webp",
+        "format": "webp",
+        "role": "mobile",
+        "width": 640,
+        "height": 635,
+        "bytes": 30978,
+        "crop": {
+          "left": 346,
+          "top": 34,
+          "width": 781,
+          "height": 775
+        }
+      }
+    ]
+  },
+  {
+    "id": "urban",
+    "sourceFilename": "founder_fullbody_city.png",
+    "sourceSha256": "47b76929316b8c00a56204f3f3473af25d8ec033d207ca39c518115cee49bfc1",
+    "sourceStatus": "owner-supplied-approved",
+    "use": "About philosophy transition — contained full figure, maximum 300px wide",
+    "altKeys": {
+      "uk": "founder.urban.uk",
+      "en": "founder.urban.en"
+    },
+    "privacy": "Final override: contained full image in a small 300px editorial frame preserves full figure. No weapon-related copy, emphasis or aggressive cover crop. Public derivative is resized and metadata-stripped.",
+    "metadata": "EXIF/XMP/IPTC stripped",
+    "outputs": [
+      {
+        "file": "/media/founder/urban-desktop.avif",
+        "format": "avif",
+        "role": "desktop",
+        "width": 600,
+        "height": 800,
+        "bytes": 43447,
+        "crop": {
+          "left": 0,
+          "top": 0,
+          "width": 960,
+          "height": 1280
+        }
+      },
+      {
+        "file": "/media/founder/urban-desktop.webp",
+        "format": "webp",
+        "role": "desktop",
+        "width": 600,
+        "height": 800,
+        "bytes": 102768,
+        "crop": {
+          "left": 0,
+          "top": 0,
+          "width": 960,
+          "height": 1280
+        }
+      },
+      {
+        "file": "/media/founder/urban-mobile.avif",
+        "format": "avif",
+        "role": "mobile",
+        "width": 480,
+        "height": 640,
+        "bytes": 28389,
+        "crop": {
+          "left": 0,
+          "top": 0,
+          "width": 960,
+          "height": 1280
+        }
+      },
+      {
+        "file": "/media/founder/urban-mobile.webp",
+        "format": "webp",
+        "role": "mobile",
+        "width": 480,
+        "height": 640,
+        "bytes": 67138,
+        "crop": {
+          "left": 0,
+          "top": 0,
+          "width": 960,
+          "height": 1280
+        }
+      }
+    ]
+  },
+  {
+    "id": "gopro",
+    "sourceFilename": "founder_gopro.png",
+    "sourceSha256": "178d7c49a285999cd30dbbe7478384f35921c6be395860c8f8be26d38b010b73",
+    "sourceStatus": "owner-supplied-approved",
+    "use": "About technology and filming",
+    "altKeys": {
+      "uk": "founder.gopro.uk",
+      "en": "founder.gopro.en"
+    },
+    "privacy": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
+    "metadata": "EXIF/XMP/IPTC stripped",
+    "outputs": [
+      {
+        "file": "/media/founder/gopro-desktop.avif",
+        "format": "avif",
+        "role": "desktop",
+        "width": 902,
+        "height": 902,
+        "bytes": 40859,
+        "crop": {
+          "left": 58,
+          "top": 282,
+          "width": 902,
+          "height": 902
+        }
+      },
+      {
+        "file": "/media/founder/gopro-desktop.webp",
+        "format": "webp",
+        "role": "desktop",
+        "width": 902,
+        "height": 902,
+        "bytes": 84354,
+        "crop": {
+          "left": 58,
+          "top": 282,
+          "width": 902,
+          "height": 902
+        }
+      },
+      {
+        "file": "/media/founder/gopro-mobile.avif",
+        "format": "avif",
+        "role": "mobile",
+        "width": 640,
+        "height": 719,
+        "bytes": 29400,
+        "crop": {
+          "left": 163,
+          "top": 320,
+          "width": 797,
+          "height": 896
+        }
+      },
+      {
+        "file": "/media/founder/gopro-mobile.webp",
+        "format": "webp",
+        "role": "mobile",
+        "width": 640,
+        "height": 719,
+        "bytes": 60134,
+        "crop": {
+          "left": 163,
+          "top": 320,
+          "width": 797,
+          "height": 896
+        }
+      }
+    ]
+  },
+  {
+    "id": "boat",
+    "sourceFilename": "founder_boat.png",
+    "sourceSha256": "161da207ee43897c1a962b737484c6c0e9081f048c4cae1469f2f55e9ecc2921",
+    "sourceStatus": "owner-supplied-approved",
+    "use": "About cinematic water chapter",
+    "altKeys": {
+      "uk": "founder.boat.uk",
+      "en": "founder.boat.en"
+    },
+    "privacy": "Lower hull and registration completely excluded from both crops.",
+    "metadata": "EXIF/XMP/IPTC stripped",
+    "outputs": [
+      {
+        "file": "/media/founder/boat-desktop.avif",
+        "format": "avif",
+        "role": "desktop",
+        "width": 960,
+        "height": 640,
+        "bytes": 19282,
+        "crop": {
+          "left": 0,
+          "top": 256,
+          "width": 960,
+          "height": 640
+        }
+      },
+      {
+        "file": "/media/founder/boat-desktop.webp",
+        "format": "webp",
+        "role": "desktop",
+        "width": 960,
+        "height": 640,
+        "bytes": 35556,
+        "crop": {
+          "left": 0,
+          "top": 256,
+          "width": 960,
+          "height": 640
+        }
+      },
+      {
+        "file": "/media/founder/boat-mobile.avif",
+        "format": "avif",
+        "role": "mobile",
+        "width": 547,
+        "height": 717,
+        "bytes": 16294,
+        "crop": {
+          "left": 355,
+          "top": 230,
+          "width": 547,
+          "height": 717
+        }
+      },
+      {
+        "file": "/media/founder/boat-mobile.webp",
+        "format": "webp",
+        "role": "mobile",
+        "width": 547,
+        "height": 717,
+        "bytes": 32514,
+        "crop": {
+          "left": 355,
+          "top": 230,
+          "width": 547,
+          "height": 717
+        }
+      }
+    ]
+  },
+  {
+    "id": "jetski",
+    "sourceFilename": "founder_main_jetski.jpg",
+    "sourceSha256": "0870b0ab32c1b1b1db50a79673aa67548654b8e3ddab5956442b76678eeddf71",
+    "sourceStatus": "owner-supplied-approved",
+    "use": "Homepage main founder visual; About water context",
+    "altKeys": {
+      "uk": "founder.jetski.uk",
+      "en": "founder.jetski.en"
+    },
+    "privacy": "Readable hull registration blurred before both crops.",
+    "metadata": "EXIF/XMP/IPTC stripped",
+    "outputs": [
+      {
+        "file": "/media/founder/jetski-desktop.avif",
+        "format": "avif",
+        "role": "desktop",
+        "width": 640,
+        "height": 499,
+        "bytes": 15123,
+        "crop": {
+          "left": 0,
+          "top": 0,
+          "width": 640,
+          "height": 499
+        }
+      },
+      {
+        "file": "/media/founder/jetski-desktop.webp",
+        "format": "webp",
+        "role": "desktop",
+        "width": 640,
+        "height": 499,
+        "bytes": 31910,
+        "crop": {
+          "left": 0,
+          "top": 0,
+          "width": 640,
+          "height": 499
+        }
+      },
+      {
+        "file": "/media/founder/jetski-mobile.avif",
+        "format": "avif",
+        "role": "mobile",
+        "width": 538,
+        "height": 525,
+        "bytes": 14223,
+        "crop": {
+          "left": 51,
+          "top": 0,
+          "width": 538,
+          "height": 525
+        }
+      },
+      {
+        "file": "/media/founder/jetski-mobile.webp",
+        "format": "webp",
+        "role": "mobile",
+        "width": 538,
+        "height": 525,
+        "bytes": 29136,
+        "crop": {
+          "left": 51,
+          "top": 0,
+          "width": 538,
+          "height": 525
+        }
+      }
+    ]
+  }
+]

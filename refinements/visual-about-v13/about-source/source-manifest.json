@@ -1,0 +1,290 @@
+{
+  "repository": "optidigitalagent/iadds-website",
+  "pinnedCommit": "013bd2d904d5be143a0e203d0005c29f25db729f",
+  "acquisition": "local git show of exact commit; clean source worktree observed",
+  "sourceHead": "013bd2d904d5be143a0e203d0005c29f25db729f",
+  "capturedAt": "2026-09-11T10:10:33.518168+00:00",
+  "files": [
+    {
+      "sourcePath": "AGENTS.md",
+      "stagedPath": "pinned/AGENTS.md",
+      "sha256": "63f2c50380ed6303237cce215ce27af1d620d094c215e28d1b1538a3c070e3bb",
+      "bytes": 678,
+      "gitBlob": "643577dfaef36ee8032915ef80a0f0638f7beda0"
+    },
+    {
+      "sourcePath": "src/app/[locale]/about/page.tsx",
+      "stagedPath": "pinned/src/app/[locale]/about/page.tsx",
+      "sha256": "6532079ad9109defe108fd1fccf4124e4837cc36e6086fef616b78a3ab7156f4",
+      "bytes": 846,
+      "gitBlob": "079cd050030a00d81c06d3d8cdcbc122ce9f759b"
+    },
+    {
+      "sourcePath": "src/components/sections/experience-sections.tsx",
+      "stagedPath": "pinned/src/components/sections/experience-sections.tsx",
+      "sha256": "e39fe0040573c50f2633dac89bb9caa6154a27024469bb7300efb2ae7c25d953",
+      "bytes": 9526,
+      "gitBlob": "8d98dda78cd78d6e9bd014b996735dc360fc2607"
+    },
+    {
+      "sourcePath": "src/components/sections/experience.module.css",
+      "stagedPath": "pinned/src/components/sections/experience.module.css",
+      "sha256": "e4b47666a0ea19c3cc5ac18fc334d5f672665a97ea583a610eadbeadd7c4d528",
+      "bytes": 7935,
+      "gitBlob": "cb5ae198a4193c4dbf8e5f11d74a6581b36680bf"
+    },
+    {
+      "sourcePath": "src/content/uk/experience.ts",
+      "stagedPath": "pinned/src/content/uk/experience.ts",
+      "sha256": "fc37711ace4e0252d017992939ef7a8f7f1e28934de0b4cefb59fc9ecd8d5366",
+      "bytes": 23522,
+      "gitBlob": "4a94b4832fa332cfa2fad6fe2a1585c2d04a8b7a"
+    },
+    {
+      "sourcePath": "src/content/en/experience.ts",
+      "stagedPath": "pinned/src/content/en/experience.ts",
+      "sha256": "b92b5f52d0f809ca4a192a327c9f495460f1c0807e3a26b6657763b32bd4fe00",
+      "bytes": 15304,
+      "gitBlob": "2da254319399b5f48b94864084218add31c16b54"
+    },
+    {
+      "sourcePath": "src/content/uk/site.ts",
+      "stagedPath": "pinned/src/content/uk/site.ts",
+      "sha256": "751f1d8339a39b199e340849213cc240e60ffbeae04991c2042919631da0472b",
+      "bytes": 20286,
+      "gitBlob": "64c7d79b8c5c9a5dadc09c10ac9ceb025a790e15"
+    },
+    {
+      "sourcePath": "src/content/en/site.ts",
+      "stagedPath": "pinned/src/content/en/site.ts",
+      "sha256": "cc682c8e1cbf2854833685c85c3affba60a0c1087634c3d332092d91cc96eecb",
+      "bytes": 13464,
+      "gitBlob": "cb2232c666ca242df0938e570f75f2dbe77da6f2"
+    },
+    {
+      "sourcePath": "src/content/site/settings.ts",
+      "stagedPath": "pinned/src/content/site/settings.ts",
+      "sha256": "4f1c7716814dc87d34ccfc32237a93109f975c2810870f409928a47d48b0ed75",
+      "bytes": 1836,
+      "gitBlob": "149276ad8c486bf1ca8354a5731ce2ea20469955"
+    },
+    {
+      "sourcePath": "src/content/site/brand-text.ts",
+      "stagedPath": "pinned/src/content/site/brand-text.ts",
+      "sha256": "3f7a85392e5a435c749353085f26c65cd232d3c0369cc012897e16f968d75c62",
+      "bytes": 1272,
+      "gitBlob": "d2dd94e40797025e8da5c39100a9bb48f6d50955"
+    },
+    {
+      "sourcePath": "src/content/site/founder-media.ts",
+      "stagedPath": "pinned/src/content/site/founder-media.ts",
+      "sha256": "eef7b7f9c63bc6a2595f4c234ac11fd7bf1ef05592a31fbd2b25dd8365c52dfe",
+      "bytes": 6418,
+      "gitBlob": "988a9be7782045fcf1a8bf563475b412f17a447f"
+    },
+    {
+      "sourcePath": "docs/founder-media-manifest.json",
+      "stagedPath": "pinned/docs/founder-media-manifest.json",
+      "sha256": "7d87bab7260004f97a3623be84e50fb936acda31819b5796d69abb2390f2ec44",
+      "bytes": 12765,
+      "gitBlob": "b73f0cbb2456653420b68e13029b34a034c2ff09"
+    },
+    {
+      "sourcePath": "public/media/founder/boat-desktop.avif",
+      "stagedPath": "pinned/public/media/founder/boat-desktop.avif",
+      "sha256": "c69ad280ba256ff9bea30c118ae579089261d05098bf5f690aa3029f1addbc51",
+      "bytes": 19282,
+      "gitBlob": "62c3dbc9a6558d18d27fb1ee77723f11821c2b32"
+    },
+    {
+      "sourcePath": "public/media/founder/boat-desktop.webp",
+      "stagedPath": "pinned/public/media/founder/boat-desktop.webp",
+      "sha256": "a873287440f8aa9d5d124a854989bac129e6587abeb8029517a7ae210b70afa5",
+      "bytes": 35556,
+      "gitBlob": "62d6c1f00891755f296729a5c663f2165131a5a0"
+    },
+    {
+      "sourcePath": "public/media/founder/boat-mobile.avif",
+      "stagedPath": "pinned/public/media/founder/boat-mobile.avif",
+      "sha256": "a85f4d2324fecb1be9a09adfc1c6fba259c93f9db0dc78462ff88f2a9dfe699c",
+      "bytes": 16294,
+      "gitBlob": "734112e1730da387a7a468c57880ba0a52c76c65"
+    },
+    {
+      "sourcePath": "public/media/founder/boat-mobile.webp",
+      "stagedPath": "pinned/public/media/founder/boat-mobile.webp",
+      "sha256": "9a475b8c36d050b8239a1eb82d37b51feff29037c464c733e554a9e7711fb9dc",
+      "bytes": 32514,
+      "gitBlob": "79e3c19043c7385edeca2de2a26b77025f9e2395"
+    },
+    {
+      "sourcePath": "public/media/founder/gopro-desktop.avif",
+      "stagedPath": "pinned/public/media/founder/gopro-desktop.avif",
+      "sha256": "468984679a38d714eddd64e443f2144648b3c95f0fb9f53039b13a1dc74ff5db",
+      "bytes": 40859,
+      "gitBlob": "a485706b6631ec4f7e02284569b443e24610fa03"
+    },
+    {
+      "sourcePath": "public/media/founder/gopro-desktop.webp",
+      "stagedPath": "pinned/public/media/founder/gopro-desktop.webp",
+      "sha256": "fcb8ba1a9900012b60335b7a4cb79bcc068a1aaaae6c15479011509212ad7fb0",
+      "bytes": 84354,
+      "gitBlob": "b735e231e4e734f965e5bc193de6874043de3157"
+    },
+    {
+      "sourcePath": "public/media/founder/gopro-mobile.avif",
+      "stagedPath": "pinned/public/media/founder/gopro-mobile.avif",
+      "sha256": "740e544787e487d6d36d87c9f12e5d14ad0e7b3cab075c532804f2aed2a662b9",
+      "bytes": 29400,
+      "gitBlob": "cb6bf4cb88d92c5fc8135963d9836270234dc53c"
+    },
+    {
+      "sourcePath": "public/media/founder/gopro-mobile.webp",
+      "stagedPath": "pinned/public/media/founder/gopro-mobile.webp",
+      "sha256": "a0fedad4df6bede432060bc10ab1a8370200ff6cb72c43dda678cdb2661ceddf",
+      "bytes": 60134,
+      "gitBlob": "a4882d99684efbddba456f69fe7203862024df02"
+    },
+    {
+      "sourcePath": "public/media/founder/hockey-puck-desktop.avif",
+      "stagedPath": "pinned/public/media/founder/hockey-puck-desktop.avif",
+      "sha256": "0c1f32f3c4b23635668a95e2e80d519d6fd89e39d5bb1a9796bc51158ce808b4",
+      "bytes": 23949,
+      "gitBlob": "425b3ee372c20bf800c19e5afa1b38faaa544ac7"
+    },
+    {
+      "sourcePath": "public/media/founder/hockey-puck-desktop.webp",
+      "stagedPath": "pinned/public/media/founder/hockey-puck-desktop.webp",
+      "sha256": "923cdf3845ee3ae4afcb29490d1f61c907661687954722227b52fdabb46e1d01",
+      "bytes": 47084,
+      "gitBlob": "64a5a1522d9d388215c9ba259be306a3324c6659"
+    },
+    {
+      "sourcePath": "public/media/founder/hockey-puck-mobile.avif",
+      "stagedPath": "pinned/public/media/founder/hockey-puck-mobile.avif",
+      "sha256": "605a9315ffaefe1e6959aeaa051a576ad879b8d74072f10ccbd8afd007b61f12",
+      "bytes": 16562,
+      "gitBlob": "b33f2294c0a382f18cb8f1bda504460559e4a642"
+    },
+    {
+      "sourcePath": "public/media/founder/hockey-puck-mobile.webp",
+      "stagedPath": "pinned/public/media/founder/hockey-puck-mobile.webp",
+      "sha256": "13be3e6caa10b7e11fe0519fe461153575260001c3a3d32c6af40e61557824d5",
+      "bytes": 30978,
+      "gitBlob": "7720ae5da734fe7d856bba8b3cecdd7480887b7e"
+    },
+    {
+      "sourcePath": "public/media/founder/hockey-team-desktop.avif",
+      "stagedPath": "pinned/public/media/founder/hockey-team-desktop.avif",
+      "sha256": "d0a915242f5df7b809d9fef7b9688304e45b5cfe21594af70aaf39aff790c34f",
+      "bytes": 34997,
+      "gitBlob": "5ad4a85aaf047a97fce3d2dfdb3b91799488e3b4"
+    },
+    {
+      "sourcePath": "public/media/founder/hockey-team-desktop.webp",
+      "stagedPath": "pinned/public/media/founder/hockey-team-desktop.webp",
+      "sha256": "ed0e8dd925165a107294edadf95e24288f2f351dd33d95eaa2e184f578114888",
+      "bytes": 73894,
+      "gitBlob": "c51345b65c9aa0cb5f52539952e78b0b15e2644b"
+    },
+    {
+      "sourcePath": "public/media/founder/hockey-team-mobile.avif",
+      "stagedPath": "pinned/public/media/founder/hockey-team-mobile.avif",
+      "sha256": "cfa66ea7baa54c19d252c2f35b873b3ce79794d2a2429f5716db18600fa5a8dd",
+      "bytes": 21509,
+      "gitBlob": "965366619568bbc569e8be65cedb06ccd5a71af9"
+    },
+    {
+      "sourcePath": "public/media/founder/hockey-team-mobile.webp",
+      "stagedPath": "pinned/public/media/founder/hockey-team-mobile.webp",
+      "sha256": "a9e7f90ee964eb37739ba7ca50d91ad0fbe120390e757bbcd47ab7703eb36b4f",
+      "bytes": 45366,
+      "gitBlob": "e51cffbefb14b5672a72006f25208d9ce34324ff"
+    },
+    {
+      "sourcePath": "public/media/founder/jetski-desktop.avif",
+      "stagedPath": "pinned/public/media/founder/jetski-desktop.avif",
+      "sha256": "a5c2c0525337e055fcaf10fe68217778473933b6466a75d94da834bc1ca264d6",
+      "bytes": 15123,
+      "gitBlob": "9d4e2010951a86340474d2013c3ae2d4b109fd94"
+    },
+    {
+      "sourcePath": "public/media/founder/jetski-desktop.webp",
+      "stagedPath": "pinned/public/media/founder/jetski-desktop.webp",
+      "sha256": "2f2876e22b98add0753fcb80370ecfe51fb2e869619ddfea10ab696beaab8176",
+      "bytes": 31910,
+      "gitBlob": "494af2d0c2556a73a93af8b6b72413bff509e74b"
+    },
+    {
+      "sourcePath": "public/media/founder/jetski-mobile.avif",
+      "stagedPath": "pinned/public/media/founder/jetski-mobile.avif",
+      "sha256": "9cd6c8862ab0bf37ddf9d76ab05f0a8023283d42d73f9e7b6492b4db4fe0144d",
+      "bytes": 14223,
+      "gitBlob": "01030a06aad0aa5772bb181cc4b79187cb99fa6e"
+    },
+    {
+      "sourcePath": "public/media/founder/jetski-mobile.webp",
+      "stagedPath": "pinned/public/media/founder/jetski-mobile.webp",
+      "sha256": "a9f9cbd74679c5c0b91643279d1cab028dede4a87c73db1139b3aa3928ee0f38",
+      "bytes": 29136,
+      "gitBlob": "eb6dcea3144e2ca519c17899c8a61300fc5fb73c"
+    },
+    {
+      "sourcePath": "public/media/founder/portrait-desktop.avif",
+      "stagedPath": "pinned/public/media/founder/portrait-desktop.avif",
+      "sha256": "3f9b3b1835d7dfc64a7d134d61d89f76231c5b4cfb26f72abbe43a982f47cf6f",
+      "bytes": 19588,
+      "gitBlob": "2d0c1b296294e9dca4aca39e8e21227356a2005a"
+    },
+    {
+      "sourcePath": "public/media/founder/portrait-desktop.webp",
+      "stagedPath": "pinned/public/media/founder/portrait-desktop.webp",
+      "sha256": "910d416f8c366ab8ea59f698ea760de6cd14c176b8af1b8f990076393671ca0b",
+      "bytes": 36660,
+      "gitBlob": "d8b54da925e171f70e627c5ef1fba9b78ea04e24"
+    },
+    {
+      "sourcePath": "public/media/founder/portrait-mobile.avif",
+      "stagedPath": "pinned/public/media/founder/portrait-mobile.avif",
+      "sha256": "77df5471cbdbc9c61a49d89ed7b4d87300fb5ee4ff4cc44ef36f5ace6fc41a3b",
+      "bytes": 17819,
+      "gitBlob": "78cff2dc98763dbd16d10e88ae77b17532ffef65"
+    },
+    {
+      "sourcePath": "public/media/founder/portrait-mobile.webp",
+      "stagedPath": "pinned/public/media/founder/portrait-mobile.webp",
+      "sha256": "aad60f096e2232daddeecad0656a559fc850ace28cc96eb269b0a7f25176afc0",
+      "bytes": 33132,
+      "gitBlob": "d7ec8f6545a4eaf80fb6fb88aa2000329eea622c"
+    },
+    {
+      "sourcePath": "public/media/founder/urban-desktop.avif",
+      "stagedPath": "pinned/public/media/founder/urban-desktop.avif",
+      "sha256": "3c8859d4150e767275f4267ec323f0934f84c2112dbd95da8900d2fd1eb49549",
+      "bytes": 43447,
+      "gitBlob": "8b23a2dbd2d0dd6f05a3e7008cfedb409ea87432"
+    },
+    {
+      "sourcePath": "public/media/founder/urban-desktop.webp",
+      "stagedPath": "pinned/public/media/founder/urban-desktop.webp",
+      "sha256": "67e0e9975df885c6779c4ac64a338a033bb6b8dbe490e58014d4ab807b7c3fb6",
+      "bytes": 102768,
+      "gitBlob": "fa19c81e3c3f505e66bf9dd06343704ee79ae046"
+    },
+    {
+      "sourcePath": "public/media/founder/urban-mobile.avif",
+      "stagedPath": "pinned/public/media/founder/urban-mobile.avif",
+      "sha256": "278951b7738bc1fb15d2e3a141c0ecc03f6e306b0208a14d42299a7de0082a9f",
+      "bytes": 28389,
+      "gitBlob": "9e69679651f9fd9bc51fbf224f9c30612d30a70e"
+    },
+    {
+      "sourcePath": "public/media/founder/urban-mobile.webp",
+      "stagedPath": "pinned/public/media/founder/urban-mobile.webp",
+      "sha256": "5e9e46d3c62d9ce4e047f2e4bcf982c49c9ffd41640c734c5479c236dc5cbf9b",
+      "bytes": 67138,
+      "gitBlob": "ca3c2cfcc4fa57c272a13a37b09ab9380bdc1b06"
+    }
+  ],
+  "derivativeCount": 28
+}

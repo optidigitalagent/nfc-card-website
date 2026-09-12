@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 6,
+  "revision": "NFC-CARD-UA-2026-09-v11",
+  "physicalProduct": {
+    "id": "nfc-review-card",
+    "name": "NFC Review Card"
+  },
+  "currency": "UAH",
+  "market": "UA",
+  "deposit": 200,
+  "depositIncluded": true,
+  "variants": {
+    "standard": {
+      "name": "Review Card",
+      "prices": {
+        "1": 1500,
+        "2": 2600
+      },
+      "qr": "not_included",
+      "customDesign": false,
+      "freeFirstMockup": false
+    },
+    "branded": {
+      "name": "Branded Review Card",
+      "prices": {
+        "1": 2000,
+        "2": 3600
+      },
+      "qr": "optional",
+      "customDesign": true,
+      "freeFirstMockup": true
+    }
+  },
+  "interests": [
+    "standard",
+    "branded",
+    "bulk",
+    "consultation"
+  ],
+  "quantities": [
+    "1",
+    "2",
+    "more"
+  ],
+  "customQuoteInterests": [
+    "bulk",
+    "consultation"
+  ],
+  "bulkQuantity": "more",
+  "evidence": "NFC_CARD_Approved_Facts_v11.md; Product_Commerce_UX_Master_Brief_v11 §§5,9"
+}

@@ -1,0 +1,3 @@
+# Hashes cover exact source bytes, including accepted CRLF handoff files.
+# Disable checkout/checkin newline conversion on every platform.
+* -text

@@ -1,0 +1,50 @@
+{
+  "scope": "Unthrottled local Chromium on shared workstation; not field Core Web Vitals or physical-device certification. Initial session-window CLS is recorded before programmatic component capture. Cumulative shifts across the later capture/state walkthrough are retained separately and are not labelled field CLS. Event Timing is sampled local observation, not complete field INP.",
+  "maxInitialSessionCLS": 0.045980556604229984,
+  "maxSessionCLSDuringCaptureWalkthrough": 0.045980556604229984,
+  "maxCumulativeShiftDuringCaptureWalkthrough": 0.045980556604229984,
+  "lcpMsRange": [
+    140,
+    2436
+  ],
+  "maxObservedEventDurationMs": 224,
+  "eventTimingThresholdMs": 16,
+  "resourceBytesRange": [
+    498474,
+    1402794
+  ],
+  "delayedMediaRegression": "targeted-regression/delayed-media-*.json",
+  "causalHistory": "layout-shift-diagnosis.md",
+  "legacyInitialLoad": {
+    "rows": 144,
+    "maximumEligibleShiftSum": 0.04421062836340614,
+    "measurementNote": "Recorded before screenshot sweep. Legacy observer sums eligible shifts; it does not compute a full session-window metric. Kept separately from the new initial session CLS observer.",
+    "highestRows": [
+      {
+        "route": "/order",
+        "width": 390,
+        "eligibleShiftSum": 0.04421062836340614
+      },
+      {
+        "route": "/en/contact",
+        "width": 360,
+        "eligibleShiftSum": 0.04220106706532922
+      },
+      {
+        "route": "/en/reviews/new",
+        "width": 430,
+        "eligibleShiftSum": 0.029692308624031005
+      },
+      {
+        "route": "/en/order",
+        "width": 390,
+        "eligibleShiftSum": 0.027783437500000004
+      },
+      {
+        "route": "/order",
+        "width": 320,
+        "eligibleShiftSum": 0.024043359375
+      }
+    ]
+  }
+}

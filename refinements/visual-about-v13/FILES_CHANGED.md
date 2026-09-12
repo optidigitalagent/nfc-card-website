@@ -1,0 +1,154 @@
+# Exact file inventory
+
+## Modified source/helpers/tests
+
+- `Run-Checks.ps1`
+- `src/build.mjs`
+- `src/commerce-view.mjs`
+- `src/commerce.js`
+- `src/media-manifest.json`
+- `tests/test_site.py`
+- `tests/test_v12_browser.py`
+- `tests/test_v9.py`
+
+## New source/tests
+
+- `src/about-content.json`
+- `src/about-media.json`
+- `src/about-view.mjs`
+- `src/about.css`
+- `src/gallery-view.mjs`
+- `src/gallery.js`
+- `src/licenses/messenger-icons.json`
+- `src/licenses/simple-icons-CC0.md`
+- `src/media/founder/boat-desktop.avif`
+- `src/media/founder/boat-desktop.webp`
+- `src/media/founder/boat-mobile.avif`
+- `src/media/founder/boat-mobile.webp`
+- `src/media/founder/gopro-desktop.avif`
+- `src/media/founder/gopro-desktop.webp`
+- `src/media/founder/gopro-mobile.avif`
+- `src/media/founder/gopro-mobile.webp`
+- `src/media/founder/hockey-puck-desktop.avif`
+- `src/media/founder/hockey-puck-desktop.webp`
+- `src/media/founder/hockey-puck-mobile.avif`
+- `src/media/founder/hockey-puck-mobile.webp`
+- `src/media/founder/hockey-team-desktop.avif`
+- `src/media/founder/hockey-team-desktop.webp`
+- `src/media/founder/hockey-team-mobile.avif`
+- `src/media/founder/hockey-team-mobile.webp`
+- `src/media/founder/jetski-desktop.avif`
+- `src/media/founder/jetski-desktop.webp`
+- `src/media/founder/jetski-mobile.avif`
+- `src/media/founder/jetski-mobile.webp`
+- `src/media/founder/portrait-desktop.avif`
+- `src/media/founder/portrait-desktop.webp`
+- `src/media/founder/portrait-mobile.avif`
+- `src/media/founder/portrait-mobile.webp`
+- `src/media/founder/urban-desktop.avif`
+- `src/media/founder/urban-desktop.webp`
+- `src/media/founder/urban-mobile.avif`
+- `src/media/founder/urban-mobile.webp`
+- `src/media/v13/01-review-card-design-render-160.webp`
+- `src/media/v13/01-review-card-design-render-480.webp`
+- `src/media/v13/01-review-card-design-render-800.webp`
+- `src/media/v13/02-review-card-real-front-160.webp`
+- `src/media/v13/02-review-card-real-front-480.webp`
+- `src/media/v13/02-review-card-real-front-800.webp`
+- `src/media/v13/03-review-card-real-in-hand-160.webp`
+- `src/media/v13/03-review-card-real-in-hand-480.webp`
+- `src/media/v13/03-review-card-real-in-hand-800.webp`
+- `src/media/v13/04-review-card-real-back-160.webp`
+- `src/media/v13/04-review-card-real-back-480.webp`
+- `src/media/v13/04-review-card-real-back-800.webp`
+- `src/media/v13/05-promo-direct-review-form-160.webp`
+- `src/media/v13/05-promo-direct-review-form-480.webp`
+- `src/media/v13/05-promo-direct-review-form-800.webp`
+- `src/media/v13/branded-catalog.svg`
+- `src/messenger-icons.json`
+- `src/visual-v13.css`
+- `tests/test_v13.py`
+- `tests/test_v13_browser.py`
+
+## Generated output
+
+- `site/assets/commerce.js`
+- `site/assets/style.css`
+- `site/contact/index.html`
+- `site/delivery-and-payment/index.html`
+- `site/en/contact/index.html`
+- `site/en/delivery-and-payment/index.html`
+- `site/en/index.html`
+- `site/en/order/index.html`
+- `site/en/privacy/index.html`
+- `site/en/reviews/new/index.html`
+- `site/en/solutions/branded-review-card/index.html`
+- `site/en/solutions/index.html`
+- `site/en/solutions/review-card/index.html`
+- `site/en/terms/index.html`
+- `site/en/thank-you/index.html`
+- `site/en/warranty-and-returns/index.html`
+- `site/index.html`
+- `site/order/index.html`
+- `site/privacy/index.html`
+- `site/reviews/new/index.html`
+- `site/sitemap.xml`
+- `site/solutions/branded-review-card/index.html`
+- `site/solutions/index.html`
+- `site/solutions/review-card/index.html`
+- `site/terms/index.html`
+- `site/thank-you/index.html`
+- `site/warranty-and-returns/index.html`
+- `site/about/index.html`
+- `site/assets/gallery.js`
+- `site/assets/media/founder/boat-desktop.avif`
+- `site/assets/media/founder/boat-desktop.webp`
+- `site/assets/media/founder/boat-mobile.avif`
+- `site/assets/media/founder/boat-mobile.webp`
+- `site/assets/media/founder/gopro-desktop.avif`
+- `site/assets/media/founder/gopro-desktop.webp`
+- `site/assets/media/founder/gopro-mobile.avif`
+- `site/assets/media/founder/gopro-mobile.webp`
+- `site/assets/media/founder/hockey-puck-desktop.avif`
+- `site/assets/media/founder/hockey-puck-desktop.webp`
+- `site/assets/media/founder/hockey-puck-mobile.avif`
+- `site/assets/media/founder/hockey-puck-mobile.webp`
+- `site/assets/media/founder/hockey-team-desktop.avif`
+- `site/assets/media/founder/hockey-team-desktop.webp`
+- `site/assets/media/founder/hockey-team-mobile.avif`
+- `site/assets/media/founder/hockey-team-mobile.webp`
+- `site/assets/media/founder/jetski-desktop.avif`
+- `site/assets/media/founder/jetski-desktop.webp`
+- `site/assets/media/founder/jetski-mobile.avif`
+- `site/assets/media/founder/jetski-mobile.webp`
+- `site/assets/media/founder/portrait-desktop.avif`
+- `site/assets/media/founder/portrait-desktop.webp`
+- `site/assets/media/founder/portrait-mobile.avif`
+- `site/assets/media/founder/portrait-mobile.webp`
+- `site/assets/media/founder/urban-desktop.avif`
+- `site/assets/media/founder/urban-desktop.webp`
+- `site/assets/media/founder/urban-mobile.avif`
+- `site/assets/media/founder/urban-mobile.webp`
+- `site/assets/media/v13/01-review-card-design-render-160.webp`
+- `site/assets/media/v13/01-review-card-design-render-480.webp`
+- `site/assets/media/v13/01-review-card-design-render-800.webp`
+- `site/assets/media/v13/02-review-card-real-front-160.webp`
+- `site/assets/media/v13/02-review-card-real-front-480.webp`
+- `site/assets/media/v13/02-review-card-real-front-800.webp`
+- `site/assets/media/v13/03-review-card-real-in-hand-160.webp`
+- `site/assets/media/v13/03-review-card-real-in-hand-480.webp`
+- `site/assets/media/v13/03-review-card-real-in-hand-800.webp`
+- `site/assets/media/v13/04-review-card-real-back-160.webp`
+- `site/assets/media/v13/04-review-card-real-back-480.webp`
+- `site/assets/media/v13/04-review-card-real-back-800.webp`
+- `site/assets/media/v13/05-promo-direct-review-form-160.webp`
+- `site/assets/media/v13/05-promo-direct-review-form-480.webp`
+- `site/assets/media/v13/05-promo-direct-review-form-800.webp`
+- `site/assets/media/v13/branded-catalog.svg`
+- `site/en/about/index.html`
+
+## Checkpoint
+
+- `workflow/checkpoint.json`
+
+All paths are relative to the existing NFC application. Every before/after digest is in [files-changed.json](files-changed.json). Backend and data contracts: 33 protected files remain byte-identical. Task-local evidence files are listed separately in the final evidence manifest. No other project is staged or edited.

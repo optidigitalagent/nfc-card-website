@@ -1,0 +1,322 @@
+{
+  "scope": "Local WSGI before/after comparison, no live deployment",
+  "selected": [
+    {
+      "scene": "home-1440.png",
+      "baseline": {
+        "file": "baseline-home-1440.png",
+        "sha256": "82ecff592acf50d14e62e706c19a6ba06dc1033bc8bd122c54727043a025c4e4"
+      },
+      "after": {
+        "file": "after-home-1440.png",
+        "sha256": "82ecff592acf50d14e62e706c19a6ba06dc1033bc8bd122c54727043a025c4e4"
+      },
+      "identicalPixels": true
+    },
+    {
+      "scene": "solutions-review-card-390.png",
+      "baseline": {
+        "file": "baseline-solutions-review-card-390.png",
+        "sha256": "075fc0039ed737d1968ada823cf96168bd7df037fe1c0541e3fc1eefad80fedc"
+      },
+      "after": {
+        "file": "after-solutions-review-card-390.png",
+        "sha256": "075fc0039ed737d1968ada823cf96168bd7df037fe1c0541e3fc1eefad80fedc"
+      },
+      "identicalPixels": true
+    },
+    {
+      "scene": "en-about-1440.png",
+      "baseline": {
+        "file": "baseline-en-about-1440.png",
+        "sha256": "5a2a1be007fb0591a63b3ad8235360316c3a5d6eaefc5f45e87cf64314de9061"
+      },
+      "after": {
+        "file": "after-en-about-1440.png",
+        "sha256": "5a2a1be007fb0591a63b3ad8235360316c3a5d6eaefc5f45e87cf64314de9061"
+      },
+      "identicalPixels": true
+    },
+    {
+      "scene": "en-order-390.png",
+      "baseline": {
+        "file": "baseline-en-order-390.png",
+        "sha256": "206cdbebc257dad93873dc9e2368bac7c5e5fb9235829a3451e319db79fdbef4"
+      },
+      "after": {
+        "file": "after-en-order-390.png",
+        "sha256": "206cdbebc257dad93873dc9e2368bac7c5e5fb9235829a3451e319db79fdbef4"
+      },
+      "identicalPixels": true
+    }
+  ],
+  "renderedBodies": [
+    {
+      "path": "about/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "contact/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "delivery-and-payment/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "en/about/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "en/contact/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "en/delivery-and-payment/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "en/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "en/order/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "en/privacy/index.html",
+      "bodyIdentical": false
+    },
+    {
+      "path": "en/reviews/new/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "en/solutions/branded-review-card/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "en/solutions/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "en/solutions/review-card/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "en/terms/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "en/thank-you/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "en/warranty-and-returns/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "order/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "privacy/index.html",
+      "bodyIdentical": false
+    },
+    {
+      "path": "reviews/new/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "solutions/branded-review-card/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "solutions/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "solutions/review-card/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "terms/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "thank-you/index.html",
+      "bodyIdentical": true
+    },
+    {
+      "path": "warranty-and-returns/index.html",
+      "bodyIdentical": true
+    }
+  ],
+  "sourceMediaFilesUnchanged": 64,
+  "allEightCapturePairs": {
+    "baseline": [
+      {
+        "route": "/",
+        "width": 390,
+        "status": 200,
+        "sha256": "56e64bdcbe3e44e3d2442b82059ff101e1a6eb6ef51a4c9604af97f33e1852a6",
+        "file": "home-390.png"
+      },
+      {
+        "route": "/en/about",
+        "width": 390,
+        "status": 200,
+        "sha256": "b5bc1973d86684085bae69fde525bbdfda72b063dfe1fa033e6fd34c975cce3a",
+        "file": "en-about-390.png"
+      },
+      {
+        "route": "/solutions/review-card",
+        "width": 390,
+        "status": 200,
+        "sha256": "075fc0039ed737d1968ada823cf96168bd7df037fe1c0541e3fc1eefad80fedc",
+        "file": "solutions-review-card-390.png"
+      },
+      {
+        "route": "/en/order",
+        "width": 390,
+        "status": 200,
+        "sha256": "206cdbebc257dad93873dc9e2368bac7c5e5fb9235829a3451e319db79fdbef4",
+        "file": "en-order-390.png"
+      },
+      {
+        "route": "/",
+        "width": 1440,
+        "status": 200,
+        "sha256": "82ecff592acf50d14e62e706c19a6ba06dc1033bc8bd122c54727043a025c4e4",
+        "file": "home-1440.png"
+      },
+      {
+        "route": "/en/about",
+        "width": 1440,
+        "status": 200,
+        "sha256": "5a2a1be007fb0591a63b3ad8235360316c3a5d6eaefc5f45e87cf64314de9061",
+        "file": "en-about-1440.png"
+      },
+      {
+        "route": "/solutions/review-card",
+        "width": 1440,
+        "status": 200,
+        "sha256": "60edf9374de9622ddf0c7474a0d49cb3b1f7994c7ddc81a18c3e47ce660b78ce",
+        "file": "solutions-review-card-1440.png"
+      },
+      {
+        "route": "/en/order",
+        "width": 1440,
+        "status": 200,
+        "sha256": "e6cfdcd67b9330eed14086dbf63e9027d767c843fa00a9a1cc3cbe647e1dda3f",
+        "file": "en-order-1440.png"
+      }
+    ],
+    "after": [
+      {
+        "route": "/",
+        "width": 390,
+        "status": 200,
+        "sha256": "56e64bdcbe3e44e3d2442b82059ff101e1a6eb6ef51a4c9604af97f33e1852a6",
+        "file": "home-390.png",
+        "consoleErrors": 0
+      },
+      {
+        "route": "/en/about",
+        "width": 390,
+        "status": 200,
+        "sha256": "b5bc1973d86684085bae69fde525bbdfda72b063dfe1fa033e6fd34c975cce3a",
+        "file": "en-about-390.png",
+        "consoleErrors": 0
+      },
+      {
+        "route": "/solutions/review-card",
+        "width": 390,
+        "status": 200,
+        "sha256": "075fc0039ed737d1968ada823cf96168bd7df037fe1c0541e3fc1eefad80fedc",
+        "file": "solutions-review-card-390.png",
+        "consoleErrors": 0
+      },
+      {
+        "route": "/en/order",
+        "width": 390,
+        "status": 200,
+        "sha256": "206cdbebc257dad93873dc9e2368bac7c5e5fb9235829a3451e319db79fdbef4",
+        "file": "en-order-390.png",
+        "consoleErrors": 0
+      },
+      {
+        "route": "/",
+        "width": 1440,
+        "status": 200,
+        "sha256": "82ecff592acf50d14e62e706c19a6ba06dc1033bc8bd122c54727043a025c4e4",
+        "file": "home-1440.png",
+        "consoleErrors": 0
+      },
+      {
+        "route": "/en/about",
+        "width": 1440,
+        "status": 200,
+        "sha256": "5a2a1be007fb0591a63b3ad8235360316c3a5d6eaefc5f45e87cf64314de9061",
+        "file": "en-about-1440.png",
+        "consoleErrors": 0
+      },
+      {
+        "route": "/solutions/review-card",
+        "width": 1440,
+        "status": 200,
+        "sha256": "f92a36bcc8e2aae5a3a7b6cc9e10e03b29ad9662d7f28ae6f4027e2378d5ca98",
+        "file": "solutions-review-card-1440.png",
+        "consoleErrors": 0
+      },
+      {
+        "route": "/en/order",
+        "width": 1440,
+        "status": 200,
+        "sha256": "e6cfdcd67b9330eed14086dbf63e9027d767c843fa00a9a1cc3cbe647e1dda3f",
+        "file": "en-order-1440.png",
+        "consoleErrors": 0
+      },
+      {
+        "apiOrAsset": "/healthz",
+        "status": 200,
+        "noindex": "noindex, nofollow",
+        "cache": "no-store, private"
+      },
+      {
+        "apiOrAsset": "/api/reviews",
+        "status": 200,
+        "noindex": "noindex, nofollow",
+        "cache": "no-store, private"
+      },
+      {
+        "apiOrAsset": "/api/admin/reviews",
+        "status": 401,
+        "noindex": "noindex, nofollow",
+        "cache": "no-store, private"
+      },
+      {
+        "apiOrAsset": "/assets/media/v9/nfc-card-logo-primary.svg",
+        "status": 200,
+        "noindex": "noindex, nofollow",
+        "cache": "public, max-age=3600"
+      },
+      {
+        "apiOrAsset": "/not-real",
+        "status": 404,
+        "noindex": "noindex, nofollow",
+        "cache": "no-store, private"
+      }
+    ]
+  },
+  "rapidCloseReopen": {
+    "cycles": 8,
+    "bodyUnlocked": true,
+    "closed": true
+  },
+  "captureState": "Recaptured after gallery and independent code fixes; local WSGI only"
+}

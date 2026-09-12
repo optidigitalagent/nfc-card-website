@@ -1,0 +1,196 @@
+{
+  "behind": {
+    "eyebrow": "WHO IS BEHIND iADDS",
+    "title": "A project by Antonov Digital, led directly by its founder",
+    "paragraphs": [
+      "iADDS is one of the ventures developed by Antonov Digital—a Ukrainian AI-native digital company building digital products, AI systems, web solutions and automation.",
+      "Antonov Digital has delivered more than 30 digital and AI projects and completed around 50 additional tests and experiments. The categories are not presented as an additive breakdown because many projects combine web development, AI and automation.",
+      "The current team consists of Artem Antonov and an undisclosed developer partner. Artem personally leads consultations, defines the project direction, coordinates delivery and reviews the final result before it reaches the client."
+    ],
+    "link": "Meet the founder and company"
+  },
+  "founder": {
+    "title": "Artem Antonov — Founder & CEO of Antonov Digital",
+    "paragraphs": [
+      "Artem grew up in Zaporizhzhia and later moved to Kyiv. His path into digital work began while he was still at school, through US YouTube and the idea of producing video without a traditional filming team.",
+      "In 2023, he was sceptical about ChatGPT. By September 2025, while exploring AI-assisted video production, he began working systematically with prompting, generative tools and the possibility of building products with a much smaller team.",
+      "That led to web development, a first client website, automation and original AI products. One of them became Mentium—a startup platform with an AI teacher for English learning.",
+      "By studying how AI was developing in the United States, Europe and China, Artem saw a gap between what the technology could already do and how slowly many Ukrainian businesses were applying it in practice. Antonov Digital was built to close that gap—not merely to talk about AI, but to turn it into finished products, content and working systems.",
+      "Today, Artem is responsible for Antonov Digital’s development, client consultations, project definition, product and project management, AI direction, web development and final quality review."
+    ],
+    "education": "His learning combines school with independent study of AI, marketing, economics, content, development and entrepreneurship. Artem took one course on US YouTube; his professional path is built through practice and his own projects.",
+    "responsibilityTitle": "Personal responsibility",
+    "responsibility": "Before a project begins, Artem personally studies the business and develops an initial idea. During delivery, he defines the direction, coordinates the work and shares intermediate materials. Before handover, he checks the result against the agreed objective, timeline, price and quality criteria. He remains available after completion and follows the project’s progress.",
+    "philosophy": [
+      "For me, Antonov Digital is a business, and business has become part of my life. I am not interested in simply exchanging time for payment—I want to build projects that grow, solve problems and leave real value behind.",
+      "I want to show that it is possible to start at any age. The key is not waiting for the perfect credential or moment, but learning, taking responsibility and consistently building what you believe in."
+    ],
+    "philosophyTitle": "Build what you believe in",
+    "competenciesTitle": "From an objective to a working solution",
+    "competencies": [
+      {
+        "title": "AI Solution Design & Implementation",
+        "body": "Turns a business objective into a working AI process or product."
+      },
+      {
+        "title": "AI-assisted Product & Web Development",
+        "body": "Builds websites, interfaces and digital products with AI."
+      },
+      {
+        "title": "Creative AI Production & Content Direction",
+        "body": "Develops ideas and directs advertising content production."
+      },
+      {
+        "title": "AI Workflow Automation",
+        "body": "Designs bots, agents and automated workflows."
+      },
+      {
+        "title": "Product & Project Management",
+        "body": "Defines scope, coordinates delivery and takes responsibility for handover."
+      },
+      {
+        "title": "Client Consulting & Business Development",
+        "body": "Explains technology without complex jargon and proposes practical ideas."
+      }
+    ],
+    "timelineTitle": "The path into digital",
+    "timeline": [
+      {
+        "title": "2023 — Early scepticism",
+        "body": "In 2023, Artem was sceptical about ChatGPT and did not consider it a practical tool. Hands-on experience later changed that view completely."
+      },
+      {
+        "title": "September 2025 — US YouTube and generative AI",
+        "body": "Artem began studying video creation for US YouTube without needing to appear on camera all the time. This was his first systematic work with prompting and generative tools."
+      },
+      {
+        "title": "October 2025 — Web development",
+        "body": "AI experiments led to websites, interfaces and digital products."
+      },
+      {
+        "title": "November 2025 — First client project",
+        "body": "The first real client project was a digital menu website for a restaurant."
+      },
+      {
+        "title": "2026 — Product development",
+        "body": "One of the first AI products was Mentium, a startup platform with an AI teacher for English learning."
+      },
+      {
+        "title": "15 August 2026 — iADDS",
+        "body": "A dedicated advertising and product AI content venture."
+      },
+      {
+        "title": "20 August 2026 — NFC Card",
+        "body": "A separate Antonov Digital product for local businesses."
+      },
+      {
+        "title": "Today",
+        "body": "Antonov Digital develops iADDS, NFC Card, Mentium, web development, SEO, CRM solutions, automation, personal AI agents and Google Business Profile/Maps."
+      }
+    ],
+    "principlesTitle": "Antonov Digital principles",
+    "principles": [
+      {
+        "title": "Start with the real business objective",
+        "body": "First, we define what needs to change for the business, and only then select the technology."
+      },
+      {
+        "title": "Propose ideas, not just execute instructions",
+        "body": "Clients can bring an objective without a finished technical solution. We analyse it, consult and propose our own approach."
+      },
+      {
+        "title": "Do not transfer technical complexity to the client",
+        "body": "We explain solutions in clear language and take care of implementation."
+      },
+      {
+        "title": "Take personal responsibility for the agreed result",
+        "body": "We define deliverables, timeline, price and quality criteria and review the work before handover."
+      },
+      {
+        "title": "Work with ownership",
+        "body": "We treat a project as a product that supports the client’s real work, rather than a list of tasks."
+      },
+      {
+        "title": "Look for a stronger solution",
+        "body": "We work best with clients who are open to dialogue, new ideas and developing the concept together."
+      }
+    ],
+    "hockey": {
+      "title": "Hockey, discipline and shared responsibility",
+      "paragraphs": [
+        "Artem played hockey for the Sokol team. It is an environment where results depend not only on individual ability, but also on discipline, fast decisions and coordinated teamwork.",
+        "He brings the same principle into his projects: each participant understands their responsibility, and every decision supports the shared outcome."
+      ]
+    },
+    "water": {
+      "title": "Water, movement and curiosity for technology",
+      "paragraphs": [
+        "Artem enjoys the water, boats, jet skis and filming with a GoPro. It brings together movement, speed, technology and the opportunity to see familiar things from a different angle.",
+        "That curiosity for new formats gradually led him from video creation to AI, digital products and the development of Antonov Digital."
+      ]
+    }
+  },
+  "company": {
+    "title": "The Antonov Digital ecosystem",
+    "paragraphs": [
+      "Antonov Digital is a Ukrainian AI-native digital company building digital products, AI systems, web solutions and business automation.",
+      "We combine entrepreneurial thinking, development, design and modern AI technology. Our role is not limited to executing a specification—we identify the underlying business need, propose a stronger solution and take it through to delivery."
+    ],
+    "productParagraphs": [
+      "iADDS is a project by Antonov Digital that produces advertising and product content with AI and builds custom systems for scalable content generation.",
+      "We help businesses produce more creative assets faster, test different ideas, adapt content across platforms and markets, and reduce the production burden behind every new campaign."
+    ],
+    "items": [
+      {
+        "title": "iADDS",
+        "body": "Advertising and product AI content, and systems for its production."
+      },
+      {
+        "title": "NFC Card",
+        "body": "A separate digital/physical Antonov Digital product for local businesses."
+      },
+      {
+        "title": "Mentium",
+        "body": "A startup platform with an AI teacher for English learning."
+      },
+      {
+        "title": "Web Development",
+        "body": "Website and digital interface development."
+      },
+      {
+        "title": "SEO",
+        "body": "Search optimisation and improved business visibility."
+      },
+      {
+        "title": "CRM Solutions",
+        "body": "Solutions for managing clients and enquiries."
+      },
+      {
+        "title": "Automation",
+        "body": "Automation of recurring business processes."
+      },
+      {
+        "title": "Personal AI Agents",
+        "body": "Personal AI agents designed for specific objectives."
+      },
+      {
+        "title": "Google Business Profile & Maps",
+        "body": "Creating and configuring business profiles and presence on Google Maps."
+      }
+    ]
+  },
+  "why": {
+    "eyebrow": "WHY NOW",
+    "title": "Advertising no longer has to begin with a complex shoot",
+    "paragraphs": [
+      "Traditionally, every new advertising asset could require a studio, models or actors, a location, lighting, production, filming and editing.",
+      "Modern AI can reduce many of these production stages, speed up delivery and make more ideas available for testing. Technology alone is not enough, however—it still requires direction, product understanding, brand judgement and channel awareness.",
+      "iADDS exists to make this production model understandable for businesses and turn AI capabilities into launch-ready creative assets and practical systems."
+    ],
+    "mission": "Help Ukrainian businesses spend less time, energy and production resources on advertising and content by using modern AI technology in a practical and responsible way.",
+    "vision": "Within three years, iADDS aims to become one of Ukraine’s visible AI creative ventures—working with around 100 clients, building a specialised team and community, speaking publicly about the field and producing campaigns for major brands.",
+    "missionLabel": "Mission",
+    "visionLabel": "Our ambition for the next three years"
+  },
+  "formula": "More launch-ready advertising content—faster, with lower production overhead and less risk at the start."
+}

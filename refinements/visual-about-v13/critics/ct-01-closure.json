@@ -1,0 +1,38 @@
+{
+  "status": "closed",
+  "method": "Read-only source and built HTML checks; no external navigation or sends",
+  "checks": [
+    {
+      "route": "/",
+      "htmlSHA256": "fc57becfbf6f74eb24d4b3f31cdb4e502bc73e307462371f3b6233b190abd978",
+      "primaryHref": "/order",
+      "primaryEvent": "order_start",
+      "secondaryHref": "https://t.me/TijGabumG",
+      "secondaryEvent": "telegram_click"
+    },
+    {
+      "route": "/en",
+      "htmlSHA256": "75b07ebaa072f38d46adf022c69b2f22005e3f2d8afead2242d33a0f90c6afdf",
+      "primaryHref": "/en/order",
+      "primaryEvent": "order_start",
+      "secondaryHref": "https://t.me/TijGabumG",
+      "secondaryEvent": "telegram_click"
+    },
+    {
+      "route": "/about",
+      "htmlSHA256": "71e06343f7f3161de90de192353ee7af706210d906409115c9eb8a0fb9621662",
+      "primaryHref": "/solutions",
+      "primaryEvent": null,
+      "secondaryHref": "/contact",
+      "secondaryEvent": null
+    },
+    {
+      "route": "/en/about",
+      "htmlSHA256": "833242d9432d3c5a8b196e19def88a72ac7cd21c4067010c432e6cc9a090e31a",
+      "primaryHref": "/en/solutions",
+      "primaryEvent": null,
+      "secondaryHref": "/en/contact",
+      "secondaryEvent": null
+    }
+  ]
+}

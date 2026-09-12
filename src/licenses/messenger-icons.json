@@ -1,0 +1,11 @@
+{
+  "repository": "simple-icons/simple-icons",
+  "commit": "5d5d4d1d28cbb00b21770bb69d8112da52211a95",
+  "license": "CC0-1.0; marks used only to identify messenger choice",
+  "files": {
+    "icons/telegram.svg": "147fd8f8923e7e5f463fe98c0eb9913bead6b2ae59935728cda141002ec8a7c9",
+    "icons/whatsapp.svg": "8fb209a53a61618c3483594b3e070481a35575d6aaecbe00a6fe386670c8fb1c",
+    "icons/viber.svg": "2cc123deda743aeb31e3a9cba6bdd73bee79475704dfba9cf0c7b46023095914",
+    "LICENSE.md": "9046848b63a5c92bff14e4accca80bd987e0623b74adf9226ce5198d312b79d5"
+  }
+}

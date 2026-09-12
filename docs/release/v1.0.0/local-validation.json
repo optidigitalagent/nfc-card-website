@@ -1,0 +1,110 @@
+{
+  "complete": true,
+  "browser_only": false,
+  "groups": [
+    {
+      "group": "build-for-tests",
+      "exit_code": 0,
+      "seconds": 0.07
+    },
+    {
+      "group": "unit-integration",
+      "exit_code": 0,
+      "seconds": 51.36,
+      "tests": 552,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-width-320",
+      "exit_code": 0,
+      "seconds": 11.75,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-width-360",
+      "exit_code": 0,
+      "seconds": 11.8,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-width-390",
+      "exit_code": 0,
+      "seconds": 15.8,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-width-430",
+      "exit_code": 0,
+      "seconds": 11.82,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-width-768",
+      "exit_code": 0,
+      "seconds": 11.98,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-width-1024",
+      "exit_code": 0,
+      "seconds": 11.74,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-width-1280",
+      "exit_code": 0,
+      "seconds": 11.76,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-width-1440",
+      "exit_code": 0,
+      "seconds": 16.92,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-v12-flows",
+      "exit_code": 0,
+      "seconds": 40.51,
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-v13",
+      "exit_code": 0,
+      "seconds": 39.03,
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ]
+}

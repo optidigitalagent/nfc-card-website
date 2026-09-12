@@ -1,0 +1,273 @@
+{
+  "reviewer": "independent v13_content_technical_critic",
+  "reviewedAt": "2026-09-11T12:58:07.729636+00:00",
+  "siteRevision": "4b0ccbc08aecda587aae9600e79352a1829c6de9758de87caffcdaf0821e5414",
+  "sourceRevision": "446a54d0dddac08cb10e0d0bf27f698986861b5812defd8da381b126bb28fec5",
+  "testSourceRevision": "e1fd7a116c99fa2030fc3b6cebe92aebbf3b69a6926c8f7b3621aaf08da10c8b",
+  "sourceInventoryCheckedAgainstCurrentFiles": true,
+  "acceptedWithinScope": true,
+  "scope": [
+    "content",
+    "media provenance",
+    "technical non-regression",
+    "SEO",
+    "security boundary",
+    "CT-01/02/03/04 closure",
+    "messenger correction state"
+  ],
+  "openCritical": 0,
+  "openHigh": 0,
+  "openMedium": 0,
+  "openLow": 0,
+  "findings": [
+    {
+      "id": "CT-01",
+      "severity": "medium",
+      "status": "closed",
+      "closure": "Rendered event mappings plus browser confirms no About false order_start and one real homepage order_start."
+    },
+    {
+      "id": "CT-02",
+      "severity": "high",
+      "status": "closed",
+      "closure": "Distinct About anchor; current About UA/EN 390/1440 runtime and 144-row width matrix have no page errors."
+    },
+    {
+      "id": "CT-03",
+      "severity": "high",
+      "status": "closed",
+      "closure": "Pinned image ratios are external CSS; unchanged CSP; current About and diagnostics record no console/CSP errors."
+    },
+    {
+      "id": "CT-04",
+      "severity": "high",
+      "status": "closed",
+      "closure": "Asset-specific reserved ratios preserve decoded proportions; four real-FCP delayed-media cases have session CLS 0 and exact image/copy geometry preservation; final 144-row initial-load matrix max CLS below 0.1."
+    },
+    {
+      "id": "MESSENGER-FEEDBACK",
+      "severity": "medium",
+      "status": "closed",
+      "closure": "UI-only change preserves transaction code; UA/EN 320/390/1024 error-to-valid-keyboard tests pass."
+    }
+  ],
+  "verifiedCounts": {
+    "routeWidthRows": 144,
+    "aboutRuntimeRows": 4,
+    "messengerLocaleWidthRows": 6,
+    "consoleDiagnosticRows": 36,
+    "targetedTestsPassed": 15,
+    "legacyBehaviorTestsPassed": 11,
+    "auxiliaryStateCaptures": 16,
+    "delayedMediaCases": 4
+  },
+  "performanceClosure": {
+    "scope": "Local unthrottled native Chromium initial-load and controlled delayed-media observations; not field Core Web Vitals.",
+    "maximumInitialLoadCLS": 0.04421062836340614,
+    "previousReproductionRoutes": [
+      {
+        "route": "/en",
+        "width": 390,
+        "cls": 0
+      },
+      {
+        "route": "/en/solutions",
+        "width": 390,
+        "cls": 0
+      }
+    ],
+    "delayedMedia": [
+      {
+        "route": "/",
+        "width": 390,
+        "sessionCLS": 0,
+        "maximumGeometryDelta": 0
+      },
+      {
+        "route": "/solutions",
+        "width": 390,
+        "sessionCLS": 0,
+        "maximumGeometryDelta": 0
+      },
+      {
+        "route": "/en",
+        "width": 390,
+        "sessionCLS": 0,
+        "maximumGeometryDelta": 0
+      },
+      {
+        "route": "/en/solutions",
+        "width": 390,
+        "sessionCLS": 0,
+        "maximumGeometryDelta": 0
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "targeted-regression/about-navigation-media-uk.json",
+      "sha256": "aef289038a391c27a98db8380c1e9332d34cf9721063ee079373a1325695b3fa",
+      "role": "CT-01/02/03 current-revision About runtime and media closure"
+    },
+    {
+      "path": "targeted-regression/about-navigation-media-en.json",
+      "sha256": "29bf0fbfb1cc6fcdd1b11e500da686df9aa50ea1a7321bf60110c2e82bd85d01",
+      "role": "CT-01/02/03 current-revision About runtime and media closure"
+    },
+    {
+      "path": "legacy-regression/browser-width-320.json",
+      "sha256": "c0490e3f0769a71f2449ac33f71f0e7daaf3fcbb9dbcffdee19a2b826c5ec08e",
+      "role": "Current-revision 18-route bilingual width regression"
+    },
+    {
+      "path": "legacy-regression/browser-width-360.json",
+      "sha256": "5ce075b4d31efaa1469d5f79581c45a4ae7800a389a6b92cae6da6b89d247e23",
+      "role": "Current-revision 18-route bilingual width regression"
+    },
+    {
+      "path": "legacy-regression/browser-width-390.json",
+      "sha256": "b167c186618bc059436d4c267547ba4ee17c346e602e95f9d9b1870e69db9ec4",
+      "role": "Current-revision 18-route bilingual width regression"
+    },
+    {
+      "path": "legacy-regression/browser-width-430.json",
+      "sha256": "7671df8e88c5088a846c83191bef899103142e89d92872770adefa6b140a2e57",
+      "role": "Current-revision 18-route bilingual width regression"
+    },
+    {
+      "path": "legacy-regression/browser-width-768.json",
+      "sha256": "0e53bac0b5403497860df367bc64159b531536a3f6300e8c43d339990649fad3",
+      "role": "Current-revision 18-route bilingual width regression"
+    },
+    {
+      "path": "legacy-regression/browser-width-1024.json",
+      "sha256": "ddbef5959d3c21286672b98c1bbd2ec6e9d3eef3664460f6a46a20595bd1aa0d",
+      "role": "Current-revision 18-route bilingual width regression"
+    },
+    {
+      "path": "legacy-regression/browser-width-1280.json",
+      "sha256": "e61c3cef569184dfc7fb8ce0c16e704efcbcb7a4178f90418daf4dc9f149adc4",
+      "role": "Current-revision 18-route bilingual width regression"
+    },
+    {
+      "path": "legacy-regression/browser-width-1440.json",
+      "sha256": "0d0a44fc50db4d6fea12893c0e3303adbbfc50d64ac6e4567c40c6e193121d0c",
+      "role": "Current-revision 18-route bilingual width regression"
+    },
+    {
+      "path": "legacy-regression/browser-diagnostics.json",
+      "sha256": "64ae059d358940010c70afc109e4fc6038bd85891a4bbb7881eea8afb9ab43a7",
+      "role": "Zero console/CSP/page/network errors and unnamed controls"
+    },
+    {
+      "path": "targeted-regression/controls-footer-320.json",
+      "sha256": "c34d84e5866a79c0aba160b14bf068adee210bec05b32163a777f36c69d321bb",
+      "role": "UA/EN default → error → valid keyboard selection and footer checks"
+    },
+    {
+      "path": "targeted-regression/controls-footer-390.json",
+      "sha256": "9e4618d8127389bf7d481441268858626d4f2499da761bdaaf3a73589f5c9af8",
+      "role": "UA/EN default → error → valid keyboard selection and footer checks"
+    },
+    {
+      "path": "targeted-regression/controls-footer-1024.json",
+      "sha256": "f50a45d311511defa18dfe10374ed7037ae19c0a32c49372c40b14950157eeae",
+      "role": "UA/EN default → error → valid keyboard selection and footer checks"
+    },
+    {
+      "path": "v13-browser-final.txt",
+      "sha256": "db1d10344874232bfdb31aa1fe8129a8a3ec6bff547934d7c1b266e16356dd36",
+      "role": "15 targeted tests passed, including four deliberate delayed-media regressions and actual messenger error-state clearing"
+    },
+    {
+      "path": "legacy-browser-flows.txt",
+      "sha256": "b791f6498d56aef1a0c30139635fe594ba9a58abfc1214318b685c2c893965cb",
+      "role": "11 legacy behavior/security/persistence/diagnostics tests passed"
+    },
+    {
+      "path": "final-test-start.json",
+      "sha256": "2f88861b755c96ffde5d715e17cb2bdedd6d7a91ec3ab580981c9f39aca9e45f",
+      "role": "Pre-test candidate source/public inventory, revalidated against current files"
+    },
+    {
+      "path": "critics/content-technical-verification.json",
+      "sha256": "887e2f3d731a44605a7969718e27abec3b1228d8b869f7a0a225c68fea804c18",
+      "role": "Independent content, media and bounded source-fix evidence"
+    },
+    {
+      "path": "critics/ct-01-closure.json",
+      "sha256": "c81aa336ae4e8f7c787565bd59cbbc6b1319bfa80e30b7fea834bc3ae6edcf44",
+      "role": "Independent content, media and bounded source-fix evidence"
+    },
+    {
+      "path": "critics/ct-02-source-closure.json",
+      "sha256": "7ec7d0b44554539ef73c87cc78fdf8fb7f7d666b66a13991be26c7df03b94c78",
+      "role": "Independent content, media and bounded source-fix evidence"
+    },
+    {
+      "path": "critics/ct-03-source-closure.json",
+      "sha256": "cf9e24cf939b813969af63fd49d9b07a4883027a2e02ef5cd34c3a554cd882c4",
+      "role": "Independent content, media and bounded source-fix evidence"
+    },
+    {
+      "path": "critics/messenger-feedback-boundary.json",
+      "sha256": "9f9d7f9adea0cc5c666b78a085dad5812d0e5a9325453a8dc472983b6ca40ba2",
+      "role": "Independent content, media and bounded source-fix evidence"
+    },
+    {
+      "path": "targeted-regression/delayed-media-uk-home.json",
+      "sha256": "5e5d9658af558e683f5b76b993b42df7c5653a975c27abd053589a96078b40c1",
+      "role": "CT-04 final-run real-FCP delayed-media reservation and decoding proof"
+    },
+    {
+      "path": "targeted-regression/delayed-media-uk-catalog.json",
+      "sha256": "30b3da780821537ff23c6700f46752b27af10856c485afc362cea65919f93955",
+      "role": "CT-04 final-run real-FCP delayed-media reservation and decoding proof"
+    },
+    {
+      "path": "targeted-regression/delayed-media-en-home.json",
+      "sha256": "1c4877ae7e8375cdba20c2d5b5ceb9e5cd483b459f1f9e0cfcace52cb5820bb0",
+      "role": "CT-04 final-run real-FCP delayed-media reservation and decoding proof"
+    },
+    {
+      "path": "targeted-regression/delayed-media-en-catalog.json",
+      "sha256": "0b6e0909a06a99bb18f4e3a9b39260139214b8334ee7c2ed2d62d11825430d61",
+      "role": "CT-04 final-run real-FCP delayed-media reservation and decoding proof"
+    },
+    {
+      "path": "state-evidence-index.json",
+      "sha256": "e60be259c95e9744c029ce8f46135482ad06c3227a9cb86e386a4b23aabe0bda",
+      "role": "16 auxiliary state captures bound to current source producer, revision and exact screenshot hash"
+    },
+    {
+      "path": "candidate-seal.json",
+      "sha256": "6b5fe499dc872ee9133ffe02133eb7e5f88c71012a221ae528ef4262492af5a8",
+      "role": "Current full-source and public inventories, independently checked"
+    },
+    {
+      "path": "critics/content-technical-4b0-receipt.json",
+      "sha256": "8d5bb90449b5427cba647082408289a1e9f3f45342ee74182cd79e15641ffdff",
+      "role": "Independent pre-runtime source/media correction receipt; final runtime is restamped here"
+    },
+    {
+      "path": "final-test-sequence.json",
+      "sha256": "87eda249e3cfd1303454c4fa41c0cc7c123e811f61b3fcac8f939e7caef3f721",
+      "role": "Full frozen test sequence"
+    },
+    {
+      "path": "test-results.json",
+      "sha256": "667018281eb8121829dafc08eedf679712d3e3b54b70f21ba7fcc3c26e62ce02",
+      "role": "465 passing tests with current-revision log hashes, independently checked"
+    }
+  ],
+  "limitations": [
+    "Independent reviewer inspected source, JSON, logs and native evidence without launching another browser.",
+    "Overall task acceptance still needs complete native before/after evidence, visual critic closure and final acceptance report.",
+    "No deployment, production integration, external notification or physical-device validation is claimed."
+  ],
+  "finalTestSequence": {
+    "pass": true,
+    "passedTests": 465,
+    "sourceUnchanged": true
+  }
+}

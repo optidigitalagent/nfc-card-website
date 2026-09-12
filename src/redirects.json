@@ -1,0 +1,8 @@
+{
+  "/solutions/counter-stand": "/solutions/review-card",
+  "/solutions/team-kit": "/solutions/review-card#business-orders",
+  "/solutions/multi-location": "/solutions/review-card#branches",
+  "/en/solutions/counter-stand": "/en/solutions/review-card",
+  "/en/solutions/team-kit": "/en/solutions/review-card#business-orders",
+  "/en/solutions/multi-location": "/en/solutions/review-card#branches"
+}

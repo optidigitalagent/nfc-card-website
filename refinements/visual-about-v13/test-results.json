@@ -1,0 +1,112 @@
+{
+  "allPassed": true,
+  "total": 465,
+  "siteRevision": "4b0ccbc08aecda587aae9600e79352a1829c6de9758de87caffcdaf0821e5414",
+  "sourceRevision": "446a54d0dddac08cb10e0d0bf27f698986861b5812defd8da381b126bb28fec5",
+  "testSourceRevision": "e1fd7a116c99fa2030fc3b6cebe92aebbf3b69a6926c8f7b3621aaf08da10c8b",
+  "sourceScopeNote": "Test runner fingerprints implementation/test extensions plus four launch/build helpers. Candidate seal is a superset that also binds README, requirements, license and environment-example files. Every common source digest matches; public fingerprints are identical.",
+  "groups": [
+    {
+      "name": "v13-browser-final",
+      "passed": 15,
+      "log": "v13-browser-final.txt",
+      "logSHA256": "db1d10344874232bfdb31aa1fe8129a8a3ec6bff547934d7c1b266e16356dd36",
+      "startedAt": "2026-09-11T12:40:45.138012+00:00",
+      "durationSeconds": 160.035,
+      "summary": "======================= 15 passed in 157.22s (0:02:37) ========================"
+    },
+    {
+      "name": "legacy-browser-width-320",
+      "passed": 1,
+      "log": "legacy-browser-width-320.txt",
+      "logSHA256": "39426793a53697469035316af1b5581809953fb6ce7111cba26abc6b346fb7c6",
+      "startedAt": "2026-09-11T12:43:25.173678+00:00",
+      "durationSeconds": 33.314,
+      "summary": "============================= 1 passed in 30.41s =============================="
+    },
+    {
+      "name": "legacy-browser-width-360",
+      "passed": 1,
+      "log": "legacy-browser-width-360.txt",
+      "logSHA256": "4f48a3c22c0a88bbed09061daca714eb775e15b7384a47be72d5a340797e641d",
+      "startedAt": "2026-09-11T12:43:58.488334+00:00",
+      "durationSeconds": 28.947,
+      "summary": "============================= 1 passed in 26.75s =============================="
+    },
+    {
+      "name": "legacy-browser-width-390",
+      "passed": 1,
+      "log": "legacy-browser-width-390.txt",
+      "logSHA256": "8d28f5b945f94f5cbad041ab08d203c64f4be399deb799d9e0d4c5f27482c824",
+      "startedAt": "2026-09-11T12:44:27.435192+00:00",
+      "durationSeconds": 75.866,
+      "summary": "======================== 1 passed in 73.56s (0:01:13) ========================="
+    },
+    {
+      "name": "legacy-browser-width-430",
+      "passed": 1,
+      "log": "legacy-browser-width-430.txt",
+      "logSHA256": "c2297495afa1edc21cf612f30ee4c9a7d0e242b333bae294b4848c190a168399",
+      "startedAt": "2026-09-11T12:45:43.301726+00:00",
+      "durationSeconds": 37.347,
+      "summary": "============================= 1 passed in 34.93s =============================="
+    },
+    {
+      "name": "legacy-browser-width-768",
+      "passed": 1,
+      "log": "legacy-browser-width-768.txt",
+      "logSHA256": "1a9d8fd17a6708b42b2a838600c6deebaee233f874e9be27df07d3cd5b6decca",
+      "startedAt": "2026-09-11T12:46:20.649095+00:00",
+      "durationSeconds": 25.725,
+      "summary": "============================= 1 passed in 23.90s =============================="
+    },
+    {
+      "name": "legacy-browser-width-1024",
+      "passed": 1,
+      "log": "legacy-browser-width-1024.txt",
+      "logSHA256": "aa16dbd67a80a91c96eb109033351e0b1152414df34444965f873a9ea90ee06b",
+      "startedAt": "2026-09-11T12:46:46.373829+00:00",
+      "durationSeconds": 25.188,
+      "summary": "============================= 1 passed in 23.77s =============================="
+    },
+    {
+      "name": "legacy-browser-width-1280",
+      "passed": 1,
+      "log": "legacy-browser-width-1280.txt",
+      "logSHA256": "cbb2f3b2257cb47928fca27c5c0902be3cf2cb7a351d6790187eb6b9a1a5190f",
+      "startedAt": "2026-09-11T12:47:11.562380+00:00",
+      "durationSeconds": 24.486,
+      "summary": "============================= 1 passed in 23.09s =============================="
+    },
+    {
+      "name": "legacy-browser-width-1440",
+      "passed": 1,
+      "log": "legacy-browser-width-1440.txt",
+      "logSHA256": "145fbf2937498047b975bf29a2c9e5120e0eff01ede85f11f3e6aeb72cbc4e4b",
+      "startedAt": "2026-09-11T12:47:36.048545+00:00",
+      "durationSeconds": 41.196,
+      "summary": "============================= 1 passed in 39.82s =============================="
+    },
+    {
+      "name": "legacy-browser-flows",
+      "passed": 11,
+      "log": "legacy-browser-flows.txt",
+      "logSHA256": "b791f6498d56aef1a0c30139635fe594ba9a58abfc1214318b685c2c893965cb",
+      "startedAt": "2026-09-11T12:48:17.244244+00:00",
+      "durationSeconds": 159.75,
+      "summary": "================ 11 passed, 8 deselected in 157.41s (0:02:37) ================="
+    },
+    {
+      "name": "nonbrowser-final",
+      "passed": 431,
+      "log": "nonbrowser-final.txt",
+      "logSHA256": "101799bc621e88ddce6171465a008f86e519df9b54593072c1ccf8f791ff0d16",
+      "startedAt": "2026-09-11T12:50:56.994118+00:00",
+      "durationSeconds": 176.884,
+      "summary": "431 passed in 174.96s (0:02:54)"
+    }
+  ],
+  "sequence": "final-test-sequence.json",
+  "start": "final-test-start.json",
+  "end": "final-test-end.json"
+}

@@ -1,0 +1,113 @@
+{
+  "reviewedAt": "2026-09-11T12:43:24.716547+00:00",
+  "reviewer": "independent v13_content_technical_critic",
+  "siteRevision": "4b0ccbc08aecda587aae9600e79352a1829c6de9758de87caffcdaf0821e5414",
+  "sourceRevision": "446a54d0dddac08cb10e0d0bf27f698986861b5812defd8da381b126bb28fec5",
+  "previousSiteRevision": "c63289cb3d96e82035f98b2bd4f59b0b1de5891009fd6b79d1bfdacfabf45edb",
+  "status": "source_and_focused_delayed_media_verified_full_runtime_pending",
+  "accepted": false,
+  "sourceChanged": [
+    "src/visual-v13.css",
+    "tests/test_v13_browser.py"
+  ],
+  "publicChanged": [
+    "assets/style.css"
+  ],
+  "sourceAndPublicSealVerified": true,
+  "media": [
+    {
+      "url": "/assets/media/v9/05-promo-direct-review-form.webp",
+      "width": 1122,
+      "height": 1402,
+      "sha256": "3d027f8fe044abc5726f50b4d32d50f13ecec4be62fe8bea4aa34fd2f42e309f",
+      "unchangedBytes": true
+    },
+    {
+      "url": "/assets/media/v13/05-promo-direct-review-form-160.webp",
+      "width": 160,
+      "height": 200,
+      "sha256": "07f695829eef8d7081aa65c61d6eb1191af548022c5a797b177ad072351a328c",
+      "unchangedBytes": true
+    },
+    {
+      "url": "/assets/media/v13/05-promo-direct-review-form-480.webp",
+      "width": 480,
+      "height": 600,
+      "sha256": "ecfcf15bfad66a520c56727d5b0d7df8012e194f3ff46e960a60b0d89787a373",
+      "unchangedBytes": true
+    },
+    {
+      "url": "/assets/media/v13/05-promo-direct-review-form-800.webp",
+      "width": 800,
+      "height": 1000,
+      "sha256": "c14a9d0fdd5cab7912c42ae8838c94bdeb9e705ca6439f1a924b04236957e337",
+      "unchangedBytes": true
+    },
+    {
+      "url": "/assets/media/v13/branded-catalog.svg",
+      "width": 1160,
+      "height": 940,
+      "sha256": "305d3967e7ca97987fea7bc1bb672321f7aa41e3e439ca02592cd8b3c14a707d",
+      "unchangedBytes": true
+    }
+  ],
+  "focusedEvidence": [
+    {
+      "path": "targeted-regression/delayed-media-uk-home.json",
+      "sha256": "5e5d9658af558e683f5b76b993b42df7c5653a975c27abd053589a96078b40c1",
+      "sessionCLS": 0,
+      "heldRequests": 1,
+      "releaseAfterFCP": true,
+      "maximumGeometryDelta": 0,
+      "screenshotsAwaitingStableRerun": []
+    },
+    {
+      "path": "targeted-regression/delayed-media-uk-catalog.json",
+      "sha256": "30b3da780821537ff23c6700f46752b27af10856c485afc362cea65919f93955",
+      "sessionCLS": 0,
+      "heldRequests": 1,
+      "releaseAfterFCP": true,
+      "maximumGeometryDelta": 0,
+      "screenshotsAwaitingStableRerun": []
+    },
+    {
+      "path": "targeted-regression/delayed-media-en-home.json",
+      "sha256": "1c4877ae7e8375cdba20c2d5b5ceb9e5cd483b459f1f9e0cfcace52cb5820bb0",
+      "sessionCLS": 0,
+      "heldRequests": 1,
+      "releaseAfterFCP": true,
+      "maximumGeometryDelta": 0,
+      "screenshotsAwaitingStableRerun": []
+    },
+    {
+      "path": "targeted-regression/delayed-media-en-catalog.json",
+      "sha256": "0b6e0909a06a99bb18f4e3a9b39260139214b8334ee7c2ed2d62d11825430d61",
+      "sessionCLS": 0,
+      "heldRequests": 1,
+      "releaseAfterFCP": true,
+      "maximumGeometryDelta": 0,
+      "screenshotsAwaitingStableRerun": []
+    }
+  ],
+  "findings": [
+    {
+      "id": "CT-04",
+      "severity": "high",
+      "origin": "Independent visual critic and node-attributed layout-shift diagnosis",
+      "status": "source_and_focused_tests_verified_full_runtime_pending",
+      "issue": "Catalogue product media height was not reserved through first paint, causing a 435 px content displacement.",
+      "fix": "Asset-specific fallback ratios reserve the intended box while auto uses decoded natural proportions."
+    }
+  ],
+  "priorFindings": {
+    "CT-01": "unchanged source; current full runtime recheck pending",
+    "CT-02": "unchanged source; current full runtime recheck pending",
+    "CT-03": "unchanged source; current full runtime recheck pending",
+    "MESSENGER-FEEDBACK": "unchanged source; current full runtime recheck pending"
+  },
+  "limitations": [
+    "This receipt is not the final runtime verdict for 4b0. Fresh 465-test sequence and current after/diagnostic evidence must complete.",
+    "The historical c632 content/technical verdict remains valid only for its named revision and scope; it does not accept the newly found CLS issue.",
+    "No browser, source edit, send, deployment or provisioning was performed by this reviewer."
+  ]
+}
