@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {isIP} from 'node:net';
+import {publicBasePath, publicURL} from './pages.mjs';
 
 export const PREVIEW = 'PUBLIC_PREVIEW';
 export const INDEXABLE = 'PUBLIC_INDEXABLE';
@@ -30,12 +31,19 @@ export function publicOrigin(value, localAllowed = false) {
 }
 
 export function resolvePublication({env = process.env, config, flags, approval, contentHash}) {
+  const deploymentTarget = env.NFC_DEPLOYMENT_TARGET || 'fullstack';
+  if (!['fullstack', 'github-pages'].includes(deploymentTarget)) throw Error('Invalid NFC_DEPLOYMENT_TARGET');
+  const basePath = publicBasePath(env.NFC_PUBLIC_BASE_PATH);
   const mode = env.NFC_PUBLICATION_MODE || PREVIEW;
   if (![PREVIEW, INDEXABLE].includes(mode)) throw Error('Invalid NFC_PUBLICATION_MODE');
   const runtime = env.NFC_ENV || 'local';
   if (!['local', 'test', 'production'].includes(runtime)) throw Error('Invalid NFC_ENV');
   if (runtime === 'production' && !env.NFC_PUBLIC_ORIGIN) throw Error('Production build requires NFC_PUBLIC_ORIGIN');
   const origin = publicOrigin(env.NFC_PUBLIC_ORIGIN || config.origin, runtime !== 'production' && mode === PREVIEW);
+  if (deploymentTarget === 'github-pages') {
+    if (!env.NFC_PUBLIC_ORIGIN) throw Error('GitHub Pages requires explicit NFC_PUBLIC_ORIGIN');
+    publicOrigin(origin);
+  }
   if (mode === INDEXABLE) {
     publicOrigin(origin);
     const legal = config.legal || {};
@@ -50,7 +58,8 @@ export function resolvePublication({env = process.env, config, flags, approval, 
   }
   const sitemapRoutes = localized(mode === INDEXABLE ? [...PUBLIC_ROUTES, ...LEGAL_ROUTES] : PUBLIC_ROUTES);
   return Object.freeze({schemaVersion: 1, mode, origin, sitemapRoutes,
-    indexableRoutes: mode === INDEXABLE ? sitemapRoutes : [], contentHash});
+    indexableRoutes: mode === INDEXABLE ? sitemapRoutes : [], contentHash,
+    ...(basePath || deploymentTarget === 'github-pages' ? {basePath, deploymentTarget} : {})});
 }
 
 export function robotsMeta(publication, route) {
@@ -68,6 +77,6 @@ export function robotsFile(publication) {
   if (publication.mode === PREVIEW) return 'User-agent: *\nDisallow: /\n';
   const excluded = ['/admin', '/en/admin', '/api', '/order', '/en/order', '/contact', '/en/contact',
     '/reviews/new', '/en/reviews/new', '/thank-you', '/en/thank-you', '/healthz'];
-  return 'User-agent: *\nAllow: /\n' + excluded.map(route => 'Disallow: ' + route + '\n').join('') +
-    'Sitemap: ' + publication.origin + '/sitemap.xml\n';
+  return 'User-agent: *\nAllow: ' + publicURL('/', publication) + '\n' + excluded.map(route => 'Disallow: ' + publicURL(route, publication) + '\n').join('') +
+    'Sitemap: ' + publication.origin + publicURL('/sitemap.xml', publication) + '\n';
 }

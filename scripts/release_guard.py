@@ -54,6 +54,10 @@ PATTERNS = {
 SAFE_FIXTURES: dict[tuple[str, str, str], str] = {
     ("server/set_admin_password.py", "credential-literal", "ed7489ccf2dbe1f9ac0862947de7e10b7acefc3ff748436455524a936bc85d09"): "getpass confirmation prompt; no credential value",
     ("src/admin-reviews.js", "credential-literal", "83a10662969214b3e8a3531c70eee41191893818142863a9e9ccf9d83a8f2c22"): "fetch credentials mode same-origin; no credential value",
+    ("src/pages.mjs", "credential-literal", "42fff62a2d917c178ec83a013dcece0a1bc0458648c77cf7167a083d143887bd"): "fetch credentials mode omit; no credential value",
+    ("tests/test_pages_v17.py", "credential-literal", "881622b66d6a34e6af8eab0308ee2b00eaba3303b0ecafc424e2b26d2a1cc968"): "synthetic sentinel proving host secrets never enter the Pages artifact",
+    ("tests/test_pages_v17.py", "credential-url", "1099be0ab9e8698186a400ff5ebef55a99293124293b480f50869ed8da906bd5"): "rejected credential-bearing public endpoint fixtures; no network calls",
+    ("tests/test_pages_v17.py", "credential-url", "15b1e866d911af28fc99f2270c455deb037f8dbeee9ba599407423d52a1d4cce"): "build rejection fixture for credential-bearing endpoint; no network calls",
     ("tests/test_leads.py", "credential-url", "569acbdaa523c77a390a9d90ea6cf6f30c5af8a127ce44266f7ac4f22cf2ef3b"): "rejected URL validation fixture",
     ("tests/test_leads.py", "credential-url", "38dffcef3477ee8c2b88be9510841b991b83c1faa71c8a21d265b87e0a298e78"): "rejected referrer fixture",
     ("tests/test_v12_reviews.py", "credential-literal", "700ae23d898bb23222221b43a939d1daf5d1a8a30678e94d66f9740e48a02f3e"): "isolated test session signing fixture",

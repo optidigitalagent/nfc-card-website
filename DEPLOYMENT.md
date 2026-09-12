@@ -1,3 +1,11 @@
+# Current deployment target: GitHub Pages (v17)
+
+The owner's v17 request supersedes the v16 full-stack Railway hosting target.
+The public site is built for `https://optidigitalagent.github.io/nfc-card-website/`.
+See `PAGES_DEPLOYMENT.md` for the project-path build and explicit static boundaries.
+The Python reviews/admin implementation below remains in source for a future
+separately configured full-stack deployment; GitHub Pages does not execute it.
+
 # Deployment and publication modes
 
 Deploy from `main` of the dedicated GitHub repository to an existing isolated

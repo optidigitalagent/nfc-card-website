@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
-  "file_count_including_manifest": 228,
+  "file_count_including_manifest": 233,
   "release_source": {
     "handoff_archive_sha256": "9cf61bc26214321d296adeae4c63eb21a5b624bfa9f8849797bcb51c66ff5de0",
     "handoff_manifest": "docs/release/v1.0.0/source-handoff-manifest.json",
@@ -28,8 +28,8 @@
     },
     {
       "path": ".env.example",
-      "bytes": 557,
-      "sha256": "44a04f22fc95465484a892bd158be298362c9081d2131205fa4c2ada6b91ad59"
+      "bytes": 621,
+      "sha256": "06e662e2668cf87b63a9afc902092b6093e477f72240b5a9275ddd3cacd0cf5e"
     },
     {
       "path": ".gitattributes",
@@ -38,8 +38,8 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "bytes": 4614,
-      "sha256": "76f69272a2a7f6a4cfbe0158680e30533e09b6a661de82f5d99ecab5d39bdb2a"
+      "bytes": 6706,
+      "sha256": "b398744c08b9f956b5bc33a2bbc920d8fcb92f3f0a8b801f4d7d02603115a775"
     },
     {
       "path": ".gitignore",
@@ -48,8 +48,8 @@
     },
     {
       "path": "DEPLOYMENT.md",
-      "bytes": 4502,
-      "sha256": "ac9211dd7b0d2c1acd0622b80ccda46d0808469b4ab2ea06c8fb2132d5d2fdff"
+      "bytes": 4956,
+      "sha256": "79f31c89c6c30542e67dd54e062186a8790d1e23c2de270eb39f8abcc32c46cd"
     },
     {
       "path": "DEPLOYMENT_BLOCKERS.md",
@@ -72,6 +72,11 @@
       "sha256": "dbfcb24967073e76f974f422c584f38c2180df45ede332a4f295ad95b1d2dc45"
     },
     {
+      "path": "PAGES_DEPLOYMENT.md",
+      "bytes": 4835,
+      "sha256": "752da8d704f56261994dc9015b04c1f720b8b721cfe80402389c5714f7470b40"
+    },
+    {
       "path": "README.md",
       "bytes": 5671,
       "sha256": "7741c83d88ec6d8eacce267d360e9e8facb96461f860ddbf9ded8f633eb178eb"
@@ -90,6 +95,16 @@
       "path": "SECURITY.md",
       "bytes": 1659,
       "sha256": "fde4e9ded5cd94817b583639a35ad1078ed44710345402ee7c5248ccf4c8bc02"
+    },
+    {
+      "path": "docs/pages-v17/ACCEPTANCE.md",
+      "bytes": 4290,
+      "sha256": "a94dedba1462b0ed4d91eec13f4b54027d1a18dcb912e190dcd5ec1dcf51c57e"
+    },
+    {
+      "path": "docs/pages-v17/PACKAGING.md",
+      "bytes": 1531,
+      "sha256": "0f69cfd14a83f27c3cf0cc11fe8fa29669881770c98f8ce4f97b4d32ffcf810a"
     },
     {
       "path": "docs/release/v1.0.0/PACKAGING.md",
@@ -453,8 +468,8 @@
     },
     {
       "path": "scripts/release_guard.py",
-      "bytes": 13516,
-      "sha256": "a24cd47afe455d37120786f6eff212879ca9a8f3aa64522fb7f2981aae7bd39e"
+      "bytes": 14267,
+      "sha256": "775941954b9b6b7ad4b5faff9fc0c886474db50f92c19f5bbca47afdcb95db5b"
     },
     {
       "path": "scripts/run_tests.py",
@@ -658,13 +673,13 @@
     },
     {
       "path": "src/app.js",
-      "bytes": 25825,
-      "sha256": "0697b22c59d1433c59a5f9f0b47b60a8134baf764b78709b0f4bfad5d374422a"
+      "bytes": 26055,
+      "sha256": "d73f81a7029f03dc5f839618c777975b7863ec0b2b5ada36d4100eea699bfb1a"
     },
     {
       "path": "src/build.mjs",
-      "bytes": 34910,
-      "sha256": "87d068aaad617791e27baa8726c9b2ebdd665d796cfaa1eab3885d00e92908e2"
+      "bytes": 37742,
+      "sha256": "1528fb03b45e67229e1e09d1b1d7df3ec25749fa8f2759c78ebf0af18fe640e7"
     },
     {
       "path": "src/commerce-view.mjs",
@@ -678,8 +693,8 @@
     },
     {
       "path": "src/commerce.js",
-      "bytes": 16509,
-      "sha256": "f165a5bc8d0115c6b2cb0e60b38389f6b7c7a74f8f7778c38eb21a67977036cf"
+      "bytes": 17132,
+      "sha256": "f310445d00170a6ab018d77854dbfe872f9d7aaa97f50f8f026e6ca5a3f55b39"
     },
     {
       "path": "src/commerce.json",
@@ -1052,14 +1067,19 @@
       "sha256": "66fa2abd1db6dae1255c1fed17b46e77053ab443bfa8838d17f2ea89d26e13db"
     },
     {
+      "path": "src/pages.mjs",
+      "bytes": 14131,
+      "sha256": "d9012fd69942e3e2a4d470ee7f7cc01ae69290325a59cffdf882b31560aaf73a"
+    },
+    {
       "path": "src/publication-approval.json",
       "bytes": 162,
       "sha256": "f60baa4dd3adc4185952b5c207aac55b08766abbbc5349509135e1b0fa1be4f3"
     },
     {
       "path": "src/publication.mjs",
-      "bytes": 4519,
-      "sha256": "9233c37c7c897d26c3ad0db07e73de26ef56ce030e9463a79c79745c18a2c0ee"
+      "bytes": 5168,
+      "sha256": "6facf95c91e60da8000a2ec2f3f4c18c4034f763ca553cfd96cea91665e4297c"
     },
     {
       "path": "src/redirects.json",
@@ -1115,6 +1135,11 @@
       "path": "tests/test_leads.py",
       "bytes": 24539,
       "sha256": "78bb57d42010e1be110b6ddf3f6f94029cf7a1b77c13949d896e5560ad4af5d6"
+    },
+    {
+      "path": "tests/test_pages_v17.py",
+      "bytes": 23214,
+      "sha256": "5e06a07bf96d1535c0b9f044e1c43f35e319737885777ceefe5af7420bba598d"
     },
     {
       "path": "tests/test_publication.py",
