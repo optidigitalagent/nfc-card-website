@@ -34,7 +34,18 @@ Never bypass validation or move the immutable accepted `v1.0.0` tag.
 
 ## Preview and unsupported server functions
 
-The initial mode remains PUBLIC_PREVIEW. Every HTML page includes noindex/nofollow.
+The owner authorized publication of the limited PUBLIC_PREVIEW on 2026-09-12.
+Every HTML page includes noindex/nofollow. Pages uses this one publication-mode
+configuration to show a compact PUBLIC PREVIEW label, suppress analytics events,
+and force the form endpoint empty even if an endpoint variable is configured.
+The unavailable-form branch does not read or write personal-data drafts to browser
+storage and never starts a submission. It retains product and quantity controls.
+Both languages use the exact owner-approved preview notice.
+
+These Pages restrictions are selected centrally by `NFC_PUBLICATION_MODE`; the
+existing PUBLIC_INDEXABLE legal/owner approval gates still apply. Do not switch
+mode or activate an endpoint until the separate backend and publication decisions
+are complete. Full-stack form components and tests remain available in the source.
 Project-path robots.txt is included but GitHub controls the origin-root robots.txt;
 per-page meta noindex is the effective preview boundary. Pages cannot configure
 WSGI security/cache headers and must not be described as the full-stack runtime.
@@ -58,9 +69,9 @@ separate authorization required by section 9 of the v17 pack. The iADDS reposito
 source secret, bot/chat configuration and existing behavior remain unchanged.
 
 Until those prerequisites pass, `NFC_LEAD_ENDPOINT` stays unset. The Pages form
-must visibly state that sending is unavailable, keep user-entered values, and
-never emit a success receipt. Publishing this limited preview requires the owner's
-explicit decision about the missing lead backend. No completed v17 integration
+must visibly state that sending is unavailable, keep user-entered values only in
+the open form, and never emit a success receipt. The owner's authorization covers
+this limited preview, not the missing lead backend. No completed v17 integration
 is claimed merely because the static site is reachable.
 
 After a real bridge is independently verified, its public HTTPS endpoint may be

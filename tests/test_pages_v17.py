@@ -149,12 +149,18 @@ def test_forms_are_inert_before_client_and_expose_only_public_config(source, end
             assert form['method'] == 'dialog' and form['action'] == ''
             assert form.has_attr('data-pages-form')
             assert form.select_one('[type=submit]').has_attr('disabled')
-            assert soup.html['data-lead-endpoint'] == endpoint
+            assert soup.html['data-lead-endpoint'] == ''
+            assert soup.html['data-publication-mode'] == 'PUBLIC_PREVIEW'
+            assert soup.select_one('.header .preview-badge').text == 'PUBLIC PREVIEW'
             assert soup.html['data-public-base-path'] == BASE
             notice = form.select_one('.preview-notice')
             assert notice['role'] == 'status'
-            if not endpoint:
-                assert ('тимчасово недоступне' if soup.html['lang'] == 'uk' else 'temporarily unavailable') in notice.text
+            expected_notice = ('Онлайн-заявки тимчасово недоступні у preview-версії. Функцію буде активовано після підключення захищеного збереження заявок.'
+                               if soup.html['lang'] == 'uk' else
+                               'Online enquiries are temporarily unavailable in the preview version. The feature will be enabled after secure lead storage is connected.')
+            assert notice.text == expected_notice
+            if endpoint:
+                assert endpoint not in str(soup)
             assert form.select_one('[name=name]') and form.select_one('[name=phone]')
             assert form.select_one('[name=quantity]') and form.select_one('[name=variant]')
             assert_project_url(form.select_one('[name=source]')['value'], site)
@@ -176,7 +182,7 @@ def test_built_clients_fetch_and_navigate_under_project_path(source):
           {href:'https://optidigitalagent.github.io/nfc-card-website/en/order/'}];
         const localeLink={href:'https://optidigitalagent.github.io/nfc-card-website/en/solutions/review-card',
           addEventListener(kind,fn){this[kind]=fn;}};
-        const doc={documentElement:{lang:'uk',dataset:{publicBasePath:'/nfc-card-website',deploymentTarget:'github-pages'}},
+        const doc={documentElement:{lang:'uk',dataset:{publicBasePath:'/nfc-card-website',deploymentTarget:'github-pages',publicationMode:'PUBLIC_PREVIEW'}},
           body:{dataset:{route:'/solutions/review-card'}},referrer:'',getElementById:()=>null,
           querySelector:selector=>name==='commerce.js'&&selector==='[data-product]'?{dataset:{product:'standard'}}:null,
           querySelectorAll:selector=>selector==='.locale-switch'?[localeLink]:selector==='a[href]'?links:[],addEventListener(){}};
@@ -188,6 +194,7 @@ def test_built_clients_fetch_and_navigate_under_project_path(source):
         vm.runInNewContext(scripts[name],state);
         await new Promise(resolve=>setImmediate(resolve));
         assert.deepEqual(fetched,['/nfc-card-website/assets/content.json']);
+        assert.equal(state.window.nfcAnalyticsEvents?.length||0,0);
         localeLink.click();assert.ok(new URL(localeLink.href,location.origin).pathname.startsWith('/nfc-card-website/'));
         assert.equal(new URL(localeLink.href,location.origin).searchParams.get('quantity'),'2');
         if(name==='commerce.js'){
@@ -302,16 +309,21 @@ function fixture(endpoint,locale='en'){
 def test_mounted_unavailable_form_preserves_fields_and_never_submits():
     node(FORM_FIXTURE + r"""
       let calls=0;globalThis.fetch=async()=>{calls++;throw Error('network forbidden');};
+      let storageCalls=0;
+      for(const store of [localStorage,sessionStorage])for(const op of ['getItem','setItem','removeItem'])
+        store[op]=()=>{storageCalls++;throw Error('preview storage forbidden');};
       for(const locale of ['uk','en']){
         const f=fixture('',locale);await f.send();
         assert.equal(f.submit.disabled,true);assert.equal(f.values.name.disabled,false);
         assert.equal(f.values.name.value,'Test Customer');assert.equal(f.values.comment.value,'Retained comment');
-        assert.deepEqual(f.selected,{variant:'branded',quantity:locale==='uk'?'2':'more'});
-        assert.ok(f.notice.textContent.includes(locale==='uk'?'тимчасово недоступне':'temporarily unavailable'));
+        assert.deepEqual(f.selected,{variant:'branded',quantity:'2'});
+        assert.ok(f.notice.textContent.includes(locale==='uk'?'тимчасово недоступні':'temporarily unavailable'));
         f.values.quantity.value='more';f.handlers.change({target:{name:'quantity'}});assert.equal(f.selected.quantity,'more');
-        assert.equal(f.events.some(e=>e.name==='order_submit_success'),false);
+        assert.equal(f.handlers.input,undefined);
+        assert.equal(f.events.length,0);
+        f.submit.disabled=false;await f.send();assert.equal(f.form.dataset.complete,undefined);
       }
-      assert.equal(calls,0);
+      assert.equal(calls,0);assert.equal(storageCalls,0);
     """)
 
 

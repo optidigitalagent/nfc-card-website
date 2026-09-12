@@ -57,8 +57,10 @@ export function leadEndpoint(value = '') {
 }
 
 export const unavailable = locale => locale === 'uk'
-  ? 'Надсилання заявок тимчасово недоступне. Ваші дані та вибір залишаються у формі. Зв’яжіться з нами в месенджері.'
-  : 'Request submission is temporarily unavailable. Your details and selection remain in the form. Please contact us in a messenger.';
+  ? 'Онлайн-заявки тимчасово недоступні у preview-версії. Функцію буде активовано після підключення захищеного збереження заявок.'
+  : 'Online enquiries are temporarily unavailable in the preview version. The feature will be enabled after secure lead storage is connected.';
+
+export const previewCSS = '.header .preview-brand{display:flex;flex-direction:column;justify-content:center;gap:2px;flex-shrink:0}.preview-badge{display:block;width:max-content;font-size:9px;line-height:1.1;letter-spacing:.08em;font-weight:600;color:var(--nfc-steel-700)}';
 
 export function pagesFormHTML(html, {endpoint = '', locale, esc}) {
   const notice = endpoint ? (locale === 'uk'
@@ -113,6 +115,19 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
   const P = (uk, en) => locale === 'uk' ? uk : en, q = name => form.elements.namedItem(name);
   const submit = form.querySelector('[type=submit]'), result = form.querySelector('.form-result'), note = form.querySelector('.pending-notice');
   const label = submit.textContent;
+  try { endpoint = leadEndpoint(endpoint); } catch { endpoint = ''; }
+  if (!endpoint) {
+    // Preview never reads or writes personal-data drafts, registers a transport,
+    // or emits form analytics. Keep only the visual product/quantity controls.
+    submit.disabled = true;
+    form.querySelector('.preview-notice').textContent = unavailable(locale);
+    form.onsubmit = e => { e.preventDefault(); };
+    form.addEventListener('change', e => {
+      if (['variant', 'quantity'].includes(e.target.name)) select({variant: q('variant').value, quantity: q('quantity').value});
+    });
+    form.dataset.enhanced = 'true';
+    return;
+  }
   let busy = false, pending = null;
   // Language switches share the same pending attempt, but other project sites
   // and differently configured endpoints cannot reuse it.
@@ -140,7 +155,6 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
     result.hidden = false;
     result.focus();
   }
-  try { endpoint = leadEndpoint(endpoint); } catch { endpoint = ''; }
   try { restore(JSON.parse(sessionStorage.getItem(draftKey) || 'null')); } catch {}
   form.addEventListener('input', () => { if (!pending) try { sessionStorage.setItem(draftKey, JSON.stringify(snapshot())); } catch {} });
   form.addEventListener('change', e => {
@@ -192,12 +206,6 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
       form.removeAttribute('aria-busy');
     }
   };
-  if (!endpoint) {
-    submit.disabled = true;
-    form.querySelector('.preview-notice').textContent = unavailable(locale);
-    form.dataset.enhanced = 'true';
-    return;
-  }
   try {
     const stored = JSON.parse(localStorage.getItem(storageKey) || 'null');
     if (stored?.committed) {
