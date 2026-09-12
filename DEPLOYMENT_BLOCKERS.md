@@ -1,3 +1,10 @@
+# Historical full-stack deployment blockers
+
+The earlier full-stack/S3 provisioning plan below was superseded by the owner's
+GitHub Pages + existing lead-gateway architecture. It is retained as historical
+release evidence, not an instruction to provision more resources. The active
+configuration and acceptance gates are in [PUBLIC_LAUNCH.md](PUBLIC_LAUNCH.md).
+
 # Deployment blockers — v1.0.0
 
 Status: **DEPLOYMENT_BLOCKED — no verified live NFC CARD URL**.

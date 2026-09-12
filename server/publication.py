@@ -13,12 +13,13 @@ BASE_ROUTES = ('/', '/about', '/solutions', '/solutions/review-card',
                '/warranty-and-returns', '/privacy', '/terms')
 PUBLIC_ROUTES = frozenset(p for route in BASE_ROUTES for p in
                          (route, '/en' + (route if route != '/' else '')))
-CONTENT_INPUTS = ('src/model.mjs', 'src/verification.json', 'src/build.mjs')
+
 
 
 def content_hash(root):
     digest = hashlib.sha256()
-    for name in CONTENT_INPUTS:
+    for name in sorted(p.relative_to(root).as_posix() for p in (root / 'src').rglob('*')
+                       if p.is_file() and p.name != 'publication-approval.json'):
         digest.update((name + '\0').encode())
         digest.update((root / name).read_bytes())
         digest.update(b'\0')

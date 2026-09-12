@@ -52,6 +52,8 @@ PATTERNS = {
 # appending anything to that line invalidates the exemption. No tests/** or
 # keyword-based bypass exists. Reasons and fixture scopes are in PACKAGING.md.
 SAFE_FIXTURES: dict[tuple[str, str, str], str] = {
+    ("tests/test_pages_v17.py", "credential-literal", "735b954cc21270d13d65ef6927da6c7abcf443949108201bb52af41f12b5113f"): "unsigned synthetic challenge stub; transport fully mocked",
+    ("src/pages.mjs", "credential-literal", "c69d8f3d1537648b69d5e4792668ce05f6afc6deebe85a20ba150355766a6cb0"): "GET challenge fetch credentials mode omit; no credential value",
     ("server/set_admin_password.py", "credential-literal", "ed7489ccf2dbe1f9ac0862947de7e10b7acefc3ff748436455524a936bc85d09"): "getpass confirmation prompt; no credential value",
     ("src/admin-reviews.js", "credential-literal", "83a10662969214b3e8a3531c70eee41191893818142863a9e9ccf9d83a8f2c22"): "fetch credentials mode same-origin; no credential value",
     ("src/pages.mjs", "credential-literal", "42fff62a2d917c178ec83a013dcece0a1bc0458648c77cf7167a083d143887bd"): "fetch credentials mode omit; no credential value",

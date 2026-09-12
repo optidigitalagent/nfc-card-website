@@ -3,5 +3,12 @@
   "ownerAuthorizedIndexing": false,
   "publicationInputsConfirmed": false,
   "approvalReference": null,
-  "reviewedContentSha256": null
+  "reviewedContentSha256": null,
+  "publicLaunch": {
+    "ownerAuthorizedPublication": true,
+    "sellerName": "Артем Антонов",
+    "defectReturnAndRefundConfirmed": true,
+    "approvalReference": "Owner final PUBLIC launch authorization and seller/refund clarification, 2026-09-12, NFC CARD task",
+    "reviewedContentSha256": "8f74658c0e6df64fb00f502263a2abe34e830a73a971d9469a2fd8b574b63785"
+  }
 }

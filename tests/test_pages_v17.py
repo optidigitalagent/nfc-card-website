@@ -246,41 +246,49 @@ const context={basePath:'/nfc-card-website',pathname:'/nfc-card-website/order/?s
 def test_minimal_payload_allowlists_source_normalization_and_utm_limits():
     node(PAYLOAD_FIXTURE + r"""
       const payload=pages.leadPayload({...fields,source:'IADDS',lead_id:'fake',timestamp:'fake',displayed_price:'1',comment:'private'},context);
-      assert.deepEqual(Object.keys(payload), ['language','product','quantity','customer_name','contact','source_page','utm']);
-      assert.equal(payload.customer_name,'Test Customer'); assert.equal(payload.quantity,2);
-      assert.deepEqual(payload.contact,{phone:'+380980000000',messenger:'telegram'});
-      assert.equal(payload.source_page,'/nfc-card-website/order');
-      assert.deepEqual(Object.keys(payload.utm),['utm_source','utm_campaign']); assert.equal(payload.utm.utm_campaign.length,200);
+      assert.deepEqual(Object.keys(payload), ['language','product','quantity','customerName','contact','sourcePage','selection','utm']);
+      assert.equal(payload.customerName,'Test Customer'); assert.equal(payload.quantity,2);
+      assert.deepEqual(payload.contact,{phone:'+380980000000',preferredMethod:'telegram'});
+      assert.equal(payload.sourcePage,'/nfc-card-website/order');
+      assert.deepEqual(Object.keys(payload.utm),['source','campaign']); assert.equal(payload.utm.campaign.length,100);
       for(const changed of [{locale:'ru'},{variant:'invented'},{quantity:'0'},{quantity:'3'},{quantity:'1.5'},{quantity:'-1'},
         {variant:'bulk',quantity:'2'},{name:''},{name:'x'.repeat(121)},{phone:''},{phone:'abc1234567'},{phone:'1'.repeat(16)},
         {messenger:'email'},{consent:false},{website:'bot'}]) assert.throws(()=>pages.leadPayload({...fields,...changed},context));
       for(const pathname of ['/order','//evil.com','/nfc-card-website-evil/order','/nfc-card-website/../order','/nfc-card-website/%2fsecret'])
         assert.throws(()=>pages.leadPayload(fields,{...context,pathname}));
-      const custom=pages.leadPayload({...fields,variant:'bulk',quantity:'more'},context); assert.equal(custom.quantity,'more');
+      const custom=pages.leadPayload({...fields,variant:'bulk',quantity:'more'},context); assert.equal(custom.quantity,3);assert.deepEqual(custom.selection,{variant:'bulk',quantity:'more'});
       assert.equal(pages.leadPayload({...fields,locale:'en'},{...context,pathname:'/nfc-card-website/en/contact'}).language,'en');
     """)
 
 
 def test_transport_requires_durable_ack_and_never_falls_back():
     node(PAYLOAD_FIXTURE + f"const endpoint={json.dumps(ENDPOINT)};\n" + r"""
-      const pending={key:crypto.randomUUID(),payload:pages.leadPayload(fields,context)};
-      let calls=[];
-      const send=value=>async (url,options)=>{calls.push({url,options}); return new Response(JSON.stringify(value),{status:200,headers:{'Content-Type':'application/json'}});};
-      await assert.rejects(pages.submitLead('',pending,send({}))); assert.equal(calls.length,0);
-      for(const value of [{ok:true},{ok:true,saved:true,lead_id:'NFC-1'},{durable_saved:false,lead_id:'NFC-1'},
-        {durable_saved:'true',lead_id:'NFC-1'},{durable_saved:true},{durable_saved:true,lead_id:'<script>'},
-        {ok:true,receipt:{id:'NFC-123',mode:'live'}},{telegram:'sent'}])
-        await assert.rejects(pages.submitLead(endpoint,pending,send(value)));
-      await assert.rejects(pages.submitLead(endpoint,pending,async()=>new Response('<html>ok</html>',{status:200})));
-      await assert.rejects(pages.submitLead(endpoint,pending,async()=>new Response(JSON.stringify({durable_saved:true,lead_id:'NFC-1'}),{status:503,headers:{'Content-Type':'application/json'}})));
-      const result=await pages.submitLead(endpoint,pending,send({durable_saved:true,lead_id:'NFC-test-123',telegram:'failed'}));
-      assert.deepEqual(result,{lead_id:'NFC-test-123',durable_saved:true});
-      for(const {url,options} of calls){
-        assert.equal(url,endpoint); assert.equal(options.headers['Idempotency-Key'],pending.key);
-        assert.deepEqual(JSON.parse(options.body),pending.payload); assert.equal(options.redirect,'error');
-        assert.equal(options.credentials,'omit'); assert.equal(options.referrerPolicy,'no-referrer');
+      const pending={key:crypto.randomUUID(),payload:pages.leadPayload(fields,context)},id=crypto.randomUUID();
+      const token='eyJhdCI6MTAwMDB9.'+'x'.repeat(43);let calls=[];
+      const send=(value,status=202)=>async(url,options)=>{
+        if(!options.method)return Response.json({challenge:token,minimumDelayMs:2000});
+        calls.push({url,options});return Response.json(value,{status});
+      };
+      const wait=async ms=>assert.equal(ms,2100);
+      await assert.rejects(pages.submitLead('',pending,send({}),wait));assert.equal(calls.length,0);
+      for(const value of [{ok:true},{ok:true,saved:true,leadId:id},{durableSaved:false,leadId:id},
+        {durableSaved:'true',leadId:id},{durableSaved:true},{durableSaved:true,leadId:'<script>'},{telegram:'sent'}])
+        await assert.rejects(pages.submitLead(endpoint,pending,send(value),wait));
+      const accepted={ok:true,source:'NFC_CARD',durableSaved:true,leadId:id,notificationStatus:'queued'};
+      for(const status of [200,503])await assert.rejects(pages.submitLead(endpoint,pending,send(accepted,status),wait));
+      assert.deepEqual(await pages.submitLead(endpoint,pending,send(accepted),wait),{leadId:id,durableSaved:true});
+      for(const {url,options}of calls){
+        assert.equal(url,endpoint);assert.equal(options.headers['Idempotency-Key'],pending.key);
+        assert.deepEqual(JSON.parse(options.body),{...pending.payload,website:'',challenge:token});
+        assert.equal(options.credentials,'omit');assert.equal(options.referrerPolicy,'no-referrer');
         assert.deepEqual(Object.keys(options.headers),['Content-Type','Idempotency-Key']);
       }
+      const invalid={key:crypto.randomUUID(),payload:pending.payload};
+      await assert.rejects(pages.submitLead(endpoint,invalid,send({code:'invalid_payload'},422),wait),/invalid_fields/);
+      assert.equal(invalid.uncertain,false);
+      invalid.uncertain=true;
+      await assert.rejects(pages.submitLead(endpoint,invalid,send({code:'invalid_payload'},422),wait),/request_unconfirmed/);
+      assert.equal(invalid.uncertain,true);
     """)
 
 
@@ -295,13 +303,13 @@ function fixture(endpoint,locale='en'){
  values.consent.checked=true;
  const submit={type:'submit',textContent:'Send request',disabled:true,hidden:false};
  const elements=[...Object.values(values),submit];elements.namedItem=n=>values[n];
- const result={dataset:{},focus(){},hidden:true},notice={},pendingNote={hidden:true};
- const nodes={'[type=submit]':submit,'.form-result':result,'.pending-notice':pendingNote,'.preview-notice':notice};
+ const result={dataset:{},focus(){},hidden:true},notice={},pendingNote={hidden:true},newRequest={hidden:true};
+ const nodes={'[type=submit]':submit,'.form-result':result,'.pending-notice':pendingNote,'.preview-notice':notice,'[data-new-request]':newRequest};
  let selected={variant:'branded',quantity:'2'},locked=false,events=[];
  const handlers={};
  const form={elements,dataset:{},querySelector:s=>nodes[s],reportValidity:()=>true,addEventListener:(n,fn)=>handlers[n]=fn,setAttribute(){},removeAttribute(){}};
  pages.mountPagesForm(form,{endpoint,basePath:'/nfc-card-website',locale,pathname:'/nfc-card-website/'+(locale==='uk'?'':'en/')+'order',attribution:{utm_source:'test'},selection:()=>selected,select:v=>{selected=v;values.variant.value=v.variant;values.quantity.value=v.quantity;},lockSelection:v=>locked=v,event:(name,data)=>events.push({name,data})});
- return {form,values,submit,result,notice,events,handlers,get selected(){return selected},get locked(){return locked},send:()=>form.onsubmit({preventDefault(){}})};
+ return {form,values,submit,result,notice,newRequest,events,handlers,get selected(){return selected},get locked(){return locked},send:()=>form.onsubmit({preventDefault(){}})};
 }
 """
 
@@ -327,34 +335,47 @@ def test_mounted_unavailable_form_preserves_fields_and_never_submits():
     """)
 
 
-def test_mounted_retry_reload_duplicate_guard_and_durable_success():
+def test_mounted_retry_duplicate_guard_and_durable_success_without_personal_storage():
     node(FORM_FIXTURE + f"const endpoint={json.dumps(ENDPOINT)};\n" + r"""
-      const requests=[];let finish;
-      globalThis.fetch=(url,options)=>{requests.push({url,options});return new Promise(resolve=>finish=resolve);};
+      const realTimeout=setTimeout;globalThis.setTimeout=(fn,ms,...args)=>realTimeout(fn,ms===2100?0:ms,...args);
+      const requests=[];let finish;const id=crypto.randomUUID();
+      localStorage.setItem=()=>{throw Error('no personal local storage');};
+      const written=[];sessionStorage.setItem=(key,value)=>written.push({key,value});
+      globalThis.fetch=(url,options)=>{
+        if(!options.method)return Promise.resolve(Response.json({challenge:'payload.'+'x'.repeat(43),minimumDelayMs:2000}));
+        requests.push({url,options});return new Promise(resolve=>finish=resolve);
+      };
+      const until=async count=>{for(let i=0;i<100&&requests.length<count;i++)await new Promise(r=>realTimeout(r,5));assert.equal(requests.length,count);};
       const f=fixture(endpoint);assert.equal(f.submit.disabled,false);
-      const first=f.send();await f.send();assert.equal(requests.length,1);assert.equal(f.submit.disabled,true);
-      finish(new Response(JSON.stringify({ok:true,telegram:'sent'}),{headers:{'Content-Type':'application/json'}}));await first;
+      const first=f.send();await f.send();await until(1);assert.equal(f.submit.disabled,true);
+      finish(Response.json({ok:true,telegram:'sent'}));await first;
       assert.equal(f.result.dataset.status,'error');assert.equal(f.form.dataset.complete,undefined);
       assert.equal(f.values.name.value,'Test Customer');assert.equal(f.values.comment.value,'Retained comment');assert.equal(f.locked,true);
-      const reload=fixture(endpoint,'uk');assert.equal(reload.locked,true);assert.deepEqual(reload.selected,{variant:'branded',quantity:'2'});
-      const retry=reload.send();assert.equal(requests.length,2);
+      const retry=f.send();await until(2);
       assert.equal(requests[0].options.body,requests[1].options.body);
       assert.equal(requests[0].options.headers['Idempotency-Key'],requests[1].options.headers['Idempotency-Key']);
-      finish(new Response(JSON.stringify({durable_saved:true,lead_id:'NFC-committed-123',telegram:'failed'}),{headers:{'Content-Type':'application/json'}}));await retry;
-      assert.equal(reload.result.dataset.status,'success');assert.equal(reload.form.dataset.complete,'true');
-      assert.ok(reload.result.textContent.includes('NFC-committed-123'));
-      assert.equal(reload.submit.disabled,true);await reload.send();assert.equal(requests.length,2);
-      assert.deepEqual(reload.events.filter(e=>e.name==='order_submit_success'),[{name:'order_submit_success',data:{variant:'branded',quantity:'2'}}]);
-      assert.ok(!JSON.stringify(reload.events).includes('Test Customer'));
+      finish(Response.json({ok:true,source:'NFC_CARD',durableSaved:true,leadId:id,notificationStatus:'queued'},{status:202}));await retry;
+      assert.equal(f.result.dataset.status,'success');assert.equal(f.form.dataset.complete,'true');
+      assert.ok(f.result.textContent.includes(id));assert.equal(f.submit.disabled,true);await f.send();assert.equal(requests.length,2);
+      assert.deepEqual(f.events.filter(e=>e.name==='order_submit_success'),[{name:'order_submit_success',data:{variant:'branded',quantity:'2'}}]);
+      assert.ok(!JSON.stringify(f.events).includes('Test Customer'));
+      assert.ok(written.length>0);assert.ok(written.every(item=>{const state=JSON.parse(item.value);return /^[a-f0-9-]{36}$/.test(state.key)&&['uncertain','complete'].includes(state.state)&&Object.keys(state).every(k=>['key','state','leadId'].includes(k));}));
+      assert.ok(!JSON.stringify(written).includes('Test Customer'));assert.ok(!JSON.stringify(written).includes('38098'));
     """)
 
 
-def test_storage_failure_blocks_network_and_build_validation_precedes_output_cleanup(source):
+def test_definitive_rejection_unlocks_correction_and_failed_challenge_never_posts(source):
     node(FORM_FIXTURE + f"const endpoint={json.dumps(ENDPOINT)};\n" + r"""
       let calls=0;globalThis.fetch=async()=>{calls++;throw Error();};
-      const f=fixture(endpoint);localStorage.setItem=()=>{throw Error('storage unavailable');};
-      await f.send();assert.equal(calls,0);assert.equal(f.result.dataset.status,'error');
+      const f=fixture(endpoint);await f.send();assert.equal(calls,1);assert.equal(f.result.dataset.status,'error');
       assert.equal(f.values.name.value,'Test Customer');assert.equal(f.values.name.disabled,false);
+      const realTimeout=setTimeout;globalThis.setTimeout=(fn,ms,...args)=>realTimeout(fn,ms===2100?0:ms,...args);
+      const keys=[];globalThis.fetch=async(url,options)=>{
+        if(!options.method)return Response.json({challenge:'payload.'+'x'.repeat(43),minimumDelayMs:2000});
+        keys.push(options.headers['Idempotency-Key']);return Response.json({ok:false,code:'invalid_payload'},{status:422});
+      };
+      await f.send();assert.equal(f.locked,false);assert.equal(f.values.name.disabled,false);
+      f.values.name.value='Corrected Customer';await f.send();assert.equal(keys.length,2);assert.notEqual(keys[0],keys[1]);
     """)
     site = build(source)
     original = hashlib.sha256((site / 'index.html').read_bytes()).hexdigest()
@@ -365,3 +386,30 @@ def test_storage_failure_blocks_network_and_build_validation_precedes_output_cle
     assert result.returncode != 0 and 'Invalid NFC_LEAD_ENDPOINT' in result.stderr
     assert 'user:secret' not in result.stderr
     assert hashlib.sha256((site / 'index.html').read_bytes()).hexdigest() == original
+
+
+def test_reload_retains_uncertainty_and_completed_request_has_explicit_new_transition():
+    node(FORM_FIXTURE + f"const endpoint={json.dumps(ENDPOINT)};\n" + r"""
+      const realTimeout=setTimeout;globalThis.setTimeout=(fn,ms,...args)=>realTimeout(fn,ms===2100?0:ms,...args);
+      const saved=new Map(),requests=[];let lose=true,failChallenge=false;
+      globalThis.fetch=async(url,options)=>{
+        if(!options.method){if(failChallenge)throw Error('challenge lost');return Response.json({challenge:'payload.'+'x'.repeat(43),minimumDelayMs:2000});}
+        const key=options.headers['Idempotency-Key'],body=JSON.parse(options.body);delete body.challenge;
+        requests.push({key,body});let row=saved.get(key);
+        if(row&&JSON.stringify(row.body)!==JSON.stringify(body))return Response.json({code:'idempotency_conflict',existingLeadId:row.id},{status:409});
+        if(!row){row={body,id:crypto.randomUUID()};saved.set(key,row);}
+        if(lose){lose=false;throw Error('commit response lost');}
+        return Response.json({ok:true,source:'NFC_CARD',durableSaved:true,leadId:row.id},{status:202});
+      };
+      const first=fixture(endpoint);await first.send();assert.equal(saved.size,1);assert.equal(first.result.dataset.status,'error');
+      const reload=fixture(endpoint);failChallenge=true;await reload.send();assert.equal(requests.length,1);assert.equal(reload.locked,true);
+      failChallenge=false;await reload.send();assert.equal(saved.size,1);assert.equal(requests[0].key,requests[1].key);assert.equal(reload.result.dataset.status,'success');
+      const complete=fixture(endpoint);assert.equal(complete.form.dataset.complete,'true');assert.equal(complete.result.dataset.status,'existing');
+      await complete.send();assert.equal(requests.length,2);assert.equal(complete.newRequest.hidden,false);
+      complete.newRequest.onclick();complete.values.phone.value='+380980000001';await complete.send();assert.equal(saved.size,2);assert.notEqual(requests[2].key,requests[0].key);
+      // Another uncertain reload with changed details receives a safe existing
+      // receipt, not fake success for the changed form or an endless 409 retry.
+      complete.newRequest.onclick();lose=true;await complete.send();assert.equal(saved.size,3);
+      const conflict=fixture(endpoint);conflict.values.quantity.value='1';conflict.handlers.change({target:{name:'quantity'}});
+      await conflict.send();assert.equal(saved.size,3);assert.equal(conflict.result.dataset.status,'existing');assert.equal(conflict.newRequest.hidden,false);
+    """)

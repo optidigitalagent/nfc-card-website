@@ -5,8 +5,8 @@ import {isIP} from 'node:net';
 import {publicBasePath, publicURL} from './pages.mjs';
 
 export const PREVIEW = 'PUBLIC_PREVIEW';
+export const PUBLIC = 'PUBLIC';
 export const INDEXABLE = 'PUBLIC_INDEXABLE';
-export const CONTENT_INPUTS = ['src/model.mjs', 'src/verification.json', 'src/build.mjs'];
 const PUBLIC_ROUTES = ['/', '/about', '/solutions', '/solutions/review-card',
   '/solutions/branded-review-card', '/delivery-and-payment', '/warranty-and-returns'];
 const LEGAL_ROUTES = ['/privacy', '/terms'];
@@ -14,7 +14,10 @@ const localized = routes => routes.flatMap(route => [route, '/en' + (route === '
 
 export function reviewedContentSha256(root) {
   const hash = createHash('sha256');
-  for (const file of CONTENT_INPUTS) hash.update(file + '\0').update(fs.readFileSync(path.join(root, file))).update('\0');
+  const files = fs.readdirSync(path.join(root, 'src'), {recursive: true, withFileTypes: true})
+    .filter(entry => entry.isFile()).map(entry => path.relative(root, path.join(entry.parentPath, entry.name)).split(path.sep).join('/'))
+    .filter(file => file !== 'src/publication-approval.json').sort();
+  for (const file of files) hash.update(file + '\0').update(fs.readFileSync(path.join(root, file))).update('\0');
   return hash.digest('hex');
 }
 
@@ -35,7 +38,7 @@ export function resolvePublication({env = process.env, config, flags, approval, 
   if (!['fullstack', 'github-pages'].includes(deploymentTarget)) throw Error('Invalid NFC_DEPLOYMENT_TARGET');
   const basePath = publicBasePath(env.NFC_PUBLIC_BASE_PATH);
   const mode = env.NFC_PUBLICATION_MODE || PREVIEW;
-  if (![PREVIEW, INDEXABLE].includes(mode)) throw Error('Invalid NFC_PUBLICATION_MODE');
+  if (![PREVIEW, INDEXABLE, PUBLIC].includes(mode)) throw Error('Invalid NFC_PUBLICATION_MODE');
   const runtime = env.NFC_ENV || 'local';
   if (!['local', 'test', 'production'].includes(runtime)) throw Error('Invalid NFC_ENV');
   if (runtime === 'production' && !env.NFC_PUBLIC_ORIGIN) throw Error('Production build requires NFC_PUBLIC_ORIGIN');
@@ -56,9 +59,20 @@ export function resolvePublication({env = process.env, config, flags, approval, 
       throw Error('Indexing blocked: confirmed legal content, publication inputs and content-bound owner authorization required');
     }
   }
-  const sitemapRoutes = localized(mode === INDEXABLE ? [...PUBLIC_ROUTES, ...LEGAL_ROUTES] : PUBLIC_ROUTES);
+  if (mode === PUBLIC) {
+    // The owner confirmed the named seller and defect refunds for this Pages
+    // launch. This is a distinct, content-bound authorization; it does not assert
+    // nonexistent registration/address facts or weaken the old fullstack gate.
+    const launch = approval.publicLaunch;
+    if (deploymentTarget !== 'github-pages' || runtime !== 'production' ||
+        launch?.ownerAuthorizedPublication !== true || launch?.sellerName !== 'Артем Антонов' ||
+        launch?.defectReturnAndRefundConfirmed !== true || !launch?.approvalReference ||
+        launch?.reviewedContentSha256 !== contentHash) throw Error('Indexing blocked: content-bound PUBLIC authorization required');
+  }
+  const indexed = mode === INDEXABLE || mode === PUBLIC;
+  const sitemapRoutes = localized(indexed ? [...PUBLIC_ROUTES, ...LEGAL_ROUTES] : PUBLIC_ROUTES);
   return Object.freeze({schemaVersion: 1, mode, origin, sitemapRoutes,
-    indexableRoutes: mode === INDEXABLE ? sitemapRoutes : [], contentHash,
+    indexableRoutes: indexed ? sitemapRoutes : [], contentHash,
     ...(basePath || deploymentTarget === 'github-pages' ? {basePath, deploymentTarget} : {})});
 }
 
@@ -67,7 +81,7 @@ export function robotsMeta(publication, route) {
 }
 
 export function assertFinalLegalContent(publication, route, body) {
-  if (publication.mode === INDEXABLE && [...LEGAL_ROUTES, '/warranty-and-returns'].includes(route) &&
+  if ([INDEXABLE, PUBLIC].includes(publication.mode) && [...LEGAL_ROUTES, '/warranty-and-returns'].includes(route) &&
       /\bdraft\b|чернетк|awaiting owner approval|до погодження власником/iu.test(body)) {
     throw Error('Indexing blocked: legal or policy page is still a draft');
   }

@@ -2,10 +2,14 @@
 
 Source repository: https://github.com/optidigitalagent/nfc-card-website
 
-**Deployment is blocked pending an identified, existing NFC CARD full-stack service
-and its secure runtime configuration. No public live URL is verified.** See
-[DEPLOYMENT_BLOCKERS.md](DEPLOYMENT_BLOCKERS.md). Release mode defaults to
-`PUBLIC_PREVIEW`; the current legal drafts are not approved for indexing.
+Website: [NFC CARD](https://optidigitalagent.github.io/nfc-card-website/).
+
+The static frontend is published by GitHub Pages. Public enquiries use the existing
+Antonov lead gateway, its private PostgreSQL 17 and the separate `nfc_card` schema.
+The gateway persists a lead and outbox together before attempting Telegram.
+See [PUBLIC launch and rollback](PUBLIC_LAUNCH.md) for the active architecture;
+older full-stack release documents describe the retained alternative runtime.
+No additional Railway service, bucket or worker is needed.
 
 Release documentation: [deployment/publication](DEPLOYMENT.md),
 [operations and recovery](RUNBOOK.md), [security](SECURITY.md),
@@ -57,7 +61,7 @@ python -m server.set_admin_password --help
 npm start
 ```
 
-npm start is a loopback WSGI development server. Production container configuration is supplied as Dockerfile; it builds the same frontend and starts Gunicorn. Alternatively on Linux: `gunicorn --bind 0.0.0.0:8000 server.wsgi:application`. No deployment was performed or validated. PUBLIC_PREVIEW preserves noindex. PUBLIC_INDEXABLE requires final legal content and explicit owner approval bound to its content hash; an environment flag alone cannot enable indexing.
+npm start is a loopback WSGI development server. Production container configuration is supplied as Dockerfile; it builds the same frontend and starts Gunicorn. Alternatively on Linux: `gunicorn --bind 0.0.0.0:8000 server.wsgi:application`. These are the retained full-stack runtime instructions, not the active Pages gateway deployment. PUBLIC_PREVIEW preserves noindex. PUBLIC_INDEXABLE requires final legal content and explicit owner approval bound to its content hash; an environment flag alone cannot enable indexing.
 
 ## Packaging changes and exclusions
 

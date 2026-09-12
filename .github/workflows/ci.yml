@@ -2,7 +2,7 @@ name: Release source validation
 
 on:
   push:
-    branches: [main]
+    branches: [main, release/public-v19]
     tags: ['v*']
   pull_request:
   workflow_dispatch:
@@ -137,9 +137,9 @@ jobs:
       NFC_DEPLOYMENT_TARGET: github-pages
       NFC_PUBLIC_ORIGIN: https://optidigitalagent.github.io
       NFC_PUBLIC_BASE_PATH: /nfc-card-website
-      NFC_PUBLICATION_MODE: PUBLIC_PREVIEW
-      NFC_TELEGRAM_ENABLED: 'false'
-      # Empty until a real durable-save backend has separately passed acceptance.
+      NFC_PUBLICATION_MODE: PUBLIC
+      NFC_TELEGRAM_ENABLED: 'true'
+      # Public browser endpoint only; source secrets stay on the existing gateway.
       NFC_LEAD_ENDPOINT: ${{ vars.NFC_LEAD_ENDPOINT }}
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5

@@ -70,45 +70,73 @@ export function pagesFormHTML(html, {endpoint = '', locale, esc}) {
   // the mounted JSON client may enable the submit control after initialization.
   return html.replace(/action="\/api\/leads" method="post"/g, 'data-pages-form action="" method="dialog"')
     .replace(/<div class="preview-notice">[\s\S]*?<\/div>/g, `<div class="preview-notice" role="status">${esc(notice)}</div>`)
-    .replace(/(<button class="button submit-button" type="submit")/g, '$1 disabled');
+    .replace(/(<button class="button submit-button" type="submit")/g, '$1 disabled')
+    .replace(/(<div class="form-result"[^>]*><\/div>)/g, '$1<button class="button secondary" type="button" data-new-request hidden>' + (locale === 'uk' ? 'Створити іншу заявку' : 'Start another enquiry') + '</button>');
 }
 
 const products = ['standard', 'branded', 'bulk', 'consultation'];
 const quantities = ['1', '2', 'more'];
 const channels = ['telegram', 'whatsapp', 'viber'];
-const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
-const idempotencyKey = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i;
+const idempotencyKey = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/;
 export function leadPayload(input, {basePath = '', pathname, utm = {}}) {
   basePath = publicBasePath(basePath);
-  const name = String(input.name || '').trim(), phone = String(input.phone || '').trim();
+  const name = String(input.name || '').trim().normalize('NFC'), phone = String(input.phone || '').trim();
   if (!['uk', 'en'].includes(input.locale) || !products.includes(input.variant) || !quantities.includes(input.quantity) ||
-      (input.variant === 'bulk' && input.quantity !== 'more') || !name || name.length > 120 ||
+      (input.variant === 'bulk' && input.quantity !== 'more') || !name || name.length > 100 || /[\x00-\x1f\x7f\u202a-\u202e\u2066-\u2069]/u.test(name) ||
       !/^\+?[\d ()-]+$/.test(phone) || phone.replace(/\D/g, '').length < 7 || phone.replace(/\D/g, '').length > 15 ||
       !channels.includes(input.messenger) || input.consent !== true || input.website) throw Error('invalid_fields');
-  // Use the actual page, never a browser-provided source, price, ID or timestamp.
-  const sourcePage = String(pathname || '').split(/[?#]/)[0].replace(/\/$/, '') || '/';
-  if (!/^\/(?:[A-Za-z0-9_-]+\/)*[A-Za-z0-9_-]*$/.test(sourcePage) ||
-      (basePath && sourcePage !== basePath && !sourcePage.startsWith(basePath + '/'))) throw Error('invalid_source_page');
-  const payload = {language: input.locale, product: input.variant, quantity: input.quantity === 'more' ? 'more' : Number(input.quantity),
-    customer_name: name, contact: {phone: phone.replace(/[ ()-]/g, ''), messenger: input.messenger}, source_page: sourcePage};
-  const attribution = Object.fromEntries(utmKeys.filter(key => typeof utm[key] === 'string' && utm[key].trim()).map(key => [key, utm[key].trim().slice(0, 200)]));
+  const route = String(pathname || '').split(/[?#]/)[0].replace(/\/$/, '') || '/';
+  const sourcePage = route === basePath ? basePath + '/' : route;
+  const relative = sourcePage.slice(basePath.length);
+  if (!sourcePage.startsWith(basePath + '/') || !['/', '/en', ...['order','contact','about','solutions/review-card','solutions/branded-review-card'].flatMap(r=>['/'+r,'/en/'+r])].includes(relative)) throw Error('invalid_source_page');
+  const payload = {language: input.locale, product: input.variant === 'branded' ? 'branded-review-card' : 'review-card',
+    quantity: input.quantity === 'more' ? 3 : Number(input.quantity), customerName: name,
+    contact: {phone: phone.replace(/[ ()-]/g, ''), preferredMethod: input.messenger}, sourcePage,
+    selection: {variant: input.variant, quantity: input.quantity}};
+  const attribution = {};
+  for (const key of ['source', 'medium', 'campaign', 'term', 'content']) {
+    const value = utm['utm_' + key];
+    if (typeof value === 'string' && value.trim() && !/[\x00-\x1f\x7f\u202a-\u202e\u2066-\u2069]/u.test(value)) attribution[key] = value.trim().normalize('NFC').slice(0, 100);
+  }
   if (Object.keys(attribution).length) payload.utm = attribution;
-  if (new TextEncoder().encode(JSON.stringify(payload)).length > 8192) throw Error('body_too_large');
   return payload;
 }
 
-export async function submitLead(endpoint, pending, fetcher = globalThis.fetch) {
+const requestOptions = {mode: 'cors', credentials: 'omit', redirect: 'error', cache: 'no-store', referrerPolicy: 'no-referrer'};
+export async function submitLead(endpoint, pending, fetcher = globalThis.fetch, wait = ms => new Promise(resolve => setTimeout(resolve, ms))) {
   endpoint = leadEndpoint(endpoint);
   if (!endpoint) throw Error('unavailable');
   if (!idempotencyKey.test(pending.key)) throw Error('invalid_idempotency_key');
+  // A fresh signed challenge is independent of the stable lead body/key. Renewing
+  // it on retry cannot create another lead and never needs a browser secret.
+  const url = endpoint + '/challenge?sourcePage=' + encodeURIComponent(pending.payload.sourcePage);
+  const check = await fetcher(url, {...requestOptions, signal: AbortSignal.timeout(20000)});
+  if (!check.ok) throw Error('challenge_unavailable');
+  const challenge = await check.json();
+  if (typeof challenge.challenge !== 'string' || challenge.challenge.length > 800 ||
+      !/^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]{43}$/.test(challenge.challenge) || challenge.minimumDelayMs !== 2000) throw Error('invalid_challenge');
+  await wait(challenge.minimumDelayMs + 100);
+  const wasUncertain = pending.uncertain === true;
+  pending.uncertain = true;
   const response = await fetcher(endpoint, {method: 'POST', mode: 'cors', credentials: 'omit', redirect: 'error',
-    cache: 'no-store', referrerPolicy: 'no-referrer', headers: {'Content-Type': 'application/json', 'Idempotency-Key': pending.key},
-    body: JSON.stringify(pending.payload), signal: AbortSignal.timeout(20000)});
-  if (!response.ok || response.headers.get('content-type')?.split(';')[0].trim().toLowerCase() !== 'application/json') throw Error('request_unconfirmed');
+    cache: 'no-store', referrerPolicy: 'no-referrer',
+    headers: {'Content-Type': 'application/json', 'Idempotency-Key': pending.key},
+    body: JSON.stringify({...pending.payload, website: '', challenge: challenge.challenge}), signal: AbortSignal.timeout(20000)});
+  if (response.headers.get('content-type')?.split(';')[0].trim().toLowerCase() !== 'application/json') throw Error('request_unconfirmed');
   const value = await response.json();
-  // Telegram status (including failure) cannot decide whether a lead was saved.
-  if (value?.durable_saved !== true || typeof value.lead_id !== 'string' || !/^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$/.test(value.lead_id)) throw Error('request_unconfirmed');
-  return {lead_id: value.lead_id, durable_saved: true};
+  if (!response.ok) {
+    if (response.status === 409 && value?.code === 'idempotency_conflict' && idempotencyKey.test(value.existingLeadId || ''))
+      throw Object.assign(Error('existing_request'), {leadId: value.existingLeadId});
+    if (!wasUncertain && response.status === 422 && ['invalid_payload', 'invalid_selection'].includes(value?.code)) {
+      pending.uncertain = false;
+      throw Error('invalid_fields');
+    }
+    throw Error('request_unconfirmed');
+  }
+  // Only the PostgreSQL COMMIT receipt establishes success; delivery is separate.
+  if (response.status !== 202 || value?.ok !== true || value.source !== 'NFC_CARD' || value.durableSaved !== true ||
+      typeof value.leadId !== 'string' || !idempotencyKey.test(value.leadId)) throw Error('request_unconfirmed');
+  return {leadId: value.leadId, durableSaved: true};
 }
 
 export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attribution, selection, select, lockSelection, event}) {
@@ -117,8 +145,6 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
   const label = submit.textContent;
   try { endpoint = leadEndpoint(endpoint); } catch { endpoint = ''; }
   if (!endpoint) {
-    // Preview never reads or writes personal-data drafts, registers a transport,
-    // or emits form analytics. Keep only the visual product/quantity controls.
     submit.disabled = true;
     form.querySelector('.preview-notice').textContent = unavailable(locale);
     form.onsubmit = e => { e.preventDefault(); };
@@ -129,101 +155,81 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
     return;
   }
   let busy = false, pending = null;
-  // Language switches share the same pending attempt, but other project sites
-  // and differently configured endpoints cannot reuse it.
-  const route = pathname.slice(basePath.length).replace(/^\/en(?=\/|$)/, '').replace(/\/$/, '') || '/';
-  const storageKey = `nfc-pages-v17:${basePath}:${endpoint}:${route}`;
-  const draftKey = storageKey + ':draft';
-  const snapshot = () => ({name: q('name').value, phone: q('phone').value, messenger: q('messenger').value,
-    comment: q('comment').value, consent: q('consent').checked, ...selection()});
-  function restore(values) {
-    if (!values || !products.includes(values.variant) || !quantities.includes(values.quantity)) return;
-    for (const key of ['name', 'phone', 'messenger', 'comment']) if (typeof values[key] === 'string') q(key).value = values[key];
-    q('consent').checked = values.consent === true;
-    select({variant: values.variant, quantity: values.quantity});
+  const storageKey = `nfc-public-attempt:${basePath}:${endpoint}:${pathname.replace(/\/$/, '')}`;
+  // Only opaque IDs and lifecycle state survive reload. No personal fields,
+  // request body or personal-data hash ever enters browser storage.
+  let stored;
+  try { stored = JSON.parse(sessionStorage.getItem(storageKey) || 'null'); } catch {}
+  const recovered = idempotencyKey.test(stored?.key || '') && ['uncertain', 'complete'].includes(stored?.state);
+  let key = recovered ? stored.key : crypto.randomUUID(), inheritedUncertainty = recovered && stored.state === 'uncertain';
+  const newRequest = form.querySelector('[data-new-request]');
+  function remember(state, leadId) {
+    try { sessionStorage.setItem(storageKey, JSON.stringify({key, state, ...(leadId ? {leadId} : {})})); } catch {}
   }
-  function lock() {
-    for (const el of form.elements) if (!['hidden', 'submit', 'button'].includes(el.type)) el.disabled = true;
-    lockSelection(true);
-    note.hidden = false;
-    note.textContent = P('Результат спроби ще не підтверджено. Повторимо ту саму заявку з тими самими даними, щоб не створити дублікат.',
+  const snapshot = () => ({name: q('name').value, phone: q('phone').value, messenger: q('messenger').value,
+    consent: q('consent').checked, ...selection()});
+  function lock(locked) {
+    for (const el of form.elements) if (!['hidden', 'submit', 'button'].includes(el.type)) el.disabled = locked;
+    lockSelection(locked);
+    note.hidden = !locked;
+    if (locked) note.textContent = P('Результат спроби ще не підтверджено. Повторимо ту саму заявку з тими самими даними, щоб не створити дублікат.',
       'The attempt is not confirmed yet. We will retry the same request with the same details to avoid a duplicate.');
   }
   function status(message, state) {
-    result.textContent = message;
-    result.dataset.status = state;
-    result.hidden = false;
-    result.focus();
+    result.textContent = message; result.dataset.status = state; result.hidden = false; result.focus();
   }
-  try { restore(JSON.parse(sessionStorage.getItem(draftKey) || 'null')); } catch {}
-  form.addEventListener('input', () => { if (!pending) try { sessionStorage.setItem(draftKey, JSON.stringify(snapshot())); } catch {} });
+  function completed(leadId, previous = false) {
+    form.dataset.complete = 'true'; submit.hidden = true; submit.disabled = true; note.hidden = true;
+    status((previous ? P('Попередню заявку вже збережено. Нові дані не надсилалися. Номер: ', 'Your previous enquiry is already saved. The new details were not submitted. Reference: ') :
+      P('Дякуємо! Заявку збережено. Деталі погодимо у вибраному месенджері. Номер: ', 'Thank you! Your request is saved. We will agree the details in your selected messenger. Reference: ')) + leadId, previous ? 'existing' : 'success');
+    remember('complete', leadId);
+    if (newRequest) newRequest.hidden = false;
+  }
+  if (newRequest) newRequest.onclick = () => {
+    if (busy || !form.dataset.complete) return;
+    delete form.dataset.complete; pending = null; inheritedUncertainty = false; key = crypto.randomUUID();
+    try { sessionStorage.removeItem(storageKey); } catch {}
+    lock(false); submit.hidden = false; submit.disabled = false; newRequest.hidden = true; result.hidden = true;
+    q('name').focus?.();
+  };
   form.addEventListener('change', e => {
     if (pending) return;
     if (['variant', 'quantity'].includes(e.target.name)) {
       select({variant: q('variant').value, quantity: q('quantity').value});
       event(e.target.name === 'variant' ? 'product_variant_select' : 'quantity_select', selection());
     }
-    try { sessionStorage.setItem(draftKey, JSON.stringify(snapshot())); } catch {}
   });
   form.onsubmit = async e => {
     e.preventDefault();
-    if (!endpoint || busy || form.dataset.complete) return;
+    if (busy || form.dataset.complete) return;
     if (!pending && !form.reportValidity()) return;
-    busy = true;
-    submit.disabled = true;
-    submit.textContent = P('Надсилаємо…', 'Sending…');
-    form.setAttribute('aria-busy', 'true');
+    busy = true; submit.disabled = true; submit.textContent = P('Надсилаємо…', 'Sending…');
+    form.setAttribute('aria-busy', 'true'); result.hidden = true;
     try {
       if (!pending) {
-        const fields = snapshot();
-        const payload = leadPayload({...fields, locale, website: q('website').value}, {basePath, pathname, utm: attribution});
-        const next = {key: crypto.randomUUID(), payload, fields};
-        // Persist before sending. If storage is unavailable, there is no request
-        // whose idempotency key could be lost on reload.
-        localStorage.setItem(storageKey, JSON.stringify(next));
-        pending = next;
+        const payload = leadPayload({...snapshot(), locale, website: q('website').value}, {basePath, pathname, utm: attribution});
+        pending = {key, payload, uncertain: inheritedUncertainty};
+        // Conservative before transport: a page close at any point may hide a COMMIT.
+        remember('uncertain');
       }
-      lock();
+      lock(true);
       const receipt = await submitLead(endpoint, pending);
-      form.dataset.complete = 'true';
-      submit.hidden = true;
-      note.hidden = true;
-      // Keep a committed marker if cleanup fails; never turn durable success
-      // into an apparent failure because browser storage could not be cleared.
-      try { localStorage.setItem(storageKey, JSON.stringify({committed: receipt})); } catch {}
-      try { sessionStorage.removeItem(draftKey); } catch {}
-      status(P('Заявку прийнято. Номер: ', 'Request accepted. Reference: ') + receipt.lead_id, 'success');
+      completed(receipt.leadId);
       event('order_submit_success', selection());
     } catch (error) {
-      status(error.message === 'invalid_fields' ? P('Перевірте ім’я, телефон, месенджер, картку, кількість і згоду.', 'Check your name, phone, messenger, card, quantity and consent.') :
+      if (error.message === 'existing_request') { completed(error.leadId, true); return; }
+      if (!pending?.uncertain && !inheritedUncertainty) {
+        pending = null; lock(false); key = crypto.randomUUID();
+        try { sessionStorage.removeItem(storageKey); } catch {}
+      }
+      status(error.message === 'invalid_fields' ? P('Перевірте ім’я (до 100 символів), телефон, месенджер, картку, кількість і згоду.', 'Check your name (up to 100 characters), phone, messenger, card, quantity and consent.') :
         P('Прийняття заявки не підтверджено. Дані та вибір залишаються у формі. Спробуйте ще раз або зв’яжіться з нами в месенджері.',
           'Request acceptance is not confirmed. Your details and selection remain in the form. Retry or contact us in a messenger.'), 'error');
       event('order_submit_error');
     } finally {
-      busy = false;
-      submit.disabled = !endpoint || !!form.dataset.complete;
-      submit.textContent = label;
-      form.removeAttribute('aria-busy');
+      busy = false; submit.disabled = !!form.dataset.complete; submit.textContent = label; form.removeAttribute('aria-busy');
     }
   };
-  try {
-    const stored = JSON.parse(localStorage.getItem(storageKey) || 'null');
-    if (stored?.committed) {
-      // A completed attempt is not a new form submission and is never replayed.
-      localStorage.removeItem(storageKey);
-    } else if (stored) {
-      const expected = leadPayload({...stored.fields, locale: stored.payload?.language, website: ''},
-        {basePath, pathname: stored.payload?.source_page, utm: stored.payload?.utm});
-      if (JSON.stringify(expected) !== JSON.stringify(stored.payload) || !idempotencyKey.test(stored.key || '')) throw Error('invalid_pending');
-      pending = stored;
-      restore(stored.fields);
-      lock();
-    }
-    submit.disabled = false;
-  } catch {
-    endpoint = '';
-    submit.disabled = true;
-    form.querySelector('.preview-notice').textContent = unavailable(locale);
-  }
-  form.dataset.enhanced = 'true';
+  submit.disabled = false; form.dataset.enhanced = 'true';
+  if (recovered && stored.state === 'complete' && idempotencyKey.test(stored.leadId || '')) completed(stored.leadId, true);
 }

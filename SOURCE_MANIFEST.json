@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
-  "file_count_including_manifest": 233,
+  "file_count_including_manifest": 236,
   "release_source": {
     "handoff_archive_sha256": "9cf61bc26214321d296adeae4c63eb21a5b624bfa9f8849797bcb51c66ff5de0",
     "handoff_manifest": "docs/release/v1.0.0/source-handoff-manifest.json",
@@ -38,8 +38,8 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "bytes": 6706,
-      "sha256": "b398744c08b9f956b5bc33a2bbc920d8fcb92f3f0a8b801f4d7d02603115a775"
+      "bytes": 6718,
+      "sha256": "f69587d96fce3ff83ae5ad301bee55d88c0cb765b059efe3fc522b786ebc5dfc"
     },
     {
       "path": ".gitignore",
@@ -53,8 +53,8 @@
     },
     {
       "path": "DEPLOYMENT_BLOCKERS.md",
-      "bytes": 3616,
-      "sha256": "f4ee146393f50d910d5900750a5b5a05dd2b296464fa16d1c0747b3e519aa186"
+      "bytes": 3979,
+      "sha256": "b7361fd2ab282b866e1e85a3a20313f367a896f6e0001d19f730aeff57e1dbde"
     },
     {
       "path": "Dockerfile",
@@ -77,9 +77,14 @@
       "sha256": "90fe3f6211f0da5dbea7688fc4abb52dc50f4aa28692401f88bcde449fc6468a"
     },
     {
+      "path": "PUBLIC_LAUNCH.md",
+      "bytes": 4625,
+      "sha256": "f515c2ddd6d4cf8340affac8592929d9cce0a65aadfc47047096f5e1358b0c84"
+    },
+    {
       "path": "README.md",
-      "bytes": 5671,
-      "sha256": "7741c83d88ec6d8eacce267d360e9e8facb96461f860ddbf9ded8f633eb178eb"
+      "bytes": 5954,
+      "sha256": "534cc90c4b304030e09d486ea5c2a8e87cc7449a694d42371baf66446986e1f7"
     },
     {
       "path": "REQUIRED_ENVIRONMENT_VARIABLES.md",
@@ -468,8 +473,8 @@
     },
     {
       "path": "scripts/release_guard.py",
-      "bytes": 14267,
-      "sha256": "775941954b9b6b7ad4b5faff9fc0c886474db50f92c19f5bbca47afdcb95db5b"
+      "bytes": 14630,
+      "sha256": "698b62a37ddf3f335a81041137453a45e45baee32c629713a98dbb062928e4da"
     },
     {
       "path": "scripts/run_tests.py",
@@ -553,8 +558,8 @@
     },
     {
       "path": "server/publication.py",
-      "bytes": 3925,
-      "sha256": "b52f3912153118a5a660e4a134ff30d9b96802254b284c10253769e8bd12b65f"
+      "bytes": 3988,
+      "sha256": "ae1fbd02de7076aedcf23e9c2c181b91a3247050a8263cc8d912084353c8f8c2"
     },
     {
       "path": "server/review_auth.py",
@@ -673,13 +678,13 @@
     },
     {
       "path": "src/app.js",
-      "bytes": 26140,
-      "sha256": "a08fb4ea44ec0f9f837a779a14ae7fd62a3eca5fcb9556ddaf7b133e588fac08"
+      "bytes": 26148,
+      "sha256": "b266d3a94d3886bfb096bce9c57aa5cc80c91e15955c58c24f2cebccc5e673d3"
     },
     {
       "path": "src/build.mjs",
-      "bytes": 38534,
-      "sha256": "446553a9aa045a45970865923e9a2b8200cb6acec2c5f682ce40d4aa79418539"
+      "bytes": 39097,
+      "sha256": "29a40386111f70d655717fb5cae1ed86e6bd0a6000101016021f8efcc934c0d7"
     },
     {
       "path": "src/commerce-view.mjs",
@@ -693,8 +698,8 @@
     },
     {
       "path": "src/commerce.js",
-      "bytes": 17217,
-      "sha256": "2c73079870674aad4bb8e561df59f681c3e8ff68c19175f35153afae36e04b1c"
+      "bytes": 17227,
+      "sha256": "21880393263401e0954862d090b654557216d394c02c944f8f6744f30b768371"
     },
     {
       "path": "src/commerce.json",
@@ -1068,18 +1073,23 @@
     },
     {
       "path": "src/pages.mjs",
-      "bytes": 14827,
-      "sha256": "27ff96108f361de5ce5d07e71c688ee1882680a462ea24bcf13122c45b2f98be"
+      "bytes": 16592,
+      "sha256": "220fe312215a2a6070152d48b650290b3952ec266e5042616147d7638875004c"
+    },
+    {
+      "path": "src/public-legal.mjs",
+      "bytes": 8097,
+      "sha256": "c8dc330121bb57be80f1143a75d9fdf3f94e8addb4fc84c08bc2df3ac4754d88"
     },
     {
       "path": "src/publication-approval.json",
-      "bytes": 162,
-      "sha256": "f60baa4dd3adc4185952b5c207aac55b08766abbbc5349509135e1b0fa1be4f3"
+      "bytes": 541,
+      "sha256": "b700a62005dc2bde35ca5e1179e044ba8e3224dc99f7bac1c8d03534cc8c9b24"
     },
     {
       "path": "src/publication.mjs",
-      "bytes": 5168,
-      "sha256": "6facf95c91e60da8000a2ec2f3f4c18c4034f763ca553cfd96cea91665e4297c"
+      "bytes": 6180,
+      "sha256": "d1a75e9c2686d9a0c661a08346c52b6200785b59ab88ffed76b26595543e0f15"
     },
     {
       "path": "src/redirects.json",
@@ -1138,8 +1148,13 @@
     },
     {
       "path": "tests/test_pages_v17.py",
-      "bytes": 24248,
-      "sha256": "f6541b71e82ed360053288801ecda29368fabdb1ea5645f24458699b598cc95d"
+      "bytes": 28523,
+      "sha256": "c3ff5327efc40dc4bd20f4907d904fd3535265dfaa4cb9a44ba2e9de188b88be"
+    },
+    {
+      "path": "tests/test_public_launch.py",
+      "bytes": 3828,
+      "sha256": "c87f0f3d666219b35a2c42361868d0e7d5f3fc651c40c2472545dad098c3d200"
     },
     {
       "path": "tests/test_publication.py",
