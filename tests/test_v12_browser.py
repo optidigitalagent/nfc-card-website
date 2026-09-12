@@ -38,6 +38,10 @@ def visible_images(page):
 def ready(page):
     page.evaluate('document.fonts.ready')
     if page.locator('[data-commerce-form]').count():page.wait_for_selector('[data-commerce-form][data-enhanced=true]')
+    if page.locator('[data-review-form]').count():
+        # Review enhancement waits for upload options; document load alone does
+        # not mean the custom submit/validation handler has been installed.
+        page.wait_for_function("() => { const form = document.querySelector('[data-review-form]'); return form.noValidate && typeof form.onsubmit === 'function'; }")
     if page.locator('[data-admin-loading]').count():expect(page.locator('[data-admin-loading]')).to_be_hidden()
     visible_images(page)
 def geometry(page):return page.evaluate('''()=>({width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth,h1:document.querySelectorAll('h1').length,missingAlt:[...document.images].filter(e=>!e.hasAttribute('alt')).length,zeroReviews:!document.querySelector('#client-reviews,a[href="#client-reviews"]'),brokenImages:[...document.images].filter(e=>e.getBoundingClientRect().width>0&&e.complete&&e.currentSrc&&e.naturalWidth===0).map(e=>e.currentSrc),galleryDisplay:document.querySelector('.commerce-product-layout')?getComputedStyle(document.querySelector('.commerce-product-layout')).display:null})''')
@@ -148,7 +152,7 @@ def test_commerce_gallery_keyboard_sticky_price_and_retry_isolation(web,browser)
 @pytest.mark.parametrize('locale',['uk','en'])
 def test_review_public_pending_form_and_private_admin(web,browser,locale):
     origin,server=web;prefix='/en' if locale=='en' else '';context=browser.new_context(viewport={'width':390,'height':844},reduced_motion='reduce');block_external(context,origin);page=context.new_page();errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
-    page.goto(origin+prefix+'/reviews/new');page.locator('.review-form [type=submit]').click();expect(page.locator('.error-summary')).to_be_visible();page.locator('#review-rating-1').press('Space');page.keyboard.press('ArrowRight');page.keyboard.press('ArrowRight');expect(page.locator('#review-rating-3')).to_be_checked()
+    page.goto(origin+prefix+'/reviews/new');ready(page);page.locator('.review-form [type=submit]').click();expect(page.locator('.error-summary')).to_be_visible();page.locator('#review-rating-1').press('Space');page.keyboard.press('ArrowRight');page.keyboard.press('ArrowRight');expect(page.locator('#review-rating-3')).to_be_checked()
     page.locator('#review-text').fill('Technical automated QA in an isolated database; not a customer review.');page.locator('#review-instagram').fill('@technical_qa');page.locator('#review-consent').check()
     page.locator('#review-image').set_input_files({'name':'synthetic-private-proof.png','mimeType':'image/png','buffer':photo()})
     def lose_response(route):route.fetch();route.abort()
