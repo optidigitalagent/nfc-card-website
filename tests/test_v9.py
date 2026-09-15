@@ -95,18 +95,20 @@ def test_public_media_exact_allowlist_and_original_hashes():
         assert (ROOT/item['source']).resolve().is_relative_to((ROOT/'src/media').resolve())
         assert hashlib.sha256((ROOT/item['source']).read_bytes()).hexdigest()==item['sha256']
         if item['url'].removeprefix('/assets/media/') not in baseline:
-            assert item['requirements_source'].startswith('v13')
+            assert item['requirements_source'].startswith('v13') or ('/2026-09/' in item['url'] and item['requirements_source']=='Owner media replacement 2026-09-15')
             assert item['provenance'] in {'user_provided_business_asset','verified_official_business_asset','ai_generated_original'}
 
 @pytest.mark.parametrize('prefix',['','/en'])
 def test_gallery_provenance_and_visible_faq_match_schema(prefix):
     page=native(prefix+'/solutions/review-card')
     figures=page.select('[data-slide]')
-    assert len(figures)==5
-    assert [f.select_one('img')['src'].split('/')[-1][:2] for f in figures]==['05','03','01','02','04']
+    assert len(figures)==13
+    assert [f.select_one('img')['src'].split('/')[-1][:2] for f in figures[:2]]==['05','01']
+    assert len(page.select('[data-slide] video'))==3
+    assert not any(name in str(figures) for name in ['02-review-card-real-front','03-review-card-real-in-hand','04-review-card-real-back'])
     assert page.select_one('.gallery-caption').get_text(strip=True)
     assert figures[1].select_one('img')['data-media-provenance']=='user_provided_business_asset'
-    assert figures[2].select_one('img')['data-media-claim-role']=='product_design_render'
+    assert figures[1].select_one('img')['data-media-claim-role']=='product_design_render'
     assert page.select_one('#product-details') and not page.select_one('#product-details').has_attr('open')
     assert len(page.select('.faq-list details'))>=4
     schemas=[json.loads(s.string) for s in page.select('script[type="application/ld+json"]')]

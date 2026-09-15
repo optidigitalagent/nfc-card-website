@@ -35,6 +35,18 @@
 
 .image-lightbox[data-zoomed=true] .lightbox-scroll{touch-action:pan-x pan-y pinch-zoom}
 
+/* Product videos share the existing frame; native controls stay unobstructed. */
+.commerce-gallery video{object-fit:contain;background:#181b1f}
+.gallery-frame[data-active-kind=video] .gallery-open{inset:8px 8px auto auto;width:44px;height:44px;cursor:pointer}
+.gallery-frame[data-active-kind=video] .gallery-enlarge{inset:2px;pointer-events:none}
+.thumb-video{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:#181b1fe8;color:#fff;font-size:12px}
+.lightbox-scroll video{display:block;width:100%;height:calc(100dvh - 218px);max-height:740px;object-fit:contain}
+.lightbox-scroll [hidden]{display:none!important}
+.image-lightbox[data-media-kind=video] [data-lightbox-zoom]{visibility:hidden}
+
 @media(max-width:768px){html[lang=en] .final-conversion h2{font-size:clamp(2.125rem,9.4vw,2.5rem)}}
 
 @media(max-width:768px){.about-page .final-conversion h2{font-size:clamp(1.875rem,9.4vw,2.5rem)}}
+
+.lightbox-caption{flex-shrink:0;margin:0;padding:8px 16px;color:#41474f;font-size:.8rem;line-height:1.4;max-height:84px;overflow:auto}
+.lightbox-scroll img,.lightbox-scroll video{height:calc(100dvh - 290px)}

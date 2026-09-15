@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
-  "file_count_including_manifest": 236,
+  "file_count_including_manifest": 280,
   "release_source": {
     "handoff_archive_sha256": "9cf61bc26214321d296adeae4c63eb21a5b624bfa9f8849797bcb51c66ff5de0",
     "handoff_manifest": "docs/release/v1.0.0/source-handoff-manifest.json",
@@ -678,18 +678,18 @@
     },
     {
       "path": "src/app.js",
-      "bytes": 26148,
-      "sha256": "b266d3a94d3886bfb096bce9c57aa5cc80c91e15955c58c24f2cebccc5e673d3"
+      "bytes": 26163,
+      "sha256": "d00734a5188babf25ca949bdab71fb43097e27703436969daaa057a064b51cca"
     },
     {
       "path": "src/build.mjs",
-      "bytes": 39097,
-      "sha256": "29a40386111f70d655717fb5cae1ed86e6bd0a6000101016021f8efcc934c0d7"
+      "bytes": 39138,
+      "sha256": "cd90a8c4fb7c833a347579451d512d72b9f4a14d43fb081815534e9804e2eeac"
     },
     {
       "path": "src/commerce-view.mjs",
-      "bytes": 22081,
-      "sha256": "7c6e8ef9c52f66e33fd6297a95b3c6bf8a0f879a0dbca8a561e2820e92c76c73"
+      "bytes": 22290,
+      "sha256": "4e2ae544a411d8b4212bc88c2b5a9301fd5aec03c11dd71a770c429e337c70c5"
     },
     {
       "path": "src/commerce.css",
@@ -698,8 +698,8 @@
     },
     {
       "path": "src/commerce.js",
-      "bytes": 17227,
-      "sha256": "21880393263401e0954862d090b654557216d394c02c944f8f6744f30b768371"
+      "bytes": 17279,
+      "sha256": "fd5f325c47700267191b0a04aa0f63754e81df0e3bac3affbf0f374546c672bf"
     },
     {
       "path": "src/commerce.json",
@@ -718,13 +718,13 @@
     },
     {
       "path": "src/gallery-view.mjs",
-      "bytes": 3564,
-      "sha256": "9869ecf0128584389c18bc41e0b21d4b27dbc92983aac31fd3bf4222a32e26d9"
+      "bytes": 5010,
+      "sha256": "dd6cbde2dba1decc41ef93ca2f526228969d31b15d1d7e6db70745abd7870746"
     },
     {
       "path": "src/gallery.js",
-      "bytes": 5898,
-      "sha256": "b31882aba0c5b69f8ef2780f2342e74e487c75697e3dccca0e760ca0e766b875"
+      "bytes": 7974,
+      "sha256": "b62c64ebce61e72518de7c382bad9534d10feec78a5af58b7fb5a9e8592730a1"
     },
     {
       "path": "src/licenses/messenger-icons.json",
@@ -738,8 +738,223 @@
     },
     {
       "path": "src/media-manifest.json",
-      "bytes": 75181,
-      "sha256": "00c822c132db231486446b871b06a01daf73d16f9e7fed0c9b8a8c94a4e6fe46"
+      "bytes": 117483,
+      "sha256": "9256c50dabdbfb398f3e7ce22128fdb3c8c5e5e338d2c5c2af9fcda21a7fce3a"
+    },
+    {
+      "path": "src/media/2026-09/review-card-back-160.webp",
+      "bytes": 3738,
+      "sha256": "2de1a859f1ebb7219858fbeed8ec3999bdd3bc4325ca1ecc554f738dd02b8364"
+    },
+    {
+      "path": "src/media/2026-09/review-card-back-480.webp",
+      "bytes": 24892,
+      "sha256": "61c431151368097041b1a5e929992333d26b7bca616c492d7d1aec5e237e2944"
+    },
+    {
+      "path": "src/media/2026-09/review-card-back-800.webp",
+      "bytes": 49930,
+      "sha256": "17db4176ed2d5e663e10713b868418c777d67389c01a74c6a3ee207de3ec0397"
+    },
+    {
+      "path": "src/media/2026-09/review-card-back.webp",
+      "bytes": 86724,
+      "sha256": "1b9ed5247c961ca78307f313a1cb48ceef8b47a56fbb4602de61930fd5771e3f"
+    },
+    {
+      "path": "src/media/2026-09/review-card-business-benefits-160.webp",
+      "bytes": 9952,
+      "sha256": "82b30b2acf57f83baf657f42ff671af9520193124899f52f920b91fcefd2aaab"
+    },
+    {
+      "path": "src/media/2026-09/review-card-business-benefits-480.webp",
+      "bytes": 55396,
+      "sha256": "873505c31007b3d00926452d01c7635feba10e4401cbe8eab5a6d954e5bd6603"
+    },
+    {
+      "path": "src/media/2026-09/review-card-business-benefits-800.webp",
+      "bytes": 105716,
+      "sha256": "5a936bceec38ec7df16e32f58c3c50a9c191e6007bf2d65db2e243e0827bf3d1"
+    },
+    {
+      "path": "src/media/2026-09/review-card-business-benefits.webp",
+      "bytes": 152040,
+      "sha256": "91e3ecec6d735cc98700d4875a8a56588c98c1302605171eb14e750b4b43d643"
+    },
+    {
+      "path": "src/media/2026-09/review-card-edge-160.webp",
+      "bytes": 3982,
+      "sha256": "ef5a866879ab6564880600b3d708e45ea934dddbbfa1a32fb0b5573de7a7a72e"
+    },
+    {
+      "path": "src/media/2026-09/review-card-edge-480.webp",
+      "bytes": 27082,
+      "sha256": "ce1682479f32a20882134c7c61a32b6820a5c46aed577395fc62a4f58497e570"
+    },
+    {
+      "path": "src/media/2026-09/review-card-edge-800.webp",
+      "bytes": 53704,
+      "sha256": "939357a00123d7f045c78414dec6b8868ea67790233e6a0f7b72fff58f4861ab"
+    },
+    {
+      "path": "src/media/2026-09/review-card-edge.webp",
+      "bytes": 93022,
+      "sha256": "86238a5203d58f46d1a95ca84ed8d15c16d049bcb592f538285d4dba0e2d0637"
+    },
+    {
+      "path": "src/media/2026-09/review-card-front-160.webp",
+      "bytes": 4838,
+      "sha256": "15bb8716bed8d1b451dece7794463c167cf9b8bd758b268738b6094dbb3f4e1e"
+    },
+    {
+      "path": "src/media/2026-09/review-card-front-480.webp",
+      "bytes": 30186,
+      "sha256": "d25b0ace68428be98d3d7d0a638ab0f41e915ef39359c823a383ae0b95efb24c"
+    },
+    {
+      "path": "src/media/2026-09/review-card-front-800.webp",
+      "bytes": 60526,
+      "sha256": "5adf1e669da9b3f02e2f080d021d7806406b29af888640d6eacd434a56882e8a"
+    },
+    {
+      "path": "src/media/2026-09/review-card-front.webp",
+      "bytes": 108396,
+      "sha256": "84cfa4624b0f4e0d404bb5fdf69b4358aef4e89eb0bdb333c8e7962e98d37647"
+    },
+    {
+      "path": "src/media/2026-09/review-card-how-it-works-160.webp",
+      "bytes": 9392,
+      "sha256": "47fa1833d33cebc77a307d74e09c3dfa5521b49e0d3fc7bea61b450ecf2613c3"
+    },
+    {
+      "path": "src/media/2026-09/review-card-how-it-works-480.webp",
+      "bytes": 51834,
+      "sha256": "fdf3a268658432b172b329a1f5f1d1150cafe28583e50eb072d82929025b0c2b"
+    },
+    {
+      "path": "src/media/2026-09/review-card-how-it-works-800.webp",
+      "bytes": 100180,
+      "sha256": "9e354b1fc8e77d1864943f267922c5c07692dac1af17c81ab714fc9cbcfdf8a3"
+    },
+    {
+      "path": "src/media/2026-09/review-card-how-it-works.webp",
+      "bytes": 143946,
+      "sha256": "ec86d9d1b2c8803508deb2786056a4941d3af0c630c9ae02b6e8cfe51de856da"
+    },
+    {
+      "path": "src/media/2026-09/review-card-in-hand-160.webp",
+      "bytes": 6516,
+      "sha256": "827df36457957c46f88d845698bd7091d6574e41048015b536d1662c5fb74ed9"
+    },
+    {
+      "path": "src/media/2026-09/review-card-in-hand-480.webp",
+      "bytes": 37546,
+      "sha256": "31286aeab53ec80da563134e49b76669709be956e0e54422b96be00f906bb69d"
+    },
+    {
+      "path": "src/media/2026-09/review-card-in-hand-800.webp",
+      "bytes": 94788,
+      "sha256": "4f32414d4324efaae386afaa85afc76d406a95b50c90867cb5c88744fd57a46e"
+    },
+    {
+      "path": "src/media/2026-09/review-card-in-hand.webp",
+      "bytes": 379820,
+      "sha256": "a60fe94e3c1e30b3728538d80a19d902cd19c48e3aedb28e84790c5e5bf5e1a6"
+    },
+    {
+      "path": "src/media/2026-09/review-card-overview-160.webp",
+      "bytes": 9758,
+      "sha256": "94b37e5f0ee5e9e5c92ddd78f0564c8a8d493743119d4cc21de37d75bb462692"
+    },
+    {
+      "path": "src/media/2026-09/review-card-overview-480.webp",
+      "bytes": 53926,
+      "sha256": "2a0b906b33a9c573477bc4e773d45af1d70355b80425a1c17f9eb63f85ace89f"
+    },
+    {
+      "path": "src/media/2026-09/review-card-overview-800.webp",
+      "bytes": 103366,
+      "sha256": "a460cd049970c2d87faf289936ee048ec4a6647c54fce6ff8b505835e74b380c"
+    },
+    {
+      "path": "src/media/2026-09/review-card-overview.webp",
+      "bytes": 150078,
+      "sha256": "8c1a87236c02d9024823f445e3d4f6a430b8056c92dc3bd1d2eaaabd8b98c74a"
+    },
+    {
+      "path": "src/media/2026-09/review-card-review-context-160.webp",
+      "bytes": 10390,
+      "sha256": "e040b5c8fd5dc18573f99d53ec22c003e1634372399fd4707ecd416b4ce0a115"
+    },
+    {
+      "path": "src/media/2026-09/review-card-review-context-480.webp",
+      "bytes": 56956,
+      "sha256": "dee10e39ad915080b35234330b8b4d2a59424b4b8b5f1be3c9fc3382a6f643ba"
+    },
+    {
+      "path": "src/media/2026-09/review-card-review-context-800.webp",
+      "bytes": 109542,
+      "sha256": "761c5ae933e7da97f80ecf2072f46c4ecb49841b5a62e4772ac16afad6041377"
+    },
+    {
+      "path": "src/media/2026-09/review-card-review-context.webp",
+      "bytes": 157000,
+      "sha256": "af4370212b2338ca6332cc6e99ad052a636362ba84d1503303734f37c94152ea"
+    },
+    {
+      "path": "src/media/2026-09/review-card-video-1-poster-160.webp",
+      "bytes": 6702,
+      "sha256": "97123db84999717a217432791f910a8d5315c56d5982d308eb3540498303546d"
+    },
+    {
+      "path": "src/media/2026-09/review-card-video-1-poster.webp",
+      "bytes": 22396,
+      "sha256": "21022db9cdaa2769e5b062fd3d5c0c88cba9adc95f1e4248e679db1a03154806"
+    },
+    {
+      "path": "src/media/2026-09/review-card-video-1.mp4",
+      "bytes": 1952316,
+      "sha256": "261a8e3f791d84de81c45bf4de410176d96492ec5b0d1758eb050b73b1a855ae"
+    },
+    {
+      "path": "src/media/2026-09/review-card-video-2-poster-160.webp",
+      "bytes": 3070,
+      "sha256": "55b570970b391bc91a253546e39bad83896c8ce798d0a0907afc852fdc0372a1"
+    },
+    {
+      "path": "src/media/2026-09/review-card-video-2-poster.webp",
+      "bytes": 10020,
+      "sha256": "116b4228010387d894e6713c618a6e62c22bc79a0640a0611fd31f7314d8b4aa"
+    },
+    {
+      "path": "src/media/2026-09/review-card-video-2.mp4",
+      "bytes": 1056372,
+      "sha256": "a3394dcdd37c2e0dcdd78438ea669090c0ddc96f59e13ec049e4755d37456a03"
+    },
+    {
+      "path": "src/media/2026-09/review-card-video-3-en.vtt",
+      "bytes": 745,
+      "sha256": "4c78e9541a74e3b8c7afd4e47890e3c3617cbc150799c9833ca6746e0975d8ae"
+    },
+    {
+      "path": "src/media/2026-09/review-card-video-3-poster-160.webp",
+      "bytes": 4524,
+      "sha256": "8bcba1dc868e8bf34bb384eebb5484401ee3c916c6612b0d5b0459287d56b5a4"
+    },
+    {
+      "path": "src/media/2026-09/review-card-video-3-poster.webp",
+      "bytes": 15584,
+      "sha256": "e7e042144d2052a387f2ef700e124d2e395f1d5ede3f2208eb99ff8818776502"
+    },
+    {
+      "path": "src/media/2026-09/review-card-video-3-uk.vtt",
+      "bytes": 1159,
+      "sha256": "e81fb4daac7da46ee23ff1b5ba08538600f33cc02f65092d922deb880f7e9b49"
+    },
+    {
+      "path": "src/media/2026-09/review-card-video-3.mp4",
+      "bytes": 5662560,
+      "sha256": "015bab847694482d6d8682284797f7ec9eb41f00e1539574563594dbb28dd4a4"
     },
     {
       "path": "src/media/austria-1-poster.jpg",
@@ -1083,8 +1298,8 @@
     },
     {
       "path": "src/publication-approval.json",
-      "bytes": 541,
-      "sha256": "b700a62005dc2bde35ca5e1179e044ba8e3224dc99f7bac1c8d03534cc8c9b24"
+      "bytes": 630,
+      "sha256": "a120fc82a9bbabc2c1c1f7adcc85c2cb4ade2be7c185557ac4aa0c65c3df07f4"
     },
     {
       "path": "src/publication.mjs",
@@ -1128,13 +1343,18 @@
     },
     {
       "path": "src/visual-v13.css",
-      "bytes": 11429,
-      "sha256": "1106dd4027984b7d27007f1355c9334336c4ea2965737bf64f0c0ad35ecda482"
+      "bytes": 12428,
+      "sha256": "83d1638b8d9dfa1a5a975ae6d1366b6bfae60c6165f9c901538cd6317df26b02"
     },
     {
       "path": "tests/browser_qa.py",
       "bytes": 19366,
       "sha256": "85a866dd6970a2b151375c4748b3df9ce0b3ef1573df7a7de5e29f676ec4d236"
+    },
+    {
+      "path": "tests/test_gallery_media.py",
+      "bytes": 4114,
+      "sha256": "b9dbbba81d55933479415997927dabdf278272ecabbac6db7bcc86c78d458d70"
     },
     {
       "path": "tests/test_http.py",
@@ -1173,8 +1393,8 @@
     },
     {
       "path": "tests/test_v12_browser.py",
-      "bytes": 31125,
-      "sha256": "cbefcacdc5d9bed3caf1ec0ee424c47c764aba893cbc14a6bc4191179c923ee9"
+      "bytes": 31128,
+      "sha256": "07558a8db9d3b57c0cc5e5ad5b5a505ac28a988506140101dee41bd2c55d265d"
     },
     {
       "path": "tests/test_v12_reviews.py",
@@ -1183,18 +1403,18 @@
     },
     {
       "path": "tests/test_v13.py",
-      "bytes": 16413,
-      "sha256": "8397732651dd332314074e127344c02b998c92f8b9dfe083f8237377da9bb1f5"
+      "bytes": 16414,
+      "sha256": "0579fc2277624b4e7c7d8331ea5d81c54093bf3915fd09460382de3e19977dd9"
     },
     {
       "path": "tests/test_v13_browser.py",
-      "bytes": 20330,
-      "sha256": "fa22b4b0cf0fda3dd6f61bff48ece2bdb42f434d02c331c19c31d3e70187feb3"
+      "bytes": 20331,
+      "sha256": "7b6b1a2ec85983c4c855bd9dc081168f356e09a4b5f9a9ee63a65fb61df80e42"
     },
     {
       "path": "tests/test_v9.py",
-      "bytes": 7561,
-      "sha256": "1236e57ab09251cb05a42083375ea5972d0127c1cb5638cf5980425d8e1092d7"
+      "bytes": 7846,
+      "sha256": "d5cfddb77b1abcae3b34466feef183ea53a95500357d38b93992b3250316614b"
     }
   ]
 }

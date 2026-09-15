@@ -233,7 +233,7 @@ def test_final_cta_analytics_follow_the_actual_destination(prefix):
 
 
 @pytest.mark.parametrize('prefix', ['', '/en'])
-@pytest.mark.parametrize('variant,count', [('standard', 5), ('branded', 3)])
+@pytest.mark.parametrize('variant,count', [('standard', 13), ('branded', 3)])
 def test_marketplace_gallery_has_real_thumbnail_buttons_and_shared_lightbox(prefix, variant, count):
     path = prefix + '/solutions/' + ('review-card' if variant == 'standard' else 'branded-review-card')
     soup = page(path)
@@ -250,7 +250,7 @@ def test_marketplace_gallery_has_real_thumbnail_buttons_and_shared_lightbox(pref
             assert '-160.webp' in img['src']
             with Image.open(SITE / img['src'].lstrip('/')) as decoded:
                 # Derivative suffixes are responsive widths; portrait height keeps its ratio.
-                assert decoded.width == 160 and decoded.height <= 214
+                assert decoded.width == 160 and decoded.height <= 285
     dialog = soup.select_one('dialog.image-lightbox')
     assert dialog and dialog.get('aria-label')
     assert dialog.select_one('[data-lightbox-prev]') and dialog.select_one('[data-lightbox-next]')

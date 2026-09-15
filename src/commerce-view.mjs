@@ -4,7 +4,7 @@ import messengerIcons from './messenger-icons.json' with {type:'json'};
 import {canonicalQuote,priceText} from './display.mjs';
 export const productRoute=variant=>'/solutions/'+(variant==='branded'?'branded-review-card':'review-card');
 export const productNames={standard:'Review Card',branded:'Branded Review Card'};
-export const galleries={standard:['05-promo-direct-review-form.webp','03-review-card-real-in-hand.webp','01-review-card-design-render.webp','02-review-card-real-front.webp','04-review-card-real-back.webp'],branded:['branded-review-card-neutral-placeholder.svg','03-review-card-real-in-hand.webp','04-review-card-real-back.webp']};
+export const galleries={standard:['05-promo-direct-review-form.webp','01-review-card-design-render.webp','review-card-front.webp','review-card-back.webp','review-card-edge.webp','review-card-in-hand.webp','review-card-video-1.mp4','review-card-video-2.mp4','review-card-video-3.mp4','review-card-overview.webp','review-card-review-context.webp','review-card-how-it-works.webp','review-card-business-benefits.webp'],branded:['branded-review-card-neutral-placeholder.svg','03-review-card-real-in-hand.webp','04-review-card-real-back.webp']};
 export function commerceViews({locale,esc,picture,asset}){
  const P=(ua,en)=>locale==='uk'?ua:en, url=p=>(locale==='en'?'/en':'')+(p==='/'&&locale==='en'?'':p);
  const price=(variant,q)=>priceText(canonicalQuote(variant,q),locale);

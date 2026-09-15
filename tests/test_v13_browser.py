@@ -35,7 +35,7 @@ def save(name,rows,start):
 
 
 @pytest.mark.parametrize('width',[320,390,1440])
-@pytest.mark.parametrize('variant,count',[('standard',5),('branded',3)])
+@pytest.mark.parametrize('variant,count',[('standard',13),('branded',3)])
 def test_marketplace_rail_lightbox_keyboard_scroll_and_source(web,browser,width,variant,count):
     origin,_=web;start=revision();rows=[]
     for locale in ['uk','en']:
