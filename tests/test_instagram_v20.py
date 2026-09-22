@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
     "locale,expected",
     [
         ("uk", [
-            "Готова фізична NFC-картка для бізнесу",
+            "NFC Instagram Card працює за тим самим принципом, що й NFC Review Card",
             "Що стає простішим",
             "Від посилання до готової картки",
             "Що входить",
@@ -26,7 +26,7 @@ ROOT = Path(__file__).resolve().parents[1]
             "NFC Review Card відкриває форму відгуку конкретної Google-точки",
         ]),
         ("en", [
-            "A ready-to-use physical NFC card for businesses",
+            "NFC Instagram Card works the same way as NFC Review Card",
             "What becomes easier",
             "From your link to a ready-to-use card",
             "What is included",
@@ -77,12 +77,13 @@ def test_commercial_mechanism_requires_notification_action(source):
         assert phrase in step
 
 
-def test_placeholder_gallery_has_no_misleading_zoom_control(source):
+def test_approved_gallery_has_five_images_and_zoom_control(source):
     site = build(source)
     for relative in ["solutions/instagram-card/index.html", "en/solutions/instagram-card/index.html"]:
         soup = BeautifulSoup((site / relative).read_text("utf-8"), "html.parser")
-        assert len(soup.select("[data-placeholder]")) >= 6
-        assert not soup.select(".gallery-open,[data-zoom]")
+        assert not soup.select("[data-placeholder]")
+        assert len(soup.select("[data-slide]")) == 5
+        assert len(soup.select(".gallery-open,[data-zoom]")) == 1
 
 
 def test_repository_scoped_release_policy_is_persistent():

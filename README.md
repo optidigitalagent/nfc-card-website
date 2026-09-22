@@ -13,16 +13,19 @@ No additional Railway service, bucket or worker is needed.
 
 ## NFC Instagram Card
 
-The v20 corrective release adds **NFC Instagram Card** (ready-made only,
-1 = 1,500 UAH; 2 = 2,600 UAH), with UA/EN commercial and informational pages.
-Product photos are explicitly labelled placeholders; founder video remains disabled.
-Existing Review Card offers and media remain intact.
+The v22 release keeps **NFC Instagram Card** ready-made only (1 = 1,500 UAH;
+2 = 2,600 UAH) and refines its UA/EN commercial and informational copy. Its
+catalogue and product gallery use five owner-supplied approved photos/renders in
+responsive WebP/AVIF formats; one honest informational placeholder remains for a
+future phone-profile image. Founder video remains disabled. Existing Review Card
+offers and media remain intact.
 
 See [Instagram v20 implementation and acceptance](refinements/instagram-v20/IMPLEMENTATION_AND_ACCEPTANCE.md),
 [gateway contract](refinements/instagram-v20/GATEWAY_CONTRACT.md),
 [v20 rollback](refinements/instagram-v20/ROLLBACK.md), the preserved
 [v18 evidence](refinements/instagram-v18/ACCEPTANCE_REPORT.md), and the
 [historical v18 form contract](refinements/instagram-v18/FORM_AND_PAYLOAD_CONTRACT.md).
+The current evidence is under `refinements/instagram-v22/`.
 The existing lead gateway accepts the additive Instagram contract while preserving
 the iADDS and Review Card contracts; no new infrastructure is required.
 

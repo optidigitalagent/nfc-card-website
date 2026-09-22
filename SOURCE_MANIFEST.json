@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
-  "file_count_including_manifest": 330,
+  "file_count_including_manifest": 391,
   "release_source": {
     "handoff_archive_sha256": "9cf61bc26214321d296adeae4c63eb21a5b624bfa9f8849797bcb51c66ff5de0",
     "handoff_manifest": "docs/release/v1.0.0/source-handoff-manifest.json",
@@ -88,8 +88,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6830,
-      "sha256": "4815ac35a0e6587cf5a2b6bd2b362b9d413de21b813dfe489c792708970c9ad9"
+      "bytes": 7029,
+      "sha256": "15147a1f2ab86b2fd651b9945bca65f30f61a4e60b999ca29c9184f929657404"
     },
     {
       "path": "REQUIRED_ENVIRONMENT_VARIABLES.md",
@@ -402,6 +402,101 @@
       "sha256": "e13324d66b5ce161cd6777d7170836beba1e37b2845d8bc267cbf4e2b07aad25"
     },
     {
+      "path": "refinements/instagram-v22/BANNER_ALIGNMENT.md",
+      "bytes": 556,
+      "sha256": "9c14954103cb72bc96dbade079c6ceadfc61fa23e4fae9278d7aafce4ea28707"
+    },
+    {
+      "path": "refinements/instagram-v22/BASELINE.md",
+      "bytes": 892,
+      "sha256": "a671a72d48fae9916c288798f8e8a2d533b139f0fcb8aa83c81077d82b4eb691"
+    },
+    {
+      "path": "refinements/instagram-v22/BROWSER_QA_MATRIX.md",
+      "bytes": 1144,
+      "sha256": "a4f31dca30ebc90a67def380352938b54c89a796436db489f2838451143589df"
+    },
+    {
+      "path": "refinements/instagram-v22/CONTENT_BEFORE_AFTER.md",
+      "bytes": 1283,
+      "sha256": "13e24e4715e65d1b428b460f4d882ec3750d7c9f1890df525dcf69cc77c22090"
+    },
+    {
+      "path": "refinements/instagram-v22/CRITIC_FINDINGS.md",
+      "bytes": 1902,
+      "sha256": "32ef07b9278c4b60580b9aa0d56dc30b7ef561d3635ad08d947428dfd66f4afd"
+    },
+    {
+      "path": "refinements/instagram-v22/DEPLOYMENT_REPORT.md",
+      "bytes": 743,
+      "sha256": "923dfd84b151cf8e21e87ef83248101c674975db9d128bf64511eaadc5eadb3a"
+    },
+    {
+      "path": "refinements/instagram-v22/FILES_CHANGED.md",
+      "bytes": 1675,
+      "sha256": "5516ff8b5e9b68588f6a5559ba1c07f52a327d17b073e01ec6e9c2c90e406365"
+    },
+    {
+      "path": "refinements/instagram-v22/LIVE_ACCEPTANCE.md",
+      "bytes": 900,
+      "sha256": "d744dd3b8a118b9dfa1dfbd5c569757f7743e899d37d10480dd626d2cedd56c0"
+    },
+    {
+      "path": "refinements/instagram-v22/MEDIA_PLACEMENT.md",
+      "bytes": 697,
+      "sha256": "adc8371dd0a2aae1ccb2654766a35fe86c8a68a370b8b43c9cf20c44b8793d2b"
+    },
+    {
+      "path": "refinements/instagram-v22/MEDIA_PROVENANCE.md",
+      "bytes": 1605,
+      "sha256": "0fea7c70b4255878ba09f750b54ccb6ce86afa312eab64cd31d3f8ed9b7142b7"
+    },
+    {
+      "path": "refinements/instagram-v22/REVISION_LOG.md",
+      "bytes": 1434,
+      "sha256": "96c9445e691ac8c93439d267c2aa6506363d33df38b6041780470ab74c4c0391"
+    },
+    {
+      "path": "refinements/instagram-v22/ROLLBACK.md",
+      "bytes": 527,
+      "sha256": "c034e2a8e3d2e8afe92e5ab11f8743503cd41097ff00504732423de56992f0e0"
+    },
+    {
+      "path": "refinements/instagram-v22/SKILLS_LEDGER.md",
+      "bytes": 2504,
+      "sha256": "e58adf256047cc33a566cde8dee3eae2c129c307c4f0f34ac21b92a54e5ff022"
+    },
+    {
+      "path": "refinements/instagram-v22/SOURCE_INVENTORY.md",
+      "bytes": 885,
+      "sha256": "188d6999daff1cf5cf3a1a50c598911dd1a9a2c6fa998ff3b91da4a7e12b5c8c"
+    },
+    {
+      "path": "refinements/instagram-v22/TEST_REPORT.md",
+      "bytes": 1040,
+      "sha256": "00102b695c41910946102c4f646f5a10c978a27f818ca2fed03ebec170312d03"
+    },
+    {
+      "path": "refinements/instagram-v22/baseline-screenshots/en-info-390.png",
+      "bytes": 527559,
+      "sha256": "fbde3aec7dd932c85939a15cc28763347d9d69c21bd41aac1bc7313a40e0050e"
+    },
+    {
+      "path": "refinements/instagram-v22/baseline-screenshots/en-product-1440.png",
+      "bytes": 892525,
+      "sha256": "505a02b0cf0565ad0e7deea318ede13ef3e5dd7575e1d3b1d5299418cc2a38fd"
+    },
+    {
+      "path": "refinements/instagram-v22/baseline-screenshots/ua-info-1440.png",
+      "bytes": 922868,
+      "sha256": "1972893955b4335bd8cdc9ddc475076ca6249b3225000622e9c3ba5a2476cc20"
+    },
+    {
+      "path": "refinements/instagram-v22/baseline-screenshots/ua-product-390.png",
+      "bytes": 582995,
+      "sha256": "8e5f27b93bb041fb6ab57dfe2818e31657a1109ca4aaa217dda5712ae917d69d"
+    },
+    {
       "path": "refinements/visual-about-v13/ACCEPTANCE_REPORT.md",
       "bytes": 4873,
       "sha256": "4da108203dd9ca708b4c14554b35a3c5e72fc9b5f6e86946a68668c8a1f9506d"
@@ -697,6 +792,11 @@
       "sha256": "66aeabb9eae310d022cb9a1d698bfc95cd6ffb596a02235b1945e2b231f10bda"
     },
     {
+      "path": "scripts/update_instagram_media.py",
+      "bytes": 10663,
+      "sha256": "3e43e4dd4c6d1e965a6944178f3bb0c777a5986f4b545b02e2e8919855e545b6"
+    },
+    {
       "path": "scripts/update_manifest.py",
       "bytes": 3112,
       "sha256": "1f9d501072f1d445b4e274d4c933cee572672d8d2751b5891d084fee70b38941"
@@ -893,8 +993,8 @@
     },
     {
       "path": "src/build.mjs",
-      "bytes": 41608,
-      "sha256": "5bc337a7d17991cf642ac6cf808f5ff7fb44a6e6a236e2015bf9c539f6ae7aae"
+      "bytes": 42162,
+      "sha256": "85dd4a7ceb6225723eced0bc15cc920afa6e9710369779a4634d058fba3dd2b9"
     },
     {
       "path": "src/commerce-contract.mjs",
@@ -903,8 +1003,8 @@
     },
     {
       "path": "src/commerce-view.mjs",
-      "bytes": 25695,
-      "sha256": "905408e6667807aaa35c7e257f35ddc64cee7de94076fd6f73867e0399037072"
+      "bytes": 25629,
+      "sha256": "24b98aee6eb6023c925157772e1789ef0f44384938520aaf24b9a7af0f041b3b"
     },
     {
       "path": "src/commerce.css",
@@ -948,18 +1048,18 @@
     },
     {
       "path": "src/instagram-view.mjs",
-      "bytes": 6946,
-      "sha256": "2128c7a34468efa9bb21179a508a83e7ed44232f47b3a60b308e47e98af80e5e"
+      "bytes": 6613,
+      "sha256": "c930d70fa4e2d6ef263cae312b7e82d25344090bc7c3c3a44ccbfda4e05ae39b"
     },
     {
       "path": "src/instagram.css",
-      "bytes": 5119,
-      "sha256": "734fe123d126a3d4a51e6cdddf583aa1b3e7790fe55fe5aab0b6925761b2eb11"
+      "bytes": 5750,
+      "sha256": "bcfe754572d19590b2a31615eab5f33e439e7287c3213b38bb67680eb5ed1802"
     },
     {
       "path": "src/instagram.mjs",
-      "bytes": 23947,
-      "sha256": "0afb92b67692d4f5815f2367efff9863fefad1a5a86a2b3b27009a6fd2711618"
+      "bytes": 27145,
+      "sha256": "d2fe6ab2a8e033047b757345486c30de938817741eaa8f26146da6b1de381d5b"
     },
     {
       "path": "src/licenses/messenger-icons.json",
@@ -973,8 +1073,8 @@
     },
     {
       "path": "src/media-manifest.json",
-      "bytes": 117483,
-      "sha256": "9256c50dabdbfb398f3e7ce22128fdb3c8c5e5e338d2c5c2af9fcda21a7fce3a"
+      "bytes": 186021,
+      "sha256": "22520a39dfd8dcf2373806f7c1722e2dbd49e3c98b129564ce47617b78f3eeb3"
     },
     {
       "path": "src/media/2026-09/review-card-back-160.webp",
@@ -1352,6 +1452,206 @@
       "sha256": "5e9e46d3c62d9ce4e047f2e4bcf982c49c9ffd41640c734c5479c236dc5cbf9b"
     },
     {
+      "path": "src/media/instagram/instagram-card-clean-front-render-320.avif",
+      "bytes": 10347,
+      "sha256": "d3dc9e7c9d39b08d841f3996f045c0cad46664774e3c6646ad12bff072c0248f"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-clean-front-render-320.webp",
+      "bytes": 12962,
+      "sha256": "c2f439216fbff33c6589dde212796f2ab4a3dcb6d5bde48e220019bbc9d7470b"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-clean-front-render-640.avif",
+      "bytes": 22991,
+      "sha256": "95503cc97d6bda27d9a6d64198c020d8a7dc287da91edb981d508440baf43296"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-clean-front-render-640.webp",
+      "bytes": 27860,
+      "sha256": "103bba58539674f9b17db7f53c73d8174f991e45899f84c12e358be377421d58"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-clean-front-render-960.avif",
+      "bytes": 35899,
+      "sha256": "cb7c27267684693271ed3ca516bccc74a2d3fff04de565ca4f5541147d649fdd"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-clean-front-render-960.webp",
+      "bytes": 43442,
+      "sha256": "ad158da9775de107e69fbbce8f465f840e18f8e148084f6abaef84f0db72b38b"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-clean-front-render.avif",
+      "bytes": 50665,
+      "sha256": "4bbf4ef2921f2a1515aba83a59c396fd7d7dc25f64f853cfdb73ad9a08591f2f"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-clean-front-render.webp",
+      "bytes": 58334,
+      "sha256": "5ed2e3f6149abea4d8b5c7c8768878b6f4b3c4090e4ea5d6c4646b7f875abe5e"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-back-mounting-320.avif",
+      "bytes": 10035,
+      "sha256": "1deb13ebd3f2d674d7d8f1d74b3f97e0bf60c2706230b7919b320f71b2ed9801"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-back-mounting-320.webp",
+      "bytes": 10178,
+      "sha256": "96cb74ca9acdbacf189540f42d685069ecc9259ef2909172fcbdaae1481cffdd"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-back-mounting-640.avif",
+      "bytes": 24846,
+      "sha256": "140d1ef4de4b06b6bbbd5dbf9463a3af712373bef7e8d29f1dc14f5fecb28ab1"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-back-mounting-640.webp",
+      "bytes": 23580,
+      "sha256": "0dc0ad12d9095ced3d7f952371968d8740a321b86772992f8d73a96474f40aa0"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-back-mounting-960.avif",
+      "bytes": 43628,
+      "sha256": "a985d66e60cabfb5a59ccc7de784fa9d2c32449034a016646d8c8738ad999456"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-back-mounting-960.webp",
+      "bytes": 40562,
+      "sha256": "6fd22d8dbc976c47b16eb516dde7796be3ff98ed4a7a48c0646a60884c6acba3"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-back-mounting.avif",
+      "bytes": 51961,
+      "sha256": "84e179c0dfc8bc08980edebf7c1adfe3770da792faf282543a09621468175d6f"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-back-mounting.webp",
+      "bytes": 49046,
+      "sha256": "baeda27a47eed8ba28f2e94af36a8e6e86d4d00d789332296b6193de2dc026fb"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-edge-profile-320.avif",
+      "bytes": 12710,
+      "sha256": "1a4193a6c66b5397b8156c950862723817165cd4c10675ff4dd14f5ec8cf7283"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-edge-profile-320.webp",
+      "bytes": 14242,
+      "sha256": "8e551e216b41201e40abb548c58b2f21a2bdf0fda94ec4d7c8783d7903073229"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-edge-profile-640.avif",
+      "bytes": 33425,
+      "sha256": "d1721e554af1dabb66d07a01a30c426a5a7889c15765738f2fb62d0c86ca2603"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-edge-profile-640.webp",
+      "bytes": 36846,
+      "sha256": "5e0db482f70731c147b6cc077c406000dd941d53863cbd375fc10d2ae679aef1"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-edge-profile-960.avif",
+      "bytes": 59903,
+      "sha256": "2478b18d0ade44cd62388e45da6005e133ff6a952a155f396184555f22fa67f5"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-edge-profile-960.webp",
+      "bytes": 62266,
+      "sha256": "b5badaa11e3b3e5ed82743a1d55ebe94e06b6cbf763090faff6e7ee0be01ec10"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-edge-profile.avif",
+      "bytes": 70831,
+      "sha256": "7ff30f72c1d9970dcfa15da635abd3cfa1a5001989ae941764bf0779ad5f4717"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-edge-profile.webp",
+      "bytes": 73768,
+      "sha256": "b94e29cfcd4dddb7b766e8fa50e8a2053e5c30eb6c87d18c40d1cc11ac816df9"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-front-desk-320.avif",
+      "bytes": 14854,
+      "sha256": "19714d7f8ef5cc7aa0de8b8975d4964cc49b38a2bcf6744c38017236d0f36995"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-front-desk-320.webp",
+      "bytes": 16654,
+      "sha256": "7ce5a812b1693aeea127e5146826589dc3cdf46c4b0f394c097319997b756a73"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-front-desk-640.avif",
+      "bytes": 38678,
+      "sha256": "0810c843c81546edc31f92e527726a73bb97c1a363ec588922bc3e99cc3b9004"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-front-desk-640.webp",
+      "bytes": 41374,
+      "sha256": "85de5965abe9d94816e537779a3825bbf708ef33a3187d99fe856df016e5481c"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-front-desk-960.avif",
+      "bytes": 71160,
+      "sha256": "ead9599bc25d5f61036af6fc0581d77ffb666e5c2ac6fd66e1e2ac5ba7bd08fe"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-front-desk-960.webp",
+      "bytes": 73358,
+      "sha256": "6c7c97f647ce69a2c02fc642429694568a2768919a25bdb802d2e0a9872d8ee9"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-front-desk.avif",
+      "bytes": 85245,
+      "sha256": "778f431c9ba1c591e98a978c0611843a1a9f008797868b34af31418e2166a3a0"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-front-desk.webp",
+      "bytes": 87850,
+      "sha256": "6e72323e4bbfa39d82a75cc2376a7ee524615627c3275fd00f312ed7ed8ca4f9"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-front-window-320.avif",
+      "bytes": 16942,
+      "sha256": "79ae76587d900605f5ea7d3cc282d385f6eed5498ba4f3c0b185273da319c325"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-front-window-320.webp",
+      "bytes": 19460,
+      "sha256": "3e5f4b9f611b439bf018c8998c010370244f4f23eec24391cfb44ac0b988abd3"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-front-window-640.avif",
+      "bytes": 41635,
+      "sha256": "cdbeecd0afa0db58efccb160b24c07be95162112c4339f326d522c4e45c184f6"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-front-window-640.webp",
+      "bytes": 47512,
+      "sha256": "306f68bb50a4e0abec61bd3a4d6fd44ee9337e4e4df3f72393f2d87b90e7691b"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-front-window-960.avif",
+      "bytes": 74192,
+      "sha256": "3c1c6f52c3b302a2543c8fc2e884f1a126e958269dd234fa41c4871413961afa"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-front-window-960.webp",
+      "bytes": 79814,
+      "sha256": "c6afff3183c5c1fae60dcf2236a08d2f7c20d53332c7ab13b2bb048415d072e9"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-front-window.avif",
+      "bytes": 88370,
+      "sha256": "20af6522245fa579e54d5ab66b73ec99deeb1924c13009f36e88ce6576080ff4"
+    },
+    {
+      "path": "src/media/instagram/instagram-card-real-front-window.webp",
+      "bytes": 93312,
+      "sha256": "e617240a1a5d322e7402e27eeef54654a258db773a95c2c695bcc695545fa272"
+    },
+    {
       "path": "src/media/v11/branded-review-card-neutral-placeholder.svg",
       "bytes": 2729,
       "sha256": "71c198633486c4a9fddebb6e9e7f9ad6fd0cedb94bb803d59f95338f568ac6d5"
@@ -1518,8 +1818,8 @@
     },
     {
       "path": "src/model.mjs",
-      "bytes": 69878,
-      "sha256": "876fcdb001a7b76c80ed6595a7133c0f4003fe5c379e3609f23d38917b6b3343"
+      "bytes": 70342,
+      "sha256": "3a3065c8c9caf6ae1c6a56f15eccdcbfc398d7114cb529d340bf94e589cc49bb"
     },
     {
       "path": "src/pages.mjs",
@@ -1533,8 +1833,8 @@
     },
     {
       "path": "src/publication-approval.json",
-      "bytes": 740,
-      "sha256": "6ab96900c805d518c2baa272b0c70b4b57025749457015ddfe7d687ce0b611c5"
+      "bytes": 783,
+      "sha256": "cec2848181fd2982a72b98a49b8c700785ba900b1b4fce3614cb3f75e6f2f4c2"
     },
     {
       "path": "src/publication.mjs",
@@ -1598,18 +1898,23 @@
     },
     {
       "path": "tests/test_instagram_browser.py",
-      "bytes": 14367,
-      "sha256": "b5f0565b22173ffc9f37d97f49dcd03f5cfa42809b1f3fa9e5140d64539e19a7"
+      "bytes": 17624,
+      "sha256": "be206a28aabfb921752e73aa6e227bf830a20088a25039a7319d407ac970e3d1"
     },
     {
       "path": "tests/test_instagram_v18.py",
-      "bytes": 17858,
-      "sha256": "f274b2475e6818cfec70147e6eb9f2b9cefd523d06aceece2b002710b15f2f77"
+      "bytes": 18294,
+      "sha256": "b1a8f17103b84ae1eb750292e9cc4cf719c1ca5f6fc38ddd9db7a9a7f2a9934a"
     },
     {
       "path": "tests/test_instagram_v20.py",
-      "bytes": 4130,
-      "sha256": "b8761d84323469198acd9faa0a0b644d3c3469c059aa81b610f937bdbf72e8f5"
+      "bytes": 4223,
+      "sha256": "2543f54264e87dead3e10eb1e8c06633f42944aea6465ba009ecf6ad97ea5e48"
+    },
+    {
+      "path": "tests/test_instagram_v22.py",
+      "bytes": 13065,
+      "sha256": "9bc7655b2b22b7ddb37d016159e3df602edc26a772dca369da592090143ae784"
     },
     {
       "path": "tests/test_leads.py",
@@ -1663,8 +1968,8 @@
     },
     {
       "path": "tests/test_v9.py",
-      "bytes": 7846,
-      "sha256": "d5cfddb77b1abcae3b34466feef183ea53a95500357d38b93992b3250316614b"
+      "bytes": 8135,
+      "sha256": "f23461ef3ac14f7dcbd06eba3b69236e11d7a307c72a84cb9948efd2bf358857"
     }
   ]
 }

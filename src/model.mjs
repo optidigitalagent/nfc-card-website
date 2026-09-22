@@ -990,7 +990,7 @@ const source = {
           ],
           [
             "Ми зв’язуємося з вами",
-            "Уточнюємо Google-точку й дані для доставки. Для Branded Review Card готуємо перший макет безкоштовно."
+            "Уточнюємо потрібне посилання — для Google-відгуків або Instagram-профілю — та дані для доставки. Для Branded Review Card готуємо перший макет безкоштовно."
           ],
           [
             "Погоджуємо деталі",
@@ -1011,11 +1011,7 @@ const source = {
             ""
           ],
           [
-            "We contact you and confirm the Google location and delivery details.",
-            ""
-          ],
-          [
-            "For a branded card, we prepare the first mockup free of charge.",
+            "We confirm the link for Google reviews or your Instagram profile, along with delivery details. For Branded Review Card, we prepare the first mockup free of charge.",
             ""
           ],
           [
@@ -1321,11 +1317,11 @@ const source = {
       "id": "destination",
       "question": {
         "uk": "Куди саме переходить клієнт?",
-        "en": "Where does the customer land?"
+        "en": "Where does the customer go?"
       },
       "answer": {
-        "uk": "До інтерфейсу оцінки й написання відгуку конкретної Google-точки. Google може попросити спочатку увійти в акаунт.",
-        "en": "On the rating and review-writing interface for the configured Google location. Google may ask the customer to sign in first."
+        "uk": "Залежить від картки. Review Card і Branded Review Card відкривають форму Google-відгуку конкретної локації. NFC Instagram Card відкриває Instagram-профіль вашого бізнесу. Після переходу клієнт сам обирає наступну дію. Google може попросити увійти в акаунт.",
+        "en": "It depends on the card. Review Card and Branded Review Card open the Google review form for a specific location. NFC Instagram Card opens your business’s Instagram profile. After the link opens, the customer chooses what to do next. Google may ask them to sign in."
       }
     },
     {
@@ -1346,8 +1342,8 @@ const source = {
         "en": "Is there a monthly fee?"
       },
       "answer": {
-        "uk": "Ні. Обов’язкової щомісячної підписки за використання картки немає.",
-        "en": "No mandatory monthly subscription is required to use the card."
+        "uk": "Обов’язкової щомісячної плати за використання Review Card, Branded Review Card або NFC Instagram Card немає.",
+        "en": "There is no mandatory monthly fee to use Review Card, Branded Review Card or NFC Instagram Card."
       }
     },
     {
@@ -1503,7 +1499,7 @@ export function resolveContent(overrides = {}) {
   }
   if (!activeFlags.lead_time_5_days_confirmed) {
     result.copy.process.items.uk[3][1] = timing.uk;
-    result.copy.process.items.en[4][0] = timing.en;
+    result.copy.process.items.en[3][0] = timing.en;
     result.faqs.find(f => f.id === 'lead-time').answer = timing;
   }
   // Flags alone cannot manufacture a permissioned real case or missing media.

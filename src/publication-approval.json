@@ -8,7 +8,7 @@
     "ownerAuthorizedPublication": true,
     "sellerName": "Артем Антонов",
     "defectReturnAndRefundConfirmed": true,
-    "approvalReference": "Owner final PUBLIC launch authorization and seller/refund clarification, 2026-09-12, NFC CARD task; owner supplied and requested publication of replacement standard-card media, 2026-09-15; owner authorized Instagram corrective commit, push to main and GitHub Pages deployment under v20, 2026-09-22",
-    "reviewedContentSha256": "7e8d24e7a93a5e47e2915c78e14deddabebfd9c7b6e89d912c10e40252148c93"
+    "approvalReference": "Owner final PUBLIC launch authorization and seller/refund clarification, 2026-09-12, NFC CARD task; owner supplied and requested publication of replacement standard-card media, 2026-09-15; owner authorized the exact v22 Instagram copy/media release, commit, push to existing main, CI, GitHub Pages deployment and live acceptance, 2026-09-22",
+    "reviewedContentSha256": "d0d49f2e240cc4d8439a3199a99c993720ab7c1807aacd35635d716902d78c30"
   }
 }

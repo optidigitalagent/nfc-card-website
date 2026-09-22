@@ -16,7 +16,7 @@
 .instagram-info-hero,.instagram-info-truth{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
 .instagram-product-content{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;max-width:none;padding:0;border-top:1px solid var(--nfc-border-soft);margin-top:clamp(52px,7vw,96px);color:var(--nfc-ink)}
 .instagram-product-content>.detail-signature,.instagram-product-content>.field-hint,.instagram-product-content>.instagram-content-order{grid-column:1/-1}
-.instagram-product-content>.detail-signature{font-size:clamp(1.55rem,3vw,2.7rem);font-weight:650;letter-spacing:-.035em;padding:0 0 clamp(30px,5vw,60px);margin:0}
+.instagram-product-content>.detail-signature{display:grid;place-items:center;min-block-size:clamp(96px,12vw,148px);font-size:clamp(1.55rem,3vw,2.7rem);font-weight:650;line-height:1.1;letter-spacing:-.035em;text-align:center;text-wrap:balance;padding:clamp(24px,4vw,48px) clamp(20px,4vw,48px);margin:0}
 .instagram-product-content>.product-detail{margin:0;padding:clamp(28px,4vw,54px);border:1px solid var(--nfc-border-soft);border-top:0;background:var(--nfc-paper)}
 .instagram-product-content>.product-detail:nth-of-type(even){border-left:0}
 .instagram-product-content>.product-detail h2{font-size:clamp(1.45rem,2.4vw,2rem);line-height:1.14;margin:0 0 24px;color:var(--nfc-ink)}
@@ -32,10 +32,17 @@
 .instagram-product-content>.field-hint{margin:22px 0 0;color:var(--muted)}
 .instagram-product-content>.instagram-content-order{justify-self:start;margin-top:22px}
 .instagram-info-hero h1{font-size:clamp(2.1rem,4.6vw,4.5rem);line-height:1.06}
+.responsive-picture{display:block;width:100%}
+.commerce-card-media>.responsive-picture{height:100%}
+.gallery-frame figure>.responsive-picture{height:100%}
+.instagram-info-image{display:block;width:100%;height:auto;object-fit:contain;border-radius:6px}
+.instagram-info-media-stack{display:grid;gap:16px;min-width:0}
+.instagram-info-media-stack .instagram-placeholder{min-height:160px;aspect-ratio:auto}
 .instagram-actions{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 .instagram-info-truth [data-placeholder]{max-height:580px}
 .instagram-info-content{color:var(--nfc-ink)}
 .instagram-info-content .section p:not(.eyebrow):not(.field-hint),.instagram-info-content .section li,.commerce-product[data-product=instagram] .product-promise,.commerce-product[data-product=instagram] .product-short{color:var(--nfc-ink)}
 .instagram-selection-note{margin:0 0 18px;color:var(--muted);font-size:.875rem}
 .field-instagramUrl[hidden]{display:none}
+#faq-instagram-subscription{position:relative;top:auto;display:block;scroll-margin-top:0}
 @media(max-width:768px){.instagram-info-hero,.instagram-info-truth,.instagram-product-content{grid-template-columns:1fr}.instagram-product-content>.product-detail:nth-of-type(even){border-left:1px solid var(--nfc-border-soft)}.instagram-product-content>.detail-signature,.instagram-product-content>.field-hint,.instagram-product-content>.instagram-content-order,.instagram-product-content>.instagram-product-faq{grid-column:1}.instagram-product-content>.product-detail{padding:26px 20px}.instagram-product-content>.instagram-content-order{width:100%}.instagram-placeholder{min-height:240px}.commerce-gallery [data-placeholder]{height:auto;aspect-ratio:1;min-height:240px}.instagram-placeholder strong{font-size:1.4rem}.instagram-actions>.button{width:100%}}

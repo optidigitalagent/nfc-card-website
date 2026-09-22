@@ -14,7 +14,7 @@ from test_v12_browser import web, browser, repo, service, ready, block_external
 
 ROOT=Path(__file__).resolve().parents[1]
 WIDTHS=[320,360,390,393,430,768,1024,1280,1440]
-EVIDENCE=Path(os.environ.get('NFC_INSTAGRAM_EVIDENCE',str(ROOT/'work/qa/instagram-v18')))
+EVIDENCE=Path(os.environ.get('NFC_INSTAGRAM_EVIDENCE',str(ROOT/'work/qa/instagram-v22')))
 
 
 class QuietHandler(SimpleHTTPRequestHandler):
@@ -49,8 +49,8 @@ def test_instagram_nine_width_pages_matrix(pages_web,browser,width):
     EVIDENCE.mkdir(parents=True,exist_ok=True);rows=[]
     for locale in ['uk','en']:
         prefix='/en' if locale=='en' else ''
-        for route in ['/solutions','/solutions/instagram-card','/instagram-card','/order','/solutions/review-card','/solutions/branded-review-card']:
-            path=BASE+prefix+route
+        for route in ['/','/solutions','/solutions/instagram-card','/instagram-card','/order','/solutions/review-card','/solutions/branded-review-card']:
+            path=BASE+prefix+('' if route=='/' else route)
             response=page.goto(origin+path+'/');assert response.status==200
             ready(page)
             assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),(path,width)
@@ -60,15 +60,21 @@ def test_instagram_nine_width_pages_matrix(pages_web,browser,width):
             for a in page.locator('a[href^="/"]').all():assert a.get_attribute('href').startswith(BASE+'/')
             if route=='/solutions':
                 assert page.locator('.commerce-card').evaluate_all('(cards)=>cards.map(c=>c.dataset.variant)')==['standard','branded','instagram']
-                expect(page.locator('.commerce-card[data-variant=instagram] [data-placeholder]')).to_be_visible()
+                expect(page.locator('.commerce-card[data-variant=instagram] img[data-media-claim-role=promotional_product_render]')).to_be_visible()
                 page.locator('.commerce-card[data-variant=instagram]').screenshot(path=EVIDENCE/f'{locale}-instagram-catalog-tile-{width}.png')
             if route=='/solutions/instagram-card':
-                assert page.locator('[data-thumb-to]').count()==6
-                page.locator('[data-thumb-to="5"]').click();expect(page.locator('[data-slide="5"]')).to_be_visible()
-                assert page.locator('.gallery-open').count()==0
+                assert page.locator('[data-thumb-to]').count()==5
+                assert page.locator('[data-slide] [data-media-claim-role=real_product_photo]').count()==4
+                assert page.locator('[data-slide] [data-media-claim-role=promotional_product_render]').count()==1
+                page.locator('[data-thumb-to="4"]').click();expect(page.locator('[data-slide="4"]')).to_be_visible()
+                assert page.locator('.gallery-open').count()==1
                 page.locator('[data-gallery-frame]').focus();page.keyboard.press('ArrowLeft')
-                expect(page.locator('[data-slide="4"]')).to_be_visible()
+                expect(page.locator('[data-slide="3"]')).to_be_visible()
                 page.locator('[data-thumb-to="0"]').click()
+                if width in [320,1440]:
+                    opener=page.locator('[data-zoom]');opener.focus();opener.press('Enter')
+                    expect(page.locator('.image-lightbox')).to_be_visible();page.keyboard.press('Escape')
+                    expect(page.locator('.image-lightbox')).not_to_be_visible();expect(opener).to_be_focused()
                 page.select_option('#purchase-quantity','2')
                 assert '2600' in ''.join(filter(str.isdigit,page.locator('[data-current-price]').inner_text()))
                 assert page.locator('#f-quantity').input_value()=='2'
@@ -78,12 +84,17 @@ def test_instagram_nine_width_pages_matrix(pages_web,browser,width):
                 assert page.locator('[data-details-control]').count()==0
                 assert page.locator('.product-detail .faq-list>details').count()==9
                 assert page.locator('.instagram-product-content').evaluate("e=>getComputedStyle(e.querySelector('.meaning-rows p')).color===getComputedStyle(e.querySelector('.product-detail h2')).color")
+                banner=page.locator('.instagram-product-content>.detail-signature')
+                assert banner.evaluate("e=>{const s=getComputedStyle(e),r=e.getBoundingClientRect();return s.display==='grid'&&s.placeItems==='center'&&s.textAlign==='center'&&s.transform==='none'&&s.paddingTop===s.paddingBottom&&r.height>=96}")
             if route=='/instagram-card':
                 assert page.locator('.instagram-info-content').evaluate("e=>[...e.querySelectorAll('.section p:not(.eyebrow):not(.field-hint),.section li')].every(x=>getComputedStyle(x).color===getComputedStyle(e).color)")
+                assert page.locator('.instagram-info-content img[data-media-claim-role=real_product_photo]').count()==2
+                assert page.locator('.instagram-info-content [data-placeholder=IG09]').count()==1
             if route=='/solutions/review-card':assert page.locator('[data-slide]').count()==13
             if route=='/solutions/branded-review-card':assert page.locator('[data-slide]').count()==3
             page.evaluate('scrollTo(0,0)')
-            filename=f'{locale}-{route.strip("/").replace("/","-")}-{width}.png'
+            slug=route.strip("/").replace("/","-") or 'home'
+            filename=f'{locale}-{slug}-{width}.png'
             page.screenshot(path=EVIDENCE/filename,animations='disabled')
             if width in [390,1440] and route in ['/solutions/instagram-card','/instagram-card']:
                 page.screenshot(path=EVIDENCE/filename.replace('.png','-full.png'),full_page=True,animations='disabled')
@@ -91,6 +102,38 @@ def test_instagram_nine_width_pages_matrix(pages_web,browser,width):
             rows.append({'path':path,'width':width,'status':200,'overflow':False,'reload':True,'screenshot':filename})
     assert not errors and not blocked,(errors,blocked)
     (EVIDENCE/f'matrix-{width}.json').write_text(json.dumps(rows,indent=2))
+    context.close()
+
+
+@pytest.mark.parametrize('locale',['uk','en'])
+@pytest.mark.parametrize('width',[320,1440])
+def test_legacy_monthly_faq_anchor_scrolls_to_canonical_entry(pages_web,browser,locale,width):
+    origin,_=pages_web;context=browser.new_context(viewport={'width':width,'height':900},reduced_motion='reduce')
+    blocked=local_only(context,origin);page=context.new_page();prefix='/en' if locale=='en' else ''
+    page.goto(origin+BASE+prefix+'/#faq-instagram-subscription');ready(page)
+    page.wait_for_function('scrollY>1000')
+    anchor=page.locator('#faq-instagram-subscription');faq=page.locator('#faq')
+    assert anchor.bounding_box()['y']>=0 and anchor.bounding_box()['y']<160
+    assert faq.bounding_box()['y']<200
+    question='Чи є щомісячна плата?' if locale=='uk' else 'Is there a monthly fee?'
+    assert page.locator('#faq details',has=page.get_by_text(question,exact=True)).count()==1
+    assert not blocked
+    context.close()
+
+
+@pytest.mark.parametrize('locale',['uk','en'])
+def test_instagram_gallery_touch_swipe(pages_web,browser,locale):
+    origin,_=pages_web;context=browser.new_context(viewport={'width':390,'height':844},has_touch=True,is_mobile=True,reduced_motion='reduce')
+    blocked=local_only(context,origin);page=context.new_page();prefix='/en' if locale=='en' else ''
+    page.goto(origin+BASE+prefix+'/solutions/instagram-card/');ready(page)
+    frame=page.locator('[data-gallery-frame]');box=frame.bounding_box();session=context.new_cdp_session(page)
+    y=box['y']+box['height']/2;x=box['x']+box['width']*.8
+    session.send('Input.dispatchTouchEvent',{'type':'touchStart','touchPoints':[{'x':x,'y':y}]})
+    for offset in [30,65,100,140]:session.send('Input.dispatchTouchEvent',{'type':'touchMove','touchPoints':[{'x':x-offset,'y':y}]})
+    session.send('Input.dispatchTouchEvent',{'type':'touchEnd','touchPoints':[]})
+    expect(page.locator('[data-gallery-count]')).to_have_text('2 / 5')
+    expect(page.locator('.image-lightbox')).not_to_be_visible()
+    assert not blocked
     context.close()
 
 

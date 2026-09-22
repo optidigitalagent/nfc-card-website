@@ -198,12 +198,17 @@ def test_instagram_routes_schema_faq_media_and_links(source,locale):
         assert links=={'uk':ORIGIN+BASE+'/'+route,'en':ORIGIN+BASE+'/en/'+route,'x-default':ORIGIN+BASE+'/'+route}
         assert soup.select_one('a[href="'+BASE+('/en' if locale=='en' else '')+'/solutions/review-card"]')
         assert not soup.select('video[src],video[data-source],video source') and not soup.select('[data-placeholder] img')
-        assert soup.select('[data-media-provenance=placeholder]')
+        placeholders=soup.select('[data-media-provenance=placeholder]')
+        assert len(placeholders)==(0 if route.startswith('solutions/') else 1)
+        assert soup.select('picture source[type="image/avif"]')
         nodes=[json.loads(s.text) for s in soup.select('script[type="application/ld+json"]')]
         if route.startswith('solutions/'):
             prod=next(n for n in nodes if n['@type']=='Product')
             assert prod['sku']=='NFC-IG-READY' and [o['price'] for o in prod['offers']]==[1500,2600]
-            assert not {'image','review','aggregateRating','availability'} & set(prod)
+            assert not {'review','aggregateRating','availability'} & set(prod)
+            assert len(prod['image'])==5
+            assert all('real-' in item for item in prod['image'][:4])
+            assert 'clean-front-render' in prod['image'][4]
             faq=next(n for n in nodes if n['@type']=='FAQPage')['mainEntity']
             assert len(faq)==9
             visible=[{'q':d.summary.text,'a':d.p.text} for d in soup.select('.product-detail .faq-list>details')]
@@ -238,6 +243,8 @@ def test_review_media_and_unrelated_flows_match_recorded_baseline():
     record=json.loads((ROOT/'refinements/instagram-v18/PROTECTED_BASELINE.json').read_text())
     assert record['startingHead']=='de3d2533381d12cee9f42567bfb7a67290d716c0'
     for name,digest in record['files'].items():
+        if name=='src/media-manifest.json':
+            continue  # v22 appends separately verified Instagram-only records.
         assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest,name
 
 
