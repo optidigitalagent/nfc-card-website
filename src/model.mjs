@@ -1,7 +1,10 @@
 import analyticsContract from './analytics.json' with {type:'json'};
 const analyticsEvents=[...new Set(Object.values(analyticsContract).flat())];
 import commerceData from './commerce.json' with { type: 'json' };
+import {validateCommerce} from './commerce-contract.mjs';
 import verificationData from './verification.json' with { type: 'json' };
+import {instagram,instagramGlobalFAQs,instagramProductFAQs} from './instagram.mjs';
+import {validateInstagramContent} from './instagram-claims.mjs';
 
 // Source-backed bilingual content. Verification is resolved before rendering.
 export const pair = (uk, en) => ({ uk, en });
@@ -12,7 +15,7 @@ const freeze = value => {
   }
   return value;
 };
-export const commerce = freeze(structuredClone(commerceData));
+export const commerce = freeze(validateCommerce(structuredClone(commerceData)));
 export const flags = freeze(structuredClone(verificationData));
 const source = {
   "config": {
@@ -1521,6 +1524,7 @@ export const mediaPlan = resolved.mediaPlan;
 export const caseTemplate = resolved.caseTemplate;
 
 export function validateModel(model = resolved) {
+  validateInstagramContent({instagram,instagramGlobalFAQs,instagramProductFAQs});
   if (model.variants.length !== 2 || model.variants.map(v => v.id).join(',') !== 'standard,branded') throw new Error('Expected two variants of one card');
   const expected = { standard: { '1': 1500, '2': 2600 }, branded: { '1': 2000, '2': 3600 } };
   for (const variant of model.variants) {

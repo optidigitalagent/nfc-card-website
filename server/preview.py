@@ -9,6 +9,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from server.review_http import ReviewHTTP,Request as ReviewRequest
 from server.review_config import configure
 from server.routing import product_redirect
+from server.pricing import canonical_quote
 import html
 import io
 import json
@@ -53,7 +54,7 @@ def hydrate_native_form(source, request_path, commerce, content=None):
         query = dict(parse_qsl(parsed.query[:4096], keep_blank_values=True, max_num_fields=40))
     except ValueError:
         query = {}
-    routes = ['/', '/solutions', '/solutions/review-card', '/solutions/branded-review-card', '/order', '/contact',
+    routes = ['/', '/solutions', '/solutions/review-card', '/solutions/branded-review-card', '/solutions/instagram-card', '/instagram-card', '/order', '/contact',
               '/delivery-and-payment', '/warranty-and-returns', '/privacy', '/terms', '/thank-you']
     routes += ['/en' + ('' if r == '/' else r) for r in routes[:]]
     referrer = query.get('source') if query.get('source') in routes else parsed.path
@@ -64,11 +65,15 @@ def hydrate_native_form(source, request_path, commerce, content=None):
     def fill(match):
         form = match[0]
         preset = re.search(r'\bdata-variant="([^"]*)"', form)
-        variant = preset[1] if preset and preset[1] in commerce['variants'] else query.get('variant', preset[1] if preset else '')
+        variant = preset[1] if preset and preset[1] in {'standard', 'branded', 'instagram'} else query.get('variant', preset[1] if preset else '')
+        if query.get('product') == 'nfc-instagram-card' and not (preset and preset[1]):
+            variant = 'instagram'
         if variant not in commerce['interests']:
             variant = ''
         quantity = query.get('quantity', '1')
         if quantity not in commerce['quantities']:
+            quantity = '1'
+        if variant == 'instagram' and quantity not in {'1', '2'}:
             quantity = '1'
         if variant == 'bulk':
             quantity = 'more'
@@ -77,7 +82,15 @@ def hydrate_native_form(source, request_path, commerce, content=None):
                 options = re.sub(r'\sselected(?:="[^"]*")?', '', m[0])
                 return options.replace(f'<option value="{value}"', f'<option selected value="{value}"', 1)
             form = re.sub(r'<select\b[^>]*\bname="' + name + r'"[^>]*>.*?</select>', select, form, flags=re.S)
-        amount = commerce['variants'].get(variant, {}).get('prices', {}).get(quantity)
+        amount = canonical_quote(variant, quantity, commerce)['amount'] if variant else None
+        if variant == 'instagram':
+            form = re.sub(r'(<p[^>]*data-selected-product[^>]*?) hidden([^>]*>).*?(</p>)', r'\1\2NFC Instagram Card\3', form)
+            form = form.replace('class="field field-instagramUrl" hidden', 'class="field field-instagramUrl"')
+            form = re.sub(r'(<input[^>]*name="instagramUrl"[^>]*?) disabled', r'\1 required', form)
+            form = re.sub(r'<option[^>]*value="more"[^>]*>.*?</option>', '', form)
+            form = re.sub(r'<select[^>]*name="variant"[^>]*>.*?</select>', '<input type="hidden" name="variant" value="instagram">', form, flags=re.S)
+            if 'name="productSchemaVersion"' not in form:
+                form = form.replace('</form>', '<input type="hidden" name="productSchemaVersion" value="1"><input type="hidden" name="product_id" value="nfc-instagram-card"><input type="hidden" name="offer" value="ready"></form>')
         en = parsed.path == '/en' or parsed.path.startswith('/en/')
         price = (('UAH ' + f'{amount:,}') if en else f'{amount:,}'.replace(',', ' ') + ' грн') if amount else ('Individual quote' if en else 'Індивідуальний розрахунок')
         if not variant:
@@ -102,12 +115,13 @@ def hydrate_native_form(source, request_path, commerce, content=None):
             values['source'] = referrer
         return 'href="' + html.escape(target.path + '?' + urlencode(values) + ('#' + target.fragment if target.fragment else ''), quote=True) + '"'
     source = re.sub(r'href="([^"]*)"', navigation, source)
-    product = re.search(r'data-product="(standard|branded)"', source)
+    product = re.search(r'data-product="(standard|branded|instagram)"', source)
     if product:
         variant=product[1];quantity=query.get('quantity','1')
         if quantity not in commerce['quantities']:quantity='1'
         en=parsed.path.startswith('/en/')
-        amount=commerce['variants'][variant]['prices'].get(quantity)
+        if variant=='instagram' and quantity not in {'1','2'}:quantity='1'
+        amount=canonical_quote(variant,quantity,commerce)['amount']
         price=('UAH '+f'{amount:,}' if en else f'{amount:,}'.replace(',',' ')+' грн') if amount else ('Custom quote' if en else 'Індивідуальний розрахунок')
         source=re.sub(r'(<(?:p|span)\b[^>]*data-(?:current|sticky)-price[^>]*>).*?(</(?:p|span)>)',lambda m:m[1]+price+m[2],source,flags=re.S)
         def top_select(m):
@@ -324,6 +338,8 @@ class Handler(SimpleHTTPRequestHandler):
                 if len(pairs) > 40:
                     raise LeadError(400, 'invalid_payload')
             payload = no_duplicate_keys(pairs)
+            if 'productSchemaVersion' in payload:
+                payload['productSchemaVersion'] = 1 if payload['productSchemaVersion'] == '1' else 0
             payload['contractVersion'] = 6 if payload.get('contractVersion') == '6' else 0
             payload['consent'] = payload.get('consent') in {'yes', 'on', 'true'}
             payload['differentContact'] = payload.get('differentContact') in {'yes', 'on', 'true'}
@@ -339,7 +355,7 @@ class Handler(SimpleHTTPRequestHandler):
         item = value['receipt']
         en = locale == 'en'
         title = 'Test request saved locally' if en else 'Тестову заявку збережено локально'
-        variant = {'standard': 'Review Card', 'branded': 'Branded Review Card',
+        variant = {'instagram': 'NFC Instagram Card', 'standard': 'Review Card', 'branded': 'Branded Review Card',
                    'bulk': 'Business cards' if en else 'Картки для бізнесу',
                    'consultation': 'Consultation' if en else 'Консультація'}.get(item['variant'], '')
         quote = item.get('quote')

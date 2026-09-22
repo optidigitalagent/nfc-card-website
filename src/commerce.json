@@ -35,7 +35,8 @@
     "standard",
     "branded",
     "bulk",
-    "consultation"
+    "consultation",
+    "instagram"
   ],
   "quantities": [
     "1",
@@ -47,5 +48,62 @@
     "consultation"
   ],
   "bulkQuantity": "more",
-  "evidence": "NFC_CARD_Approved_Facts_v11.md; Product_Commerce_UX_Master_Brief_v11 §§5,9"
+  "evidence": "NFC_CARD_Approved_Facts_v11.md; Product_Commerce_UX_Master_Brief_v11 §§5,9",
+  "productSchemaVersion": 1,
+  "products": {
+    "nfc-review-card": {
+      "name": "NFC Review Card",
+      "offers": {
+        "standard": {
+          "legacyPriceKey": "standard"
+        },
+        "branded": {
+          "legacyPriceKey": "branded"
+        }
+      }
+    },
+    "nfc-instagram-card": {
+      "name": "NFC Instagram Card",
+      "sku": "NFC-IG-READY",
+      "category": "INSTAGRAM",
+      "offers": {
+        "ready": {
+          "prices": {
+            "1": 1500,
+            "2": 2600
+          },
+          "qr": "not_included",
+          "customDesign": false,
+          "quantities": [
+            "1",
+            "2"
+          ]
+        }
+      },
+      "pricingRevision": "NFC-INSTAGRAM-UA-2026-09-v18",
+      "evidence": "Instagram handoff v1 PRODUCT_CURRENT_TRUTH; v18 product contract"
+    }
+  },
+  "selections": {
+    "standard": {
+      "product_id": "nfc-review-card",
+      "offer": "standard"
+    },
+    "branded": {
+      "product_id": "nfc-review-card",
+      "offer": "branded"
+    },
+    "bulk": {
+      "product_id": "nfc-review-card",
+      "offer": "custom"
+    },
+    "consultation": {
+      "product_id": "nfc-review-card",
+      "offer": "consultation"
+    },
+    "instagram": {
+      "product_id": "nfc-instagram-card",
+      "offer": "ready"
+    }
+  }
 }

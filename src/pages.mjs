@@ -1,4 +1,5 @@
 // Shared Pages build/client boundary. Only explicit public configuration belongs here.
+import {instagramProfileURL} from './commerce-contract.mjs';
 export function publicBasePath(value = '') {
   if (value === '' || value === '/') return '';
   if (typeof value !== 'string' || !/^\/(?:[A-Za-z0-9_-]+\/)*[A-Za-z0-9_-]+\/?$/.test(value)) {
@@ -62,10 +63,12 @@ export const unavailable = locale => locale === 'uk'
 
 export const previewCSS = '.header .preview-brand{display:flex;flex-direction:column;justify-content:center;gap:2px;flex-shrink:0}.preview-badge{display:block;width:max-content;font-size:9px;line-height:1.1;letter-spacing:.08em;font-weight:600;color:var(--nfc-steel-700)}';
 
+export function submissionNotice(locale,selection){
+ const uk=locale==='uk';
+ return selection==='instagram'?(uk?'Надсилаємо ім’я, контакт, кількість, Instagram-посилання, коментар і згоду для опрацювання заявки.':'We send your name, contact, quantity, Instagram profile URL, comment and consent to process the enquiry.'):(uk?'Надсилаємо лише ім’я, контакт, картку та кількість. Коментар і додаткові деталі погодимо в месенджері.':'We send only your name, contact, card and quantity. Please share comments and additional details in a messenger.');
+}
 export function pagesFormHTML(html, {endpoint = '', locale, esc}) {
-  const notice = endpoint ? (locale === 'uk'
-    ? 'Надсилаємо лише ім’я, контакт, картку та кількість. Коментар і додаткові деталі погодимо в месенджері.'
-    : 'We send only your name, contact, card and quantity. Please share comments and additional details in a messenger.') : unavailable(locale);
+  const notice = endpoint ? submissionNotice(locale,html.includes('data-commerce-form data-variant="instagram"')?'instagram':'') : unavailable(locale);
   // Native submission is inert even if either client script fails to load. Only
   // the mounted JSON client may enable the submit control after initialization.
   return html.replace(/action="\/api\/leads" method="post"/g, 'data-pages-form action="" method="dialog"')
@@ -74,25 +77,28 @@ export function pagesFormHTML(html, {endpoint = '', locale, esc}) {
     .replace(/(<div class="form-result"[^>]*><\/div>)/g, '$1<button class="button secondary" type="button" data-new-request hidden>' + (locale === 'uk' ? 'Створити іншу заявку' : 'Start another enquiry') + '</button>');
 }
 
-const products = ['standard', 'branded', 'bulk', 'consultation'];
+const products = ['standard', 'branded', 'bulk', 'consultation', 'instagram'];
 const quantities = ['1', '2', 'more'];
 const channels = ['telegram', 'whatsapp', 'viber'];
 const idempotencyKey = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/;
 export function leadPayload(input, {basePath = '', pathname, utm = {}}) {
   basePath = publicBasePath(basePath);
+  if(input.variant==='instagram'&&!instagramProfileURL(input.instagramUrl))throw Error('invalid_instagram_url');
   const name = String(input.name || '').trim().normalize('NFC'), phone = String(input.phone || '').trim();
   if (!['uk', 'en'].includes(input.locale) || !products.includes(input.variant) || !quantities.includes(input.quantity) ||
+      (input.variant === 'instagram' && (!['1','2'].includes(input.quantity)||!instagramProfileURL(input.instagramUrl)||typeof input.comment!=='string'||input.comment.length>2000)) ||
       (input.variant === 'bulk' && input.quantity !== 'more') || !name || name.length > 100 || /[\x00-\x1f\x7f\u202a-\u202e\u2066-\u2069]/u.test(name) ||
       !/^\+?[\d ()-]+$/.test(phone) || phone.replace(/\D/g, '').length < 7 || phone.replace(/\D/g, '').length > 15 ||
       !channels.includes(input.messenger) || input.consent !== true || input.website) throw Error('invalid_fields');
   const route = String(pathname || '').split(/[?#]/)[0].replace(/\/$/, '') || '/';
   const sourcePage = route === basePath ? basePath + '/' : route;
   const relative = sourcePage.slice(basePath.length);
-  if (!sourcePage.startsWith(basePath + '/') || !['/', '/en', ...['order','contact','about','solutions/review-card','solutions/branded-review-card'].flatMap(r=>['/'+r,'/en/'+r])].includes(relative)) throw Error('invalid_source_page');
-  const payload = {language: input.locale, product: input.variant === 'branded' ? 'branded-review-card' : 'review-card',
+  if (!sourcePage.startsWith(basePath + '/') || !['/', '/en', ...['order','contact','about','solutions/review-card','solutions/branded-review-card','solutions/instagram-card','instagram-card'].flatMap(r=>['/'+r,'/en/'+r])].includes(relative)) throw Error('invalid_source_page');
+  const payload = {language: input.locale, product: input.variant === 'instagram' ? 'nfc-instagram-card' : input.variant === 'branded' ? 'branded-review-card' : 'review-card',
     quantity: input.quantity === 'more' ? 3 : Number(input.quantity), customerName: name,
     contact: {phone: phone.replace(/[ ()-]/g, ''), preferredMethod: input.messenger}, sourcePage,
     selection: {variant: input.variant, quantity: input.quantity}};
+  if(input.variant==='instagram')Object.assign(payload,{productSchemaVersion:1,product_id:'nfc-instagram-card',sku:'NFC-IG-READY',offer:'ready',instagramUrl:instagramProfileURL(input.instagramUrl),comment:input.comment.trim(),consent:true});
   const attribution = {};
   for (const key of ['source', 'medium', 'campaign', 'term', 'content']) {
     const value = utm['utm_' + key];
@@ -154,6 +160,8 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
     form.dataset.enhanced = 'true';
     return;
   }
+  const updateNotice=()=>{form.querySelector('.preview-notice').textContent=submissionNotice(locale,selection().variant);};
+  updateNotice();
   let busy = false, pending = null;
   const storageKey = `nfc-public-attempt:${basePath}:${endpoint}:${pathname.replace(/\/$/, '')}`;
   // Only opaque IDs and lifecycle state survive reload. No personal fields,
@@ -166,11 +174,14 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
   function remember(state, leadId) {
     try { sessionStorage.setItem(storageKey, JSON.stringify({key, state, ...(leadId ? {leadId} : {})})); } catch {}
   }
+  function clearProfileError(){const input=q('instagramUrl'),error=form.querySelector('#e-instagramUrl');if(input){input.removeAttribute('aria-invalid');input.setAttribute('aria-describedby','instagram-help');}if(error){error.hidden=true;error.textContent='';}}
+  q('instagramUrl')?.addEventListener('input',clearProfileError);
   const snapshot = () => ({name: q('name').value, phone: q('phone').value, messenger: q('messenger').value,
-    consent: q('consent').checked, ...selection()});
+    consent: q('consent').checked, instagramUrl:q('instagramUrl')?.value.trim(),comment:q('comment')?.value||'', ...selection()});
   function lock(locked) {
     for (const el of form.elements) if (!['hidden', 'submit', 'button'].includes(el.type)) el.disabled = locked;
     lockSelection(locked);
+    if(!locked)select(selection());
     note.hidden = !locked;
     if (locked) note.textContent = P('Результат спроби ще не підтверджено. Повторимо ту саму заявку з тими самими даними, щоб не створити дублікат.',
       'The attempt is not confirmed yet. We will retry the same request with the same details to avoid a duplicate.');
@@ -181,7 +192,7 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
   function completed(leadId, previous = false) {
     form.dataset.complete = 'true'; submit.hidden = true; submit.disabled = true; note.hidden = true;
     status((previous ? P('Попередню заявку вже збережено. Нові дані не надсилалися. Номер: ', 'Your previous enquiry is already saved. The new details were not submitted. Reference: ') :
-      P('Дякуємо! Заявку збережено. Деталі погодимо у вибраному месенджері. Номер: ', 'Thank you! Your request is saved. We will agree the details in your selected messenger. Reference: ')) + leadId, previous ? 'existing' : 'success');
+      selection().variant==='instagram'?P('Дякуємо! Заявку отримано. Я зв’яжуся з вами, перевірю Instagram-посилання та уточню деталі замовлення. Номер: ','Thank you! Your enquiry has been received. I will contact you, check the Instagram link and confirm your order details. Reference: '):P('Дякуємо! Заявку збережено. Деталі погодимо у вибраному месенджері. Номер: ', 'Thank you! Your request is saved. We will agree the details in your selected messenger. Reference: ')) + leadId, previous ? 'existing' : 'success');
     remember('complete', leadId);
     if (newRequest) newRequest.hidden = false;
   }
@@ -196,6 +207,7 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
     if (pending) return;
     if (['variant', 'quantity'].includes(e.target.name)) {
       select({variant: q('variant').value, quantity: q('quantity').value});
+      updateNotice();
       event(e.target.name === 'variant' ? 'product_variant_select' : 'quantity_select', selection());
     }
   });
@@ -207,6 +219,7 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
     form.setAttribute('aria-busy', 'true'); result.hidden = true;
     try {
       if (!pending) {
+        clearProfileError();
         const payload = leadPayload({...snapshot(), locale, website: q('website').value}, {basePath, pathname, utm: attribution});
         pending = {key, payload, uncertain: inheritedUncertainty};
         // Conservative before transport: a page close at any point may hide a COMMIT.
@@ -222,7 +235,14 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
         pending = null; lock(false); key = crypto.randomUUID();
         try { sessionStorage.removeItem(storageKey); } catch {}
       }
-      status(error.message === 'invalid_fields' ? P('Перевірте ім’я (до 100 символів), телефон, месенджер, картку, кількість і згоду.', 'Check your name (up to 100 characters), phone, messenger, card, quantity and consent.') :
+      if(error.message==='invalid_instagram_url'){
+        const message=P('Вкажіть повне HTTPS-посилання саме на Instagram-профіль, без дописів, Reels або параметрів посилання.','Enter the full HTTPS Instagram profile URL, without posts, Reels or link parameters.');
+        status(message,'error');const input=q('instagramUrl'),fieldError=form.querySelector('#e-instagramUrl');
+        if(fieldError){fieldError.textContent=message;fieldError.hidden=false;}
+        if(input){input.setAttribute('aria-invalid','true');input.setAttribute('aria-describedby','instagram-help e-instagramUrl');input.focus();}
+        event('order_submit_error');return;
+      }
+      status(error.message === 'invalid_fields' ? P('Перевірте ім’я (до 100 символів), телефон, месенджер, картку, кількість, Instagram-посилання (для Instagram Card) і згоду.', 'Check your name (up to 100 characters), phone, messenger, card, quantity, Instagram profile URL (for Instagram Card) and consent.') :
         P('Прийняття заявки не підтверджено. Дані та вибір залишаються у формі. Спробуйте ще раз або зв’яжіться з нами в месенджері.',
           'Request acceptance is not confirmed. Your details and selection remain in the form. Retry or contact us in a messenger.'), 'error');
       event('order_submit_error');

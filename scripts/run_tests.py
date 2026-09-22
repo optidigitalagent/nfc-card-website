@@ -62,11 +62,12 @@ def main():
     save()
     run("build-for-tests", ["node", "src/build.mjs"])
     if not summary["browser_only"]:
-        pytest("unit-integration", ["tests", "--ignore=tests/test_v12_browser.py", "--ignore=tests/test_v13_browser.py"])
+        pytest("unit-integration", ["tests", "--ignore=tests/test_v12_browser.py", "--ignore=tests/test_v13_browser.py", "--ignore=tests/test_instagram_browser.py"])
     for width in [320, 360, 390, 430, 768, 1024, 1280, 1440]:
         pytest(f"browser-width-{width}", [f"tests/test_v12_browser.py::test_eight_width_bilingual_route_and_screenshot_matrix[{width}]"])
     pytest("browser-v12-flows", ["tests/test_v12_browser.py", "-k", "not eight_width"])
     pytest("browser-v13", ["tests/test_v13_browser.py"])
+    pytest("browser-instagram-v18", ["tests/test_instagram_browser.py"])
     summary["complete"] = True
     save()
     print("Complete sequential test run:", sum(g.get("tests", 0) for g in summary["groups"]), "checks; no skipped groups")

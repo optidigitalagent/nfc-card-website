@@ -22,9 +22,9 @@ ORIGIN = 'https://preview.nfc.example'
 @pytest.fixture
 def source(tmp_path):
     shutil.copytree(ROOT / 'src', tmp_path / 'src')
-    dest = tmp_path / 'refinements/visual-about-v13'
+    dest = tmp_path / 'refinements/instagram-v18'
     dest.mkdir(parents=True)
-    shutil.copyfile(ROOT / 'refinements/visual-about-v13/routes.json', dest / 'routes.json')
+    shutil.copyfile(ROOT / 'refinements/instagram-v18/routes.json', dest / 'routes.json')
     return tmp_path
 
 
@@ -62,7 +62,7 @@ def test_https_preview_metadata_and_crawl_boundaries(source):
     result = build(source)
     assert result.returncode == 0, result.stderr
     pages = list((source / 'site').rglob('*.html'))
-    assert len(pages) == 26
+    assert len(pages) == 30
     for page in pages:
         soup = BeautifulSoup(page.read_text(), 'html.parser')
         assert soup.select_one('meta[name=robots]')['content'] == 'noindex,nofollow'
@@ -73,7 +73,7 @@ def test_https_preview_metadata_and_crawl_boundaries(source):
     assert (source / 'site/robots.txt').read_text() == 'User-agent: *\nDisallow: /\n'
     sitemap = BeautifulSoup((source / 'site/sitemap.xml').read_text(), 'xml')
     urls = [item.text for item in sitemap.find_all('loc')]
-    assert len(urls) == 14 and all(url.startswith(ORIGIN + '/') for url in urls)
+    assert len(urls) == 18 and all(url.startswith(ORIGIN + '/') for url in urls)
     assert all(not any(part in url for part in ('/order', '/contact', '/reviews/new', '/thank-you', '/privacy', '/terms', '/admin', '/api')) for url in urls)
     assert PublicationPolicy.from_build(source, SimpleNamespace(mode='production', origin=ORIGIN), {}).mode == PREVIEW
 

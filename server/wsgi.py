@@ -38,6 +38,7 @@ class Application:
             elif mime=='application/x-www-form-urlencoded':
                 payload=unique(parse_qsl(request.body.decode('utf-8'),keep_blank_values=True,max_num_fields=40))
                 payload['contractVersion']=int(payload.get('contractVersion','0'));payload['consent']=payload.get('consent') in ('yes','on','true');payload['differentContact']=False
+                if 'productSchemaVersion' in payload:payload['productSchemaVersion']=1 if payload['productSchemaVersion']=='1' else 0
                 if 'attribution' in payload:payload['attribution']=json.loads(payload['attribution'],object_pairs_hook=unique)
             else:return json_response({'ok':False,'code':'unsupported_content_type'},415)
             result=self.leads.submit(payload,request.identity);return json_response(result,200 if result['receipt']['duplicate'] else 201)

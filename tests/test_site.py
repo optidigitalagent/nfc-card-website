@@ -11,7 +11,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / 'site'
-BASE_ROUTES = ['/', '/about', '/solutions', '/solutions/review-card', '/solutions/branded-review-card', '/reviews/new', '/order',
+BASE_ROUTES = ['/', '/about', '/solutions', '/solutions/review-card', '/solutions/branded-review-card', '/solutions/instagram-card', '/instagram-card', '/reviews/new', '/order',
                '/delivery-and-payment', '/warranty-and-returns', '/contact',
                '/thank-you', '/privacy', '/terms']
 ROUTES = BASE_ROUTES + ['/en' + ('' if r == '/' else r) for r in BASE_ROUTES]
@@ -102,7 +102,9 @@ def test_catalog_is_first_meaningful_section_with_two_variants_and_exact_prices(
     soup = soup_at(route)
     assert soup.main.find('section')['id'] == 'catalog'
     cards = soup.select('.commerce-card')
-    assert [c['data-variant'] for c in cards] == ['standard', 'branded']
+    assert [c['data-variant'] for c in cards] == ['standard', 'branded', 'instagram']
+    # These original assertions continue to protect the two Review Card offers.
+    cards = cards[:2]
     for card, prices in zip(cards, [(1500, 2600), (2000, 3600)]):
         amounts = [int(re.sub(r'[^0-9]', '', value.get_text())) for value in card.select('.commerce-card-prices dd')]
         assert amounts == list(prices)
@@ -191,7 +193,7 @@ def test_new_primary_form_fields_and_conditional_contract(route):
     assert form.select_one('input[name=requestToken]')['value'] == ''
     assert form.select_one('input[name=phone]')['type'] == 'tel'
     assert {o.get('value') for o in form.select('input[type=radio][name=messenger]')} == {'telegram', 'whatsapp', 'viber'}
-    assert {o.get('value') for o in form.select('select[name=variant] option') if o.get('value')} == {'standard', 'branded', 'bulk', 'consultation'}
+    assert {o.get('value') for o in form.select('select[name=variant] option') if o.get('value')} == {'standard', 'branded', 'bulk', 'consultation', 'instagram'}
     assert {o.get('value') for o in form.select('select[name=quantity] option')} == {'1', '2', 'more'}
     for field in ['business', 'maps']:
         assert not form.select_one('[name="' + field + '"]')

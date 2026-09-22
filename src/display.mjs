@@ -1,4 +1,5 @@
 import commerce from './commerce.json' with { type: 'json' };
+import {selectionQuote} from './commerce-contract.mjs';
 import { config } from './model.mjs';
 
 const localeKey = locale => locale === 'en' ? 'en' : 'uk';
@@ -6,11 +7,7 @@ const localeKey = locale => locale === 'en' ? 'en' : 'uk';
 /** Canonical offer, shared with the server. Never uses a client price. */
 export function canonicalQuote(variant, quantity = '1') {
   const key = String(quantity);
-  const validInterest = commerce.interests.includes(variant);
-  const validQuantity = commerce.quantities.includes(key);
-  const amount = validInterest && validQuantity && key !== commerce.bulkQuantity
-    ? commerce.variants[variant]?.prices[key] ?? null
-    : null;
+  const {valid,amount,product_id,offer,pricingRevision,evidence}=selectionQuote(commerce,variant,key);
   return {
     variant,
     product: variant,
@@ -23,8 +20,8 @@ export function canonicalQuote(variant, quantity = '1') {
     currency: commerce.currency,
     deposit: commerce.deposit,
     depositIncluded: commerce.depositIncluded,
-    valid: validInterest && validQuantity,
-    evidence: commerce.evidence
+    valid, product_id, offer, pricingRevision,
+    evidence
   };
 }
 

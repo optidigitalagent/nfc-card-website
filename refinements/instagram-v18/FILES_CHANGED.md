@@ -1,0 +1,75 @@
+# Files changed
+
+Local additive candidate from `de3d2533381d12cee9f42567bfb7a67290d716c0`. No removed implementation files. Shared renderers/controls and Node/Python contracts extended; new product copy/render/styles and tests added. Existing test assertions updated for the additive routes/catalog/native parser; functional regression checks retained. No migration, dependency, workflow, live endpoint, publication-approval or existing media changes.
+
+Tracked modifications and newly authored task files:
+
+- `README.md`
+- `SOURCE_MANIFEST.json`
+- `refinements/instagram-v18/ACCEPTANCE_REPORT.md`
+- `refinements/instagram-v18/BASELINE.md`
+- `refinements/instagram-v18/BEFORE_AFTER.md`
+- `refinements/instagram-v18/BROWSER_QA_MATRIX.md`
+- `refinements/instagram-v18/CONFLICT_REGISTER.md`
+- `refinements/instagram-v18/CRITIC_FINDINGS.md`
+- `refinements/instagram-v18/FILES_CHANGED.md`
+- `refinements/instagram-v18/FORM_AND_PAYLOAD_CONTRACT.md`
+- `refinements/instagram-v18/IMPLEMENTATION_PLAN.md`
+- `refinements/instagram-v18/INDEPENDENT_ACCEPTANCE.md`
+- `refinements/instagram-v18/MEDIA_PLACEHOLDER_MAP.md`
+- `refinements/instagram-v18/PRODUCT_TRUTH_MATRIX.md`
+- `refinements/instagram-v18/PROTECTED_BASELINE.json`
+- `refinements/instagram-v18/REVISION_LOG.md`
+- `refinements/instagram-v18/ROLLBACK.md`
+- `refinements/instagram-v18/ROUTE_MAP_BEFORE_AFTER.md`
+- `refinements/instagram-v18/SEO_OUTCOMES.md`
+- `refinements/instagram-v18/SEO_STATIC_SCAN.json`
+- `refinements/instagram-v18/SKILLS_LEDGER.md`
+- `refinements/instagram-v18/SOURCE_INVENTORY.md`
+- `refinements/instagram-v18/TEST_REPORT.md`
+- `refinements/instagram-v18/evidence/after-catalog-desktop-1440.png`
+- `refinements/instagram-v18/evidence/after-review-mobile-390.png`
+- `refinements/instagram-v18/evidence/before-catalog-desktop-1440.png`
+- `refinements/instagram-v18/evidence/before-review-mobile-390.png`
+- `refinements/instagram-v18/evidence/instagram-catalog-desktop-1440.png`
+- `refinements/instagram-v18/evidence/instagram-form-error-en-mobile-393.png`
+- `refinements/instagram-v18/evidence/instagram-form-total-mobile-393.png`
+- `refinements/instagram-v18/evidence/instagram-information-desktop-1440.png`
+- `refinements/instagram-v18/evidence/instagram-product-desktop-1440.png`
+- `refinements/instagram-v18/evidence/instagram-product-mobile-390.png`
+- `refinements/instagram-v18/evidence/pages-route-matrix.json`
+- `refinements/instagram-v18/evidence/portable-verification.json`
+- `refinements/instagram-v18/evidence/protected-verification.json`
+- `refinements/instagram-v18/evidence/syntax-verification.json`
+- `refinements/instagram-v18/evidence/test-run-summary.json`
+- `refinements/instagram-v18/routes.json`
+- `scripts/run_tests.py`
+- `server/commerce_repository.py`
+- `server/leads.py`
+- `server/preview.py`
+- `server/pricing.py`
+- `server/publication.py`
+- `server/wsgi.py`
+- `src/build.mjs`
+- `src/commerce-contract.mjs`
+- `src/commerce-view.mjs`
+- `src/commerce.js`
+- `src/commerce.json`
+- `src/display.mjs`
+- `src/gallery-view.mjs`
+- `src/gallery.js`
+- `src/instagram-claims.mjs`
+- `src/instagram-view.mjs`
+- `src/instagram.css`
+- `src/instagram.mjs`
+- `src/model.mjs`
+- `src/pages.mjs`
+- `src/publication.mjs`
+- `tests/test_instagram_browser.py`
+- `tests/test_instagram_v18.py`
+- `tests/test_pages_v17.py`
+- `tests/test_public_launch.py`
+- `tests/test_publication.py`
+- `tests/test_site.py`
+- `tests/test_v12_browser.py`
+- `tests/test_v13.py`

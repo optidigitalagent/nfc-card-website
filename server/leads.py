@@ -22,14 +22,15 @@ except ImportError:
     from pricing import COMMERCE_PATH, load_commerce, canonical_quote
 
 CONSENT_VERSION = 'nfc-card-local-privacy-draft-v6'
-VARIANTS = {'standard', 'branded', 'bulk', 'consultation'}
+VARIANTS = {'standard', 'branded', 'bulk', 'consultation', 'instagram'}
 QUANTITIES = {'1', '2', 'more'}
 MESSENGERS = {'telegram', 'whatsapp', 'viber'}
 LIMITS = {'name': 120, 'phone': 80, 'messengerContact': 250, 'business': 200,
           'maps': 2048, 'businessUrl': 2048, 'comment': 2000, 'source': 250}
 ALLOWED = set(LIMITS) | {'contractVersion', 'requestToken', 'variant', 'quantity',
                        'messenger', 'differentContact', 'consent', 'locale',
-                       'attribution', 'website', 'displayed_price', 'logo'}
+                       'attribution', 'website', 'displayed_price', 'logo',
+                       'productSchemaVersion', 'product_id', 'offer', 'instagramUrl'}
 ATTRIBUTION_KEYS = {'utm_source', 'utm_medium', 'utm_campaign', 'utm_content',
                     'utm_term', 'referrer', 'landing'}
 CONTROL = re.compile(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]')
@@ -90,6 +91,36 @@ def business_url(value):
         return bool('.' in host and re.fullmatch(r'[A-Za-z0-9.-]{1,253}', host))
     except (ValueError, UnicodeError):
         return False
+
+
+def instagram_profile_url(value):
+    if not isinstance(value, str) or len(value) > 250:
+        return None
+    match = re.fullmatch(r'https://(?:www\.)?instagram\.com/([A-Za-z0-9._]{1,30})/?', value, re.IGNORECASE | re.ASCII)
+    if not match:
+        return None
+    name = match.group(1).lower()
+    reserved = {'p', 'reel', 'reels', 'stories', 'explore', 'accounts', 'direct', 'about',
+                'legal', 'developer', 'developers', 'web', 'api', 'challenge', 'oauth', 'tv'}
+    if name.startswith('.') or name.endswith('.') or '..' in name or name in reserved:
+        return None
+    return 'https://www.instagram.com/' + name + '/'
+
+
+def instagram_telegram_message(lead_id, created, lead):
+    # Private notifier only, called after durable lead/outbox commit. Never logged.
+    lines = ['NEW NFC CARD LEAD', 'Product: NFC Instagram Card', 'SKU: NFC-IG-READY',
+             'Offer: ready', f'Order ID: {lead_id}',
+             f'Created: {datetime.fromtimestamp(created, timezone.utc).isoformat()}',
+             f'Language: {lead["locale"]}', f'Quantity: {lead["quantity"]}',
+             f'Canonical price: {lead["quote"]["amount"]} UAH',
+             f'Instagram profile: {lead["instagramUrl"]}',
+             f'Name: {lead["name"]}', f'Phone: {lead["phone"]}',
+             f'Preferred messenger: {lead["messenger"]}', f'Comment: {lead["comment"]}',
+             f'Source page: {lead["source"]}',
+             f'Consent: true; {lead["consentVersion"]}; {lead["consentAcceptedAt"]}']
+    message = '\n'.join(lines)
+    return message.encode('utf-8')[:3900].decode('utf-8', errors='ignore')
 
 
 def normalize(payload):
@@ -155,6 +186,23 @@ def normalize(payload):
         errors['businessUrl'] = 'businessUrl'
     if result.get('variant') == 'bulk' and result.get('quantity') != 'more':
         errors['quantity'] = 'quantity'
+    if result.get('variant') == 'instagram':
+        if (type(payload.get('productSchemaVersion')) is not int or payload['productSchemaVersion'] != 1
+                or payload.get('product_id') != 'nfc-instagram-card' or payload.get('offer') != 'ready'):
+            errors['variant'] = 'variant'
+        profile = instagram_profile_url(payload.get('instagramUrl'))
+        if not profile:
+            errors['instagramUrl'] = 'instagramUrl'
+        else:
+            result['instagramUrl'] = profile
+        if result.get('quantity') not in {'1', '2'}:
+            errors['quantity'] = 'quantity'
+        if any(payload.get(key) for key in ['maps', 'businessUrl', 'business', 'logo']):
+            errors['variant'] = 'variant'
+        result.update(productSchemaVersion=1, product_id='nfc-instagram-card', offer='ready', sku='NFC-IG-READY')
+    elif any(key in payload for key in ['productSchemaVersion', 'product_id', 'offer', 'instagramUrl']):
+        # Reject stale destination/product data; keep old v6 fingerprints unchanged.
+        errors['variant'] = 'variant'
     if payload.get('consent') is not True:
         errors['consent'] = 'consent'
     result['consent'] = True
@@ -196,7 +244,8 @@ def normalize(payload):
 
 def receipt(lead_id, lead, duplicate):
     return {'id': lead_id, 'variant': lead['variant'], 'quantity': lead['quantity'],
-            'quote': lead['quote'], 'mode': 'local_test', 'duplicate': duplicate}
+            'quote': lead['quote'], 'mode': 'local_test', 'duplicate': duplicate,
+            **({'product_id': lead['product_id'], 'offer': lead['offer']} if lead.get('product_id') else {})}
 
 
 def displayed_price_observation(value):
@@ -218,6 +267,8 @@ def telegram_message(lead_id, created, lead):
     if lead.get('contractVersion') != 6:
         message = legacy_telegram_message(lead_id, created, lead)
     else:
+        if lead.get('product_id') == 'nfc-instagram-card':
+            return instagram_telegram_message(lead_id, created, lead)
         stamp = datetime.fromtimestamp(created, timezone.utc).isoformat()
         price = lead['quote']['amount'] if lead['quote']['status'] == 'fixed' else 'custom'
         message = '\n'.join([
@@ -337,7 +388,7 @@ class LeadService:
             lead = {
                 **intent, 'quote': canonical_quote(intent['variant'], intent['quantity'], self.commerce),
                 'displayed_price': displayed_price_observation(payload.get('displayed_price')),
-                'physicalProduct': self.commerce['physicalProduct']['id'],
+                'physicalProduct': intent.get('product_id', self.commerce['physicalProduct']['id']),
                 'consentVersion': CONSENT_VERSION,
                 'consentAcceptedAt': datetime.fromtimestamp(now, timezone.utc).isoformat(),
                 'is_test': True,

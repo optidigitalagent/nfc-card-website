@@ -26,7 +26,7 @@ class PostgresLeadService:
             lead_id='NFC-'+uuid.uuid4().hex[:20].upper()
             lead={**intent,'quote':canonical_quote(intent['variant'],intent['quantity'],self.commerce),
                   'displayed_price':displayed_price_observation(payload.get('displayed_price')),
-                  'physicalProduct':self.commerce['physicalProduct']['id'],'consentVersion':CONSENT_VERSION,
+                  'physicalProduct':intent.get('product_id', self.commerce['physicalProduct']['id']),'consentVersion':CONSENT_VERSION,
                   'consentAcceptedAt':datetime.fromtimestamp(self.clock(),timezone.utc).isoformat(),'is_test':self.mode!='production'}
             db.execute('INSERT INTO commerce_leads(id,request_hash,payload_hash,payload) VALUES(%s,%s,%s,%s)',(lead_id,key,fingerprint,Jsonb(lead)))
             db.execute('INSERT INTO commerce_notification_outbox(lead_id) VALUES(%s)',(lead_id,))

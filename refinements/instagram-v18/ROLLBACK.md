@@ -1,0 +1,6 @@
+# Rollback — local candidate only
+No deployment, remote push, Railway or production data changes occurred. Production remains unchanged.
+Starting full HEAD `de3d2533381d12cee9f42567bfb7a67290d716c0`. Branch `refinement/instagram-v18`; verified private recovery.bundle preserves all baseline refs/history. Original archives and source remain local.
+Review the candidate with `git diff de3d2533381d12cee9f42567bfb7a67290d716c0` and untracked task files. To inspect the unchanged baseline without discarding any work, create a separate local worktree at `de3d2533381d12cee9f42567bfb7a67290d716c0`. Do not use reset --hard, clean wildcards or remove parent projects. Restore individual reviewed paths from the baseline only after saving any subsequent edits. The exact new-file list is in FILES_CHANGED.md.
+No database rollback is required: no migration change; test-only schemas are dropped by fixtures. Existing lead JSONB permits additive Instagram data. A future release must keep the backend able to read persisted Instagram leads even if the frontend product is withdrawn. Outbox records must never be deleted to hide delivery failures.
+The existing content-bound publication approval was not changed; rollback does not require reauthorizing indexing. Temporary task/evidence paths are private and not automatically deleted.

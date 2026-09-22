@@ -1,0 +1,41 @@
+/* Additive slots and layouts; existing graphite commerce tokens/components. */
+.instagram-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:clamp(24px,5vw,64px);width:100%;min-height:320px;aspect-ratio:1;background:var(--nfc-metal-gradient);color:var(--nfc-ink);border:1px solid var(--nfc-border-soft);border-radius:6px}
+.instagram-placeholder strong{font-size:clamp(1.3rem,2.6vw,2rem);line-height:1.2;max-width:20ch}
+.instagram-placeholder>span:last-child{font-size:.875rem;color:var(--muted)}
+.placeholder-category{font:500 .75rem 'IBM Plex Mono',monospace;letter-spacing:.025em}
+.commerce-card-media .instagram-placeholder{height:100%;min-height:0;border:0;border-radius:0}
+@media(min-width:769px){.commerce-card[data-variant=instagram] .commerce-card-media{align-self:stretch;display:flex;align-items:stretch}.commerce-card[data-variant=instagram] .instagram-placeholder{height:auto;aspect-ratio:auto}}
+.placeholder-thumb{font-size:.6rem;line-height:1.15;display:grid;place-items:center;min-height:56px;overflow-wrap:anywhere;padding:3px}
+.commerce-gallery [data-placeholder]{height:clamp(320px,38vw,545px);aspect-ratio:auto}
+.lightbox-scroll [data-placeholder]{min-height:270px;height:min(55dvh,545px);aspect-ratio:auto}
+.instagram-catalog-actions{width:100%;display:flex;flex-direction:column;gap:12px;margin-top:auto}
+.instagram-catalog-actions>a{position:relative;z-index:3;text-align:center}
+.instagram-catalog-actions .button{width:100%}
+.commerce-card .instagram-benefits{font-size:.875rem;padding-left:20px;margin:0 0 18px}
+.commerce-card .instagram-headline{font-weight:600;color:var(--nfc-ink)}
+.instagram-info-hero,.instagram-info-truth{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.instagram-product-content{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;max-width:none;padding:0;border-top:1px solid var(--nfc-border-soft);margin-top:clamp(52px,7vw,96px);color:var(--nfc-ink)}
+.instagram-product-content>.detail-signature,.instagram-product-content>.field-hint,.instagram-product-content>.instagram-content-order{grid-column:1/-1}
+.instagram-product-content>.detail-signature{font-size:clamp(1.55rem,3vw,2.7rem);font-weight:650;letter-spacing:-.035em;padding:0 0 clamp(30px,5vw,60px);margin:0}
+.instagram-product-content>.product-detail{margin:0;padding:clamp(28px,4vw,54px);border:1px solid var(--nfc-border-soft);border-top:0;background:var(--nfc-paper)}
+.instagram-product-content>.product-detail:nth-of-type(even){border-left:0}
+.instagram-product-content>.product-detail h2{font-size:clamp(1.45rem,2.4vw,2rem);line-height:1.14;margin:0 0 24px;color:var(--nfc-ink)}
+.instagram-product-content>.product-detail h3,.instagram-product-content>.product-detail p,.instagram-product-content>.product-detail li{color:var(--nfc-ink)}
+.instagram-product-content>.product-detail .eyebrow{color:var(--nfc-steel-700)}
+.instagram-product-content>.product-detail .meaning-rows{grid-template-columns:1fr;gap:0}
+.instagram-product-content>.product-detail .meaning-rows>div{padding:18px 0;border-top:1px solid var(--nfc-border-soft)}
+.instagram-product-content>.product-detail .steps{margin:0;padding:0;list-style:none}
+.instagram-product-content>.instagram-product-steps .steps{grid-template-columns:1fr}
+.instagram-product-content>.product-detail .clean-list{margin:0}
+.instagram-product-content>.instagram-product-faq{grid-column:1/-1}
+.instagram-product-content>.instagram-product-faq .faq-list{max-width:none}
+.instagram-product-content>.field-hint{margin:22px 0 0;color:var(--muted)}
+.instagram-product-content>.instagram-content-order{justify-self:start;margin-top:22px}
+.instagram-info-hero h1{font-size:clamp(2.1rem,4.6vw,4.5rem);line-height:1.06}
+.instagram-actions{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.instagram-info-truth [data-placeholder]{max-height:580px}
+.instagram-info-content{color:var(--nfc-ink)}
+.instagram-info-content .section p:not(.eyebrow):not(.field-hint),.instagram-info-content .section li,.commerce-product[data-product=instagram] .product-promise,.commerce-product[data-product=instagram] .product-short{color:var(--nfc-ink)}
+.instagram-selection-note{margin:0 0 18px;color:var(--muted);font-size:.875rem}
+.field-instagramUrl[hidden]{display:none}
+@media(max-width:768px){.instagram-info-hero,.instagram-info-truth,.instagram-product-content{grid-template-columns:1fr}.instagram-product-content>.product-detail:nth-of-type(even){border-left:1px solid var(--nfc-border-soft)}.instagram-product-content>.detail-signature,.instagram-product-content>.field-hint,.instagram-product-content>.instagram-content-order,.instagram-product-content>.instagram-product-faq{grid-column:1}.instagram-product-content>.product-detail{padding:26px 20px}.instagram-product-content>.instagram-content-order{width:100%}.instagram-placeholder{min-height:240px}.commerce-gallery [data-placeholder]{height:auto;aspect-ratio:1;min-height:240px}.instagram-placeholder strong{font-size:1.4rem}.instagram-actions>.button{width:100%}}

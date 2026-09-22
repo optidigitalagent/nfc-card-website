@@ -178,7 +178,7 @@ def test_reduced_motion_zoom_reflow_and_story_control_contrast(web,browser):
     origin,_=web;context=browser.new_context(viewport={'width':720,'height':900},reduced_motion='reduce');block_external(context,origin);page=context.new_page();page.goto(origin);ready(page)
     assert page.evaluate("matchMedia('(prefers-reduced-motion: reduce)').matches")
     assert page.evaluate("[...document.querySelectorAll('video')].every(v=>v.paused)")
-    for route in ['/about','/en/about','/solutions/review-card','/solutions/branded-review-card','/reviews/new','/order']:
+    for route in ['/about','/en/about','/solutions/review-card','/solutions/branded-review-card','/reviews/new','/order','/solutions/instagram-card','/en/solutions/instagram-card','/instagram-card','/en/instagram-card']:
         page.goto(origin+route);ready(page)
         # Browser-level 200% page zoom through Chromium's documented settings accelerator.
         page.keyboard.press('Control+0')
@@ -224,7 +224,7 @@ def test_actual_200_percent_browser_zoom(web,tmp_path):
         context=p.chromium.launch_persistent_context(tmp_path/'browser-profile',channel='chromium',headless=True,viewport={'width':1440,'height':1000},args=['--disable-gpu',f'--disable-extensions-except={extension}',f'--load-extension={extension}']);block_external(context,origin)
         worker=context.service_workers[0] if context.service_workers else context.wait_for_event('serviceworker')
         page=context.new_page()
-        for route in ['/','/about','/en/about','/solutions/review-card','/solutions/branded-review-card','/reviews/new','/order']:
+        for route in ['/','/about','/en/about','/solutions/review-card','/solutions/branded-review-card','/reviews/new','/order','/solutions/instagram-card','/en/solutions/instagram-card','/instagram-card','/en/instagram-card']:
             page.goto(origin+route);ready(page)
             zoom=worker.evaluate('''async origin=>{const tabs=await chrome.tabs.query({});const tab=tabs.find(t=>t.url.startsWith(origin));await chrome.tabs.setZoom(tab.id,2);return await chrome.tabs.getZoom(tab.id);}''',origin)
             assert zoom==2;page.wait_for_function('devicePixelRatio===2');data=geometry(page);assert data['width']==720 and data['scrollWidth']<=720

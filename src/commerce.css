@@ -6,3 +6,7 @@ body{background:var(--nfc-paper)}.header,.catalog{background:var(--nfc-surface)}
 @media(max-width:359px){.commerce-product,.catalog{--space:16px}.commerce-card-copy{padding:20px}.commerce-card-copy h2{font-size:1.75rem}.commerce-card-prices dd{font-size:1.35rem}.gallery-dots button{min-width:25px;padding:8px}.gallery-controls{gap:3px}.commerce-purchase h1{font-size:1.875rem}.commerce-sticky .button{min-width:108px}.messenger-option{flex-direction:column}.messenger-options{gap:6px}}
 
 .story-toggle.button.secondary{color:#181b1f;background:#f3f4f5;border-color:#a7afb9}.story-toggle.button.secondary:hover{color:#fff;background:#30363d}.messenger-icon{border:0;border-radius:0}
+
+/* Product descriptions are decision content. Keep body copy at primary ink;
+   captions, hints, disabled controls and secondary metadata retain muted tokens. */
+.product-details-body,.product-detail h2,.product-detail h3,.product-detail p,.product-detail li{color:var(--nfc-ink)}

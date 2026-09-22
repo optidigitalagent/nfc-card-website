@@ -1,0 +1,30 @@
+{
+  "source": "local manifest-selected candidate, not a GitHub clean clone",
+  "hashed_files_at_copy": 323,
+  "manifest_before_and_after": "pass",
+  "node": "v24.20.0",
+  "python": "3.14.7",
+  "commands": [
+    {
+      "command": "npm ci --ignore-scripts --no-audit --no-fund",
+      "exit_code": 0,
+      "output": "up to date in 188ms"
+    },
+    {
+      "command": "npm run build",
+      "exit_code": 0,
+      "output": "> build\n> node src/build.mjs\n\nRefined existing site: 30 localized routes; PUBLIC_PREVIEW; origin https://optidigitalagent.github.io."
+    },
+    {
+      "command": "npm run build",
+      "exit_code": 0,
+      "output": "> build\n> node src/build.mjs\n\nRefined existing site: 28 localized routes; PUBLIC_PREVIEW; origin https://optidigitalagent.github.io."
+    }
+  ],
+  "new_routes_metadata_base_path_preview": "pass",
+  "external_submission": "none",
+  "runtime_mode": "PUBLIC_PREVIEW",
+  "backend_endpoint": "not configured",
+  "secret_scan": "see independent release_guard result",
+  "syntax_files": 62
+}

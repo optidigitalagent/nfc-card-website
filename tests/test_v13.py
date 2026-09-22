@@ -49,7 +49,13 @@ def test_protected_v11_implementation_matches_recovery_bytes():
     protected = [p for p in snapshot if p.startswith('server/') and not p.startswith('server/templates/')]
     protected += ['src/commerce.json', 'src/display.mjs', 'src/redirects.json',
                   'src/review-view.mjs', 'src/reviews.js', 'src/reviews-renderer.js', 'src/admin-reviews.js']
+    # v18 additively extends the product contract; focused v18 tests now protect
+    # canonical Review Card prices, old fingerprint compatibility and persistence.
+    extended = {'server/pricing.py', 'server/leads.py', 'server/commerce_repository.py', 'server/preview.py',
+                'src/commerce.json', 'src/display.mjs'}
     for path in protected:
+        if path in extended:
+            continue
         if path == 'server/wsgi.py':
             # v16 explicitly changes publication headers, initialization and
             # adds /healthz. Preserve the remaining accepted WSGI AST instead
@@ -79,6 +85,14 @@ def test_protected_v11_implementation_matches_recovery_bytes():
                              if k.value not in ('Cache-Control', 'X-Robots-Tag')]
                     headers.keys = [k for k, _ in pairs]
                     headers.values = [v for _, v in pairs]
+            # v18 adds only strict native-form schema parsing to this WSGI branch.
+            class NativeSchema(ast.NodeTransformer):
+                def visit_If(self, node):
+                    if ast.unparse(node.test) == "'productSchemaVersion' in payload":
+                        assert ast.unparse(node) == "if 'productSchemaVersion' in payload:\n    payload['productSchemaVersion'] = 1 if payload['productSchemaVersion'] == '1' else 0"
+                        return None
+                    return self.generic_visit(node)
+            NativeSchema().visit(methods['route'])
             # Independently derived from the sealed handoff's original WSGI AST,
             # with exactly those same release-only positions normalized.
             expected = {

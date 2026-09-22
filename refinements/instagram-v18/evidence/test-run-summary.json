@@ -1,0 +1,119 @@
+{
+  "complete": true,
+  "browser_only": false,
+  "groups": [
+    {
+      "group": "build-for-tests",
+      "exit_code": 0,
+      "seconds": 0.12
+    },
+    {
+      "group": "unit-integration",
+      "exit_code": 0,
+      "seconds": 72.08,
+      "tests": 667,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-width-320",
+      "exit_code": 0,
+      "seconds": 12.21,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-width-360",
+      "exit_code": 0,
+      "seconds": 11.85,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-width-390",
+      "exit_code": 0,
+      "seconds": 15.83,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-width-430",
+      "exit_code": 0,
+      "seconds": 12.22,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-width-768",
+      "exit_code": 0,
+      "seconds": 12.14,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-width-1024",
+      "exit_code": 0,
+      "seconds": 12.24,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-width-1280",
+      "exit_code": 0,
+      "seconds": 12.24,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-width-1440",
+      "exit_code": 0,
+      "seconds": 17.11,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-v12-flows",
+      "exit_code": 0,
+      "seconds": 42.05,
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-v13",
+      "exit_code": 0,
+      "seconds": 39.7,
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "browser-instagram-v18",
+      "exit_code": 0,
+      "seconds": 58.51,
+      "tests": 21,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ]
+}
