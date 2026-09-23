@@ -888,8 +888,8 @@ const source = {
         "en": "IN THE MOMENT"
       },
       "script": {
-        "uk": "Якщо вам усе сподобалося, будемо вдячні за чесний відгук. Просто піднесіть телефон до картки.",
-        "en": "If you enjoyed your experience, we would appreciate an honest review. Simply hold your phone near the card."
+        "uk": "Будемо вдячні, якщо поділитеся враженнями про візит у Google. Піднесіть телефон до картки, натисніть сповіщення й залиште відгук за бажанням.",
+        "en": "We would appreciate your feedback about your visit on Google. Hold your phone near the card, tap the notification and leave a review if you choose."
       },
       "examples": {
         "uk": [
@@ -1223,8 +1223,8 @@ const source = {
         "en": "We check the card before dispatch"
       },
       "body": {
-        "uk": "Важлива не лише NFC-функція: посилання має вести на правильну точку, картка — виглядати охайно, а персонал — розуміти, як нею користуватися.",
-        "en": "The NFC function is only part of the product: the link should open the right location, the card should look neat, and your team should understand how to use it."
+        "uk": "Важлива не лише NFC-функція: посилання має відкривати потрібну форму Google-відгуку, Instagram-профіль або онлайн-меню — залежно від картки; сама картка має виглядати охайно, а персонал — розуміти, як нею користуватися.",
+        "en": "The NFC function is only part of the product: the link should open the intended Google review form, Instagram profile or online menu, depending on the card; the card should look neat, and your team should understand how to use it."
       },
       "items": {
         "uk": [

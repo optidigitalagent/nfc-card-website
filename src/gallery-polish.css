@@ -1,0 +1,73 @@
+/* v25: product wayfinding and the shared gallery, within the existing palette. */
+.header .menu-toggle{display:flex}
+.mobile-menu{overflow-y:auto}
+body[data-route="/solutions/review-card"] .commerce-purchase h1::after,
+body[data-route="/solutions/instagram-card"] .commerce-purchase h1::after,
+body[data-route="/solutions/menu-card"] .commerce-purchase h1::after{
+  content:"";display:block;width:84px;height:3px;margin-top:16px;border-radius:3px
+}
+body[data-route="/solutions/review-card"] .commerce-purchase h1::after{
+  background:linear-gradient(90deg,#4285f4 0 25%,#ea4335 25% 50%,#fbbc05 50% 75%,#34a853 75%)
+}
+body[data-route="/solutions/instagram-card"] .commerce-purchase h1::after{
+  background:linear-gradient(90deg,#bc4b82,#b65b8f,#e2a063)
+}
+body[data-route="/solutions/menu-card"] .commerce-purchase h1::after{
+  background:linear-gradient(90deg,#454b52,#aeb5bc,#454b52)
+}
+
+.commerce-thumbnails{
+  gap:8px;padding:3px 0 5px;scrollbar-width:none;overscroll-behavior-x:contain
+}
+.commerce-thumbnails::-webkit-scrollbar{display:none}
+.commerce-thumbnails button,
+.menu-product-page .commerce-thumbnails button{
+  flex:0 0 76px;width:76px;height:76px;min-height:76px;padding:0;
+  overflow:hidden;border:1px solid transparent;border-radius:6px;background:#edf0f2
+}
+.commerce-thumbnails [aria-pressed=true]{padding:0;border:2px solid #454d56}
+.commerce-thumbnails img,
+.menu-product-page .commerce-thumbnails img{
+  width:100%;height:100%;object-fit:contain
+}
+.commerce-thumbnails button:focus-visible{outline:3px solid #181b1f;outline-offset:2px}
+.thumb-index,.thumb-check{display:none!important}
+
+.image-lightbox{
+  width:min(1100px,calc(100vw - 24px));height:min(840px,calc(100dvh - 24px));
+  max-height:none;background:#171a1e;color:#f6f7f8;border:1px solid #434b54
+}
+.image-lightbox[open]{display:flex;flex-direction:column}
+.image-lightbox .lightbox-toolbar{
+  display:flex;align-items:center;gap:8px;padding:8px 12px;background:#171a1e
+}
+.image-lightbox .lightbox-toolbar output{margin-right:auto;color:#f6f7f8}
+.image-lightbox .icon-button{
+  color:#f6f7f8;background:#2a3036;border:1px solid #66717b;min-width:44px;min-height:44px
+}
+.image-lightbox .icon-button:focus-visible{outline:3px solid #f6f7f8;outline-offset:2px}
+.image-lightbox .lightbox-scroll{
+  flex:1;display:flex;align-items:center;justify-content:center;min-height:0;max-height:none;
+  width:100%;overflow:hidden;touch-action:none;background:#171a1e
+}
+.image-lightbox .lightbox-scroll img{
+  display:block;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;
+  transform:translate(var(--pan-x,0px),var(--pan-y,0px)) scale(var(--zoom-scale,1));
+  transform-origin:center;user-select:none;-webkit-user-drag:none;touch-action:none
+}
+.image-lightbox[data-zoomed=true] .lightbox-scroll img{width:auto;height:auto;max-height:100%;cursor:grab}
+.image-lightbox[data-zoomed=true] .lightbox-scroll img:active{cursor:grabbing}
+.image-lightbox .lightbox-scroll video{
+  display:block;width:100%;height:100%;max-height:100%;object-fit:contain;touch-action:manipulation
+}
+.image-lightbox[data-media-kind=video] .lightbox-scroll{touch-action:manipulation}
+.image-lightbox .lightbox-scroll [hidden]{display:none!important}
+.image-lightbox .lightbox-caption{
+  margin:0;padding:10px 16px 12px;max-height:84px;overflow:auto;
+  color:#e5e8eb;background:#171a1e;font-size:.8rem;line-height:1.4
+}
+@media(max-width:768px){
+  .image-lightbox{width:100vw;height:100dvh;max-height:none;margin:0;border:0;border-radius:0}
+  .image-lightbox .lightbox-toolbar{padding:calc(8px + env(safe-area-inset-top)) 12px 8px}
+  .image-lightbox .lightbox-caption{padding:10px 16px calc(12px + env(safe-area-inset-bottom))}
+}

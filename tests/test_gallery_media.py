@@ -38,7 +38,7 @@ def test_manual_video_gallery_and_image_zoom(web, browser, width, prefix):
         assert video.evaluate('(v)=>v.paused')
         modal = page.locator('.lightbox-scroll video')
         expect(modal).to_be_visible()
-        expect(page.locator('[data-lightbox-zoom]')).to_be_disabled()
+        expect(page.locator('[data-lightbox-zoom]')).to_have_count(0)
         modal.evaluate('(v)=>v.play()')
         page.wait_for_function("()=>document.querySelector('.lightbox-scroll video').currentTime>0")
         if index == 8:
@@ -55,7 +55,7 @@ def test_manual_video_gallery_and_image_zoom(web, browser, width, prefix):
     page.locator('[data-zoom]').click()
     expect(page.locator('.lightbox-scroll video')).to_be_hidden()
     expect(page.locator('.lightbox-scroll img')).to_be_visible()
-    page.locator('[data-lightbox-zoom]').click()
+    page.locator('.lightbox-scroll').dblclick()
     expect(page.locator('dialog.image-lightbox')).to_have_attribute('data-zoomed', 'true')
     page.keyboard.press('Escape')
     assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
@@ -65,7 +65,8 @@ def test_manual_video_gallery_and_image_zoom(web, browser, width, prefix):
     expect(caption).to_be_visible()
     expect(caption).to_contain_text('examples' if prefix else 'умовні')
     expect(page.locator('.image-lightbox')).to_have_attribute('aria-describedby', 'gallery-viewer-caption')
-    page.locator('[data-lightbox-to="12"]').click()
+    page.locator('[data-lightbox-next]').focus()
+    page.keyboard.press('End')
     assert page.evaluate("window.nfcAnalyticsEvents.some(e=>e.event==='product_gallery_view'&&e.asset_index===12)")
     assert not errors
     context.close()

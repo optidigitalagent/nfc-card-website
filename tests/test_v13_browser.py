@@ -69,7 +69,9 @@ def test_marketplace_rail_lightbox_keyboard_scroll_and_source(web,browser,width,
         assert dialog.locator('.lightbox-scroll img').get_attribute('src')==page.locator('[data-slide="1"] img').evaluate('(img)=>img.src')
         dialog.locator('[data-lightbox-next]').click();expect(page.locator('[data-gallery-count]')).to_have_text(f'3 / {count}')
         dialog.locator('[data-lightbox-prev]').click();expect(dialog.locator('[data-lightbox-count]')).to_have_text(f'2 / {count}')
-        dialog.locator('[data-lightbox-to]').last.click();expect(thumbs.last).to_have_attribute('aria-pressed','true')
+        assert dialog.locator('[data-lightbox-to],[data-lightbox-zoom]').count()==0
+        dialog.locator('[data-lightbox-next]').focus();page.keyboard.press('End')
+        expect(thumbs.last).to_have_attribute('aria-pressed','true')
         if width==320:
             surface=dialog.locator('.lightbox-scroll').bounding_box();session=context.new_cdp_session(page)
             x=surface['x']+surface['width']*.8;y=surface['y']+min(surface['height']/2,200)
@@ -77,32 +79,41 @@ def test_marketplace_rail_lightbox_keyboard_scroll_and_source(web,browser,width,
             for offset in [30,65,100]:session.send('Input.dispatchTouchEvent',{'type':'touchMove','touchPoints':[{'x':x-offset,'y':y}]})
             session.send('Input.dispatchTouchEvent',{'type':'touchEnd','touchPoints':[]})
             expect(dialog.locator('[data-lightbox-count]')).to_have_text(f'1 / {count}')
-        for key in ['Tab']*(count+7)+['Shift+Tab']*(count+7):
+        for key in ['Tab']*12+['Shift+Tab']*12:
             page.keyboard.press(key)
             assert page.evaluate("document.querySelector('.image-lightbox').contains(document.activeElement)")
         close=dialog.locator('[data-lightbox-close]').bounding_box()
         assert close and close['x']>=0 and close['y']>=0 and close['x']+close['width']<=width
         assert close['width']>=44 and close['height']>=44
-        dialog.locator('[data-lightbox-zoom]').click();expect(dialog).to_have_attribute('data-zoomed','true')
         zoom_pan=None
         if width==320:
             scroll=dialog.locator('.lightbox-scroll');surface=scroll.bounding_box()
-            # Chromium serializes pan-x pan-y pinch-zoom as its equivalent 'manipulation'.
-            action=scroll.evaluate('(e)=>getComputedStyle(e).touchAction')
-            assert action=='manipulation' or 'pan-x' in action
+            assert scroll.evaluate('(e)=>getComputedStyle(e).touchAction')=='none'
             selected=dialog.locator('[data-lightbox-count]').inner_text()
-            x=surface['x']+surface['width']*.8;y=surface['y']+min(surface['height']/2,200)
-            session.send('Input.dispatchTouchEvent',{'type':'touchStart','touchPoints':[{'x':x,'y':y}]})
-            for offset in range(20,161,20):
-                session.send('Input.dispatchTouchEvent',{'type':'touchMove','touchPoints':[{'x':x-offset,'y':y}]})
-                page.wait_for_timeout(25)
-            session.send('Input.dispatchTouchEvent',{'type':'touchEnd','touchPoints':[]})
-            page.wait_for_function('(e)=>e.scrollLeft>0',arg=scroll.element_handle())
-            zoom_pan=scroll.evaluate('(e)=>e.scrollLeft')
+            x=surface['x']+surface['width']/2;y=surface['y']+surface['height']/2
+            def touch(kind,points):
+                session.send('Input.dispatchTouchEvent',{'type':kind,'touchPoints':[
+                    {'x':px,'y':py,'id':n,'radiusX':4,'radiusY':4,'force':1}
+                    for n,(px,py) in enumerate(points)]})
+            touch('touchStart',[(x-40,y),(x+40,y)])
+            for step in range(1,6):touch('touchMove',[(x-40-step*14,y),(x+40+step*14,y)])
+            expect(dialog).to_have_attribute('data-zoomed','true')
+            assert float(scroll.locator('img').evaluate("e=>e.style.getPropertyValue('--zoom-scale')"))>1.5
+            touch('touchEnd',[])
+            touch('touchStart',[(x,y)])
+            for step in range(1,5):touch('touchMove',[(x-step*18,y+step*9)])
+            zoom_pan=scroll.locator('img').evaluate("e=>e.style.getPropertyValue('--pan-x')")
+            assert zoom_pan!='0px'
+            touch('touchEnd',[])
             expect(dialog.locator('[data-lightbox-count]')).to_have_text(selected)
             shots.append(shot(page,f'{locale}-{variant}-lightbox-zoom-touch-pan-{width}'))
-        dialog.locator('[data-lightbox-zoom]').click();expect(dialog).to_have_attribute('data-zoomed','false')
-        assert dialog.locator('.lightbox-scroll').evaluate('(e)=>e.scrollLeft===0&&e.scrollTop===0')
+            touch('touchStart',[(x-105,y),(x+105,y)])
+            for step in range(1,6):touch('touchMove',[(x-105+step*16,y),(x+105-step*16,y)])
+            touch('touchEnd',[])
+            expect(dialog).to_have_attribute('data-zoomed','false')
+        else:
+            dialog.locator('.lightbox-scroll').dblclick();expect(dialog).to_have_attribute('data-zoomed','true')
+            dialog.locator('.lightbox-scroll').dblclick();expect(dialog).to_have_attribute('data-zoomed','false')
         shots.append(shot(page,f'{locale}-{variant}-lightbox-{width}'))
         page.keyboard.press('Escape');expect(dialog).not_to_be_visible();expect(opener).to_be_focused()
         assert abs(page.evaluate('scrollY')-before_y)<=1
@@ -112,8 +123,8 @@ def test_marketplace_rail_lightbox_keyboard_scroll_and_source(web,browser,width,
         assert abs(page.evaluate('scrollY')-before_y)<=1
         assert geometry(page)['scrollWidth']<=width and not errors
         rows.append({'route':route,'width':width,'allThumbnails':count,'keyboardRail':'Home/End/ArrowRight',
-                     'modal':'original image, arrows, thumbnails, zoom, bidirectional Tab containment, Escape, repeat close',
-                     'scrollRestored':True,'zoomedTouchPanScrollLeft':zoom_pan,'pageErrors':errors,'screenshots':shots})
+                     'modal':'original image, arrows, pinch/pan, bidirectional Tab containment, Escape, repeat close',
+                     'scrollRestored':True,'zoomedTouchPanX':zoom_pan,'pageErrors':errors,'screenshots':shots})
         context.close()
     save(f'gallery-{variant}-{width}',rows,start)
 

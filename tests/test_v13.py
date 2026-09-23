@@ -268,7 +268,8 @@ def test_marketplace_gallery_has_real_thumbnail_buttons_and_shared_lightbox(pref
     dialog = soup.select_one('dialog.image-lightbox')
     assert dialog and dialog.get('aria-label')
     assert dialog.select_one('[data-lightbox-prev]') and dialog.select_one('[data-lightbox-next]')
-    assert len(dialog.select('[data-lightbox-to]')) == count
+    assert not dialog.select('[data-lightbox-to], [data-lightbox-zoom], .lightbox-thumbnails')
+    assert not soup.select('.thumb-index, .thumb-check')
 
 
 @pytest.mark.parametrize('prefix', ['', '/en'])

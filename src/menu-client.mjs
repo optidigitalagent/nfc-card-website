@@ -70,9 +70,19 @@ export function mountMenuForm(form,{endpoint='',basePath='',locale='uk',pathname
   if(['card_order','menu_consultation'].includes(configState?.intent))form.querySelector(`[name=menu-intent][value=${configState.intent}]`).checked=true;
   if(['existing','needs_development'].includes(configState?.menu_status))form.querySelector(`[name=menu-status][value=${configState.menu_status}]`).checked=true;
   const query=new URLSearchParams(location.search);
-  if(query.get('intent')==='menu_consultation')form.querySelector('[name=menu-intent][value=menu_consultation]').checked=true;
-  if(query.get('menu_status')==='existing'&&selected('menu-intent')!=='menu_consultation')form.querySelector('[name=menu-status][value=existing]').checked=true;
-  if(query.get('menu_status')==='needs_development')form.querySelector('[name=menu-status][value=needs_development]').checked=true;
+  const requestedIntent=query.get('intent'),requestedStatus=query.get('menu_status');
+  const validChoice=(requestedIntent===null||['card_order','menu_consultation'].includes(requestedIntent))&&
+    (requestedStatus===null||['existing','needs_development'].includes(requestedStatus))&&
+    !(requestedIntent==='menu_consultation'&&requestedStatus==='existing');
+  const lockedAttempt=storedAttempt?.state==='uncertain'||(storedAttempt?.state==='complete'&&uuid.test(storedAttempt.leadId||''));
+  function applyExplicitChoice(){
+    if(!validChoice||(!requestedIntent&&!requestedStatus))return;
+    const intent=requestedIntent||(requestedStatus?'card_order':null);
+    if(intent)form.querySelector(`[name=menu-intent][value=${intent}]`).checked=true;
+    const status=requestedIntent==='menu_consultation'?'needs_development':requestedStatus;
+    if(status)form.querySelector(`[name=menu-status][value=${status}]`).checked=true;
+  }
+  if(!lockedAttempt)applyExplicitChoice();
   form.querySelector('[data-menu-add]').addEventListener('click',()=>{addRow();update();rowsBox.lastElementChild.querySelector('select').focus();});
   rowsBox.addEventListener('click',e=>{if(!e.target.closest('[data-menu-remove]'))return;const row=e.target.closest('[data-menu-row]');if(rowsBox.children.length>1)row.remove();else{row.querySelector('select').value='';row.querySelector('input').value='1';}update();});
   form.addEventListener('input',e=>{if(e.target.matches('[name=menu-variant],[name=menu-quantity]'))update();});
@@ -83,12 +93,12 @@ export function mountMenuForm(form,{endpoint='',basePath='',locale='uk',pathname
   function show(message,status){summary.textContent=message;summary.hidden=false;result.textContent=message;result.hidden=false;result.dataset.status=status;result.focus();}
   function lock(value){for(const input of form.querySelectorAll('input,select,textarea,button'))if(!['hidden','submit'].includes(input.type)&&!input.hasAttribute('data-menu-new-request'))input.disabled=value;if(!value)update();note.hidden=!value;if(value)note.textContent=P('Попередню спробу ще не підтверджено. Повторимо ту саму заявку, щоб не створити дублікат.','The previous attempt is not confirmed. We will retry the same enquiry to avoid a duplicate.');}
   function completeForm(leadId,previous=false){complete=true;submit.hidden=true;submit.disabled=true;note.hidden=true;show((previous?P('Попередню заявку вже збережено. Номер: ','Your previous enquiry was already saved. Reference: '):selected('menu-intent')==='menu_consultation'?P('Дякуємо! Запит на консультацію отримано. Номер: ','Thank you! Your consultation request has been received. Reference: '):P('Дякуємо! Заявку отримано. Номер: ','Thank you! Your request has been received. Reference: '))+leadId,previous?'existing':'success');safeStorage.set(attemptKey,JSON.stringify({key,state:'complete',leadId}));newRequest.hidden=false;}
-  newRequest.addEventListener('click',()=>{pending=null;complete=false;key=crypto.randomUUID();safeStorage.remove(attemptKey);lock(false);submit.hidden=false;submit.disabled=!endpoint;result.hidden=true;summary.hidden=true;newRequest.hidden=true;q('name').focus();});
+  newRequest.addEventListener('click',()=>{pending=null;complete=false;key=crypto.randomUUID();safeStorage.remove(attemptKey);lock(false);applyExplicitChoice();update();submit.hidden=false;submit.disabled=!endpoint;result.hidden=true;summary.hidden=true;newRequest.hidden=true;q('name').focus();});
   update();
   try{endpoint=leadEndpoint(endpoint);}catch{endpoint='';}
   if(!endpoint){submit.disabled=true;form.onsubmit=e=>e.preventDefault();notice.textContent=P('Локальний перегляд: форму можна заповнити, але заявки не надсилаються.','Local preview: you can configure the form, but enquiries are not sent.');}
   else{
-    notice.textContent=P('Надсилаємо контакт, обрані виконання, статус меню та, якщо воно вже є, гостьове посилання для опрацювання заявки.','We send your contact, selected formats, menu status and, if you already have a menu, its guest-facing link to process the enquiry.');
+    notice.textContent=P('Надсилаємо контакт, обрані виконання, статус меню та, якщо воно вже є, посилання на меню, яке можуть відкрити гості, для опрацювання заявки.','We send your contact, selected formats, menu status and, if you already have a menu, the link guests can open to process the enquiry.');
     submit.disabled=false;
     form.onsubmit=async e=>{e.preventDefault();if(busy||complete)return;busy=true;submit.disabled=true;summary.hidden=true;result.hidden=true;
     try{if(!pending){const payload=menuLeadPayload(snapshot(),{basePath,pathname});pending={key,payload,uncertain:false};safeStorage.set(attemptKey,JSON.stringify({key,state:'uncertain'}));}
