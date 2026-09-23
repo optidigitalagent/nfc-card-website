@@ -82,6 +82,81 @@
       },
       "pricingRevision": "NFC-INSTAGRAM-UA-2026-09-v18",
       "evidence": "Instagram handoff v1 PRODUCT_CURRENT_TRUTH; v18 product contract"
+    },
+    "nfc-menu-card": {
+      "name": "NFC Menu Card",
+      "category": "ONLINE_MENU",
+      "pricingRevision": "NFC-MENU-UA-2026-09-v23",
+      "evidence": "NFC Menu Card handoff v1 PRODUCT_TRUTH; owner-approved v23 media manifest",
+      "offers": {
+        "ready": {
+          "customDesign": false,
+          "qr": "not_included",
+          "readyMadeOnly": true,
+          "thicknessMmApprox": [
+            3,
+            4
+          ],
+          "mounting": "adhesive_tape",
+          "variants": {
+            "square_100_black": {
+              "shape": "square",
+              "nominalMm": 100,
+              "color": "black"
+            },
+            "square_100_white": {
+              "shape": "square",
+              "nominalMm": 100,
+              "color": "white"
+            },
+            "square_60_black": {
+              "shape": "square",
+              "nominalMm": 60,
+              "color": "black"
+            },
+            "square_60_white": {
+              "shape": "square",
+              "nominalMm": 60,
+              "color": "white"
+            },
+            "round_70_black": {
+              "shape": "round",
+              "nominalMm": 70,
+              "color": "black"
+            },
+            "round_70_white": {
+              "shape": "round",
+              "nominalMm": 70,
+              "color": "white"
+            }
+          },
+          "tiers": [
+            {
+              "min": 1,
+              "max": 4,
+              "unitUah": 1000
+            },
+            {
+              "min": 5,
+              "max": 9,
+              "unitUah": 750
+            },
+            {
+              "min": 10,
+              "max": 24,
+              "unitUah": 600
+            },
+            {
+              "min": 25,
+              "max": null,
+              "unitUah": 500
+            }
+          ],
+          "depositUahPerOrder": 200,
+          "depositIncluded": true,
+          "mixVariants": true
+        }
+      }
     }
   },
   "selections": {

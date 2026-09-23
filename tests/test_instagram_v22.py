@@ -21,8 +21,8 @@ P1 = {
 }
 
 BRIDGE = {
-    "uk": "Принцип той самий — дотик смартфоном і перехід за налаштованим посиланням. Оберіть, яку дію ви хочете спростити: відкриття Instagram-профілю чи написання Google-відгуку.",
-    "en": "The principle is the same: tap with a smartphone and open the configured link. Choose the action you want to make easier: opening your Instagram profile or writing a Google review.",
+    "uk": "Принцип той самий — дотик смартфоном і перехід за налаштованим посиланням. Оберіть, яку дію ви хочете спростити: відкриття Instagram-профілю, написання Google-відгуку або перегляд онлайн-меню.",
+    "en": "The principle is the same: tap with a smartphone and open the configured link. Choose the action you want to make easier: opening your Instagram profile, writing a Google review or viewing an online menu.",
 }
 
 P2_STAFF = {
@@ -42,14 +42,14 @@ P4 = {
 
 P3 = {
     "uk": {
-        "destination": ("Куди саме переходить клієнт?", "Залежить від картки. Review Card і Branded Review Card відкривають форму Google-відгуку конкретної локації. NFC Instagram Card відкриває Instagram-профіль вашого бізнесу. Після переходу клієнт сам обирає наступну дію. Google може попросити увійти в акаунт."),
+        "destination": ("Куди саме переходить клієнт?", "Залежить від картки. Review Card і Branded Review Card відкривають форму Google-відгуку конкретної локації. NFC Instagram Card відкриває Instagram-профіль, а NFC Menu Card — онлайн-меню закладу. Це окремі продукти; подальшу дію клієнт обирає сам."),
         "difference": ("Чим NFC Instagram Card відрізняється від NFC Review Card?", "Спосіб використання однаковий: дотик смартфоном, сповіщення й перехід. Відрізняються дизайн і призначення: NFC Instagram Card відкриває Instagram-профіль, а NFC Review Card — форму Google-відгуку. Це окремі картки для різних дій."),
-        "monthly": ("Чи є щомісячна плата?", "Обов’язкової щомісячної плати за використання Review Card, Branded Review Card або NFC Instagram Card немає."),
+        "monthly": ("Чи є щомісячна плата?", "Обов’язкової щомісячної плати за використання самих NFC-карток немає. Якщо потрібна розробка онлайн-меню, деталі обговорюємо на консультації."),
     },
     "en": {
-        "destination": ("Where does the customer go?", "It depends on the card. Review Card and Branded Review Card open the Google review form for a specific location. NFC Instagram Card opens your business’s Instagram profile. After the link opens, the customer chooses what to do next. Google may ask them to sign in."),
+        "destination": ("Where does the customer go?", "It depends on the card. Review Card and Branded Review Card open the Google review form for a specific location. NFC Instagram Card opens the Instagram profile, and NFC Menu Card opens the venue’s online menu. These are separate products; the customer chooses the next action."),
         "difference": ("How is NFC Instagram Card different from NFC Review Card?", "They work the same way: a smartphone tap, a notification and a link. The design and purpose differ: NFC Instagram Card opens an Instagram profile, while NFC Review Card opens a Google review form. They are separate cards for different actions."),
-        "monthly": ("Is there a monthly fee?", "There is no mandatory monthly fee to use Review Card, Branded Review Card or NFC Instagram Card."),
+        "monthly": ("Is there a monthly fee?", "There is no mandatory monthly fee for using the physical NFC cards themselves. If online-menu development is needed, we discuss the details in a consultation."),
     },
 }
 
@@ -89,7 +89,7 @@ def test_p3_faqs_process_and_legacy_anchor(source, locale):
     assert difference is not None
     process = home.select("#process .steps>li")
     assert len(process) == 5
-    expected = "Уточнюємо потрібне посилання" if locale == "uk" else "We confirm the link for Google reviews or your Instagram profile"
+    expected = "Уточнюємо посилання для обраної картки" if locale == "uk" else "We confirm the link for the chosen card"
     assert expected in process[1].get_text(" ", strip=True)
 
 
@@ -104,7 +104,7 @@ def test_exact_silver_banner_phrase(source, locale, phrase):
 def test_only_five_approved_sources_are_public_and_optimized():
     manifest = json.loads((ROOT / "src/media-manifest.json").read_text("utf-8"))
     records = [item for item in manifest if item.get("managed_by") == "scripts/update_instagram_media.py:v22"]
-    baseline = [item for item in manifest if item.get("managed_by") != "scripts/update_instagram_media.py:v22"]
+    baseline = [item for item in manifest if item.get("managed_by") not in {"scripts/update_instagram_media.py:v22", "scripts/update_menu_media.py:v23"}]
     frozen = hashlib.sha256(json.dumps(baseline, ensure_ascii=False, separators=(",", ":")).encode()).hexdigest()
     assert len(baseline) == 102
     assert frozen == "a3bf87b69bd7b2bea043e35fc1c1fa7013e26f51393aa528aaf1197eb9757cf4"

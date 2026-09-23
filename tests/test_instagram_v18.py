@@ -222,11 +222,12 @@ def test_instagram_routes_schema_faq_media_and_links(source,locale):
     assert ORIGIN+BASE+'/'+prefix+'solutions/instagram-card' in sitemap
 
 
-def test_owner_authorized_v20_publication_is_bound_to_current_content():
+def test_menu_v24_publication_approval_covers_current_content():
     from server.publication import content_hash
     approval=json.loads((ROOT/'src/publication-approval.json').read_text())
     assert approval['publicLaunch']['ownerAuthorizedPublication'] is True
     assert approval['publicLaunch']['reviewedContentSha256']==content_hash(ROOT)
+    assert 'release pack v24' in approval['publicLaunch']['approvalReference']
     assert json.loads((ROOT/'src/commerce.json').read_text())['products']['nfc-instagram-card']['offers'].keys()=={'ready'}
 
 
@@ -243,8 +244,8 @@ def test_review_media_and_unrelated_flows_match_recorded_baseline():
     record=json.loads((ROOT/'refinements/instagram-v18/PROTECTED_BASELINE.json').read_text())
     assert record['startingHead']=='de3d2533381d12cee9f42567bfb7a67290d716c0'
     for name,digest in record['files'].items():
-        if name=='src/media-manifest.json':
-            continue  # v22 appends separately verified Instagram-only records.
+        if name in {'src/media-manifest.json','src/about-content.json'}:
+            continue  # v23 appends Menu media and one approved product-family sentence.
         assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest,name
 
 

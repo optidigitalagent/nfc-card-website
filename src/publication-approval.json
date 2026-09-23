@@ -8,7 +8,7 @@
     "ownerAuthorizedPublication": true,
     "sellerName": "Артем Антонов",
     "defectReturnAndRefundConfirmed": true,
-    "approvalReference": "Owner final PUBLIC launch authorization and seller/refund clarification, 2026-09-12, NFC CARD task; owner supplied and requested publication of replacement standard-card media, 2026-09-15; owner authorized the exact v22 Instagram copy/media release, commit, push to existing main, CI, GitHub Pages deployment and live acceptance, 2026-09-22",
-    "reviewedContentSha256": "d0d49f2e240cc4d8439a3199a99c993720ab7c1807aacd35635d716902d78c30"
+    "approvalReference": "Owner final PUBLIC launch authorization and seller/refund clarification, 2026-09-12, NFC CARD task; owner supplied and requested publication of replacement standard-card media, 2026-09-15; owner authorized the exact v22 Instagram copy/media release, commit, push to existing main, CI, GitHub Pages deployment and live acceptance, 2026-09-22; owner explicitly authorized NFC Menu Card v23 release to existing gateway main/Railway and frontend main/GitHub Pages at the same URL, 2026-09-23 (release pack v24)",
+    "reviewedContentSha256": "e97315e68d4482395ff0c7153ed4ef379a6ab1048f16289ed0ead6bf112feedc"
   }
 }

@@ -1,0 +1,167 @@
+[
+  {
+    "id": "menu-faq-1",
+    "question": {
+      "uk": "Що робить NFC Menu Card?",
+      "en": "What does NFC Menu Card do?"
+    },
+    "answer": {
+      "uk": "Відкриває онлайн-меню закладу після дотику смартфоном і натискання на сповіщення. Ми налаштовуємо картку на потрібне посилання.",
+      "en": "It opens your venue’s online menu after a smartphone tap and a tap on the notification. We configure the card with the correct link."
+    }
+  },
+  {
+    "id": "menu-faq-2",
+    "question": {
+      "uk": "Чим вона відрізняється від Review Card та Instagram Card?",
+      "en": "How is it different from Review Card and Instagram Card?"
+    },
+    "answer": {
+      "uk": "Принцип використання той самий. Review Card веде до форми Google-відгуку, Instagram Card — до Instagram-профілю, а Menu Card — до онлайн-меню. Це окремі картки з відповідним дизайном; їхні фізичні характеристики можуть відрізнятися.",
+      "en": "They use the same interaction. Review Card opens a Google review form, Instagram Card opens an Instagram profile, and Menu Card opens an online menu. They are separate cards with suitable designs; their physical specifications can differ."
+    }
+  },
+  {
+    "id": "menu-faq-3",
+    "question": {
+      "uk": "Чи можна використати наше чинне меню?",
+      "en": "Can we use our existing online menu?"
+    },
+    "answer": {
+      "uk": "Так. Надішліть посилання, за яким гості можуть відкрити меню. Налаштуємо картки на нього.",
+      "en": "Yes. Send the link guests use to open the menu. We will configure the cards for it."
+    }
+  },
+  {
+    "id": "menu-faq-4",
+    "question": {
+      "uk": "Що робити, якщо онлайн-меню ще немає?",
+      "en": "What if we do not have an online menu?"
+    },
+    "answer": {
+      "uk": "Позначте в заявці «Потрібно розробити». Ми можемо розробити онлайн-меню; деталі обговоримо на індивідуальній консультації.",
+      "en": "Select “I need one developed” in the enquiry. We can develop an online menu and will discuss the details in an individual consultation."
+    }
+  },
+  {
+    "id": "menu-faq-5",
+    "question": {
+      "uk": "Чи входить розробка меню у вартість карток?",
+      "en": "Is menu development included in the card price?"
+    },
+    "answer": {
+      "uk": "Ні. На сторінці наведено ціни фізичних NFC Menu Card. Розробка меню погоджується окремо на консультації.",
+      "en": "No. The page lists the prices of physical NFC Menu Cards. Menu development is agreed separately during a consultation."
+    }
+  },
+  {
+    "id": "menu-faq-6",
+    "question": {
+      "uk": "Які є форми, розміри й кольори?",
+      "en": "Which shapes, sizes and colours are available?"
+    },
+    "answer": {
+      "uk": "Квадратні 10 × 10 см і 6 × 6 см та круглі діаметром 7 см. У кожного формату є чорний і білий готовий дизайн. Товщина — приблизно 3–4 мм.",
+      "en": "Square 10 × 10 cm and 6 × 6 cm, and round cards with a 7 cm diameter. Each format has a ready-made black and white design. Thickness is approximately 3–4 mm."
+    }
+  },
+  {
+    "id": "menu-faq-7",
+    "question": {
+      "uk": "Чи є QR-код або персональний дизайн?",
+      "en": "Is there a QR code or a custom design?"
+    },
+    "answer": {
+      "uk": "Ні. NFC Menu Card у цій пропозиції працює через NFC, без QR-коду, та доступна тільки в готових дизайнах.",
+      "en": "No. This NFC Menu Card offer uses NFC without a QR code and is available only in the ready-made designs."
+    }
+  },
+  {
+    "id": "menu-faq-8",
+    "question": {
+      "uk": "Чи можна змішувати різні картки для оптової ціни?",
+      "en": "Can different formats count together for volume pricing?"
+    },
+    "answer": {
+      "uk": "Так. Різні форми, розміри й кольори NFC Menu Card сумуються в одному замовленні. Інші продукти й попередні покупки до цього порога не входять.",
+      "en": "Yes. Different NFC Menu Card shapes, sizes and colours count together in one order. Other products and past purchases do not count towards the tier."
+    }
+  },
+  {
+    "id": "menu-faq-9",
+    "question": {
+      "uk": "Як розраховується ціна?",
+      "en": "How is the price calculated?"
+    },
+    "answer": {
+      "uk": "За 1–4 шт. — 1 000 грн/шт.; 5–9 — 750 грн/шт.; 10–24 — 600 грн/шт.; від 25 — 500 грн/шт. Тариф досягнутого порога застосовується до всіх Menu Card у цьому замовленні.",
+      "en": "For 1–4 cards: UAH 1,000 each; 5–9: UAH 750; 10–24: UAH 600; 25+: UAH 500. The reached tier applies to every Menu Card in that order."
+    }
+  },
+  {
+    "id": "menu-faq-10",
+    "question": {
+      "uk": "Чи потрібна картка на кожен столик?",
+      "en": "Do we need a card on every table?"
+    },
+    "answer": {
+      "uk": "Не обов’язково. Можна розмістити одну на стійці або декілька на столиках і в зоні видачі. Кількість залежить від того, де гостям потрібен доступ до меню.",
+      "en": "Not necessarily. Place one at a counter or several on tables and in the pickup area. Choose the quantity based on where guests need menu access."
+    }
+  },
+  {
+    "id": "menu-faq-11",
+    "question": {
+      "uk": "Чи приймає картка замовлення та оплату?",
+      "en": "Does the card take orders or payments?"
+    },
+    "answer": {
+      "uk": "Сама картка лише відкриває меню. Замовлення, оплата чи інші дії можливі тільки тоді, коли їх підтримує підключений сайт.",
+      "en": "The card itself only opens the menu. Ordering, payment and other actions are available only if the connected website supports them."
+    }
+  },
+  {
+    "id": "menu-faq-12",
+    "question": {
+      "uk": "Чи потрібно міняти картки, коли змінюються ціни страв?",
+      "en": "Do cards need replacing when dish prices change?"
+    },
+    "answer": {
+      "uk": "Не потрібно, якщо ви оновлюєте меню за тим самим посиланням. Якщо змінюється адреса сторінки, зверніться до нас, щоб уточнити налаштування переходу.",
+      "en": "Not if you update the menu at the same URL. If the page address changes, contact us to clarify how the link should be configured."
+    }
+  },
+  {
+    "id": "menu-faq-13",
+    "question": {
+      "uk": "Як картка кріпиться?",
+      "en": "How is the card mounted?"
+    },
+    "answer": {
+      "uk": "За допомогою клейкої стрічки. Місце розміщення можна уточнити під час замовлення.",
+      "en": "With adhesive tape. We can discuss placement when agreeing the order."
+    }
+  },
+  {
+    "id": "menu-faq-14",
+    "question": {
+      "uk": "Чи потрібен застосунок або інтернет?",
+      "en": "Is an app or internet access required?"
+    },
+    "answer": {
+      "uk": "Окремий застосунок для самої картки не потрібен. Для NFC-зчитування телефон має підтримувати NFC; для завантаження онлайн-меню потрібен інтернет. На деяких пристроях NFC потрібно ввімкнути.",
+      "en": "No separate app is needed for the card itself. The phone must support NFC for reading the card, and internet access is needed to load the online menu. Some devices require NFC to be enabled."
+    }
+  },
+  {
+    "id": "menu-faq-15",
+    "question": {
+      "uk": "Які умови оплати, доставки та підготовки?",
+      "en": "What are the payment, delivery and preparation terms?"
+    },
+    "answer": {
+      "uk": "Передоплата — 200 грн за замовлення, включена в суму. Решта — після відправлення та отримання номера накладної. Стандартна доставка Новою поштою по Україні безкоштовна. Строк підготовки підтвердимо під час узгодження.",
+      "en": "A UAH 200 deposit per order is included in the total. The balance is due after dispatch and receipt of the tracking number. Standard Nova Poshta delivery within Ukraine is free. Preparation time is confirmed when agreeing the order."
+    }
+  }
+]

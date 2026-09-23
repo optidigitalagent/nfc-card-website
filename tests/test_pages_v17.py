@@ -104,7 +104,7 @@ def test_all_static_urls_metadata_css_and_content_use_base_path(source, base):
     for value in strings(json.loads((site / 'assets/content.json').read_text())):
         assert_project_url(value, site, normalized)
     sitemap = BeautifulSoup((site / 'sitemap.xml').read_text(), 'xml')
-    assert len(sitemap.select('loc')) == 18
+    assert len(sitemap.select('loc')) == 22
     for loc in sitemap.select('loc'):
         assert_project_url(loc.text, site, normalized)
     assert (site / '.nojekyll').exists()
@@ -115,7 +115,7 @@ def test_pages_cleans_server_artifacts_and_default_build_remains_fullstack(sourc
     site = build(source, pages=False)
     baseline = {p.relative_to(site): p.read_bytes() for p in site.rglob('*') if p.is_file()}
     server = {p.relative_to(source): p.read_bytes() for p in (source / 'server').rglob('*') if p.is_file()}
-    assert len(list(site.rglob('*.html'))) == 30
+    assert len(list(site.rglob('*.html'))) == 34
     admin = site / 'admin/reviews/index.html'
     admin.parent.mkdir(parents=True)
     admin.write_text('stale admin')
@@ -154,7 +154,8 @@ def test_forms_are_inert_before_client_and_expose_only_public_config(source, end
         for form in soup.select('.lead-form'):
             forms += 1
             assert form['method'] == 'dialog' and form['action'] == ''
-            assert form.has_attr('data-pages-form')
+            menu = form.has_attr('data-menu-form')
+            assert menu or form.has_attr('data-pages-form')
             assert form.select_one('[type=submit]').has_attr('disabled')
             assert soup.html['data-lead-endpoint'] == ''
             assert soup.html['data-publication-mode'] == 'PUBLIC_PREVIEW'
@@ -165,13 +166,20 @@ def test_forms_are_inert_before_client_and_expose_only_public_config(source, end
             expected_notice = ('Онлайн-заявки тимчасово недоступні у preview-версії. Функцію буде активовано після підключення захищеного збереження заявок.'
                                if soup.html['lang'] == 'uk' else
                                'Online enquiries are temporarily unavailable in the preview version. The feature will be enabled after secure lead storage is connected.')
-            assert notice.text == expected_notice
+            if menu:
+                assert notice.text == ('Локальний перегляд: повідомлення не надсилаються.' if soup.html['lang'] == 'uk'
+                                       else 'Local preview: no messages are sent.')
+            else:
+                assert notice.text == expected_notice
             if endpoint:
                 assert endpoint not in str(soup)
             assert form.select_one('[name=name]') and form.select_one('[name=phone]')
-            assert form.select_one('[name=quantity]') and form.select_one('[name=variant]')
-            assert_project_url(form.select_one('[name=source]')['value'], site)
-    assert forms == 10
+            if menu:
+                assert form.select_one('[name=menu-quantity]') and form.select_one('[name=menu-variant]')
+            else:
+                assert form.select_one('[name=quantity]') and form.select_one('[name=variant]')
+                assert_project_url(form.select_one('[name=source]')['value'], site)
+    assert forms == 16
     for file in site.rglob('*'):
         if file.is_file():
             assert secret.encode() not in file.read_bytes()

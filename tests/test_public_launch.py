@@ -23,6 +23,13 @@ def test_public_requires_content_bound_owner_receipt_and_real_endpoint(source):
 
 
 def test_public_marketing_indexed_forms_enabled_after_mount_and_no_preview_badge(source):
+    # Exercise PUBLIC in a disposable fixture; the real v24 checkout has a
+    # content-bound approval, while any later source edit must still invalidate it.
+    from server.publication import content_hash
+    approval = source / 'src/publication-approval.json'
+    data = json.loads(approval.read_text())
+    data['publicLaunch']['reviewedContentSha256'] = content_hash(source)
+    approval.write_text(json.dumps(data))
     site = build(source, NFC_PUBLICATION_MODE='PUBLIC', NFC_LEAD_ENDPOINT=ENDPOINT, NFC_TELEGRAM_ENABLED='true')
     for relative in ['index.html', 'en/index.html', 'about/index.html', 'en/about/index.html',
                      'solutions/review-card/index.html', 'solutions/branded-review-card/index.html',
@@ -45,7 +52,7 @@ def test_public_marketing_indexed_forms_enabled_after_mount_and_no_preview_badge
     robots = (site / 'robots.txt').read_text()
     assert 'Disallow: /\n' not in robots
     assert 'Sitemap: ' + ORIGIN + BASE + '/sitemap.xml' in robots
-    assert len(BeautifulSoup((site / 'sitemap.xml').read_text(), 'xml').select('loc')) == 22
+    assert len(BeautifulSoup((site / 'sitemap.xml').read_text(), 'xml').select('loc')) == 26
     assert not (site / 'admin').exists()
     assert not (site / 'api').exists()
 

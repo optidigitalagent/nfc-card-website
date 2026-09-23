@@ -6,6 +6,7 @@ export function galleryView({variant,names,title,P,esc,picture,asset,temporaryNo
   const caption=name=>{
     const m=asset(name);
     if(m.caption_ua&&m.caption_en)return P(m.caption_ua,m.caption_en);
+    if(variant==='menu')return P('Візуалізація NFC Menu Card; форма та колір показані для вибору виконання.','NFC Menu Card visualization showing a format and colour option.');
     return variant==='branded'?temporaryNote:name.startsWith('05')?P('Промоілюстрація переходу до форми. Оцінку, текст і публікацію обирає клієнт.','An illustration of the path to the form. The customer chooses the rating, text and publication.'):name.startsWith('01')?P('Візуалізація готового дизайну Review Card.','A render of the ready-made Review Card design.'):P('Реальне фото поточної Review Card: формат, масштаб і поверхня.','An actual photo of the current Review Card: format, scale and finish.');
   };
   const label=name=>placeholder(name)?P('місце для майбутнього фото','future photo placeholder'):video(name)?P('відео','video'):P('зображення','image');

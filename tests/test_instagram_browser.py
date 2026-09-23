@@ -59,7 +59,7 @@ def test_instagram_nine_width_pages_matrix(pages_web,browser,width):
             assert page.evaluate("[...document.images].every(i=>!i.getClientRects().length||!i.complete||i.naturalWidth>0)")
             for a in page.locator('a[href^="/"]').all():assert a.get_attribute('href').startswith(BASE+'/')
             if route=='/solutions':
-                assert page.locator('.commerce-card').evaluate_all('(cards)=>cards.map(c=>c.dataset.variant)')==['standard','branded','instagram']
+                assert page.locator('.commerce-card').evaluate_all('(cards)=>cards.map(c=>c.dataset.variant)')==['standard','branded','instagram','menu']
                 expect(page.locator('.commerce-card[data-variant=instagram] img[data-media-claim-role=promotional_product_render]')).to_be_visible()
                 page.locator('.commerce-card[data-variant=instagram]').screenshot(path=EVIDENCE/f'{locale}-instagram-catalog-tile-{width}.png')
             if route=='/solutions/instagram-card':
@@ -152,7 +152,7 @@ def test_pages_instagram_form_switch_retry_no_pii_and_durable_receipt(pages_web,
     context.route(ENDPOINT+'/challenge?*',challenge);context.route(ENDPOINT,submit)
     page.goto(origin+BASE+prefix+'/order/');ready(page)
     page.fill('#f-name','Synthetic Instagram QA');page.fill('#f-phone','+380001234567')
-    page.locator('[name=messenger][value=telegram]').check(force=True);page.check('#f-consent')
+    page.locator('.lead-form:not([data-menu-form]) [name=messenger][value=telegram]').check(force=True);page.check('#f-consent')
     page.select_option('#f-variant','instagram');expect(page.locator('#f-instagramUrl')).to_be_visible()
     page.fill('#f-instagramUrl','https://www.instagram.com/isolated_nfc_fixture/');page.fill('#f-comment','Synthetic comment')
     page.select_option('#f-quantity','2')
@@ -161,24 +161,24 @@ def test_pages_instagram_form_switch_retry_no_pii_and_durable_receipt(pages_web,
     assert page.locator('#f-quantity option').evaluate_all('(o)=>o.map(x=>x.value)')==['1','2','more']
     expect(page.locator('#f-name')).to_have_value('Synthetic Instagram QA')
     page.select_option('#f-variant','instagram');page.fill('#f-instagramUrl','https://instagram.com/reel/invalid')
-    page.locator('[type=submit]').click();expect(page.locator('.form-result[data-status=error]')).to_be_visible()
+    page.locator('.lead-form:not([data-menu-form]) [type=submit]').click();expect(page.locator('.lead-form:not([data-menu-form]) .form-result[data-status=error]')).to_be_visible()
     assert not posts and not challenge_calls
     expect(page.locator('#f-instagramUrl')).to_have_attribute('aria-invalid','true')
     expect(page.locator('#e-instagramUrl')).to_be_visible()
     expect(page.locator('#f-instagramUrl')).to_be_focused()
     page.screenshot(path=EVIDENCE/f'{locale}-instagram-url-error-393.png')
-    page.fill('#f-instagramUrl','https://instagram.com/isolated_nfc_fixture/');page.locator('[type=submit]').click()
-    expect(page.locator('.form-result[data-status=error]')).to_be_visible(timeout=15000)
+    page.fill('#f-instagramUrl','https://instagram.com/isolated_nfc_fixture/');page.locator('.lead-form:not([data-menu-form]) [type=submit]').click()
+    expect(page.locator('.lead-form:not([data-menu-form]) .form-result[data-status=error]')).to_be_visible(timeout=15000)
     assert len(posts)==1
     expect(page.locator('#f-instagramUrl')).to_have_value('https://instagram.com/isolated_nfc_fixture/')
     expect(page.locator('#f-name')).to_have_value('Synthetic Instagram QA')
-    page.locator('[type=submit]').click();expect(page.locator('.form-result[data-status=success]')).to_be_visible(timeout=15000)
+    page.locator('.lead-form:not([data-menu-form]) [type=submit]').click();expect(page.locator('.lead-form:not([data-menu-form]) .form-result[data-status=success]')).to_be_visible(timeout=15000)
     assert len(posts)==2 and posts[0]==posts[1]
     assert posts[0]['payload']['product_id']=='nfc-instagram-card' and posts[0]['payload']['quantity']==2
     assert posts[0]['payload']['comment']=='Synthetic comment'
-    assert 'Instagram' in page.locator('.form-result').inner_text()
+    assert 'Instagram' in page.locator('.lead-form:not([data-menu-form]) .form-result').inner_text()
     page.screenshot(path=EVIDENCE/f'{locale}-instagram-success-mocked-393.png')
-    page.locator('form').evaluate('(f)=>f.requestSubmit()');page.wait_for_timeout(100);assert len(posts)==2
+    page.locator('.lead-form:not([data-menu-form])').evaluate('(f)=>f.requestSubmit()');page.wait_for_timeout(100);assert len(posts)==2
     stores=page.evaluate('JSON.stringify({local:{...localStorage},session:{...sessionStorage},events:window.nfcAnalyticsEvents})')
     for pii in ['Synthetic Instagram QA','isolated_nfc_fixture','380001234567','Synthetic comment']:assert pii not in stores
     events=page.evaluate('window.nfcAnalyticsEvents')
@@ -218,10 +218,10 @@ def test_fullstack_instagram_real_local_persistence(web,browser,locale):
     origin,server=web;context=browser.new_context();block_external(context,origin);page=context.new_page()
     page.goto(origin+('/en' if locale=='en' else '')+'/solutions/instagram-card');ready(page)
     page.fill('#f-name','Synthetic local IG');page.fill('#f-phone','+380001234567')
-    page.locator('[name=messenger][value=telegram]').check(force=True)
+    page.locator('.lead-form:not([data-menu-form]) [name=messenger][value=telegram]').check(force=True)
     page.fill('#f-instagramUrl','https://instagram.com/isolated_nfc_fixture/');page.check('#f-consent')
-    page.select_option('#f-quantity','2');page.locator('[type=submit]').click()
-    expect(page.locator('.form-result[data-status=success]')).to_be_visible()
+    page.select_option('#f-quantity','2');page.locator('.lead-form:not([data-menu-form]) [type=submit]').click()
+    expect(page.locator('.lead-form:not([data-menu-form]) .form-result[data-status=success]')).to_be_visible()
     with server.leads.repo.transaction() as db:
         leads=db.execute('SELECT payload FROM commerce_leads').fetchall()
         outbox=db.execute('SELECT state FROM commerce_notification_outbox').fetchall()
@@ -245,10 +245,10 @@ def test_native_instagram_form_without_javascript(web,browser,locale,quantity):
     expected=1500 if quantity=='1' else 2600
     assert ''.join(filter(str.isdigit,page.locator('[data-form-price]').inner_text()))==str(expected)
     page.fill('#f-name','Synthetic native IG');page.fill('#f-phone','+380001234567')
-    page.locator('[name=messenger][value=telegram]').check(force=True)
+    page.locator('.lead-form:not([data-menu-form]) [name=messenger][value=telegram]').check(force=True)
     page.fill('#f-instagramUrl','https://instagram.com/isolated_nfc_fixture/')
     page.locator('#f-consent').focus();page.keyboard.press('Space');expect(page.locator('#f-consent')).to_be_checked()
-    page.locator('[type=submit]').click();expect(page.locator('h1')).to_contain_text('локально' if locale=='uk' else 'locally')
+    page.locator('.lead-form:not([data-menu-form]) [type=submit]').click();expect(page.locator('h1')).to_contain_text('локально' if locale=='uk' else 'locally')
     assert 'NFC Instagram Card' in page.locator('main').inner_text()
     with server.leads.repo.transaction() as db:
         rows=db.execute('SELECT payload FROM commerce_leads').fetchall()

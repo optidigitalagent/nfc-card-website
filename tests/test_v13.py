@@ -223,7 +223,7 @@ def test_about_navigation_and_final_home_conversion_target(prefix):
     last = sections[-1]
     assert 'final-conversion' in last.get('class', [])
     assert not home.select('.lead-form')
-    assert last.find('a', href=prefix + '/order')
+    assert last.find('a', href=prefix + '/solutions')
     assert home.main.find_next_sibling().name == 'footer'
     # A compact footer has essential destinations, rather than another request form.
     assert not home.footer.select('form,input,textarea')
@@ -237,7 +237,7 @@ def test_final_cta_analytics_follow_the_actual_destination(prefix):
     home = page(prefix or '/').select_one('main>.final-conversion')
     primary = home.select_one('.button')
     secondary = home.select_one('.text-action')
-    assert primary['href'] == prefix+'/order' and primary.get('data-event') == 'order_start'
+    assert primary['href'] == prefix+'/solutions' and primary.get('data-event') == 'catalog_view'
     assert secondary['href'] == 'https://t.me/TijGabumG' and secondary.get('data-event') == 'telegram_click'
     about = page(prefix+'/about').select_one('.about-page>.final-conversion')
     primary = about.select_one('.button')

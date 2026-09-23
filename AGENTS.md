@@ -17,17 +17,23 @@ For every complete owner-requested website fix:
 8. verify the exact deployed commit on the public site;
 9. report the commit, workflow run, and live URLs.
 
+This default applies to one coherent, tested fix set, not to each save or an
+unfinished intermediate state. When the fix also changes the NFC lead gateway,
+release and verify that existing Railway service before the dependent Pages
+site. Do not leave a completed NFC CARD fix only in a local checkout.
+
 Public site: `https://optidigitalagent.github.io/nfc-card-website/`.
 
 Do not ask again for an ordinary same-repository, same-URL GitHub Pages
 deployment after an owner-requested fix. Stop instead when tests fail, a
 critical/high finding remains, a secret or private record could be exposed, a
 form could show false success, unrelated work would be overwritten, or the
-change requires a new paid resource, billing change, secret rotation, or
-destructive data operation. An explicit owner instruction such as `local only`
-or `do not deploy` overrides the default release step.
+change requires a new paid resource, billing change, domain change, secret
+rotation, or destructive data operation. An explicit owner instruction such as
+`local only`, `do not deploy`, or `не публиковать` for the current task overrides
+the default release step. Report the exact safety blocker when release stops.
 
 Never create a replacement repository, public URL, Railway project, bot, or
 paid resource; never force-push; never send real customer or Telegram test
-messages without explicit authorization; and never regress the existing Review
-Card or iADDS flows.
+messages or submit production forms during QA without explicit authorization;
+and never regress the existing Review Card or iADDS flows.

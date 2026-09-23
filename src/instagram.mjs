@@ -48,7 +48,7 @@ export const instagram={
     finalBody:pair('Перегляньте NFC Instagram Card, ціну, характеристики та залиште заявку на налаштування під ваш профіль.','View NFC Instagram Card, its price and specifications, and enquire about setup for your profile.'),
     founderHeading:pair('Навіщо ми створили NFC Instagram Card','Why we created NFC Instagram Card'),
     founderBody:pair('Ми хочемо зробити просту взаємодію з бізнесом зручнішою: клієнту — швидко відкрити потрібний профіль, а персоналу — не пояснювати пошук щоразу. NFC Instagram Card прибирає зайві дії; підписатися, написати чи переглянути контент людина вирішує сама.','We want to make a simple interaction with a business more convenient: customers can open the right profile quickly, and staff do not have to explain the search each time. NFC Instagram Card removes unnecessary steps; customers decide whether to follow, message or view the content.'),
-    comparisonBridge:pair('Принцип той самий — дотик смартфоном і перехід за налаштованим посиланням. Оберіть, яку дію ви хочете спростити: відкриття Instagram-профілю чи написання Google-відгуку.','The principle is the same: tap with a smartphone and open the configured link. Choose the action you want to make easier: opening your Instagram profile or writing a Google review.')
+    comparisonBridge:pair('Принцип той самий — дотик смартфоном і перехід за налаштованим посиланням. Оберіть, яку дію ви хочете спростити: відкриття Instagram-профілю, написання Google-відгуку або перегляд онлайн-меню.','The principle is the same: tap with a smartphone and open the configured link. Choose the action you want to make easier: opening your Instagram profile, writing a Google review or viewing an online menu.')
   }
 };
 

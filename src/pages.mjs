@@ -142,7 +142,7 @@ export async function submitLead(endpoint, pending, fetcher = globalThis.fetch, 
   // Only the PostgreSQL COMMIT receipt establishes success; delivery is separate.
   if (response.status !== 202 || value?.ok !== true || value.source !== 'NFC_CARD' || value.durableSaved !== true ||
       typeof value.leadId !== 'string' || !idempotencyKey.test(value.leadId)) throw Error('request_unconfirmed');
-  return {leadId: value.leadId, durableSaved: true};
+  return {leadId: value.leadId, durableSaved: true, ...(value.quote === undefined ? {} : {quote: value.quote})};
 }
 
 export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attribution, selection, select, lockSelection, event}) {

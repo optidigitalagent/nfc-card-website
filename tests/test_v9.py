@@ -99,7 +99,10 @@ def test_public_media_exact_allowlist_and_original_hashes():
                     ('/2026-09/' in item['url'] and item['requirements_source']=='Owner media replacement 2026-09-15') or
                     (item['url'].startswith('/assets/media/instagram/') and
                      item['requirements_source']=='NFC_CARD_FRESH_CHAT_INSTAGRAM_UPDATE_PACK_v22' and
-                     item.get('managed_by')=='scripts/update_instagram_media.py:v22'))
+                     item.get('managed_by')=='scripts/update_instagram_media.py:v22') or
+                    (item['url'].startswith('/assets/media/menu/') and
+                     item['requirements_source']=='NFC_CARD_MENU_FRESH_CHAT_IMPLEMENTATION_PACK_v23' and
+                     item.get('managed_by')=='scripts/update_menu_media.py:v23'))
             assert item['provenance'] in {'user_provided_business_asset','verified_official_business_asset','ai_generated_original'}
 
 @pytest.mark.parametrize('prefix',['','/en'])

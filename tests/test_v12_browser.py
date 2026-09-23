@@ -117,7 +117,7 @@ def test_eight_width_bilingual_route_and_screenshot_matrix(web,browser,width):
 
 def fill_order(page):
     page.locator('#f-name').fill('Synthetic technical QA');page.locator('#f-phone').fill('+380001234567')
-    page.locator('label.messenger-option').filter(has=page.locator('[value=telegram]')).click();page.locator('#f-consent').check()
+    page.locator('.lead-form:not([data-menu-form]) label.messenger-option').filter(has=page.locator('[value=telegram]')).click();page.locator('#f-consent').check()
 def login(page,origin,locale='uk'):
     page.goto(origin+('/en' if locale=='en' else '')+'/admin/login');ready(page);page.locator('#admin-password').fill(PASSWORD);page.locator('.admin-login button').click();page.wait_for_url('**/admin/reviews');ready(page)
 
@@ -235,9 +235,9 @@ def test_actual_200_percent_browser_zoom(web,tmp_path):
 def test_explicit_order_routes_keep_pending_variants_separate(web,browser):
     origin,server=web;context=browser.new_context(viewport={'width':390,'height':844});block_external(context,origin);page=context.new_page();page.goto(origin+'/order?variant=standard&quantity=2');ready(page);fill_order(page)
     def lose_response(route):route.fetch();route.abort()
-    page.route('**/api/leads',lose_response);page.locator('.submit-button').click();expect(page.locator('.form-result')).to_have_attribute('data-status','error')
-    page.goto(origin+'/order?variant=branded&quantity=1');ready(page);expect(page.locator('input[name=variant]')).to_have_value('branded');expect(page.locator('#f-quantity')).to_have_value('1');expect(page.locator('.pending-notice')).not_to_be_visible()
-    page.goto(origin+'/order?variant=standard&quantity=2');ready(page);expect(page.locator('.pending-notice')).to_be_visible();page.unroute('**/api/leads',lose_response);page.locator('.submit-button').click();expect(page.locator('.form-result')).to_have_attribute('data-status','success')
+    page.route('**/api/leads',lose_response);page.locator('.lead-form:not([data-menu-form]) .submit-button').click();expect(page.locator('.lead-form:not([data-menu-form]) .form-result')).to_have_attribute('data-status','error')
+    page.goto(origin+'/order?variant=branded&quantity=1');ready(page);expect(page.locator('input[name=variant]')).to_have_value('branded');expect(page.locator('#f-quantity')).to_have_value('1');expect(page.locator('.lead-form:not([data-menu-form]) .pending-notice')).not_to_be_visible()
+    page.goto(origin+'/order?variant=standard&quantity=2');ready(page);expect(page.locator('.lead-form:not([data-menu-form]) .pending-notice')).to_be_visible();page.unroute('**/api/leads',lose_response);page.locator('.lead-form:not([data-menu-form]) .submit-button').click();expect(page.locator('.lead-form:not([data-menu-form]) .form-result')).to_have_attribute('data-status','success')
     with server.reviews.runtime.service.repo.transaction() as db:assert db.execute('SELECT count(*) n FROM commerce_leads').fetchone()['n']==1
     context.close()
 

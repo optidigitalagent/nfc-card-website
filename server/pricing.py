@@ -3,6 +3,38 @@ import json
 from pathlib import Path
 
 COMMERCE_PATH = Path(__file__).resolve().parents[1] / 'src' / 'commerce.json'
+MENU_VARIANTS = ('square_100_black', 'square_100_white', 'square_60_black',
+                 'square_60_white', 'round_70_black', 'round_70_white')
+
+
+def menu_quote(rows, intent='card_order'):
+    """Mirror the Menu display quote; the deployed gateway recalculates it."""
+    if intent == 'menu_consultation':
+        if rows:
+            raise ValueError('invalid_menu_rows')
+        return {'quantity': 0, 'unitPrice': None, 'amount': None,
+                'deposit': None, 'balance': None, 'items': []}
+    if intent != 'card_order' or not isinstance(rows, list) or not 1 <= len(rows) <= 100:
+        raise ValueError('invalid_menu_rows')
+    merged = {}
+    for row in rows:
+        if (not isinstance(row, dict) or set(row) != {'variant_id', 'quantity'} or
+                row['variant_id'] not in MENU_VARIANTS or type(row['quantity']) is not int or
+                not 1 <= row['quantity'] <= 10000):
+            raise ValueError('invalid_menu_rows')
+        variant = row['variant_id']
+        merged[variant] = merged.get(variant, 0) + row['quantity']
+        if merged[variant] > 10000:
+            raise ValueError('invalid_menu_rows')
+    items = [{'variant_id': variant, 'quantity': merged[variant]}
+             for variant in MENU_VARIANTS if variant in merged]
+    quantity = sum(item['quantity'] for item in items)
+    if quantity > 10000:
+        raise ValueError('invalid_menu_rows')
+    unit = 500 if quantity >= 25 else 600 if quantity >= 10 else 750 if quantity >= 5 else 1000
+    amount = quantity * unit
+    return {'quantity': quantity, 'unitPrice': unit, 'amount': amount,
+            'deposit': 200, 'balance': amount - 200, 'items': items}
 
 
 def load_commerce(path=COMMERCE_PATH):
@@ -65,7 +97,7 @@ def validate_products(data):
         ig = products['nfc-instagram-card']
         ready = ig['offers']['ready']
         valid = (type(data['productSchemaVersion']) is int and data['productSchemaVersion'] == 1
-                 and set(products) == {'nfc-review-card', 'nfc-instagram-card'}
+                 and set(products) == {'nfc-review-card', 'nfc-instagram-card', 'nfc-menu-card'}
                  and set(products['nfc-review-card']['offers']) == {'standard', 'branded'}
                  and ig['pricingRevision'] == 'NFC-INSTAGRAM-UA-2026-09-v18'
                  and isinstance(ig['evidence'], str) and bool(ig['evidence'])
@@ -76,6 +108,24 @@ def validate_products(data):
                  and ready['prices'] == {'1': 1500, '2': 2600}
                  and all(type(n) is int for n in ready['prices'].values())
                  and set(data['selections']) == set(expected))
+        menu = products['nfc-menu-card']
+        menu_ready = menu['offers']['ready']
+        valid = valid and (
+            menu['pricingRevision'] == 'NFC-MENU-UA-2026-09-v23'
+            and menu['category'] == 'ONLINE_MENU'
+            and menu_ready['readyMadeOnly'] is True
+            and menu_ready['customDesign'] is False
+            and menu_ready['qr'] == 'not_included'
+            and menu_ready['depositUahPerOrder'] == 200
+            and menu_ready['depositIncluded'] is True
+            and menu_ready['mixVariants'] is True
+            and menu_ready['tiers'] == [
+                {'min': 1, 'max': 4, 'unitUah': 1000},
+                {'min': 5, 'max': 9, 'unitUah': 750},
+                {'min': 10, 'max': 24, 'unitUah': 600},
+                {'min': 25, 'max': None, 'unitUah': 500},
+            ]
+        )
         for key, (product, offer) in expected.items():
             valid = valid and data['selections'][key] == {'product_id': product, 'offer': offer}
         for key in ['standard', 'branded']:

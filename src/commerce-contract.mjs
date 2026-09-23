@@ -1,4 +1,5 @@
 // Product schema v1 is additive to the accepted v6 lead/Review Card contract.
+import {MENU_VARIANTS, menuQuote} from './menu-contract.mjs';
 export const IG = 'instagram';
 export function validateCommerce(c) {
   const fail = () => { throw Error('invalid_commerce_configuration'); };
@@ -6,9 +7,9 @@ export function validateCommerce(c) {
   if(c.schemaVersion!==6||c.productSchemaVersion!==1||c.currency!=='UAH'||c.market!=='UA'||c.deposit!==200||c.depositIncluded!==true)fail();
   if(JSON.stringify(Object.keys(c.variants))!==JSON.stringify(['standard','branded'])||JSON.stringify(c.interests)!==JSON.stringify(['standard','branded','bulk','consultation',IG]))fail();
   if(JSON.stringify(c.quantities)!==JSON.stringify(['1','2','more'])||JSON.stringify(c.customQuoteInterests)!==JSON.stringify(['bulk','consultation'])||c.bulkQuantity!=='more')fail();
-  const p=c.products, ig=p?.['nfc-instagram-card'];
+  const p=c.products, ig=p?.['nfc-instagram-card'],menu=p?.['nfc-menu-card'];
   if(ig?.pricingRevision!=='NFC-INSTAGRAM-UA-2026-09-v18'||typeof ig?.evidence!=='string'||!ig.evidence)fail();
-  if(Object.keys(p||{}).sort().join()!=='nfc-instagram-card,nfc-review-card'||ig.sku!=='NFC-IG-READY'||ig.category!=='INSTAGRAM'||Object.keys(ig.offers).join()!=='ready')fail();
+  if(Object.keys(p||{}).sort().join()!=='nfc-instagram-card,nfc-menu-card,nfc-review-card'||ig.sku!=='NFC-IG-READY'||ig.category!=='INSTAGRAM'||Object.keys(ig.offers).join()!=='ready')fail();
   const ready=ig.offers.ready;
   if(ready.customDesign!==false||ready.qr!=='not_included'||JSON.stringify(ready.quantities)!=='["1","2"]')fail();
   const expected={standard:['nfc-review-card','standard'],branded:['nfc-review-card','branded'],bulk:['nfc-review-card','custom'],consultation:['nfc-review-card','consultation'],instagram:['nfc-instagram-card','ready']};
@@ -18,6 +19,14 @@ export function validateCommerce(c) {
   for(const key of ['standard','branded'])if(p['nfc-review-card'].offers[key]?.legacyPriceKey!==key)fail();
   for(const prices of [c.variants.standard.prices,c.variants.branded.prices,ready.prices])if(Object.keys(prices).join()!=='1,2'||!Object.values(prices).every(n=>Number.isInteger(n)&&n>=c.deposit&&n<100000000))fail();
   if(ready.prices['1']!==1500||ready.prices['2']!==2600)fail();
+  const menuReady=menu?.offers?.ready;
+  if(menu?.pricingRevision!=='NFC-MENU-UA-2026-09-v23'||menu?.category!=='ONLINE_MENU'||
+    menuReady?.customDesign!==false||menuReady?.qr!=='not_included'||menuReady?.readyMadeOnly!==true||
+    menuReady?.mounting!=='adhesive_tape'||JSON.stringify(menuReady?.thicknessMmApprox)!=='[3,4]'||
+    JSON.stringify(Object.keys(menuReady?.variants||{}))!==JSON.stringify(MENU_VARIANTS)||
+    JSON.stringify(menuReady?.tiers)!==JSON.stringify([{min:1,max:4,unitUah:1000},{min:5,max:9,unitUah:750},{min:10,max:24,unitUah:600},{min:25,max:null,unitUah:500}])||
+    menuReady?.depositUahPerOrder!==200||menuReady?.depositIncluded!==true||menuReady?.mixVariants!==true)fail();
+  for(const n of [1,4,5,6,9,10,15,24,25,26])if(menuQuote([{variant_id:MENU_VARIANTS[0],quantity:n}]).amount!==n*(n>=25?500:n>=10?600:n>=5?750:1000))fail();
   return c;
 }
 export function selectionQuote(c, selection, quantity='1') {

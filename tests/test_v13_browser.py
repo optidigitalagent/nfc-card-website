@@ -124,11 +124,11 @@ def test_compact_messenger_keyboard_error_and_footer_boundaries(web,browser,widt
     for locale in ['uk','en']:
         context=browser.new_context(viewport={'width':width,'height':844},reduced_motion='reduce');block_external(context,origin);page=context.new_page()
         prefix='/en' if locale=='en' else '';page.goto(origin+prefix+'/order',wait_until='networkidle');ready(page)
-        group=page.locator('.messenger-options');group.scroll_into_view_if_needed();labels=group.locator('label');boxes=[x.bounding_box() for x in labels.all()]
+        form=page.locator('[data-commerce-form]');group=form.locator('.messenger-options');group.scroll_into_view_if_needed();labels=group.locator('label');boxes=[x.bounding_box() for x in labels.all()]
         assert len(boxes)==3 and all(b and 44<=b['height']<=56 for b in boxes)
         assert max(b['y'] for b in boxes)-min(b['y'] for b in boxes)<=1
         screenshots=[shot(page,f'{locale}-messenger-default-{width}')]
-        page.locator('.submit-button').click();expect(page.locator('#e-messenger')).to_be_visible()
+        form.locator('.submit-button').click();expect(page.locator('#e-messenger')).to_be_visible()
         group.scroll_into_view_if_needed();screenshots.append(shot(page,f'{locale}-messenger-error-{width}'))
         first=page.locator('#f-messenger-telegram');first.focus();first.press('Space');expect(first).to_be_checked()
         expect(page.locator('#e-messenger')).not_to_be_visible()
@@ -136,8 +136,8 @@ def test_compact_messenger_keyboard_error_and_footer_boundaries(web,browser,widt
         expect(page.locator('#e-name')).to_be_visible();expect(page.locator('#e-phone')).to_be_visible()
         page.keyboard.press('ArrowRight');expect(page.locator('#f-messenger-whatsapp')).to_be_checked()
         page.keyboard.press('ArrowRight');expect(page.locator('#f-messenger-viber')).to_be_checked()
-        assert page.locator('[name=messenger]:checked').count()==1
-        assert page.locator('.messenger-option').last.locator('.selection-check').evaluate('(e)=>getComputedStyle(e).visibility')=='visible'
+        assert form.locator('[name=messenger]:checked').count()==1
+        assert form.locator('.messenger-option').last.locator('.selection-check').evaluate('(e)=>getComputedStyle(e).visibility')=='visible'
         screenshots.append(shot(page,f'{locale}-messenger-keyboard-selected-{width}'))
         page.goto(origin+prefix,wait_until='networkidle');ready(page);page.evaluate('scrollTo(0,document.documentElement.scrollHeight)')
         footer=page.locator('footer').bounding_box();cta=page.locator('main>.final-conversion').bounding_box()
@@ -150,12 +150,12 @@ def test_compact_messenger_keyboard_error_and_footer_boundaries(web,browser,widt
         for child in assist.locator('a,p').all():
             bounds=child.bounding_box();assert bounds and bounds['x']>=box['x']-1 and bounds['x']+bounds['width']<=box['x']+box['width']+1
         page.evaluate("sessionStorage.removeItem('qa-click-events');window.addEventListener('nfc:analytics',e=>{const a=JSON.parse(sessionStorage.getItem('qa-click-events')||'[]');a.push(e.detail);sessionStorage.setItem('qa-click-events',JSON.stringify(a));})")
-        page.locator('main>.final-conversion .button').click();page.wait_for_url(lambda u:urlsplit(u).path==prefix+'/order');ready(page)
+        page.locator('main>.final-conversion .button').click();page.wait_for_url(lambda u:urlsplit(u).path==prefix+'/solutions');ready(page)
         events=page.evaluate("JSON.parse(sessionStorage.getItem('qa-click-events')||'[]')")
-        assert len([e for e in events if e['event']=='order_start'])==1
+        assert len([e for e in events if e['event']=='catalog_view'])>=1
         rows.append({'locale':locale,'width':width,'messengerHeights':[b['height'] for b in boxes],
                      'radioKeyboard':'Space + ArrowRight; exactly one selected; visible check','footerHeight':footer['height'],
-                     'customQuoteHeight':box['height'],'homeFinalCtaOrderStartCount':1,'screenshots':screenshots});context.close()
+                     'customQuoteHeight':box['height'],'homeFinalCtaCatalogViewCount':len([e for e in events if e['event']=='catalog_view']),'screenshots':screenshots});context.close()
     save(f'controls-footer-{width}',rows,start)
 
 

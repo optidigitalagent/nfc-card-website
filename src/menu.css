@@ -1,0 +1,49 @@
+/* NFC Menu Card uses the existing graphite and silver product system. */
+.menu-catalog-card .instagram-catalog-actions{margin-top:auto;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.menu-catalog-card .commerce-card-media img{object-fit:contain}
+.menu-chooser{padding-top:clamp(40px,5vw,70px);padding-bottom:clamp(40px,5vw,70px);background:var(--nfc-surface-soft)}
+.menu-chooser .meaning-rows,.menu-cross-link .meaning-rows{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.menu-chooser .meaning-rows>div,.menu-cross-link .meaning-rows>div{min-width:0}
+.menu-product-page>.product-detail,.menu-info-page>.section{max-width:1200px;margin-inline:auto}
+.menu-product-page>.product-detail{padding:clamp(35px,5vw,70px) var(--space);border-bottom:1px solid var(--nfc-border-soft)}
+.menu-product-page>.product-detail h2{max-width:800px}
+.menu-product-page .commerce-gallery-image{object-fit:contain}
+.menu-product-page .commerce-thumbnails{overflow-x:auto;scrollbar-width:thin;padding-bottom:8px;overscroll-behavior-x:contain}
+.menu-product-page .commerce-thumbnails button{flex:0 0 78px;width:78px;min-height:70px}
+.menu-product-page .commerce-thumbnails img{height:58px}
+.menu-product-page .commerce-purchase>.button{margin-bottom:10px}
+.menu-product-page .price-rows{display:flex;gap:clamp(16px,3vw,50px);flex-wrap:wrap}
+.menu-product-page .price-rows>div{min-width:135px}
+.menu-product-page .steps{margin:25px 0}
+.menu-product-page .menu-cross-link,.menu-info-page .menu-cross-link{max-width:1200px;margin:auto;padding:clamp(30px,5vw,60px) var(--space);display:block}
+.menu-cross-link h2{margin-bottom:25px}
+.menu-form{max-width:790px;width:100%;min-width:0}
+.menu-form fieldset{border:0;padding:0;margin:20px 0;min-width:0}
+.menu-form legend{font-size:.95rem;font-weight:650;margin-bottom:12px}
+.menu-form .menu-intent,.menu-form .menu-status{display:flex;flex-wrap:wrap;gap:10px 22px}
+.menu-form .menu-intent legend,.menu-form .menu-status legend{width:100%}
+.menu-form .menu-intent label,.menu-form .menu-status label{display:flex;align-items:flex-start;gap:8px;min-height:44px;max-width:360px;cursor:pointer}
+.menu-form .menu-intent input,.menu-form .menu-status input{flex:none;width:20px;height:20px;margin:2px 0 0;accent-color:var(--nfc-ink)}
+.menu-form .messenger-options{margin-top:8px}
+.menu-form [data-menu-configuration]{padding:22px 0;border-top:1px solid var(--nfc-border-soft);border-bottom:1px solid var(--nfc-border-soft)}
+.menu-row{display:grid;grid-template-columns:minmax(0,2fr) minmax(90px,.8fr) auto;gap:12px;align-items:end;margin:15px 0}
+.menu-row label{display:block;min-width:0;font-size:.86rem;font-weight:550}
+.menu-row select,.menu-row input{display:block;width:100%;min-width:0;min-height:48px;margin-top:7px;padding:10px;border:1px solid #a7afb9;border-radius:5px;background:#fff;color:var(--nfc-ink)}
+.menu-row [data-menu-remove]{min-height:48px;padding:10px 15px}
+.menu-totals{margin:25px 0 0;padding:18px;border:1px solid var(--nfc-border-soft);background:var(--nfc-surface-soft);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 24px}
+.menu-totals p{margin:0;min-width:0;font-size:.9rem}
+.menu-totals output{font-weight:700;white-space:nowrap}
+.menu-form [data-menu-url-field]{margin:18px 0}
+.menu-form [data-menu-development-note]{padding:14px;border-left:3px solid #6f767e;background:var(--nfc-surface-soft)}
+.menu-form .consent-field{margin:18px 0}
+.menu-form .submit-button{min-height:50px}
+.menu-interest{padding:18px 20px;margin:20px 0;border:1px solid var(--nfc-border-soft);background:var(--nfc-surface-soft)}
+.menu-interest p{font-weight:600;margin-bottom:10px}
+.menu-interest .button{margin-right:14px}
+.menu-inline{margin-top:20px;border-top:1px solid var(--nfc-border-soft)}
+.menu-info-page .instagram-info-hero img,.menu-info-page .instagram-info-image{object-fit:contain;max-height:550px;margin-inline:auto}
+.menu-info-page .section>.responsive-picture{max-width:430px;margin:24px 0}
+.menu-info-page .button{margin:8px 12px 8px 0}
+@media(max-width:768px){.menu-chooser .meaning-rows,.menu-cross-link .meaning-rows{grid-template-columns:1fr}.menu-product-page .commerce-thumbnails{display:flex}.menu-row{grid-template-columns:minmax(0,1fr) 115px}.menu-row [data-menu-remove]{grid-column:1/-1;justify-self:start}.menu-totals{grid-template-columns:1fr}.menu-info-page .instagram-info-hero{display:block}}
+@media(max-width:430px){.menu-row{grid-template-columns:minmax(0,1fr)}.menu-row [data-menu-remove]{grid-column:auto}.menu-interest .button{width:100%;margin:0 0 10px}.menu-form .menu-intent,.menu-form .menu-status{display:block}.menu-form .menu-intent label,.menu-form .menu-status label{margin:9px 0}.menu-product-page .price-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}}
+@media(prefers-reduced-motion:reduce){.menu-product-page *,.menu-info-page *,.menu-chooser *{scroll-behavior:auto}}

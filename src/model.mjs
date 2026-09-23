@@ -1480,6 +1480,28 @@ export function resolveContent(overrides = {}) {
   }
   const timing = leadTime(activeFlags.lead_time_5_days_confirmed);
   const result = substitute(structuredClone(source), timing);
+  // v23 adds Menu as a separate fourth offer while preserving the source-backed
+  // Review and Instagram product copy. Only shared copy is widened here.
+  result.config.seo.homeTitle = pair('NFC-картки: Google-відгуки, Instagram та меню | NFC CARD','NFC Cards for Google Reviews, Instagram & Menus | NFC CARD');
+  result.config.seo.homeDescription = pair('Готові NFC-картки для Google-відгуків, Instagram та онлайн-меню. Налаштування потрібного посилання, оптові ціни Menu Card та доставка по Україні.','Ready-to-use NFC cards for Google reviews, Instagram and online menus. Link setup, Menu Card volume pricing and delivery within Ukraine.');
+  result.copy.process.items.uk[1][1] = 'Уточнюємо посилання для обраної картки — Google-відгук, Instagram-профіль або онлайн-меню — та дані доставки. Якщо меню ще немає, обговоримо його розробку окремо. Для Branded Review Card готуємо перший макет безкоштовно.';
+  result.copy.process.items.en[1][0] = 'We confirm the link for the chosen card — a Google review form, an Instagram profile or an online menu — and delivery details. If there is no menu yet, we discuss its development separately. For Branded Review Card, we prepare the first mockup free of charge.';
+  result.copy.process.items.uk[3][1] = 'Для Review Card та Instagram Card орієнтовний строк — до 5 робочих днів після погодження. Строк підготовки Menu Card підтвердимо під час узгодження.';
+  result.copy.process.items.en[3][0] = 'For Review and Instagram cards, preparation is normally within five business days after approval. We confirm Menu Card preparation time when agreeing the order.';
+  result.copy.bulk.heading = pair('Більше Review Card для бізнесу','More Review Cards for your business');
+  result.copy.bulk.body = pair('Для Review Card і Branded Review Card від трьох штук підготуємо індивідуальний розрахунок. Для Menu Card діє окрема оптова сітка.','Review Card and Branded Review Card orders of three or more receive an individual quote. Menu Card has its own volume pricing.');
+  const faqAnswers={
+    destination:pair('Залежить від картки. Review Card і Branded Review Card відкривають форму Google-відгуку конкретної локації. NFC Instagram Card відкриває Instagram-профіль, а NFC Menu Card — онлайн-меню закладу. Це окремі продукти; подальшу дію клієнт обирає сам.','It depends on the card. Review Card and Branded Review Card open the Google review form for a specific location. NFC Instagram Card opens the Instagram profile, and NFC Menu Card opens the venue’s online menu. These are separate products; the customer chooses the next action.'),
+    dimensions:pair('Review Card та NFC Instagram Card — 10 × 10 см, товщина 3 мм. Menu Card — квадрат 10 × 10 або 6 × 6 см чи круг діаметром 7 см; товщина приблизно 3–4 мм. Точне виконання обирайте на сторінці товару.','Review Card and NFC Instagram Card are 10 × 10 cm and 3 mm thick. Menu Card comes as a 10 × 10 or 6 × 6 cm square or a 7 cm diameter circle, approximately 3–4 mm thick. Choose the format on the product page.'),
+    qr:pair('Стандартна Review Card, NFC Instagram Card і NFC Menu Card у цих пропозиціях не мають QR-коду. Персональний дизайн доступний лише для Branded Review Card; QR для неї можна погодити окремо. Instagram і Menu доступні у готових дизайнах.','The standard Review Card, NFC Instagram Card and NFC Menu Card in these offers do not have QR codes. Custom design is available only for Branded Review Card; a QR code can be agreed separately for that version. Instagram and Menu cards use ready-made designs.'),
+    subscription:pair('Обов’язкової щомісячної плати за використання самих NFC-карток немає. Якщо потрібна розробка онлайн-меню, деталі обговорюємо на консультації.','There is no mandatory monthly fee for using the physical NFC cards themselves. If online-menu development is needed, we discuss the details in a consultation.'),
+    bulk:pair('Для Review Card і Branded Review Card від трьох штук — індивідуальний розрахунок. NFC Instagram Card у поточній пропозиції замовляється по одній або дві. Для Menu Card діє оптова сітка від 5, 10 і 25 штук; різні її виконання можна поєднувати. Оберіть потрібний товар у каталозі.','Review Card and Branded Review Card orders of three or more are quoted individually. The current NFC Instagram Card offer supports one or two cards. Menu Card has volume tiers at 5, 10 and 25 cards; its formats can be mixed. Choose the product in the catalog.'),
+    'change-link':pair('Для Review Card та Instagram Card посилання можна переписати зі сумісного смартфона. Якщо адреса онлайн-меню зміниться, зверніться до нас, щоб уточнити налаштування Menu Card.','For Review and Instagram cards, the link can be rewritten from a compatible smartphone. If your online-menu address changes, contact us to clarify Menu Card setup.'),
+    'lead-time':pair('Для Review Card та Instagram Card орієнтовно до п’яти робочих днів після погодження деталей. Строк підготовки Menu Card підтвердимо під час узгодження замовлення.','Review and Instagram cards are normally prepared within five business days after approval. We confirm Menu Card preparation time when agreeing the order.')
+  };
+  for(const faq of result.faqs)if(faqAnswers[faq.id])faq.answer=faqAnswers[faq.id];
+  const bulkFaq=result.faqs.find(f=>f.id==='bulk');
+  if(bulkFaq)bulkFaq.question=pair('Як замовити більше карток?','How can I order more cards?');
   result.flags = activeFlags;
   result.leadTime = timing;
   result.config.production.duration.value = timing;
