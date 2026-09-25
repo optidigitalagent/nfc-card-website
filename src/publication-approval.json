@@ -8,7 +8,7 @@
     "ownerAuthorizedPublication": true,
     "sellerName": "Артем Антонов",
     "defectReturnAndRefundConfirmed": true,
-    "approvalReference": "Owner final PUBLIC launch authorization and seller/refund clarification, 2026-09-12, NFC CARD task; owner supplied and requested publication of replacement standard-card media, 2026-09-15; owner authorized the exact v22 Instagram copy/media release, commit, push to existing main, CI, GitHub Pages deployment and live acceptance, 2026-09-22; owner explicitly authorized NFC Menu Card v23 release to existing gateway main/Railway and frontend main/GitHub Pages at the same URL, 2026-09-23 (release pack v24); owner explicitly requested v25 product page, gallery and targeted audit follow-up publication to existing main and same GitHub Pages URL, 2026-09-23",
-    "reviewedContentSha256": "2d3cc63d68ba0dc7aa9206869f8e6db0658c751f05438d68cef7f03ae0850cd8"
+    "approvalReference": "Owner final PUBLIC launch authorization and seller/refund clarification, 2026-09-12, NFC CARD task; owner supplied and requested publication of replacement standard-card media, 2026-09-15; owner authorized the exact v22 Instagram copy/media release, commit, push to existing main, CI, GitHub Pages deployment and live acceptance, 2026-09-22; owner explicitly authorized NFC Menu Card v23 release to existing gateway main/Railway and frontend main/GitHub Pages at the same URL, 2026-09-23 (release pack v24); owner explicitly requested v25 product page, gallery and targeted audit follow-up publication to existing main and same GitHub Pages URL, 2026-09-23; owner explicitly authorized NFC Review Card 3D v26 release to existing gateway main/Railway and frontend main/GitHub Pages at the same site URL, 2026-09-25",
+    "reviewedContentSha256": "675412dfa0beb6d01127a2b4c863dafed281dec0f5d57302272fad95cc149bc0"
   }
 }

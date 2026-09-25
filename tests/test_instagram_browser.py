@@ -59,7 +59,9 @@ def test_instagram_nine_width_pages_matrix(pages_web,browser,width):
             assert page.evaluate("[...document.images].every(i=>!i.getClientRects().length||!i.complete||i.naturalWidth>0)")
             for a in page.locator('a[href^="/"]').all():assert a.get_attribute('href').startswith(BASE+'/')
             if route=='/solutions':
-                assert page.locator('.commerce-card').evaluate_all('(cards)=>cards.map(c=>c.dataset.variant)')==['standard','branded','instagram','menu']
+                cards=page.locator('.commerce-card')
+                assert cards.evaluate_all('(rows)=>rows.map(c=>c.dataset.variant||null)')==['standard','branded',None,'instagram','menu']
+                assert cards.nth(2).get_attribute('data-product-id')=='nfc-review-card-3d'
                 expect(page.locator('.commerce-card[data-variant=instagram] img[data-media-claim-role=promotional_product_render]')).to_be_visible()
                 page.locator('.commerce-card[data-variant=instagram]').screenshot(path=EVIDENCE/f'{locale}-instagram-catalog-tile-{width}.png')
             if route=='/solutions/instagram-card':

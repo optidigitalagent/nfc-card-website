@@ -28,9 +28,12 @@ def test_manual_video_gallery_and_image_zoom(web, browser, width, prefix):
         # Native controls must remain reachable below the corner expand button.
         assert video.evaluate('''v=>{const r=v.getBoundingClientRect();
             return document.elementFromPoint(r.x+r.width/2,r.bottom-24)===v}''')
-        video.evaluate('(v)=>v.play()')
+        # Headless macOS may freeze the media clock without an audio sink.
+        # Check actual frame advancement with audio muted only in this test.
+        video.evaluate('(v)=>{v.muted=true;return v.play()}')
         page.wait_for_function('''()=>{const v=document.querySelector('[data-slide]:not([hidden]) video');
             return v.currentTime>0 && v.videoWidth===320 && v.videoHeight===568 && !v.paused}''')
+        video.evaluate('(v)=>v.muted=false')
         video.focus()
         page.keyboard.press('ArrowRight')
         expect(page.locator('[data-gallery-count]')).to_have_text(f'{index+1} / 13')
@@ -39,11 +42,16 @@ def test_manual_video_gallery_and_image_zoom(web, browser, width, prefix):
         modal = page.locator('.lightbox-scroll video')
         expect(modal).to_be_visible()
         expect(page.locator('[data-lightbox-zoom]')).to_have_count(0)
-        modal.evaluate('(v)=>v.play()')
+        assert not modal.evaluate('(v)=>v.muted'), 'The public player must retain audio'
+        # The headless macOS audio sink can hold an audible video's media clock
+        # at zero. Mute only in this browser test so decoded-frame playback is
+        # measurable; restore the real player's audio setting before closing.
+        modal.evaluate('(v)=>{v.muted=true;return v.play()}')
         page.wait_for_function("()=>document.querySelector('.lightbox-scroll video').currentTime>0")
         if index == 8:
             assert modal.locator('track').count() == 2
             page.wait_for_function("()=>[...document.querySelector('.lightbox-scroll video').textTracks].some(t=>t.mode==='showing' && t.cues?.length===5)")
+        modal.evaluate('(v)=>v.muted=false')
         page.keyboard.press('Escape')
         expect(page.locator('dialog.image-lightbox')).not_to_be_visible()
         assert modal.evaluate('(v)=>v.paused') and video.evaluate('(v)=>v.paused')

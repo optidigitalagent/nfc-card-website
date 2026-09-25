@@ -102,7 +102,11 @@ def test_public_media_exact_allowlist_and_original_hashes():
                      item.get('managed_by')=='scripts/update_instagram_media.py:v22') or
                     (item['url'].startswith('/assets/media/menu/') and
                      item['requirements_source']=='NFC_CARD_MENU_FRESH_CHAT_IMPLEMENTATION_PACK_v23' and
-                     item.get('managed_by')=='scripts/update_menu_media.py:v23'))
+                         item.get('managed_by')=='scripts/update_menu_media.py:v23') or
+                    (item['url'].startswith('/assets/media/review-3d/') and
+                     item['product_id']=='nfc-review-card-3d' and
+                     item['requirements_source']=='NFC_CARD_Review_3D_Website_Pack_v1 + NFC_CARD_REVIEW_3D_MEDIA_MANIFEST_v26' and
+                     item.get('managed_by')=='v26_review_3d_media_import'))
             assert item['provenance'] in {'user_provided_business_asset','verified_official_business_asset','ai_generated_original'}
 
 @pytest.mark.parametrize('prefix',['','/en'])

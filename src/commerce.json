@@ -157,6 +157,24 @@
           "mixVariants": true
         }
       }
+    },
+    "nfc-review-card-3d": {
+      "name": "NFC Review Card 3D",
+      "category": "GOOGLE_REVIEW",
+      "pricingRevision": "NFC-REVIEW-3D-UA-2026-09-v26",
+      "evidence": "NFC_CARD_Review_3D_Website_Pack_v1; NFC_CARD_REVIEW_3D_IMPLEMENTATION_HELPER_PACK_v26",
+      "offers": {
+        "fixed": {
+          "unitUah": 4000,
+          "depositUahPerOrder": 200,
+          "depositIncluded": true,
+          "customDesign": false,
+          "prototype": true,
+          "madeToOrder": true,
+          "quantityMin": 1,
+          "quantityMax": 10000
+        }
+      }
     }
   },
   "selections": {

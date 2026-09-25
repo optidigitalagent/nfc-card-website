@@ -8,7 +8,7 @@ export const PREVIEW = 'PUBLIC_PREVIEW';
 export const PUBLIC = 'PUBLIC';
 export const INDEXABLE = 'PUBLIC_INDEXABLE';
 const PUBLIC_ROUTES = ['/', '/about', '/solutions', '/solutions/review-card',
-  '/solutions/branded-review-card', '/solutions/instagram-card', '/instagram-card', '/solutions/menu-card', '/menu-card', '/delivery-and-payment', '/warranty-and-returns'];
+  '/solutions/branded-review-card', '/solutions/review-card-3d', '/solutions/instagram-card', '/instagram-card', '/solutions/menu-card', '/menu-card', '/delivery-and-payment', '/warranty-and-returns'];
 const LEGAL_ROUTES = ['/privacy', '/terms'];
 const localized = routes => routes.flatMap(route => [route, '/en' + (route === '/' ? '' : route)]);
 

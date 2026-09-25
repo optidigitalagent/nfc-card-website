@@ -52,7 +52,7 @@ def test_public_marketing_indexed_forms_enabled_after_mount_and_no_preview_badge
     robots = (site / 'robots.txt').read_text()
     assert 'Disallow: /\n' not in robots
     assert 'Sitemap: ' + ORIGIN + BASE + '/sitemap.xml' in robots
-    assert len(BeautifulSoup((site / 'sitemap.xml').read_text(), 'xml').select('loc')) == 26
+    assert len(BeautifulSoup((site / 'sitemap.xml').read_text(), 'xml').select('loc')) == 28
     assert not (site / 'admin').exists()
     assert not (site / 'api').exists()
 

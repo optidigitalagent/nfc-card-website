@@ -1,0 +1,37 @@
+/* The existing commerce system, with a restrained accent for the fifth offer. */
+.review3d-card{border-color:#b8c5d5}
+.review3d-card .commerce-card-media{background:#f7f9fc}
+.review3d-card .catalog-product-image{object-fit:cover}
+.review3d-card .commerce-card-copy{gap:6px}
+.review3d-card .commerce-card-copy .instagram-headline{font-weight:650;color:#182b47}
+.review3d-card .commerce-card-copy .commerce-price{font-size:1.55rem;margin:10px 0 0}
+.review3d-card .commerce-card-copy .button{position:relative;z-index:3;margin-top:auto;min-height:48px}
+.review3d-media-label{position:absolute;left:16px;bottom:16px;padding:6px 10px;background:#fffef7e8;border:1px solid #b6c1cf;color:#2f4159;font:650 .69rem 'IBM Plex Mono',monospace;letter-spacing:.12em}
+.review3d-status{display:inline-block;margin:4px 0 14px;padding:9px 12px;border:1px solid #aebed2;border-radius:4px;background:#f1f5fa;color:#26394f;font-size:.85rem;font-weight:650;line-height:1.4}
+.review3d-product-page .commerce-purchase h1{margin-bottom:8px}
+.review3d-hero-heading{font-size:clamp(1.25rem,2vw,1.8rem);line-height:1.25;margin:0 0 14px;color:#26394f}
+.review3d-product-page .commerce-purchase .product-promise{margin-bottom:16px}
+.review3d-product-page .commerce-purchase .commerce-price{margin:12px 0 8px}
+.review3d-product-page .commerce-purchase>.button{margin-top:8px}
+.review3d-product-page .commerce-purchase>.field-hint{margin:12px 0}
+.review3d-product-page .gallery-frame{background:#f8fafc}
+.review3d-product-page .gallery-frame picture,.review3d-product-page .gallery-frame img{display:block}
+.review3d-product-page .commerce-gallery-image{object-fit:contain}
+.review3d-detail{max-width:880px}
+.review3d-detail h2{max-width:28ch}
+.review3d-detail p{max-width:76ch}
+.review3d-table-wrap{overflow-x:auto}
+.review3d-comparison table{width:100%;min-width:590px;border-collapse:collapse;margin:22px 0}
+.review3d-comparison th,.review3d-comparison td{text-align:left;vertical-align:top;border-bottom:1px solid #d5dce5;padding:16px 12px}
+.review3d-comparison th{font-weight:650}
+.review3d-comparison thead{background:#f1f5fa}
+.review3d-cross-links{line-height:2}
+.review3d-form .field{margin-bottom:18px}
+.review3d-form .field input[type=number]{max-width:220px}
+.review3d-form .form-grid{margin-bottom:10px}
+.review3d-totals{display:grid;gap:8px;margin:16px 0 24px;padding:18px;border:1px solid #c1ccdb;background:#f7f9fc}
+.review3d-totals p{display:flex;justify-content:space-between;gap:16px;margin:0;font-size:.9rem}
+.review3d-totals output{font-weight:650;white-space:nowrap}
+.review3d-notice{font-size:.82rem;line-height:1.5;padding:12px 14px;background:#f1f5fa;border-left:3px solid #6d88a5}
+.review3d-form .submit-button{min-height:52px}
+@media(max-width:768px){.review3d-card .catalog-product-image{aspect-ratio:1;object-fit:cover}.review3d-product-page .commerce-gallery-image{height:auto;max-height:520px}.review3d-totals p{display:block}.review3d-totals output{display:block;margin-top:2px}.review3d-hero-heading{font-size:1.35rem}}

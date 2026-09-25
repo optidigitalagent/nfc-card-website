@@ -7,9 +7,15 @@ export function validateCommerce(c) {
   if(c.schemaVersion!==6||c.productSchemaVersion!==1||c.currency!=='UAH'||c.market!=='UA'||c.deposit!==200||c.depositIncluded!==true)fail();
   if(JSON.stringify(Object.keys(c.variants))!==JSON.stringify(['standard','branded'])||JSON.stringify(c.interests)!==JSON.stringify(['standard','branded','bulk','consultation',IG]))fail();
   if(JSON.stringify(c.quantities)!==JSON.stringify(['1','2','more'])||JSON.stringify(c.customQuoteInterests)!==JSON.stringify(['bulk','consultation'])||c.bulkQuantity!=='more')fail();
-  const p=c.products, ig=p?.['nfc-instagram-card'],menu=p?.['nfc-menu-card'];
+  const p=c.products, ig=p?.['nfc-instagram-card'],menu=p?.['nfc-menu-card'],review3d=p?.['nfc-review-card-3d'];
   if(ig?.pricingRevision!=='NFC-INSTAGRAM-UA-2026-09-v18'||typeof ig?.evidence!=='string'||!ig.evidence)fail();
-  if(Object.keys(p||{}).sort().join()!=='nfc-instagram-card,nfc-menu-card,nfc-review-card'||ig.sku!=='NFC-IG-READY'||ig.category!=='INSTAGRAM'||Object.keys(ig.offers).join()!=='ready')fail();
+  if(Object.keys(p||{}).sort().join()!=='nfc-instagram-card,nfc-menu-card,nfc-review-card,nfc-review-card-3d'||ig.sku!=='NFC-IG-READY'||ig.category!=='INSTAGRAM'||Object.keys(ig.offers).join()!=='ready')fail();
+  const fixed3d=review3d?.offers?.fixed;
+  if(review3d?.category!=='GOOGLE_REVIEW'||review3d?.pricingRevision!=='NFC-REVIEW-3D-UA-2026-09-v26'||
+    typeof review3d?.evidence!=='string'||!review3d.evidence||Object.keys(review3d.offers).join()!=='fixed'||
+    fixed3d?.unitUah!==4000||fixed3d?.depositUahPerOrder!==200||fixed3d?.depositIncluded!==true||
+    fixed3d?.customDesign!==false||fixed3d?.prototype!==true||fixed3d?.madeToOrder!==true||
+    fixed3d?.quantityMin!==1||fixed3d?.quantityMax!==10000)fail();
   const ready=ig.offers.ready;
   if(ready.customDesign!==false||ready.qr!=='not_included'||JSON.stringify(ready.quantities)!=='["1","2"]')fail();
   const expected={standard:['nfc-review-card','standard'],branded:['nfc-review-card','branded'],bulk:['nfc-review-card','custom'],consultation:['nfc-review-card','consultation'],instagram:['nfc-instagram-card','ready']};
@@ -28,6 +34,14 @@ export function validateCommerce(c) {
     menuReady?.depositUahPerOrder!==200||menuReady?.depositIncluded!==true||menuReady?.mixVariants!==true)fail();
   for(const n of [1,4,5,6,9,10,15,24,25,26])if(menuQuote([{variant_id:MENU_VARIANTS[0],quantity:n}]).amount!==n*(n>=25?500:n>=10?600:n>=5?750:1000))fail();
   return c;
+}
+export function review3dQuote(c, quantity) {
+  const offer=c.products['nfc-review-card-3d'].offers.fixed;
+  const valid=typeof quantity==='number'&&Number.isSafeInteger(quantity)&&quantity>=offer.quantityMin&&quantity<=offer.quantityMax;
+  const amount=valid?quantity*offer.unitUah:null;
+  return {valid,quantity,unitPrice:offer.unitUah,amount,deposit:valid?offer.depositUahPerOrder:null,
+    balance:valid?amount-offer.depositUahPerOrder:null,currency:c.currency,
+    pricingRevision:c.products['nfc-review-card-3d'].pricingRevision};
 }
 export function selectionQuote(c, selection, quantity='1') {
   const q=String(quantity), spec=c.selections[selection];

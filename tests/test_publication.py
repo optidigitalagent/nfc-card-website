@@ -62,7 +62,7 @@ def test_https_preview_metadata_and_crawl_boundaries(source):
     result = build(source)
     assert result.returncode == 0, result.stderr
     pages = list((source / 'site').rglob('*.html'))
-    assert len(pages) == 34
+    assert len(pages) == 36
     for page in pages:
         soup = BeautifulSoup(page.read_text(), 'html.parser')
         assert soup.select_one('meta[name=robots]')['content'] == 'noindex,nofollow'
@@ -73,7 +73,7 @@ def test_https_preview_metadata_and_crawl_boundaries(source):
     assert (source / 'site/robots.txt').read_text() == 'User-agent: *\nDisallow: /\n'
     sitemap = BeautifulSoup((source / 'site/sitemap.xml').read_text(), 'xml')
     urls = [item.text for item in sitemap.find_all('loc')]
-    assert len(urls) == 22 and all(url.startswith(ORIGIN + '/') for url in urls)
+    assert len(urls) == 24 and all(url.startswith(ORIGIN + '/') for url in urls)
     assert all(not any(part in url for part in ('/order', '/contact', '/reviews/new', '/thank-you', '/privacy', '/terms', '/admin', '/api')) for url in urls)
     assert PublicationPolicy.from_build(source, SimpleNamespace(mode='production', origin=ORIGIN), {}).mode == PREVIEW
 

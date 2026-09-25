@@ -37,6 +37,16 @@ def menu_quote(rows, intent='card_order'):
             'deposit': 200, 'balance': amount - 200, 'items': items}
 
 
+def review3d_quote(quantity, commerce):
+    """Mirror the public quote; the gateway is authoritative at submission."""
+    offer = commerce['products']['nfc-review-card-3d']['offers']['fixed']
+    if type(quantity) is not int or not offer['quantityMin'] <= quantity <= offer['quantityMax']:
+        raise ValueError('invalid_review3d_quantity')
+    amount = quantity * offer['unitUah']
+    return {'quantity': quantity, 'unitPrice': offer['unitUah'], 'amount': amount,
+            'deposit': offer['depositUahPerOrder'], 'balance': amount - offer['depositUahPerOrder']}
+
+
 def load_commerce(path=COMMERCE_PATH):
     data = json.loads(Path(path).read_text(encoding='utf-8'))
     try:
@@ -97,7 +107,7 @@ def validate_products(data):
         ig = products['nfc-instagram-card']
         ready = ig['offers']['ready']
         valid = (type(data['productSchemaVersion']) is int and data['productSchemaVersion'] == 1
-                 and set(products) == {'nfc-review-card', 'nfc-instagram-card', 'nfc-menu-card'}
+                 and set(products) == {'nfc-review-card', 'nfc-instagram-card', 'nfc-menu-card', 'nfc-review-card-3d'}
                  and set(products['nfc-review-card']['offers']) == {'standard', 'branded'}
                  and ig['pricingRevision'] == 'NFC-INSTAGRAM-UA-2026-09-v18'
                  and isinstance(ig['evidence'], str) and bool(ig['evidence'])
@@ -109,6 +119,18 @@ def validate_products(data):
                  and all(type(n) is int for n in ready['prices'].values())
                  and set(data['selections']) == set(expected))
         menu = products['nfc-menu-card']
+        review3d = products['nfc-review-card-3d']
+        fixed3d = review3d['offers']['fixed']
+        valid = valid and (
+            review3d['category'] == 'GOOGLE_REVIEW'
+            and review3d['pricingRevision'] == 'NFC-REVIEW-3D-UA-2026-09-v26'
+            and isinstance(review3d['evidence'], str) and bool(review3d['evidence'])
+            and set(review3d['offers']) == {'fixed'}
+            and fixed3d == {'unitUah': 4000, 'depositUahPerOrder': 200,
+                            'depositIncluded': True, 'customDesign': False,
+                            'prototype': True, 'madeToOrder': True,
+                            'quantityMin': 1, 'quantityMax': 10000}
+        )
         menu_ready = menu['offers']['ready']
         valid = valid and (
             menu['pricingRevision'] == 'NFC-MENU-UA-2026-09-v23'
