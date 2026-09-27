@@ -104,7 +104,7 @@ def test_all_static_urls_metadata_css_and_content_use_base_path(source, base):
     for value in strings(json.loads((site / 'assets/content.json').read_text())):
         assert_project_url(value, site, normalized)
     sitemap = BeautifulSoup((site / 'sitemap.xml').read_text(), 'xml')
-    assert len(sitemap.select('loc')) == 24
+    assert len(sitemap.select('loc')) == 36
     for loc in sitemap.select('loc'):
         assert_project_url(loc.text, site, normalized)
     assert (site / '.nojekyll').exists()
@@ -115,13 +115,13 @@ def test_pages_cleans_server_artifacts_and_default_build_remains_fullstack(sourc
     site = build(source, pages=False)
     baseline = {p.relative_to(site): p.read_bytes() for p in site.rglob('*') if p.is_file()}
     server = {p.relative_to(source): p.read_bytes() for p in (source / 'server').rglob('*') if p.is_file()}
-    assert len(list(site.rglob('*.html'))) == 36
+    assert len(list(site.rglob('*.html'))) == 54
     admin = site / 'admin/reviews/index.html'
     admin.parent.mkdir(parents=True)
     admin.write_text('stale admin')
     build(source)
     assert not (site / 'admin').exists()
-    assert not (site / 'reviews/new').exists() and not (site / 'en/reviews/new').exists()
+    assert not any((site / prefix / 'reviews/new').exists() for prefix in ('', 'en', 'pl'))
     assert not (site / '_redirects').exists()
     for filename in ['reviews.js', 'reviews-renderer.js', 'admin-reviews.js', 'reviews.css']:
         assert not (site / 'assets' / filename).exists()
@@ -164,12 +164,17 @@ def test_forms_are_inert_before_client_and_expose_only_public_config(source, end
             assert soup.html['data-public-base-path'] == BASE
             notice = form.select_one('.review3d-notice' if review3d else '.preview-notice')
             assert notice['role'] == 'status'
-            expected_notice = ('Онлайн-заявки тимчасово недоступні у preview-версії. Функцію буде активовано після підключення захищеного збереження заявок.'
-                               if soup.html['lang'] == 'uk' else
-                               'Online enquiries are temporarily unavailable in the preview version. The feature will be enabled after secure lead storage is connected.')
+            expected_notice = {
+                'uk': 'Онлайн-заявки тимчасово недоступні у preview-версії. Функцію буде активовано після підключення захищеного збереження заявок.',
+                'en': 'Online enquiries are temporarily unavailable in the preview version. The feature will be enabled after secure lead storage is connected.',
+                'pl': 'W wersji podglądowej nie można obecnie wysyłać zgłoszeń. Funkcja zostanie uruchomiona po podłączeniu bezpiecznego zapisu zgłoszeń.',
+            }[soup.html['lang']]
             if menu:
-                assert notice.text == ('Локальний перегляд: повідомлення не надсилаються.' if soup.html['lang'] == 'uk'
-                                       else 'Local preview: no messages are sent.')
+                assert notice.text == {
+                    'uk': 'Локальний перегляд: повідомлення не надсилаються.',
+                    'en': 'Local preview: no messages are sent.',
+                    'pl': 'Podgląd lokalny: wiadomości nie są wysyłane.',
+                }[soup.html['lang']]
             else:
                 assert notice.text == expected_notice
             if endpoint:
@@ -182,7 +187,7 @@ def test_forms_are_inert_before_client_and_expose_only_public_config(source, end
             else:
                 assert form.select_one('[name=quantity]') and form.select_one('[name=variant]')
                 assert_project_url(form.select_one('[name=source]')['value'], site)
-    assert forms == 18
+    assert forms == 27
     for file in site.rglob('*'):
         if file.is_file():
             assert secret.encode() not in file.read_bytes()
@@ -190,7 +195,7 @@ def test_forms_are_inert_before_client_and_expose_only_public_config(source, end
 
 def test_built_clients_fetch_and_navigate_under_project_path(source):
     site = build(source)
-    scripts = {name: (site / 'assets' / name).read_text() for name in ['app.js', 'commerce.js']}
+    scripts = {name: (site / 'assets' / name).read_text() for name in ['localization-client.js', 'app.js', 'commerce.js']}
     content = json.loads((site / 'assets/content.json').read_text())
     node('const scripts=' + json.dumps(scripts) + ';\nconst content=' + json.dumps(content) + ';\n' + r"""
       const {default:vm}=await import('node:vm');
@@ -210,6 +215,7 @@ def test_built_clients_fetch_and_navigate_under_project_path(source):
           sessionStorage:{getItem:()=>null,setItem(){},removeItem(){}},URL,URLSearchParams,Intl,Set,Map,
           CustomEvent:class{},window:{addEventListener(){},dispatchEvent(){}},fetch:async url=>{fetched.push(url);return {ok:true,json:async()=>content};}};
         state.contract=await import(new URL('../src/commerce-contract.mjs',new URL('./tests/test_pages_v17.py', 'file://'+process.cwd()+'/').href));
+        vm.runInNewContext(scripts['localization-client.js'],state);
         vm.runInNewContext(scripts[name].replace("await import(basePath+'/assets/commerce-contract.mjs')",'contract'),state);
         await new Promise(resolve=>setImmediate(resolve));
         assert.deepEqual(fetched,['/nfc-card-website/assets/content.json']);

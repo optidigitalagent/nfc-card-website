@@ -57,15 +57,18 @@ export function leadEndpoint(value = '') {
   return url.href;
 }
 
-export const unavailable = locale => locale === 'uk'
-  ? 'Онлайн-заявки тимчасово недоступні у preview-версії. Функцію буде активовано після підключення захищеного збереження заявок.'
-  : 'Online enquiries are temporarily unavailable in the preview version. The feature will be enabled after secure lead storage is connected.';
+const localized = (locale, uk, en, pl) => locale === 'uk' ? uk : locale === 'en' ? en : locale === 'pl' ? pl : (() => { throw Error('Unsupported locale'); })();
+export const unavailable = locale => localized(locale,
+  'Онлайн-заявки тимчасово недоступні у preview-версії. Функцію буде активовано після підключення захищеного збереження заявок.',
+  'Online enquiries are temporarily unavailable in the preview version. The feature will be enabled after secure lead storage is connected.',
+  'W wersji podglądowej nie można obecnie wysyłać zgłoszeń. Funkcja zostanie uruchomiona po podłączeniu bezpiecznego zapisu zgłoszeń.');
 
 export const previewCSS = '.header .preview-brand{display:flex;flex-direction:column;justify-content:center;gap:2px;flex-shrink:0}.preview-badge{display:block;width:max-content;font-size:9px;line-height:1.1;letter-spacing:.08em;font-weight:600;color:var(--nfc-steel-700)}';
 
 export function submissionNotice(locale,selection){
- const uk=locale==='uk';
- return selection==='instagram'?(uk?'Надсилаємо ім’я, контакт, кількість, Instagram-посилання, коментар і згоду для опрацювання заявки.':'We send your name, contact, quantity, Instagram profile URL, comment and consent to process the enquiry.'):(uk?'Надсилаємо лише ім’я, контакт, картку та кількість. Коментар і додаткові деталі погодимо в месенджері.':'We send only your name, contact, card and quantity. Please share comments and additional details in a messenger.');
+ return selection==='instagram'
+  ? localized(locale,'Надсилаємо ім’я, контакт, кількість, Instagram-посилання, коментар і згоду для опрацювання заявки.','We send your name, contact, quantity, Instagram profile URL, comment and consent to process the enquiry.','Przesyłamy imię, dane kontaktowe, liczbę kart, link do profilu na Instagramie, komentarz i zgodę, aby obsłużyć zgłoszenie.')
+  : localized(locale,'Надсилаємо лише ім’я, контакт, картку та кількість. Коментар і додаткові деталі погодимо в месенджері.','We send only your name, contact, card and quantity. Please share comments and additional details in a messenger.','Przesyłamy tylko imię, dane kontaktowe, wybraną kartę i liczbę sztuk. Komentarz oraz pozostałe szczegóły ustalimy w komunikatorze.');
 }
 export function pagesFormHTML(html, {endpoint = '', locale, esc}) {
   const notice = endpoint ? submissionNotice(locale,html.includes('data-commerce-form data-variant="instagram"')?'instagram':'') : unavailable(locale);
@@ -74,7 +77,7 @@ export function pagesFormHTML(html, {endpoint = '', locale, esc}) {
   return html.replace(/action="\/api\/leads" method="post"/g, 'data-pages-form action="" method="dialog"')
     .replace(/<div class="preview-notice">[\s\S]*?<\/div>/g, `<div class="preview-notice" role="status">${esc(notice)}</div>`)
     .replace(/(<button class="button submit-button" type="submit")/g, '$1 disabled')
-    .replace(/(<div class="form-result"[^>]*><\/div>)/g, '$1<button class="button secondary" type="button" data-new-request hidden>' + (locale === 'uk' ? 'Створити іншу заявку' : 'Start another enquiry') + '</button>');
+    .replace(/(<div class="form-result"[^>]*><\/div>)/g, '$1<button class="button secondary" type="button" data-new-request hidden>' + localized(locale,'Створити іншу заявку','Start another enquiry','Wyślij kolejne zgłoszenie') + '</button>');
 }
 
 const products = ['standard', 'branded', 'bulk', 'consultation', 'instagram'];
@@ -85,7 +88,7 @@ export function leadPayload(input, {basePath = '', pathname, utm = {}}) {
   basePath = publicBasePath(basePath);
   if(input.variant==='instagram'&&!instagramProfileURL(input.instagramUrl))throw Error('invalid_instagram_url');
   const name = String(input.name || '').trim().normalize('NFC'), phone = String(input.phone || '').trim();
-  if (!['uk', 'en'].includes(input.locale) || !products.includes(input.variant) || !quantities.includes(input.quantity) ||
+  if (!['uk', 'en', 'pl'].includes(input.locale) || !products.includes(input.variant) || !quantities.includes(input.quantity) ||
       (input.variant === 'instagram' && (!['1','2'].includes(input.quantity)||!instagramProfileURL(input.instagramUrl)||typeof input.comment!=='string'||input.comment.length>2000)) ||
       (input.variant === 'bulk' && input.quantity !== 'more') || !name || name.length > 100 || /[\x00-\x1f\x7f\u202a-\u202e\u2066-\u2069]/u.test(name) ||
       !/^\+?[\d ()-]+$/.test(phone) || phone.replace(/\D/g, '').length < 7 || phone.replace(/\D/g, '').length > 15 ||
@@ -93,7 +96,7 @@ export function leadPayload(input, {basePath = '', pathname, utm = {}}) {
   const route = String(pathname || '').split(/[?#]/)[0].replace(/\/$/, '') || '/';
   const sourcePage = route === basePath ? basePath + '/' : route;
   const relative = sourcePage.slice(basePath.length);
-  if (!sourcePage.startsWith(basePath + '/') || !['/', '/en', ...['order','contact','about','solutions/review-card','solutions/branded-review-card','solutions/instagram-card','instagram-card'].flatMap(r=>['/'+r,'/en/'+r])].includes(relative)) throw Error('invalid_source_page');
+  if (!sourcePage.startsWith(basePath + '/') || !['/', '/en', '/pl', ...['order','contact','about','solutions/review-card','solutions/branded-review-card','solutions/instagram-card','instagram-card'].flatMap(r=>['/'+r,'/en/'+r,'/pl/'+r])].includes(relative)) throw Error('invalid_source_page');
   const payload = {language: input.locale, product: input.variant === 'instagram' ? 'nfc-instagram-card' : input.variant === 'branded' ? 'branded-review-card' : 'review-card',
     quantity: input.quantity === 'more' ? 3 : Number(input.quantity), customerName: name,
     contact: {phone: phone.replace(/[ ()-]/g, ''), preferredMethod: input.messenger}, sourcePage,
@@ -146,7 +149,7 @@ export async function submitLead(endpoint, pending, fetcher = globalThis.fetch, 
 }
 
 export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attribution, selection, select, lockSelection, event}) {
-  const P = (uk, en) => locale === 'uk' ? uk : en, q = name => form.elements.namedItem(name);
+  const P = (uk, en, pl) => localized(locale, uk, en, pl), q = name => form.elements.namedItem(name);
   const submit = form.querySelector('[type=submit]'), result = form.querySelector('.form-result'), note = form.querySelector('.pending-notice');
   const label = submit.textContent;
   try { endpoint = leadEndpoint(endpoint); } catch { endpoint = ''; }
@@ -184,15 +187,16 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
     if(!locked)select(selection());
     note.hidden = !locked;
     if (locked) note.textContent = P('Результат спроби ще не підтверджено. Повторимо ту саму заявку з тими самими даними, щоб не створити дублікат.',
-      'The attempt is not confirmed yet. We will retry the same request with the same details to avoid a duplicate.');
+      'The attempt is not confirmed yet. We will retry the same request with the same details to avoid a duplicate.',
+      'Wynik tej próby nie został jeszcze potwierdzony. Ponowimy to samo zgłoszenie z tymi samymi danymi, aby uniknąć duplikatu.');
   }
   function status(message, state) {
     result.textContent = message; result.dataset.status = state; result.hidden = false; result.focus();
   }
   function completed(leadId, previous = false) {
     form.dataset.complete = 'true'; submit.hidden = true; submit.disabled = true; note.hidden = true;
-    status((previous ? P('Попередню заявку вже збережено. Нові дані не надсилалися. Номер: ', 'Your previous enquiry is already saved. The new details were not submitted. Reference: ') :
-      selection().variant==='instagram'?P('Дякуємо! Заявку отримано. Я зв’яжуся з вами, перевірю Instagram-посилання та уточню деталі замовлення. Номер: ','Thank you! Your enquiry has been received. I will contact you, check the Instagram link and confirm your order details. Reference: '):P('Дякуємо! Заявку збережено. Деталі погодимо у вибраному месенджері. Номер: ', 'Thank you! Your request is saved. We will agree the details in your selected messenger. Reference: ')) + leadId, previous ? 'existing' : 'success');
+    status((previous ? P('Попередню заявку вже збережено. Нові дані не надсилалися. Номер: ', 'Your previous enquiry is already saved. The new details were not submitted. Reference: ', 'Poprzednie zgłoszenie zostało już zapisane. Nie wysłano nowych danych. Numer: ') :
+      selection().variant==='instagram'?P('Дякуємо! Заявку отримано. Я зв’яжуся з вами, перевірю Instagram-посилання та уточню деталі замовлення. Номер: ','Thank you! Your enquiry has been received. I will contact you, check the Instagram link and confirm your order details. Reference: ','Dziękuję! Otrzymałem zgłoszenie. Skontaktuję się z Tobą, sprawdzę link do profilu na Instagramie i ustalę szczegóły zamówienia. Numer: '):P('Дякуємо! Заявку збережено. Деталі погодимо у вибраному месенджері. Номер: ', 'Thank you! Your request is saved. We will agree the details in your selected messenger. Reference: ', 'Dziękujemy! Zgłoszenie zostało zapisane. Szczegóły ustalimy w wybranym komunikatorze. Numer: ')) + leadId, previous ? 'existing' : 'success');
     remember('complete', leadId);
     if (newRequest) newRequest.hidden = false;
   }
@@ -215,7 +219,7 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
     e.preventDefault();
     if (busy || form.dataset.complete) return;
     if (!pending && !form.reportValidity()) return;
-    busy = true; submit.disabled = true; submit.textContent = P('Надсилаємо…', 'Sending…');
+    busy = true; submit.disabled = true; submit.textContent = P('Надсилаємо…', 'Sending…', 'Wysyłanie…');
     form.setAttribute('aria-busy', 'true'); result.hidden = true;
     try {
       if (!pending) {
@@ -236,15 +240,16 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
         try { sessionStorage.removeItem(storageKey); } catch {}
       }
       if(error.message==='invalid_instagram_url'){
-        const message=P('Вкажіть повне HTTPS-посилання саме на Instagram-профіль, без дописів, Reels або параметрів посилання.','Enter the full HTTPS Instagram profile URL, without posts, Reels or link parameters.');
+        const message=P('Вкажіть повне HTTPS-посилання саме на Instagram-профіль, без дописів, Reels або параметрів посилання.','Enter the full HTTPS Instagram profile URL, without posts, Reels or link parameters.','Podaj pełny link HTTPS do profilu na Instagramie. Linki do postów, Reels i linki z dodatkowymi parametrami nie są przyjmowane.');
         status(message,'error');const input=q('instagramUrl'),fieldError=form.querySelector('#e-instagramUrl');
         if(fieldError){fieldError.textContent=message;fieldError.hidden=false;}
         if(input){input.setAttribute('aria-invalid','true');input.setAttribute('aria-describedby','instagram-help e-instagramUrl');input.focus();}
         event('order_submit_error');return;
       }
-      status(error.message === 'invalid_fields' ? P('Перевірте ім’я (до 100 символів), телефон, месенджер, картку, кількість, Instagram-посилання (для Instagram Card) і згоду.', 'Check your name (up to 100 characters), phone, messenger, card, quantity, Instagram profile URL (for Instagram Card) and consent.') :
+      status(error.message === 'invalid_fields' ? P('Перевірте ім’я (до 100 символів), телефон, месенджер, картку, кількість, Instagram-посилання (для Instagram Card) і згоду.', 'Check your name (up to 100 characters), phone, messenger, card, quantity, Instagram profile URL (for Instagram Card) and consent.', 'Sprawdź imię (do 100 znaków), numer telefonu, komunikator, kartę, liczbę sztuk, link do profilu na Instagramie (dla Instagram Card) oraz zgodę.') :
         P('Прийняття заявки не підтверджено. Дані та вибір залишаються у формі. Спробуйте ще раз або зв’яжіться з нами в месенджері.',
-          'Request acceptance is not confirmed. Your details and selection remain in the form. Retry or contact us in a messenger.'), 'error');
+          'Request acceptance is not confirmed. Your details and selection remain in the form. Retry or contact us in a messenger.',
+          'Nie udało się potwierdzić przyjęcia zgłoszenia. Dane i wybrane opcje pozostały w formularzu. Spróbuj ponownie lub skontaktuj się z nami w komunikatorze.'), 'error');
       event('order_submit_error');
     } finally {
       busy = false; submit.disabled = !!form.dataset.complete; submit.textContent = label; form.removeAttribute('aria-busy');

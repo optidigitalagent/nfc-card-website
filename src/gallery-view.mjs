@@ -1,20 +1,27 @@
 // Shared gallery: approved image treatment plus manual video playback.
-export function galleryView({variant,names,title,P,esc,picture,asset,temporaryNote}) {
+export function galleryView({variant,names,title,locale,P,esc,picture,asset,temporaryNote}) {
+  const suffix={uk:'ua',en:'en',pl:'pl'}[locale];
+  if(!suffix)throw Error('Unsupported gallery locale: '+locale);
+  const mediaText=(entry,field)=>{
+    const key=field+'_'+suffix;
+    if(!Object.hasOwn(entry,key)||typeof entry[key]!=='string')throw Error('Missing gallery '+key);
+    return entry[key];
+  };
   const placeholder=name=>asset(name).media_type==='placeholder';
   const placeholderOnly=names.every(placeholder);
   const video=name=>asset(name).media_type==='video';
   const caption=name=>{
     const m=asset(name);
-    if(m.caption_ua&&m.caption_en)return P(m.caption_ua,m.caption_en);
+    if(m.caption_ua&&m.caption_en)return mediaText(m,'caption');
     if(variant==='menu')return P('Візуалізація NFC Menu Card; форма та колір показані для вибору виконання.','NFC Menu Card visualization showing a format and colour option.');
     return variant==='branded'?temporaryNote:name.startsWith('05')?P('Промоілюстрація переходу до форми. Оцінку, текст і публікацію обирає клієнт.','An illustration of the path to the form. The customer chooses the rating, text and publication.'):name.startsWith('01')?P('Візуалізація готового дизайну Review Card.','A render of the ready-made Review Card design.'):P('Реальне фото поточної Review Card: формат, масштаб і поверхня.','An actual photo of the current Review Card: format, scale and finish.');
   };
   const label=name=>placeholder(name)?P('місце для майбутнього фото','future photo placeholder'):video(name)?P('відео','video'):P('зображення','image');
-  const rail=()=>`<div class="commerce-thumbnails" aria-label="${P('Мініатюри фото та відео','Photo and video thumbnails')}">${names.map((name,i)=>`<button type="button" data-thumb-to="${i}" aria-label="${P('Показати','Show')} ${label(name)} ${i+1} ${P('із','of')} ${names.length}" aria-pressed="${i===0}">${placeholder(name)?`<span class="placeholder-thumb" aria-hidden="true">${esc(P(asset(name).alt_ua,asset(name).alt_en))}</span>`:`<img src="${asset(name).thumbnail_url||asset(name).url}" alt="" width="160" height="160" loading="lazy">`}${video(name)?'<span class="thumb-video" aria-hidden="true">▶</span>':''}</button>`).join('')}</div>`;
+  const rail=()=>`<div class="commerce-thumbnails" aria-label="${P('Мініатюри фото та відео','Photo and video thumbnails')}">${names.map((name,i)=>`<button type="button" data-thumb-to="${i}" aria-label="${P('Показати','Show')} ${label(name)} ${i+1} ${P('із','of')} ${names.length}" aria-pressed="${i===0}">${placeholder(name)?`<span class="placeholder-thumb" aria-hidden="true">${esc(mediaText(asset(name),'alt'))}</span>`:`<img src="${asset(name).thumbnail_url||asset(name).url}" alt="" width="160" height="160" loading="lazy">`}${video(name)?'<span class="thumb-video" aria-hidden="true">▶</span>':''}</button>`).join('')}</div>`;
   const arrow=(direction,modal=false)=>`<button type="button" class="icon-button" data-${modal?'lightbox':'gallery'}-${direction} aria-label="${direction==='prev'?P('Попередній матеріал','Previous item'):P('Наступний матеріал','Next item')}">${direction==='prev'?'←':'→'}</button>`;
   const slides=names.map((name,i)=>{
     const m=asset(name);
-    const content=video(name)?`<video class="commerce-gallery-image gallery-video" controls playsinline preload="none" poster="${m.poster_url}" data-source="${m.url}" width="${m.width}" height="${m.height}" aria-label="${esc(P(m.alt_ua,m.alt_en))}" data-media-provenance="${m.provenance}" data-media-claim-role="${m.claim_role}">${(m.tracks||[]).map(track=>`<track kind="subtitles" src="${track.url}" srclang="${track.language}" label="${track.label}" ${P('uk','en')===track.language?'default':''}>`).join('')}</video>`:picture(name,'commerce-gallery-image',i===0);
+    const content=video(name)?`<video class="commerce-gallery-image gallery-video" controls playsinline preload="none" poster="${m.poster_url}" data-source="${m.url}" width="${m.width}" height="${m.height}" aria-label="${esc(mediaText(m,'alt'))}" data-media-provenance="${m.provenance}" data-media-claim-role="${m.claim_role}">${(m.tracks||[]).map(track=>`<track kind="subtitles" src="${track.url}" srclang="${track.language}" label="${track.label}" ${locale===track.language?'default':''}>`).join('')}</video>`:picture(name,'commerce-gallery-image',i===0);
     return `<figure data-slide="${i}" data-kind="${placeholder(name)?'placeholder':video(name)?'video':'image'}" data-caption="${esc(caption(name))}" ${i?'hidden':''}>${content}</figure>`;
   }).join('');
   const frameLabel=placeholderOnly?P('Майбутні фото. Стрілки — попередній або наступний матеріал.','Planned photos. Arrow keys change items.'):P('Фото та відео. Стрілки — попередній або наступний матеріал; Enter — відкрити.','Photos and videos. Arrow keys change items; Enter opens the viewer.');

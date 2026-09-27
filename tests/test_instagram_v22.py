@@ -104,7 +104,18 @@ def test_exact_silver_banner_phrase(source, locale, phrase):
 def test_only_five_approved_sources_are_public_and_optimized():
     manifest = json.loads((ROOT / "src/media-manifest.json").read_text("utf-8"))
     records = [item for item in manifest if item.get("managed_by") == "scripts/update_instagram_media.py:v22"]
-    baseline = [item for item in manifest if item.get("managed_by") not in {"scripts/update_instagram_media.py:v22", "scripts/update_menu_media.py:v23", "v26_review_3d_media_import"}]
+    baseline = []
+    for item in manifest:
+        if item.get("managed_by") in {"scripts/update_instagram_media.py:v22", "scripts/update_menu_media.py:v23", "v26_review_3d_media_import"} or item.get("source", "").endswith("-pl.vtt"):
+            continue
+        # v27 adds Polish descriptive metadata and one timed subtitle track.
+        # Verify that the previously accepted asset/provenance contract is intact.
+        original = {key: value for key, value in item.items() if key not in {"alt_pl", "caption_pl"}}
+        if original.get("page_or_section") == "/about, /en/about and /pl/about only":
+            original["page_or_section"] = "/about and /en/about only"
+        if "tracks" in original:
+            original["tracks"] = [track for track in original["tracks"] if track.get("language") != "pl"]
+        baseline.append(original)
     frozen = hashlib.sha256(json.dumps(baseline, ensure_ascii=False, separators=(",", ":")).encode()).hexdigest()
     assert len(baseline) == 102
     assert frozen == "a3bf87b69bd7b2bea043e35fc1c1fa7013e26f51393aa528aaf1197eb9757cf4"

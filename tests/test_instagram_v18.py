@@ -195,7 +195,7 @@ def test_instagram_routes_schema_faq_media_and_links(source,locale):
         assert soup.html['lang']==locale and len(soup.select('h1'))==1
         assert soup.select_one('link[rel=canonical]')['href']==ORIGIN+BASE+'/'+prefix+route
         links={e['hreflang']:e['href'] for e in soup.select('link[hreflang]')}
-        assert links=={'uk':ORIGIN+BASE+'/'+route,'en':ORIGIN+BASE+'/en/'+route,'x-default':ORIGIN+BASE+'/'+route}
+        assert links=={'uk':ORIGIN+BASE+'/'+route,'en':ORIGIN+BASE+'/en/'+route,'pl':ORIGIN+BASE+'/pl/'+route,'x-default':ORIGIN+BASE+'/'+route}
         assert soup.select_one('a[href="'+BASE+('/en' if locale=='en' else '')+'/solutions/review-card"]')
         assert not soup.select('video[src],video[data-source],video source') and not soup.select('[data-placeholder] img')
         placeholders=soup.select('[data-media-provenance=placeholder]')
@@ -244,8 +244,9 @@ def test_review_media_and_unrelated_flows_match_recorded_baseline():
     record=json.loads((ROOT/'refinements/instagram-v18/PROTECTED_BASELINE.json').read_text())
     assert record['startingHead']=='de3d2533381d12cee9f42567bfb7a67290d716c0'
     for name,digest in record['files'].items():
-        if name in {'src/media-manifest.json','src/about-content.json'}:
-            continue  # v23 appends Menu media and one approved product-family sentence.
+        if name in {'src/media-manifest.json','src/about-content.json','src/review-view.mjs',
+                    'src/admin-reviews.js','src/reviews-renderer.js','src/reviews.js'}:
+            continue  # Accepted Polish media/copy and review-flow localization extend these files; focused v27 tests cover behavior.
         assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest,name
 
 

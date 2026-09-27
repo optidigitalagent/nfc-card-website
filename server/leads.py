@@ -147,7 +147,7 @@ def normalize(payload):
             errors[field] = field
         else:
             result[field] = CONTROL.sub('', value).strip()
-    for field, allowed in [('locale', {'uk', 'en'}), ('variant', VARIANTS),
+    for field, allowed in [('locale', {'uk', 'en', 'pl'}), ('variant', VARIANTS),
                            ('quantity', QUANTITIES), ('messenger', MESSENGERS)]:
         value = payload.get(field)
         if not isinstance(value, str) or value not in allowed:
@@ -255,7 +255,7 @@ def displayed_price_observation(value):
     if not isinstance(value, str) or len(value) > 80:
         return None
     value = ' '.join(value.split())
-    if value in {'Individual quote', 'Custom quote', 'Індивідуальний розрахунок', 'Індивідуальний прорахунок'}:
+    if value in {'Individual quote', 'Custom quote', 'Індивідуальний розрахунок', 'Індивідуальний прорахунок', 'Wycena indywidualna'}:
         return value
     if re.fullmatch(r'(?:UAH\s*)?[\d\s,.]{1,32}(?:\s*(?:UAH|грн))?', value):
         return value
@@ -271,10 +271,11 @@ def telegram_message(lead_id, created, lead):
             return instagram_telegram_message(lead_id, created, lead)
         stamp = datetime.fromtimestamp(created, timezone.utc).isoformat()
         price = lead['quote']['amount'] if lead['quote']['status'] == 'fixed' else 'custom'
+        language = {'uk': 'UA', 'en': 'EN', 'pl': 'PL'}[lead['locale']]
         message = '\n'.join([
             'NEW NFC CARD LEAD',
             f'Order ID: {lead_id}', f'Created: {stamp}',
-            f'Language: {"UA" if lead["locale"] == "uk" else "EN"}',
+            f'Language: {language}',
             f'Source page: {lead["source"]}',
             f'UTM/source: {encode(lead["attribution"])}', '',
             f'Product: {lead["variant"]}', f'Quantity: {lead["quantity"]}',

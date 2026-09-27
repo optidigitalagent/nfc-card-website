@@ -56,6 +56,6 @@ def public_submission(payload):
     if not isinstance(payload,dict) or set(payload)-allowed:raise ReviewError(422,'unsupported_fields')
     if type(payload.get('rating')) is not int or not 1<=payload['rating']<=5:raise ReviewError(422,'validation',{'rating':'rating'})
     if payload.get('consent') is not True:raise ReviewError(422,'validation',{'consent':'consent'})
-    if payload.get('locale') not in ('uk','en'):raise ReviewError(422,'validation',{'locale':'locale'})
+    if payload.get('locale') not in ('uk','en','pl'):raise ReviewError(422,'validation',{'locale':'locale'})
     if payload.get('honeypot','')!='':raise ReviewError(422,'spam_rejected')
     return {'rating':payload['rating'],'raw_review_text':plain(payload.get('reviewText'),'reviewText',10,2000),'instagram_url':instagram(payload.get('instagram')),'locale':payload['locale'],'request_id':plain(payload.get('clientRequestId') or str(uuid.uuid4()),'clientRequestId',8,100)}

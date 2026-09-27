@@ -1,5 +1,6 @@
 // NFC Instagram handoff v1 (SHA-256 recorded in refinement evidence), v18 truth.
 // English for UA-only sections is a faithful translation. No new performance claims.
+import polishCopy from './pl-instagram.json' with {type:'json'};
 const pair=(uk,en)=>({uk,en});
 export const instagram={
   id:'nfc-instagram-card', selection:'instagram', sku:'NFC-IG-READY', offer:'ready',
@@ -80,9 +81,21 @@ export const instagramMedia={
  IG08:{id:'IG08',status:'approved',label:pair('Край і товщина','Edge and thickness'),asset:'instagram-card-real-edge-profile.webp',claimRole:'real_product_photo'},
  IG09:{id:'IG09',status:'placeholder',label:pair('Профіль Instagram на смартфоні','Instagram profile on a smartphone'),asset:null,claimRole:'not_product_evidence'}
 };
+// Keep all three locale branches explicit: missing Polish copy is a build error.
+function attachPolish(value,path=''){
+ if(!value||typeof value!=='object')return;
+ if(Array.isArray(value)){value.forEach((item,index)=>attachPolish(item,path+'/'+index));return;}
+ if(Object.hasOwn(value,'uk')&&Object.hasOwn(value,'en')){
+  if(!Object.hasOwn(polishCopy,path))throw Error('Missing Polish Instagram copy: '+path);
+  value.pl=structuredClone(polishCopy[path]);
+  return;
+ }
+ for(const [key,item] of Object.entries(value))attachPolish(item,path+'/'+key);
+}
+attachPolish({instagram,instagramGlobalFAQs,instagramProductFAQs,instagramMedia});
 export function instagramPlaceholder(id,locale,esc,compact=false){
  const slot=instagramMedia[id];
- return `<div class="instagram-placeholder${compact?' compact':''}" data-placeholder="${id}" data-media-provenance="placeholder" data-media-claim-role="not_product_evidence"><span class="placeholder-category">NFC Instagram Card</span><strong>${esc(slot.label[locale])}</strong><span>${locale==='uk'?'Фото буде додано':'Photo coming soon'}</span></div>`;
+ return `<div class="instagram-placeholder${compact?' compact':''}" data-placeholder="${id}" data-media-provenance="placeholder" data-media-claim-role="not_product_evidence"><span class="placeholder-category">NFC Instagram Card</span><strong>${esc(slot.label[locale])}</strong><span>${({uk:'Фото буде додано',en:'Photo coming soon',pl:'Zdjęcie zostanie dodane'})[locale]}</span></div>`;
 }
 
 export function instagramMediaEntry(id,asset){
@@ -92,9 +105,10 @@ export function instagramMediaEntry(id,asset){
   const entry=asset(slot.asset);
   if(entry.status==='public'&&entry.product_id===instagram.id&&entry.provenance==='user_provided_business_asset'&&entry.claim_role===slot.claimRole)return entry;
  }
- return {media_type:'placeholder',alt_ua:slot.label.uk,alt_en:slot.label.en,
+ return {media_type:'placeholder',alt_ua:slot.label.uk,alt_en:slot.label.en,alt_pl:slot.label.pl,
   caption_ua:'Місце для майбутнього фото: '+slot.label.uk+'. Фото буде додано.',
-  caption_en:'Future photo placeholder: '+slot.label.en+'. Photo coming soon.'};
+  caption_en:'Future photo placeholder: '+slot.label.en+'. Photo coming soon.',
+  caption_pl:'Miejsce na przyszłe zdjęcie: '+slot.label.pl+'. Zdjęcie zostanie dodane.'};
 }
 export function instagramMediaView(id,locale,esc,{asset,picture,cls='',eager=false,compact=false}={}){
  return instagramMediaEntry(id,asset).media_type==='placeholder'?instagramPlaceholder(id,locale,esc,compact):picture(instagramMedia[id].asset,cls,eager);

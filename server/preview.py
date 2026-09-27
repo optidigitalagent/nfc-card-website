@@ -29,6 +29,22 @@ MAX_BODY = 14 * 1024 * 1024  # Replay of an already-saved v1 logo request only.
 MAX_V6_BODY = 64 * 1024
 
 
+def public_locale(path):
+    return 'pl' if path == '/pl' or path.startswith('/pl/') else 'en' if path == '/en' or path.startswith('/en/') else 'uk'
+
+
+def local_copy(locale, uk, en, pl):
+    return {'uk': uk, 'en': en, 'pl': pl}[locale]
+
+
+def local_price(locale, amount):
+    if locale == 'uk':
+        return f'{amount:,}'.replace(',', ' ') + ' грн'
+    if locale == 'pl':
+        return f'{amount:,}'.replace(',', '\u00a0') + ' UAH'
+    return 'UAH ' + f'{amount:,}'
+
+
 def load_redirects():
     data = json.loads((ROOT / 'src' / 'redirects.json').read_text(encoding='utf-8'))
     if not isinstance(data, dict):
@@ -56,7 +72,7 @@ def hydrate_native_form(source, request_path, commerce, content=None):
         query = {}
     routes = ['/', '/solutions', '/solutions/review-card', '/solutions/branded-review-card', '/solutions/instagram-card', '/instagram-card', '/order', '/contact',
               '/delivery-and-payment', '/warranty-and-returns', '/privacy', '/terms', '/thank-you']
-    routes += ['/en' + ('' if r == '/' else r) for r in routes[:]]
+    routes += ['/' + language + ('' if r == '/' else r) for language in ('en', 'pl') for r in routes[:]]
     referrer = query.get('source') if query.get('source') in routes else parsed.path
     attribution = {k: v for k, v in query.items()
                    if k in {'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'}
@@ -91,10 +107,10 @@ def hydrate_native_form(source, request_path, commerce, content=None):
             form = re.sub(r'<select[^>]*name="variant"[^>]*>.*?</select>', '<input type="hidden" name="variant" value="instagram">', form, flags=re.S)
             if 'name="productSchemaVersion"' not in form:
                 form = form.replace('</form>', '<input type="hidden" name="productSchemaVersion" value="1"><input type="hidden" name="product_id" value="nfc-instagram-card"><input type="hidden" name="offer" value="ready"></form>')
-        en = parsed.path == '/en' or parsed.path.startswith('/en/')
-        price = (('UAH ' + f'{amount:,}') if en else f'{amount:,}'.replace(',', ' ') + ' грн') if amount else ('Individual quote' if en else 'Індивідуальний розрахунок')
+        locale = public_locale(parsed.path)
+        price = local_price(locale, amount) if amount else local_copy(locale, 'Індивідуальний розрахунок', 'Individual quote', 'Wycena indywidualna')
         if not variant:
-            price = 'Choose a variant to see the price' if en else 'Оберіть варіант для розрахунку'
+            price = local_copy(locale, 'Оберіть варіант для розрахунку', 'Choose a variant to see the price', 'Wybierz wariant, aby zobaczyć cenę')
         form = re.sub(r'(<p\b[^>]*\bdata-form-price[^>]*>).*?(</p>)', lambda m: m[1] + html.escape(price) + m[2], form, flags=re.S)
         for name, value in [('displayed_price', price if variant else ''), ('source', referrer)]:
             form = re.sub(r'(<input\b[^>]*\bname="' + name + r'"[^>]*\bvalue=")[^"]*(")', lambda m: m[1] + html.escape(value, quote=True) + m[2], form)
@@ -119,10 +135,10 @@ def hydrate_native_form(source, request_path, commerce, content=None):
     if product:
         variant=product[1];quantity=query.get('quantity','1')
         if quantity not in commerce['quantities']:quantity='1'
-        en=parsed.path.startswith('/en/')
+        locale=public_locale(parsed.path)
         if variant=='instagram' and quantity not in {'1','2'}:quantity='1'
         amount=canonical_quote(variant,quantity,commerce)['amount']
-        price=('UAH '+f'{amount:,}' if en else f'{amount:,}'.replace(',',' ')+' грн') if amount else ('Custom quote' if en else 'Індивідуальний розрахунок')
+        price=local_price(locale,amount) if amount else local_copy(locale,'Індивідуальний розрахунок','Custom quote','Wycena indywidualna')
         source=re.sub(r'(<(?:p|span)\b[^>]*data-(?:current|sticky)-price[^>]*>).*?(</(?:p|span)>)',lambda m:m[1]+price+m[2],source,flags=re.S)
         def top_select(m):
             options=re.sub(r'\sselected(?:="[^"]*")?','',m[0])
@@ -135,12 +151,11 @@ def hydrate_native_form(source, request_path, commerce, content=None):
         quantity = query.get('quantity', '1')
         if quantity not in commerce['quantities']:
             quantity = '1'
-        en = parsed.path.startswith('/en/')
-        locale = 'en' if en else 'uk'
+        locale = public_locale(parsed.path)
         def money(amount):
-            return 'UAH ' + f'{amount:,}' if en else f'{amount:,}'.replace(',', ' ') + ' грн'
+            return local_price(locale, amount)
         prices = commerce['variants'][variant]['prices']
-        total = money(prices[quantity]) if quantity in prices else 'Individual quote' if en else 'Індивідуальний розрахунок'
+        total = money(prices[quantity]) if quantity in prices else local_copy(locale, 'Індивідуальний розрахунок', 'Individual quote', 'Wycena indywidualna')
         def purchase(match):
             form = match[0]
             def radio(m):
@@ -158,7 +173,7 @@ def hydrate_native_form(source, request_path, commerce, content=None):
             return form.replace('</form>', hidden + '</form>')
         source = re.sub(r'<form class="product-order".*?</form>', purchase, source, flags=re.S)
         selected = next((v for v in (content or {}).get('variants', []) if v['id'] == variant), {})
-        cta_label = ('Request a quote' if en else 'Розрахувати замовлення') if quantity == 'more' else selected.get('cta', {}).get(locale)
+        cta_label = local_copy(locale, 'Розрахувати замовлення', 'Request a quote', 'Poproś o wycenę') if quantity == 'more' else selected.get('cta', {}).get(locale)
         name = selected.get('name', 'Branded Review Card' if variant == 'branded' else 'Review Card')
         source = re.sub(r'(<h1\b[^>]*data-variant-title[^>]*>).*?(</h1>)', lambda m: m[1] + html.escape(name) + m[2], source)
         for attribute, tag, value in [('data-variant-description', 'p', selected.get('description', {}).get(locale)), ('data-product-cta', 'button', cta_label)]:
@@ -168,7 +183,7 @@ def hydrate_native_form(source, request_path, commerce, content=None):
             source = re.sub(r'(<p\b[^>]*data-branded-note) hidden', r'\1', source)
         def sticky(match):
             block = match[0]
-            path = ('/en' if en else '') + '/order'
+            path = ('/' + locale if locale != 'uk' else '') + '/order'
             href = path + '?' + urlencode({'variant': variant, 'quantity': quantity, 'source': parsed.path, **attribution})
             return re.sub(r'(<a href=")[^"]*(" class="button[^>]*>).*?(</a>)', lambda m: m[1] + html.escape(href, quote=True) + m[2] + html.escape(cta_label or 'NFC CARD') + m[3], block, count=1)
         source = re.sub(r'<div class="sticky-order">.*?</div>', sticky, source, flags=re.S)
@@ -353,28 +368,30 @@ class Handler(SimpleHTTPRequestHandler):
 
     def native_success(self, value, locale):
         item = value['receipt']
-        en = locale == 'en'
-        title = 'Test request saved locally' if en else 'Тестову заявку збережено локально'
+        locale = locale if locale in ('uk', 'en', 'pl') else 'uk'
+        title = local_copy(locale, 'Тестову заявку збережено локально', 'Test request saved locally', 'Zgłoszenie testowe zapisano lokalnie')
         variant = {'instagram': 'NFC Instagram Card', 'standard': 'Review Card', 'branded': 'Branded Review Card',
-                   'bulk': 'Business cards' if en else 'Картки для бізнесу',
-                   'consultation': 'Consultation' if en else 'Консультація'}.get(item['variant'], '')
+                   'bulk': local_copy(locale, 'Картки для бізнесу', 'Business cards', 'Karty dla firm'),
+                   'consultation': local_copy(locale, 'Консультація', 'Consultation', 'Konsultacja')}.get(item['variant'], '')
         quote = item.get('quote')
         amount = ''
         if quote:
-            amount = (str(quote['amount']) + ' UAH' if quote['status'] == 'fixed'
-                      else 'Custom quote' if en else 'Індивідуальний прорахунок')
+            amount = ((local_price(locale, quote['amount']) if locale == 'pl' else str(quote['amount']) + ' UAH') if quote['status'] == 'fixed'
+                      else local_copy(locale, 'Індивідуальний прорахунок', 'Custom quote', 'Wycena indywidualna'))
+        quantity = ('Co najmniej 3 karty' if locale == 'pl' and item.get('quantity') == 'more'
+                    else str(item.get('quantity') or ''))
         body = (
-            '<!doctype html><html lang="' + ('en' if en else 'uk') + '"><meta charset="utf-8">'
+            '<!doctype html><html lang="' + locale + '"><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width, initial-scale=1">'
             '<meta name="robots" content="noindex,nofollow"><title>' + title + '</title>'
             '<link rel="stylesheet" href="/assets/style.css"><main class="section prose-page">'
             '<h1>' + title + '</h1><p>' +
-            ('No notifications were sent.' if en else 'Повідомлення не надсилалися.') +
+            local_copy(locale, 'Повідомлення не надсилалися.', 'No notifications were sent.', 'Nie wysłano żadnych powiadomień.') +
             '</p><p>' + html.escape(item['id']) + '</p><p>' + html.escape(variant) +
-            '</p><p>' + html.escape(str(item.get('quantity') or '')) + '</p><p>' +
+            '</p><p>' + html.escape(quantity) + '</p><p>' +
             html.escape(amount) + '</p><a class="button" href="' +
-            ('/en/solutions' if en else '/solutions') + '">' +
-            ('Back to catalog' if en else 'Повернутися до каталогу') + '</a></main></html>'
+            ('' if locale == 'uk' else '/' + locale) + '/solutions">' +
+            local_copy(locale, 'Повернутися до каталогу', 'Back to catalog', 'Wróć do katalogu') + '</a></main></html>'
         ).encode()
         self.send_response(200 if item['duplicate'] else 201)
         self.send_header('Content-Type', 'text/html; charset=utf-8')
@@ -383,25 +400,38 @@ class Handler(SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
     def native_error(self, error, locale):
-        en = locale == 'en'
-        title = 'Check the request details' if en else 'Перевірте дані заявки'
-        message = ('Use your browser’s Back button to return to the form and correct the fields.'
-                   if en else 'Поверніться до форми кнопкою браузера «Назад» і виправте поля.')
+        locale = locale if locale in ('uk', 'en', 'pl') else 'uk'
+        title = local_copy(locale, 'Перевірте дані заявки', 'Check the request details', 'Sprawdź dane zgłoszenia')
+        message = local_copy(locale, 'Поверніться до форми кнопкою браузера «Назад» і виправте поля.',
+                             'Use your browser’s Back button to return to the form and correct the fields.',
+                             'Wróć do formularza przyciskiem Wstecz w przeglądarce i popraw pola.')
         names = {
-            'name': ('Ім’я', 'Name'), 'phone': ('Номер телефону', 'Phone number'),
-            'messenger': ('Зручний месенджер', 'Preferred messenger'),
-            'messengerContact': ('Інший контакт', 'Different contact'),
-            'differentContact': ('Інший контакт', 'Different contact'),
-            'variant': ('Варіант картки', 'Card variant'), 'quantity': ('Кількість', 'Quantity'),
-            'maps': ('Посилання на Google Maps', 'Google Maps link'),
-            'businessUrl': ('Посилання на бізнес', 'Business page link'),
-            'consent': ('Згода з обробкою даних', 'Privacy consent'),
+            'name': ('Ім’я', 'Name', 'Imię'), 'phone': ('Номер телефону', 'Phone number', 'Numer telefonu'),
+            'messenger': ('Зручний месенджер', 'Preferred messenger', 'Preferowany komunikator'),
+            'messengerContact': ('Інший контакт', 'Different contact', 'Inny kontakt'),
+            'differentContact': ('Інший контакт', 'Different contact', 'Inny kontakt'),
+            'variant': ('Варіант картки', 'Card variant', 'Wariant karty'), 'quantity': ('Кількість', 'Quantity', 'Liczba kart'),
+            'maps': ('Посилання на Google Maps', 'Google Maps link', 'Link do Map Google'),
+            'businessUrl': ('Посилання на бізнес', 'Business page link', 'Link do strony firmy'),
+            'instagramUrl': ('Посилання на Instagram', 'Instagram profile link', 'Link do profilu na Instagramie'),
+            'business': ('Назва бізнесу', 'Business name', 'Nazwa firmy'),
+            'comment': ('Коментар', 'Comment', 'Komentarz'),
+            'source': ('Джерело заявки', 'Enquiry source', 'Źródło zgłoszenia'),
+            'locale': ('Мова', 'Language', 'Język'),
+            'requestToken': ('Ідентифікатор заявки', 'Enquiry reference', 'Identyfikator zgłoszenia'),
+            'attribution': ('Дані кампанії', 'Campaign data', 'Dane kampanii'),
+            'logo': ('Логотип', 'Logo', 'Logo'),
+            'productSchemaVersion': ('Версія продукту', 'Product version', 'Wersja produktu'),
+            'product_id': ('Продукт', 'Product', 'Produkt'),
+            'offer': ('Пропозиція', 'Offer', 'Oferta'),
+            'consent': ('Згода з обробкою даних', 'Privacy consent', 'Zgoda na przetwarzanie danych'),
         }
         if error.status == 429:
-            message = ('Too many attempts. Wait a minute, then return to your form.' if en else
-                       'Забагато спроб. Зачекайте хвилину та поверніться до форми.')
-        fields = ''.join('<li>' + names[key][int(en)] + '</li>' for key in error.fields if key in names)
-        body = ('<!doctype html><html lang="' + ('en' if en else 'uk') + '">'
+            message = local_copy(locale, 'Забагато спроб. Зачекайте хвилину та поверніться до форми.',
+                                 'Too many attempts. Wait a minute, then return to your form.',
+                                 'Zbyt wiele prób. Odczekaj minutę i wróć do formularza.')
+        fields = ''.join('<li>' + names[key][('uk', 'en', 'pl').index(locale)] + '</li>' for key in error.fields if key in names)
+        body = ('<!doctype html><html lang="' + locale + '">'
                 '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
                 '<meta name="robots" content="noindex,nofollow"><title>' + title + '</title>'
                 '<link rel="stylesheet" href="/assets/style.css"><main class="section prose-page">'

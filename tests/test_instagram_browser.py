@@ -209,7 +209,8 @@ def test_instagram_header_order_and_preselection(pages_web,browser,locale,width)
     assert page.locator('[name=variant]').input_value()=='instagram'
     assert page.locator('#f-quantity').input_value()=='2'
     assert 'Review Card' not in page.locator('h1').inner_text()
-    page.locator('.locale-switch').click();ready(page)
+    target_locale = 'en' if locale == 'uk' else 'uk'
+    page.locator(f'.header-actions .locale-switch[lang="{target_locale}"]').click();ready(page)
     assert page.locator('[name=variant]').input_value()=='instagram' and page.locator('#f-quantity').input_value()=='2'
     assert not blocked
     context.close()
@@ -233,12 +234,12 @@ def test_fullstack_instagram_real_local_persistence(web,browser,locale):
     context.close()
 
 
-@pytest.mark.parametrize('locale',['uk','en'])
+@pytest.mark.parametrize('locale',['uk','en','pl'])
 @pytest.mark.parametrize('quantity',['1','2'])
 def test_native_instagram_form_without_javascript(web,browser,locale,quantity):
     origin,server=web;context=browser.new_context(java_script_enabled=False,reduced_motion="reduce")
     block_external(context,origin);page=context.new_page()
-    page.goto(origin+('/en' if locale=='en' else '')+'/order?variant=instagram&quantity='+quantity)
+    page.goto(origin+('/'+locale if locale!='uk' else '')+'/order?variant=instagram&quantity='+quantity)
     expect(page.locator('#f-instagramUrl')).to_be_visible()
     expect(page.locator('[name=variant]')).to_have_value('instagram')
     assert page.locator('#f-quantity option').count()==2
@@ -250,9 +251,10 @@ def test_native_instagram_form_without_javascript(web,browser,locale,quantity):
     page.locator('.lead-form:not([data-menu-form]) [name=messenger][value=telegram]').check(force=True)
     page.fill('#f-instagramUrl','https://instagram.com/isolated_nfc_fixture/')
     page.locator('#f-consent').focus();page.keyboard.press('Space');expect(page.locator('#f-consent')).to_be_checked()
-    page.locator('.lead-form:not([data-menu-form]) [type=submit]').click();expect(page.locator('h1')).to_contain_text('локально' if locale=='uk' else 'locally')
+    page.locator('.lead-form:not([data-menu-form]) [type=submit]').click();expect(page.locator('h1')).to_contain_text({'uk':'локально','en':'locally','pl':'lokalnie'}[locale])
     assert 'NFC Instagram Card' in page.locator('main').inner_text()
     with server.leads.repo.transaction() as db:
         rows=db.execute('SELECT payload FROM commerce_leads').fetchall()
     assert len(rows)==1 and rows[0]['payload']['quote']['amount']==expected
+    assert rows[0]['payload']['locale']==locale
     context.close()

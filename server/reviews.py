@@ -219,10 +219,10 @@ class ReviewService:
                     if field in payload:db.execute('UPDATE client_review_assets SET alt_text=%s WHERE review_id=%s AND role=%s AND active',(plain(payload[field],field,0,300),review_id,role))
                 if 'translations' in payload:
                     translations=payload['translations']
-                    if not isinstance(translations,list) or len(translations)>2:raise ReviewError(422,'validation',{'translations':'translations'})
+                    if not isinstance(translations,list) or len(translations)>3:raise ReviewError(422,'validation',{'translations':'translations'})
                     seen=set()
                     for tr in translations:
-                        if not isinstance(tr,dict) or set(tr)!={'locale','publicReviewText','primaryAlt','secondaryAlt','approved'} or tr['locale'] not in ('uk','en') or tr['locale'] in seen or type(tr['approved']) is not bool:raise ReviewError(422,'validation',{'translations':'translations'})
+                        if not isinstance(tr,dict) or set(tr)!={'locale','publicReviewText','primaryAlt','secondaryAlt','approved'} or tr['locale'] not in ('uk','en','pl') or tr['locale'] in seen or type(tr['approved']) is not bool:raise ReviewError(422,'validation',{'translations':'translations'})
                         seen.add(tr['locale']);body=plain(tr['publicReviewText'],'translations',10,2000);a=plain(tr['primaryAlt'],'translations',1,300);b=plain(tr['secondaryAlt'],'translations',1,300)
                         db.execute('''INSERT INTO client_review_translations(review_id,locale,public_review_text,primary_alt,secondary_alt,approved) VALUES(%s,%s,%s,%s,%s,%s)
                           ON CONFLICT(review_id,locale) DO UPDATE SET public_review_text=EXCLUDED.public_review_text,primary_alt=EXCLUDED.primary_alt,secondary_alt=EXCLUDED.secondary_alt,approved=EXCLUDED.approved''',(review_id,tr['locale'],body,a,b,tr['approved']))
@@ -296,7 +296,7 @@ class ReviewService:
         return {'id':str(row['id']),'slug':row['slug'],'rating':row['rating'],'reviewText':tr['public_review_text'] if tr else row['public_review_text'],'businessName':row['business_name'],'instagramUrl':row['instagram_url'],'googleMapsUrl':row['google_maps_url'],'websiteUrl':row['website_url'],'primaryImage':image(ROLES[1],'primary_alt'),'secondaryImage':image(ROLES[2],'secondary_alt'),'publishedAt':row['published_at'].isoformat() if row['published_at'] else None}
 
     def public_list(self,locale='uk',limit=12,cursor=None,featured=None):
-        if locale not in ('uk','en') or type(limit) is not int or not 1<=limit<=30:raise ReviewError(422,'invalid_filter')
+        if locale not in ('uk','en','pl') or type(limit) is not int or not 1<=limit<=30:raise ReviewError(422,'invalid_filter')
         offset=0
         if cursor:
             try:
@@ -305,12 +305,13 @@ class ReviewService:
                 offset=int(number)
             except (ValueError,AttributeError):raise ReviewError(422,'invalid_cursor') from None
         with self.repo.transaction() as db:
-            rows=db.execute("SELECT * FROM client_reviews WHERE status='published'"+(' AND featured' if featured else '')+' ORDER BY featured DESC,sort_order,id LIMIT %s OFFSET %s',(limit+1,offset)).fetchall()
+            polish=" AND (locale='pl' OR EXISTS (SELECT 1 FROM client_review_translations t WHERE t.review_id=client_reviews.id AND t.locale='pl' AND t.approved))" if locale=='pl' else ''
+            rows=db.execute("SELECT * FROM client_reviews WHERE status='published'"+polish+(' AND featured' if featured else '')+' ORDER BY featured DESC,sort_order,id LIMIT %s OFFSET %s',(limit+1,offset)).fetchall()
             items=[self.public_item(db,row,locale) for row in rows[:limit]]
         next_offset=str(offset+limit);return {'items':items,'nextCursor':next_offset+'.'+digest(self.secret,'cursor:'+next_offset) if len(rows)>limit else None}
 
     def preview(self,review_id,locale):
-        if locale not in ('uk','en'):raise ReviewError(422,'invalid_filter')
+        if locale not in ('uk','en','pl'):raise ReviewError(422,'invalid_filter')
         with self.repo.transaction() as db:
             row=self.row(db,review_id);return {'item':self.public_item(db,row,locale,True),'publicationBlockers':self.gate(db,row)}
 

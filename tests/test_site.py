@@ -14,7 +14,7 @@ SITE = ROOT / 'site'
 BASE_ROUTES = ['/', '/about', '/solutions', '/solutions/review-card', '/solutions/branded-review-card', '/solutions/review-card-3d', '/solutions/instagram-card', '/instagram-card', '/solutions/menu-card', '/menu-card', '/reviews/new', '/order',
                '/delivery-and-payment', '/warranty-and-returns', '/contact',
                '/thank-you', '/privacy', '/terms']
-ROUTES = BASE_ROUTES + ['/en' + ('' if r == '/' else r) for r in BASE_ROUTES]
+ROUTES = BASE_ROUTES + ['/en' + ('' if r == '/' else r) for r in BASE_ROUTES] + ['/pl' + ('/' if r == '/' else r) for r in BASE_ROUTES]
 RETIRED = ['counter-stand', 'team-kit', 'multi-location']
 EVENTS = ['catalog_view', 'product_variant_select', 'quantity_select',
           'product_details_open', 'order_start', 'order_submit_success',
@@ -40,10 +40,13 @@ def node(script):
     return result.stdout
 
 
-def test_exact_thirty_six_localized_routes():
+def test_exact_fifty_four_localized_routes():
     actual = {'/' + p.parent.relative_to(SITE).as_posix() for p in SITE.rglob('index.html')}
     actual.discard('/.')
     actual.add('/')
+    if '/pl' in actual:
+        actual.remove('/pl')
+        actual.add('/pl/')
     assert actual == set(ROUTES)
 
 
@@ -53,14 +56,15 @@ def test_rendered_route_integrity(route):
     source = page.read_text('utf-8')
     soup = BeautifulSoup(source, 'html.parser')
     en = route == '/en' or route.startswith('/en/')
-    assert soup.html['lang'] == ('en' if en else 'uk')
+    pl = route == '/pl/' or route.startswith('/pl/')
+    assert soup.html['lang'] == ('pl' if pl else 'en' if en else 'uk')
     assert len(soup.select('h1')) == 1
     assert soup.title.string and soup.select_one('meta[name=description]')['content']
     assert soup.select_one('meta[name=robots]')['content'] == 'noindex,nofollow'
-    assert len(soup.select('link[hreflang]')) == 3
+    assert len(soup.select('link[hreflang]')) == 4
     assert soup.select_one('header') and soup.select_one('main') and soup.select_one('footer')
     assert soup.select_one('dialog#mobile-menu')
-    if en:
+    if en or pl:
         assert not re.search(r'[\u0400-\u04ff]', soup.get_text())
     assert not re.search(r'undefined|lorem ipsum|href=["\']#["\']|[A-Z]:[\\/]Users[\\/]', source, re.I)
     assert '\ufffd' not in source
@@ -91,10 +95,11 @@ def test_canonical_hreflang_are_bidirectional_and_current(route):
     assert canonical.scheme in {'http', 'https'} and canonical.netloc
     assert canonical.path.rstrip('/') == route.rstrip('/')
     assert not canonical.query and not canonical.fragment
-    expected_ua = '/' if route == '/en' else route[3:] if route.startswith('/en/') else route
+    expected_ua = '/' if route in ('/en', '/pl/') else route[3:] if route.startswith(('/en/', '/pl/')) else route
     links = {a['hreflang']: urlsplit(a['href']).path for a in soup.select('link[hreflang]')}
     assert links['uk'] == expected_ua and links['x-default'] == expected_ua
     assert links['en'] == '/en' + ('' if expected_ua == '/' else expected_ua)
+    assert links['pl'] == '/pl' + ('/' if expected_ua == '/' else expected_ua)
 
 
 @pytest.mark.parametrize('route', ['/', '/en', '/solutions', '/en/solutions'])

@@ -52,7 +52,8 @@ def test_protected_v11_implementation_matches_recovery_bytes():
     # v18 additively extends the product contract; focused v18 tests now protect
     # canonical Review Card prices, old fingerprint compatibility and persistence.
     extended = {'server/pricing.py', 'server/leads.py', 'server/commerce_repository.py', 'server/preview.py',
-                'src/commerce.json', 'src/display.mjs'}
+                'server/review_security.py', 'server/reviews.py', 'src/commerce.json', 'src/display.mjs',
+                'src/review-view.mjs', 'src/reviews.js', 'src/reviews-renderer.js', 'src/admin-reviews.js'}
     for path in protected:
         if path in extended:
             continue

@@ -1,0 +1,395 @@
+{
+  "/config/contacts/telegram/label": "Napisz na Telegramie",
+  "/config/contacts/phone/label": "Zadzwoń",
+  "/config/contacts/whatsapp/label": "Napisz na WhatsAppie",
+  "/config/contacts/viber/label": "Napisz na Viberze",
+  "/config/contacts/instagram/label": "Otwórz Instagram",
+  "/config/specs/0/name": "Rozmiar",
+  "/config/specs/0/value": "10 × 10 cm",
+  "/config/specs/1/name": "Grubość",
+  "/config/specs/1/value": "3 mm",
+  "/config/specs/2/name": "Materiał",
+  "/config/specs/2/value": "Tworzywo sztuczne",
+  "/config/disclaimer": "NFC CARD jest niezależnym produktem. Nie jest powiązany z Google ani przez Google zatwierdzony czy sponsorowany. Google, Google Maps i odpowiadające im logotypy są znakami towarowymi ich właścicieli.",
+  "/config/seo/homeTitle": "Karty NFC: opinie Google, Instagram i menu | NFC CARD",
+  "/config/seo/homeDescription": "Gotowe karty NFC do opinii Google, profilu na Instagramie i menu online. Konfiguracja właściwego linku, ceny hurtowe Menu Card i dostawa na terenie Ukrainy.",
+  "/config/seo/productTitle": "NFC Review Card — karta do opinii Google | NFC CARD",
+  "/config/seo/productDescription": "NFC Review Card dla lokalnych firm. Jedna karta kosztuje 1 500 UAH, dwie 2 600 UAH; indywidualny projekt od 2 000 UAH. Konfiguracja, wsparcie i dostawa na terenie Ukrainy są wliczone w cenę.",
+  "/config/production/deposit/value": "200 UAH po uzgodnieniu szczegółów. Zaliczka jest wliczona w łączną cenę zamówienia.",
+  "/config/production/deposit/label": "Zaliczka",
+  "/config/production/balance/value": "Po wysyłce i otrzymaniu numeru listu przewozowego.",
+  "/config/production/balance/label": "Dopłata pozostałej kwoty",
+  "/config/production/payment/value": "Przelew bankowy. USDT po wcześniejszym uzgodnieniu.",
+  "/config/production/payment/label": "Metody płatności",
+  "/config/production/duration/value": "Zwykle do pięciu dni roboczych od uzgodnienia szczegółów",
+  "/config/production/duration/label": "Czas przygotowania",
+  "/config/production/delivery/value": "Standardowa dostawa Nova Poshta na terenie Ukrainy jest wliczona w cenę.",
+  "/config/production/delivery/label": "Dostawa na terenie Ukrainy",
+  "/config/production/pickup/value": "Odbiór osobisty po wcześniejszym uzgodnieniu.",
+  "/config/production/pickup/label": "Odbiór osobisty",
+  "/config/production/europe/value": "Zamówienia i dostawę międzynarodową uzgadniamy indywidualnie. Koszt dostawy pokrywa klient.",
+  "/config/production/europe/label": "Europa",
+  "/ui/nav": [
+    "Karty",
+    "Jak to działa",
+    "Dla firm",
+    "O NFC CARD",
+    "Dostawa i płatność",
+    "FAQ",
+    "Kontakt"
+  ],
+  "/ui/order": "Zamów",
+  "/ui/orderStandard": "Zamów Review Card",
+  "/ui/quote": "Poproś o wycenę",
+  "/ui/free": "Poproś o bezpłatną wizualizację",
+  "/ui/mockup": "Poproś o bezpłatną wizualizację",
+  "/ui/details": "Szczegóły",
+  "/ui/help": "Potrzebuję konsultacji",
+  "/ui/catalog": "Karty",
+  "/ui/backCatalog": "Wróć do kart",
+  "/ui/returnCatalog": "Wróć do kart",
+  "/ui/newRequest": "Nowe zgłoszenie",
+  "/ui/back": "Wstecz",
+  "/ui/contact": "Kontakt",
+  "/ui/privacy": "Polityka prywatności",
+  "/ui/terms": "Warunki zamówienia",
+  "/ui/warranty": "Gwarancja i zwroty",
+  "/ui/delivery": "Dostawa i płatność",
+  "/ui/submit": "Wyślij zgłoszenie",
+  "/ui/sending": "Wysyłamy zgłoszenie…",
+  "/ui/submitting": "Wysyłamy zgłoszenie…",
+  "/ui/successTitle": "Dziękujemy! Otrzymaliśmy zgłoszenie.",
+  "/ui/success": "Dziękujemy! Otrzymaliśmy zgłoszenie.",
+  "/ui/successBody": "Skontaktujemy się z Tobą przez wybrany komunikator, aby potwierdzić lokalizację firmy w Google, liczbę kart i szczegóły zamówienia. Zwykle odpowiadamy w ciągu 45 minut w godzinach 07:00–23:00.",
+  "/ui/successText": "Skontaktujemy się z Tobą przez wybrany komunikator. Zwykle odpowiadamy w ciągu 45 minut w godzinach 07:00–23:00.",
+  "/ui/brandedSuccess": "Do przygotowania wizualizacji projektu wykorzystamy podany link do Instagrama lub strony internetowej. Jeśli będą potrzebne dodatkowe materiały, poprosimy o nie w komunikatorze.",
+  "/ui/errorTitle": "Nie udało się wysłać zgłoszenia.",
+  "/ui/error": "Nie udało się wysłać zgłoszenia.",
+  "/ui/errorBody": "Jeśli widzisz numer zgłoszenia, Twoje dane zostały zapisane. Jeśli nie ma numeru, napisz do nas na Telegramie lub zadzwoń pod +380 98 042 16 19.",
+  "/ui/errorText": "Jeśli widzisz numer zgłoszenia, Twoje dane zostały zapisane. Jeśli nie ma numeru, napisz do nas na Telegramie lub zadzwoń pod +380 98 042 16 19.",
+  "/ui/retry": "Spróbuj ponownie",
+  "/ui/formTitle": "Zamów NFC Review Card dla swojej firmy",
+  "/ui/formIntro": "Zostaw dane kontaktowe. Potwierdzimy lokalizację firmy w Google, liczbę kart i wybrany wariant. Dla Branded Review Card przygotujemy pierwszą wizualizację projektu bezpłatnie.",
+  "/ui/responseTime": "Codziennie 07:00–23:00. Zwykle odpowiadamy w ciągu 45 minut.",
+  "/ui/quantity": "Liczba kart",
+  "/ui/variant": "Wariant karty",
+  "/ui/more": "więcej niż 2",
+  "/ui/individual": "Indywidualna wycena",
+  "/ui/customQuote": "Indywidualna wycena",
+  "/ui/total": "Wartość zamówienia",
+  "/ui/deposit": "Zaliczka jest wliczona w cenę",
+  "/ui/noSelection": "Wybierz wariant",
+  "/ui/required": "Pole wymagane",
+  "/ui/optional": "opcjonalnie",
+  "/ui/media": "Miejsce na prawdziwe zdjęcie",
+  "/ui/founderMedia": "Miejsce na zdjęcie założyciela",
+  "/ui/menu": "Otwórz menu",
+  "/ui/close": "Zamknij",
+  "/ui/skip": "Przejdź do treści",
+  "/ui/draft": "Wersja robocza dokumentu",
+  "/ui/previewNotice": "Podgląd lokalny. Zgłoszenia i powiadomienia są sprawdzane w trybie testowym.",
+  "/ui/localSuccess": "Testowe zgłoszenie zapisano lokalnie.",
+  "/ui/localSuccessText": "To lokalny test formularza. Nie wysłano prawdziwego powiadomienia.",
+  "/ui/orderId": "Numer zgłoszenia",
+  "/ui/noReceipt": "Zgłoszenie nie zostało jeszcze potwierdzone",
+  "/ui/noReceiptTitle": "Zgłoszenie nie zostało jeszcze potwierdzone",
+  "/ui/noReceiptBody": "Wyślij formularz lub skontaktuj się z nami przez wybrany komunikator.",
+  "/ui/qrStandard": "Standardowa karta nie zawiera kodu QR.",
+  "/ui/qrBranded": "Kod QR można opcjonalnie dodać do karty z indywidualnym projektem.",
+  "/ui/europe": "Zamówienia do Europy wyceniamy indywidualnie wraz z dostawą.",
+  "/ui/telegram": "Napisz na Telegramie",
+  "/ui/phone": "Zadzwoń",
+  "/ui/whatsapp": "Napisz na WhatsAppie",
+  "/ui/viber": "Napisz na Viberze",
+  "/ui/instagram": "Otwórz Instagram",
+  "/fields/name": "Imię",
+  "/fields/phone": "Numer telefonu",
+  "/fields/messenger": "Preferowany komunikator",
+  "/fields/preferredMessenger": "Preferowany komunikator",
+  "/fields/messengerContact": "Nazwa użytkownika lub numer do kontaktu",
+  "/fields/alternateContact": "Nazwa użytkownika lub numer do kontaktu",
+  "/fields/differentContact": "Kontakt w komunikatorze różni się od numeru telefonu",
+  "/fields/product": "Co Cię interesuje?",
+  "/fields/quantity": "Liczba kart",
+  "/fields/businessName": "Nazwa firmy",
+  "/fields/googleMaps": "Link do Google Maps",
+  "/fields/googleMapsHint": "Możesz dodać go teraz albo przesłać nam w komunikatorze",
+  "/fields/businessUrl": "Instagram lub strona firmy",
+  "/fields/comment": "Uwagi",
+  "/fields/consent": "Zgadzam się na przetwarzanie danych, aby NFC CARD mógł odpowiedzieć na moje zgłoszenie.",
+  "/fields/standard": "Review Card — gotowy projekt",
+  "/fields/branded": "Branded Review Card — indywidualny projekt",
+  "/fields/bulk": "Karty dla kilku oddziałów lub zespołu",
+  "/fields/consultation": "Potrzebuję konsultacji",
+  "/fields/businessUrlHint": "W przypadku karty z indywidualnym projektem dodaj stronę, Instagram lub inny publiczny profil firmy.",
+  "/fields/variant": "Co Cię interesuje?",
+  "/fields/business": "Nazwa firmy",
+  "/fields/maps": "Link do Google Maps",
+  "/fields/mapsHint": "Możesz dodać go teraz albo przesłać nam w komunikatorze",
+  "/errors/name": "Podaj imię.",
+  "/errors/phone": "Podaj poprawny numer telefonu.",
+  "/errors/messenger": "Wybierz komunikator.",
+  "/errors/businessUrl": "Dla karty z indywidualnym projektem dodaj link do Instagrama, strony lub innego profilu firmy.",
+  "/errors/consent": "Wyraź zgodę na przetwarzanie danych, abyśmy mogli odpowiedzieć na zgłoszenie.",
+  "/errors/messengerContact": "Podaj kontakt w wybranym komunikatorze.",
+  "/errors/product": "Wybierz wariant karty lub konsultację.",
+  "/errors/quantity": "Wybierz liczbę kart: 1, 2 albo więcej niż 2.",
+  "/errors/googleMaps": "Sprawdź link do Google Maps lub pozostaw pole puste.",
+  "/errors/summary": "Sprawdź zaznaczone pola.",
+  "/errors/network": "Jeśli widzisz numer zgłoszenia, Twoje dane zostały zapisane. Jeśli nie ma numeru, napisz do nas na Telegramie lub zadzwoń pod +380 98 042 16 19.",
+  "/errors/server": "Jeśli widzisz numer zgłoszenia, Twoje dane zostały zapisane. Jeśli nie ma numeru, napisz do nas na Telegramie lub zadzwoń pod +380 98 042 16 19.",
+  "/errors/variant": "Wybierz wariant karty lub konsultację.",
+  "/errors/maps": "Sprawdź link do Google Maps lub pozostaw pole puste.",
+  "/variants/0/label": "Gotowy projekt",
+  "/variants/0/description": "Gotowa karta NFC, która po zbliżeniu smartfona otwiera formularz oceny i opinii o Twojej firmie w Google.",
+  "/variants/0/cta": "Zamów Review Card",
+  "/variants/0/note": "Standardowa karta nie zawiera kodu QR.",
+  "/variants/0/benefits": [
+    "Konfiguracja dla właściwej lokalizacji firmy w Google",
+    "Bez osobnej aplikacji dla klienta",
+    "Bez obowiązkowego miesięcznego abonamentu",
+    "Standardowa dostawa na terenie Ukrainy w cenie"
+  ],
+  "/variants/1/label": "Indywidualny projekt",
+  "/variants/1/description": "Karta NFC z Twoim logo, kolorami, tekstem i uzgodnionym wezwaniem do działania.",
+  "/variants/1/cta": "Poproś o bezpłatną wizualizację",
+  "/variants/1/note": "Prześlij link do Instagrama, strony lub innego profilu swojej firmy. Zaproponujemy pierwszą wizualizację projektu bez zobowiązań.",
+  "/variants/1/benefits": [
+    "Pierwsza indywidualna wizualizacja bezpłatnie",
+    "Bez osobnej opłaty za projekt",
+    "Konfiguracja dla Twojej lokalizacji w Google",
+    "Kod QR opcjonalnie",
+    "Standardowa dostawa na terenie Ukrainy w cenie"
+  ],
+  "/copy/catalog/eyebrow": "NFC REVIEW CARD DLA FIRM",
+  "/copy/catalog/heading": "Wybierz kartę NFC dla swojej firmy",
+  "/copy/catalog/body": "Gotowy projekt lub indywidualne oznakowanie. Oba warianty konfigurujemy dla właściwej lokalizacji Twojej firmy w Google i dostarczamy bezpłatnie na terenie Ukrainy.",
+  "/copy/problem/heading": "Zadowoleni klienci nie zawsze zostawiają opinię",
+  "/copy/problem/paragraphs": [
+    "Po zakupie lub usłudze klienci często dziękują i wychodzą. Gdy mają później samodzielnie znaleźć firmę w Google, łatwo odkładają napisanie opinii na później.",
+    "NFC Review Card skraca tę drogę. Klient zbliża telefon, otwiera powiadomienie i przechodzi do formularza, w którym sam wybiera ocenę i pisze szczerą opinię.",
+    "Karta nie pisze opinii za klienta ani nie wpływa na ocenę. Pomaga wykorzystać moment, w którym doświadczenie jest jeszcze świeże."
+  ],
+  "/copy/problem/eyebrow": "DLACZEGO TO POMAGA",
+  "/copy/how/heading": "Jak działa NFC Review Card",
+  "/copy/how/eyebrow": "OD ZBLIŻENIA TELEFONU DO FORMULARZA OPINII",
+  "/copy/how/items": [
+    [
+      "Konfigurujemy właściwą lokalizację firmy w Google",
+      "Zapisujemy na karcie link do konkretnej lokalizacji Twojej firmy."
+    ],
+    [
+      "Klient zbliża smartfon",
+      "Telefon odczytuje NFC i wyświetla systemowe powiadomienie z linkiem."
+    ],
+    [
+      "Otwiera się formularz opinii",
+      "Klient przechodzi do formularza, w którym może wybrać ocenę i napisać opinię. Google może poprosić o zalogowanie się."
+    ]
+  ],
+  "/copy/how/note": "Klient nie potrzebuje osobnej aplikacji do otwarcia linku.",
+  "/copy/destination/heading": "Bezpośrednio do napisania opinii",
+  "/copy/destination/paragraphs": [
+    "Konfigurujemy link tak, aby klient trafił do formularza oceny i opinii dla właściwej lokalizacji firmy, zamiast do ogólnych wyników wyszukiwania."
+  ],
+  "/copy/destination/eyebrow": "WIĘCEJ NIŻ STRONA FIRMY",
+  "/copy/destination/note": "Jedno zbliżenie telefonu → formularz opinii.",
+  "/copy/facts/heading": "Widoczna karta przy kasie, recepcji lub stanowisku obsługi",
+  "/copy/facts/eyebrow": "FORMA PRODUKTU",
+  "/copy/facts/facts": [
+    "rozmiar: 10 × 10 cm",
+    "grubość: 3 mm",
+    "gotowy lub indywidualny projekt",
+    "link można zmienić za pomocą zgodnego smartfona",
+    "standardowa Review Card nie zawiera kodu QR",
+    "w Branded Review Card kod QR można dodać po uzgodnieniu"
+  ],
+  "/copy/audience/heading": "Dla firm, które mają bezpośredni kontakt z klientem",
+  "/copy/audience/paragraphs": [
+    "NFC Review Card najlepiej sprawdza się tam, gdzie po zakupie lub usłudze pojawia się naturalna okazja, aby zaprosić klienta do podzielenia się wrażeniami."
+  ],
+  "/copy/audience/eyebrow": "GDZIE SPRAWDZA SIĘ NAJLEPIEJ",
+  "/copy/audience/script": "Będzie nam miło, jeśli podzielisz się opinią o wizycie w Google. Zbliż telefon do karty, otwórz powiadomienie i, jeśli chcesz, napisz opinię.",
+  "/copy/audience/examples": [
+    "Kawiarnie i restauracje",
+    "Salony urody, barbershopy i specjaliści",
+    "Gabinety stomatologiczne i prywatne kliniki",
+    "Warsztaty samochodowe, studia detailingu i serwisy opon",
+    "Hotele i apartamenty",
+    "Studia fitness i wellness",
+    "Sklepy, showroomy i punkty usługowe",
+    "Usługi dla zwierząt i kliniki weterynaryjne"
+  ],
+  "/copy/story/heading": "Pomysł na NFC CARD narodził się podczas podróży do Austrii",
+  "/copy/story/paragraphs": [
+    "Zobaczyłem lokal, w którym prośba o opinię była naturalną częścią obsługi: gość zbliżał telefon do karty NFC i od razu przechodził do odpowiedniego miejsca w Google.",
+    "Obok działała inna firma, także z dużym ruchem, ale klienci musieli sami znaleźć ją w Google. Zrozumiałem wtedy, że firmie często nie brakuje zadowolonych klientów — brakuje prostego sposobu, by mogli podzielić się wrażeniami we właściwym momencie.",
+    "Tak powstała NFC CARD: pomysł na dopracowane, zrozumiałe i dostępne narzędzie dla firm w Ukrainie i Europie."
+  ],
+  "/copy/story/eyebrow": "SKĄD WZIĄŁ SIĘ POMYSŁ",
+  "/copy/about/heading": "NFC CARD — produkt Antonov Digital",
+  "/copy/about/paragraphs": [
+    "Antonov Digital to firma doradcza i cyfrowa rozwijana z wykorzystaniem AI. Tworzy strony internetowe, automatyzacje, rozwiązania AI i praktyczne produkty cyfrowe dla firm.",
+    "NFC CARD jest odrębnym produktem Antonov Digital dla lokalnych firm w Ukrainie i Europie."
+  ],
+  "/copy/founder/heading": "Osobiście odpowiadam za każde zamówienie",
+  "/copy/founder/paragraphs": [
+    "Nazywam się Artem Antonov. Jestem założycielem Antonov Digital i NFC CARD.",
+    "Prowadzę zamówienie od pierwszego kontaktu do wysyłki: rozmawiam z klientem, sprawdzam link do Google, uzgadniam projekt, kontroluję gotową kartę i pozostaję do dyspozycji w razie pytań.",
+    "Zależy mi, aby klient dostał nie anonimową kartę NFC, lecz zrozumiały produkt, który wygląda profesjonalnie i sprawdza się w codziennej pracy firmy."
+  ],
+  "/copy/founder/cta": "Napisz do Artema na Telegramie",
+  "/copy/process/heading": "Jak przebiega zamówienie",
+  "/copy/process/eyebrow": "OD ZGŁOSZENIA DO GOTOWEJ KARTY",
+  "/copy/process/items": [
+    [
+      "Wybierasz wariant i liczbę kart",
+      "Podajesz imię, numer telefonu i preferowany komunikator."
+    ],
+    [
+      "Kontaktujemy się z Tobą",
+      "Potwierdzamy link odpowiedni dla wybranej karty — formularz opinii Google, profil na Instagramie lub menu online — oraz dane dostawy. Jeśli nie masz jeszcze menu, możemy osobno omówić jego przygotowanie. Dla Branded Review Card pierwszą wizualizację projektu przygotowujemy bezpłatnie."
+    ],
+    [
+      "Uzgadniamy szczegóły",
+      "Po ich potwierdzeniu wpłacasz zaliczkę 200 UAH. Jest wliczona w łączną cenę."
+    ],
+    [
+      "Przygotowujemy kartę",
+      "Standardową Review Card i Instagram Card przygotowujemy zwykle w ciągu pięciu dni roboczych od uzgodnienia szczegółów. Czas wykonania NFC Review Card 3D ustalamy osobno przed wpłatą zaliczki. Czas przygotowania Menu Card potwierdzamy przy uzgadnianiu zamówienia."
+    ],
+    [
+      "Wysyłamy zamówienie",
+      "Na terenie Ukrainy wysyłamy kartę przez Nova Poshta na nasz koszt. Pozostałą kwotę opłacasz po wysyłce i otrzymaniu numeru listu przewozowego."
+    ]
+  ],
+  "/copy/payment/heading": "Płatność i dostawa",
+  "/copy/payment/items": [
+    [
+      "zaliczka: 200 UAH;",
+      ""
+    ],
+    [
+      "zaliczka jest wliczona w łączną cenę;",
+      ""
+    ],
+    [
+      "pozostała kwota jest płatna po wysyłce i otrzymaniu numeru listu przewozowego;",
+      ""
+    ],
+    [
+      "płatność przelewem bankowym;",
+      ""
+    ],
+    [
+      "USDT po wcześniejszym uzgodnieniu;",
+      ""
+    ],
+    [
+      "dostawa przez Nova Poshta na terenie Ukrainy jest bezpłatna;",
+      ""
+    ],
+    [
+      "koszt dostawy do Europy pokrywa klient; ustalamy go z wyprzedzeniem;",
+      ""
+    ],
+    [
+      "odbiór osobisty po uzgodnieniu.",
+      ""
+    ]
+  ],
+  "/copy/payment/cta": "Więcej o płatności i dostawie",
+  "/copy/bulk/heading": "Więcej kart Review Card dla Twojej firmy",
+  "/copy/bulk/body": "Dla zamówień od trzech standardowych Review Card lub Branded Review Card przygotujemy indywidualną wycenę. NFC Review Card 3D kosztuje 4 000 UAH za każdą kartę, bez rabatu ilościowego. Menu Card ma osobny cennik dla większych zamówień.",
+  "/copy/bulk/cta": "Poproś o wycenę",
+  "/copy/included/heading": "Co otrzymujesz w ramach zamówienia",
+  "/copy/included/body": "Otrzymujesz kartę skonfigurowaną dla konkretnej lokalizacji firmy w Google, sprawdzony link i jasną instrukcję dla zespołu. Nie ma obowiązkowego miesięcznego abonamentu.",
+  "/copy/included/standard": [
+    "Review Card w gotowym projekcie",
+    "Konfiguracja dla właściwej lokalizacji Twojej firmy w Google",
+    "Sprawdzenie NFC i poprawności linku",
+    "Krótka instrukcja i wskazówki dla personelu",
+    "Wsparcie po otrzymaniu karty",
+    "Standardowa dostawa przez Nova Poshta na terenie Ukrainy"
+  ],
+  "/copy/included/branded": [
+    "Wszystko, co w standardowym wariancie, z indywidualnym projektem zamiast gotowego",
+    "Pierwsza indywidualna wizualizacja bezpłatnie i bez zobowiązań",
+    "Logo, kolory, tekst i uzgodnione wezwanie do działania",
+    "Akceptacja projektu przed wykonaniem",
+    "Kod QR opcjonalnie",
+    "Zdjęcie gotowej karty przed wysyłką"
+  ],
+  "/copy/included/items": [
+    [
+      "Właściwa lokalizacja w Google",
+      "Konfiguracja i sprawdzenie odpowiedniego linku."
+    ],
+    [
+      "Łatwy start",
+      "Krótka instrukcja, wskazówki dla zespołu i wsparcie po otrzymaniu karty."
+    ],
+    [
+      "Dostawa w cenie",
+      "Standardowa dostawa przez Nova Poshta na terenie Ukrainy jest wliczona w cenę."
+    ],
+    [
+      "Dla karty z indywidualnym projektem",
+      "Bezpłatna pierwsza wizualizacja projektu, akceptacja wyglądu i zdjęcie gotowej karty. Kod QR można dodać opcjonalnie."
+    ]
+  ],
+  "/copy/compatibility/heading": "Działa z Twoim smartfonem",
+  "/copy/compatibility/body": "Działa z większością współczesnych smartfonów iPhone i Android obsługujących NFC. Na niektórych urządzeniach z Androidem trzeba włączyć NFC w ustawieniach, a miejsce odczytu zależy od modelu telefonu.",
+  "/copy/quality/heading": "Sprawdzamy kartę przed wysyłką",
+  "/copy/quality/body": "Liczy się nie tylko działanie NFC. Link powinien otwierać właściwy formularz opinii Google, profil na Instagramie albo menu online — zależnie od karty. Sama karta powinna wyglądać starannie, a personel wiedzieć, jak z niej korzystać.",
+  "/copy/quality/items": [
+    [
+      "Właściwy link",
+      "Sprawdzamy NFC i stronę konkretnej firmy."
+    ],
+    [
+      "Uzgodniony wygląd",
+      "W przypadku karty z indywidualnym projektem porównujemy gotowy produkt z zaakceptowanym wyglądem i przesyłamy zdjęcie."
+    ],
+    [
+      "Kontrola i pakowanie",
+      "Przed zapakowaniem sprawdzamy kartę pod kątem widocznych wad."
+    ],
+    [
+      "Prosta obsługa",
+      "Dołączamy krótką instrukcję i pomagamy przy pierwszych pytaniach."
+    ]
+  ],
+  "/copy/quality/note": "Nie zginaj ani nie przekłuwaj karty. Nie zanurzaj jej w wodzie.",
+  "/copy/support/heading": "Jeśli telefon nie odczytuje NFC",
+  "/copy/support/body": "Najpierw sprawdzimy model telefonu, ustawienia NFC, miejsce zbliżenia i zapisany link. Jeśli potwierdzi się wada techniczna, której nie da się rozwiązać zdalnie, uzgodnimy bezpłatną wymianę lub zwrot pieniędzy.",
+  "/copy/rewrite/heading": "Link można zmienić",
+  "/copy/rewrite/body": "Link na zgodnej karcie NFC można ponownie zapisać za pomocą smartfona. W razie potrzeby podpowiemy, jak to zrobić.",
+  "/faqs/0/question": "Czy karta działa z iPhone'em i Androidem?",
+  "/faqs/0/answer": "Działa z większością współczesnych smartfonów iPhone i Android obsługujących NFC. Na niektórych urządzeniach z Androidem trzeba włączyć NFC w ustawieniach, a miejsce odczytu zależy od modelu telefonu.",
+  "/faqs/1/question": "Czy klient potrzebuje aplikacji?",
+  "/faqs/1/answer": "Nie. Do otwarcia linku nie jest potrzebna osobna aplikacja.",
+  "/faqs/2/question": "Dokąd trafia klient po zbliżeniu telefonu?",
+  "/faqs/2/answer": "To zależy od karty. Review Card, Branded Review Card i NFC Review Card 3D otwierają formularz opinii Google dla konkretnej lokalizacji. NFC Instagram Card otwiera profil na Instagramie, a NFC Menu Card — menu online lokalu. To osobne produkty; klient sam decyduje, co zrobi dalej.",
+  "/faqs/3/question": "Czy po zakupie można zmienić link?",
+  "/faqs/3/answer": "Link na Review Card i Instagram Card można ponownie zapisać za pomocą zgodnego smartfona. Jeśli zmieni się adres menu online, skontaktuj się z nami, aby ustalić konfigurację Menu Card.",
+  "/faqs/4/question": "Czy jest opłata miesięczna?",
+  "/faqs/4/answer": "Nie ma obowiązkowej opłaty miesięcznej za korzystanie z samych kart NFC. Jeśli potrzebujesz przygotowania menu online, omówimy szczegóły podczas konsultacji.",
+  "/faqs/5/question": "Czy karta ma kod QR?",
+  "/faqs/5/answer": "Standardowa Review Card, NFC Instagram Card i NFC Menu Card w tych ofertach nie mają kodu QR. Indywidualny projekt jest dostępny tylko dla Branded Review Card; dodanie kodu QR do tej wersji można uzgodnić osobno. Karty Instagram i Menu mają gotowe projekty.",
+  "/faqs/6/question": "Jaki rozmiar ma karta?",
+  "/faqs/6/answer": "Review Card i NFC Instagram Card mają 10 × 10 cm i grubość 3 mm. Menu Card jest kwadratem 10 × 10 lub 6 × 6 cm albo kołem o średnicy 7 cm; jej grubość wynosi około 3–4 mm. Dokładny wariant wybierzesz na stronie produktu.",
+  "/faqs/7/question": "Ile trwa realizacja zamówienia?",
+  "/faqs/7/answer": "Standardową Review Card i Instagram Card przygotowujemy zwykle w ciągu pięciu dni roboczych od uzgodnienia szczegółów. Czas wykonania NFC Review Card 3D ustalamy osobno przed wpłatą zaliczki, a czas przygotowania Menu Card potwierdzamy przy uzgadnianiu zamówienia.",
+  "/faqs/8/question": "Ile wynosi zaliczka?",
+  "/faqs/8/answer": "200 UAH. Zaliczka jest wliczona w łączną cenę.",
+  "/faqs/9/question": "Ile kosztuje dostawa na terenie Ukrainy?",
+  "/faqs/9/answer": "Standardową dostawę przez Nova Poshta na terenie Ukrainy opłacamy my.",
+  "/faqs/10/question": "Czy wysyłacie karty do Europy?",
+  "/faqs/10/answer": "Tak. Koszt i przewoźnika uzgadniamy osobno; za dostawę płaci klient.",
+  "/faqs/11/question": "Co zrobić, jeśli telefon nie odczytuje NFC?",
+  "/faqs/11/answer": "Najpierw sprawdzimy model telefonu, ustawienia NFC, miejsce zbliżenia i zapisany link. Jeśli potwierdzi się wada techniczna, której nie da się rozwiązać zdalnie, uzgodnimy bezpłatną wymianę lub zwrot pieniędzy.",
+  "/faqs/12/question": "Jak zamówić więcej kart?",
+  "/faqs/12/answer": "Dla zamówień od trzech Review Card lub Branded Review Card przygotujemy indywidualną wycenę. NFC Review Card 3D kosztuje 4 000 UAH za każdą kartę, bez rabatu ilościowego; zaliczka 200 UAH jest płatna raz za zamówienie i wliczona w łączną cenę. Obecnie NFC Instagram Card można zamówić w liczbie jednej lub dwóch sztuk. Menu Card ma ceny hurtowe od 5, 10 i 25 sztuk; można łączyć jej różne warianty. Wybierz produkt w katalogu.",
+  "/leadTime": "Zwykle do pięciu dni roboczych od uzgodnienia szczegółów"
+}

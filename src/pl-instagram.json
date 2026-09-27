@@ -1,0 +1,162 @@
+{
+  "/instagram/eyebrow": "DLA INSTAGRAMA TWOJEJ FIRMY",
+  "/instagram/headline": "Twój Instagram — jedno zbliżenie telefonu",
+  "/instagram/catalog": "Gotowa karta NFC otwierająca właściwy profil Twojej firmy na Instagramie — bez wyszukiwania, wpisywania nazwy użytkownika i zbędnych kroków.",
+  "/instagram/lead": "Klient zbliża smartfon do karty i otwiera właściwy profil Twojej firmy na Instagramie — bez wyszukiwania i wpisywania nazwy użytkownika.",
+  "/instagram/mechanics": "Zbliżenie telefonu → powiadomienie systemowe → dotknięcie powiadomienia → właściwy profil na Instagramie. Profil otwiera się w aplikacji lub przeglądarce, zależnie od urządzenia i ustawień.",
+  "/instagram/summary": "NFC Instagram Card działa tak samo jak NFC Review Card: klient zbliża smartfon do karty i dotyka powiadomienia. Różnią się wyglądem i przeznaczeniem — zamiast formularza opinii Google otwiera się profil Twojej firmy na Instagramie. Konfigurujemy kartę dla Twojego profilu i przekazujemy gotową do użycia.",
+  "/instagram/benefits/0": "Bezpośrednio do profilu",
+  "/instagram/benefits/1": "10 × 10 cm, grubość 3 mm",
+  "/instagram/benefits/2": "Bez obowiązkowej opłaty miesięcznej",
+  "/instagram/honesty": "NFC Instagram Card nie obserwuje profilu za klienta ani nie gwarantuje określonej liczby obserwujących. Eliminuje wyszukiwanie, wpisywanie nazwy użytkownika i zbędne kroki, ułatwiając otwarcie profilu we właściwym momencie.",
+  "/instagram/customerChoice": "To klient sam decyduje, czy zaobserwuje profil, napisze wiadomość albo obejrzy treści.",
+  "/instagram/disclaimer": "NFC CARD jest niezależnym produktem. Nie jest oficjalnym produktem ani partnerem Instagrama lub Meta.",
+  "/instagram/formIntro": "Podaj dane kontaktowe i link do profilu na Instagramie. Skontaktuję się z Tobą, sprawdzę link i potwierdzę szczegóły zamówienia.",
+  "/instagram/crossHeading": "Chcesz także ułatwić klientom dodawanie opinii Google?",
+  "/instagram/crossBody": "NFC Review Card otwiera formularz opinii dla konkretnej lokalizacji firmy w Google i pomaga pokazać doświadczenia zadowolonych klientów innym osobom.",
+  "/instagram/facts/0": "100 × 100 mm · grubość 3 mm",
+  "/instagram/facts/1": "PVC · zaokrąglone rogi",
+  "/instagram/facts/2": "NFC · bez kodu QR",
+  "/instagram/facts/3": "Tylko gotowy projekt",
+  "/instagram/facts/4": "Bez obowiązkowej opłaty miesięcznej",
+  "/instagram/commercialBenefits/0": [
+    "Właściwy profil bez wyszukiwania",
+    "Klient nie musi pamiętać ani wpisywać nazwy użytkownika."
+  ],
+  "/instagram/commercialBenefits/1": [
+    "Mniej kroków dla klienta",
+    "Zbliżenie telefonu, powiadomienie i otwarcie profilu."
+  ],
+  "/instagram/commercialBenefits/2": [
+    "Mniej wyjaśnień dla personelu",
+    "Pracownik nie musi za każdym razem dyktować nazwy użytkownika ani pomagać w szukaniu profilu. Wystarczy pokazać kartę — bez powtarzania instrukcji i odrywania się od rezerwacji, płatności czy obsługi."
+  ],
+  "/instagram/commercialBenefits/3": [
+    "Możliwość dalszego kontaktu",
+    "Klient może zacząć obserwować profil, obejrzeć treści, napisać wiadomość prywatną lub udostępnić profil."
+  ],
+  "/instagram/includedItems": [
+    "NFC Instagram Card w gotowym projekcie",
+    "konfiguracja dla właściwego profilu na Instagramie",
+    "sprawdzenie linku przed wysyłką",
+    "krótka instrukcja obsługi",
+    "wsparcie po otrzymaniu karty",
+    "staranne opakowanie",
+    "bezpłatna dostawa przez Nova Poshta na terenie Ukrainy"
+  ],
+  "/instagram/specifications": [
+    "Materiał: PVC",
+    "Rozmiar: 100 × 100 mm",
+    "Grubość: 3 mm",
+    "Technologia: NFC",
+    "Kod QR: brak",
+    "Indywidualny projekt: niedostępny",
+    "Obowiązkowa opłata miesięczna: brak"
+  ],
+  "/instagram/placement": "Na recepcji, przy kasie, na stoliku, przy stanowisku odbioru, w showroomie lub w innym miejscu, gdzie kończy się wizyta klienta.",
+  "/instagram/payment": "Zaliczka wynosi 200 UAH i jest wliczona w łączną cenę. Pozostałą kwotę opłacasz po wysyłce i otrzymaniu numeru listu przewozowego. Przygotowanie trwa zwykle do pięciu dni roboczych. Dostawa przez Nova Poshta na terenie Ukrainy jest bezpłatna.",
+  "/instagram/productSteps/0": [
+    "Przesyłasz link do właściwego profilu na Instagramie.",
+    "Dodaj profil swojej firmy na Instagramie w zgłoszeniu."
+  ],
+  "/instagram/productSteps/1": [
+    "Programujemy i sprawdzamy kartę.",
+    "Przed wysyłką sprawdzamy, czy link działa."
+  ],
+  "/instagram/productSteps/2": [
+    "Klient zbliża smartfon do karty.",
+    "Na ekranie pojawia się powiadomienie systemowe."
+  ],
+  "/instagram/productSteps/3": [
+    "Klient dotyka powiadomienia. Otwiera się profil Twojej firmy na Instagramie.",
+    "Po otwarciu profilu klient sam wybiera dalsze działanie."
+  ],
+  "/instagram/productSEO/title": "NFC Instagram Card — karta prowadząca do Instagrama | NFC CARD",
+  "/instagram/productSEO/description": "NFC Instagram Card ułatwia otwarcie właściwego profilu firmy na Instagramie. 100 × 100 mm, bez kodu QR i obowiązkowej opłaty miesięcznej.",
+  "/instagram/infoSEO/title": "Jak ułatwić klientowi przejście z lokalu na Instagram | NFC CARD",
+  "/instagram/infoSEO/description": "Pomóż klientom szybko otwierać profil Twojej firmy na Instagramie bez wyszukiwania i wpisywania nazwy użytkownika. Zobacz, jak działa NFC Instagram Card.",
+  "/instagram/info/heading": "Pozostań w kontakcie z klientem po wizycie",
+  "/instagram/info/lead": "Klient skorzystał już z Twojej usługi, zrobił zakupy lub odwiedził lokal. NFC Instagram Card pozwala mu szybko otworzyć właściwy profil Twojej firmy na Instagramie.",
+  "/instagram/info/frictionHeading": "Klient jest już u Ciebie. Nadal musi jednak znaleźć Twój Instagram.",
+  "/instagram/info/friction": "Gdy klienci pytają o profil na Instagramie, personel może za każdym razem powtarzać nazwę użytkownika albo pokazywać właściwy profil. W ciągu dnia takie wyjaśnienia odrywają od innych zadań. Karta eliminuje ten powtarzalny krok: pracownik ją pokazuje, a klient otwiera profil na swoim telefonie.",
+  "/instagram/info/stepsHeading": "Od wizyty w lokalu do Instagrama — jednym zbliżeniem telefonu",
+  "/instagram/info/steps/0": [
+    "Umieść kartę w widocznym miejscu.",
+    "Na recepcji, przy kasie, na stoliku lub przy stanowisku odbioru."
+  ],
+  "/instagram/info/steps/1": [
+    "Klient zbliża smartfon do karty.",
+    "Na ekranie pojawia się powiadomienie systemowe."
+  ],
+  "/instagram/info/steps/2": [
+    "Klient dotyka powiadomienia.",
+    "Otwiera się właściwy profil na Instagramie. Klient sam decyduje, czy go zaobserwuje, napisze wiadomość lub obejrzy treści."
+  ],
+  "/instagram/info/valueHeading": "Mały gest, który ułatwia kontakt z firmą",
+  "/instagram/info/values/0": [
+    "Bez szukania profilu",
+    "Klient nie musi wpisywać nazwy użytkownika ani sprawdzać, czy znalazł właściwy profil."
+  ],
+  "/instagram/info/values/1": [
+    "Mniej pracy dla personelu",
+    "Pracownik pokazuje kartę, zamiast dyktować nazwę użytkownika i pomagać w wyszukiwaniu."
+  ],
+  "/instagram/info/values/2": [
+    "Szansa na dalszy kontakt",
+    "Po wizycie klient może zobaczyć nowe realizacje, produkty, aktualności i oferty albo napisać wiadomość prywatną."
+  ],
+  "/instagram/info/values/3": [
+    "Wykorzystanie kontaktu podczas wizyty",
+    "Klient już odwiedził Twoją firmę. Karta pomaga nie stracić tego momentu przez zbędne kroki na telefonie."
+  ],
+  "/instagram/info/contexts": [
+    "salon lub barbershop",
+    "studio manicure, brwi lub rzęs",
+    "gabinet kosmetyczny, SPA lub wellness",
+    "kawiarnia lub restauracja",
+    "studio tatuażu",
+    "studio fitnessu, jogi, pilatesu lub tańca",
+    "showroom lub sklep specjalistyczny",
+    "salon samochodowy, studio detailingu lub warsztat",
+    "hotel, warsztaty, wydarzenie lub pracownia twórcza"
+  ],
+  "/instagram/info/truthHeading": "Gotowa karta bez skomplikowanego wdrożenia",
+  "/instagram/info/truth": "Przesyłasz link do właściwego profilu na Instagramie. Programujemy kartę, sprawdzamy link i wysyłamy ją gotową do użycia.",
+  "/instagram/info/finalHeading": "Ułatw klientowi dotarcie do Twojego Instagrama",
+  "/instagram/info/finalBody": "Zobacz NFC Instagram Card, jej cenę i parametry, a następnie wyślij zgłoszenie dotyczące konfiguracji dla swojego profilu.",
+  "/instagram/info/founderHeading": "Dlaczego stworzyliśmy NFC Instagram Card",
+  "/instagram/info/founderBody": "Chcemy ułatwiać proste kontakty z firmą: klientowi pozwolić szybko otworzyć właściwy profil, a personelowi oszczędzić ciągłego tłumaczenia, jak go znaleźć. NFC Instagram Card usuwa zbędne kroki; o obserwowaniu profilu, wysłaniu wiadomości czy obejrzeniu treści klient decyduje sam.",
+  "/instagram/info/comparisonBridge": "Zasada działania jest taka sama: zbliżenie smartfona i otwarcie skonfigurowanego linku. Wybierz, co chcesz ułatwić klientom: otwarcie profilu na Instagramie, napisanie opinii Google czy wyświetlenie menu online.",
+  "/instagramGlobalFAQs/0/question": "Czym jest NFC Instagram Card?",
+  "/instagramGlobalFAQs/0/answer": "To fizyczna karta NFC, która po zbliżeniu smartfona otwiera właściwy profil Twojej firmy na Instagramie.",
+  "/instagramGlobalFAQs/1/question": "Czy karta automatycznie zaczyna obserwować profil?",
+  "/instagramGlobalFAQs/1/answer": "Nie. Karta tylko otwiera profil. Klient sam decyduje, czy go zaobserwuje, napisze wiadomość lub obejrzy treści.",
+  "/instagramGlobalFAQs/2/question": "Czym NFC Instagram Card różni się od NFC Review Card?",
+  "/instagramGlobalFAQs/2/answer": "Obie działają podobnie: zbliżenie smartfona, powiadomienie i otwarcie linku. Różnią się wyglądem i przeznaczeniem. NFC Instagram Card otwiera profil na Instagramie, a NFC Review Card — formularz opinii Google. To osobne karty do różnych działań.",
+  "/instagramProductFAQs/0/question": "Czy potrzebna jest osobna aplikacja?",
+  "/instagramProductFAQs/0/answer": "Do użycia samej karty nie jest potrzebna osobna aplikacja. Profil otwiera się w Instagramie lub przeglądarce, zależnie od urządzenia i jego ustawień.",
+  "/instagramProductFAQs/1/question": "Czy karta działa z iPhone'em i Androidem?",
+  "/instagramProductFAQs/1/answer": "Karta działa z nowoczesnymi smartfonami obsługującymi NFC. Na niektórych urządzeniach z Androidem trzeba włączyć NFC w ustawieniach.",
+  "/instagramProductFAQs/2/question": "Czy po zakupie można zmienić profil na Instagramie?",
+  "/instagramProductFAQs/2/answer": "Tak. Jeśli link się zmieni, kartę można ponownie zaprogramować dla nowego profilu.",
+  "/instagramProductFAQs/3/question": "Czy karta ma kod QR?",
+  "/instagramProductFAQs/3/answer": "Nie. Ta wersja NFC Instagram Card działa przez NFC i nie ma kodu QR.",
+  "/instagramProductFAQs/4/question": "Czy mogę zamówić indywidualny projekt?",
+  "/instagramProductFAQs/4/answer": "Nie. NFC Instagram Card jest dostępna wyłącznie w gotowym projekcie.",
+  "/instagramProductFAQs/5/question": "Jakie wymiary ma karta?",
+  "/instagramProductFAQs/5/answer": "100 × 100 mm, grubość 3 mm.",
+  "/instagramProductFAQs/6/question": "Ile kosztuje karta?",
+  "/instagramProductFAQs/6/answer": "Jedna NFC Instagram Card kosztuje 1 500 UAH, a dwie 2 600 UAH.",
+  "/instagramProductFAQs/7/question": "Jak przebiega zamówienie?",
+  "/instagramProductFAQs/7/answer": "Podajesz dane kontaktowe, liczbę kart i link do właściwego profilu na Instagramie. Sprawdzamy link, programujemy kartę i potwierdzamy szczegóły dostawy.",
+  "/instagramProductFAQs/8/question": "Jakie są warunki płatności i dostawy?",
+  "/instagramProductFAQs/8/answer": "Zaliczka 200 UAH jest wliczona w łączną cenę. Pozostałą kwotę płacisz po wysyłce i otrzymaniu numeru listu przewozowego. Dostawa przez Nova Poshta na terenie Ukrainy jest bezpłatna.",
+  "/instagramMedia/IG01/label": "Przód przy oknie",
+  "/instagramMedia/IG02/label": "Przód nad biurkiem",
+  "/instagramMedia/IG03/label": "Krawędź i grubość",
+  "/instagramMedia/IG04/label": "Tył i mocowanie",
+  "/instagramMedia/IG05/label": "Ilustracja promocyjna gotowego projektu",
+  "/instagramMedia/IG07/label": "Przód przy oknie",
+  "/instagramMedia/IG08/label": "Krawędź i grubość",
+  "/instagramMedia/IG09/label": "Profil na Instagramie na smartfonie"
+}

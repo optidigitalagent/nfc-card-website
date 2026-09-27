@@ -52,6 +52,12 @@ def authorize_synthetic_content(source, final_documents=True):
         lines = builder.read_text().splitlines()
         lines = ["function legalPage(route){return '<h1>Synthetic final policy fixture</h1><p>Only for isolated release regression tests.</p>';}" if line.startswith('function legalPage(') else line for line in lines]
         builder.write_text('\n'.join(lines).replace('Чернетка документа до погодження власником.', 'Synthetic final policy fixture.').replace('Draft document awaiting owner approval.', 'Synthetic final policy fixture.'))
+        # The test's synthetic legal page has an explicit Polish counterpart;
+        # the real Polish dictionary remains strict about missing source text.
+        polish = source / 'src/pl-shell.json'
+        translations = json.loads(polish.read_text())
+        translations['Synthetic final policy fixture.'] = 'Syntetyczny dokument wyłącznie do testów.'
+        polish.write_text(json.dumps(translations, ensure_ascii=False))
     approval = {'schemaVersion': 1, 'ownerAuthorizedIndexing': True, 'publicationInputsConfirmed': True,
                 'approvalReference': 'Synthetic test-only approval; never an owner authorization',
                 'reviewedContentSha256': content_hash(source)}
@@ -62,7 +68,7 @@ def test_https_preview_metadata_and_crawl_boundaries(source):
     result = build(source)
     assert result.returncode == 0, result.stderr
     pages = list((source / 'site').rglob('*.html'))
-    assert len(pages) == 36
+    assert len(pages) == 54
     for page in pages:
         soup = BeautifulSoup(page.read_text(), 'html.parser')
         assert soup.select_one('meta[name=robots]')['content'] == 'noindex,nofollow'
@@ -73,7 +79,7 @@ def test_https_preview_metadata_and_crawl_boundaries(source):
     assert (source / 'site/robots.txt').read_text() == 'User-agent: *\nDisallow: /\n'
     sitemap = BeautifulSoup((source / 'site/sitemap.xml').read_text(), 'xml')
     urls = [item.text for item in sitemap.find_all('loc')]
-    assert len(urls) == 24 and all(url.startswith(ORIGIN + '/') for url in urls)
+    assert len(urls) == 36 and all(url.startswith(ORIGIN + '/') for url in urls)
     assert all(not any(part in url for part in ('/order', '/contact', '/reviews/new', '/thank-you', '/privacy', '/terms', '/admin', '/api')) for url in urls)
     assert PublicationPolicy.from_build(source, SimpleNamespace(mode='production', origin=ORIGIN), {}).mode == PREVIEW
 
@@ -113,6 +119,7 @@ def test_indexable_build_and_runtime_allow_only_public_routes(source):
     for page in (source / 'site').rglob('*.html'):
         route = '/' + page.parent.relative_to(source / 'site').as_posix()
         if route == '/.': route = '/'
+        if route == '/pl': route = '/pl/'
         soup = BeautifulSoup(page.read_text(), 'html.parser')
         assert soup.select_one('meta[name=robots]')['content'] == ('index,follow' if route in PUBLIC_ROUTES else 'noindex,nofollow')
         assert policy.robots(route, 200, 'text/html') == ('index, follow' if route in PUBLIC_ROUTES else 'noindex, nofollow')

@@ -13,7 +13,8 @@ BASE_ROUTES = ('/', '/about', '/solutions', '/solutions/review-card',
                '/solutions/menu-card', '/menu-card', '/delivery-and-payment',
                '/warranty-and-returns', '/privacy', '/terms')
 PUBLIC_ROUTES = frozenset(p for route in BASE_ROUTES for p in
-                         (route, '/en' + (route if route != '/' else '')))
+                         (route, '/en' + (route if route != '/' else ''),
+                          '/pl' + (route if route != '/' else '/')))
 
 
 
@@ -66,7 +67,7 @@ class PublicationPolicy:
     def robots(self, request_path, status, mime):
         path = unquote(urlsplit(request_path).path)
         # Direct index.html aliases, malformed paths, errors and stateful routes stay noindex.
-        if path != '/':
+        if path not in ('/', '/pl/'):
             path = path.rstrip('/')
         if (self.mode == INDEXABLE and status == 200 and mime.startswith('text/html') and
                 path in self.indexable_routes):

@@ -106,7 +106,10 @@ def test_public_media_exact_allowlist_and_original_hashes():
                     (item['url'].startswith('/assets/media/review-3d/') and
                      item['product_id']=='nfc-review-card-3d' and
                      item['requirements_source']=='NFC_CARD_Review_3D_Website_Pack_v1 + NFC_CARD_REVIEW_3D_MEDIA_MANIFEST_v26' and
-                     item.get('managed_by')=='v26_review_3d_media_import'))
+                     item.get('managed_by')=='v26_review_3d_media_import') or
+                    (item['url']=='/assets/media/2026-09/review-card-video-3-pl.vtt' and
+                     item['requirements_source']=='v27 Polish localization of Owner media replacement 2026-09-15' and
+                     item['sha256']=='00b3a3278eb3b05e0e0563fbb719846909e87df199ff0fa70e00b618f31f1bfc'))
             assert item['provenance'] in {'user_provided_business_asset','verified_official_business_asset','ai_generated_original'}
 
 @pytest.mark.parametrize('prefix',['','/en'])

@@ -422,5 +422,217 @@
       "title": "About Antonov Digital and Artem Antonov | NFC CARD",
       "description": "Antonov Digital: Artem Antonov and a developer partner, more than 30 digital and AI projects and around 50 additional tests. Our story, principles and approach."
     }
+  },
+  "pl": {
+    "behind": {
+      "eyebrow": "KTO STOI ZA NFC CARD",
+      "title": "NFC CARD — projekt Antonov Digital prowadzony osobiście przez założyciela",
+      "paragraphs": [
+        "NFC CARD jest jednym z projektów Antonov Digital — ukraińskiej firmy cyfrowej tworzącej produkty, systemy AI, rozwiązania internetowe i automatyzacje.",
+        "W portfolio Antonov Digital jest ponad 30 projektów cyfrowych i AI oraz około 50 odrębnych testów i eksperymentów. Liczb tych nie należy sumować według kategorii, ponieważ część prac łączy tworzenie stron, AI i automatyzację.",
+        "Zespół tworzą obecnie Artem Antonov i współpracujący programista, który nie ujawnia swojej tożsamości. Artem osobiście prowadzi konsultacje, wyznacza kierunek projektu, koordynuje realizację i sprawdza wynik przed przekazaniem go klientowi."
+      ],
+      "link": "Historia założyciela i firmy"
+    },
+    "founder": {
+      "title": "Artem Antonov — założyciel i CEO Antonov Digital",
+      "paragraphs": [
+        "Artem dorastał w Zaporożu, a później przeprowadził się do Kijowa. Jego droga do branży cyfrowej zaczęła się jeszcze w szkole — od amerykańskiego YouTube'a i pomysłu na tworzenie filmów bez tradycyjnej ekipy zdjęciowej.",
+        "W 2023 roku podchodził do ChatGPT sceptycznie. We wrześniu 2025 roku, pracując nad treściami AI na YouTube, po raz pierwszy systematycznie zgłębił tworzenie promptów, narzędzia generatywne i możliwość budowania produktów w znacznie mniejszym zespole.",
+        "Potem przyszły tworzenie stron internetowych, pierwsza strona dla klienta, automatyzacje i własne produkty AI. Jednym z nich jest Mentium — platforma startupowa z nauczycielem AI do nauki angielskiego.",
+        "Obserwując rozwój AI w USA, Europie i Chinach, Artem dostrzegł różnicę między możliwościami technologii a jej praktycznym wykorzystaniem w wielu ukraińskich firmach. Firma Antonov Digital powstała, aby zmniejszać tę lukę: nie tylko mówić o AI, lecz zamieniać je w gotowe produkty, treści i działające systemy.",
+        "Dziś Artem odpowiada za rozwój Antonov Digital, konsultacje z klientami, definiowanie zadań, zarządzanie produktami i projektami, obszar AI, tworzenie stron oraz końcową kontrolę rezultatów."
+      ],
+      "education": "Uczył się w szkole, a następnie samodzielnie poznawał AI, marketing, ekonomię, tworzenie treści, programowanie i przedsiębiorczość. Ukończył jeden kurs dotyczący amerykańskiego YouTube'a; zawodowo rozwija się przez praktykę i własne projekty.",
+      "responsibilityTitle": "Osobista odpowiedzialność",
+      "responsibility": "Przed rozpoczęciem projektu Artem osobiście poznaje firmę klienta i przygotowuje wstępny pomysł. Podczas realizacji wyznacza kierunek, koordynuje pracę i pokazuje materiały pośrednie. Przed przekazaniem sprawdza, czy wynik odpowiada uzgodnionemu zadaniu, terminom, cenie i kryteriom jakości. Po zakończeniu pozostaje w kontakcie i interesuje się dalszym rozwojem projektu.",
+      "philosophy": [
+        "Antonov Digital to dla mnie firma, a prowadzenie firmy stało się częścią mojego życia. Interesuje mnie nie tylko wymiana czasu na wynagrodzenie, lecz tworzenie projektów, które rosną, rozwiązują problemy i przynoszą realną wartość.",
+        "Chcę pokazać, że można zacząć w każdym wieku. Zamiast czekać na idealny dyplom czy moment, warto się uczyć, brać odpowiedzialność i konsekwentnie budować to, w co się wierzy."
+      ],
+      "philosophyTitle": "Budować to, w co się wierzy",
+      "competenciesTitle": "Od wyzwania do działającego rozwiązania",
+      "competencies": [
+        {
+          "title": "Projektowanie i wdrażanie rozwiązań AI",
+          "body": "Przekształca wyzwanie biznesowe w działający proces lub produkt oparty na AI."
+        },
+        {
+          "title": "Tworzenie produktów i stron z pomocą AI",
+          "body": "Tworzy strony, interfejsy i produkty cyfrowe z wykorzystaniem AI."
+        },
+        {
+          "title": "Produkcja kreatywna AI i kierunek treści",
+          "body": "Opracowuje pomysły i nadzoruje tworzenie treści reklamowych."
+        },
+        {
+          "title": "Automatyzacja procesów z użyciem AI",
+          "body": "Projektuje boty, agentów i procesy automatyczne."
+        },
+        {
+          "title": "Zarządzanie produktem i projektem",
+          "body": "Określa zakres, koordynuje realizację i odpowiada za przekazanie rezultatu."
+        },
+        {
+          "title": "Doradztwo dla klientów i rozwój biznesu",
+          "body": "Wyjaśnia technologię bez zbędnego żargonu i proponuje pomysły możliwe do zastosowania."
+        }
+      ],
+      "timelineTitle": "Droga do branży cyfrowej",
+      "timeline": [
+        {
+          "title": "2023 — sceptycyzm",
+          "body": "W 2023 roku Artem podchodził do ChatGPT sceptycznie i nie uważał go za praktyczne narzędzie. Później własne doświadczenia całkowicie zmieniły jego zdanie."
+        },
+        {
+          "title": "Wrzesień 2025 — amerykański YouTube i pierwsza systematyczna praca z AI",
+          "body": "Artem zaczął poznawać sposoby tworzenia filmów na amerykański YouTube bez konieczności ciągłego występowania przed kamerą. Wtedy po raz pierwszy systematycznie pracował nad promptami i z narzędziami generatywnymi."
+        },
+        {
+          "title": "Październik 2025 — tworzenie stron",
+          "body": "Eksperymenty z AI doprowadziły go do stron internetowych, interfejsów i produktów cyfrowych."
+        },
+        {
+          "title": "Listopad 2025 — pierwszy projekt dla klienta",
+          "body": "Pierwszym rzeczywistym zleceniem była strona z menu dla restauracji."
+        },
+        {
+          "title": "2026 — własne produkty",
+          "body": "Jednym z pierwszych produktów AI był Mentium — platforma startupowa z nauczycielem AI do nauki angielskiego."
+        },
+        {
+          "title": "15 sierpnia 2026 — iADDS",
+          "body": "Odrębny obszar reklamowych i produktowych treści tworzonych z użyciem AI."
+        },
+        {
+          "title": "20 sierpnia 2026 — NFC CARD",
+          "body": "Odrębny produkt Antonov Digital dla lokalnych firm."
+        },
+        {
+          "title": "Dziś",
+          "body": "Antonov Digital rozwija iADDS, NFC CARD, Mentium, tworzenie stron, SEO, rozwiązania CRM, automatyzacje, osobistych agentów AI oraz usługi związane z Google Business Profile i Google Maps."
+        }
+      ],
+      "principlesTitle": "Zasady Antonov Digital",
+      "principles": [
+        {
+          "title": "Zaczynamy od rzeczywistego wyzwania firmy",
+          "body": "Najpierw ustalamy, co powinno się zmienić w firmie, a dopiero potem dobieramy technologię."
+        },
+        {
+          "title": "Proponujemy pomysły, nie tylko realizujemy instrukcje",
+          "body": "Klient może przyjść z wyzwaniem, bez gotowego rozwiązania technicznego. Analizujemy je, doradzamy i proponujemy własne podejście."
+        },
+        {
+          "title": "Nie przerzucamy trudności technicznych na klienta",
+          "body": "Wyjaśniamy rozwiązanie prostym językiem i bierzemy odpowiedzialność za wdrożenie."
+        },
+        {
+          "title": "Osobiście odpowiadamy za uzgodniony rezultat",
+          "body": "Ustalamy zakres prac, terminy, cenę i kryteria jakości, a przed przekazaniem sprawdzamy wynik."
+        },
+        {
+          "title": "Traktujemy projekt jak własny",
+          "body": "Nie widzimy w nim tylko listy zadań, lecz produkt, od którego zależy codzienna praca klienta."
+        },
+        {
+          "title": "Szukamy mocniejszego rozwiązania",
+          "body": "Najlepiej współpracuje nam się z klientami otwartymi na rozmowę, nowe pomysły i wspólne rozwijanie koncepcji."
+        }
+      ],
+      "hockey": {
+        "title": "Hokej, dyscyplina i odpowiedzialność zespołu",
+        "paragraphs": [
+          "Artem trenował hokej i grał w drużynie „Sokół”. W tym sporcie wynik zależy nie tylko od umiejętności zawodnika, lecz także od dyscypliny, szybkich decyzji i współpracy całego zespołu.",
+          "Tę samą zasadę przenosi do pracy: każda osoba powinna znać swoją odpowiedzialność, a wszystkie decyzje służyć wspólnemu rezultatowi."
+        ]
+      },
+      "water": {
+        "title": "Woda, ruch i ciekawość technologii",
+        "paragraphs": [
+          "Artem lubi wodę, łodzie, skutery wodne i nagrywanie kamerą GoPro. To dla niego połączenie ruchu, szybkości, techniki i możliwości zobaczenia codziennych rzeczy z innej perspektywy.",
+          "Ciekawość nowych form stopniowo zaprowadziła go od tworzenia filmów do AI, produktów cyfrowych i założenia Antonov Digital."
+        ]
+      }
+    },
+    "company": {
+      "title": "Ekosystem Antonov Digital",
+      "paragraphs": [
+        "Antonov Digital to ukraińska firma cyfrowa tworząca produkty, systemy AI, rozwiązania internetowe i automatyzacje dla firm.",
+        "Łączymy przedsiębiorcze myślenie, programowanie, projektowanie i nowoczesne technologie AI. Chcemy nie tylko wykonać specyfikację, lecz zrozumieć rzeczywistą potrzebę firmy, zaproponować lepsze rozwiązanie i doprowadzić je do gotowego rezultatu."
+      ],
+      "productParagraphs": [
+        "NFC CARD to produkt cyfrowy i fizyczny Antonov Digital dla lokalnych firm: karta NFC otwierająca formularz oceny i opinii dla właściwej lokalizacji firmy w Google.",
+        "Review Card ma gotowy projekt. Branded Review Card to indywidualny projekt z logo, kolorami, tekstem i uzgodnionym wezwaniem do działania. Pierwszy indywidualny projekt jest bezpłatny.",
+        "NFC CARD obejmuje osobne rozwiązania dla opinii Google, profilu na Instagramie i menu online."
+      ],
+      "items": [
+        {
+          "title": "NFC CARD",
+          "body": "Odrębny produkt cyfrowy i fizyczny Antonov Digital dla lokalnych firm."
+        },
+        {
+          "title": "iADDS",
+          "body": "Treści reklamowe i produktowe tworzone z pomocą AI oraz systemy służące do ich produkcji."
+        },
+        {
+          "title": "Mentium",
+          "body": "Platforma startupowa z nauczycielem AI do nauki angielskiego."
+        },
+        {
+          "title": "Tworzenie stron internetowych",
+          "body": "Projektowanie stron i interfejsów cyfrowych."
+        },
+        {
+          "title": "SEO",
+          "body": "Pozycjonowanie i poprawa widoczności firmy w wyszukiwarkach."
+        },
+        {
+          "title": "Rozwiązania CRM",
+          "body": "Konfiguracja narzędzi do obsługi klientów i zgłoszeń."
+        },
+        {
+          "title": "Automatyzacja",
+          "body": "Automatyzacja powtarzalnych procesów biznesowych."
+        },
+        {
+          "title": "Osobiści agenci AI",
+          "body": "Agenci AI dopasowani do konkretnych zadań."
+        },
+        {
+          "title": "Google Business Profile i Maps",
+          "body": "Tworzenie i konfiguracja profili firm oraz ich obecności w Google Maps."
+        }
+      ]
+    },
+    "why": {
+      "eyebrow": "PO CO NFC CARD",
+      "title": "Krótsza droga do szczerej opinii",
+      "paragraphs": [
+        "Zadowoleni klienci nie zawsze zostawiają opinię. Szukanie właściwego profilu firmy w Google i dodatkowe kroki mogą sprawić, że odkładają to na później.",
+        "NFC CARD pomaga poprosić o opinię we właściwym momencie: klient zbliża zgodny smartfon do karty i przechodzi do formularza oceny i opinii.",
+        "Google może poprosić o zalogowanie się. Karta nie wybiera oceny, nie pisze tekstu ani nie publikuje opinii za klienta."
+      ],
+      "missionLabel": "Misja",
+      "mission": "Ułatwić klientowi przejście od wdzięczności do samodzielnego napisania opinii.",
+      "visionLabel": "Nasze podejście",
+      "vision": "Technologia powinna wspierać prostą drogę klienta do formularza. Ocenę, treść i decyzję o publikacji podejmuje człowiek."
+    },
+    "formula": "Jedno zbliżenie telefonu → formularz opinii. Klient zawsze sam decyduje o ocenie, treści i publikacji.",
+    "labels": {
+      "home": "Strona główna",
+      "about": "O nas",
+      "founder": "HISTORIA ZAŁOŻYCIELA",
+      "current": "Aktualny produkt",
+      "sibling": "Inny projekt Antonov Digital",
+      "ctaTitle": "Wybierzmy kartę dla Twojej firmy",
+      "ctaBody": "Gotowy projekt lub indywidualna propozycja — pomożemy wybrać w rozmowie.",
+      "cta": "Wybierz kartę",
+      "contact": "Zadaj pytanie"
+    },
+    "metadata": {
+      "title": "Antonov Digital i założyciel Artem Antonov | NFC CARD",
+      "description": "Antonov Digital: Artem Antonov i współpracujący programista, ponad 30 projektów cyfrowych i AI oraz około 50 odrębnych testów. Historia, zasady i sposób pracy."
+    }
   }
 }

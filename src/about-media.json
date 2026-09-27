@@ -2,7 +2,8 @@
   "portrait": {
     "alt": {
       "uk": "Артем Антонов у кепці біля моря",
-      "en": "Artem Antonov wearing a cap by the sea"
+      "en": "Artem Antonov wearing a cap by the sea",
+      "pl": "Artem Antonov w czapce nad morzem"
     },
     "variants": [
       {
@@ -38,7 +39,8 @@
   "hockey-team": {
     "alt": {
       "uk": "Артем під час хокейного матчу поруч з іншим гравцем",
-      "en": "Artem in a hockey match alongside another player"
+      "en": "Artem in a hockey match alongside another player",
+      "pl": "Artem podczas meczu hokejowego obok innego zawodnika"
     },
     "variants": [
       {
@@ -74,7 +76,8 @@
   "hockey-puck": {
     "alt": {
       "uk": "Артем веде шайбу під час хокейного матчу",
-      "en": "Artem guiding the puck during a hockey match"
+      "en": "Artem guiding the puck during a hockey match",
+      "pl": "Artem prowadzi krążek podczas meczu hokejowego"
     },
     "variants": [
       {
@@ -110,7 +113,8 @@
   "urban": {
     "alt": {
       "uk": "Артем на міській прогулянці, кадр на повний зріст",
-      "en": "Full-length photograph of Artem at an urban event"
+      "en": "Full-length photograph of Artem at an urban event",
+      "pl": "Artem podczas spaceru po mieście, zdjęcie całej postaci"
     },
     "variants": [
       {
@@ -146,7 +150,8 @@
   "gopro": {
     "alt": {
       "uk": "Артем показує GoPro біля води",
-      "en": "Artem holding a GoPro by the water"
+      "en": "Artem holding a GoPro by the water",
+      "pl": "Artem z kamerą GoPro nad wodą"
     },
     "variants": [
       {
@@ -182,7 +187,8 @@
   "boat": {
     "alt": {
       "uk": "Артем на човні під відкритим небом",
-      "en": "Artem on a boat under the open sky"
+      "en": "Artem on a boat under the open sky",
+      "pl": "Artem na łodzi pod gołym niebem"
     },
     "variants": [
       {
@@ -218,7 +224,8 @@
   "jetski": {
     "alt": {
       "uk": "Артем на водному мотоциклі біля берега",
-      "en": "Artem on a jet ski near the shore"
+      "en": "Artem on a jet ski near the shore",
+      "pl": "Artem na skuterze wodnym przy brzegu"
     },
     "variants": [
       {

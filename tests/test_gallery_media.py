@@ -49,7 +49,8 @@ def test_manual_video_gallery_and_image_zoom(web, browser, width, prefix):
         modal.evaluate('(v)=>{v.muted=true;return v.play()}')
         page.wait_for_function("()=>document.querySelector('.lightbox-scroll video').currentTime>0")
         if index == 8:
-            assert modal.locator('track').count() == 2
+            assert modal.locator('track').count() == 3
+            assert modal.locator('track[srclang=pl]').count() == 1
             page.wait_for_function("()=>[...document.querySelector('.lightbox-scroll video').textTracks].some(t=>t.mode==='showing' && t.cues?.length===5)")
         modal.evaluate('(v)=>v.muted=false')
         page.keyboard.press('Escape')

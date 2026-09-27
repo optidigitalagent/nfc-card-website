@@ -59,7 +59,7 @@ def enrich(service,id):
 
 def test_migration_idempotent_and_zero_state(repo,service):
     repo.migrate();assert repo.ready();assert service.public_list()=={'items':[],'nextCursor':None}
-    with repo.transaction() as db:assert db.execute('SELECT COUNT(*) n FROM nfc_review_migrations').fetchone()['n']==3
+    with repo.transaction() as db:assert db.execute('SELECT COUNT(*) n FROM nfc_review_migrations').fetchone()['n']==4
 def test_durable_pending_notification_failure_and_retry(service):
     service.notifier.fail=True;p=submission();a=service.submit(p,image=photo());b=service.submit(p,image=photo())
     assert a['reference']==b['reference'] and b['duplicate'];assert service.notifier.attempts==1

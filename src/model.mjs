@@ -5,6 +5,7 @@ import {validateCommerce} from './commerce-contract.mjs';
 import verificationData from './verification.json' with { type: 'json' };
 import {instagram,instagramGlobalFAQs,instagramProductFAQs} from './instagram.mjs';
 import {validateInstagramContent} from './instagram-claims.mjs';
+import polishCopy from './pl-model.json' with { type: 'json' };
 
 // Source-backed bilingual content. Verification is resolved before rendering.
 export const pair = (uk, en) => ({ uk, en });
@@ -26,7 +27,8 @@ const source = {
     "defaultLocale": "uk",
     "locales": [
       "uk",
-      "en"
+      "en",
+      "pl"
     ],
     "origin": "http://127.0.0.1:8765",
     "publicationReady": false,
@@ -1468,7 +1470,7 @@ function substitute(value, timing, locale = 'uk') {
   if (typeof value === 'string') return value.replaceAll('{lead_time}', timing[locale]);
   if (Array.isArray(value)) return value.map(item => substitute(item, timing, locale));
   if (value && typeof value === 'object') {
-    return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, substitute(item, timing, key === 'uk' || key === 'en' ? key : locale)]));
+    return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, substitute(item, timing, key === 'uk' || key === 'en' || key === 'pl' ? key : locale)]));
   }
   return value;
 }
@@ -1524,6 +1526,28 @@ export function resolveContent(overrides = {}) {
     result.copy.process.items.en[3][0] = timing.en;
     result.faqs.find(f => f.id === 'lead-time').answer = timing;
   }
+  // Polish copy is a reviewed, explicit third locale. Missing entries fail closed
+  // instead of silently rendering Ukrainian or English on public Polish pages.
+  const faqIndex = new Map(source.faqs.map((faq, index) => [faq.id, index]));
+  const localize = (value, path = '') => {
+    if (!value || typeof value !== 'object') return;
+    if (Array.isArray(value)) {
+      value.forEach((item, index) => localize(item, path + '/' + (path === '/faqs' ? faqIndex.get(item.id) : index)));
+      return;
+    }
+    if (Object.hasOwn(value, 'uk') && Object.hasOwn(value, 'en')) {
+      if (!Object.hasOwn(polishCopy, path)) throw new Error('Missing Polish source copy: ' + path);
+      value.pl = structuredClone(polishCopy[path]);
+      if (path === '/copy/facts/facts' && !activeFlags.link_rewrite_verified) value.pl.splice(3, 1);
+      if (!activeFlags.lead_time_5_days_confirmed) {
+        if (path === '/leadTime' || path === '/config/production/duration/value' || path === '/faqs/7/answer') value.pl = 'Dokładny czas przygotowania potwierdzimy przed wpłatą zaliczki';
+        if (path === '/copy/process/items') value.pl[3][1] = 'Dokładny czas przygotowania potwierdzimy przed wpłatą zaliczki';
+      }
+      return;
+    }
+    for (const [key, item] of Object.entries(value)) localize(item, path + '/' + key);
+  };
+  localize(result);
   // Flags alone cannot manufacture a permissioned real case or missing media.
   result.caseTemplate.enabled = false;
   result.caseTemplate.public = false;
@@ -1554,9 +1578,10 @@ export function validateModel(model = resolved) {
   const walk = (value, path = 'content') => {
     if (value === undefined) throw new Error('Undefined content: ' + path);
     if (value && typeof value === 'object') {
-      if ('uk' in value || 'en' in value) {
-        if (!('uk' in value) || !('en' in value) || value.uk === '' || value.en === '') throw new Error('Missing translation: ' + path);
+      if ('uk' in value || 'en' in value || 'pl' in value) {
+        if (!('uk' in value) || !('en' in value) || !('pl' in value) || value.uk === '' || value.en === '' || value.pl === '') throw new Error('Missing translation: ' + path);
         if (/[\u0400-\u04ff]/u.test(JSON.stringify(value.en))) throw new Error('Cyrillic in English: ' + path);
+        if (/[\u0400-\u04ff]/u.test(JSON.stringify(value.pl))) throw new Error('Cyrillic in Polish: ' + path);
       }
       for (const [key, child] of Object.entries(value)) walk(child, path + '.' + key);
     }

@@ -31,7 +31,7 @@ def test_public_marketing_indexed_forms_enabled_after_mount_and_no_preview_badge
     data['publicLaunch']['reviewedContentSha256'] = content_hash(source)
     approval.write_text(json.dumps(data))
     site = build(source, NFC_PUBLICATION_MODE='PUBLIC', NFC_LEAD_ENDPOINT=ENDPOINT, NFC_TELEGRAM_ENABLED='true')
-    for relative in ['index.html', 'en/index.html', 'about/index.html', 'en/about/index.html',
+    for relative in ['index.html', 'en/index.html', 'pl/index.html', 'about/index.html', 'en/about/index.html', 'pl/about/index.html',
                      'solutions/review-card/index.html', 'solutions/branded-review-card/index.html',
                      'privacy/index.html', 'terms/index.html', 'warranty-and-returns/index.html']:
         soup = BeautifulSoup((site / relative).read_text(), 'html.parser')
@@ -44,7 +44,7 @@ def test_public_marketing_indexed_forms_enabled_after_mount_and_no_preview_badge
         assert soup.select_one('link[rel=canonical]')['href'].startswith(ORIGIN + BASE)
         for form in soup.select('.lead-form'):
             assert form['method'] == 'dialog' and form['action'] == ''
-    for locale in ['', 'en/']:
+    for locale in ['', 'en/', 'pl/']:
         privacy = BeautifulSoup((site / (locale + 'privacy/index.html')).read_text(), 'html.parser')
         assert 'Draft' not in privacy.get_text() and 'Чернетка' not in privacy.get_text()
         assert ('Artem Antonov' if locale else 'Артем Антонов') in privacy.get_text()
@@ -52,7 +52,7 @@ def test_public_marketing_indexed_forms_enabled_after_mount_and_no_preview_badge
     robots = (site / 'robots.txt').read_text()
     assert 'Disallow: /\n' not in robots
     assert 'Sitemap: ' + ORIGIN + BASE + '/sitemap.xml' in robots
-    assert len(BeautifulSoup((site / 'sitemap.xml').read_text(), 'xml').select('loc')) == 28
+    assert len(BeautifulSoup((site / 'sitemap.xml').read_text(), 'xml').select('loc')) == 42
     assert not (site / 'admin').exists()
     assert not (site / 'api').exists()
 

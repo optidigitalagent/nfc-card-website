@@ -14,9 +14,9 @@ export function menuLeadPayload(input,{basePath='',pathname}={}) {
   basePath=publicBasePath(basePath);
   const route=String(pathname||'').split(/[?#]/,1)[0].replace(/\/$/,'')||'/';
   const relative=route.slice(basePath.length);
-  if(!route.startsWith(basePath+'/')||!['/solutions/menu-card','/menu-card','/order','/contact','/en/solutions/menu-card','/en/menu-card','/en/order','/en/contact'].includes(relative))throw Error('invalid_source_page');
+  if(!route.startsWith(basePath+'/')||!['/solutions/menu-card','/menu-card','/order','/contact','/en/solutions/menu-card','/en/menu-card','/en/order','/en/contact','/pl/solutions/menu-card','/pl/menu-card','/pl/order','/pl/contact'].includes(relative))throw Error('invalid_source_page');
   const name=cleanText(input.name,100),comment=cleanText(input.comment||'',1000,true),phone=String(input.phone||'').trim();
-  if(!name||!['uk','en'].includes(input.locale)||!/^\+?[\d ()-]+$/.test(phone)||phone.replace(/\D/g,'').length<7||phone.replace(/\D/g,'').length>15||!methods.has(input.messenger)||input.consent!==true||input.website)throw Error('invalid_fields');
+  if(!name||!['uk','en','pl'].includes(input.locale)||!/^\+?[\d ()-]+$/.test(phone)||phone.replace(/\D/g,'').length<7||phone.replace(/\D/g,'').length>15||!methods.has(input.messenger)||input.consent!==true||input.website)throw Error('invalid_fields');
   if(!['existing','needs_development'].includes(input.menu_status)||!['card_order','menu_consultation'].includes(input.intent))throw Error('invalid_menu_status');
   const consult=input.intent==='menu_consultation';
   if(consult&&input.menu_status!=='needs_development')throw Error('invalid_menu_status');
@@ -37,12 +37,12 @@ const safeStorage={get(key){try{return sessionStorage.getItem(key)}catch{return 
 export function mountMenuForm(form,{endpoint='',basePath='',locale='uk',pathname=location.pathname}={}) {
   if(form.dataset.menuMounted==='true')return;
   form.dataset.menuMounted='true';
-  const uk=locale==='uk',P=(ua,en)=>uk?ua:en;
+  const uk=locale==='uk',P=(ua,en)=>locale==='pl'?window.nfcTranslate(locale,ua,en):uk?ua:en;
   const q=name=>form.elements.namedItem(name),rowsBox=form.querySelector('[data-menu-rows]'),config=form.querySelector('[data-menu-configuration]');
   const submit=form.querySelector('[type=submit]'),result=form.querySelector('.form-result'),summary=form.querySelector('.error-summary');
   const note=form.querySelector('.pending-notice'),notice=form.querySelector('.preview-notice'),newRequest=form.querySelector('[data-menu-new-request]');
   const configKey='nfc-menu-v23-config',attemptKey='nfc-menu-v23-attempt:'+pathname;
-  const fmt=n=>(uk?'': 'UAH ')+new Intl.NumberFormat(uk?'uk-UA':'en-GB').format(n)+(uk?' грн':'');
+  const fmt=n=>locale==='pl'?new Intl.NumberFormat('pl-PL',{useGrouping:'always'}).format(n)+' UAH':(uk?'': 'UAH ')+new Intl.NumberFormat(uk?'uk-UA':'en-GB').format(n)+(uk?' грн':'');
   let busy=false,pending=null,key=crypto.randomUUID(),complete=false;
   const storedAttempt=(()=>{try{return JSON.parse(safeStorage.get(attemptKey)||'null')}catch{return null}})();
   if(storedAttempt&&uuid.test(storedAttempt.key)&&['uncertain','complete'].includes(storedAttempt.state))key=storedAttempt.key;
@@ -95,6 +95,11 @@ export function mountMenuForm(form,{endpoint='',basePath='',locale='uk',pathname
   function completeForm(leadId,previous=false){complete=true;submit.hidden=true;submit.disabled=true;note.hidden=true;show((previous?P('Попередню заявку вже збережено. Номер: ','Your previous enquiry was already saved. Reference: '):selected('menu-intent')==='menu_consultation'?P('Дякуємо! Запит на консультацію отримано. Номер: ','Thank you! Your consultation request has been received. Reference: '):P('Дякуємо! Заявку отримано. Номер: ','Thank you! Your request has been received. Reference: '))+leadId,previous?'existing':'success');safeStorage.set(attemptKey,JSON.stringify({key,state:'complete',leadId}));newRequest.hidden=false;}
   newRequest.addEventListener('click',()=>{pending=null;complete=false;key=crypto.randomUUID();safeStorage.remove(attemptKey);lock(false);applyExplicitChoice();update();submit.hidden=false;submit.disabled=!endpoint;result.hidden=true;summary.hidden=true;newRequest.hidden=true;q('name').focus();});
   update();
+  document.querySelectorAll('.locale-switch').forEach(link=>link.addEventListener('click',()=>{
+    if(form.closest('[hidden]'))return;
+    const intent=selected('menu-intent'),quantity=intent==='card_order'?rowValues().reduce((sum,item)=>sum+item.quantity,0):0;
+    link.href=window.nfcSwitchLocaleURL(link.href,{intent,menu_status:selected('menu-status'),quantity:quantity>0?String(quantity):''});
+  }));
   try{endpoint=leadEndpoint(endpoint);}catch{endpoint='';}
   if(!endpoint){submit.disabled=true;form.onsubmit=e=>e.preventDefault();notice.textContent=P('Локальний перегляд: форму можна заповнити, але заявки не надсилаються.','Local preview: you can configure the form, but enquiries are not sent.');}
   else{

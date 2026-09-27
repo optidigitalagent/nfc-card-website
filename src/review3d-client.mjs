@@ -8,7 +8,7 @@ function analytics(name,quantity){
   if(document.documentElement.dataset.publicationMode==='PUBLIC_PREVIEW')return;
   const allowed=new Set(['quantity_select','order_start','order_submit_success','order_submit_error']);
   if(!allowed.has(name))return;
-  const value={event:name,locale:document.documentElement.lang==='en'?'en':'uk',route:document.body.dataset.route,product_id:'nfc-review-card-3d'};
+  const value={event:name,locale:document.documentElement.lang,route:document.body.dataset.route,product_id:'nfc-review-card-3d'};
   if(/^[1-9]\d*$/.test(String(quantity))&&Number(quantity)<=10000)value.quantity=String(quantity);
   window.nfcAnalyticsEvents??=[];
   window.nfcAnalyticsEvents.push(value);
@@ -36,11 +36,11 @@ const clean=(value,max,multiline=false)=>{
 export function review3dLeadPayload(input,{basePath='',pathname}={}){
   basePath=publicBasePath(basePath);
   const route=String(pathname||'').split(/[?#]/,1)[0].replace(/\/$/,'')||'/';
-  if(!route.startsWith(basePath+'/')||!['/solutions/review-card-3d','/en/solutions/review-card-3d'].includes(route.slice(basePath.length)))throw Error('invalid_source_page');
+  if(!route.startsWith(basePath+'/')||!['/solutions/review-card-3d','/en/solutions/review-card-3d','/pl/solutions/review-card-3d'].includes(route.slice(basePath.length)))throw Error('invalid_source_page');
   const name=clean(input.name,100),comment=clean(input.comment||'',1000,true),phone=String(input.phone||'').trim();
   const quantity=Number(input.quantity);
   if(!/^[1-9]\d*$/.test(String(input.quantity))||!Number.isSafeInteger(quantity)||quantity>10000||
-    !name||!['uk','en'].includes(input.locale)||!/^\+?[\d ()-]+$/.test(phone)||
+    !name||!['uk','en','pl'].includes(input.locale)||!/^\+?[\d ()-]+$/.test(phone)||
     phone.replace(/\D/g,'').length<7||phone.replace(/\D/g,'').length>15||
     !methods.has(input.messenger)||input.consent!==true||input.website)throw Error('invalid_fields');
   const google=input.google_location_url?googleLocationURL(input.google_location_url):null;
@@ -57,11 +57,11 @@ const safe={get(key){try{return sessionStorage.getItem(key)}catch{return null}},
 export async function mountReview3dForm(form,{endpoint='',basePath='',locale='uk',pathname=location.pathname,commerce,send=submitLead}={}){
   if(form.dataset.review3dMounted==='true')return;
   form.dataset.review3dMounted='true';
-  const P=(ua,en)=>locale==='uk'?ua:en,q=name=>form.elements.namedItem(name),submit=form.querySelector('[type=submit]'),result=form.querySelector('.form-result'),summary=form.querySelector('.error-summary'),note=form.querySelector('.pending-notice'),notice=form.querySelector('.review3d-notice'),newRequest=form.querySelector('[data-review3d-new-request]');
+  const P=(ua,en)=>locale==='pl'?window.nfcTranslate(locale,ua,en):locale==='uk'?ua:en,q=name=>form.elements.namedItem(name),submit=form.querySelector('[type=submit]'),result=form.querySelector('.form-result'),summary=form.querySelector('.error-summary'),note=form.querySelector('.pending-notice'),notice=form.querySelector('.review3d-notice'),newRequest=form.querySelector('[data-review3d-new-request]');
   const keyName='nfc-review3d-v26-attempt:'+pathname;
   let stored;try{stored=JSON.parse(safe.get(keyName)||'null')}catch{}
   let key=uuid.test(stored?.key||'')?stored.key:crypto.randomUUID(),pending=null,busy=false,complete=false;
-  const money=n=>(locale==='uk'?'':'UAH ')+new Intl.NumberFormat(locale==='uk'?'uk-UA':'en-GB').format(n)+(locale==='uk'?' грн':'');
+  const money=n=>locale==='pl'?new Intl.NumberFormat('pl-PL',{useGrouping:'always'}).format(n)+' UAH':(locale==='uk'?'':'UAH ')+new Intl.NumberFormat(locale==='uk'?'uk-UA':'en-GB').format(n)+(locale==='uk'?' грн':'');
   const save=(state,leadId)=>safe.set(keyName,JSON.stringify({key,state,...(leadId?{leadId}:{})}));
   const show=(message,state)=>{summary.textContent=message;summary.hidden=false;result.textContent=message;result.dataset.status=state;result.hidden=false;result.focus();};
   const update=()=>{const raw=q('quantity').value,valid=/^[1-9]\d*$/.test(raw),quote=review3dQuote(commerce,valid?Number(raw):NaN);for(const [label,value]of [['total',quote.amount],['deposit',quote.deposit],['balance',quote.balance]])form.querySelector(`[data-review3d-${label}]`).textContent=quote.valid?money(value):'—';return quote;};
@@ -72,6 +72,9 @@ export async function mountReview3dForm(form,{endpoint='',basePath='',locale='uk
   q('quantity').addEventListener('change',()=>analytics('quantity_select',q('quantity').value));
   const query=new URLSearchParams(location.search).get('quantity');if(query&&/^[1-9]\d*$/.test(query)&&Number(query)<=10000)q('quantity').value=query;
   update();
+  document.querySelectorAll('.locale-switch').forEach(link=>link.addEventListener('click',()=>{
+    link.href=window.nfcSwitchLocaleURL(link.href,{quantity:q('quantity').value});
+  }));
   newRequest.onclick=()=>{if(busy)return;pending=null;stored=null;complete=false;key=crypto.randomUUID();safe.remove(keyName);lock(false);submit.hidden=false;submit.disabled=!endpoint;result.hidden=true;summary.hidden=true;newRequest.hidden=true;q('name').focus();};
   try{endpoint=leadEndpoint(endpoint)}catch{endpoint=''}
   if(!endpoint){notice.textContent=unavailable(locale);submit.disabled=true;form.onsubmit=e=>e.preventDefault();return;}

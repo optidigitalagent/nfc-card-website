@@ -5,7 +5,7 @@ export {aboutContent};
 
 /** All biography and approved derivatives come from the v13 pinned source. */
 export function aboutPage({locale,esc,url,finalCTA}) {
-  if (!['uk','en'].includes(locale)) throw new Error('Unsupported About locale');
+  if (!['uk','en','pl'].includes(locale)) throw new Error('Unsupported About locale');
   const c=aboutContent[locale],f=c.founder,l=c.labels;
   const paragraphs=items=>items.map(p=>`<p>${esc(p)}</p>`).join('');
   const section=(id,title,body,cls='')=>`<section class="section about-chapter ${cls}" id="${id}" aria-labelledby="${id}-title"><h2 id="${id}-title">${esc(title)}</h2>${body}</section>`;
@@ -20,7 +20,7 @@ export function aboutPage({locale,esc,url,finalCTA}) {
   const fallbackCTA=`<section class="section final-conversion" aria-labelledby="about-cta-title"><div><h2 id="about-cta-title">${esc(ending.heading)}</h2><p>${esc(ending.body)}</p></div><div class="about-actions"><a class="button" href="${esc(ending.primaryHref)}">${esc(ending.primaryLabel)}</a><a class="text-action" href="${esc(ending.secondaryHref)}">${esc(ending.secondaryLabel)}</a></div></section>`;
   return `<div class="about-page">
     <section class="about-intro" aria-labelledby="about-title"><div class="section">
-      <nav class="breadcrumbs" aria-label="${locale==='uk'?'Навігаційний шлях':'Breadcrumb'}"><a href="${esc(url('/'))}">${esc(l.home)}</a><span aria-hidden="true">/</span><span aria-current="page">${esc(l.about)}</span></nav>
+      <nav class="breadcrumbs" aria-label="${locale==='uk'?'Навігаційний шлях':locale==='pl'?'Ścieżka nawigacyjna':'Breadcrumb'}"><a href="${esc(url('/'))}">${esc(l.home)}</a><span aria-hidden="true">/</span><span aria-current="page">${esc(l.about)}</span></nav>
       <p class="eyebrow">${esc(c.behind.eyebrow)}</p><h1 id="about-title">${esc(c.behind.title)}</h1>
       <div class="about-intro-copy">${paragraphs(c.behind.paragraphs)}</div>
       <a class="about-story-link" href="#about-founder-story">${esc(c.behind.link)} <span aria-hidden="true">↓</span></a>

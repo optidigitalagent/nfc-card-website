@@ -132,7 +132,7 @@ def test_commerce_gallery_keyboard_sticky_price_and_retry_isolation(web,browser)
     page.locator('#product-details summary').first.click();page.locator('.product-detail').last.scroll_into_view_if_needed();expect(page.locator('[data-commerce-sticky]')).to_be_visible();capture(page,'uk-sticky-details-390')
     page.locator('#f-name').focus();expect(page.locator('[data-commerce-sticky]')).not_to_be_visible()
     page.locator('#purchase-quantity').select_option('more');expect(page.locator('#f-quantity')).to_have_value('more');assert not any(c.isdigit() for c in page.locator('[data-current-price]').inner_text())
-    page.locator('#purchase-quantity').select_option('2');page.locator('.locale-switch').click();page.wait_for_url('**/en/solutions/review-card?**');ready(page);expect(page.locator('#f-quantity')).to_have_value('2');assert 'synthetic' in page.url
+    page.locator('#purchase-quantity').select_option('2');page.locator('.header-actions .locale-switch[lang="en"]').click();page.wait_for_url('**/en/solutions/review-card?**');ready(page);expect(page.locator('#f-quantity')).to_have_value('2');assert 'quantity=2' in page.url and 'utm_campaign' not in page.url
     fill_order(page)
     # Deliver to the local service, then drop the browser response: the durable record exists.
     def lose_response(route):route.fetch();route.abort()

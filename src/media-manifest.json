@@ -16,7 +16,9 @@
     "url": "/assets/media/v9/nfc-card-logo-primary.svg",
     "provenance": "user_provided_business_asset",
     "claim_role": "brand",
-    "requirements_source": "v11"
+    "requirements_source": "v11",
+    "alt_pl": "",
+    "caption_pl": ""
   },
   {
     "path": "brand/logo/nfc-card-logo-reversed.svg",
@@ -35,7 +37,9 @@
     "url": "/assets/media/v9/nfc-card-logo-reversed.svg",
     "provenance": "user_provided_business_asset",
     "claim_role": "brand",
-    "requirements_source": "v11"
+    "requirements_source": "v11",
+    "alt_pl": "",
+    "caption_pl": ""
   },
   {
     "path": "brand/logo/nfc-card-mark.svg",
@@ -54,7 +58,9 @@
     "url": "/assets/media/v9/nfc-card-mark.svg",
     "provenance": "user_provided_business_asset",
     "claim_role": "brand",
-    "requirements_source": "v11"
+    "requirements_source": "v11",
+    "alt_pl": "",
+    "caption_pl": ""
   },
   {
     "path": "brand/logo/nfc-card-favicon.svg",
@@ -73,7 +79,9 @@
     "url": "/assets/media/v9/nfc-card-favicon.svg",
     "provenance": "user_provided_business_asset",
     "claim_role": "brand",
-    "requirements_source": "v11"
+    "requirements_source": "v11",
+    "alt_pl": "",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/public/01-review-card-design-render.webp",
@@ -103,7 +111,9 @@
         "url": "/assets/media/v13/01-review-card-design-render-800.webp",
         "width": 800
       }
-    ]
+    ],
+    "alt_pl": "Gotowy wzór NFC Review Card do opinii Google",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/public/02-review-card-real-front.webp",
@@ -133,7 +143,9 @@
         "url": "/assets/media/v13/02-review-card-real-front-800.webp",
         "width": 800
       }
-    ]
+    ],
+    "alt_pl": "Prawdziwa NFC Review Card widziana od przodu",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/public/03-review-card-real-in-hand.webp",
@@ -163,7 +175,9 @@
         "url": "/assets/media/v13/03-review-card-real-in-hand-800.webp",
         "width": 800
       }
-    ]
+    ],
+    "alt_pl": "NFC Review Card o wymiarach 10 × 10 cm trzymana w dłoni",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/public/04-review-card-real-back.webp",
@@ -193,7 +207,9 @@
         "url": "/assets/media/v13/04-review-card-real-back-800.webp",
         "width": 800
       }
-    ]
+    ],
+    "alt_pl": "Tył prawdziwej NFC Review Card",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/public/05-promo-direct-review-form.webp",
@@ -223,7 +239,9 @@
         "url": "/assets/media/v13/05-promo-direct-review-form-800.webp",
         "width": 800
       }
-    ]
+    ],
+    "alt_pl": "Karta NFC obok smartfona z otwartym formularzem opinii Google",
+    "caption_pl": ""
   },
   {
     "path": "media/founder/artem-antonov-founder-photo.webp",
@@ -242,7 +260,9 @@
     "url": "/assets/media/v9/artem-antonov-founder-photo.webp",
     "provenance": "user_provided_business_asset",
     "claim_role": "founder_portrait",
-    "requirements_source": "v11"
+    "requirements_source": "v11",
+    "alt_pl": "Artem Antonov, założyciel NFC CARD i Antonov Digital",
+    "caption_pl": ""
   },
   {
     "path": "media/story/austria-story-01-muted.mp4",
@@ -261,7 +281,9 @@
     "url": "/assets/media/v9/austria-story-01-muted.mp4",
     "provenance": "user_provided_business_asset",
     "claim_role": "founder_atmosphere",
-    "requirements_source": "v11"
+    "requirements_source": "v11",
+    "alt_pl": "",
+    "caption_pl": ""
   },
   {
     "path": "media/story/austria-story-02-muted.mp4",
@@ -280,7 +302,9 @@
     "url": "/assets/media/v9/austria-story-02-muted.mp4",
     "provenance": "user_provided_business_asset",
     "claim_role": "founder_atmosphere",
-    "requirements_source": "v11"
+    "requirements_source": "v11",
+    "alt_pl": "",
+    "caption_pl": ""
   },
   {
     "path": "media/posters/austria-story-01-poster.jpg",
@@ -299,7 +323,9 @@
     "url": "/assets/media/v9/austria-story-01-poster.jpg",
     "provenance": "user_provided_business_asset",
     "claim_role": "founder_atmosphere",
-    "requirements_source": "v11"
+    "requirements_source": "v11",
+    "alt_pl": "",
+    "caption_pl": ""
   },
   {
     "path": "media/posters/austria-story-02-poster.jpg",
@@ -318,7 +344,9 @@
     "url": "/assets/media/v9/austria-story-02-poster.jpg",
     "provenance": "user_provided_business_asset",
     "claim_role": "founder_atmosphere",
-    "requirements_source": "v11"
+    "requirements_source": "v11",
+    "alt_pl": "",
+    "caption_pl": ""
   },
   {
     "source": "src/media/v11/branded-review-card-neutral-placeholder.svg",
@@ -332,7 +360,9 @@
     "alt_en": "Branded Review Card personalisation example — your design is agreed individually",
     "sha256": "71c198633486c4a9fddebb6e9e7f9ad6fd0cedb94bb803d59f95338f568ac6d5",
     "provenance": "user_provided_business_asset",
-    "claim_role": "neutral_personalisation_example"
+    "claim_role": "neutral_personalisation_example",
+    "alt_pl": "Przykład indywidualnego projektu Branded Review Card — Twój wzór uzgodnimy osobno",
+    "caption_pl": ""
   },
   {
     "path": "v13/01-review-card-design-render-160.webp",
@@ -353,7 +383,9 @@
     "claim_role": "product_design_render",
     "requirements_source": "v13",
     "derivative_of": "/assets/media/v9/01-review-card-design-render.webp",
-    "transform": "Aspect-preserving downsample; no crop"
+    "transform": "Aspect-preserving downsample; no crop",
+    "alt_pl": "Gotowy wzór NFC Review Card do opinii Google",
+    "caption_pl": ""
   },
   {
     "path": "v13/01-review-card-design-render-480.webp",
@@ -375,7 +407,9 @@
     "requirements_source": "v13",
     "thumbnail_url": "/assets/media/v13/01-review-card-design-render-160.webp",
     "derivative_of": "/assets/media/v9/01-review-card-design-render.webp",
-    "transform": "Aspect-preserving downsample; no crop"
+    "transform": "Aspect-preserving downsample; no crop",
+    "alt_pl": "Gotowy wzór NFC Review Card do opinii Google",
+    "caption_pl": ""
   },
   {
     "path": "v13/01-review-card-design-render-800.webp",
@@ -397,7 +431,9 @@
     "requirements_source": "v13",
     "thumbnail_url": "/assets/media/v13/01-review-card-design-render-160.webp",
     "derivative_of": "/assets/media/v9/01-review-card-design-render.webp",
-    "transform": "Aspect-preserving downsample; no crop"
+    "transform": "Aspect-preserving downsample; no crop",
+    "alt_pl": "Gotowy wzór NFC Review Card do opinii Google",
+    "caption_pl": ""
   },
   {
     "path": "v13/02-review-card-real-front-160.webp",
@@ -418,7 +454,9 @@
     "claim_role": "actual_standard_product",
     "requirements_source": "v13",
     "derivative_of": "/assets/media/v9/02-review-card-real-front.webp",
-    "transform": "Aspect-preserving downsample; no crop"
+    "transform": "Aspect-preserving downsample; no crop",
+    "alt_pl": "Prawdziwa NFC Review Card widziana od przodu",
+    "caption_pl": ""
   },
   {
     "path": "v13/02-review-card-real-front-480.webp",
@@ -440,7 +478,9 @@
     "requirements_source": "v13",
     "thumbnail_url": "/assets/media/v13/02-review-card-real-front-160.webp",
     "derivative_of": "/assets/media/v9/02-review-card-real-front.webp",
-    "transform": "Aspect-preserving downsample; no crop"
+    "transform": "Aspect-preserving downsample; no crop",
+    "alt_pl": "Prawdziwa NFC Review Card widziana od przodu",
+    "caption_pl": ""
   },
   {
     "path": "v13/02-review-card-real-front-800.webp",
@@ -462,7 +502,9 @@
     "requirements_source": "v13",
     "thumbnail_url": "/assets/media/v13/02-review-card-real-front-160.webp",
     "derivative_of": "/assets/media/v9/02-review-card-real-front.webp",
-    "transform": "Aspect-preserving downsample; no crop"
+    "transform": "Aspect-preserving downsample; no crop",
+    "alt_pl": "Prawdziwa NFC Review Card widziana od przodu",
+    "caption_pl": ""
   },
   {
     "path": "v13/03-review-card-real-in-hand-160.webp",
@@ -483,7 +525,9 @@
     "claim_role": "actual_standard_product",
     "requirements_source": "v13",
     "derivative_of": "/assets/media/v9/03-review-card-real-in-hand.webp",
-    "transform": "Aspect-preserving downsample; no crop"
+    "transform": "Aspect-preserving downsample; no crop",
+    "alt_pl": "NFC Review Card o wymiarach 10 × 10 cm trzymana w dłoni",
+    "caption_pl": ""
   },
   {
     "path": "v13/03-review-card-real-in-hand-480.webp",
@@ -505,7 +549,9 @@
     "requirements_source": "v13",
     "thumbnail_url": "/assets/media/v13/03-review-card-real-in-hand-160.webp",
     "derivative_of": "/assets/media/v9/03-review-card-real-in-hand.webp",
-    "transform": "Aspect-preserving downsample; no crop"
+    "transform": "Aspect-preserving downsample; no crop",
+    "alt_pl": "NFC Review Card o wymiarach 10 × 10 cm trzymana w dłoni",
+    "caption_pl": ""
   },
   {
     "path": "v13/03-review-card-real-in-hand-800.webp",
@@ -527,7 +573,9 @@
     "requirements_source": "v13",
     "thumbnail_url": "/assets/media/v13/03-review-card-real-in-hand-160.webp",
     "derivative_of": "/assets/media/v9/03-review-card-real-in-hand.webp",
-    "transform": "Aspect-preserving downsample; no crop"
+    "transform": "Aspect-preserving downsample; no crop",
+    "alt_pl": "NFC Review Card o wymiarach 10 × 10 cm trzymana w dłoni",
+    "caption_pl": ""
   },
   {
     "path": "v13/04-review-card-real-back-160.webp",
@@ -548,7 +596,9 @@
     "claim_role": "actual_standard_product",
     "requirements_source": "v13",
     "derivative_of": "/assets/media/v9/04-review-card-real-back.webp",
-    "transform": "Aspect-preserving downsample; no crop"
+    "transform": "Aspect-preserving downsample; no crop",
+    "alt_pl": "Tył prawdziwej NFC Review Card",
+    "caption_pl": ""
   },
   {
     "path": "v13/04-review-card-real-back-480.webp",
@@ -570,7 +620,9 @@
     "requirements_source": "v13",
     "thumbnail_url": "/assets/media/v13/04-review-card-real-back-160.webp",
     "derivative_of": "/assets/media/v9/04-review-card-real-back.webp",
-    "transform": "Aspect-preserving downsample; no crop"
+    "transform": "Aspect-preserving downsample; no crop",
+    "alt_pl": "Tył prawdziwej NFC Review Card",
+    "caption_pl": ""
   },
   {
     "path": "v13/04-review-card-real-back-800.webp",
@@ -592,7 +644,9 @@
     "requirements_source": "v13",
     "thumbnail_url": "/assets/media/v13/04-review-card-real-back-160.webp",
     "derivative_of": "/assets/media/v9/04-review-card-real-back.webp",
-    "transform": "Aspect-preserving downsample; no crop"
+    "transform": "Aspect-preserving downsample; no crop",
+    "alt_pl": "Tył prawdziwej NFC Review Card",
+    "caption_pl": ""
   },
   {
     "path": "v13/05-promo-direct-review-form-160.webp",
@@ -613,7 +667,9 @@
     "claim_role": "educational_illustration",
     "requirements_source": "v13",
     "derivative_of": "/assets/media/v9/05-promo-direct-review-form.webp",
-    "transform": "Aspect-preserving downsample; no crop"
+    "transform": "Aspect-preserving downsample; no crop",
+    "alt_pl": "Karta NFC obok smartfona z otwartym formularzem opinii Google",
+    "caption_pl": ""
   },
   {
     "path": "v13/05-promo-direct-review-form-480.webp",
@@ -635,7 +691,9 @@
     "requirements_source": "v13",
     "thumbnail_url": "/assets/media/v13/05-promo-direct-review-form-160.webp",
     "derivative_of": "/assets/media/v9/05-promo-direct-review-form.webp",
-    "transform": "Aspect-preserving downsample; no crop"
+    "transform": "Aspect-preserving downsample; no crop",
+    "alt_pl": "Karta NFC obok smartfona z otwartym formularzem opinii Google",
+    "caption_pl": ""
   },
   {
     "path": "v13/05-promo-direct-review-form-800.webp",
@@ -657,7 +715,9 @@
     "requirements_source": "v13",
     "thumbnail_url": "/assets/media/v13/05-promo-direct-review-form-160.webp",
     "derivative_of": "/assets/media/v9/05-promo-direct-review-form.webp",
-    "transform": "Aspect-preserving downsample; no crop"
+    "transform": "Aspect-preserving downsample; no crop",
+    "alt_pl": "Karta NFC obok smartfona z otwartym formularzem opinii Google",
+    "caption_pl": ""
   },
   {
     "source": "src/media/v13/branded-catalog.svg",
@@ -674,13 +734,15 @@
     "claim_role": "neutral_personalisation_example",
     "bytes": 2765,
     "derivative_of": "/assets/media/v11/branded-review-card-neutral-placeholder.svg",
-    "transform": "Trim outer canvas only: viewBox 220 20 1160 940; all product edges, text and shadow retained"
+    "transform": "Trim outer canvas only: viewBox 220 20 1160 940; all product edges, text and shadow retained",
+    "alt_pl": "Przykład indywidualnego projektu Branded Review Card — Twój wzór uzgodnimy osobno",
+    "caption_pl": ""
   },
   {
     "path": "founder/portrait-desktop.avif",
     "status": "public",
     "role": "About introduction only",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем Антонов у кепці біля моря",
     "alt_en": "Artem Antonov wearing a cap by the sea",
     "notes": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
@@ -706,13 +768,15 @@
       "width": 680,
       "height": 986
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem Antonov w czapce nad morzem",
+    "caption_pl": ""
   },
   {
     "path": "founder/portrait-desktop.webp",
     "status": "public",
     "role": "About introduction only",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем Антонов у кепці біля моря",
     "alt_en": "Artem Antonov wearing a cap by the sea",
     "notes": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
@@ -738,13 +802,15 @@
       "width": 680,
       "height": 986
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem Antonov w czapce nad morzem",
+    "caption_pl": ""
   },
   {
     "path": "founder/portrait-mobile.avif",
     "status": "public",
     "role": "About introduction only",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем Антонов у кепці біля моря",
     "alt_en": "Artem Antonov wearing a cap by the sea",
     "notes": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
@@ -770,13 +836,15 @@
       "width": 694,
       "height": 998
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem Antonov w czapce nad morzem",
+    "caption_pl": ""
   },
   {
     "path": "founder/portrait-mobile.webp",
     "status": "public",
     "role": "About introduction only",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем Антонов у кепці біля моря",
     "alt_en": "Artem Antonov wearing a cap by the sea",
     "notes": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
@@ -802,13 +870,15 @@
       "width": 694,
       "height": 998
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem Antonov w czapce nad morzem",
+    "caption_pl": ""
   },
   {
     "path": "founder/hockey-team-desktop.avif",
     "status": "public",
     "role": "About hockey — teamwork",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем під час хокейного матчу поруч з іншим гравцем",
     "alt_en": "Artem in a hockey match alongside another player",
     "notes": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
@@ -834,13 +904,15 @@
       "width": 1075,
       "height": 711
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem podczas meczu hokejowego obok innego zawodnika",
+    "caption_pl": ""
   },
   {
     "path": "founder/hockey-team-desktop.webp",
     "status": "public",
     "role": "About hockey — teamwork",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем під час хокейного матчу поруч з іншим гравцем",
     "alt_en": "Artem in a hockey match alongside another player",
     "notes": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
@@ -866,13 +938,15 @@
       "width": 1075,
       "height": 711
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem podczas meczu hokejowego obok innego zawodnika",
+    "caption_pl": ""
   },
   {
     "path": "founder/hockey-team-mobile.avif",
     "status": "public",
     "role": "About hockey — teamwork",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем під час хокейного матчу поруч з іншим гравцем",
     "alt_en": "Artem in a hockey match alongside another player",
     "notes": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
@@ -898,13 +972,15 @@
       "width": 832,
       "height": 788
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem podczas meczu hokejowego obok innego zawodnika",
+    "caption_pl": ""
   },
   {
     "path": "founder/hockey-team-mobile.webp",
     "status": "public",
     "role": "About hockey — teamwork",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем під час хокейного матчу поруч з іншим гравцем",
     "alt_en": "Artem in a hockey match alongside another player",
     "notes": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
@@ -930,13 +1006,15 @@
       "width": 832,
       "height": 788
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem podczas meczu hokejowego obok innego zawodnika",
+    "caption_pl": ""
   },
   {
     "path": "founder/hockey-puck-desktop.avif",
     "status": "public",
     "role": "About hockey — concentration",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем веде шайбу під час хокейного матчу",
     "alt_en": "Artem guiding the puck during a hockey match",
     "notes": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
@@ -962,13 +1040,15 @@
       "width": 896,
       "height": 758
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem prowadzi krążek podczas meczu hokejowego",
+    "caption_pl": ""
   },
   {
     "path": "founder/hockey-puck-desktop.webp",
     "status": "public",
     "role": "About hockey — concentration",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем веде шайбу під час хокейного матчу",
     "alt_en": "Artem guiding the puck during a hockey match",
     "notes": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
@@ -994,13 +1074,15 @@
       "width": 896,
       "height": 758
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem prowadzi krążek podczas meczu hokejowego",
+    "caption_pl": ""
   },
   {
     "path": "founder/hockey-puck-mobile.avif",
     "status": "public",
     "role": "About hockey — concentration",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем веде шайбу під час хокейного матчу",
     "alt_en": "Artem guiding the puck during a hockey match",
     "notes": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
@@ -1026,13 +1108,15 @@
       "width": 781,
       "height": 775
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem prowadzi krążek podczas meczu hokejowego",
+    "caption_pl": ""
   },
   {
     "path": "founder/hockey-puck-mobile.webp",
     "status": "public",
     "role": "About hockey — concentration",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем веде шайбу під час хокейного матчу",
     "alt_en": "Artem guiding the puck during a hockey match",
     "notes": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
@@ -1058,13 +1142,15 @@
       "width": 781,
       "height": 775
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem prowadzi krążek podczas meczu hokejowego",
+    "caption_pl": ""
   },
   {
     "path": "founder/urban-desktop.avif",
     "status": "public",
     "role": "About philosophy transition — contained full figure, maximum 300px wide",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем на міській прогулянці, кадр на повний зріст",
     "alt_en": "Full-length photograph of Artem at an urban event",
     "notes": "Final override: contained full image in a small 300px editorial frame preserves full figure. No weapon-related copy, emphasis or aggressive cover crop. Public derivative is resized and metadata-stripped.",
@@ -1090,13 +1176,15 @@
       "width": 960,
       "height": 1280
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem podczas spaceru po mieście, sylwetka w całości",
+    "caption_pl": ""
   },
   {
     "path": "founder/urban-desktop.webp",
     "status": "public",
     "role": "About philosophy transition — contained full figure, maximum 300px wide",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем на міській прогулянці, кадр на повний зріст",
     "alt_en": "Full-length photograph of Artem at an urban event",
     "notes": "Final override: contained full image in a small 300px editorial frame preserves full figure. No weapon-related copy, emphasis or aggressive cover crop. Public derivative is resized and metadata-stripped.",
@@ -1122,13 +1210,15 @@
       "width": 960,
       "height": 1280
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem podczas spaceru po mieście, sylwetka w całości",
+    "caption_pl": ""
   },
   {
     "path": "founder/urban-mobile.avif",
     "status": "public",
     "role": "About philosophy transition — contained full figure, maximum 300px wide",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем на міській прогулянці, кадр на повний зріст",
     "alt_en": "Full-length photograph of Artem at an urban event",
     "notes": "Final override: contained full image in a small 300px editorial frame preserves full figure. No weapon-related copy, emphasis or aggressive cover crop. Public derivative is resized and metadata-stripped.",
@@ -1154,13 +1244,15 @@
       "width": 960,
       "height": 1280
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem podczas spaceru po mieście, sylwetka w całości",
+    "caption_pl": ""
   },
   {
     "path": "founder/urban-mobile.webp",
     "status": "public",
     "role": "About philosophy transition — contained full figure, maximum 300px wide",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем на міській прогулянці, кадр на повний зріст",
     "alt_en": "Full-length photograph of Artem at an urban event",
     "notes": "Final override: contained full image in a small 300px editorial frame preserves full figure. No weapon-related copy, emphasis or aggressive cover crop. Public derivative is resized and metadata-stripped.",
@@ -1186,13 +1278,15 @@
       "width": 960,
       "height": 1280
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem podczas spaceru po mieście, sylwetka w całości",
+    "caption_pl": ""
   },
   {
     "path": "founder/gopro-desktop.avif",
     "status": "public",
     "role": "About technology and filming",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем показує GoPro біля води",
     "alt_en": "Artem holding a GoPro by the water",
     "notes": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
@@ -1218,13 +1312,15 @@
       "width": 902,
       "height": 902
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem pokazuje kamerę GoPro nad wodą",
+    "caption_pl": ""
   },
   {
     "path": "founder/gopro-desktop.webp",
     "status": "public",
     "role": "About technology and filming",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем показує GoPro біля води",
     "alt_en": "Artem holding a GoPro by the water",
     "notes": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
@@ -1250,13 +1346,15 @@
       "width": 902,
       "height": 902
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem pokazuje kamerę GoPro nad wodą",
+    "caption_pl": ""
   },
   {
     "path": "founder/gopro-mobile.avif",
     "status": "public",
     "role": "About technology and filming",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем показує GoPro біля води",
     "alt_en": "Artem holding a GoPro by the water",
     "notes": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
@@ -1282,13 +1380,15 @@
       "width": 797,
       "height": 896
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem pokazuje kamerę GoPro nad wodą",
+    "caption_pl": ""
   },
   {
     "path": "founder/gopro-mobile.webp",
     "status": "public",
     "role": "About technology and filming",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем показує GoPro біля води",
     "alt_en": "Artem holding a GoPro by the water",
     "notes": "Reviewed clothing, equipment and background; no readable sensitive personal identifiers. Equipment/team marks are incidental personal-history context.",
@@ -1314,13 +1414,15 @@
       "width": 797,
       "height": 896
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem pokazuje kamerę GoPro nad wodą",
+    "caption_pl": ""
   },
   {
     "path": "founder/boat-desktop.avif",
     "status": "public",
     "role": "About cinematic water chapter",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем на човні під відкритим небом",
     "alt_en": "Artem on a boat under the open sky",
     "notes": "Lower hull and registration completely excluded from both crops.",
@@ -1346,13 +1448,15 @@
       "width": 960,
       "height": 640
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem na łodzi pod gołym niebem",
+    "caption_pl": ""
   },
   {
     "path": "founder/boat-desktop.webp",
     "status": "public",
     "role": "About cinematic water chapter",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем на човні під відкритим небом",
     "alt_en": "Artem on a boat under the open sky",
     "notes": "Lower hull and registration completely excluded from both crops.",
@@ -1378,13 +1482,15 @@
       "width": 960,
       "height": 640
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem na łodzi pod gołym niebem",
+    "caption_pl": ""
   },
   {
     "path": "founder/boat-mobile.avif",
     "status": "public",
     "role": "About cinematic water chapter",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем на човні під відкритим небом",
     "alt_en": "Artem on a boat under the open sky",
     "notes": "Lower hull and registration completely excluded from both crops.",
@@ -1410,13 +1516,15 @@
       "width": 547,
       "height": 717
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem na łodzi pod gołym niebem",
+    "caption_pl": ""
   },
   {
     "path": "founder/boat-mobile.webp",
     "status": "public",
     "role": "About cinematic water chapter",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем на човні під відкритим небом",
     "alt_en": "Artem on a boat under the open sky",
     "notes": "Lower hull and registration completely excluded from both crops.",
@@ -1442,13 +1550,15 @@
       "width": 547,
       "height": 717
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem na łodzi pod gołym niebem",
+    "caption_pl": ""
   },
   {
     "path": "founder/jetski-desktop.avif",
     "status": "public",
     "role": "Homepage main founder visual; About water context",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем на водному мотоциклі біля берега",
     "alt_en": "Artem on a jet ski near the shore",
     "notes": "Readable hull registration blurred before both crops.",
@@ -1474,13 +1584,15 @@
       "width": 640,
       "height": 499
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem na skuterze wodnym przy brzegu",
+    "caption_pl": ""
   },
   {
     "path": "founder/jetski-desktop.webp",
     "status": "public",
     "role": "Homepage main founder visual; About water context",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем на водному мотоциклі біля берега",
     "alt_en": "Artem on a jet ski near the shore",
     "notes": "Readable hull registration blurred before both crops.",
@@ -1506,13 +1618,15 @@
       "width": 640,
       "height": 499
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem na skuterze wodnym przy brzegu",
+    "caption_pl": ""
   },
   {
     "path": "founder/jetski-mobile.avif",
     "status": "public",
     "role": "Homepage main founder visual; About water context",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем на водному мотоциклі біля берега",
     "alt_en": "Artem on a jet ski near the shore",
     "notes": "Readable hull registration blurred before both crops.",
@@ -1538,13 +1652,15 @@
       "width": 538,
       "height": 525
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem na skuterze wodnym przy brzegu",
+    "caption_pl": ""
   },
   {
     "path": "founder/jetski-mobile.webp",
     "status": "public",
     "role": "Homepage main founder visual; About water context",
-    "page_or_section": "/about and /en/about only",
+    "page_or_section": "/about, /en/about and /pl/about only",
     "alt_ua": "Артем на водному мотоциклі біля берега",
     "alt_en": "Artem on a jet ski near the shore",
     "notes": "Readable hull registration blurred before both crops.",
@@ -1570,7 +1686,9 @@
       "width": 538,
       "height": 525
     },
-    "transform": "none; exact approved derivative bytes"
+    "transform": "none; exact approved derivative bytes",
+    "alt_pl": "Artem na skuterze wodnym przy brzegu",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-front.webp",
@@ -1600,7 +1718,9 @@
         "url": "/assets/media/2026-09/review-card-front-800.webp",
         "width": 800
       }
-    ]
+    ],
+    "alt_pl": "Przód Review Card",
+    "caption_pl": "Przód Review Card."
   },
   {
     "path": "media/product/review-card/2026-09/review-card-front-160.webp",
@@ -1617,7 +1737,9 @@
     "claim_role": "product_appearance_reference",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-front.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-front.webp",
+    "alt_pl": "Przód Review Card",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-front-480.webp",
@@ -1634,7 +1756,9 @@
     "claim_role": "product_appearance_reference",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-front.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-front.webp",
+    "alt_pl": "Przód Review Card",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-front-800.webp",
@@ -1651,7 +1775,9 @@
     "claim_role": "product_appearance_reference",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-front.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-front.webp",
+    "alt_pl": "Przód Review Card",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-back.webp",
@@ -1681,7 +1807,9 @@
         "url": "/assets/media/2026-09/review-card-back-800.webp",
         "width": 800
       }
-    ]
+    ],
+    "alt_pl": "Tył Review Card z paskami samoprzylepnymi",
+    "caption_pl": "Tył Review Card z paskami samoprzylepnymi."
   },
   {
     "path": "media/product/review-card/2026-09/review-card-back-160.webp",
@@ -1698,7 +1826,9 @@
     "claim_role": "product_appearance_reference",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-back.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-back.webp",
+    "alt_pl": "Tył Review Card z paskami samoprzylepnymi",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-back-480.webp",
@@ -1715,7 +1845,9 @@
     "claim_role": "product_appearance_reference",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-back.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-back.webp",
+    "alt_pl": "Tył Review Card z paskami samoprzylepnymi",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-back-800.webp",
@@ -1732,7 +1864,9 @@
     "claim_role": "product_appearance_reference",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-back.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-back.webp",
+    "alt_pl": "Tył Review Card z paskami samoprzylepnymi",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-edge.webp",
@@ -1762,7 +1896,9 @@
         "url": "/assets/media/2026-09/review-card-edge-800.webp",
         "width": 800
       }
-    ]
+    ],
+    "alt_pl": "Grubość i krawędź Review Card",
+    "caption_pl": "Grubość i krawędź Review Card."
   },
   {
     "path": "media/product/review-card/2026-09/review-card-edge-160.webp",
@@ -1779,7 +1915,9 @@
     "claim_role": "product_appearance_reference",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-edge.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-edge.webp",
+    "alt_pl": "Grubość i krawędź Review Card",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-edge-480.webp",
@@ -1796,7 +1934,9 @@
     "claim_role": "product_appearance_reference",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-edge.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-edge.webp",
+    "alt_pl": "Grubość i krawędź Review Card",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-edge-800.webp",
@@ -1813,7 +1953,9 @@
     "claim_role": "product_appearance_reference",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-edge.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-edge.webp",
+    "alt_pl": "Grubość i krawędź Review Card",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-in-hand.webp",
@@ -1843,7 +1985,9 @@
         "url": "/assets/media/2026-09/review-card-in-hand-800.webp",
         "width": 800
       }
-    ]
+    ],
+    "alt_pl": "Review Card trzymana w dłoni, zbliżenie",
+    "caption_pl": "Review Card trzymana w dłoni, zbliżenie."
   },
   {
     "path": "media/product/review-card/2026-09/review-card-in-hand-160.webp",
@@ -1860,7 +2004,9 @@
     "claim_role": "actual_standard_product",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-in-hand.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-in-hand.webp",
+    "alt_pl": "Review Card trzymana w dłoni, zbliżenie",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-in-hand-480.webp",
@@ -1877,7 +2023,9 @@
     "claim_role": "actual_standard_product",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-in-hand.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-in-hand.webp",
+    "alt_pl": "Review Card trzymana w dłoni, zbliżenie",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-in-hand-800.webp",
@@ -1894,7 +2042,9 @@
     "claim_role": "actual_standard_product",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-in-hand.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-in-hand.webp",
+    "alt_pl": "Review Card trzymana w dłoni, zbliżenie",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-overview.webp",
@@ -1924,7 +2074,9 @@
         "url": "/assets/media/2026-09/review-card-overview-800.webp",
         "width": 800
       }
-    ]
+    ],
+    "alt_pl": "Ilustracja promocyjna wyjaśniająca NFC CARD",
+    "caption_pl": "Ilustracja promocyjna NFC CARD. Oceny i opinie na ekranie są przykładowe."
   },
   {
     "path": "media/product/review-card/2026-09/review-card-overview-160.webp",
@@ -1941,7 +2093,9 @@
     "claim_role": "product_illustration",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-overview.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-overview.webp",
+    "alt_pl": "Ilustracja promocyjna wyjaśniająca NFC CARD",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-overview-480.webp",
@@ -1958,7 +2112,9 @@
     "claim_role": "product_illustration",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-overview.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-overview.webp",
+    "alt_pl": "Ilustracja promocyjna wyjaśniająca NFC CARD",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-overview-800.webp",
@@ -1975,7 +2131,9 @@
     "claim_role": "product_illustration",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-overview.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-overview.webp",
+    "alt_pl": "Ilustracja promocyjna wyjaśniająca NFC CARD",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-review-context.webp",
@@ -2005,7 +2163,9 @@
         "url": "/assets/media/2026-09/review-card-review-context-800.webp",
         "width": 800
       }
-    ]
+    ],
+    "alt_pl": "Ilustracja promocyjna z przykładowymi opiniami Google",
+    "caption_pl": "Ilustracja promocyjna NFC CARD. Oceny i opinie na ekranie są przykładowe."
   },
   {
     "path": "media/product/review-card/2026-09/review-card-review-context-160.webp",
@@ -2022,7 +2182,9 @@
     "claim_role": "product_illustration",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-review-context.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-review-context.webp",
+    "alt_pl": "Ilustracja promocyjna z przykładowymi opiniami Google",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-review-context-480.webp",
@@ -2039,7 +2201,9 @@
     "claim_role": "product_illustration",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-review-context.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-review-context.webp",
+    "alt_pl": "Ilustracja promocyjna z przykładowymi opiniami Google",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-review-context-800.webp",
@@ -2056,7 +2220,9 @@
     "claim_role": "product_illustration",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-review-context.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-review-context.webp",
+    "alt_pl": "Ilustracja promocyjna z przykładowymi opiniami Google",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-how-it-works.webp",
@@ -2086,7 +2252,9 @@
         "url": "/assets/media/2026-09/review-card-how-it-works-800.webp",
         "width": 800
       }
-    ]
+    ],
+    "alt_pl": "Ilustracja smartfona otwierającego formularz opinii po zbliżeniu do karty",
+    "caption_pl": "Ilustracja promocyjna NFC CARD. Oceny i opinie na ekranie są przykładowe."
   },
   {
     "path": "media/product/review-card/2026-09/review-card-how-it-works-160.webp",
@@ -2103,7 +2271,9 @@
     "claim_role": "product_illustration",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-how-it-works.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-how-it-works.webp",
+    "alt_pl": "Ilustracja smartfona otwierającego formularz opinii po zbliżeniu do karty",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-how-it-works-480.webp",
@@ -2120,7 +2290,9 @@
     "claim_role": "product_illustration",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-how-it-works.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-how-it-works.webp",
+    "alt_pl": "Ilustracja smartfona otwierającego formularz opinii po zbliżeniu do karty",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-how-it-works-800.webp",
@@ -2137,7 +2309,9 @@
     "claim_role": "product_illustration",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-how-it-works.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-how-it-works.webp",
+    "alt_pl": "Ilustracja smartfona otwierającego formularz opinii po zbliżeniu do karty",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-business-benefits.webp",
@@ -2167,7 +2341,9 @@
         "url": "/assets/media/2026-09/review-card-business-benefits-800.webp",
         "width": 800
       }
-    ]
+    ],
+    "alt_pl": "Ilustracja promocyjna korzyści NFC CARD dla firm",
+    "caption_pl": "Ilustracja promocyjna NFC CARD. Oceny i opinie na ekranie są przykładowe."
   },
   {
     "path": "media/product/review-card/2026-09/review-card-business-benefits-160.webp",
@@ -2184,7 +2360,9 @@
     "claim_role": "product_illustration",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-business-benefits.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-business-benefits.webp",
+    "alt_pl": "Ilustracja promocyjna korzyści NFC CARD dla firm",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-business-benefits-480.webp",
@@ -2201,7 +2379,9 @@
     "claim_role": "product_illustration",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-business-benefits.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-business-benefits.webp",
+    "alt_pl": "Ilustracja promocyjna korzyści NFC CARD dla firm",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-business-benefits-800.webp",
@@ -2218,7 +2398,9 @@
     "claim_role": "product_illustration",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-business-benefits.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-business-benefits.webp",
+    "alt_pl": "Ilustracja promocyjna korzyści NFC CARD dla firm",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-video-1-poster.webp",
@@ -2236,7 +2418,9 @@
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
     "thumbnail_url": "/assets/media/2026-09/review-card-video-1-poster-160.webp",
-    "responsive": []
+    "responsive": [],
+    "alt_pl": "Gotowe Review Card: wygląd i grubość",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-video-1-poster-160.webp",
@@ -2253,7 +2437,9 @@
     "claim_role": "product_video_poster",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-video-1-poster.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-video-1-poster.webp",
+    "alt_pl": "Gotowe Review Card: wygląd i grubość",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-video-1.mp4",
@@ -2277,7 +2463,9 @@
     "original_sha256": "328d4271def13ca92740cced93c34d9a869ce41954224ed2f09f8d09a2008818",
     "caption_ua": "Готові Review Card: вигляд і товщина.",
     "caption_en": "Finished Review Cards: appearance and thickness.",
-    "audio": "Original audio preserved; manual playback only"
+    "audio": "Original audio preserved; manual playback only",
+    "alt_pl": "Gotowe Review Card: wygląd i grubość",
+    "caption_pl": "Gotowe Review Card: wygląd i grubość."
   },
   {
     "path": "media/product/review-card/2026-09/review-card-video-2-poster.webp",
@@ -2295,7 +2483,9 @@
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
     "thumbnail_url": "/assets/media/2026-09/review-card-video-2-poster-160.webp",
-    "responsive": []
+    "responsive": [],
+    "alt_pl": "Review Card pokazana z obu stron",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-video-2-poster-160.webp",
@@ -2312,7 +2502,9 @@
     "claim_role": "product_video_poster",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-video-2-poster.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-video-2-poster.webp",
+    "alt_pl": "Review Card pokazana z obu stron",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-video-2.mp4",
@@ -2336,7 +2528,9 @@
     "original_sha256": "44436c257dccfae169c9897181517cbd07e554d92a6f324b5a1a2ff070efa04c",
     "caption_ua": "Огляд Review Card з обох боків.",
     "caption_en": "Review Card shown from both sides.",
-    "audio": "Original audio preserved; manual playback only"
+    "audio": "Original audio preserved; manual playback only",
+    "alt_pl": "Review Card pokazana z obu stron",
+    "caption_pl": "Review Card pokazana z obu stron."
   },
   {
     "path": "media/product/review-card/2026-09/review-card-video-3-poster.webp",
@@ -2354,7 +2548,9 @@
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
     "thumbnail_url": "/assets/media/2026-09/review-card-video-3-poster-160.webp",
-    "responsive": []
+    "responsive": [],
+    "alt_pl": "Pokaz otwierania formularza opinii Google",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-video-3-poster-160.webp",
@@ -2371,7 +2567,9 @@
     "claim_role": "product_video_poster",
     "requirements_source": "Owner media replacement 2026-09-15",
     "metadata": "EXIF/XMP/IPTC and source-container metadata removed",
-    "derivative_of": "/assets/media/2026-09/review-card-video-3-poster.webp"
+    "derivative_of": "/assets/media/2026-09/review-card-video-3-poster.webp",
+    "alt_pl": "Pokaz otwierania formularza opinii Google",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-video-3.mp4",
@@ -2406,8 +2604,15 @@
         "url": "/assets/media/2026-09/review-card-video-3-en.vtt",
         "language": "en",
         "label": "English"
+      },
+      {
+        "url": "/assets/media/2026-09/review-card-video-3-pl.vtt",
+        "language": "pl",
+        "label": "Polski"
       }
-    ]
+    ],
+    "alt_pl": "Pokaz otwierania formularza opinii Google",
+    "caption_pl": "Pokaz otwierania formularza opinii Google."
   },
   {
     "path": "media/product/review-card/2026-09/review-card-video-3-uk.vtt",
@@ -2421,7 +2626,9 @@
     "claim_role": "product_video_condensed_subtitles",
     "requirements_source": "Owner media replacement 2026-09-15",
     "language": "uk",
-    "description": "Condensed subtitles from the supplied demonstration speech; Ukrainian and English translation."
+    "description": "Condensed subtitles from the supplied demonstration speech; Ukrainian and English translation.",
+    "alt_pl": "",
+    "caption_pl": ""
   },
   {
     "path": "media/product/review-card/2026-09/review-card-video-3-en.vtt",
@@ -2435,7 +2642,25 @@
     "claim_role": "product_video_condensed_subtitles",
     "requirements_source": "Owner media replacement 2026-09-15",
     "language": "en",
-    "description": "Condensed subtitles from the supplied demonstration speech; Ukrainian and English translation."
+    "description": "Condensed subtitles from the supplied demonstration speech; Ukrainian and English translation.",
+    "alt_pl": "",
+    "caption_pl": ""
+  },
+  {
+    "path": "media/product/review-card/2026-09/review-card-video-3-pl.vtt",
+    "source": "src/media/2026-09/review-card-video-3-pl.vtt",
+    "url": "/assets/media/2026-09/review-card-video-3-pl.vtt",
+    "status": "public",
+    "bytes": 725,
+    "sha256": "00b3a3278eb3b05e0e0563fbb719846909e87df199ff0fa70e00b618f31f1bfc",
+    "media_type": "captions",
+    "provenance": "user_provided_business_asset",
+    "claim_role": "product_video_condensed_subtitles",
+    "requirements_source": "v27 Polish localization of Owner media replacement 2026-09-15",
+    "language": "pl",
+    "description": "Polish translation of the approved condensed Ukrainian subtitles; cue timing unchanged.",
+    "alt_pl": "",
+    "caption_pl": ""
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-front-window.webp",
@@ -2495,7 +2720,9 @@
           "width": 960
         }
       ]
-    }
+    },
+    "alt_pl": "Przód NFC Instagram Card w dłoni przy oknie.",
+    "caption_pl": "Prawdziwe zdjęcie przodu NFC Instagram Card przy oknie."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-front-window-320.webp",
@@ -2523,7 +2750,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-front-window.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-front-window.webp",
+    "alt_pl": "Przód NFC Instagram Card w dłoni przy oknie.",
+    "caption_pl": "Prawdziwe zdjęcie przodu NFC Instagram Card przy oknie."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-front-window-640.webp",
@@ -2551,7 +2780,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-front-window.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-front-window.webp",
+    "alt_pl": "Przód NFC Instagram Card w dłoni przy oknie.",
+    "caption_pl": "Prawdziwe zdjęcie przodu NFC Instagram Card przy oknie."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-front-window-960.webp",
@@ -2579,7 +2810,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-front-window.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-front-window.webp",
+    "alt_pl": "Przód NFC Instagram Card w dłoni przy oknie.",
+    "caption_pl": "Prawdziwe zdjęcie przodu NFC Instagram Card przy oknie."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-front-window.avif",
@@ -2607,7 +2840,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-front-window.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-front-window.webp",
+    "alt_pl": "Przód NFC Instagram Card w dłoni przy oknie.",
+    "caption_pl": "Prawdziwe zdjęcie przodu NFC Instagram Card przy oknie."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-front-window-320.avif",
@@ -2635,7 +2870,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-front-window.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-front-window.webp",
+    "alt_pl": "Przód NFC Instagram Card w dłoni przy oknie.",
+    "caption_pl": "Prawdziwe zdjęcie przodu NFC Instagram Card przy oknie."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-front-window-640.avif",
@@ -2663,7 +2900,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-front-window.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-front-window.webp",
+    "alt_pl": "Przód NFC Instagram Card w dłoni przy oknie.",
+    "caption_pl": "Prawdziwe zdjęcie przodu NFC Instagram Card przy oknie."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-front-window-960.avif",
@@ -2691,7 +2930,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-front-window.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-front-window.webp",
+    "alt_pl": "Przód NFC Instagram Card w dłoni przy oknie.",
+    "caption_pl": "Prawdziwe zdjęcie przodu NFC Instagram Card przy oknie."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-front-desk.webp",
@@ -2751,7 +2992,9 @@
           "width": 960
         }
       ]
-    }
+    },
+    "alt_pl": "Przód NFC Instagram Card w dłoni nad jasnym biurkiem.",
+    "caption_pl": "Prawdziwe zdjęcie NFC Instagram Card nad biurkiem."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-front-desk-320.webp",
@@ -2779,7 +3022,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-front-desk.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-front-desk.webp",
+    "alt_pl": "Przód NFC Instagram Card w dłoni nad jasnym biurkiem.",
+    "caption_pl": "Prawdziwe zdjęcie NFC Instagram Card nad biurkiem."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-front-desk-640.webp",
@@ -2807,7 +3052,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-front-desk.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-front-desk.webp",
+    "alt_pl": "Przód NFC Instagram Card w dłoni nad jasnym biurkiem.",
+    "caption_pl": "Prawdziwe zdjęcie NFC Instagram Card nad biurkiem."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-front-desk-960.webp",
@@ -2835,7 +3082,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-front-desk.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-front-desk.webp",
+    "alt_pl": "Przód NFC Instagram Card w dłoni nad jasnym biurkiem.",
+    "caption_pl": "Prawdziwe zdjęcie NFC Instagram Card nad biurkiem."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-front-desk.avif",
@@ -2863,7 +3112,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-front-desk.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-front-desk.webp",
+    "alt_pl": "Przód NFC Instagram Card w dłoni nad jasnym biurkiem.",
+    "caption_pl": "Prawdziwe zdjęcie NFC Instagram Card nad biurkiem."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-front-desk-320.avif",
@@ -2891,7 +3142,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-front-desk.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-front-desk.webp",
+    "alt_pl": "Przód NFC Instagram Card w dłoni nad jasnym biurkiem.",
+    "caption_pl": "Prawdziwe zdjęcie NFC Instagram Card nad biurkiem."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-front-desk-640.avif",
@@ -2919,7 +3172,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-front-desk.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-front-desk.webp",
+    "alt_pl": "Przód NFC Instagram Card w dłoni nad jasnym biurkiem.",
+    "caption_pl": "Prawdziwe zdjęcie NFC Instagram Card nad biurkiem."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-front-desk-960.avif",
@@ -2947,7 +3202,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-front-desk.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-front-desk.webp",
+    "alt_pl": "Przód NFC Instagram Card w dłoni nad jasnym biurkiem.",
+    "caption_pl": "Prawdziwe zdjęcie NFC Instagram Card nad biurkiem."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-edge-profile.webp",
@@ -3007,7 +3264,9 @@
           "width": 960
         }
       ]
-    }
+    },
+    "alt_pl": "NFC Instagram Card w dłoni pod kątem, z widoczną krawędzią i grubością.",
+    "caption_pl": "Prawdziwe zdjęcie NFC Instagram Card pod kątem, z widoczną krawędzią."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-edge-profile-320.webp",
@@ -3035,7 +3294,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-edge-profile.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-edge-profile.webp",
+    "alt_pl": "NFC Instagram Card w dłoni pod kątem, z widoczną krawędzią i grubością.",
+    "caption_pl": "Prawdziwe zdjęcie NFC Instagram Card pod kątem, z widoczną krawędzią."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-edge-profile-640.webp",
@@ -3063,7 +3324,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-edge-profile.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-edge-profile.webp",
+    "alt_pl": "NFC Instagram Card w dłoni pod kątem, z widoczną krawędzią i grubością.",
+    "caption_pl": "Prawdziwe zdjęcie NFC Instagram Card pod kątem, z widoczną krawędzią."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-edge-profile-960.webp",
@@ -3091,7 +3354,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-edge-profile.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-edge-profile.webp",
+    "alt_pl": "NFC Instagram Card w dłoni pod kątem, z widoczną krawędzią i grubością.",
+    "caption_pl": "Prawdziwe zdjęcie NFC Instagram Card pod kątem, z widoczną krawędzią."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-edge-profile.avif",
@@ -3119,7 +3384,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-edge-profile.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-edge-profile.webp",
+    "alt_pl": "NFC Instagram Card w dłoni pod kątem, z widoczną krawędzią i grubością.",
+    "caption_pl": "Prawdziwe zdjęcie NFC Instagram Card pod kątem, z widoczną krawędzią."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-edge-profile-320.avif",
@@ -3147,7 +3414,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-edge-profile.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-edge-profile.webp",
+    "alt_pl": "NFC Instagram Card w dłoni pod kątem, z widoczną krawędzią i grubością.",
+    "caption_pl": "Prawdziwe zdjęcie NFC Instagram Card pod kątem, z widoczną krawędzią."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-edge-profile-640.avif",
@@ -3175,7 +3444,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-edge-profile.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-edge-profile.webp",
+    "alt_pl": "NFC Instagram Card w dłoni pod kątem, z widoczną krawędzią i grubością.",
+    "caption_pl": "Prawdziwe zdjęcie NFC Instagram Card pod kątem, z widoczną krawędzią."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-edge-profile-960.avif",
@@ -3203,7 +3474,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-edge-profile.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-edge-profile.webp",
+    "alt_pl": "NFC Instagram Card w dłoni pod kątem, z widoczną krawędzią i grubością.",
+    "caption_pl": "Prawdziwe zdjęcie NFC Instagram Card pod kątem, z widoczną krawędzią."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-back-mounting.webp",
@@ -3263,7 +3536,9 @@
           "width": 960
         }
       ]
-    }
+    },
+    "alt_pl": "Tył NFC Instagram Card z dwoma paskami samoprzylepnymi do mocowania.",
+    "caption_pl": "Prawdziwe zdjęcie tyłu NFC Instagram Card z paskami samoprzylepnymi."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-back-mounting-320.webp",
@@ -3291,7 +3566,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-back-mounting.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-back-mounting.webp",
+    "alt_pl": "Tył NFC Instagram Card z dwoma paskami samoprzylepnymi do mocowania.",
+    "caption_pl": "Prawdziwe zdjęcie tyłu NFC Instagram Card z paskami samoprzylepnymi."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-back-mounting-640.webp",
@@ -3319,7 +3596,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-back-mounting.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-back-mounting.webp",
+    "alt_pl": "Tył NFC Instagram Card z dwoma paskami samoprzylepnymi do mocowania.",
+    "caption_pl": "Prawdziwe zdjęcie tyłu NFC Instagram Card z paskami samoprzylepnymi."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-back-mounting-960.webp",
@@ -3347,7 +3626,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-back-mounting.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-back-mounting.webp",
+    "alt_pl": "Tył NFC Instagram Card z dwoma paskami samoprzylepnymi do mocowania.",
+    "caption_pl": "Prawdziwe zdjęcie tyłu NFC Instagram Card z paskami samoprzylepnymi."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-back-mounting.avif",
@@ -3375,7 +3656,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-back-mounting.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-back-mounting.webp",
+    "alt_pl": "Tył NFC Instagram Card z dwoma paskami samoprzylepnymi do mocowania.",
+    "caption_pl": "Prawdziwe zdjęcie tyłu NFC Instagram Card z paskami samoprzylepnymi."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-back-mounting-320.avif",
@@ -3403,7 +3686,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-back-mounting.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-back-mounting.webp",
+    "alt_pl": "Tył NFC Instagram Card z dwoma paskami samoprzylepnymi do mocowania.",
+    "caption_pl": "Prawdziwe zdjęcie tyłu NFC Instagram Card z paskami samoprzylepnymi."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-back-mounting-640.avif",
@@ -3431,7 +3716,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-back-mounting.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-back-mounting.webp",
+    "alt_pl": "Tył NFC Instagram Card z dwoma paskami samoprzylepnymi do mocowania.",
+    "caption_pl": "Prawdziwe zdjęcie tyłu NFC Instagram Card z paskami samoprzylepnymi."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-real-back-mounting-960.avif",
@@ -3459,7 +3746,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-real-back-mounting.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-real-back-mounting.webp",
+    "alt_pl": "Tył NFC Instagram Card z dwoma paskami samoprzylepnymi do mocowania.",
+    "caption_pl": "Prawdziwe zdjęcie tyłu NFC Instagram Card z paskami samoprzylepnymi."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-clean-front-render.webp",
@@ -3519,7 +3808,9 @@
           "width": 960
         }
       ]
-    }
+    },
+    "alt_pl": "Ilustracja promocyjna przodu NFC Instagram Card na białym tle.",
+    "caption_pl": "Ilustracja promocyjna gotowego wzoru NFC Instagram Card."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-clean-front-render-320.webp",
@@ -3547,7 +3838,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-clean-front-render.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-clean-front-render.webp",
+    "alt_pl": "Ilustracja promocyjna przodu NFC Instagram Card na białym tle.",
+    "caption_pl": "Ilustracja promocyjna gotowego wzoru NFC Instagram Card."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-clean-front-render-640.webp",
@@ -3575,7 +3868,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-clean-front-render.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-clean-front-render.webp",
+    "alt_pl": "Ilustracja promocyjna przodu NFC Instagram Card na białym tle.",
+    "caption_pl": "Ilustracja promocyjna gotowego wzoru NFC Instagram Card."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-clean-front-render-960.webp",
@@ -3603,7 +3898,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-clean-front-render.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-clean-front-render.webp",
+    "alt_pl": "Ilustracja promocyjna przodu NFC Instagram Card na białym tle.",
+    "caption_pl": "Ilustracja promocyjna gotowego wzoru NFC Instagram Card."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-clean-front-render.avif",
@@ -3631,7 +3928,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-clean-front-render.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-clean-front-render.webp",
+    "alt_pl": "Ilustracja promocyjna przodu NFC Instagram Card na białym tle.",
+    "caption_pl": "Ilustracja promocyjna gotowego wzoru NFC Instagram Card."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-clean-front-render-320.avif",
@@ -3659,7 +3958,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-clean-front-render.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-clean-front-render.webp",
+    "alt_pl": "Ilustracja promocyjna przodu NFC Instagram Card na białym tle.",
+    "caption_pl": "Ilustracja promocyjna gotowego wzoru NFC Instagram Card."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-clean-front-render-640.avif",
@@ -3687,7 +3988,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-clean-front-render.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-clean-front-render.webp",
+    "alt_pl": "Ilustracja promocyjna przodu NFC Instagram Card na białym tle.",
+    "caption_pl": "Ilustracja promocyjna gotowego wzoru NFC Instagram Card."
   },
   {
     "path": "media/product/instagram-card/2026-09/instagram-card-clean-front-render-960.avif",
@@ -3715,7 +4018,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_instagram_media.py:v22",
     "media_type": "image",
-    "derivative_of": "/assets/media/instagram/instagram-card-clean-front-render.webp"
+    "derivative_of": "/assets/media/instagram/instagram-card-clean-front-render.webp",
+    "alt_pl": "Ilustracja promocyjna przodu NFC Instagram Card na białym tle.",
+    "caption_pl": "Ilustracja promocyjna gotowego wzoru NFC Instagram Card."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-desk.webp",
@@ -3780,7 +4085,9 @@
           "width": 960
         }
       ]
-    }
+    },
+    "alt_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-desk-320.webp",
@@ -3811,7 +4118,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-desk.webp",
+    "alt_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-desk-640.webp",
@@ -3842,7 +4151,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-desk.webp",
+    "alt_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-desk-960.webp",
@@ -3873,7 +4184,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-desk.webp",
+    "alt_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-desk.avif",
@@ -3904,7 +4217,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-desk.webp",
+    "alt_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-desk-320.avif",
@@ -3935,7 +4250,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-desk.webp",
+    "alt_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-desk-640.avif",
@@ -3966,7 +4283,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-desk.webp",
+    "alt_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-desk-960.avif",
@@ -3997,7 +4316,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-desk.webp",
+    "alt_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-hand.webp",
@@ -4062,7 +4383,9 @@
           "width": 960
         }
       ]
-    }
+    },
+    "alt_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-hand-320.webp",
@@ -4093,7 +4416,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-hand.webp",
+    "alt_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-hand-640.webp",
@@ -4124,7 +4449,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-hand.webp",
+    "alt_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-hand-960.webp",
@@ -4155,7 +4482,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-hand.webp",
+    "alt_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-hand.avif",
@@ -4186,7 +4515,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-hand.webp",
+    "alt_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-hand-320.avif",
@@ -4217,7 +4548,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-hand.webp",
+    "alt_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-hand-640.avif",
@@ -4248,7 +4581,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-hand.webp",
+    "alt_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-hand-960.avif",
@@ -4279,7 +4614,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-hand.webp",
+    "alt_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja czarnej kwadratowej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-white-desk.webp",
@@ -4344,7 +4681,9 @@
           "width": 960
         }
       ]
-    }
+    },
+    "alt_pl": "Wizualizacja białej okrągłej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja białej okrągłej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-white-desk-320.webp",
@@ -4375,7 +4714,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-white-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-white-desk.webp",
+    "alt_pl": "Wizualizacja białej okrągłej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja białej okrągłej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-white-desk-640.webp",
@@ -4406,7 +4747,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-white-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-white-desk.webp",
+    "alt_pl": "Wizualizacja białej okrągłej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja białej okrągłej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-white-desk-960.webp",
@@ -4437,7 +4780,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-white-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-white-desk.webp",
+    "alt_pl": "Wizualizacja białej okrągłej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja białej okrągłej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-white-desk.avif",
@@ -4468,7 +4813,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-white-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-white-desk.webp",
+    "alt_pl": "Wizualizacja białej okrągłej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja białej okrągłej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-white-desk-320.avif",
@@ -4499,7 +4846,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-white-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-white-desk.webp",
+    "alt_pl": "Wizualizacja białej okrągłej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja białej okrągłej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-white-desk-640.avif",
@@ -4530,7 +4879,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-white-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-white-desk.webp",
+    "alt_pl": "Wizualizacja białej okrągłej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja białej okrągłej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-white-desk-960.avif",
@@ -4561,7 +4912,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-white-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-white-desk.webp",
+    "alt_pl": "Wizualizacja białej okrągłej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja białej okrągłej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-white-hand.webp",
@@ -4626,7 +4979,9 @@
           "width": 960
         }
       ]
-    }
+    },
+    "alt_pl": "Wizualizacja białej okrągłej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja białej okrągłej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-white-hand-320.webp",
@@ -4657,7 +5012,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-white-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-white-hand.webp",
+    "alt_pl": "Wizualizacja białej okrągłej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja białej okrągłej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-white-hand-640.webp",
@@ -4688,7 +5045,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-white-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-white-hand.webp",
+    "alt_pl": "Wizualizacja białej okrągłej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja białej okrągłej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-white-hand-960.webp",
@@ -4719,7 +5078,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-white-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-white-hand.webp",
+    "alt_pl": "Wizualizacja białej okrągłej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja białej okrągłej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-white-hand.avif",
@@ -4750,7 +5111,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-white-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-white-hand.webp",
+    "alt_pl": "Wizualizacja białej okrągłej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja białej okrągłej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-white-hand-320.avif",
@@ -4781,7 +5144,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-white-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-white-hand.webp",
+    "alt_pl": "Wizualizacja białej okrągłej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja białej okrągłej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-white-hand-640.avif",
@@ -4812,7 +5177,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-white-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-white-hand.webp",
+    "alt_pl": "Wizualizacja białej okrągłej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja białej okrągłej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-white-hand-960.avif",
@@ -4843,7 +5210,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-white-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-white-hand.webp",
+    "alt_pl": "Wizualizacja białej okrągłej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja białej okrągłej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-black-desk.webp",
@@ -4908,7 +5277,9 @@
           "width": 960
         }
       ]
-    }
+    },
+    "alt_pl": "Wizualizacja czarnej okrągłej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja czarnej okrągłej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-black-desk-320.webp",
@@ -4939,7 +5310,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-black-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-black-desk.webp",
+    "alt_pl": "Wizualizacja czarnej okrągłej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja czarnej okrągłej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-black-desk-640.webp",
@@ -4970,7 +5343,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-black-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-black-desk.webp",
+    "alt_pl": "Wizualizacja czarnej okrągłej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja czarnej okrągłej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-black-desk-960.webp",
@@ -5001,7 +5376,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-black-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-black-desk.webp",
+    "alt_pl": "Wizualizacja czarnej okrągłej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja czarnej okrągłej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-black-desk.avif",
@@ -5032,7 +5409,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-black-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-black-desk.webp",
+    "alt_pl": "Wizualizacja czarnej okrągłej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja czarnej okrągłej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-black-desk-320.avif",
@@ -5063,7 +5442,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-black-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-black-desk.webp",
+    "alt_pl": "Wizualizacja czarnej okrągłej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja czarnej okrągłej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-black-desk-640.avif",
@@ -5094,7 +5475,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-black-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-black-desk.webp",
+    "alt_pl": "Wizualizacja czarnej okrągłej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja czarnej okrągłej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-black-desk-960.avif",
@@ -5125,7 +5508,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-black-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-black-desk.webp",
+    "alt_pl": "Wizualizacja czarnej okrągłej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja czarnej okrągłej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-black-hand.webp",
@@ -5190,7 +5575,9 @@
           "width": 960
         }
       ]
-    }
+    },
+    "alt_pl": "Wizualizacja czarnej okrągłej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja czarnej okrągłej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-black-hand-320.webp",
@@ -5221,7 +5608,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-black-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-black-hand.webp",
+    "alt_pl": "Wizualizacja czarnej okrągłej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja czarnej okrągłej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-black-hand-640.webp",
@@ -5252,7 +5641,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-black-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-black-hand.webp",
+    "alt_pl": "Wizualizacja czarnej okrągłej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja czarnej okrągłej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-black-hand-960.webp",
@@ -5283,7 +5674,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-black-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-black-hand.webp",
+    "alt_pl": "Wizualizacja czarnej okrągłej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja czarnej okrągłej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-black-hand.avif",
@@ -5314,7 +5707,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-black-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-black-hand.webp",
+    "alt_pl": "Wizualizacja czarnej okrągłej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja czarnej okrągłej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-black-hand-320.avif",
@@ -5345,7 +5740,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-black-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-black-hand.webp",
+    "alt_pl": "Wizualizacja czarnej okrągłej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja czarnej okrągłej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-black-hand-640.avif",
@@ -5376,7 +5773,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-black-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-black-hand.webp",
+    "alt_pl": "Wizualizacja czarnej okrągłej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja czarnej okrągłej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-round-black-hand-960.avif",
@@ -5407,7 +5806,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-round-black-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-round-black-hand.webp",
+    "alt_pl": "Wizualizacja czarnej okrągłej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja czarnej okrągłej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-desk.webp",
@@ -5472,7 +5873,9 @@
           "width": 960
         }
       ]
-    }
+    },
+    "alt_pl": "Wizualizacja białej kwadratowej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja białej kwadratowej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-desk-320.webp",
@@ -5503,7 +5906,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-desk.webp",
+    "alt_pl": "Wizualizacja białej kwadratowej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja białej kwadratowej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-desk-640.webp",
@@ -5534,7 +5939,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-desk.webp",
+    "alt_pl": "Wizualizacja białej kwadratowej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja białej kwadratowej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-desk-960.webp",
@@ -5565,7 +5972,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-desk.webp",
+    "alt_pl": "Wizualizacja białej kwadratowej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja białej kwadratowej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-desk.avif",
@@ -5596,7 +6005,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-desk.webp",
+    "alt_pl": "Wizualizacja białej kwadratowej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja białej kwadratowej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-desk-320.avif",
@@ -5627,7 +6038,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-desk.webp",
+    "alt_pl": "Wizualizacja białej kwadratowej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja białej kwadratowej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-desk-640.avif",
@@ -5658,7 +6071,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-desk.webp",
+    "alt_pl": "Wizualizacja białej kwadratowej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja białej kwadratowej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-desk-960.avif",
@@ -5689,7 +6104,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-desk.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-desk.webp",
+    "alt_pl": "Wizualizacja białej kwadratowej NFC Menu Card na jasnym stole.",
+    "caption_pl": "Wizualizacja białej kwadratowej NFC Menu Card na jasnym stole."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-hand.webp",
@@ -5754,7 +6171,9 @@
           "width": 960
         }
       ]
-    }
+    },
+    "alt_pl": "Wizualizacja białej kwadratowej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja białej kwadratowej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-hand-320.webp",
@@ -5785,7 +6204,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-hand.webp",
+    "alt_pl": "Wizualizacja białej kwadratowej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja białej kwadratowej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-hand-640.webp",
@@ -5816,7 +6237,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-hand.webp",
+    "alt_pl": "Wizualizacja białej kwadratowej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja białej kwadratowej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-hand-960.webp",
@@ -5847,7 +6270,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-hand.webp",
+    "alt_pl": "Wizualizacja białej kwadratowej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja białej kwadratowej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-hand.avif",
@@ -5878,7 +6303,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-hand.webp",
+    "alt_pl": "Wizualizacja białej kwadratowej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja białej kwadratowej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-hand-320.avif",
@@ -5909,7 +6336,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-hand.webp",
+    "alt_pl": "Wizualizacja białej kwadratowej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja białej kwadratowej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-hand-640.avif",
@@ -5940,7 +6369,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-hand.webp",
+    "alt_pl": "Wizualizacja białej kwadratowej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja białej kwadratowej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-hand-960.avif",
@@ -5971,7 +6402,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-hand.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-hand.webp",
+    "alt_pl": "Wizualizacja białej kwadratowej NFC Menu Card trzymanej w dłoni.",
+    "caption_pl": "Wizualizacja białej kwadratowej NFC Menu Card trzymanej w dłoni."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-size-pair.webp",
@@ -6037,7 +6470,9 @@
           "width": 960
         }
       ]
-    }
+    },
+    "alt_pl": "Wizualizacja dwóch białych kwadratowych NFC Menu Card w różnych rozmiarach.",
+    "caption_pl": "Wizualizacja dwóch białych kwadratowych NFC Menu Card w różnych rozmiarach."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-size-pair-320.webp",
@@ -6069,7 +6504,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-size-pair.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-size-pair.webp",
+    "alt_pl": "Wizualizacja dwóch białych kwadratowych NFC Menu Card w różnych rozmiarach.",
+    "caption_pl": "Wizualizacja dwóch białych kwadratowych NFC Menu Card w różnych rozmiarach."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-size-pair-640.webp",
@@ -6101,7 +6538,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-size-pair.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-size-pair.webp",
+    "alt_pl": "Wizualizacja dwóch białych kwadratowych NFC Menu Card w różnych rozmiarach.",
+    "caption_pl": "Wizualizacja dwóch białych kwadratowych NFC Menu Card w różnych rozmiarach."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-size-pair-960.webp",
@@ -6133,7 +6572,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-size-pair.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-size-pair.webp",
+    "alt_pl": "Wizualizacja dwóch białych kwadratowych NFC Menu Card w różnych rozmiarach.",
+    "caption_pl": "Wizualizacja dwóch białych kwadratowych NFC Menu Card w różnych rozmiarach."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-size-pair.avif",
@@ -6165,7 +6606,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-size-pair.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-size-pair.webp",
+    "alt_pl": "Wizualizacja dwóch białych kwadratowych NFC Menu Card w różnych rozmiarach.",
+    "caption_pl": "Wizualizacja dwóch białych kwadratowych NFC Menu Card w różnych rozmiarach."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-size-pair-320.avif",
@@ -6197,7 +6640,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-size-pair.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-size-pair.webp",
+    "alt_pl": "Wizualizacja dwóch białych kwadratowych NFC Menu Card w różnych rozmiarach.",
+    "caption_pl": "Wizualizacja dwóch białych kwadratowych NFC Menu Card w różnych rozmiarach."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-size-pair-640.avif",
@@ -6229,7 +6674,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-size-pair.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-size-pair.webp",
+    "alt_pl": "Wizualizacja dwóch białych kwadratowych NFC Menu Card w różnych rozmiarach.",
+    "caption_pl": "Wizualizacja dwóch białych kwadratowych NFC Menu Card w różnych rozmiarach."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-white-size-pair-960.avif",
@@ -6261,7 +6708,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-white-size-pair.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-white-size-pair.webp",
+    "alt_pl": "Wizualizacja dwóch białych kwadratowych NFC Menu Card w różnych rozmiarach.",
+    "caption_pl": "Wizualizacja dwóch białych kwadratowych NFC Menu Card w różnych rozmiarach."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-size-pair.webp",
@@ -6327,7 +6776,9 @@
           "width": 960
         }
       ]
-    }
+    },
+    "alt_pl": "Wizualizacja dwóch czarnych kwadratowych NFC Menu Card w różnych rozmiarach.",
+    "caption_pl": "Wizualizacja dwóch czarnych kwadratowych NFC Menu Card w różnych rozmiarach."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-size-pair-320.webp",
@@ -6359,7 +6810,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-size-pair.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-size-pair.webp",
+    "alt_pl": "Wizualizacja dwóch czarnych kwadratowych NFC Menu Card w różnych rozmiarach.",
+    "caption_pl": "Wizualizacja dwóch czarnych kwadratowych NFC Menu Card w różnych rozmiarach."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-size-pair-640.webp",
@@ -6391,7 +6844,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-size-pair.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-size-pair.webp",
+    "alt_pl": "Wizualizacja dwóch czarnych kwadratowych NFC Menu Card w różnych rozmiarach.",
+    "caption_pl": "Wizualizacja dwóch czarnych kwadratowych NFC Menu Card w różnych rozmiarach."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-size-pair-960.webp",
@@ -6423,7 +6878,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-size-pair.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-size-pair.webp",
+    "alt_pl": "Wizualizacja dwóch czarnych kwadratowych NFC Menu Card w różnych rozmiarach.",
+    "caption_pl": "Wizualizacja dwóch czarnych kwadratowych NFC Menu Card w różnych rozmiarach."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-size-pair.avif",
@@ -6455,7 +6912,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-size-pair.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-size-pair.webp",
+    "alt_pl": "Wizualizacja dwóch czarnych kwadratowych NFC Menu Card w różnych rozmiarach.",
+    "caption_pl": "Wizualizacja dwóch czarnych kwadratowych NFC Menu Card w różnych rozmiarach."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-size-pair-320.avif",
@@ -6487,7 +6946,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-size-pair.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-size-pair.webp",
+    "alt_pl": "Wizualizacja dwóch czarnych kwadratowych NFC Menu Card w różnych rozmiarach.",
+    "caption_pl": "Wizualizacja dwóch czarnych kwadratowych NFC Menu Card w różnych rozmiarach."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-size-pair-640.avif",
@@ -6519,7 +6980,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-size-pair.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-size-pair.webp",
+    "alt_pl": "Wizualizacja dwóch czarnych kwadratowych NFC Menu Card w różnych rozmiarach.",
+    "caption_pl": "Wizualizacja dwóch czarnych kwadratowych NFC Menu Card w różnych rozmiarach."
   },
   {
     "path": "media/product/menu-card/2026-09/menu-card-square-black-size-pair-960.avif",
@@ -6551,7 +7014,9 @@
     "metadata_stripped": true,
     "managed_by": "scripts/update_menu_media.py:v23",
     "media_type": "image",
-    "derivative_of": "/assets/media/menu/menu-card-square-black-size-pair.webp"
+    "derivative_of": "/assets/media/menu/menu-card-square-black-size-pair.webp",
+    "alt_pl": "Wizualizacja dwóch czarnych kwadratowych NFC Menu Card w różnych rozmiarach.",
+    "caption_pl": "Wizualizacja dwóch czarnych kwadratowych NFC Menu Card w różnych rozmiarach."
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-front-in-hand.webp",
@@ -6619,7 +7084,9 @@
           "width": 960
         }
       ]
-    }
+    },
+    "alt_pl": "Prototyp NFC Review Card 3D w dłoni: przezroczysta krawędź, wypukłe napisy, gwiazdki i symbol NFC",
+    "caption_pl": "NFC Review Card 3D — prototyp w gotowym wzorze"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-front-in-hand-320.webp",
@@ -6653,7 +7120,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-front-in-hand.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-front-in-hand.webp",
+    "alt_pl": "Prototyp NFC Review Card 3D w dłoni: przezroczysta krawędź, wypukłe napisy, gwiazdki i symbol NFC",
+    "caption_pl": "NFC Review Card 3D — prototyp w gotowym wzorze"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-front-in-hand-640.webp",
@@ -6687,7 +7156,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-front-in-hand.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-front-in-hand.webp",
+    "alt_pl": "Prototyp NFC Review Card 3D w dłoni: przezroczysta krawędź, wypukłe napisy, gwiazdki i symbol NFC",
+    "caption_pl": "NFC Review Card 3D — prototyp w gotowym wzorze"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-front-in-hand-960.webp",
@@ -6721,7 +7192,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-front-in-hand.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-front-in-hand.webp",
+    "alt_pl": "Prototyp NFC Review Card 3D w dłoni: przezroczysta krawędź, wypukłe napisy, gwiazdki i symbol NFC",
+    "caption_pl": "NFC Review Card 3D — prototyp w gotowym wzorze"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-front-in-hand.avif",
@@ -6755,7 +7228,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-front-in-hand.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-front-in-hand.webp",
+    "alt_pl": "Prototyp NFC Review Card 3D w dłoni: przezroczysta krawędź, wypukłe napisy, gwiazdki i symbol NFC",
+    "caption_pl": "NFC Review Card 3D — prototyp w gotowym wzorze"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-front-in-hand-320.avif",
@@ -6789,7 +7264,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-front-in-hand.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-front-in-hand.webp",
+    "alt_pl": "Prototyp NFC Review Card 3D w dłoni: przezroczysta krawędź, wypukłe napisy, gwiazdki i symbol NFC",
+    "caption_pl": "NFC Review Card 3D — prototyp w gotowym wzorze"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-front-in-hand-640.avif",
@@ -6823,7 +7300,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-front-in-hand.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-front-in-hand.webp",
+    "alt_pl": "Prototyp NFC Review Card 3D w dłoni: przezroczysta krawędź, wypukłe napisy, gwiazdki i symbol NFC",
+    "caption_pl": "NFC Review Card 3D — prototyp w gotowym wzorze"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-front-in-hand-960.avif",
@@ -6857,7 +7336,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-front-in-hand.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-front-in-hand.webp",
+    "alt_pl": "Prototyp NFC Review Card 3D w dłoni: przezroczysta krawędź, wypukłe napisy, gwiazdki i symbol NFC",
+    "caption_pl": "NFC Review Card 3D — prototyp w gotowym wzorze"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-front-on-desk.webp",
@@ -6925,7 +7406,9 @@
           "width": 960
         }
       ]
-    }
+    },
+    "alt_pl": "Prototyp NFC Review Card 3D na jasnej powierzchni, widok z przodu pod kątem",
+    "caption_pl": "Przezroczysta krawędź i przestrzenny wygląd prototypu"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-front-on-desk-320.webp",
@@ -6959,7 +7442,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-front-on-desk.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-front-on-desk.webp",
+    "alt_pl": "Prototyp NFC Review Card 3D na jasnej powierzchni, widok z przodu pod kątem",
+    "caption_pl": "Przezroczysta krawędź i przestrzenny wygląd prototypu"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-front-on-desk-640.webp",
@@ -6993,7 +7478,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-front-on-desk.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-front-on-desk.webp",
+    "alt_pl": "Prototyp NFC Review Card 3D na jasnej powierzchni, widok z przodu pod kątem",
+    "caption_pl": "Przezroczysta krawędź i przestrzenny wygląd prototypu"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-front-on-desk-960.webp",
@@ -7027,7 +7514,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-front-on-desk.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-front-on-desk.webp",
+    "alt_pl": "Prototyp NFC Review Card 3D na jasnej powierzchni, widok z przodu pod kątem",
+    "caption_pl": "Przezroczysta krawędź i przestrzenny wygląd prototypu"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-front-on-desk.avif",
@@ -7061,7 +7550,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-front-on-desk.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-front-on-desk.webp",
+    "alt_pl": "Prototyp NFC Review Card 3D na jasnej powierzchni, widok z przodu pod kątem",
+    "caption_pl": "Przezroczysta krawędź i przestrzenny wygląd prototypu"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-front-on-desk-320.avif",
@@ -7095,7 +7586,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-front-on-desk.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-front-on-desk.webp",
+    "alt_pl": "Prototyp NFC Review Card 3D na jasnej powierzchni, widok z przodu pod kątem",
+    "caption_pl": "Przezroczysta krawędź i przestrzenny wygląd prototypu"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-front-on-desk-640.avif",
@@ -7129,7 +7622,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-front-on-desk.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-front-on-desk.webp",
+    "alt_pl": "Prototyp NFC Review Card 3D na jasnej powierzchni, widok z przodu pod kątem",
+    "caption_pl": "Przezroczysta krawędź i przestrzenny wygląd prototypu"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-front-on-desk-960.avif",
@@ -7163,7 +7658,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-front-on-desk.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-front-on-desk.webp",
+    "alt_pl": "Prototyp NFC Review Card 3D na jasnej powierzchni, widok z przodu pod kątem",
+    "caption_pl": "Przezroczysta krawędź i przestrzenny wygląd prototypu"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-back.webp",
@@ -7231,7 +7728,9 @@
           "width": 960
         }
       ]
-    }
+    },
+    "alt_pl": "Tył prototypu NFC Review Card 3D z folią ochronną warstwy klejącej",
+    "caption_pl": "Tył prototypu"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-back-320.webp",
@@ -7265,7 +7764,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-back.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-back.webp",
+    "alt_pl": "Tył prototypu NFC Review Card 3D z folią ochronną warstwy klejącej",
+    "caption_pl": "Tył prototypu"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-back-640.webp",
@@ -7299,7 +7800,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-back.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-back.webp",
+    "alt_pl": "Tył prototypu NFC Review Card 3D z folią ochronną warstwy klejącej",
+    "caption_pl": "Tył prototypu"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-back-960.webp",
@@ -7333,7 +7836,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-back.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-back.webp",
+    "alt_pl": "Tył prototypu NFC Review Card 3D z folią ochronną warstwy klejącej",
+    "caption_pl": "Tył prototypu"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-back.avif",
@@ -7367,7 +7872,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-back.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-back.webp",
+    "alt_pl": "Tył prototypu NFC Review Card 3D z folią ochronną warstwy klejącej",
+    "caption_pl": "Tył prototypu"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-back-320.avif",
@@ -7401,7 +7908,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-back.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-back.webp",
+    "alt_pl": "Tył prototypu NFC Review Card 3D z folią ochronną warstwy klejącej",
+    "caption_pl": "Tył prototypu"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-back-640.avif",
@@ -7435,7 +7944,9 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-back.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-back.webp",
+    "alt_pl": "Tył prototypu NFC Review Card 3D z folią ochronną warstwy klejącej",
+    "caption_pl": "Tył prototypu"
   },
   {
     "path": "media/product/review-card-3d/2026-09/review-card-3d-back-960.avif",
@@ -7469,6 +7980,8 @@
     "focal_point": "card centered",
     "mobile_crop": "none; preserve the full frame and PROTOTYPE label",
     "selected": true,
-    "derivative_of": "/assets/media/review-3d/review-card-3d-back.webp"
+    "derivative_of": "/assets/media/review-3d/review-card-3d-back.webp",
+    "alt_pl": "Tył prototypu NFC Review Card 3D z folią ochronną warstwy klejącej",
+    "caption_pl": "Tył prototypu"
   }
 ]

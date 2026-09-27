@@ -1,7 +1,8 @@
 // Owner-confirmed seller and defect/refund policy, 2026-09-12.
 // No address, registration number, legal status or unconfirmed guarantee is invented.
+import {translate} from './locale.mjs';
 export function publicLegalPage(route, {locale, esc, link, url, contacts}) {
-  const P = (uk, en) => locale === 'uk' ? uk : en;
+  const P = (uk, en) => translate(locale, uk, en);
   const seller = [P('Продавець і контакт', 'Seller and contact'), P('Продавець NFC CARD — Артем Антонов. Для питань щодо замовлення, повернення або персональних даних звертайтеся за контактами нижче.', 'NFC CARD is sold by Artem Antonov. For questions about orders, returns or personal data, use the contacts below.')];
   const returns = [P('Брак і повернення коштів', 'Defects and refunds'), P('Якщо картка має брак, приймаємо її повернення та повертаємо кошти. Зв’яжіться з нами: погодимо перевірку, повернення картки й повернення коштів. Перед оплатою погоджуємо інші умови повернення, зокрема для персоналізованої картки, та витрати на пересилання.', 'If a card is defective, we accept its return and refund your payment. Contact us to arrange the assessment, return and refund. Other return terms, including personalised cards and shipping costs, are agreed before payment.')];
   const privacy = route === '/privacy';

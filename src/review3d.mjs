@@ -1,4 +1,5 @@
 // Owner-supplied Review 3D handoff copy; this is a fifth offer for Google reviews.
+import polishCopy from './pl-review3d.json' with {type:'json'};
 export const review3d = Object.freeze({
   id:'nfc-review-card-3d',
   route:'/solutions/review-card-3d',
@@ -58,3 +59,14 @@ export const review3d = Object.freeze({
   ],
   seo:{uk:['NFC Review Card 3D з оргскла — 4 000 грн | NFC CARD','NFC Review Card 3D з оргскла у готовому об’ємному дизайні. Перехід до Google-відгуку вашого бізнесу. 4 000 грн. Прототип під замовлення.'],en:['Acrylic NFC Review Card 3D — UAH 4,000 | NFC CARD','NFC Review Card 3D in a fixed dimensional acrylic design. Opens your Google business review form. UAH 4,000 per card. Prototype made to order.']}
 });
+function attachPolish(value,path=''){
+ if(!value||typeof value!=='object')return;
+ if(Array.isArray(value)){value.forEach((item,index)=>attachPolish(item,path+'/'+index));return;}
+ if(Object.hasOwn(value,'uk')&&Object.hasOwn(value,'en')){
+  if(!Object.hasOwn(polishCopy,path))throw Error('Missing Polish Review 3D copy: '+path);
+  value.pl=structuredClone(polishCopy[path]);
+  return;
+ }
+ for(const [key,item] of Object.entries(value))attachPolish(item,path+'/'+key);
+}
+attachPolish(review3d);

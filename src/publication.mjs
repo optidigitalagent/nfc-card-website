@@ -3,6 +3,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {isIP} from 'node:net';
 import {publicBasePath, publicURL} from './pages.mjs';
+import {LOCALES, localizedRoute} from './locale.mjs';
 
 export const PREVIEW = 'PUBLIC_PREVIEW';
 export const PUBLIC = 'PUBLIC';
@@ -10,7 +11,7 @@ export const INDEXABLE = 'PUBLIC_INDEXABLE';
 const PUBLIC_ROUTES = ['/', '/about', '/solutions', '/solutions/review-card',
   '/solutions/branded-review-card', '/solutions/review-card-3d', '/solutions/instagram-card', '/instagram-card', '/solutions/menu-card', '/menu-card', '/delivery-and-payment', '/warranty-and-returns'];
 const LEGAL_ROUTES = ['/privacy', '/terms'];
-const localized = routes => routes.flatMap(route => [route, '/en' + (route === '/' ? '' : route)]);
+const localized = routes => routes.flatMap(route => LOCALES.map(locale => localizedRoute(route,locale)));
 
 export function reviewedContentSha256(root) {
   const hash = createHash('sha256');
@@ -89,8 +90,8 @@ export function assertFinalLegalContent(publication, route, body) {
 
 export function robotsFile(publication) {
   if (publication.mode === PREVIEW) return 'User-agent: *\nDisallow: /\n';
-  const excluded = ['/admin', '/en/admin', '/api', '/order', '/en/order', '/contact', '/en/contact',
-    '/reviews/new', '/en/reviews/new', '/thank-you', '/en/thank-you', '/healthz'];
+  const excluded = ['/admin', '/en/admin', '/pl/admin', '/api',
+    ...localized(['/order','/contact','/reviews/new','/thank-you']), '/healthz'];
   return 'User-agent: *\nAllow: ' + publicURL('/', publication) + '\n' + excluded.map(route => 'Disallow: ' + publicURL(route, publication) + '\n').join('') +
     'Sitemap: ' + publication.origin + publicURL('/sitemap.xml', publication) + '\n';
 }
