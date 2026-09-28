@@ -1,5 +1,6 @@
 // Product schema v1 is additive to the accepted v6 lead/Review Card contract.
 import {MENU_VARIANTS, menuQuote} from './menu-contract.mjs';
+import {plFixedQuote,plReview3dQuote} from './pl-commerce.mjs';
 export const IG = 'instagram';
 export function validateCommerce(c) {
   const fail = () => { throw Error('invalid_commerce_configuration'); };
@@ -35,7 +36,8 @@ export function validateCommerce(c) {
   for(const n of [1,4,5,6,9,10,15,24,25,26])if(menuQuote([{variant_id:MENU_VARIANTS[0],quantity:n}]).amount!==n*(n>=25?500:n>=10?600:n>=5?750:1000))fail();
   return c;
 }
-export function review3dQuote(c, quantity) {
+export function review3dQuote(c, quantity, locale='uk') {
+  if(locale==='pl')return plReview3dQuote(c.poland,quantity);
   const offer=c.products['nfc-review-card-3d'].offers.fixed;
   const valid=typeof quantity==='number'&&Number.isSafeInteger(quantity)&&quantity>=offer.quantityMin&&quantity<=offer.quantityMax;
   const amount=valid?quantity*offer.unitUah:null;
@@ -43,12 +45,13 @@ export function review3dQuote(c, quantity) {
     balance:valid?amount-offer.depositUahPerOrder:null,currency:c.currency,
     pricingRevision:c.products['nfc-review-card-3d'].pricingRevision};
 }
-export function selectionQuote(c, selection, quantity='1') {
+export function selectionQuote(c, selection, quantity='1', locale='uk') {
   const q=String(quantity), spec=c.selections[selection];
   const valid=!!spec&&c.quantities.includes(q)&&(selection!==IG||['1','2'].includes(q));
   const offer=spec&&c.products[spec.product_id].offers[spec.offer];
   const prices=offer?.legacyPriceKey?c.variants[offer.legacyPriceKey].prices:offer?.prices;
-  return {valid,pricingRevision:spec?(c.products[spec.product_id].pricingRevision||c.revision):c.revision,evidence:spec?(c.products[spec.product_id].evidence||c.evidence):c.evidence,amount:valid&&q!=='more'?(prices?.[q]??null):null,...(spec||{})};
+  const polish=locale==='pl'&&valid?plFixedQuote(c.poland,selection,q):null;
+  return {valid,pricingRevision:polish?.pricingRevision||(spec?(c.products[spec.product_id].pricingRevision||c.revision):c.revision),evidence:spec?(c.products[spec.product_id].evidence||c.evidence):c.evidence,amount:polish?polish.amount:(valid&&q!=='more'?(prices?.[q]??null):null),currency:polish?.currency||c.currency,deposit:polish?polish.deposit:c.deposit,...(spec||{})};
 }
 
 // Accept exact HTTPS profile URLs only, never redirects, credentials or content URLs.

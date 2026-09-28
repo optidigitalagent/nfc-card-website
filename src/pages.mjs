@@ -148,7 +148,7 @@ export async function submitLead(endpoint, pending, fetcher = globalThis.fetch, 
   return {leadId: value.leadId, durableSaved: true, ...(value.quote === undefined ? {} : {quote: value.quote})};
 }
 
-export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attribution, selection, select, lockSelection, event}) {
+export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attribution, selection, select, lockSelection, event, quoteForSelection}) {
   const P = (uk, en, pl) => localized(locale, uk, en, pl), q = name => form.elements.namedItem(name);
   const submit = form.querySelector('[type=submit]'), result = form.querySelector('.form-result'), note = form.querySelector('.pending-notice');
   const label = submit.textContent;
@@ -193,10 +193,10 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
   function status(message, state) {
     result.textContent = message; result.dataset.status = state; result.hidden = false; result.focus();
   }
-  function completed(leadId, previous = false) {
+  function completed(leadId, previous = false, serverQuote = null) {
     form.dataset.complete = 'true'; submit.hidden = true; submit.disabled = true; note.hidden = true;
     status((previous ? P('Попередню заявку вже збережено. Нові дані не надсилалися. Номер: ', 'Your previous enquiry is already saved. The new details were not submitted. Reference: ', 'Poprzednie zgłoszenie zostało już zapisane. Nie wysłano nowych danych. Numer: ') :
-      selection().variant==='instagram'?P('Дякуємо! Заявку отримано. Я зв’яжуся з вами, перевірю Instagram-посилання та уточню деталі замовлення. Номер: ','Thank you! Your enquiry has been received. I will contact you, check the Instagram link and confirm your order details. Reference: ','Dziękuję! Otrzymałem zgłoszenie. Skontaktuję się z Tobą, sprawdzę link do profilu na Instagramie i ustalę szczegóły zamówienia. Numer: '):P('Дякуємо! Заявку збережено. Деталі погодимо у вибраному месенджері. Номер: ', 'Thank you! Your request is saved. We will agree the details in your selected messenger. Reference: ', 'Dziękujemy! Zgłoszenie zostało zapisane. Szczegóły ustalimy w wybranym komunikatorze. Numer: ')) + leadId, previous ? 'existing' : 'success');
+      selection().variant==='instagram'?P('Дякуємо! Заявку отримано. Я зв’яжуся з вами, перевірю Instagram-посилання та уточню деталі замовлення. Номер: ','Thank you! Your enquiry has been received. I will contact you, check the Instagram link and confirm your order details. Reference: ','Dziękuję! Otrzymałem zgłoszenie. Skontaktuję się z Tobą, sprawdzę link do profilu na Instagramie i ustalę szczegóły zamówienia. Numer: '):P('Дякуємо! Заявку збережено. Деталі погодимо у вибраному месенджері. Номер: ', 'Thank you! Your request is saved. We will agree the details in your selected messenger. Reference: ', 'Dziękujemy! Zgłoszenie zostało zapisane. Szczegóły ustalimy w wybranym komunikatorze. Numer: ')) + leadId + (locale==='pl'&&Number.isSafeInteger(serverQuote?.amount)?` · Cena produktów: ${serverQuote.amount} PLN. Zaliczka: ${serverQuote.deposit} PLN.`:''), previous ? 'existing' : 'success');
     remember('complete', leadId);
     if (newRequest) newRequest.hidden = false;
   }
@@ -231,7 +231,12 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
       }
       lock(true);
       const receipt = await submitLead(endpoint, pending);
-      completed(receipt.leadId);
+      if(locale==='pl'){
+        const expected=quoteForSelection?.(pending.payload.selection?.variant,pending.payload.selection?.quantity);
+        if(!expected||receipt.quote?.currency!=='PLN'||receipt.quote.amount!==expected.amount||
+          (expected.amount!==null&&receipt.quote.deposit!==expected.deposit))throw Error('request_unconfirmed');
+      }
+      completed(receipt.leadId,false,receipt.quote);
       event('order_submit_success', selection());
     } catch (error) {
       if (error.message === 'existing_request') { completed(error.leadId, true); return; }

@@ -1,14 +1,15 @@
 import commerce from './commerce.json' with { type: 'json' };
+import poland from './poland-commerce.json' with { type: 'json' };
 import {selectionQuote} from './commerce-contract.mjs';
 import { config } from './model.mjs';
-import {assertLocale, localizedValue, translate, uah} from './locale.mjs';
+import {assertLocale, localizedValue, translate, moneyForLocale} from './locale.mjs';
 
 const localeKey = assertLocale;
 
 /** Canonical offer, shared with the server. Never uses a client price. */
-export function canonicalQuote(variant, quantity = '1') {
+export function canonicalQuote(variant, quantity = '1', locale = 'uk') {
   const key = String(quantity);
-  const {valid,amount,product_id,offer,pricingRevision,evidence}=selectionQuote(commerce,variant,key);
+  const {valid,amount,product_id,offer,pricingRevision,evidence,currency,deposit}=selectionQuote({...commerce,poland},variant,key,locale);
   return {
     variant,
     product: variant,
@@ -18,8 +19,8 @@ export function canonicalQuote(variant, quantity = '1') {
     amount,
     value: amount,
     price: amount,
-    currency: commerce.currency,
-    deposit: commerce.deposit,
+    currency,
+    deposit,
     depositIncluded: commerce.depositIncluded,
     valid, product_id, offer, pricingRevision,
     evidence
@@ -28,7 +29,7 @@ export function canonicalQuote(variant, quantity = '1') {
 
 export function money(amount, locale = 'uk') {
   if (!Number.isFinite(amount) || amount < 0) throw new TypeError('Invalid canonical amount');
-  return uah(localeKey(locale), amount);
+  return moneyForLocale(localeKey(locale), amount);
 }
 
 export function priceText(quote, locale = 'uk') {

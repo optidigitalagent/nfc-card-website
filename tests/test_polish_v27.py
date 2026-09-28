@@ -68,8 +68,8 @@ def test_polish_pages_are_complete_and_reciprocal(tmp_path):
     pl_product = BeautifulSoup((site / "pl/solutions/review-card-3d/index.html").read_text(), "html.parser")
     product = next(json.loads(script.string) for script in pl_product.select('script[type="application/ld+json"]')
                    if json.loads(script.string).get("@type") == "Product")
-    assert product["offers"]["price"] == 4000 and product["offers"]["priceCurrency"] == "UAH"
-    assert "PLN" not in pl_product.get_text(" ")
+    assert product["offers"]["price"] == 349 and product["offers"]["priceCurrency"] == "PLN"
+    assert "UAH" not in pl_product.get_text(" ")
     assert (site / "pl/index.html").is_file()  # Direct Pages reload target.
 
 

@@ -69,6 +69,10 @@ export function uah(locale, amount) {
   return locale === 'uk' ? localeNumber(locale, amount) + ' грн' : localeNumber(locale, amount) + ' UAH';
 }
 
+export function moneyForLocale(locale, amount) {
+  return locale === 'pl' ? localeNumber(locale, amount) + ' PLN' : uah(locale, amount);
+}
+
 export function polishPlural(number, one, few, many) {
   const value = Math.abs(Number(number));
   if (!Number.isSafeInteger(value)) throw Error('Invalid Polish plural number');

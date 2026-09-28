@@ -1,5 +1,6 @@
 // NFC Menu Card's browser calculator mirrors the server contract. The gateway
 // always recalculates every order and never accepts a client price.
+import {plMenuQuote} from './pl-commerce.mjs';
 export const MENU_VARIANTS = Object.freeze([
   'square_100_black', 'square_100_white', 'square_60_black',
   'square_60_white', 'round_70_black', 'round_70_white'
@@ -26,14 +27,16 @@ export function normalizeMenuRows(rows, {allowEmpty = false} = {}) {
   return normalized;
 }
 
-export function menuQuote(rows, intent = 'card_order') {
+export function menuQuote(rows, intent = 'card_order', polishContract = null) {
   if (intent === 'menu_consultation') {
     if (rows?.length) throw Error('invalid_menu_rows');
-    return {quantity: 0, unitPrice: null, amount: null, deposit: null, balance: null};
+    return {quantity: 0, unitPrice: null, amount: null, deposit: null, balance: null,
+      ...(polishContract?{currency:'PLN'}:{})};
   }
   if (intent !== 'card_order') throw Error('invalid_menu_intent');
   const items = normalizeMenuRows(rows);
   const quantity = items.reduce((sum, row) => sum + row.quantity, 0);
+  if(polishContract)return {...plMenuQuote(polishContract,quantity),items};
   const unitPrice = quantity >= 25 ? 500 : quantity >= 10 ? 600 : quantity >= 5 ? 750 : 1000;
   const amount = quantity * unitPrice;
   return {quantity, unitPrice, amount, deposit: 200, balance: amount - 200, items};

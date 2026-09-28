@@ -11,24 +11,24 @@
   "/config/specs/2/name": "Materiał",
   "/config/specs/2/value": "Tworzywo sztuczne",
   "/config/disclaimer": "NFC CARD jest niezależnym produktem. Nie jest powiązany z Google ani przez Google zatwierdzony czy sponsorowany. Google, Google Maps i odpowiadające im logotypy są znakami towarowymi ich właścicieli.",
-  "/config/seo/homeTitle": "Karty NFC: opinie Google, Instagram i menu | NFC CARD",
-  "/config/seo/homeDescription": "Gotowe karty NFC do opinii Google, profilu na Instagramie i menu online. Konfiguracja właściwego linku, ceny hurtowe Menu Card i dostawa na terenie Ukrainy.",
-  "/config/seo/productTitle": "NFC Review Card — karta do opinii Google | NFC CARD",
-  "/config/seo/productDescription": "NFC Review Card dla lokalnych firm. Jedna karta kosztuje 1 500 UAH, dwie 2 600 UAH; indywidualny projekt od 2 000 UAH. Konfiguracja, wsparcie i dostawa na terenie Ukrainy są wliczone w cenę.",
-  "/config/production/deposit/value": "200 UAH po uzgodnieniu szczegółów. Zaliczka jest wliczona w łączną cenę zamówienia.",
+  "/config/seo/homeTitle": "Karty NFC dla firm: opinie Google, Instagram i menu | NFC CARD",
+  "/config/seo/homeDescription": "Gotowe karty NFC do opinii w Google, profilu na Instagramie i menu online. Konfiguracja właściwego linku, personalizacja, wsparcie i wysyłka do Polski.",
+  "/config/seo/productTitle": "Review Card — karta NFC do opinii w Google | NFC CARD",
+  "/config/seo/productDescription": "Gotowa karta NFC, która otwiera formularz opinii w Google dla właściwej lokalizacji firmy. Konfiguracja linku i wsparcie są w cenie.",
+  "/config/production/deposit/value": "20 PLN raz za fizyczne zamówienie, po uzgodnieniu szczegółów. Zaliczka jest wliczona w cenę produktów. Nie pobieramy jej za samą konsultację w sprawie menu online.",
   "/config/production/deposit/label": "Zaliczka",
-  "/config/production/balance/value": "Po wysyłce i otrzymaniu numeru listu przewozowego.",
+  "/config/production/balance/value": "Po wysyłce i otrzymaniu potwierdzenia nadania oraz numeru przesyłki.",
   "/config/production/balance/label": "Dopłata pozostałej kwoty",
   "/config/production/payment/value": "Przelew bankowy. USDT po wcześniejszym uzgodnieniu.",
   "/config/production/payment/label": "Metody płatności",
   "/config/production/duration/value": "Zwykle do pięciu dni roboczych od uzgodnienia szczegółów",
   "/config/production/duration/label": "Czas przygotowania",
-  "/config/production/delivery/value": "Standardowa dostawa Nova Poshta na terenie Ukrainy jest wliczona w cenę.",
-  "/config/production/delivery/label": "Dostawa na terenie Ukrainy",
-  "/config/production/pickup/value": "Odbiór osobisty po wcześniejszym uzgodnieniu.",
-  "/config/production/pickup/label": "Odbiór osobisty",
-  "/config/production/europe/value": "Zamówienia i dostawę międzynarodową uzgadniamy indywidualnie. Koszt dostawy pokrywa klient.",
-  "/config/production/europe/label": "Europa",
+  "/config/production/delivery/value": "Zamówienie wysyłamy z Ukrainy. Koszt i sposób dostawy potwierdzamy przed wpłatą zaliczki. Koszt dostawy pokrywa klient.",
+  "/config/production/delivery/label": "Dostawa do Polski",
+  "/config/production/pickup/value": "Sposób odbioru uzgadniamy indywidualnie przed wpłatą zaliczki.",
+  "/config/production/pickup/label": "Odbiór",
+  "/config/production/europe/value": "Koszt i przewoźnika ustalamy indywidualnie przed płatnością.",
+  "/config/production/europe/label": "Inne kraje Europy",
   "/ui/nav": [
     "Karty",
     "Jak to działa",
@@ -96,7 +96,7 @@
   "/ui/noReceiptBody": "Wyślij formularz lub skontaktuj się z nami przez wybrany komunikator.",
   "/ui/qrStandard": "Standardowa karta nie zawiera kodu QR.",
   "/ui/qrBranded": "Kod QR można opcjonalnie dodać do karty z indywidualnym projektem.",
-  "/ui/europe": "Zamówienia do Europy wyceniamy indywidualnie wraz z dostawą.",
+  "/ui/europe": "Zamówienie wysyłamy z Ukrainy do Polski; koszt i sposób dostawy uzgadniamy przed wpłatą zaliczki.",
   "/ui/telegram": "Napisz na Telegramie",
   "/ui/phone": "Zadzwoń",
   "/ui/whatsapp": "Napisz na WhatsAppie",
@@ -148,7 +148,7 @@
     "Konfiguracja dla właściwej lokalizacji firmy w Google",
     "Bez osobnej aplikacji dla klienta",
     "Bez obowiązkowego miesięcznego abonamentu",
-    "Standardowa dostawa na terenie Ukrainy w cenie"
+    "Wysyłka z Ukrainy do Polski; koszt dostawy uzgadniany przed zaliczką"
   ],
   "/variants/1/label": "Indywidualny projekt",
   "/variants/1/description": "Karta NFC z Twoim logo, kolorami, tekstem i uzgodnionym wezwaniem do działania.",
@@ -159,11 +159,11 @@
     "Bez osobnej opłaty za projekt",
     "Konfiguracja dla Twojej lokalizacji w Google",
     "Kod QR opcjonalnie",
-    "Standardowa dostawa na terenie Ukrainy w cenie"
+    "Wysyłka z Ukrainy do Polski; koszt dostawy uzgadniany przed zaliczką"
   ],
   "/copy/catalog/eyebrow": "NFC REVIEW CARD DLA FIRM",
   "/copy/catalog/heading": "Wybierz kartę NFC dla swojej firmy",
-  "/copy/catalog/body": "Gotowy projekt lub indywidualne oznakowanie. Oba warianty konfigurujemy dla właściwej lokalizacji Twojej firmy w Google i dostarczamy bezpłatnie na terenie Ukrainy.",
+  "/copy/catalog/body": "Gotowy projekt lub karta z indywidualnym oznakowaniem. Oba warianty konfigurujemy dla właściwej lokalizacji Twojej firmy w Google. Zamówienie wysyłamy z Ukrainy do Polski.",
   "/copy/problem/heading": "Zadowoleni klienci nie zawsze zostawiają opinię",
   "/copy/problem/paragraphs": [
     "Po zakupie lub usłudze klienci często dziękują i wychodzą. Gdy mają później samodzielnie znaleźć firmę w Google, łatwo odkładają napisanie opinii na później.",
@@ -229,7 +229,7 @@
   "/copy/story/eyebrow": "SKĄD WZIĄŁ SIĘ POMYSŁ",
   "/copy/about/heading": "NFC CARD — produkt Antonov Digital",
   "/copy/about/paragraphs": [
-    "Antonov Digital to firma doradcza i cyfrowa rozwijana z wykorzystaniem AI. Tworzy strony internetowe, automatyzacje, rozwiązania AI i praktyczne produkty cyfrowe dla firm.",
+    "Antonov Digital to firma doradcza i technologiczna, która tworzy strony internetowe, automatyzacje, rozwiązania AI i praktyczne produkty cyfrowe dla firm.",
     "NFC CARD jest odrębnym produktem Antonov Digital dla lokalnych firm w Ukrainie i Europie."
   ],
   "/copy/founder/heading": "Osobiście odpowiadam za każde zamówienie",
@@ -248,11 +248,11 @@
     ],
     [
       "Kontaktujemy się z Tobą",
-      "Potwierdzamy link odpowiedni dla wybranej karty — formularz opinii Google, profil na Instagramie lub menu online — oraz dane dostawy. Jeśli nie masz jeszcze menu, możemy osobno omówić jego przygotowanie. Dla Branded Review Card pierwszą wizualizację projektu przygotowujemy bezpłatnie."
+      "Potwierdzamy link odpowiedni dla wybranej karty — formularz opinii w Google, profil na Instagramie lub menu online — oraz sposób i koszt dostawy z Ukrainy do Polski. Jeśli nie masz jeszcze menu, możemy osobno omówić jego przygotowanie. Dla Branded Review Card pierwszą wizualizację projektu przygotowujemy bezpłatnie."
     ],
     [
       "Uzgadniamy szczegóły",
-      "Po ich potwierdzeniu wpłacasz zaliczkę 200 UAH. Jest wliczona w łączną cenę."
+      "Po uzgodnieniu ceny produktów i dostawy wpłacasz zaliczkę 20 PLN raz za fizyczne zamówienie. Jest wliczona w cenę produktów. Sama konsultacja w sprawie menu online nie wymaga zaliczki."
     ],
     [
       "Przygotowujemy kartę",
@@ -260,13 +260,13 @@
     ],
     [
       "Wysyłamy zamówienie",
-      "Na terenie Ukrainy wysyłamy kartę przez Nova Poshta na nasz koszt. Pozostałą kwotę opłacasz po wysyłce i otrzymaniu numeru listu przewozowego."
+      "Wysyłamy zamówienie z Ukrainy. Sposób i koszt dostawy do Polski potwierdzamy przed wpłatą zaliczki; za dostawę płacisz Ty. Pozostałą cenę produktów opłacasz po wysyłce i otrzymaniu potwierdzenia nadania oraz numeru przesyłki."
     ]
   ],
   "/copy/payment/heading": "Płatność i dostawa",
   "/copy/payment/items": [
     [
-      "zaliczka: 200 UAH;",
+      "zaliczka: 20 PLN raz za fizyczne zamówienie;",
       ""
     ],
     [
@@ -274,7 +274,7 @@
       ""
     ],
     [
-      "pozostała kwota jest płatna po wysyłce i otrzymaniu numeru listu przewozowego;",
+      "pozostała cena produktów jest płatna po wysyłce i otrzymaniu potwierdzenia nadania oraz numeru przesyłki;",
       ""
     ],
     [
@@ -286,21 +286,21 @@
       ""
     ],
     [
-      "dostawa przez Nova Poshta na terenie Ukrainy jest bezpłatna;",
+      "zamówienie wysyłamy z Ukrainy do Polski; koszt i sposób dostawy potwierdzamy przed zaliczką;",
       ""
     ],
     [
-      "koszt dostawy do Europy pokrywa klient; ustalamy go z wyprzedzeniem;",
+      "koszt dostawy pokrywa klient i nie jest on wliczony w cenę produktów;",
       ""
     ],
     [
-      "odbiór osobisty po uzgodnieniu.",
+      "dla innych krajów Europy koszt i przewoźnika ustalamy indywidualnie przed płatnością.",
       ""
     ]
   ],
   "/copy/payment/cta": "Więcej o płatności i dostawie",
   "/copy/bulk/heading": "Więcej kart Review Card dla Twojej firmy",
-  "/copy/bulk/body": "Dla zamówień od trzech standardowych Review Card lub Branded Review Card przygotujemy indywidualną wycenę. NFC Review Card 3D kosztuje 4 000 UAH za każdą kartę, bez rabatu ilościowego. Menu Card ma osobny cennik dla większych zamówień.",
+  "/copy/bulk/body": "Dla zamówień od trzech Review Card lub Branded Review Card przygotujemy indywidualną wycenę. NFC Review Card 3D ma stałą cenę za każdą kartę, bez rabatu ilościowego. NFC Menu Card ma osobne progi cenowe zależne od łącznej liczby kart Menu w zamówieniu.",
   "/copy/bulk/cta": "Poproś o wycenę",
   "/copy/included/heading": "Co otrzymujesz w ramach zamówienia",
   "/copy/included/body": "Otrzymujesz kartę skonfigurowaną dla konkretnej lokalizacji firmy w Google, sprawdzony link i jasną instrukcję dla zespołu. Nie ma obowiązkowego miesięcznego abonamentu.",
@@ -310,7 +310,7 @@
     "Sprawdzenie NFC i poprawności linku",
     "Krótka instrukcja i wskazówki dla personelu",
     "Wsparcie po otrzymaniu karty",
-    "Standardowa dostawa przez Nova Poshta na terenie Ukrainy"
+    "Wysyłka z Ukrainy do Polski po uzgodnieniu sposobu i kosztu dostawy"
   ],
   "/copy/included/branded": [
     "Wszystko, co w standardowym wariancie, z indywidualnym projektem zamiast gotowego",
@@ -330,8 +330,8 @@
       "Krótka instrukcja, wskazówki dla zespołu i wsparcie po otrzymaniu karty."
     ],
     [
-      "Dostawa w cenie",
-      "Standardowa dostawa przez Nova Poshta na terenie Ukrainy jest wliczona w cenę."
+      "Dostawa do Polski",
+      "Wysyłamy z Ukrainy. Sposób i koszt dostawy potwierdzamy przed wpłatą zaliczki; koszt pokrywa klient."
     ],
     [
       "Dla karty z indywidualnym projektem",
@@ -341,7 +341,7 @@
   "/copy/compatibility/heading": "Działa z Twoim smartfonem",
   "/copy/compatibility/body": "Działa z większością współczesnych smartfonów iPhone i Android obsługujących NFC. Na niektórych urządzeniach z Androidem trzeba włączyć NFC w ustawieniach, a miejsce odczytu zależy od modelu telefonu.",
   "/copy/quality/heading": "Sprawdzamy kartę przed wysyłką",
-  "/copy/quality/body": "Liczy się nie tylko działanie NFC. Link powinien otwierać właściwy formularz opinii Google, profil na Instagramie albo menu online — zależnie od karty. Sama karta powinna wyglądać starannie, a personel wiedzieć, jak z niej korzystać.",
+  "/copy/quality/body": "Liczy się nie tylko działanie NFC. Link powinien otwierać właściwy formularz opinii w Google, profil na Instagramie albo menu online — zależnie od karty. Sama karta powinna wyglądać starannie, a personel wiedzieć, jak z niej korzystać.",
   "/copy/quality/items": [
     [
       "Właściwy link",
@@ -370,7 +370,7 @@
   "/faqs/1/question": "Czy klient potrzebuje aplikacji?",
   "/faqs/1/answer": "Nie. Do otwarcia linku nie jest potrzebna osobna aplikacja.",
   "/faqs/2/question": "Dokąd trafia klient po zbliżeniu telefonu?",
-  "/faqs/2/answer": "To zależy od karty. Review Card, Branded Review Card i NFC Review Card 3D otwierają formularz opinii Google dla konkretnej lokalizacji. NFC Instagram Card otwiera profil na Instagramie, a NFC Menu Card — menu online lokalu. To osobne produkty; klient sam decyduje, co zrobi dalej.",
+  "/faqs/2/answer": "To zależy od karty. Review Card, Branded Review Card i NFC Review Card 3D otwierają formularz opinii w Google dla konkretnej lokalizacji. NFC Instagram Card otwiera profil na Instagramie, a NFC Menu Card — menu online lokalu. To osobne produkty; klient sam decyduje, co zrobi dalej.",
   "/faqs/3/question": "Czy po zakupie można zmienić link?",
   "/faqs/3/answer": "Link na Review Card i Instagram Card można ponownie zapisać za pomocą zgodnego smartfona. Jeśli zmieni się adres menu online, skontaktuj się z nami, aby ustalić konfigurację Menu Card.",
   "/faqs/4/question": "Czy jest opłata miesięczna?",
@@ -382,14 +382,14 @@
   "/faqs/7/question": "Ile trwa realizacja zamówienia?",
   "/faqs/7/answer": "Standardową Review Card i Instagram Card przygotowujemy zwykle w ciągu pięciu dni roboczych od uzgodnienia szczegółów. Czas wykonania NFC Review Card 3D ustalamy osobno przed wpłatą zaliczki, a czas przygotowania Menu Card potwierdzamy przy uzgadnianiu zamówienia.",
   "/faqs/8/question": "Ile wynosi zaliczka?",
-  "/faqs/8/answer": "200 UAH. Zaliczka jest wliczona w łączną cenę.",
-  "/faqs/9/question": "Ile kosztuje dostawa na terenie Ukrainy?",
-  "/faqs/9/answer": "Standardową dostawę przez Nova Poshta na terenie Ukrainy opłacamy my.",
-  "/faqs/10/question": "Czy wysyłacie karty do Europy?",
-  "/faqs/10/answer": "Tak. Koszt i przewoźnika uzgadniamy osobno; za dostawę płaci klient.",
+  "/faqs/8/answer": "20 PLN raz za fizyczne zamówienie. Zaliczka jest wliczona w cenę produktów. Sama konsultacja w sprawie menu online nie wymaga zaliczki.",
+  "/faqs/9/question": "Ile kosztuje dostawa do Polski?",
+  "/faqs/9/answer": "Zamówienie wysyłamy z Ukrainy. Koszt i sposób dostawy potwierdzamy przed wpłatą zaliczki. Koszt dostawy pokrywa klient.",
+  "/faqs/10/question": "Czy wysyłacie karty do innych krajów Europy?",
+  "/faqs/10/answer": "Tak, możliwość wysyłki oraz koszt i przewoźnika ustalamy indywidualnie przed płatnością.",
   "/faqs/11/question": "Co zrobić, jeśli telefon nie odczytuje NFC?",
   "/faqs/11/answer": "Najpierw sprawdzimy model telefonu, ustawienia NFC, miejsce zbliżenia i zapisany link. Jeśli potwierdzi się wada techniczna, której nie da się rozwiązać zdalnie, uzgodnimy bezpłatną wymianę lub zwrot pieniędzy.",
   "/faqs/12/question": "Jak zamówić więcej kart?",
-  "/faqs/12/answer": "Dla zamówień od trzech Review Card lub Branded Review Card przygotujemy indywidualną wycenę. NFC Review Card 3D kosztuje 4 000 UAH za każdą kartę, bez rabatu ilościowego; zaliczka 200 UAH jest płatna raz za zamówienie i wliczona w łączną cenę. Obecnie NFC Instagram Card można zamówić w liczbie jednej lub dwóch sztuk. Menu Card ma ceny hurtowe od 5, 10 i 25 sztuk; można łączyć jej różne warianty. Wybierz produkt w katalogu.",
+  "/faqs/12/answer": "Dla zamówień od trzech Review Card lub Branded Review Card przygotujemy indywidualną wycenę. NFC Review Card 3D ma stałą cenę za każdą kartę, bez rabatu ilościowego. NFC Instagram Card można obecnie zamówić w liczbie jednej lub dwóch sztuk. Różne warianty NFC Menu Card sumują się w jednym zamówieniu i wspólnie wyznaczają próg cenowy. Ceny sprawdzisz na stronach produktów.",
   "/leadTime": "Zwykle do pięciu dni roboczych od uzgodnienia szczegółów"
 }

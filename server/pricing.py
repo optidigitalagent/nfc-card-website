@@ -3,17 +3,19 @@ import json
 from pathlib import Path
 
 COMMERCE_PATH = Path(__file__).resolve().parents[1] / 'src' / 'commerce.json'
+POLAND_PATH = Path(__file__).resolve().parents[1] / 'src' / 'poland-commerce.json'
 MENU_VARIANTS = ('square_100_black', 'square_100_white', 'square_60_black',
                  'square_60_white', 'round_70_black', 'round_70_white')
 
 
-def menu_quote(rows, intent='card_order'):
+def menu_quote(rows, intent='card_order', locale='uk'):
     """Mirror the Menu display quote; the deployed gateway recalculates it."""
     if intent == 'menu_consultation':
         if rows:
             raise ValueError('invalid_menu_rows')
         return {'quantity': 0, 'unitPrice': None, 'amount': None,
-                'deposit': None, 'balance': None, 'items': []}
+                'deposit': None, 'balance': None, 'items': [],
+                **({'currency': 'PLN'} if locale == 'pl' else {})}
     if intent != 'card_order' or not isinstance(rows, list) or not 1 <= len(rows) <= 100:
         raise ValueError('invalid_menu_rows')
     merged = {}
@@ -31,20 +33,27 @@ def menu_quote(rows, intent='card_order'):
     quantity = sum(item['quantity'] for item in items)
     if quantity > 10000:
         raise ValueError('invalid_menu_rows')
-    unit = 500 if quantity >= 25 else 600 if quantity >= 10 else 750 if quantity >= 5 else 1000
+    market = json.loads(POLAND_PATH.read_text(encoding='utf-8')) if locale == 'pl' else None
+    unit = next(tier['unitPrice'] for tier in market['products']['nfc-menu-card']['tiers']
+                if quantity >= tier['min'] and (tier['max'] is None or quantity <= tier['max'])) if market else (500 if quantity >= 25 else 600 if quantity >= 10 else 750 if quantity >= 5 else 1000)
     amount = quantity * unit
     return {'quantity': quantity, 'unitPrice': unit, 'amount': amount,
-            'deposit': 200, 'balance': amount - 200, 'items': items}
+            'deposit': 20 if market else 200, 'balance': amount - (20 if market else 200), 'items': items,
+            **({'currency': 'PLN'} if market else {})}
 
 
-def review3d_quote(quantity, commerce):
+def review3d_quote(quantity, commerce, locale='uk'):
     """Mirror the public quote; the gateway is authoritative at submission."""
     offer = commerce['products']['nfc-review-card-3d']['offers']['fixed']
     if type(quantity) is not int or not offer['quantityMin'] <= quantity <= offer['quantityMax']:
         raise ValueError('invalid_review3d_quantity')
-    amount = quantity * offer['unitUah']
-    return {'quantity': quantity, 'unitPrice': offer['unitUah'], 'amount': amount,
-            'deposit': offer['depositUahPerOrder'], 'balance': amount - offer['depositUahPerOrder']}
+    market = json.loads(POLAND_PATH.read_text(encoding='utf-8')) if locale == 'pl' else None
+    unit = market['products']['review-card-3d']['unitPrice'] if market else offer['unitUah']
+    deposit = market['deposit']['amount'] if market else offer['depositUahPerOrder']
+    amount = quantity * unit
+    return {'quantity': quantity, 'unitPrice': unit, 'amount': amount,
+            'deposit': deposit, 'balance': amount - deposit,
+            **({'currency': 'PLN'} if market else {})}
 
 
 def load_commerce(path=COMMERCE_PATH):
@@ -76,7 +85,7 @@ def load_commerce(path=COMMERCE_PATH):
     return data
 
 
-def canonical_quote(variant, quantity, commerce):
+def canonical_quote(variant, quantity, commerce, locale='uk'):
     if variant not in commerce['interests'] or quantity not in commerce['quantities']:
         raise ValueError('invalid_quote_combination')
     if variant == 'instagram' and quantity not in {'1', '2'}:
@@ -84,6 +93,16 @@ def canonical_quote(variant, quantity, commerce):
     prices = (commerce['products']['nfc-instagram-card']['offers']['ready']['prices']
               if variant == 'instagram' else commerce['variants'].get(variant, {}).get('prices', {}))
     custom = quantity == 'more' or variant in commerce['customQuoteInterests']
+    if locale == 'pl':
+        market = json.loads(POLAND_PATH.read_text(encoding='utf-8'))
+        key = {'standard': 'review-card', 'branded': 'branded-review-card',
+               'instagram': 'nfc-instagram-card'}.get(variant)
+        amount = None if custom else market['products'][key]['fixedPrices'][quantity]
+        deposit = market['deposit']['amount']
+        return {'status': 'custom' if custom else 'fixed', 'amount': amount,
+                'currency': market['currency'], 'deposit': deposit,
+                'balance': None if amount is None else amount - deposit,
+                'depositIncluded': True, 'pricingRevision': market['contractId']}
     return {
         'status': 'custom' if custom else 'fixed',
         'amount': None if custom else prices[quantity],

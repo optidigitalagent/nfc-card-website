@@ -41,7 +41,7 @@ def local_price(locale, amount):
     if locale == 'uk':
         return f'{amount:,}'.replace(',', ' ') + ' грн'
     if locale == 'pl':
-        return f'{amount:,}'.replace(',', '\u00a0') + ' UAH'
+        return f'{amount:,}'.replace(',', '\u00a0') + ' PLN'
     return 'UAH ' + f'{amount:,}'
 
 
@@ -98,7 +98,7 @@ def hydrate_native_form(source, request_path, commerce, content=None):
                 options = re.sub(r'\sselected(?:="[^"]*")?', '', m[0])
                 return options.replace(f'<option value="{value}"', f'<option selected value="{value}"', 1)
             form = re.sub(r'<select\b[^>]*\bname="' + name + r'"[^>]*>.*?</select>', select, form, flags=re.S)
-        amount = canonical_quote(variant, quantity, commerce)['amount'] if variant else None
+        amount = canonical_quote(variant, quantity, commerce, public_locale(parsed.path))['amount'] if variant else None
         if variant == 'instagram':
             form = re.sub(r'(<p[^>]*data-selected-product[^>]*?) hidden([^>]*>).*?(</p>)', r'\1\2NFC Instagram Card\3', form)
             form = form.replace('class="field field-instagramUrl" hidden', 'class="field field-instagramUrl"')
@@ -137,7 +137,7 @@ def hydrate_native_form(source, request_path, commerce, content=None):
         if quantity not in commerce['quantities']:quantity='1'
         locale=public_locale(parsed.path)
         if variant=='instagram' and quantity not in {'1','2'}:quantity='1'
-        amount=canonical_quote(variant,quantity,commerce)['amount']
+        amount=canonical_quote(variant,quantity,commerce,locale)['amount']
         price=local_price(locale,amount) if amount else local_copy(locale,'Індивідуальний розрахунок','Custom quote','Wycena indywidualna')
         source=re.sub(r'(<(?:p|span)\b[^>]*data-(?:current|sticky)-price[^>]*>).*?(</(?:p|span)>)',lambda m:m[1]+price+m[2],source,flags=re.S)
         def top_select(m):
@@ -154,7 +154,8 @@ def hydrate_native_form(source, request_path, commerce, content=None):
         locale = public_locale(parsed.path)
         def money(amount):
             return local_price(locale, amount)
-        prices = commerce['variants'][variant]['prices']
+        prices = (json.loads((ROOT / 'src/poland-commerce.json').read_text())['products'][{'standard':'review-card','branded':'branded-review-card'}[variant]]['fixedPrices']
+                  if locale == 'pl' else commerce['variants'][variant]['prices'])
         total = money(prices[quantity]) if quantity in prices else local_copy(locale, 'Індивідуальний розрахунок', 'Individual quote', 'Wycena indywidualna')
         def purchase(match):
             form = match[0]

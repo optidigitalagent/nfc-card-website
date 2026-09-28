@@ -138,7 +138,8 @@ def test_retired_products_absent_from_public_html_runtime_data_and_analytics():
     assert set(EVENTS)<=set(content['events'])
     assert {'catalog_product_open','product_gallery_slide','client_review_submit_success'}<=set(content['events'])
     assert len(content['events'])==len(set(content['events']))
-    assert content['commerce'] == load_commerce()
+    assert {key: value for key, value in content['commerce'].items() if key != 'poland'} == load_commerce()
+    assert content['commerce']['poland'] == json.loads((ROOT / 'src/poland-commerce.json').read_text('utf-8'))
 
 
 def test_deployment_redirect_rules_match_canonical_source():

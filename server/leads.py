@@ -113,7 +113,7 @@ def instagram_telegram_message(lead_id, created, lead):
              'Offer: ready', f'Order ID: {lead_id}',
              f'Created: {datetime.fromtimestamp(created, timezone.utc).isoformat()}',
              f'Language: {lead["locale"]}', f'Quantity: {lead["quantity"]}',
-             f'Canonical price: {lead["quote"]["amount"]} UAH',
+             f'Canonical price: {lead["quote"]["amount"]} {lead["quote"]["currency"]}',
              f'Instagram profile: {lead["instagramUrl"]}',
              f'Name: {lead["name"]}', f'Phone: {lead["phone"]}',
              f'Preferred messenger: {lead["messenger"]}', f'Comment: {lead["comment"]}',
@@ -257,7 +257,7 @@ def displayed_price_observation(value):
     value = ' '.join(value.split())
     if value in {'Individual quote', 'Custom quote', 'Індивідуальний розрахунок', 'Індивідуальний прорахунок', 'Wycena indywidualna'}:
         return value
-    if re.fullmatch(r'(?:UAH\s*)?[\d\s,.]{1,32}(?:\s*(?:UAH|грн))?', value):
+    if re.fullmatch(r'(?:(?:UAH|PLN)\s*)?[\d\s,.]{1,32}(?:\s*(?:UAH|PLN|грн))?', value):
         return value
     return None
 
@@ -387,7 +387,7 @@ class LeadService:
                 return {'ok': True, 'receipt': receipt(prior[0], json.loads(prior[2]), True)}
             lead_id = 'NFC-' + uuid.uuid4().hex[:20].upper()
             lead = {
-                **intent, 'quote': canonical_quote(intent['variant'], intent['quantity'], self.commerce),
+                **intent, 'quote': canonical_quote(intent['variant'], intent['quantity'], self.commerce, intent['locale']),
                 'displayed_price': displayed_price_observation(payload.get('displayed_price')),
                 'physicalProduct': intent.get('product_id', self.commerce['physicalProduct']['id']),
                 'consentVersion': CONSENT_VERSION,

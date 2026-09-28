@@ -24,7 +24,7 @@ class PostgresLeadService:
                 if row['payload_hash']!=fingerprint:raise LeadError(409,'idempotency_conflict')
                 return self.result(row,True)
             lead_id='NFC-'+uuid.uuid4().hex[:20].upper()
-            lead={**intent,'quote':canonical_quote(intent['variant'],intent['quantity'],self.commerce),
+            lead={**intent,'quote':canonical_quote(intent['variant'],intent['quantity'],self.commerce,intent['locale']),
                   'displayed_price':displayed_price_observation(payload.get('displayed_price')),
                   'physicalProduct':intent.get('product_id', self.commerce['physicalProduct']['id']),'consentVersion':CONSENT_VERSION,
                   'consentAcceptedAt':datetime.fromtimestamp(self.clock(),timezone.utc).isoformat(),'is_test':self.mode!='production'}

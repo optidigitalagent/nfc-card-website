@@ -41,5 +41,5 @@ def test_polish_native_custom_quantity_receipt_uses_words(web, browser):
     with server.leads.repo.transaction() as db:
         row = db.execute('SELECT payload FROM commerce_leads').fetchone()
     assert row['payload']['locale'] == 'pl'
-    assert row['payload']['quote']['currency'] == 'UAH'
+    assert row['payload']['quote']['currency'] == 'PLN'
     context.close()

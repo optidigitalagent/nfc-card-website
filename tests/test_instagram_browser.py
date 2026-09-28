@@ -245,7 +245,7 @@ def test_native_instagram_form_without_javascript(web,browser,locale,quantity):
     assert page.locator('#f-quantity option').count()==2
     assert page.locator('#f-quantity').input_value()==quantity
     assert page.locator('[name=productSchemaVersion]').input_value()=='1'
-    expected=1500 if quantity=='1' else 2600
+    expected=(129 if quantity=='1' else 219) if locale=='pl' else (1500 if quantity=='1' else 2600)
     assert ''.join(filter(str.isdigit,page.locator('[data-form-price]').inner_text()))==str(expected)
     page.fill('#f-name','Synthetic native IG');page.fill('#f-phone','+380001234567')
     page.locator('.lead-form:not([data-menu-form]) [name=messenger][value=telegram]').check(force=True)
@@ -256,5 +256,6 @@ def test_native_instagram_form_without_javascript(web,browser,locale,quantity):
     with server.leads.repo.transaction() as db:
         rows=db.execute('SELECT payload FROM commerce_leads').fetchall()
     assert len(rows)==1 and rows[0]['payload']['quote']['amount']==expected
+    assert rows[0]['payload']['quote']['currency']==('PLN' if locale=='pl' else 'UAH')
     assert rows[0]['payload']['locale']==locale
     context.close()

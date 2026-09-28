@@ -1,5 +1,5 @@
 {
-  "/instagram/eyebrow": "DLA INSTAGRAMA TWOJEJ FIRMY",
+  "/instagram/eyebrow": "DLA PROFILU TWOJEJ FIRMY NA INSTAGRAMIE",
   "/instagram/headline": "Twój Instagram — jedno zbliżenie telefonu",
   "/instagram/catalog": "Gotowa karta NFC otwierająca właściwy profil Twojej firmy na Instagramie — bez wyszukiwania, wpisywania nazwy użytkownika i zbędnych kroków.",
   "/instagram/lead": "Klient zbliża smartfon do karty i otwiera właściwy profil Twojej firmy na Instagramie — bez wyszukiwania i wpisywania nazwy użytkownika.",
@@ -12,8 +12,8 @@
   "/instagram/customerChoice": "To klient sam decyduje, czy zaobserwuje profil, napisze wiadomość albo obejrzy treści.",
   "/instagram/disclaimer": "NFC CARD jest niezależnym produktem. Nie jest oficjalnym produktem ani partnerem Instagrama lub Meta.",
   "/instagram/formIntro": "Podaj dane kontaktowe i link do profilu na Instagramie. Skontaktuję się z Tobą, sprawdzę link i potwierdzę szczegóły zamówienia.",
-  "/instagram/crossHeading": "Chcesz także ułatwić klientom dodawanie opinii Google?",
-  "/instagram/crossBody": "NFC Review Card otwiera formularz opinii dla konkretnej lokalizacji firmy w Google i pomaga pokazać doświadczenia zadowolonych klientów innym osobom.",
+  "/instagram/crossHeading": "Chcesz także ułatwić klientom dodawanie opinii w Google?",
+  "/instagram/crossBody": "NFC Review Card otwiera formularz opinii w Google dla konkretnej lokalizacji firmy. Klient sam decyduje, czy napisze i opublikuje opinię.",
   "/instagram/facts/0": "100 × 100 mm · grubość 3 mm",
   "/instagram/facts/1": "PVC · zaokrąglone rogi",
   "/instagram/facts/2": "NFC · bez kodu QR",
@@ -42,7 +42,7 @@
     "krótka instrukcja obsługi",
     "wsparcie po otrzymaniu karty",
     "staranne opakowanie",
-    "bezpłatna dostawa przez Nova Poshta na terenie Ukrainy"
+    "wysyłka z Ukrainy do Polski po uzgodnieniu sposobu i kosztu dostawy"
   ],
   "/instagram/specifications": [
     "Materiał: PVC",
@@ -54,7 +54,7 @@
     "Obowiązkowa opłata miesięczna: brak"
   ],
   "/instagram/placement": "Na recepcji, przy kasie, na stoliku, przy stanowisku odbioru, w showroomie lub w innym miejscu, gdzie kończy się wizyta klienta.",
-  "/instagram/payment": "Zaliczka wynosi 200 UAH i jest wliczona w łączną cenę. Pozostałą kwotę opłacasz po wysyłce i otrzymaniu numeru listu przewozowego. Przygotowanie trwa zwykle do pięciu dni roboczych. Dostawa przez Nova Poshta na terenie Ukrainy jest bezpłatna.",
+  "/instagram/payment": "Zaliczka 20 PLN jest pobierana raz za fizyczne zamówienie i wliczona w cenę produktów. Pozostałą kwotę opłacasz po wysyłce i otrzymaniu potwierdzenia nadania oraz numeru przesyłki. Przygotowanie karty trwa zwykle do pięciu dni roboczych. Zamówienie wysyłamy z Ukrainy; koszt i sposób dostawy do Polski potwierdzamy przed zaliczką. Koszt dostawy pokrywa klient.",
   "/instagram/productSteps/0": [
     "Przesyłasz link do właściwego profilu na Instagramie.",
     "Dodaj profil swojej firmy na Instagramie w zgłoszeniu."
@@ -71,8 +71,8 @@
     "Klient dotyka powiadomienia. Otwiera się profil Twojej firmy na Instagramie.",
     "Po otwarciu profilu klient sam wybiera dalsze działanie."
   ],
-  "/instagram/productSEO/title": "NFC Instagram Card — karta prowadząca do Instagrama | NFC CARD",
-  "/instagram/productSEO/description": "NFC Instagram Card ułatwia otwarcie właściwego profilu firmy na Instagramie. 100 × 100 mm, bez kodu QR i obowiązkowej opłaty miesięcznej.",
+  "/instagram/productSEO/title": "NFC Instagram Card — profil firmy jednym dotknięciem | NFC CARD",
+  "/instagram/productSEO/description": "Gotowa karta NFC, która otwiera właściwy profil Twojej firmy na Instagramie. Bez wyszukiwania nazwy i bez obowiązkowego abonamentu.",
   "/instagram/infoSEO/title": "Jak ułatwić klientowi przejście z lokalu na Instagram | NFC CARD",
   "/instagram/infoSEO/description": "Pomóż klientom szybko otwierać profil Twojej firmy na Instagramie bez wyszukiwania i wpisywania nazwy użytkownika. Zobacz, jak działa NFC Instagram Card.",
   "/instagram/info/heading": "Pozostań w kontakcie z klientem po wizycie",
@@ -126,13 +126,13 @@
   "/instagram/info/finalBody": "Zobacz NFC Instagram Card, jej cenę i parametry, a następnie wyślij zgłoszenie dotyczące konfiguracji dla swojego profilu.",
   "/instagram/info/founderHeading": "Dlaczego stworzyliśmy NFC Instagram Card",
   "/instagram/info/founderBody": "Chcemy ułatwiać proste kontakty z firmą: klientowi pozwolić szybko otworzyć właściwy profil, a personelowi oszczędzić ciągłego tłumaczenia, jak go znaleźć. NFC Instagram Card usuwa zbędne kroki; o obserwowaniu profilu, wysłaniu wiadomości czy obejrzeniu treści klient decyduje sam.",
-  "/instagram/info/comparisonBridge": "Zasada działania jest taka sama: zbliżenie smartfona i otwarcie skonfigurowanego linku. Wybierz, co chcesz ułatwić klientom: otwarcie profilu na Instagramie, napisanie opinii Google czy wyświetlenie menu online.",
+  "/instagram/info/comparisonBridge": "Zasada działania jest taka sama: zbliżenie smartfona i otwarcie skonfigurowanego linku. Wybierz, co chcesz ułatwić klientom: otwarcie profilu na Instagramie, napisanie opinii w Google czy wyświetlenie menu online.",
   "/instagramGlobalFAQs/0/question": "Czym jest NFC Instagram Card?",
   "/instagramGlobalFAQs/0/answer": "To fizyczna karta NFC, która po zbliżeniu smartfona otwiera właściwy profil Twojej firmy na Instagramie.",
   "/instagramGlobalFAQs/1/question": "Czy karta automatycznie zaczyna obserwować profil?",
   "/instagramGlobalFAQs/1/answer": "Nie. Karta tylko otwiera profil. Klient sam decyduje, czy go zaobserwuje, napisze wiadomość lub obejrzy treści.",
   "/instagramGlobalFAQs/2/question": "Czym NFC Instagram Card różni się od NFC Review Card?",
-  "/instagramGlobalFAQs/2/answer": "Obie działają podobnie: zbliżenie smartfona, powiadomienie i otwarcie linku. Różnią się wyglądem i przeznaczeniem. NFC Instagram Card otwiera profil na Instagramie, a NFC Review Card — formularz opinii Google. To osobne karty do różnych działań.",
+  "/instagramGlobalFAQs/2/answer": "Obie działają podobnie: zbliżenie smartfona, powiadomienie i otwarcie linku. Różnią się wyglądem i przeznaczeniem. NFC Instagram Card otwiera profil na Instagramie, a NFC Review Card — formularz opinii w Google. To osobne karty do różnych działań.",
   "/instagramProductFAQs/0/question": "Czy potrzebna jest osobna aplikacja?",
   "/instagramProductFAQs/0/answer": "Do użycia samej karty nie jest potrzebna osobna aplikacja. Profil otwiera się w Instagramie lub przeglądarce, zależnie od urządzenia i jego ustawień.",
   "/instagramProductFAQs/1/question": "Czy karta działa z iPhone'em i Androidem?",
@@ -146,11 +146,11 @@
   "/instagramProductFAQs/5/question": "Jakie wymiary ma karta?",
   "/instagramProductFAQs/5/answer": "100 × 100 mm, grubość 3 mm.",
   "/instagramProductFAQs/6/question": "Ile kosztuje karta?",
-  "/instagramProductFAQs/6/answer": "Jedna NFC Instagram Card kosztuje 1 500 UAH, a dwie 2 600 UAH.",
+  "/instagramProductFAQs/6/answer": "Cena zależy od tego, czy zamawiasz jedną czy dwie karty. Obie ceny są widoczne na stronie produktu przy wyborze liczby kart.",
   "/instagramProductFAQs/7/question": "Jak przebiega zamówienie?",
   "/instagramProductFAQs/7/answer": "Podajesz dane kontaktowe, liczbę kart i link do właściwego profilu na Instagramie. Sprawdzamy link, programujemy kartę i potwierdzamy szczegóły dostawy.",
   "/instagramProductFAQs/8/question": "Jakie są warunki płatności i dostawy?",
-  "/instagramProductFAQs/8/answer": "Zaliczka 200 UAH jest wliczona w łączną cenę. Pozostałą kwotę płacisz po wysyłce i otrzymaniu numeru listu przewozowego. Dostawa przez Nova Poshta na terenie Ukrainy jest bezpłatna.",
+  "/instagramProductFAQs/8/answer": "Zaliczka 20 PLN jest pobierana raz za fizyczne zamówienie i wliczona w cenę produktów. Pozostałą kwotę płacisz po wysyłce i otrzymaniu potwierdzenia nadania oraz numeru przesyłki. Zamówienie wysyłamy z Ukrainy; koszt i sposób dostawy do Polski potwierdzamy przed zaliczką. Koszt dostawy pokrywa klient.",
   "/instagramMedia/IG01/label": "Przód przy oknie",
   "/instagramMedia/IG02/label": "Przód nad biurkiem",
   "/instagramMedia/IG03/label": "Krawędź i grubość",
