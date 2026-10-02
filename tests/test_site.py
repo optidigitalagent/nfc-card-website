@@ -11,7 +11,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / 'site'
-BASE_ROUTES = ['/', '/about', '/solutions', '/solutions/review-card', '/solutions/branded-review-card', '/solutions/review-card-3d', '/solutions/instagram-card', '/instagram-card', '/solutions/menu-card', '/menu-card', '/reviews/new', '/order',
+BASE_ROUTES = ['/', '/about', '/solutions', '/solutions/review-card', '/solutions/branded-review-card', '/solutions/beauty-review-card', '/solutions/restaurant-review-card', '/solutions/review-card-3d', '/solutions/instagram-card', '/instagram-card', '/solutions/menu-card', '/menu-card', '/reviews/new', '/order',
                '/delivery-and-payment', '/warranty-and-returns', '/contact',
                '/thank-you', '/privacy', '/terms']
 ROUTES = BASE_ROUTES + ['/en' + ('' if r == '/' else r) for r in BASE_ROUTES] + ['/pl' + ('/' if r == '/' else r) for r in BASE_ROUTES]
@@ -107,8 +107,9 @@ def test_catalog_is_first_meaningful_section_with_two_variants_and_exact_prices(
     soup = soup_at(route)
     assert soup.main.find('section')['id'] == 'catalog'
     cards = soup.select('.commerce-card')
-    assert [c.get('data-variant', 'review_3d') for c in cards] == ['standard', 'branded', 'review_3d', 'instagram', 'menu']
-    assert cards[2]['data-product-id'] == 'nfc-review-card-3d'
+    assert [c.get('data-variant', 'review_3d') for c in cards] == ['standard', 'branded', 'review_3d', 'review_3d', 'review_3d', 'instagram', 'menu']
+    assert [c['data-solution'] for c in cards[2:4]] == ['beauty-review-card', 'restaurant-review-card']
+    assert cards[4]['data-product-id'] == 'nfc-review-card-3d'
     # These original assertions continue to protect the two Review Card offers.
     cards = cards[:2]
     for card, prices in zip(cards, [(1500, 2600), (2000, 3600)]):

@@ -103,6 +103,10 @@ def test_public_media_exact_allowlist_and_original_hashes():
                     (item['url'].startswith('/assets/media/menu/') and
                      item['requirements_source']=='NFC_CARD_MENU_FRESH_CHAT_IMPLEMENTATION_PACK_v23' and
                          item.get('managed_by')=='scripts/update_menu_media.py:v23') or
+                    (item['url'].startswith('/assets/media/niche-v29/') and
+                     item['product_id'] in {'beauty-review-card','restaurant-review-card'} and
+                     item['requirements_source']=='NFC_CARD_BEAUTY_RESTAURANT_IMPLEMENTATION_PACK_v29' and
+                     item.get('managed_by')=='v29_niche_media_import') or
                     (item['url'].startswith('/assets/media/review-3d/') and
                      item['product_id']=='nfc-review-card-3d' and
                      item['requirements_source']=='NFC_CARD_Review_3D_Website_Pack_v1 + NFC_CARD_REVIEW_3D_MEDIA_MANIFEST_v26' and

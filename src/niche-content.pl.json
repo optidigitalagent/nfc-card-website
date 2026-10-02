@@ -1,0 +1,547 @@
+{
+  "locale": "pl",
+  "market": "PL",
+  "products": {
+    "beauty": {
+      "name": "Beauty Review Card",
+      "descriptor": "Karta NFC do opinii Google w salonach urody",
+      "eyebrow": "DLA SALONÓW URODY · INDYWIDUALNY PROJEKT",
+      "h1": "Beauty Review Card — karta NFC dla salonów urody",
+      "headline": "Ułatw klientom dodanie opinii Google, gdy są jeszcze w Twoim salonie.",
+      "catalog_description": "Karta NFC z Twoim brandingiem dla salonów urody, studiów stylizacji paznokci, brwi i rzęs. Klient otwiera formularz opinii Google przy stanowisku lub w recepcji, bez samodzielnego wyszukiwania salonu.",
+      "catalog_benefits": [
+        "Twoje logo i kolory marki.",
+        "Wskazówki dotyczące rozmieszczenia i krótka podpowiedź dla zespołu.",
+        "Pierwsza indywidualna wizualizacja gratis."
+      ],
+      "lead": "Klient zobaczył już efekt zabiegu. Daj mu prosty sposób, by podzielił się wrażeniami: zbliża smartfon obsługujący NFC do karty i otwiera formularz opinii właściwej wizytówki Google Twojego salonu.",
+      "summary": "Projektujemy kartę w stylu Twojego salonu, konfigurujemy odnośnik NFC i pomagamy wybrać wygodne miejsca użycia. Przed zamówieniem otrzymujesz pierwszą bezpłatną wizualizację, propozycję rozmieszczenia i krótką podpowiedź dla osoby wykonującej zabieg lub recepcji.",
+      "cta_primary": "Otrzymaj bezpłatną wizualizację",
+      "cta_secondary": "Omów rozmieszczenie",
+      "cta_sticky": "Wizualizacja dla salonu",
+      "cta_note": "Pierwsza indywidualna wizualizacja jest bezpłatna i nie zobowiązuje do zamówienia kart.",
+      "details_label": "Więcej o Beauty Review Card",
+      "sections": [
+        {
+          "id": "situation",
+          "heading": "Dobre doświadczenie nie zawsze staje się publiczną opinią",
+          "paragraphs": [
+            "Klient może podziękować za zabieg, umówić kolejną wizytę i polecić salon znajomym. Osoba wybierająca miejsce na pierwszą wizytę nie widzi jednak tych rozmów.",
+            "Po prośbie „proszę zostawić opinię” klient nadal musi o niej pamiętać, znaleźć salon w Google, wybrać właściwy adres i otworzyć formularz. Beauty Review Card eliminuje samodzielne wyszukiwanie i pozwala przejść do formularza jeszcze podczas wizyty."
+          ]
+        },
+        {
+          "id": "placement",
+          "heading": "Nie tylko przy kasie — tam, gdzie klientowi wygodnie",
+          "paragraphs": [
+            "W studiu stylizacji paznokci główne karty można umieścić przy stanowiskach. Klient zauważa je podczas wizyty, a osoba wykonująca usługę zwraca uwagę na kartę, gdy efekt jest już widoczny i klient może wygodnie skorzystać z telefonu.",
+            "Karta w recepcji tworzy dodatkowe miejsce kontaktu po zabiegu. W salonie urody czy studiu brwi i rzęs zasada jest taka sama: wybieramy miejsce, w którym klient widzi już efekt i nie spieszy się jeszcze do wyjścia.",
+            "Liczbę kart dobieramy do przestrzeni i pracy zespołu. Nie trzeba automatycznie umieszczać karty przy każdym fotelu ani zaczynać od dużego zestawu."
+          ]
+        },
+        {
+          "id": "mechanism",
+          "heading": "Jak klient przechodzi do formularza opinii",
+          "paragraphs": [
+            "Prosta prośba zespołu i krótka droga dla klienta."
+          ],
+          "items": [
+            "Osoba wykonująca zabieg lub pracownik recepcji zaprasza do podzielenia się wrażeniami.",
+            "Klient zbliża smartfon obsługujący NFC do karty i otwiera odnośnik zaproponowany przez telefon.",
+            "Otwiera się formularz oceny i opinii właściwej wizytówki Google. Google może poprosić o zalogowanie.",
+            "Klient sam wybiera ocenę, wpisuje treść i decyduje o publikacji."
+          ]
+        },
+        {
+          "id": "staff_script",
+          "heading": "Krótka podpowiedź dla zespołu lub recepcji",
+          "paragraphs": [
+            "„Aby podzielić się wrażeniami, wystarczy zbliżyć telefon do karty”. Bez proszenia o konkretną ocenę i bez wywierania presji na kliencie."
+          ]
+        },
+        {
+          "id": "value",
+          "heading": "Niech doświadczenia klientów będą widoczne dla kolejnych osób",
+          "paragraphs": [
+            "Przed pierwszą rezerwacją klient może sprawdzić wizytówkę salonu w Google: ocenę, liczbę i aktualność opinii oraz doświadczenia innych osób. Beauty Review Card ułatwia dotarcie do formularza takiej opinii.",
+            "Opinie mogą wspierać lokalną widoczność obok innych czynników. Karta nie gwarantuje pierwszego miejsca w Google, nowych rezerwacji ani określonej oceny i nie zastępuje reklamy."
+          ]
+        },
+        {
+          "id": "included",
+          "heading": "Co obejmuje rozwiązanie",
+          "paragraphs": [
+            "Otrzymujesz kartę przygotowaną do użycia w salonie, a nie pusty znacznik NFC."
+          ],
+          "items": [
+            "Indywidualny projekt z Twoim logo, kolorami marki, tekstem i uzgodnionym wezwaniem do działania. Pierwsza wizualizacja gratis.",
+            "Akceptacja projektu przed produkcją i przygotowanie pliku do druku.",
+            "Wykonanie karty przez naszego partnera poligraficznego w Kijowie.",
+            "Konfiguracja NFC do formularza opinii właściwej wizytówki Google oraz sprawdzenie odnośnika.",
+            "Propozycja rozmieszczenia przy stanowiskach i w recepcji oraz krótka podpowiedź dla zespołu.",
+            "Zdjęcie gotowej karty przed wysyłką.",
+            "Pomoc w kwestiach technicznych po otrzymaniu karty. Wysyłkę z Ukrainy organizujemy na uzgodnionych warunkach; dostawa jest płatna osobno przez klienta."
+          ]
+        },
+        {
+          "id": "alternatives",
+          "heading": "Dlaczego to nie jest kolejny zwykły znacznik NFC",
+          "paragraphs": [
+            "Tańszy znacznik NFC może wystarczyć, gdy samodzielnie przygotujesz projekt, zapiszesz link, sprawdzisz jego działanie i opracujesz sposób użycia.",
+            "Beauty Review Card łączy te etapy: od wizualizacji w stylu salonu po rozmieszczenie i prostą podpowiedź dla zespołu. Częścią oferty jest przygotowanie do pracy, a nie tylko fizyczna karta."
+          ]
+        },
+        {
+          "id": "free_value",
+          "heading": "Zobacz rozwiązanie dla swojego salonu przed zamówieniem",
+          "paragraphs": [
+            "Pierwszą indywidualną wizualizację przygotujemy bezpłatnie. Zaproponujemy też rozmieszczenie kart oraz naturalny sposób, w jaki zespół lub recepcja może zwrócić na nie uwagę.",
+            "Na początek zostaw dane kontaktowe. O logo lub adres strony/Instagrama, wizytówkę Google i szczegóły przestrzeni zapytamy w wybranym komunikatorze. Bezpłatna wizualizacja nie zobowiązuje do zakupu kart."
+          ]
+        },
+        {
+          "id": "quality",
+          "heading": "Ty akceptujesz projekt. My sprawdzamy odnośnik.",
+          "paragraphs": [
+            "Przed produkcją widzisz cyfrową wizualizację. Przed wysyłką sprawdzamy nazwę, logo, projekt, zapisany odnośnik NFC i przejście do właściwej wizytówki Google. Wysyłamy również zdjęcie gotowej karty.",
+            "Po otrzymaniu pomagamy w kwestiach technicznych. W przypadku wady obowiązuje procedura zwrotu karty i pieniędzy opisana w sekcji „Gwarancja i zwroty”."
+          ]
+        },
+        {
+          "id": "specs",
+          "heading": "Format i personalizacja",
+          "paragraphs": [
+            "Beauty Review Card to rozwiązanie dla salonów oparte na Branded Review Card. Format i funkcja NFC pozostają takie same; różnica dotyczy zastosowania w salonie i wskazówek dla zespołu."
+          ],
+          "items": [
+            "Wymiary: 10 × 10 cm. Grubość: 3 mm.",
+            "Logo, kolory, tekst i wezwanie do działania uzgadniamy indywidualnie.",
+            "Kod QR można dodać po uzgodnieniu.",
+            "NFC wymaga zgodnego smartfona. Do otwarcia odnośnika nie jest potrzebna osobna aplikacja.",
+            "Karta otwiera formularz opinii — nie tworzy ani nie publikuje opinii automatycznie."
+          ]
+        },
+        {
+          "id": "order_process",
+          "heading": "Od zapytania do gotowej karty",
+          "paragraphs": [
+            "Najpierw uzgadniamy rozwiązanie, potem przygotowujemy zamówienie."
+          ],
+          "items": [
+            "Zostaw dane kontaktowe i wybierz wygodny komunikator.",
+            "Ustalimy właściwą wizytówkę Google, materiały do projektu i rozmieszczenie.",
+            "Przygotujemy pierwszą bezpłatną wizualizację i wskazówki dla salonu.",
+            "Przed zaliczką uzgodnimy projekt, liczbę kart, cenę, termin oraz sposób i koszt dostawy.",
+            "Wykonamy, skonfigurujemy i sprawdzimy karty, prześlemy zdjęcie i wyślemy zamówienie."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Czym Beauty Review Card różni się od Branded Review Card?",
+          "answer": "Fizycznie to ta sama karta NFC z indywidualnym projektem. Beauty Review Card łączy ją z zastosowaniem dla salonu: rozmieszczeniem przy stanowiskach i w recepcji, doborem liczby kart oraz krótką podpowiedzią dla zespołu."
+        },
+        {
+          "question": "Czy pasuje do studia paznokci, brwi lub rzęs?",
+          "answer": "Tak. Rozmieszczenie dopasowujemy do miejsca. W studiu paznokci karta może znaleźć się przy stanowisku, a dodatkowa w recepcji. W studiu brwi i rzęs warto wybrać moment, gdy klient widzi już efekt i może wygodnie skorzystać z telefonu."
+        },
+        {
+          "question": "Ile kart potrzebuje salon?",
+          "answer": "Nie ma obowiązkowego zestawu. Bierzemy pod uwagę stanowiska, recepcję i przebieg wizyty. Zamówienia od trzech kart wyceniamy indywidualnie."
+        },
+        {
+          "question": "Jakie są wymiary karty?",
+          "answer": "Obecny format to 10 × 10 cm i 3 mm grubości. Indywidualny projekt uzgadniamy przed produkcją."
+        },
+        {
+          "question": "Czy klient potrzebuje aplikacji lub konta Google?",
+          "answer": "Do otwarcia odnośnika NFC nie potrzeba osobnej aplikacji; potrzebny jest smartfon obsługujący NFC. Przed dodaniem opinii Google może poprosić o zalogowanie na konto."
+        },
+        {
+          "question": "Czy można zbierać tylko pięciogwiazdkowe opinie?",
+          "answer": "Nie. Karta nie wybiera ocen, nie filtruje klientów według ich wrażeń i nie publikuje w ich imieniu. Każda osoba sama decyduje o treści i ocenie."
+        },
+        {
+          "question": "Mamy już kod QR. Czy trzeba go usunąć?",
+          "answer": "Nie. QR i NFC to różne sposoby otwarcia linku. Kod QR odczytuje się aparatem, a przy NFC zbliża zgodny smartfon do karty. Kod QR można również dodać do projektu karty po uzgodnieniu."
+        },
+        {
+          "question": "Co jest potrzebne do bezpłatnej wizualizacji?",
+          "answer": "Na początek wystarczą dane kontaktowe. W rozmowie poprosimy o logo lub adres strony/Instagrama oraz ustalimy wizytówkę Google i rozmieszczenie. Pierwsza indywidualna wizualizacja jest bezpłatna i nie zobowiązuje do zamówienia."
+        },
+        {
+          "question": "Czy ta karta może otwierać Instagram?",
+          "answer": "W tym rozwiązaniu Beauty Review Card konfigurujemy do formularza opinii Google. Do otwierania profilu Instagram służy osobna NFC Instagram Card — inny produkt i inne działanie klienta."
+        }
+      ],
+      "cross_sell": {
+        "heading": "Opinia Google i Instagram to różne działania",
+        "body": "Beauty Review Card otwiera formularz opinii Google. Do wygodnego otwierania profilu salonu na Instagramie służy osobna NFC Instagram Card. Nie jest wliczona w cenę tego rozwiązania.",
+        "label": "Zobacz NFC Instagram Card",
+        "target": "/solutions/instagram-card"
+      },
+      "final_heading": "Zobacz Beauty Review Card w stylu swojego salonu",
+      "final_body": "Otrzymaj pierwszą indywidualną wizualizację i wskazówki dotyczące rozmieszczenia gratis. Najpierw zobaczysz, jak karta pasuje do przestrzeni i jak użyje jej zespół, a potem zdecydujesz o zamówieniu.",
+      "form_heading": "Otrzymaj wizualizację dla salonu",
+      "form_intro": "Zostaw dane kontaktowe. Napiszemy w wybranym komunikatorze, aby ustalić materiały do projektu, wizytówkę Google i rozmieszczenie kart.",
+      "form_submit": "Poproś o wizualizację dla salonu",
+      "form_success_heading": "Otrzymaliśmy zapytanie o Beauty Review Card",
+      "form_success_body": "Napiszemy w wybranym komunikatorze, aby omówić projekt i rozmieszczenie w salonie. Zapytanie nie jest płatnością ani automatycznym potwierdzeniem zamówienia.",
+      "seo_title": "Beauty Review Card dla salonów urody | NFC CARD",
+      "seo_description": "Karta NFC z Twoim brandingiem do opinii Google w salonie. Rozmieszczenie przy stanowiskach i w recepcji, podpowiedź dla zespołu i pierwsza wizualizacja gratis."
+    },
+    "restaurant": {
+      "name": "Restaurant Review Card",
+      "descriptor": "Karta NFC do opinii Google w restauracjach",
+      "eyebrow": "DLA RESTAURACJI · INDYWIDUALNY PROJEKT",
+      "h1": "Restaurant Review Card — karta NFC dla restauracji",
+      "headline": "Od prośby kelnera do formularza opinii Google, gdy gość jest jeszcze w lokalu.",
+      "catalog_description": "Karta NFC z brandingiem restauracji: na stoliku lub podawana z rachunkiem. Gość otwiera formularz opinii właściwej wizytówki Google, a kelner od razu wskazuje prosty sposób podzielenia się wrażeniami.",
+      "catalog_benefits": [
+        "Na stolikach lub razem z rachunkiem.",
+        "Twój projekt i krótka podpowiedź dla kelnera.",
+        "Pierwsza indywidualna wizualizacja gratis."
+      ],
+      "lead": "Gość poznał już kuchnię, atmosferę i obsługę. Restaurant Review Card zmienia prośbę o opinię w konkretny następny krok: zbliżenie smartfona z NFC i otwarcie formularza właściwej wizytówki Google.",
+      "summary": "Projektujemy kartę w stylu restauracji, konfigurujemy link i pomagamy wybrać zastosowanie: na stolikach, przy barze lub z rachunkiem. Przed zamówieniem otrzymujesz pierwszą bezpłatną wizualizację i propozycję wykorzystania kart w lokalu.",
+      "cta_primary": "Otrzymaj bezpłatną wizualizację",
+      "cta_secondary": "Omów zastosowanie w restauracji",
+      "cta_sticky": "Wizualizacja dla restauracji",
+      "cta_note": "Pierwsza indywidualna wizualizacja jest bezpłatna i nie zobowiązuje do zamówienia kart.",
+      "details_label": "Więcej o Restaurant Review Card",
+      "sections": [
+        {
+          "id": "situation",
+          "heading": "Prośba była. Opinia nie powstała.",
+          "paragraphs": [
+            "Kelner prosi o opinię. Gość odpowiada „oczywiście”, płaci i wychodzi. Musi jeszcze pamiętać o prośbie, znaleźć restaurację w Google, wybrać właściwy adres i otworzyć formularz.",
+            "Restaurant Review Card usuwa przerwę między prośbą a działaniem. Kelner nie tylko przypomina o opinii — od razu pokazuje, jak otworzyć formularz."
+          ]
+        },
+        {
+          "id": "table_scenario",
+          "heading": "Scenariusz 1. Karta na stoliku",
+          "paragraphs": [
+            "Gość widzi Review Card podczas wizyty. Pod koniec obsługi kelner zwraca na nią uwagę, a gość zbliża smartfon z NFC i otwiera zaproponowany link.",
+            "Karta tworzy stale dostępny punkt kontaktu na stoliku. Przygotowujemy projekt z Twoim logo, kolorami i czytelnym zaproszeniem do podzielenia się wrażeniami."
+          ]
+        },
+        {
+          "id": "bill_scenario",
+          "heading": "Scenariusz 2. Karta podawana z rachunkiem",
+          "paragraphs": [
+            "Kelner przynosi rachunek lub terminal i proponuje gościowi Review Card. Wrażenia z wizyty są już ukształtowane, a możliwość dodania opinii pojawia się od razu, zamiast zamieniać się w zadanie na później.",
+            "Zespół może używać przenośnych kart przy zakończeniu obsługi. Nie trzeba zaczynać od karty na każdym stoliku — liczbę dobieramy do pracy restauracji."
+          ]
+        },
+        {
+          "id": "staff_script",
+          "heading": "Jedna krótka podpowiedź dla kelnera",
+          "paragraphs": [
+            "„Aby podzielić się wrażeniami, wystarczy zbliżyć telefon do karty”. Bez proszenia o konkretną ocenę i bez wywierania presji na gościu."
+          ]
+        },
+        {
+          "id": "mechanism",
+          "heading": "Zbliżenie → właściwa wizytówka Google → formularz opinii",
+          "paragraphs": [
+            "Karta daje dostęp do formularza, ale nie publikuje opinii za gościa."
+          ],
+          "items": [
+            "Gość zbliża smartfon obsługujący NFC do karty.",
+            "Otwiera odnośnik zaproponowany przez telefon.",
+            "Trafia do formularza opinii właściwej wizytówki Google. Google może poprosić o zalogowanie.",
+            "Sam wybiera ocenę, treść i decyduje o publikacji."
+          ]
+        },
+        {
+          "id": "qr_comparison",
+          "heading": "Nie zamiast każdego kodu QR — inny sposób otwarcia linku",
+          "paragraphs": [
+            "QR to znane narzędzie: gość otwiera aparat, kieruje go na kod i przechodzi do linku. Przy NFC zbliża zgodny smartfon do karty i otwiera zaproponowany odnośnik.",
+            "Nie twierdzimy, że QR nie działa ani że każdy telefon obsługuje NFC. Proponujemy inną interakcję, którą można naturalnie połączyć z prośbą kelnera. Kod QR można dodać do karty po uzgodnieniu."
+          ]
+        },
+        {
+          "id": "value",
+          "heading": "Wrażenia dzisiejszych gości — informacje dla kolejnych",
+          "paragraphs": [
+            "Wybierając restaurację, klient może sprawdzić ocenę, liczbę i aktualność opinii Google oraz doświadczenia innych gości. Prywatne podziękowanie kelnerowi nie jest widoczne w tej wizytówce.",
+            "Restaurant Review Card ułatwia przejście od doświadczenia w lokalu do możliwości podzielenia się nim. Opinie mogą wspierać lokalną widoczność obok innych czynników, ale karta nie gwarantuje pierwszego miejsca w Google, rezerwacji ani określonej oceny."
+          ]
+        },
+        {
+          "id": "included",
+          "heading": "Co obejmuje rozwiązanie",
+          "paragraphs": [
+            "Przygotowujemy kartę i praktyczny sposób wykorzystania jej w Twojej restauracji."
+          ],
+          "items": [
+            "Indywidualny projekt z Twoim logo, kolorami marki, tekstem i uzgodnionym wezwaniem do działania. Pierwsza wizualizacja gratis.",
+            "Akceptacja projektu przed produkcją i przygotowanie pliku do druku.",
+            "Wykonanie karty przez naszego partnera poligraficznego w Kijowie.",
+            "Konfiguracja NFC do formularza opinii właściwej wizytówki Google oraz sprawdzenie przejścia.",
+            "Propozycja rozmieszczenia i liczby kart: stoliki, bar, kasa lub przenośne karty dla kelnerów — zgodnie z pracą lokalu.",
+            "Krótka podpowiedź dla kelnera i zdjęcie gotowej karty przed wysyłką.",
+            "Pomoc w kwestiach technicznych po otrzymaniu karty. Wysyłkę z Ukrainy organizujemy na uzgodnionych warunkach; dostawa jest płatna osobno przez klienta."
+          ]
+        },
+        {
+          "id": "quantity_logic",
+          "heading": "Liczbę określa zastosowanie, nie chęć sprzedania więcej",
+          "paragraphs": [
+            "W jednej restauracji sprawdzą się karty na stolikach. W innej — kilka przenośnych kart podawanych z rachunkiem. Dodatkowe miejsca przy barze lub kasie mają sens tam, gdzie goście mogą wygodnie z nich skorzystać.",
+            "Pomożemy wybrać użyteczne punkty kontaktu. Nie ma obowiązkowego zestawu; zamówienia od trzech kart wyceniamy indywidualnie."
+          ]
+        },
+        {
+          "id": "alternatives",
+          "heading": "Znacznik NFC i gotowe rozwiązanie to nie to samo",
+          "paragraphs": [
+            "Na rynku są tańsze karty i znaczniki NFC. Mogą odpowiadać Twoim potrzebom, gdy samodzielnie przygotujesz projekt, skonfigurujesz link i ustalisz sposób użycia przez zespół.",
+            "Restaurant Review Card obejmuje indywidualny projekt, przygotowanie do druku, konfigurację, sprawdzenie i wskazówki dla lokalu. Dostajesz kartę z jasnym zastosowaniem, a nie element, który trzeba jeszcze wdrożyć."
+          ]
+        },
+        {
+          "id": "free_value",
+          "heading": "Zobacz kartę i sposób użycia przed zamówieniem",
+          "paragraphs": [
+            "Bezpłatnie przygotujemy pierwszą indywidualną wizualizację i zaproponujemy odpowiedni scenariusz: stoliki lub rachunek, dodatkowe miejsca i krótką prośbę dla kelnera.",
+            "Zacznij od zapytania. Materiały do projektu, wizytówkę Google i przebieg obsługi ustalimy w wybranym komunikatorze. Wizualizacja nie zobowiązuje do zamówienia."
+          ]
+        },
+        {
+          "id": "quality",
+          "heading": "Akceptacja przed produkcją. Sprawdzenie przed wysyłką.",
+          "paragraphs": [
+            "Akceptujesz cyfrową wizualizację przed produkcją. Sprawdzamy nazwę, logo, projekt, wizytówkę Google, zapisany link NFC i faktyczne przejście. Przed wysyłką otrzymujesz zdjęcie gotowej karty.",
+            "Po otrzymaniu pomagamy w kwestiach technicznych. Dla karty z wadą obowiązuje procedura zwrotu karty i pieniędzy z sekcji „Gwarancja i zwroty”."
+          ]
+        },
+        {
+          "id": "specs",
+          "heading": "Format i personalizacja",
+          "paragraphs": [
+            "Restaurant Review Card to rozwiązanie dla restauracji oparte na Branded Review Card. Fizyczna karta i funkcja NFC są takie same; zastosowanie dopasowujemy do obsługi w lokalu."
+          ],
+          "items": [
+            "Wymiary: 10 × 10 cm. Grubość: 3 mm.",
+            "Twoje logo, kolory marki, tekst i uzgodnione wezwanie do działania.",
+            "Kod QR po uzgodnieniu.",
+            "Potrzebny jest smartfon obsługujący NFC; otwarcie linku nie wymaga osobnej aplikacji.",
+            "Jedno czytelne działanie: otwarcie formularza opinii Google Twojej restauracji."
+          ]
+        },
+        {
+          "id": "order_process",
+          "heading": "Jak złożyć zamówienie",
+          "paragraphs": [
+            "Od pierwszej rozmowy do skonfigurowanych kart."
+          ],
+          "items": [
+            "Zostaw dane kontaktowe i wybierz wygodny komunikator.",
+            "Ustalimy wizytówkę Google, logo, kolory i przebieg obsługi.",
+            "Przygotujemy pierwszą bezpłatną wizualizację i propozycję rozmieszczenia.",
+            "Przed zaliczką uzgodnimy projekt, liczbę kart, cenę, termin oraz sposób i koszt dostawy.",
+            "Wykonamy, skonfigurujemy i sprawdzimy karty, prześlemy zdjęcie gotowego zamówienia i wyślemy je."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Czym Restaurant Review Card różni się od Branded Review Card?",
+          "answer": "To ta sama karta NFC z indywidualnym projektem, ale z zastosowaniem dla restauracji: na stolikach, z rachunkiem lub w innych odpowiednich miejscach, z doborem liczby kart i krótką podpowiedzią dla kelnera."
+        },
+        {
+          "question": "Lepiej umieścić karty na stolikach czy podawać z rachunkiem?",
+          "answer": "Zależy to od obsługi. Karta na stoliku jest stale dostępna; karta z rachunkiem pojawia się na zakończenie wizyty. Pomożemy wybrać jeden scenariusz lub je połączyć."
+        },
+        {
+          "question": "Czy każdy stolik potrzebuje karty?",
+          "answer": "Nie. Można zacząć od przenośnych kart dla kelnerów lub wybranych miejsc. Liczbę dopasowujemy do restauracji, bez obowiązkowego dużego zestawu."
+        },
+        {
+          "question": "Co z gościem, który nie korzysta z NFC?",
+          "answer": "NFC wymaga zgodnego smartfona. Do karty można po uzgodnieniu dodać kod QR jako inny sposób otwarcia linku."
+        },
+        {
+          "question": "Czy gość potrzebuje aplikacji?",
+          "answer": "Otwarcie odnośnika NFC nie wymaga osobnej aplikacji. Przed dodaniem opinii Google może poprosić o zalogowanie."
+        },
+        {
+          "question": "Czy jedna karta może otwierać menu i formularz opinii?",
+          "answer": "W tym rozwiązaniu rozdzielamy działania. Restaurant Review Card otwiera formularz opinii Google, a osobna NFC Menu Card — Twoje publiczne menu online. Menu Card nie jest wliczona w cenę Review Card."
+        },
+        {
+          "question": "Czy karta gwarantuje pięć gwiazdek lub automatyczną opinię?",
+          "answer": "Nie. Gość sam wybiera ocenę, treść i decyduje o publikacji. Karta tylko otwiera właściwy formularz."
+        },
+        {
+          "question": "Jakie ma wymiary i czy będzie na niej nasze logo?",
+          "answer": "Obecny format to 10 × 10 cm i 3 mm grubości. Logo, kolory, tekst i wezwanie do działania uzgadniamy w indywidualnej wizualizacji przed produkcją."
+        },
+        {
+          "question": "Co jest potrzebne do wizualizacji i wyceny?",
+          "answer": "Zostaw dane kontaktowe. W rozmowie ustalimy logo lub adres strony/Instagrama, wizytówkę Google i sposób użycia. Pierwsza wizualizacja jest bezpłatna; zamówienia od trzech kart wyceniamy indywidualnie."
+        }
+      ],
+      "cross_sell": {
+        "heading": "Do menu — osobna NFC Menu Card",
+        "body": "Masz już publiczne menu online? NFC Menu Card otworzy je na telefonie gościa przy stoliku lub barze. Restaurant Review Card pozostaje przeznaczona do opinii Google: dwie karty, dwa czytelne działania. Menu Card zamawia się osobno.",
+        "label": "Zobacz NFC Menu Card",
+        "target": "/solutions/menu-card"
+      },
+      "final_heading": "Zobacz, jak Review Card może działać w Twojej restauracji",
+      "final_body": "Otrzymaj pierwszą bezpłatną wizualizację i wskazówki: gdzie umieścić karty, kiedy zaproponować je gościowi i co może powiedzieć kelner. Liczbę kart i zamówienie omówimy później.",
+      "form_heading": "Otrzymaj wizualizację dla restauracji",
+      "form_intro": "Zostaw dane kontaktowe. Napiszemy w wybranym komunikatorze, aby ustalić projekt, wizytówkę Google i scenariusz: stoliki, rachunek lub oba warianty.",
+      "form_submit": "Poproś o wizualizację dla restauracji",
+      "form_success_heading": "Otrzymaliśmy zapytanie o Restaurant Review Card",
+      "form_success_body": "Napiszemy w wybranym komunikatorze, aby omówić projekt i zastosowanie w restauracji. Zapytanie nie jest płatnością ani automatycznym potwierdzeniem zamówienia.",
+      "seo_title": "Restaurant Review Card dla restauracji | NFC CARD",
+      "seo_description": "Karta NFC do opinii Google w restauracji: na stolikach lub z rachunkiem. Twój projekt, krótka podpowiedź dla kelnera i pierwsza indywidualna wizualizacja gratis."
+    }
+  },
+  "shared": {
+    "price_rows": [
+      [
+        "1 karta",
+        "169 PLN"
+      ],
+      [
+        "2 karty",
+        "299 PLN"
+      ],
+      [
+        "Od 3 kart",
+        "Wycena indywidualna"
+      ]
+    ],
+    "price_note": "Beauty Review Card i Restaurant Review Card korzystają z cen Branded Review Card. Liczbę kart i końcową kwotę uzgadniamy przed zaliczką. Dostawa jest płatna osobno.",
+    "delivery_short": "Wysyłka z Ukrainy. Dostawa płatna osobno przez klienta.",
+    "payment_heading": "Płatność i dostawa",
+    "payment_body": "Pierwsza indywidualna wizualizacja jest bezpłatna. Po uzgodnieniu zamówienia zaliczka 20 PLN jest pobierana raz za fizyczne zamówienie i wliczana w jego wartość. Pozostałą kwotę płacisz po wysyłce i potwierdzeniu numeru śledzenia. Termin wykonania oraz koszt i sposób dostawy potwierdzamy przed zaliczką. Wysyłamy z Ukrainy; koszt dostawy pokrywa klient.",
+    "other_markets": "Koszt dostawy do innych krajów i przewoźnika ustalamy indywidualnie przed płatnością.",
+    "proof_heading": "Od materiałów marki do gotowej karty",
+    "proof_body": "NFC CARD zamawiały już lokalne firmy z różnych branż, między innymi pracownia ceramiczna Glynar w Kijowie oraz salony samochodowe Ford i MG „Velet Avto” we Lwowie. Dla Velet Avto otrzymaliśmy materiały marek, przygotowaliśmy warianty projektu, uzgodniliśmy wygląd, a następnie wykonaliśmy i skonfigurowaliśmy karty. Ten przykład pokazuje nasz proces personalizacji i przygotowania zamówienia.",
+    "proof_note": "Przykłady realizacji pokazują produkt i projekt, a nie zmierzony wzrost liczby opinii w salonie lub restauracji.",
+    "menu_group": "Rozwiązania dla firm",
+    "nav_beauty": "Dla salonów urody",
+    "nav_restaurant": "Dla restauracji",
+    "footer_beauty": "Beauty Review Card — dla salonów",
+    "footer_restaurant": "Restaurant Review Card — dla restauracji",
+    "home_catalog_intro": "Karty NFC do opinii Google, Instagrama i menu online. Wybierz działanie klienta, projekt i zastosowanie dla swojej firmy. Dla salonów urody i restauracji przygotowaliśmy osobne rozwiązania z indywidualnym projektem i wskazówkami użycia.",
+    "catalog_extension": "Do opinii Google dostępne są gotowa Review Card, indywidualna Branded Review Card i NFC Review Card 3D. Beauty Review Card i Restaurant Review Card to osobne rozwiązania branżowe oparte na karcie z brandingiem. NFC Instagram Card otwiera profil Instagram, a NFC Menu Card — menu online.",
+    "niche_heading": "Wybierz nie tylko kartę, ale też zastosowanie dla swojej firmy",
+    "niche_intro": "Review Card ma jedną funkcję: otworzyć formularz opinii Google. Moment, miejsce i sposób zaproponowania jej klientowi zależą od firmy. Dlatego przygotowaliśmy osobne rozwiązania dla salonów urody i restauracji.",
+    "home_beauty_heading": "Dla salonu: przy stanowisku i w recepcji",
+    "home_beauty_body": "Beauty Review Card pomaga zaprosić klienta do dodania opinii Google, gdy widzi już efekt zabiegu i nadal jest w salonie. Przygotujemy projekt, zaproponujemy rozmieszczenie i krótką podpowiedź dla zespołu.",
+    "home_beauty_cta": "Zobacz Beauty Review Card",
+    "home_restaurant_heading": "Dla restauracji: na stoliku lub z rachunkiem",
+    "home_restaurant_body": "Restaurant Review Card łączy prośbę kelnera z możliwością natychmiastowego otwarcia formularza opinii Google. Pomożemy wybrać karty na stolikach lub przenośne karty podawane na zakończenie wizyty.",
+    "home_restaurant_cta": "Zobacz Restaurant Review Card",
+    "problem_addition": "W salonie prośba o opinię może zniknąć między zakończeniem zabiegu a wyjściem klienta. W restauracji — między słowami kelnera a działaniem gościa. Branżowe Review Card ułatwiają otwarcie formularza właśnie w tym momencie.",
+    "how_addition": "W salonie klient korzysta z karty przy stanowisku lub w recepcji. W restauracji — na stoliku lub z rachunkiem. Przejście NFC jest takie samo: zgodny smartfon → zaproponowany link → formularz opinii właściwej wizytówki Google.",
+    "facts_addition": "Beauty Review Card i Restaurant Review Card mają ten sam format co Branded Review Card: 10 × 10 cm, 3 mm grubości i indywidualny projekt. Kod QR można dodać po uzgodnieniu.",
+    "included_addition": "Oprócz indywidualnego projektu i konfiguracji Beauty Review Card i Restaurant Review Card obejmują propozycję rozmieszczenia oraz krótką podpowiedź dla zespołu: osoby wykonującej zabieg, recepcji lub kelnera.",
+    "process_addition": "Na etapie bezpłatnej wizualizacji omawiamy stanowiska i recepcję w salonie lub stoliki i podawanie karty z rachunkiem w restauracji. Liczbę kart i ostateczną cenę dopasowujemy do zastosowania.",
+    "bulk_heading": "Kilka kart w kilku odpowiednich miejscach",
+    "bulk_body": "Stanowiska i recepcja w salonie; stoliki, bar lub przenośne karty dla kelnerów w restauracji. Pomożemy dobrać liczbę według zastosowania, bez obowiązkowego dużego zestawu. Od trzech kart — wycena indywidualna.",
+    "bulk_cta": "Omów liczbę i rozmieszczenie",
+    "final_heading": "Wybierz działanie i zastosowanie dla swojej firmy",
+    "final_body": "Opinie Google, Instagram lub menu online. Dla salonu lub restauracji zacznij od rozwiązania branżowego Review: Twój projekt, czytelne rozmieszczenie i pierwsza wizualizacja gratis.",
+    "final_cta": "Wybierz rozwiązanie",
+    "review_cross_heading": "Szukasz zastosowania dla swojej branży?",
+    "review_cross_body": "Beauty Review Card służy do użycia przy stanowiskach i w recepcji salonu. Restaurant Review Card — na stolikach lub z rachunkiem. Oba rozwiązania bazują na karcie z brandingiem i obejmują wskazówki dla zespołu.",
+    "branded_cross_body": "Beauty Review Card i Restaurant Review Card to ta sama spersonalizowana karta z osobnymi zastosowaniami dla salonu i restauracji. Otwórz swoje rozwiązanie, aby zobaczyć rozmieszczenie, podpowiedź dla zespołu i formularz bezpłatnej wizualizacji.",
+    "menu_cross_heading": "Menu na początku wizyty. Opinia po wrażeniach.",
+    "menu_cross_body": "NFC Menu Card otwiera menu online. Osobna Restaurant Review Card ułatwia gościowi przejście do opinii Google na koniec wizyty — na stoliku lub z rachunkiem. To różne produkty i oddzielne działania.",
+    "menu_cross_cta": "Zobacz rozwiązanie do opinii dla restauracji",
+    "instagram_cross_heading": "Dla salonu: Instagram i opinie Google osobno",
+    "instagram_cross_body": "NFC Instagram Card otwiera profil salonu. Beauty Review Card prowadzi do formularza opinii Google i ma osobny scenariusz dla stanowisk i recepcji. Wybierz kartę według działania, które chcesz zaproponować klientowi.",
+    "instagram_cross_cta": "Zobacz rozwiązanie do opinii dla salonu",
+    "review3d_cross_body": "Potrzebujesz indywidualnego projektu i zastosowania w salonie lub restauracji? Zobacz Beauty Review Card i Restaurant Review Card oparte na Branded Review Card. To osobne rozwiązania, nie wersja 3D.",
+    "about_addition": "NFC CARD to więcej niż wybór fizycznej karty. Przygotowujemy ją do pracy w konkretnej firmie: Beauty Review Card uwzględnia stanowiska i recepcję, a Restaurant Review Card — stoliki i zakończenie obsługi. Projekt, konfiguracja i wskazówki tworzą jedno rozwiązanie.",
+    "contact_intro": "Pomożemy wybrać kartę NFC do opinii Google, Instagrama lub menu online. Dla salonów urody i restauracji przygotujemy pierwszą bezpłatną wizualizację i podpowiemy, gdzie oraz jak używać Review Card.",
+    "contact_prompt": "Pytasz o rozwiązanie dla salonu lub restauracji? Wybierz Beauty Review Card albo Restaurant Review Card, abyśmy od początku uwzględnili właściwe zastosowanie.",
+    "delivery_addition": "Beauty Review Card i Restaurant Review Card wykonujemy z indywidualnym projektem na warunkach Branded Review Card. Pierwsza wizualizacja jest bezpłatna. Projekt, liczbę kart, cenę, termin oraz koszt i sposób dostawy uzgadniamy przed zaliczką. Zaliczka 20 PLN jest pobierana raz za zamówienie i wliczana w jego wartość. Wysyłamy z Ukrainy; dostawę opłaca klient.",
+    "terms_addition": "Beauty Review Card i Restaurant Review Card to branżowe rozwiązania oparte na Branded Review Card z indywidualnym projektem. Zapytanie o bezpłatną wizualizację nie jest płatnością ani automatycznym potwierdzeniem zamówienia. Projekt, liczbę kart, cenę, termin oraz sposób i koszt dostawy uzgadniamy przed zaliczką.",
+    "warranty_addition": "Dla Beauty Review Card i Restaurant Review Card obowiązuje procedura pomocy z NFC, sprawdzenia wad i zwrotu pieniędzy dotycząca kart z brandingiem. W kwestiach technicznych skontaktuj się z nami przez stronę. Warunki zwrotu spersonalizowanej karty i koszty przesyłki uzgadniamy przed płatnością.",
+    "privacy_addition": "W zapytaniu o Beauty Review Card lub Restaurant Review Card zapisujemy również wybrane rozwiązanie branżowe, aby odpowiedzieć w kontekście salonu urody lub restauracji. Zgoda na obsługę zapytania nie jest zgodą na komunikację marketingową.",
+    "footer_description": "Karty NFC do opinii Google, Instagrama i menu online. Osobne rozwiązania Review dla salonów urody i restauracji.",
+    "home_seo_title": "NFC CARD — karty NFC dla firm, salonów i restauracji",
+    "home_seo_description": "Karty NFC do opinii Google, Instagrama i menu online. Wersje gotowe i z brandingiem oraz osobne rozwiązania dla salonów urody i restauracji.",
+    "catalog_seo_title": "Katalog kart NFC i rozwiązań branżowych | NFC CARD",
+    "catalog_seo_description": "Porównaj Review Card, Branded, 3D, Instagram i Menu Card. Dla salonów i restauracji: osobne rozwiązania z indywidualnym projektem i scenariuszami użycia.",
+    "global_faq": [
+      {
+        "question": "Czy jest osobne rozwiązanie dla salonu urody?",
+        "answer": "Tak. Beauty Review Card to karta NFC do opinii Google z Twoim brandingiem, propozycją rozmieszczenia przy stanowiskach i w recepcji, doborem liczby kart oraz krótką podpowiedzią dla zespołu."
+      },
+      {
+        "question": "Co oferujecie restauracjom do opinii Google?",
+        "answer": "Restaurant Review Card — kartę NFC z brandingiem do użycia na stolikach lub z rachunkiem. Pomagamy dobrać scenariusz i liczbę kart oraz przygotowujemy krótką podpowiedź dla kelnera."
+      },
+      {
+        "question": "Czy Beauty i Restaurant wykorzystują inną technologię?",
+        "answer": "Nie. Bazują na Branded Review Card i tak samo otwierają formularz opinii Google. Różnią się zastosowaniem i wskazówkami dla konkretnej branży."
+      },
+      {
+        "question": "Czy najpierw mogę otrzymać wizualizację i poradę dotyczącą rozmieszczenia?",
+        "answer": "Tak. Pierwsza indywidualna wizualizacja Beauty Review Card i Restaurant Review Card jest bezpłatna. Przed zamówieniem proponujemy też rozmieszczenie i krótką podpowiedź dla zespołu."
+      },
+      {
+        "question": "Czy Restaurant Review Card obejmuje menu online?",
+        "answer": "Nie. Restaurant Review Card służy do opinii Google. Do otwierania publicznego menu online przeznaczona jest osobna NFC Menu Card."
+      }
+    ],
+    "form_labels": {
+      "name": "Imię",
+      "phone": "Numer telefonu",
+      "messenger": "Preferowany komunikator",
+      "solution": "Co Cię interesuje?",
+      "beauty_option": "Beauty Review Card — dla salonu urody",
+      "restaurant_option": "Restaurant Review Card — dla restauracji",
+      "quantity": "Orientacyjna liczba kart",
+      "quantity_options": [
+        "1 karta",
+        "2 karty",
+        "Od 3 kart — wycena indywidualna",
+        "Potrzebuję porady dotyczącej liczby kart"
+      ],
+      "quantity_help": "Nie wiesz, ile kart wybrać? Poproś o poradę — dobierzemy liczbę do rozmieszczenia.",
+      "materials_hint": "Logo, link do wizytówki Google i szczegóły rozmieszczenia ustalimy w komunikatorze.",
+      "free_request_note": "Zapytanie o pierwszą wizualizację jest bezpłatne. Zaliczka dotyczy tylko uzgodnionego zamówienia fizycznych kart.",
+      "phone_help": "Numer wykorzystamy wyłącznie do kontaktu w sprawie zapytania.",
+      "consent": "Akceptuję Politykę prywatności i przetwarzanie danych w celu odpowiedzi na zapytanie.",
+      "sending": "Wysyłamy zapytanie…",
+      "not_confirmed": "Nie mamy jeszcze potwierdzenia otrzymania zapytania. Spróbuj wysłać je ponownie lub napisz do nas w komunikatorze.",
+      "validation_name": "Podaj imię.",
+      "validation_phone": "Sprawdź numer telefonu.",
+      "validation_messenger": "Wybierz komunikator.",
+      "validation_consent": "Potwierdź zgodę na obsługę zapytania.",
+      "validation_solution": "Wybierz rozwiązanie.",
+      "validation_quantity": "Wybierz liczbę kart lub poproś o poradę."
+    },
+    "notification_labels": {
+      "solution": "Rozwiązanie",
+      "base": "Produkt bazowy",
+      "scenario": "Zastosowanie",
+      "quantity": "Orientacyjna liczba kart",
+      "request": "Rodzaj zapytania",
+      "request_value": "Pierwsza bezpłatna wizualizacja i propozycja rozmieszczenia",
+      "beauty_scenario": "Salon urody: stanowiska / recepcja",
+      "restaurant_scenario": "Restauracja: stoliki / z rachunkiem",
+      "quantity_unknown": "Potrzebna porada; liczba kart i kwota nie zostały uzgodnione"
+    },
+    "media_labels": {
+      "physical_example": "Fizyczny format Branded Review Card. Projekt dla Twojej firmy uzgadniamy osobno.",
+      "mockup": "Wizualizacja indywidualnego projektu, nie zdjęcie gotowego zamówienia.",
+      "process_example": "Przykład zrealizowanego zamówienia NFC CARD z brandingiem.",
+      "beauty_context": "Przykład rozmieszczenia Beauty Review Card w salonie.",
+      "restaurant_table": "Przykład umieszczenia Restaurant Review Card na stoliku.",
+      "restaurant_bill": "Przykład użycia Restaurant Review Card z rachunkiem.",
+      "tap_demo": "Demonstracja przejścia NFC do formularza opinii. Klient wybiera ocenę i decyduje o publikacji."
+    }
+  }
+}

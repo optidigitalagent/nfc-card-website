@@ -106,7 +106,7 @@ def test_only_five_approved_sources_are_public_and_optimized():
     records = [item for item in manifest if item.get("managed_by") == "scripts/update_instagram_media.py:v22"]
     baseline = []
     for item in manifest:
-        if item.get("managed_by") in {"scripts/update_instagram_media.py:v22", "scripts/update_menu_media.py:v23", "v26_review_3d_media_import"} or item.get("source", "").endswith("-pl.vtt"):
+        if item.get("managed_by") in {"scripts/update_instagram_media.py:v22", "scripts/update_menu_media.py:v23", "v26_review_3d_media_import", "v29_niche_media_import"} or item.get("source", "").endswith("-pl.vtt"):
             continue
         # v27 adds Polish descriptive metadata and one timed subtitle track.
         # Verify that the previously accepted asset/provenance contract is intact.

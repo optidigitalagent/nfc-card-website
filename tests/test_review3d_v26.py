@@ -73,7 +73,7 @@ def test_bilingual_product_routes_gallery_catalog_and_schema():
         assert product.select_one('[data-review3d-form] [name=quantity]')['min'] == '1'
         assert product.select_one('[data-review3d-form] [name=comment]')['maxlength'] == '1000'
         assert product.select_one('[data-review3d-form] [type=submit]').has_attr('disabled')
-        assert len(catalog.select('.product-rows>article')) == 5
+        assert len(catalog.select('.product-rows>article')) == 7
         assert catalog.select_one('.review3d-card') is not None
         assert catalog.select_one('.review3d-card .review3d-status') is not None
         assert product.select_one('.commerce-purchase .review3d-status') is not None

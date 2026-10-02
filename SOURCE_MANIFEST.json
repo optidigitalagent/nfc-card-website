@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
-  "file_count_including_manifest": 525,
+  "file_count_including_manifest": 612,
   "release_source": {
     "handoff_archive_sha256": "9cf61bc26214321d296adeae4c63eb21a5b624bfa9f8849797bcb51c66ff5de0",
     "handoff_manifest": "docs/release/v1.0.0/source-handoff-manifest.json",
@@ -878,8 +878,8 @@
     },
     {
       "path": "server/publication.py",
-      "bytes": 4200,
-      "sha256": "4934fe54b7ceec745a550700353828ea245a97306ae058419bdd6e0770077f10"
+      "bytes": 4270,
+      "sha256": "300f5b9aced1ffb7bd983de7e7ff9fca33463713fd4a1b608390aa9967d07919"
     },
     {
       "path": "server/review_auth.py",
@@ -998,13 +998,13 @@
     },
     {
       "path": "src/app.js",
-      "bytes": 26600,
-      "sha256": "3b992ea8a171045f213986dde149fa323876cefd4c9a63b05f8fb67cc36fc5d4"
+      "bytes": 26674,
+      "sha256": "84db90f3dc9848a4d0a0c163661c7237c436fcd35c4fbebe8db708401177fa9c"
     },
     {
       "path": "src/build.mjs",
-      "bytes": 53116,
-      "sha256": "d88144fd8665cf596061ed4e8323003d82646c0633906448bb9e17b49b2bc4fa"
+      "bytes": 57881,
+      "sha256": "c040e776e9602b0bd4c45a24221d09d7961f75b1f038d4ac3bac7e0218e0cbb8"
     },
     {
       "path": "src/commerce-contract.mjs",
@@ -1098,8 +1098,8 @@
     },
     {
       "path": "src/media-manifest.json",
-      "bytes": 415621,
-      "sha256": "0f62e7cec1f3d46ccaf28bf6c0d22117ae671c11e527e6d995c32e192be7fc9b"
+      "bytes": 593717,
+      "sha256": "3556866198102b3f261a8d27d6d8894be80c2a57bf6d89ff33b949cca4305e40"
     },
     {
       "path": "src/media/2026-09/review-card-back-160.webp",
@@ -2082,6 +2082,406 @@
       "sha256": "8659d601b87846d5ea6f9688068b8fa886a5ee72e9edd04048552e90d7d53aa5"
     },
     {
+      "path": "src/media/niche-v29/beauty-review-card-back-mounting-320.avif",
+      "bytes": 11436,
+      "sha256": "2e3d0f242d9adfcaeafbef8409bd923eb5cf31d3f8cfe7a0666e14e0c9761dff"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-back-mounting-320.webp",
+      "bytes": 12400,
+      "sha256": "9c8af53bd3de0a8941ec1198d2f903cd9c919cdaa8a5c134cadf9d9bc40ec3f6"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-back-mounting-640.avif",
+      "bytes": 35228,
+      "sha256": "e47fc7663aebecbdb27707a49bffd78d1fb911744c66ed43e0378d635a7fa273"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-back-mounting-640.webp",
+      "bytes": 36558,
+      "sha256": "9c50777093d5c61e012d239860a057027886a6d9ea9474b6407c34bdd87499fb"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-back-mounting-960.avif",
+      "bytes": 71247,
+      "sha256": "9d98a056223d0a4801b44ec299d48462dcf76d58aee0688724aadd6e7e36b229"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-back-mounting-960.webp",
+      "bytes": 69022,
+      "sha256": "eea359e3292588da08b3680d1fa3cabeff2889b31eeca23f413b9b919f817d6c"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-back-mounting.avif",
+      "bytes": 88530,
+      "sha256": "4d30d2aaddaf6243573a23444a64e1120d4dd3a3246c09c7508acf97fcf9efd3"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-back-mounting.webp",
+      "bytes": 84198,
+      "sha256": "f3dad9e1aeea1e38dbb9b610ca979991ba7cee6c936f03cb36ba4de720fc731e"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-edge-thickness-320.avif",
+      "bytes": 11779,
+      "sha256": "c1d95c59fb8b2b0a850eb5b5d62a420fb1dc4bcf9f579fba138a9f153bb15ae6"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-edge-thickness-320.webp",
+      "bytes": 13010,
+      "sha256": "5076748feb8561a8ffb5690d5ed62a6f7794353fe7707f3ebd02a421c6f1daa0"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-edge-thickness-640.avif",
+      "bytes": 34794,
+      "sha256": "c5dc3276f370328b364b4f6d6bc6f246b65f6f37b3789ad76efd9f96dac47742"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-edge-thickness-640.webp",
+      "bytes": 38136,
+      "sha256": "cc8ea834fa2b219f0ccfd28eba72c31fd964520981481ac390250ce9b556fcf7"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-edge-thickness-960.avif",
+      "bytes": 63276,
+      "sha256": "a4a5e231c4016d6e7d729af1c48cfe433e2c1aeb1a06e6a11967ca844ca39bfb"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-edge-thickness-960.webp",
+      "bytes": 66790,
+      "sha256": "8601e6dd3f9a81ec8fe1bbbdc35a0959827a321381e1914187414f27f7da2f39"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-edge-thickness.avif",
+      "bytes": 76455,
+      "sha256": "bd1d7b6a21b29f3571f3fc864a015402df932211379e0c6bfb51647067d2d9c3"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-edge-thickness.webp",
+      "bytes": 79044,
+      "sha256": "6a3a6dbee88cc12807d7e8f9038f09f394ce6919ebaef3dcbafe1af0640fd1d1"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-front-hand-320.avif",
+      "bytes": 16213,
+      "sha256": "6c412288ae9965f301094adc3a6433f5f1583b34019bf1671e50cd5c6466a170"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-front-hand-320.webp",
+      "bytes": 17614,
+      "sha256": "bc892a422c7324f056d26070028323434c84e151fdf2e9a24d170959eaea836d"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-front-hand-640.avif",
+      "bytes": 46587,
+      "sha256": "e8637b65d4035666b6201b0ae535500d8ab2e527cdb8d9c8c33d2d14e095e890"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-front-hand-640.webp",
+      "bytes": 52454,
+      "sha256": "1b45dd82f127ea019beb827b9e23b64a78b6d87fb521e472c98f3898bef2f6d3"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-front-hand-960.avif",
+      "bytes": 91130,
+      "sha256": "805f06dbce3fad811d23eb7fdbf7d482b481e3ee356cfbe6c7284a0a9d17e896"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-front-hand-960.webp",
+      "bytes": 98498,
+      "sha256": "72795a67c455bcf2c6e5b232e5a8734f19a5b548d95628db24587bdb64869240"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-front-hand.avif",
+      "bytes": 111834,
+      "sha256": "e06d0fb44603f24e4be75874f1dcf435e698c98bdaed8e034960661652e4bb85"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-front-hand.webp",
+      "bytes": 118266,
+      "sha256": "a1a83231b69f75d597b738a64e7424ce5154cf693da398707ce7ff6fc56d2dff"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-group-front-320.avif",
+      "bytes": 16696,
+      "sha256": "523d7fe27258812108b057c89083666fd99555af0b3ad8fb12d5609899738181"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-group-front-320.webp",
+      "bytes": 18106,
+      "sha256": "586e123648edbde0ba160ed2943f8a207f50edb00362075ae805b2d9cd93c5e7"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-group-front-640.avif",
+      "bytes": 47390,
+      "sha256": "eea0db71e732d6907b9c48dc3c0186f34e267cbc4d9ab42b1529a033516dc847"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-group-front-640.webp",
+      "bytes": 52254,
+      "sha256": "b866ffdb02e6548ed6e9fcc6a2d61154abe17847aa5f3acaeb0299333f8fbe18"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-group-front-960.avif",
+      "bytes": 88551,
+      "sha256": "f60ccaeb5cfe979caf075d60631e5b85db5c874725df2dc717b88b25f3e9d7fc"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-group-front-960.webp",
+      "bytes": 93940,
+      "sha256": "2a9014ec8eba82a1d2bd234e9d352c98a3fcce8de5972c7974bf58720a8efaaf"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-group-front.avif",
+      "bytes": 108920,
+      "sha256": "bed32dac436dcdfd8f3b92954211cad46811fc9c0b154608adc3788a9ecfc5cb"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-group-front.webp",
+      "bytes": 111150,
+      "sha256": "ef27cdd89f7ff0c6303ab5e98206da198c6be65cc11d0f34a6d73211eb46f921"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-group-hand-320.avif",
+      "bytes": 16570,
+      "sha256": "b748f926083ce7116ebd1379fed7a3904b43e71795aa42c3ce6ece8e04ee7c70"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-group-hand-320.webp",
+      "bytes": 17862,
+      "sha256": "32b1f454acb7117a0311dbe7d134101276f2990ae2010faa3d786123473a2ccd"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-group-hand-640.avif",
+      "bytes": 44169,
+      "sha256": "56788e0ce8f6cf140753ecacaf46b1b78859960e9c372678a9817515ae282e84"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-group-hand-640.webp",
+      "bytes": 49100,
+      "sha256": "81da456fb0024fe7c6b26dbfd65183a4cf4c1690cc9de053a65fcaa5795b4ad6"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-group-hand-960.avif",
+      "bytes": 78801,
+      "sha256": "ed164997dd9f797c512510a95b68c78003baba60a63b618c198bcf48b1d592bf"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-group-hand-960.webp",
+      "bytes": 84652,
+      "sha256": "b493054d9ecb2c2f6efd836e133813a90f89a1ad223f21f092e8650becd67e90"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-group-hand.avif",
+      "bytes": 97129,
+      "sha256": "31ad57ed4b5003c265f3c76b78b439563647a03986ef7d7a6585aafe01a69f4e"
+    },
+    {
+      "path": "src/media/niche-v29/beauty-review-card-group-hand.webp",
+      "bytes": 100206,
+      "sha256": "8382ece793c392ca1cf3580bfd7a953bc920269bef2304474e2ceae3ceaf8636"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-back-mounting-320.avif",
+      "bytes": 11777,
+      "sha256": "176e4e767065b684e6234ca7728bc4a601c4da073cceaacf3b46dcfa782fc6ed"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-back-mounting-320.webp",
+      "bytes": 13172,
+      "sha256": "76d80afc69aa0df4771431b7fd2e4b4f33a9f4977368eb0fa5774e2e60ff3cee"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-back-mounting-640.avif",
+      "bytes": 36511,
+      "sha256": "41eee997ebf6241549f00fa8e2850ccaa985276624d886068259ce08605f0acb"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-back-mounting-640.webp",
+      "bytes": 39582,
+      "sha256": "baac67ef324ea0348fe388992592031561d404113f6b9bcb926a207a503f5115"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-back-mounting-960.avif",
+      "bytes": 74320,
+      "sha256": "594bb33154cc05dce56959731f28226979a85b462531dfc0f60b05654933665d"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-back-mounting-960.webp",
+      "bytes": 73940,
+      "sha256": "48282f18fcf3a433ad09437b29bea33942f454ba3f6a6833b6a4b1d271aa9f80"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-back-mounting.avif",
+      "bytes": 93294,
+      "sha256": "6566e8c7845d682723730495da4f25fe509ba255e2e7b9483f40b3dcec689f53"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-back-mounting.webp",
+      "bytes": 89080,
+      "sha256": "a9d26439180f00183d627cfa2c7e7d3fda8f6cca7cf608ca4021522767cdc67f"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-edge-thickness-320.avif",
+      "bytes": 12952,
+      "sha256": "21251d3f62fa6ebc595d98db60fb23e1e0133e96fdd09ae0455e87e02933a058"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-edge-thickness-320.webp",
+      "bytes": 13884,
+      "sha256": "a70abb42b90529f502c1d98efd75baf15a9aa3fa4a6f563b7ed27c9c11fb8c0e"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-edge-thickness-640.avif",
+      "bytes": 37008,
+      "sha256": "240136abe3549c78b6efb54d8f770a6148a200134af52b239ae79f45aa79221e"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-edge-thickness-640.webp",
+      "bytes": 40908,
+      "sha256": "e15e06da3d0eaec3023d97f85f305737834a75ebfdfd99b9d2c33fa100283bee"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-edge-thickness-960.avif",
+      "bytes": 66896,
+      "sha256": "76b8c0e5f178bb934012ef54778c2051ff4318b0ba4d0b184d7da2ee415139ed"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-edge-thickness-960.webp",
+      "bytes": 73126,
+      "sha256": "0f962dea0fa955846971b54adc6db697d79f476a8dc0756b6c38a31c9889d143"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-edge-thickness.avif",
+      "bytes": 81432,
+      "sha256": "8c9936528864ece570a80d25f168ea968795aabae2ec492d9a71b7ce056b9f4b"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-edge-thickness.webp",
+      "bytes": 87286,
+      "sha256": "22b8722819e641e8ee1d1b094726daf9cc007c97c07db3f5479fc1ee1aab1986"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-front-hand-320.avif",
+      "bytes": 15543,
+      "sha256": "43a3a62df39e756e6ee609821ceb1f5c9222005b9f38bcbae37d4dcd79e5eb55"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-front-hand-320.webp",
+      "bytes": 17300,
+      "sha256": "6801cdd0fd85fb7131666790af24600a5eeef75bc2b3a8c10737ab5dac9b650b"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-front-hand-640.avif",
+      "bytes": 43612,
+      "sha256": "f92c975514547696a199ed44b58053d0f7e210168e1ef2f3b016b0ae099994eb"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-front-hand-640.webp",
+      "bytes": 50574,
+      "sha256": "45066a0943b069fab3587b75097f751bdefe56b42cc783d64693d65e5df32cb8"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-front-hand-960.avif",
+      "bytes": 79921,
+      "sha256": "af63e4846d5afd46c4c12e5b3887dd93be27fb0a1fe6e864098b270c8d212329"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-front-hand-960.webp",
+      "bytes": 92620,
+      "sha256": "398b70e4ed80ed99bf513908ac160a6a1de8af65286e9550ba445b322e952568"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-front-hand.avif",
+      "bytes": 97392,
+      "sha256": "7f82d98263f2461d2b34db860a665798a14bc265adb40051f38aed22a4cd53e2"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-front-hand.webp",
+      "bytes": 109972,
+      "sha256": "b1cf0b27dd44c0550ad74ea0f298f272669432735d3a8a3071b4d3960f01dd5c"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-group-front-320.avif",
+      "bytes": 15919,
+      "sha256": "cd1b29b1d77c607008c4b8ef011b08910db4d86f27a601a130982780b3301614"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-group-front-320.webp",
+      "bytes": 17528,
+      "sha256": "d5b270d14a8758e17ef3435f58ef868a389ef672d9a92b115ea1df69429e0dd7"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-group-front-640.avif",
+      "bytes": 43268,
+      "sha256": "4e8e5f73746dbdb3351b7fa14e0c26c1a462dd75dd887b0ee358a9445c22b33f"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-group-front-640.webp",
+      "bytes": 49074,
+      "sha256": "e712fc11c76319e618a80645fa39ccea077fab156567e77ce21eb0612dadc7ad"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-group-front-960.avif",
+      "bytes": 78155,
+      "sha256": "40f355b1ba8f7b333cca1d04bf375f198657daf1620726ee750cf9e2cfe48d9a"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-group-front-960.webp",
+      "bytes": 87024,
+      "sha256": "d1af9b30a46a2ee92c26ece0ee416b3eb412b18a34a3dfef5e820264c212c90a"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-group-front.avif",
+      "bytes": 94861,
+      "sha256": "cda5c64b2d73c75ecb9208ee72988872d5debc232bf089fe9b4cb3dadc2910d6"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-group-front.webp",
+      "bytes": 104412,
+      "sha256": "06d74ec23961202a9a75f89ee8168cd6b671a36dda9c8bf6c3c0564a93bb1d3a"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-group-hand-320.avif",
+      "bytes": 14704,
+      "sha256": "a96d280d7319ef4fb58bde366faf2a57fc0418f865aff75f2fd4fee951dbf8e3"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-group-hand-320.webp",
+      "bytes": 16066,
+      "sha256": "42325d89699cd74ba759d5462dbbd1ff77af21e9a5c3c3e2e9ad13f7bf8d20c5"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-group-hand-640.avif",
+      "bytes": 41079,
+      "sha256": "b5824036325ee2884107e4825c39a85da57268fde6e5841f57dc8acc6180d006"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-group-hand-640.webp",
+      "bytes": 45416,
+      "sha256": "24f558ea3fcd20b7fc4565d9887da2b3c272be5fbd364df353015050725f7bb2"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-group-hand-960.avif",
+      "bytes": 78787,
+      "sha256": "d69c235e4d0de606ab3a3fcfcc75c7affe1d0303b8b093e421fb9011b0396e5e"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-group-hand-960.webp",
+      "bytes": 84380,
+      "sha256": "51a84307fe38ce6532ec9ef315d2e6748a5d3ff87a05c6defd92e1ca95f1df0c"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-group-hand.avif",
+      "bytes": 98045,
+      "sha256": "1459e75d40b5476b29e6746023b4826e5c7c6708433634ccd22e6eebe24828b7"
+    },
+    {
+      "path": "src/media/niche-v29/restaurant-review-card-group-hand.webp",
+      "bytes": 100472,
+      "sha256": "82e1eaf5ffeafa429d5dc2f40f67ad6321d54ea04c55cebbe46c71f481a7f52a"
+    },
+    {
       "path": "src/media/review-3d/review-card-3d-back-320.avif",
       "bytes": 13710,
       "sha256": "0115d8fb6f13d71e65d1c479ccc995d9ad46d6074df7f1873b402646d9cae7fd"
@@ -2397,9 +2797,39 @@
       "sha256": "a5b1bfc24b33daa2822734abab6b1b35b49787acc23e5b548a9ad444072011db"
     },
     {
+      "path": "src/niche-client.mjs",
+      "bytes": 2237,
+      "sha256": "ba63a95cc97d3351c2d212548b23fb4c30ee6544c472d6106852cfed85bf90bd"
+    },
+    {
+      "path": "src/niche-content.en.json",
+      "bytes": 40417,
+      "sha256": "7ff9e268b18c258b8d049e0b8a23026b92ee725c90e1a820fce8af1e3b91eb6f"
+    },
+    {
+      "path": "src/niche-content.pl.json",
+      "bytes": 41640,
+      "sha256": "d4bb340db752cd9636ccf7a496b61dcfbba1188bd655ca0217960085205f6037"
+    },
+    {
+      "path": "src/niche-content.uk.json",
+      "bytes": 61340,
+      "sha256": "11234d56fe4bdc5d1885910c12a3ac4a170704979ba73350771a448ff697acfc"
+    },
+    {
+      "path": "src/niche-view.mjs",
+      "bytes": 9686,
+      "sha256": "6a8b10d1447cd6d8fed6afb8c4977c25b269565409b57a9b2c45548d9113a905"
+    },
+    {
+      "path": "src/niche.css",
+      "bytes": 2900,
+      "sha256": "d0e629d7f1cc1e5a0c8ea73d0f06828b62f22d44cf61a52258dd1e605ce9fe43"
+    },
+    {
       "path": "src/pages.mjs",
-      "bytes": 21828,
-      "sha256": "5bc72786892762c8b2935bfbece76b69b60ecc705a211de313cf43d18518d6ff"
+      "bytes": 23396,
+      "sha256": "4803b270eff8479e777a82424dd11fc3bd3e4ce36cb5c02d642d09bb65fc10c7"
     },
     {
       "path": "src/pl-clients.json",
@@ -2448,13 +2878,13 @@
     },
     {
       "path": "src/publication-approval.json",
-      "bytes": 1587,
-      "sha256": "3cbd67a3779939e13af0dee0dcdab2e15f068df00170d3aa91fda79f7a0b2344"
+      "bytes": 1754,
+      "sha256": "ba813a8631c8dbf0d2a212f061523334d08e7c8c76db026cad46100169529017"
     },
     {
       "path": "src/publication.mjs",
-      "bytes": 6317,
-      "sha256": "52920de839d6370cf34ff18fb2aac8849192bd2282c5497184a12857d26f2282"
+      "bytes": 6387,
+      "sha256": "49f6f5bce0e0642d5ff9fb0c69db7312d6d9cef9514d953b723017a7c07ba7eb"
     },
     {
       "path": "src/redirects.json",
@@ -2548,8 +2978,8 @@
     },
     {
       "path": "tests/test_instagram_v22.py",
-      "bytes": 14050,
-      "sha256": "0b1242f727ff2cf4ebda68b4839dc4c73615b2cfa9f343f54779f2019fcaf367"
+      "bytes": 14076,
+      "sha256": "850cc4c8a14986085a7480b6db604c486dd3bb329319fffe2f4db64897c0b773"
     },
     {
       "path": "tests/test_leads.py",
@@ -2562,9 +2992,14 @@
       "sha256": "c4ff3a1cb94ad4c987118ebd45e002971dc7ee320b40361b6ee04bf7518966d1"
     },
     {
+      "path": "tests/test_niche_v29.py",
+      "bytes": 6110,
+      "sha256": "dd073511176975c8819db55579f900a43a8683d32dd203ac2486a851a159a96a"
+    },
+    {
       "path": "tests/test_pages_v17.py",
       "bytes": 30274,
-      "sha256": "1b262b2193da652d3b7deafee00ba40c158543bf26338a0408da5bf3b284cdf9"
+      "sha256": "b9260e42a65f5623ea6f59e01d2f605b7bb79f2ec4eca19ae85bd8a3147facc0"
     },
     {
       "path": "tests/test_poland_v28.py",
@@ -2589,12 +3024,12 @@
     {
       "path": "tests/test_public_launch.py",
       "bytes": 4297,
-      "sha256": "8453349658981289b7b79213fa925bb0d7bad73168b19c7d8f7224aaa0facc84"
+      "sha256": "ee18cc2c23e9ce017c4dcc44fca39a511630e256fd00ce68010704247e41f9dc"
     },
     {
       "path": "tests/test_publication.py",
       "bytes": 11939,
-      "sha256": "26c75bbd7f2e3c3e35fe0d6043b5198660cbe6aaf4e7451cf24b070b70570669"
+      "sha256": "2ada1828ebd7b6462d213adfe6908993ec3f6e90566ce66ee39bcc2be26a37b7"
     },
     {
       "path": "tests/test_release_packaging.py",
@@ -2604,12 +3039,12 @@
     {
       "path": "tests/test_review3d_v26.py",
       "bytes": 6575,
-      "sha256": "4c3df81874caad2dec0486991e4af351b1087f4e606bd47a139f490b82f4f58c"
+      "sha256": "cabd15107a99e1e5ebfe513e1b561d8867bb500432a4050b1a72fd4ab293c74d"
     },
     {
       "path": "tests/test_site.py",
-      "bytes": 15427,
-      "sha256": "fbd757efd614252ded68bb77559a71a1440ae2661b37e9ab8fbf330955c838e9"
+      "bytes": 15627,
+      "sha256": "8ff54be0f58e0cf6fec71245268ddd8036a48741fd0daaf78482b1cfc88bee3f"
     },
     {
       "path": "tests/test_v12_browser.py",
@@ -2638,8 +3073,8 @@
     },
     {
       "path": "tests/test_v9.py",
-      "bytes": 9065,
-      "sha256": "ef9ada20cb8974e5edb533f42d8306fd842009bd0259e701e0513c65534200d7"
+      "bytes": 9457,
+      "sha256": "63145c824b38b7b776c7586275acb8922839b295d43dc371ab549c5fc18a9eae"
     }
   ]
 }

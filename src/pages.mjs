@@ -66,12 +66,16 @@ export const unavailable = locale => localized(locale,
 export const previewCSS = '.header .preview-brand{display:flex;flex-direction:column;justify-content:center;gap:2px;flex-shrink:0}.preview-badge{display:block;width:max-content;font-size:9px;line-height:1.1;letter-spacing:.08em;font-weight:600;color:var(--nfc-steel-700)}';
 
 export function submissionNotice(locale,selection){
+ if(selection==='niche')return localized(locale,
+  'Надсилаємо ім’я, контакт, обране рішення, тип запиту та кількість або запит поради. Перший макет безкоштовний.',
+  'We send your name, contact, selected solution, request type and quantity or advice request. The first mockup is free.',
+  'Przesyłamy imię, dane kontaktowe, wybrane rozwiązanie, rodzaj zapytania i liczbę kart lub prośbę o poradę. Pierwsza wizualizacja jest bezpłatna.');
  return selection==='instagram'
   ? localized(locale,'Надсилаємо ім’я, контакт, кількість, Instagram-посилання, коментар і згоду для опрацювання заявки.','We send your name, contact, quantity, Instagram profile URL, comment and consent to process the enquiry.','Przesyłamy imię, dane kontaktowe, liczbę kart, link do profilu na Instagramie, komentarz i zgodę, aby obsłużyć zgłoszenie.')
   : localized(locale,'Надсилаємо лише ім’я, контакт, картку та кількість. Коментар і додаткові деталі погодимо в месенджері.','We send only your name, contact, card and quantity. Please share comments and additional details in a messenger.','Przesyłamy tylko imię, dane kontaktowe, wybraną kartę i liczbę sztuk. Komentarz oraz pozostałe szczegóły ustalimy w komunikatorze.');
 }
 export function pagesFormHTML(html, {endpoint = '', locale, esc}) {
-  const notice = endpoint ? submissionNotice(locale,html.includes('data-commerce-form data-variant="instagram"')?'instagram':'') : unavailable(locale);
+  const notice = endpoint ? submissionNotice(locale,html.includes('data-niche-form')?'niche':html.includes('data-commerce-form data-variant="instagram"')?'instagram':'') : unavailable(locale);
   // Native submission is inert even if either client script fails to load. Only
   // the mounted JSON client may enable the submit control after initialization.
   return html.replace(/action="\/api\/leads" method="post"/g, 'data-pages-form action="" method="dialog"')
@@ -82,13 +86,22 @@ export function pagesFormHTML(html, {endpoint = '', locale, esc}) {
 
 const products = ['standard', 'branded', 'bulk', 'consultation', 'instagram'];
 const quantities = ['1', '2', 'more'];
+const solutions = Object.freeze({
+  'beauty-review-card': {niche:'beauty_salon',route:'/solutions/beauty-review-card'},
+  'restaurant-review-card': {niche:'restaurant',route:'/solutions/restaurant-review-card'}
+});
 const channels = ['telegram', 'whatsapp', 'viber'];
 const idempotencyKey = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/;
 export function leadPayload(input, {basePath = '', pathname, utm = {}}) {
   basePath = publicBasePath(basePath);
+  const solutionId=typeof input.solution==='string'?input.solution:'';
+  const solution=solutionId?solutions[solutionId]:null;
+  if(solutionId&&!solution)throw Error('invalid_fields');
+  const advice=solution&&input.quantity==='advice';
   if(input.variant==='instagram'&&!instagramProfileURL(input.instagramUrl))throw Error('invalid_instagram_url');
   const name = String(input.name || '').trim().normalize('NFC'), phone = String(input.phone || '').trim();
-  if (!['uk', 'en', 'pl'].includes(input.locale) || !products.includes(input.variant) || !quantities.includes(input.quantity) ||
+  if (!['uk', 'en', 'pl'].includes(input.locale) || !products.includes(input.variant) || !(quantities.includes(input.quantity)||advice) ||
+      (solution&&input.variant!=='branded') ||
       (input.variant === 'instagram' && (!['1','2'].includes(input.quantity)||!instagramProfileURL(input.instagramUrl)||typeof input.comment!=='string'||input.comment.length>2000)) ||
       (input.variant === 'bulk' && input.quantity !== 'more') || !name || name.length > 100 || /[\x00-\x1f\x7f\u202a-\u202e\u2066-\u2069]/u.test(name) ||
       !/^\+?[\d ()-]+$/.test(phone) || phone.replace(/\D/g, '').length < 7 || phone.replace(/\D/g, '').length > 15 ||
@@ -96,12 +109,14 @@ export function leadPayload(input, {basePath = '', pathname, utm = {}}) {
   const route = String(pathname || '').split(/[?#]/)[0].replace(/\/$/, '') || '/';
   const sourcePage = route === basePath ? basePath + '/' : route;
   const relative = sourcePage.slice(basePath.length);
-  if (!sourcePage.startsWith(basePath + '/') || !['/', '/en', '/pl', ...['order','contact','about','solutions/review-card','solutions/branded-review-card','solutions/instagram-card','instagram-card'].flatMap(r=>['/'+r,'/en/'+r,'/pl/'+r])].includes(relative)) throw Error('invalid_source_page');
+  if (!sourcePage.startsWith(basePath + '/') || !['/', '/en', '/pl', ...['order','contact','about','solutions/review-card','solutions/branded-review-card','solutions/instagram-card','instagram-card','solutions/beauty-review-card','solutions/restaurant-review-card'].flatMap(r=>['/'+r,'/en/'+r,'/pl/'+r])].includes(relative) ||
+      (solution&&!['', '/en', '/pl'].some(prefix=>relative===prefix+solution.route))) throw Error('invalid_source_page');
   const payload = {language: input.locale, product: input.variant === 'instagram' ? 'nfc-instagram-card' : input.variant === 'branded' ? 'branded-review-card' : 'review-card',
-    quantity: input.quantity === 'more' ? 3 : Number(input.quantity), customerName: name,
+    ...(!advice?{quantity:input.quantity === 'more' ? 3 : Number(input.quantity)}:{}), customerName: name,
     contact: {phone: phone.replace(/[ ()-]/g, ''), preferredMethod: input.messenger}, sourcePage,
     selection: {variant: input.variant, quantity: input.quantity}};
   if(input.variant==='instagram')Object.assign(payload,{productSchemaVersion:1,product_id:'nfc-instagram-card',sku:'NFC-IG-READY',offer:'ready',instagramUrl:instagramProfileURL(input.instagramUrl),comment:input.comment.trim(),consent:true});
+  if(solution)payload.solution={schemaVersion:1,solution_id:solutionId,niche:solution.niche,request_type:'free_first_mockup'};
   const attribution = {};
   for (const key of ['source', 'medium', 'campaign', 'term', 'content']) {
     const value = utm['utm_' + key];
@@ -163,7 +178,7 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
     form.dataset.enhanced = 'true';
     return;
   }
-  const updateNotice=()=>{form.querySelector('.preview-notice').textContent=submissionNotice(locale,selection().variant);};
+  const updateNotice=()=>{form.querySelector('.preview-notice').textContent=submissionNotice(locale,form.dataset.solution?'niche':selection().variant);};
   updateNotice();
   let busy = false, pending = null;
   const storageKey = `nfc-public-attempt:${basePath}:${endpoint}:${pathname.replace(/\/$/, '')}`;
@@ -180,7 +195,7 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
   function clearProfileError(){const input=q('instagramUrl'),error=form.querySelector('#e-instagramUrl');if(input){input.removeAttribute('aria-invalid');input.setAttribute('aria-describedby','instagram-help');}if(error){error.hidden=true;error.textContent='';}}
   q('instagramUrl')?.addEventListener('input',clearProfileError);
   const snapshot = () => ({name: q('name').value, phone: q('phone').value, messenger: q('messenger').value,
-    consent: q('consent').checked, instagramUrl:q('instagramUrl')?.value.trim(),comment:q('comment')?.value||'', ...selection()});
+    consent: q('consent').checked, instagramUrl:q('instagramUrl')?.value.trim(),comment:q('comment')?.value||'', ...selection(),...(form.dataset.solution?{solution:form.dataset.solution}:{})});
   function lock(locked) {
     for (const el of form.elements) if (!['hidden', 'submit', 'button'].includes(el.type)) el.disabled = locked;
     lockSelection(locked);
@@ -195,7 +210,7 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
   }
   function completed(leadId, previous = false, serverQuote = null) {
     form.dataset.complete = 'true'; submit.hidden = true; submit.disabled = true; note.hidden = true;
-    status((previous ? P('Попередню заявку вже збережено. Нові дані не надсилалися. Номер: ', 'Your previous enquiry is already saved. The new details were not submitted. Reference: ', 'Poprzednie zgłoszenie zostało już zapisane. Nie wysłano nowych danych. Numer: ') :
+    status((previous ? P('Попередню заявку вже збережено. Нові дані не надсилалися. Номер: ', 'Your previous enquiry is already saved. The new details were not submitted. Reference: ', 'Poprzednie zgłoszenie zostało już zapisane. Nie wysłano nowych danych. Numer: ') :form.dataset.solution?form.dataset.successHeading+' — '+form.dataset.successBody+' ' :
       selection().variant==='instagram'?P('Дякуємо! Заявку отримано. Я зв’яжуся з вами, перевірю Instagram-посилання та уточню деталі замовлення. Номер: ','Thank you! Your enquiry has been received. I will contact you, check the Instagram link and confirm your order details. Reference: ','Dziękuję! Otrzymałem zgłoszenie. Skontaktuję się z Tobą, sprawdzę link do profilu na Instagramie i ustalę szczegóły zamówienia. Numer: '):P('Дякуємо! Заявку збережено. Деталі погодимо у вибраному месенджері. Номер: ', 'Thank you! Your request is saved. We will agree the details in your selected messenger. Reference: ', 'Dziękujemy! Zgłoszenie zostało zapisane. Szczegóły ustalimy w wybranym komunikatorze. Numer: ')) + leadId + (locale==='pl'&&Number.isSafeInteger(serverQuote?.amount)?` · Cena produktów: ${serverQuote.amount} PLN. Zaliczka: ${serverQuote.deposit} PLN.`:''), previous ? 'existing' : 'success');
     remember('complete', leadId);
     if (newRequest) newRequest.hidden = false;
