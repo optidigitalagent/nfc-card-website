@@ -1003,8 +1003,8 @@
     },
     {
       "path": "src/build.mjs",
-      "bytes": 57881,
-      "sha256": "c040e776e9602b0bd4c45a24221d09d7961f75b1f038d4ac3bac7e0218e0cbb8"
+      "bytes": 57949,
+      "sha256": "37571bfb88c90c0996fd216a76577f8c3fc5d20f9a1e5ed27d6bd3c7212a78b2"
     },
     {
       "path": "src/commerce-contract.mjs",
@@ -2823,8 +2823,8 @@
     },
     {
       "path": "src/niche.css",
-      "bytes": 2900,
-      "sha256": "d0e629d7f1cc1e5a0c8ea73d0f06828b62f22d44cf61a52258dd1e605ce9fe43"
+      "bytes": 2975,
+      "sha256": "04f9bd86325bfa89214b6a621f054dec601d8fe43b7e5f1fa44b42110f99b551"
     },
     {
       "path": "src/pages.mjs",
@@ -2879,7 +2879,7 @@
     {
       "path": "src/publication-approval.json",
       "bytes": 1754,
-      "sha256": "ba813a8631c8dbf0d2a212f061523334d08e7c8c76db026cad46100169529017"
+      "sha256": "07d5bf3846f6c2c94027d279c58478007a7974bf19798a56df4d8b14f28974e5"
     },
     {
       "path": "src/publication.mjs",
@@ -2963,8 +2963,8 @@
     },
     {
       "path": "tests/test_instagram_browser.py",
-      "bytes": 18525,
-      "sha256": "fde3f2413674e3f8b3c7cf004ee7a6b8cd8344c9e61cb2e6b3207d3e3d7ab957"
+      "bytes": 18535,
+      "sha256": "01c122ffa873a4af91b0b594d51cb2f516b825079ad1770f7e389c22672c4552"
     },
     {
       "path": "tests/test_instagram_v18.py",
@@ -3063,8 +3063,8 @@
     },
     {
       "path": "tests/test_v13_browser.py",
-      "bytes": 20873,
-      "sha256": "d1009f2fc7b20361f7a2413bf7401bb96231f503dbc887853742d051485355fb"
+      "bytes": 21137,
+      "sha256": "570c3e38a71c5426c0e231cbcb4d58f3b2846527be15a8b3ca6318ca91baa3e8"
     },
     {
       "path": "tests/test_v25_followup.py",
