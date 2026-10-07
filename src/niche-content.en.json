@@ -4,10 +4,8 @@
   "products": {
     "beauty": {
       "name": "Beauty Review Card Mini",
-      "descriptor": "A ready-made pink Mini NFC card for Google reviews in your salon. We set the link to your Google business location; the pictured design stays the same.",
       "eyebrow": "FOR BEAUTY SALONS · MINI · READY-MADE DESIGN",
       "h1": "Beauty Review Card Mini",
-      "headline": "A ready-made pink Mini NFC card for Google reviews in your salon. We set the link to your Google business location; the pictured design stays the same.",
       "catalog_description": "A ready-made pink Mini NFC card for Google reviews in your salon. We set the link to your Google business location; the pictured design stays the same.",
       "catalog_benefits": [
         "Ready-made Beauty design.",
@@ -158,10 +156,8 @@
     },
     "brandedBeauty": {
       "name": "Branded Beauty Review Card Mini",
-      "descriptor": "A Mini NFC card in your salon’s style. We prepare 3–4 initial design concepts free of charge, agree on the artwork and set the link to your Google business location.",
       "eyebrow": "FOR BEAUTY SALONS · MINI · YOUR DESIGN",
       "h1": "Branded Beauty Review Card Mini",
-      "headline": "A Mini NFC card in your salon’s style. We prepare 3–4 initial design concepts free of charge, agree on the artwork and set the link to your Google business location.",
       "catalog_description": "A Mini NFC card in your salon’s style. We prepare 3–4 initial design concepts free of charge, agree on the artwork and set the link to your Google business location.",
       "catalog_benefits": [
         "Your logo and brand style.",
@@ -323,10 +319,8 @@
     },
     "restaurant": {
       "name": "Restaurant Review Card Mini",
-      "descriptor": "A ready-made green Mini NFC card for restaurant Google reviews. Use it on a table or present it with the bill; we set the link to your Google business location.",
       "eyebrow": "FOR RESTAURANTS · MINI · READY-MADE DESIGN",
       "h1": "Restaurant Review Card Mini",
-      "headline": "A ready-made green Mini NFC card for restaurant Google reviews. Use it on a table or present it with the bill; we set the link to your Google business location.",
       "catalog_description": "A ready-made green Mini NFC card for restaurant Google reviews. Use it on a table or present it with the bill; we set the link to your Google business location.",
       "catalog_benefits": [
         "Ready-made green design.",
@@ -491,10 +485,8 @@
     },
     "brandedRestaurant": {
       "name": "Branded Restaurant Review Card Mini",
-      "descriptor": "A Mini NFC card for your restaurant with your logo and style. We prepare 3–4 initial design concepts free of charge and agree on the final artwork.",
       "eyebrow": "FOR RESTAURANTS · MINI · YOUR DESIGN",
       "h1": "Branded Restaurant Review Card Mini",
-      "headline": "A Mini NFC card for your restaurant with your logo and style. We prepare 3–4 initial design concepts free of charge and agree on the final artwork.",
       "catalog_description": "A Mini NFC card for your restaurant with your logo and style. We prepare 3–4 initial design concepts free of charge and agree on the final artwork.",
       "catalog_benefits": [
         "Your restaurant’s logo and style.",
@@ -738,7 +730,7 @@
     "delivery_addition": "Ready-made Beauty and Restaurant Review Card Mini retain their fixed designs; Branded Mini uses approved artwork. We agree on quantity, price, lead time and delivery before the deposit. The 200 UAH deposit is included in a confirmed physical order. Nova Poshta delivery in Ukraine is free.",
     "terms_addition": "An enquiry or consultation is not payment or automatic order confirmation. For Branded Mini we prepare 3–4 initial concepts free of charge; final artwork, quantity, price, lead time and delivery are agreed before production.",
     "warranty_addition": "Contact us through the site for help with NFC, defects or refunds. We agree on return terms for personalised Branded Mini cards and shipping costs before payment.",
-    "privacy_addition": "We store your chosen niche Mini product and whether it is ready-made or branded so we can respond to your enquiry. Consent to process an enquiry does not include marketing messages.",
+    "privacy_addition": "For Mini enquiries we also transmit the niche product, ready-made or branded design, and enquiry type. We transmit card quantity only for a physical order; advice or free concepts are not a card purchase. For Branded Mini, if you provide them, we also send the logo description, website or Instagram, style preferences, and notes on splitting a batch across approved designs. Enquiry consent does not authorise marketing messages.",
     "footer_description": "NFC cards for Google reviews, Instagram and online menus. Ready-made and branded Mini options for salons and restaurants.",
     "home_seo_title": "NFC CARD — NFC cards for businesses, salons and restaurants",
     "home_seo_description": "NFC cards for Google reviews, Instagram and online menus. Ready-made and branded Mini options for beauty salons and restaurants.",

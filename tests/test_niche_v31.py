@@ -56,8 +56,10 @@ def test_twelve_mini_pages_keep_distinct_products_and_exact_market_prices():
             assert soup.title.string == product['seo_title']
             assert soup.select_one('meta[name=description]')['content'] == product['seo_description']
             text = main.get_text(' ', strip=True)
-            for key in ('headline', 'lead', 'final_heading', 'final_body', 'form_heading', 'form_intro'):
+            for key in ('lead', 'final_heading', 'final_body', 'form_heading', 'form_intro'):
                 assert product[key] in text, (lang, slug, key)
+            assert len(main.select('.niche-hero .product-promise')) == 1
+            assert len(main.select('.niche-hero .niche-descriptor')) == 0
             for section in product['sections']:
                 assert section['heading'] in text, (lang, slug, section['id'])
             faq = [(node.summary.get_text(' ', strip=True), node.p.get_text(' ', strip=True))
@@ -84,7 +86,7 @@ def test_twelve_mini_pages_keep_distinct_products_and_exact_market_prices():
             assert form['data-solution'] == slug and form['data-design-mode'] == design
             assert form['data-product-family'] == 'nfc-review-card-mini'
             assert form.select_one('[name=variant]')['value'] == ('branded' if design == 'branded' else 'standard')
-            expected_options = ['1', '2', '4', '10', 'other', 'advice'] + (['concepts'] if design == 'branded' else [])
+            expected_options = (['concepts'] if design == 'branded' else []) + ['1', '2', '4', '10', 'other', 'advice']
             assert [option['value'] for option in form.select('[name=quantity] option')] == expected_options
             if design == 'ready':
                 assert not form.select('[name=brandLink],[name=logoNote],[name=brandStyle],[name=designSplitNote]')
@@ -97,6 +99,33 @@ def test_twelve_mini_pages_keep_distinct_products_and_exact_market_prices():
                 assert '3–4' in text
             assert not re.search(r'(?:10\s*[×x]\s*10|6\s*[×x]\s*6)\s*(?:cm|см)', text, re.I)
             assert not re.search(r'\+\s*40\s*%|50\s*%\s*(?:refund|повернен|zwrot)', text, re.I)
+
+
+def test_v32_mini_copy_intent_market_terms_and_polish_gallery_are_rendered():
+    for lang in LANGS:
+        for slug, _, design in PRODUCTS.values():
+            soup = soup_at(lang, slug)
+            hero = soup.select_one('.niche-hero .commerce-purchase')
+            assert len(hero.select('.product-promise')) == 1
+            assert not hero.select('.niche-descriptor')
+            pricing = soup.select_one('.niche-pricing').get_text(' ', strip=True)
+            if lang == 'pl':
+                assert 'Zamówienie wysyłamy z Ukrainy' in pricing
+                assert 'Koszt dostawy pokrywa klient' in pricing
+                assert 'potwierdzenia nadania' in pricing
+                assert soup.select_one('[data-niche-form] [name=phone]')['placeholder'] == '+48 ___ ___ ___'
+                assert soup.select_one('.niche-hero .breadcrumbs')['aria-label'] == 'Ścieżka nawigacji'
+                gallery = soup.select_one('.niche-hero .commerce-gallery')
+                assert gallery.select_one('.gallery-hint').get_text(' ', strip=True) == 'Przeglądaj zdjęcia'
+                assert gallery.select_one('.image-lightbox')['aria-label'] == 'Podgląd zdjęć karty'
+                assert gallery.select_one('[data-lightbox-close]')['aria-label'] == 'Zamknij podgląd'
+            else:
+                assert ('Новою поштою по Україні' if lang == 'uk' else 'Nova Poshta delivery in Ukraine is free') in pricing
+                assert ('ТТН' if lang == 'uk' else 'tracking number') in pricing
+            if design == 'branded':
+                assert soup.select_one('[data-niche-form] [name=quantity] option[selected]')['value'] == 'concepts'
+                assert soup.select_one('.niche-hero a[data-niche-intent=concepts]')['href'].endswith('/?intent=concepts#request')
+                assert soup.select_one('.final-conversion a[data-niche-intent=concepts]')
 
 
 def test_ten_owner_photos_are_separated_and_branded_gallery_marks_ready_artwork_as_example():
@@ -264,6 +293,12 @@ def test_mini_pages_browser_selector_and_layout_without_external_requests():
                         if design == 'branded':
                             form.locator('[name=quantity]').select_option('concepts')
                             assert '3–4' in form.locator('[data-niche-price]').inner_text()
+                            form.locator('[name=name]').fill('Synthetic draft')
+                            form.locator('[name=quantity]').select_option('10')
+                            page.locator('.niche-hero [data-niche-intent=concepts]').click()
+                            assert form.locator('[name=quantity]').input_value() == 'concepts'
+                            assert form.locator('[name=name]').input_value() == 'Synthetic draft'
+                            assert page.url.split('?', 1)[0].endswith('/solutions/' + slug + '/')
                         assert not errors, (lang, slug, width, errors)
                 context.close()
             browser.close()

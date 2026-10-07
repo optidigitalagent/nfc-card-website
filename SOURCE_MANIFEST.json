@@ -1003,8 +1003,8 @@
     },
     {
       "path": "src/build.mjs",
-      "bytes": 58163,
-      "sha256": "8b0298b17eac711ed9ad838bc6b868113ca11aed5b90dd4ed68f2aa9ce4f4b55"
+      "bytes": 58154,
+      "sha256": "c4d35fc9a23986eef94c92caae91d4b9fc05920c3c6f1536319331caf4457f64"
     },
     {
       "path": "src/commerce-contract.mjs",
@@ -1048,8 +1048,8 @@
     },
     {
       "path": "src/gallery-view.mjs",
-      "bytes": 7488,
-      "sha256": "856cd1d9d1e2f79ff8e3c62b1253591867bd415ffc9f0d238cd8cb0065854b36"
+      "bytes": 7901,
+      "sha256": "cb15913b4ec3a34051e9db1b67028544e31dc151d7406224b8080df124485322"
     },
     {
       "path": "src/gallery.js",
@@ -2803,38 +2803,38 @@
     },
     {
       "path": "src/niche-client.mjs",
-      "bytes": 2473,
-      "sha256": "94ad38e5d8d894f8929f1b4d6492a4333f76cd5839e0da962f054b8f71d7b833"
+      "bytes": 5024,
+      "sha256": "d4be4ec76dee7565937f3e10bd47548fb61640d343d4e68a47c39fa2d97bf5b5"
     },
     {
       "path": "src/niche-content.en.json",
-      "bytes": 56646,
-      "sha256": "95acacb773786ee4155a006e1364e74bf5649586f22f1165662cab9794db3152"
+      "bytes": 55453,
+      "sha256": "ab71beeabe55120aa1f940eef1708ce91ea5716c36b7beb0253fd3bba6b1f7f5"
     },
     {
       "path": "src/niche-content.pl.json",
-      "bytes": 56559,
-      "sha256": "f8a8fed2cf4e6b0fcb3026e61016c5ad634950fd1cb6f8afdb3045b914a80b87"
+      "bytes": 55756,
+      "sha256": "d0463f103506593f5ab36b7e56b0c5d2edb26fa89f7706d643fba9d475d26ec2"
     },
     {
       "path": "src/niche-content.uk.json",
-      "bytes": 82820,
-      "sha256": "2047f50c3e43d00c071f70159307795947901b93fb8c1278149956a4ebb5bdc5"
+      "bytes": 81057,
+      "sha256": "bf15c132b7256bdc76b75f1de193f24392413e22f279e6a41ff2b5403d336ef5"
     },
     {
       "path": "src/niche-view.mjs",
-      "bytes": 14560,
-      "sha256": "bc88ca4bd51d99cfc889114cdfc882fe1c05ee7de77e323c5dbc6cbd17a8dcce"
+      "bytes": 15375,
+      "sha256": "4d4062307d10147f08bab344f610bbb997d89701c5cb4d587ead3075c7c78b22"
     },
     {
       "path": "src/niche.css",
-      "bytes": 2975,
-      "sha256": "04f9bd86325bfa89214b6a621f054dec601d8fe43b7e5f1fa44b42110f99b551"
+      "bytes": 3053,
+      "sha256": "fe675189229ed99c98531d7b7de827f4b5585ce324675ba64def4b6332067b11"
     },
     {
       "path": "src/pages.mjs",
-      "bytes": 27780,
-      "sha256": "81f7d34dcd550d9e58bf622dd9ef7811b64721e3afb2b0851e9a249cdd37ccaa"
+      "bytes": 30060,
+      "sha256": "5d580ca76d539b33d72fe0cbad2ead5369b3ec98828614c884a29849825445f5"
     },
     {
       "path": "src/pl-clients.json",
@@ -2868,8 +2868,8 @@
     },
     {
       "path": "src/pl-views.json",
-      "bytes": 42750,
-      "sha256": "7310bd938e21a760e3d768979aa6bc5e554751da68d7bc42627f4b7b532dad6d"
+      "bytes": 43112,
+      "sha256": "d7e795bf28e28636ee8346d38601911177aade2c9e44bd42276e8d0a676858c7"
     },
     {
       "path": "src/poland-commerce.json",
@@ -2883,8 +2883,8 @@
     },
     {
       "path": "src/publication-approval.json",
-      "bytes": 1913,
-      "sha256": "81ca6fba57144b5984988451954cd78ff83ef640469269efe9715172211a902b"
+      "bytes": 2008,
+      "sha256": "b25fcce2e1511a54b4d70c742673dfac1706996f8e66fab46fd99a9cc7c640ca"
     },
     {
       "path": "src/publication.mjs",
@@ -2998,8 +2998,8 @@
     },
     {
       "path": "tests/test_niche_v31.py",
-      "bytes": 15921,
-      "sha256": "132e1e77e17b9b27b75117b3be868f08bd3cd7fcb61c758ce573b03e643b04ac"
+      "bytes": 18506,
+      "sha256": "223dce786ab697eb1a4f6dad294c2e3dd13ec80cd79f8c7c043f4aefd48cd246"
     },
     {
       "path": "tests/test_pages_v17.py",

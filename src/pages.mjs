@@ -219,6 +219,14 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
   try { stored = JSON.parse(sessionStorage.getItem(storageKey) || 'null'); } catch {}
   const recovered = idempotencyKey.test(stored?.key || '') && ['uncertain', 'complete'].includes(stored?.state);
   let key = recovered ? stored.key : crypto.randomUUID(), inheritedUncertainty = recovered && stored.state === 'uncertain';
+  form.dataset.attemptState = recovered ? stored.state : 'draft';
+  form.applyNicheIntent = quantity => {
+    if (form.dataset.productFamily !== 'nfc-review-card-mini' || busy || pending || inheritedUncertainty || form.dataset.complete) return false;
+    if (!['1','2','4','10','other','advice','concepts'].includes(quantity) || quantity === 'concepts' && form.dataset.designMode !== 'branded') return false;
+    select({variant: q('variant').value, quantity});
+    updateNotice();
+    return true;
+  };
   const newRequest = form.querySelector('[data-new-request]');
   function remember(state, leadId) {
     try { sessionStorage.setItem(storageKey, JSON.stringify({key, state, ...(leadId ? {leadId} : {})})); } catch {}
@@ -245,14 +253,21 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
   }
   function completed(leadId, previous = false, serverQuote = null) {
     form.dataset.complete = 'true'; submit.hidden = true; submit.disabled = true; note.hidden = true;
-    status((previous ? P('Попередню заявку вже збережено. Нові дані не надсилалися. Номер: ', 'Your previous enquiry is already saved. The new details were not submitted. Reference: ', 'Poprzednie zgłoszenie zostało już zapisane. Nie wysłano nowych danych. Numer: ') :form.dataset.solution?form.dataset.successHeading+' — '+form.dataset.successBody+' ' :
+    form.dataset.attemptState = 'complete';
+    const successBody = pending?.payload?.solution?.quantity_mode === 'free_design_concepts'
+      ? P('Запит на 3–4 безкоштовні початкові концепції збережено. Фізичне замовлення не оформлено.',
+          'Your request for 3–4 free initial concepts is saved. No physical order was placed.',
+          'Zapisaliśmy prośbę o 3–4 bezpłatne wstępne projekty. Nie złożono zamówienia na karty.')
+      : form.dataset.successBody;
+    status((previous ? P('Попередню заявку вже збережено. Нові дані не надсилалися. Номер: ', 'Your previous enquiry is already saved. The new details were not submitted. Reference: ', 'Poprzednie zgłoszenie zostało już zapisane. Nie wysłano nowych danych. Numer: ') :form.dataset.solution?form.dataset.successHeading+' — '+successBody+' ' :
       selection().variant==='instagram'?P('Дякуємо! Заявку отримано. Я зв’яжуся з вами, перевірю Instagram-посилання та уточню деталі замовлення. Номер: ','Thank you! Your enquiry has been received. I will contact you, check the Instagram link and confirm your order details. Reference: ','Dziękuję! Otrzymałem zgłoszenie. Skontaktuję się z Tobą, sprawdzę link do profilu na Instagramie i ustalę szczegóły zamówienia. Numer: '):P('Дякуємо! Заявку збережено. Деталі погодимо у вибраному месенджері. Номер: ', 'Thank you! Your request is saved. We will agree the details in your selected messenger. Reference: ', 'Dziękujemy! Zgłoszenie zostało zapisane. Szczegóły ustalimy w wybranym komunikatorze. Numer: ')) + leadId + (locale==='pl'&&Number.isSafeInteger(serverQuote?.amount)?` · Cena produktów: ${serverQuote.amount} PLN. Zaliczka: ${serverQuote.deposit} PLN.`:''), previous ? 'existing' : 'success');
     remember('complete', leadId);
     if (newRequest) newRequest.hidden = false;
   }
   if (newRequest) newRequest.onclick = () => {
-    if (busy || !form.dataset.complete) return;
+    if (busy || !form.dataset.complete && form.dataset.attemptState !== 'uncertain') return;
     delete form.dataset.complete; pending = null; inheritedUncertainty = false; key = crypto.randomUUID();
+    form.dataset.attemptState = 'draft';
     try { sessionStorage.removeItem(storageKey); } catch {}
     lock(false); submit.hidden = false; submit.disabled = false; newRequest.hidden = true; result.hidden = true;
     q('name').focus?.();
@@ -276,6 +291,7 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
         clearProfileError();
         const payload = leadPayload({...snapshot(), locale, website: q('website').value}, {basePath, pathname, utm: attribution});
         pending = {key, payload, uncertain: inheritedUncertainty};
+        form.dataset.attemptState = 'uncertain';
         // Conservative before transport: a page close at any point may hide a COMMIT.
         remember('uncertain');
       }
@@ -315,9 +331,20 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
           'Nie udało się potwierdzić przyjęcia zgłoszenia. Dane i wybrane opcje pozostały w formularzu. Spróbuj ponownie lub skontaktuj się z nami w komunikatorze.'), 'error');
       event('order_submit_error');
     } finally {
-      busy = false; submit.disabled = !!form.dataset.complete; submit.textContent = label; form.removeAttribute('aria-busy');
+      busy = false; submit.disabled = !!form.dataset.complete;
+      submit.textContent = form.dataset.productFamily === 'nfc-review-card-mini' ?
+        (selection().quantity === 'concepts' ? form.dataset.conceptsSubmit : form.dataset.physicalSubmit) : label;
+      if (!pending && !form.dataset.complete) form.dataset.attemptState = 'draft';
+      form.removeAttribute('aria-busy');
     }
   };
   submit.disabled = false; form.dataset.enhanced = 'true';
   if (recovered && stored.state === 'complete' && idempotencyKey.test(stored.leadId || '')) completed(stored.leadId, true);
+  if (recovered && stored.state === 'uncertain') {
+    lock(true); submit.hidden = true; submit.disabled = true;
+    if (newRequest) newRequest.hidden = false;
+    status(P('Результат попередньої спроби після перезавантаження невідомий. Перш ніж створювати нову заявку, уточніть його у менеджера. Дані попередньої спроби не зберігалися в браузері.',
+      'The previous attempt is unconfirmed after reload. Check with us before starting another enquiry. Its details were not stored in the browser.',
+      'Po odświeżeniu wynik poprzedniej próby jest nieznany. Sprawdź go u nas przed nowym zapytaniem. Dane poprzedniej próby nie były przechowywane w przeglądarce.'), 'uncertain');
+  }
 }

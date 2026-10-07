@@ -1,3 +1,4 @@
+.niche-hero .commerce-gallery{order:1}.niche-hero .commerce-purchase{order:2}
 .niche-card .commerce-card-media{align-items:stretch}.niche-card .catalog-product-image{max-height:520px;object-fit:cover}.niche-card .commerce-card-copy>.button{margin-top:auto;position:relative;z-index:3;min-height:48px}.niche-card .clean-list{margin:8px 0 16px;padding-left:20px}.niche-card .clean-list li{margin-bottom:5px}.niche-card .commerce-card-link::after{z-index:2}
 .niche-catalog-explanation{max-width:85ch;margin:18px 0 0;line-height:1.6}
 .niche-audience{background:var(--nfc-surface-soft)}.niche-audience-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,64px);margin-top:30px}.niche-audience-grid article{border-top:1px solid var(--nfc-border);padding-top:24px}.niche-audience-grid h3{font-size:clamp(1.35rem,2vw,2rem)}.niche-audience-grid p{max-width:50ch}.niche-shared-addition{max-width:1000px;margin:0 auto;padding:18px 20px;color:var(--muted)}
