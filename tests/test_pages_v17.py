@@ -104,7 +104,7 @@ def test_all_static_urls_metadata_css_and_content_use_base_path(source, base):
     for value in strings(json.loads((site / 'assets/content.json').read_text())):
         assert_project_url(value, site, normalized)
     sitemap = BeautifulSoup((site / 'sitemap.xml').read_text(), 'xml')
-    assert len(sitemap.select('loc')) == 42
+    assert len(sitemap.select('loc')) == 48
     for loc in sitemap.select('loc'):
         assert_project_url(loc.text, site, normalized)
     assert (site / '.nojekyll').exists()
@@ -115,7 +115,7 @@ def test_pages_cleans_server_artifacts_and_default_build_remains_fullstack(sourc
     site = build(source, pages=False)
     baseline = {p.relative_to(site): p.read_bytes() for p in site.rglob('*') if p.is_file()}
     server = {p.relative_to(source): p.read_bytes() for p in (source / 'server').rglob('*') if p.is_file()}
-    assert len(list(site.rglob('*.html'))) == 60
+    assert len(list(site.rglob('*.html'))) == 66
     admin = site / 'admin/reviews/index.html'
     admin.parent.mkdir(parents=True)
     admin.write_text('stale admin')
@@ -187,7 +187,7 @@ def test_forms_are_inert_before_client_and_expose_only_public_config(source, end
             else:
                 assert form.select_one('[name=quantity]') and form.select_one('[name=variant]')
                 assert_project_url(form.select_one('[name=source]')['value'], site)
-    assert forms == 33
+    assert forms == 39
     for file in site.rglob('*'):
         if file.is_file():
             assert secret.encode() not in file.read_bytes()

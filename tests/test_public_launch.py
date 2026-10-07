@@ -33,6 +33,9 @@ def test_public_marketing_indexed_forms_enabled_after_mount_and_no_preview_badge
     site = build(source, NFC_PUBLICATION_MODE='PUBLIC', NFC_LEAD_ENDPOINT=ENDPOINT, NFC_TELEGRAM_ENABLED='true')
     for relative in ['index.html', 'en/index.html', 'pl/index.html', 'about/index.html', 'en/about/index.html', 'pl/about/index.html',
                      'solutions/review-card/index.html', 'solutions/branded-review-card/index.html',
+                     *[f'{locale}solutions/{name}/index.html' for locale in ('', 'en/', 'pl/')
+                       for name in ('beauty-review-card', 'branded-beauty-review-card',
+                                    'restaurant-review-card', 'branded-restaurant-review-card')],
                      'privacy/index.html', 'terms/index.html', 'warranty-and-returns/index.html']:
         soup = BeautifulSoup((site / relative).read_text(), 'html.parser')
         assert soup.html['data-publication-mode'] == 'PUBLIC'
@@ -52,7 +55,7 @@ def test_public_marketing_indexed_forms_enabled_after_mount_and_no_preview_badge
     robots = (site / 'robots.txt').read_text()
     assert 'Disallow: /\n' not in robots
     assert 'Sitemap: ' + ORIGIN + BASE + '/sitemap.xml' in robots
-    assert len(BeautifulSoup((site / 'sitemap.xml').read_text(), 'xml').select('loc')) == 48
+    assert len(BeautifulSoup((site / 'sitemap.xml').read_text(), 'xml').select('loc')) == 54
     assert not (site / 'admin').exists()
     assert not (site / 'api').exists()
 

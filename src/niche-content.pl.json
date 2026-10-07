@@ -3,31 +3,31 @@
   "market": "PL",
   "products": {
     "beauty": {
-      "name": "Beauty Review Card",
-      "descriptor": "Karta NFC do opinii Google w salonach urody",
-      "eyebrow": "DLA SALONÓW URODY · INDYWIDUALNY PROJEKT",
-      "h1": "Beauty Review Card — karta NFC dla salonów urody",
-      "headline": "Ułatw klientom dodanie opinii Google, gdy są jeszcze w Twoim salonie.",
-      "catalog_description": "Karta NFC z Twoim brandingiem dla salonów urody, studiów stylizacji paznokci, brwi i rzęs. Klient otwiera formularz opinii Google przy stanowisku lub w recepcji, bez samodzielnego wyszukiwania salonu.",
+      "name": "Beauty Review Card Mini",
+      "descriptor": "Gotowa różowa karta NFC Mini do opinii Google w salonie. Ustawiamy link do Twojej wizytówki Google; projekt pozostaje taki jak na zdjęciach.",
+      "eyebrow": "DLA SALONÓW URODY · MINI · GOTOWY PROJEKT",
+      "h1": "Beauty Review Card Mini",
+      "headline": "Gotowa różowa karta NFC Mini do opinii Google w salonie. Ustawiamy link do Twojej wizytówki Google; projekt pozostaje taki jak na zdjęciach.",
+      "catalog_description": "Gotowa różowa karta NFC Mini do opinii Google w salonie. Ustawiamy link do Twojej wizytówki Google; projekt pozostaje taki jak na zdjęciach.",
       "catalog_benefits": [
-        "Twoje logo i kolory marki.",
-        "Wskazówki dotyczące rozmieszczenia i krótka podpowiedź dla zespołu.",
-        "Pierwsza indywidualna wizualizacja gratis."
+        "Gotowy projekt Beauty.",
+        "Przy stanowisku lub w recepcji.",
+        "Link do Twojej wizytówki Google."
       ],
-      "lead": "Klient zobaczył już efekt zabiegu. Daj mu prosty sposób, by podzielił się wrażeniami: zbliża smartfon obsługujący NFC do karty i otwiera formularz opinii właściwej wizytówki Google Twojego salonu.",
-      "summary": "Projektujemy kartę w stylu Twojego salonu, konfigurujemy odnośnik NFC i pomagamy wybrać wygodne miejsca użycia. Przed zamówieniem otrzymujesz pierwszą bezpłatną wizualizację, propozycję rozmieszczenia i krótką podpowiedź dla osoby wykonującej zabieg lub recepcji.",
-      "cta_primary": "Otrzymaj bezpłatną wizualizację",
-      "cta_secondary": "Omów rozmieszczenie",
-      "cta_sticky": "Wizualizacja dla salonu",
-      "cta_note": "Pierwsza indywidualna wizualizacja jest bezpłatna i nie zobowiązuje do zamówienia kart.",
-      "details_label": "Więcej o Beauty Review Card",
+      "lead": "Gotowa różowa karta NFC Mini do opinii Google w salonie. Ustawiamy link do Twojej wizytówki Google; projekt pozostaje taki jak na zdjęciach.",
+      "summary": "Karta zachowuje projekt pokazany na zdjęciach; nie dodajemy logo ani nie zmieniamy kolorów. Ustawiamy link NFC do formularza opinii Twojej wizytówki Google. Wybierz Branded Mini, jeśli potrzebujesz własnego projektu.",
+      "cta_primary": "Zapytaj o gotową kartę",
+      "cta_secondary": "Omów liczbę i rozmieszczenie",
+      "cta_sticky": "Zapytaj o gotową kartę",
+      "cta_note": "Projekt ze zdjęć jest stały. Zapytanie jest bezpłatne; cenę i termin potwierdzimy przed zamówieniem.",
+      "details_label": "Beauty Review Card Mini",
       "sections": [
         {
           "id": "situation",
           "heading": "Dobre doświadczenie nie zawsze staje się publiczną opinią",
           "paragraphs": [
             "Klient może podziękować za zabieg, umówić kolejną wizytę i polecić salon znajomym. Osoba wybierająca miejsce na pierwszą wizytę nie widzi jednak tych rozmów.",
-            "Po prośbie „proszę zostawić opinię” klient nadal musi o niej pamiętać, znaleźć salon w Google, wybrać właściwy adres i otworzyć formularz. Beauty Review Card eliminuje samodzielne wyszukiwanie i pozwala przejść do formularza jeszcze podczas wizyty."
+            "Po prośbie „proszę zostawić opinię” klient nadal musi o niej pamiętać, znaleźć salon w Google, wybrać właściwy adres i otworzyć formularz. Beauty Review Card Mini eliminuje samodzielne wyszukiwanie i pozwala przejść do formularza jeszcze podczas wizyty."
           ]
         },
         {
@@ -63,167 +63,297 @@
           "id": "value",
           "heading": "Niech doświadczenia klientów będą widoczne dla kolejnych osób",
           "paragraphs": [
-            "Przed pierwszą rezerwacją klient może sprawdzić wizytówkę salonu w Google: ocenę, liczbę i aktualność opinii oraz doświadczenia innych osób. Beauty Review Card ułatwia dotarcie do formularza takiej opinii.",
+            "Przed pierwszą rezerwacją klient może sprawdzić wizytówkę salonu w Google: ocenę, liczbę i aktualność opinii oraz doświadczenia innych osób. Beauty Review Card Mini ułatwia dotarcie do formularza takiej opinii.",
             "Opinie mogą wspierać lokalną widoczność obok innych czynników. Karta nie gwarantuje pierwszego miejsca w Google, nowych rezerwacji ani określonej oceny i nie zastępuje reklamy."
           ]
         },
         {
+          "id": "ready_design",
+          "heading": "Gotowy projekt widoczny przed zamówieniem",
+          "paragraphs": [
+            "Karta zachowuje projekt pokazany na zdjęciach; nie dodajemy logo ani nie zmieniamy kolorów. Ustawiamy link NFC do formularza opinii Twojej wizytówki Google. Wybierz Branded Mini, jeśli potrzebujesz własnego projektu."
+          ]
+        },
+        {
           "id": "included",
-          "heading": "Co obejmuje rozwiązanie",
+          "heading": "Co obejmuje zamówienie",
           "paragraphs": [
-            "Otrzymujesz kartę przygotowaną do użycia w salonie, a nie pusty znacznik NFC."
-          ],
-          "items": [
-            "Indywidualny projekt z Twoim logo, kolorami marki, tekstem i uzgodnionym wezwaniem do działania. Pierwsza wizualizacja gratis.",
-            "Akceptacja projektu przed produkcją i przygotowanie pliku do druku.",
-            "Wykonanie karty przez naszego partnera poligraficznego w Kijowie.",
-            "Konfiguracja NFC do formularza opinii właściwej wizytówki Google oraz sprawdzenie odnośnika.",
-            "Propozycja rozmieszczenia przy stanowiskach i w recepcji oraz krótka podpowiedź dla zespołu.",
-            "Zdjęcie gotowej karty przed wysyłką.",
-            "Pomoc w kwestiach technicznych po otrzymaniu karty. Wysyłkę z Ukrainy organizujemy na uzgodnionych warunkach; dostawa jest płatna osobno przez klienta."
+            "Zamówienie obejmuje karty Mini w projekcie pokazanym na zdjęciach, ustawienie linku NFC do Twojej wizytówki Google, wskazówki dotyczące rozmieszczenia i krótką podpowiedź dla zespołu."
           ]
         },
         {
-          "id": "alternatives",
-          "heading": "Dlaczego to nie jest kolejny zwykły znacznik NFC",
+          "id": "quantity_logic",
+          "heading": "Ile kart zamówić",
           "paragraphs": [
-            "Tańszy znacznik NFC może wystarczyć, gdy samodzielnie przygotujesz projekt, zapiszesz link, sprawdzisz jego działanie i opracujesz sposób użycia.",
-            "Beauty Review Card łączy te etapy: od wizualizacji w stylu salonu po rozmieszczenie i prostą podpowiedź dla zespołu. Częścią oferty jest przygotowanie do pracy, a nie tylko fizyczna karta."
-          ]
-        },
-        {
-          "id": "free_value",
-          "heading": "Zobacz rozwiązanie dla swojego salonu przed zamówieniem",
-          "paragraphs": [
-            "Pierwszą indywidualną wizualizację przygotujemy bezpłatnie. Zaproponujemy też rozmieszczenie kart oraz naturalny sposób, w jaki zespół lub recepcja może zwrócić na nie uwagę.",
-            "Na początek zostaw dane kontaktowe. O logo lub adres strony/Instagrama, wizytówkę Google i szczegóły przestrzeni zapytamy w wybranym komunikatorze. Bezpłatna wizualizacja nie zobowiązuje do zakupu kart."
+            "Ceny Mini w Polsce ustalamy indywidualnie. Podaj orientacyjną liczbę kart, a prześlemy wycenę przed potwierdzeniem zamówienia."
           ]
         },
         {
           "id": "quality",
-          "heading": "Ty akceptujesz projekt. My sprawdzamy odnośnik.",
+          "heading": "Jak działa karta",
           "paragraphs": [
-            "Przed produkcją widzisz cyfrową wizualizację. Przed wysyłką sprawdzamy nazwę, logo, projekt, zapisany odnośnik NFC i przejście do właściwej wizytówki Google. Wysyłamy również zdjęcie gotowej karty.",
-            "Po otrzymaniu pomagamy w kwestiach technicznych. W przypadku wady obowiązuje procedura zwrotu karty i pieniędzy opisana w sekcji „Gwarancja i zwroty”."
+            "Karta działa ze smartfonem obsługującym NFC. Gość otwiera odnośnik zaproponowany przez telefon; Google może poprosić o zalogowanie. Klient sam wybiera ocenę, treść i publikację. Karta nie gwarantuje liczby opinii ani pozycji w wyszukiwarce."
           ]
         },
         {
           "id": "specs",
-          "heading": "Format i personalizacja",
+          "heading": "Format Mini",
           "paragraphs": [
-            "Beauty Review Card to rozwiązanie dla salonów oparte na Branded Review Card. Format i funkcja NFC pozostają takie same; różnica dotyczy zastosowania w salonie i wskazówek dla zespołu."
-          ],
-          "items": [
-            "Wymiary: 10 × 10 cm. Grubość: 3 mm.",
-            "Logo, kolory, tekst i wezwanie do działania uzgadniamy indywidualnie.",
-            "Kod QR można dodać po uzgodnieniu.",
-            "NFC wymaga zgodnego smartfona. Do otwarcia odnośnika nie jest potrzebna osobna aplikacja.",
-            "Karta otwiera formularz opinii — nie tworzy ani nie publikuje opinii automatycznie."
+            "To fizyczna karta NFC w formacie Mini. Dokładne wymiary i grubość potwierdzimy przed zamówieniem; parametry większej Branded Review Card nie przechodzą na Mini."
           ]
         },
         {
           "id": "order_process",
-          "heading": "Od zapytania do gotowej karty",
+          "heading": "Jak zamówić",
           "paragraphs": [
-            "Najpierw uzgadniamy rozwiązanie, potem przygotowujemy zamówienie."
-          ],
-          "items": [
-            "Zostaw dane kontaktowe i wybierz wygodny komunikator.",
-            "Ustalimy właściwą wizytówkę Google, materiały do projektu i rozmieszczenie.",
-            "Przygotujemy pierwszą bezpłatną wizualizację i wskazówki dla salonu.",
-            "Przed zaliczką uzgodnimy projekt, liczbę kart, cenę, termin oraz sposób i koszt dostawy.",
-            "Wykonamy, skonfigurujemy i sprawdzimy karty, prześlemy zdjęcie i wyślemy zamówienie."
+            "Wybierz liczbę kart i wyślij zapytanie. Potwierdzimy wizytówkę Google, indywidualną cenę i termin, a potem przygotujemy karty w projekcie ze zdjęć. Zaliczka 20 PLN dotyczy tylko uzgodnionego zamówienia fizycznego i jest wliczona w cenę."
           ]
         }
       ],
       "faq": [
         {
-          "question": "Czym Beauty Review Card różni się od Branded Review Card?",
-          "answer": "Fizycznie to ta sama karta NFC z indywidualnym projektem. Beauty Review Card łączy ją z zastosowaniem dla salonu: rozmieszczeniem przy stanowiskach i w recepcji, doborem liczby kart oraz krótką podpowiedzią dla zespołu."
+          "question": "Jak działa karta?",
+          "answer": "Klient zbliża smartfon z NFC i otwiera odnośnik do formularza opinii właściwej wizytówki Google. Google może poprosić o zalogowanie. Klient sam wybiera ocenę i decyduje o publikacji."
         },
         {
-          "question": "Czy pasuje do studia paznokci, brwi lub rzęs?",
-          "answer": "Tak. Rozmieszczenie dopasowujemy do miejsca. W studiu paznokci karta może znaleźć się przy stanowisku, a dodatkowa w recepcji. W studiu brwi i rzęs warto wybrać moment, gdy klient widzi już efekt i może wygodnie skorzystać z telefonu."
+          "question": "Czy można zmienić projekt?",
+          "answer": "Gotowa Mini zachowuje projekt pokazany na zdjęciach. Aby dodać logo i kolory marki, wybierz Branded Mini."
         },
         {
-          "question": "Ile kart potrzebuje salon?",
-          "answer": "Nie ma obowiązkowego zestawu. Bierzemy pod uwagę stanowiska, recepcję i przebieg wizyty. Zamówienia od trzech kart wyceniamy indywidualnie."
+          "question": "Ile kart można zamówić?",
+          "answer": "Liczbę kart dobieramy do zastosowania. Każdą ilość Mini w Polsce wyceniamy indywidualnie przed zamówieniem."
         },
         {
-          "question": "Jakie są wymiary karty?",
-          "answer": "Obecny format to 10 × 10 cm i 3 mm grubości. Indywidualny projekt uzgadniamy przed produkcją."
+          "question": "Kiedy wpłaca się zaliczkę?",
+          "answer": "Dopiero po uzgodnieniu zamówienia fizycznego. Zaliczka 20 PLN jest wpłacana raz i wliczona w uzgodnioną cenę."
         },
         {
-          "question": "Czy klient potrzebuje aplikacji lub konta Google?",
-          "answer": "Do otwarcia odnośnika NFC nie potrzeba osobnej aplikacji; potrzebny jest smartfon obsługujący NFC. Przed dodaniem opinii Google może poprosić o zalogowanie na konto."
+          "question": "Co widać na zdjęciach?",
+          "answer": "Pokazany nadruk to gotowy projekt Mini. Na stronach Branded Mini zdjęcia pokazują format fizyczny; własny projekt uzgadniamy osobno."
         },
         {
-          "question": "Czy można zbierać tylko pięciogwiazdkowe opinie?",
-          "answer": "Nie. Karta nie wybiera ocen, nie filtruje klientów według ich wrażeń i nie publikuje w ich imieniu. Każda osoba sama decyduje o treści i ocenie."
+          "question": "Jakie wymiary ma Mini?",
+          "answer": "Dokładne wymiary i grubość Mini potwierdzimy przed zamówieniem. Parametry większej Branded Review Card nie przechodzą na Mini."
         },
         {
-          "question": "Mamy już kod QR. Czy trzeba go usunąć?",
-          "answer": "Nie. QR i NFC to różne sposoby otwarcia linku. Kod QR odczytuje się aparatem, a przy NFC zbliża zgodny smartfon do karty. Kod QR można również dodać do projektu karty po uzgodnieniu."
-        },
-        {
-          "question": "Co jest potrzebne do bezpłatnej wizualizacji?",
-          "answer": "Na początek wystarczą dane kontaktowe. W rozmowie poprosimy o logo lub adres strony/Instagrama oraz ustalimy wizytówkę Google i rozmieszczenie. Pierwsza indywidualna wizualizacja jest bezpłatna i nie zobowiązuje do zamówienia."
-        },
-        {
-          "question": "Czy ta karta może otwierać Instagram?",
-          "answer": "W tym rozwiązaniu Beauty Review Card konfigurujemy do formularza opinii Google. Do otwierania profilu Instagram służy osobna NFC Instagram Card — inny produkt i inne działanie klienta."
+          "question": "Czy można dodać kod QR?",
+          "answer": "W Branded Mini możliwość dodania kodu QR omówimy podczas uzgadniania projektu. Gotowy projekt pozostaje taki jak na zdjęciach."
         }
       ],
       "cross_sell": {
         "heading": "Opinia Google i Instagram to różne działania",
-        "body": "Beauty Review Card otwiera formularz opinii Google. Do wygodnego otwierania profilu salonu na Instagramie służy osobna NFC Instagram Card. Nie jest wliczona w cenę tego rozwiązania.",
+        "body": "Beauty Review Card Mini otwiera formularz opinii Google. Do wygodnego otwierania profilu salonu na Instagramie służy osobna NFC Instagram Card. Nie jest wliczona w cenę tego rozwiązania.",
         "label": "Zobacz NFC Instagram Card",
         "target": "/solutions/instagram-card"
       },
-      "final_heading": "Zobacz Beauty Review Card w stylu swojego salonu",
-      "final_body": "Otrzymaj pierwszą indywidualną wizualizację i wskazówki dotyczące rozmieszczenia gratis. Najpierw zobaczysz, jak karta pasuje do przestrzeni i jak użyje jej zespół, a potem zdecydujesz o zamówieniu.",
-      "form_heading": "Otrzymaj wizualizację dla salonu",
-      "form_intro": "Zostaw dane kontaktowe. Napiszemy w wybranym komunikatorze, aby ustalić materiały do projektu, wizytówkę Google i rozmieszczenie kart.",
-      "form_submit": "Poproś o wizualizację dla salonu",
-      "form_success_heading": "Otrzymaliśmy zapytanie o Beauty Review Card",
-      "form_success_body": "Napiszemy w wybranym komunikatorze, aby omówić projekt i rozmieszczenie w salonie. Zapytanie nie jest płatnością ani automatycznym potwierdzeniem zamówienia.",
-      "seo_title": "Beauty Review Card dla salonów urody | NFC CARD",
-      "seo_description": "Karta NFC z Twoim brandingiem do opinii Google w salonie. Rozmieszczenie przy stanowiskach i w recepcji, podpowiedź dla zespołu i pierwsza wizualizacja gratis."
+      "final_heading": "Zapytaj o gotową kartę Mini",
+      "final_body": "Karta zachowuje projekt pokazany na zdjęciach; nie dodajemy logo ani nie zmieniamy kolorów. Ustawiamy link NFC do formularza opinii Twojej wizytówki Google. Wybierz Branded Mini, jeśli potrzebujesz własnego projektu.",
+      "form_heading": "Zapytaj o gotową kartę Mini",
+      "form_intro": "Zostaw dane kontaktowe. Potwierdzimy wizytówkę Google, liczbę kart, indywidualną cenę i termin. Projekt jest taki jak na zdjęciach.",
+      "form_submit": "Wyślij zapytanie",
+      "form_success_heading": "Beauty Review Card Mini",
+      "form_success_body": "Otrzymaliśmy zapytanie. Napiszemy, aby potwierdzić wizytówkę Google, liczbę kart i warunki. Nie jest to jeszcze potwierdzone zamówienie fizyczne.",
+      "seo_title": "Beauty Review Card Mini | NFC CARD",
+      "seo_description": "Gotowa karta NFC Mini do opinii Google: projekt ze zdjęć, ustawienie linku do Twojej wizytówki i wskazówki dotyczące rozmieszczenia."
+    },
+    "brandedBeauty": {
+      "name": "Branded Beauty Review Card Mini",
+      "descriptor": "Karta NFC Mini w stylu Twojego salonu. Bezpłatnie przygotujemy 3–4 wstępne warianty projektu, uzgodnimy wygląd i ustawimy link do Twojej wizytówki Google.",
+      "eyebrow": "DLA SALONÓW URODY · MINI · TWÓJ PROJEKT",
+      "h1": "Branded Beauty Review Card Mini",
+      "headline": "Karta NFC Mini w stylu Twojego salonu. Bezpłatnie przygotujemy 3–4 wstępne warianty projektu, uzgodnimy wygląd i ustawimy link do Twojej wizytówki Google.",
+      "catalog_description": "Karta NFC Mini w stylu Twojego salonu. Bezpłatnie przygotujemy 3–4 wstępne warianty projektu, uzgodnimy wygląd i ustawimy link do Twojej wizytówki Google.",
+      "catalog_benefits": [
+        "Twoje logo i styl marki.",
+        "3–4 wstępne warianty bezpłatnie.",
+        "Podział nakładu między zaakceptowane projekty."
+      ],
+      "lead": "Karta NFC Mini w stylu Twojego salonu. Bezpłatnie przygotujemy 3–4 wstępne warianty projektu, uzgodnimy wygląd i ustawimy link do Twojej wizytówki Google.",
+      "summary": "Prześlij logo oraz link do strony lub Instagrama, a także wskazówki dotyczące stylu i kolorów. Bezpłatnie przygotujemy 3–4 wstępne warianty projektu. Wybierzesz kierunek, zgłosisz potrzebne poprawki i zaakceptujesz finalny projekt przed produkcją. Materiały możesz przekazać teraz lub po pierwszym kontakcie.",
+      "cta_primary": "Poproś o 3–4 warianty projektu",
+      "cta_secondary": "Omów liczbę i rozmieszczenie",
+      "cta_sticky": "Poproś o 3–4 warianty projektu",
+      "cta_note": "3–4 wstępne warianty są bezpłatne. Zamówienie fizyczne potwierdzamy osobno.",
+      "details_label": "Branded Beauty Review Card Mini",
+      "sections": [
+        {
+          "id": "situation",
+          "heading": "Dobre doświadczenie nie zawsze staje się publiczną opinią",
+          "paragraphs": [
+            "Klient może podziękować za zabieg, umówić kolejną wizytę i polecić salon znajomym. Osoba wybierająca miejsce na pierwszą wizytę nie widzi jednak tych rozmów.",
+            "Po prośbie „proszę zostawić opinię” klient nadal musi o niej pamiętać, znaleźć salon w Google, wybrać właściwy adres i otworzyć formularz. Beauty Review Card Mini eliminuje samodzielne wyszukiwanie i pozwala przejść do formularza jeszcze podczas wizyty."
+          ]
+        },
+        {
+          "id": "placement",
+          "heading": "Nie tylko przy kasie — tam, gdzie klientowi wygodnie",
+          "paragraphs": [
+            "W studiu stylizacji paznokci główne karty można umieścić przy stanowiskach. Klient zauważa je podczas wizyty, a osoba wykonująca usługę zwraca uwagę na kartę, gdy efekt jest już widoczny i klient może wygodnie skorzystać z telefonu.",
+            "Karta w recepcji tworzy dodatkowe miejsce kontaktu po zabiegu. W salonie urody czy studiu brwi i rzęs zasada jest taka sama: wybieramy miejsce, w którym klient widzi już efekt i nie spieszy się jeszcze do wyjścia.",
+            "Liczbę kart dobieramy do przestrzeni i pracy zespołu. Nie trzeba automatycznie umieszczać karty przy każdym fotelu ani zaczynać od dużego zestawu."
+          ]
+        },
+        {
+          "id": "mechanism",
+          "heading": "Jak klient przechodzi do formularza opinii",
+          "paragraphs": [
+            "Prosta prośba zespołu i krótka droga dla klienta."
+          ],
+          "items": [
+            "Osoba wykonująca zabieg lub pracownik recepcji zaprasza do podzielenia się wrażeniami.",
+            "Klient zbliża smartfon obsługujący NFC do karty i otwiera odnośnik zaproponowany przez telefon.",
+            "Otwiera się formularz oceny i opinii właściwej wizytówki Google. Google może poprosić o zalogowanie.",
+            "Klient sam wybiera ocenę, wpisuje treść i decyduje o publikacji."
+          ]
+        },
+        {
+          "id": "staff_script",
+          "heading": "Krótka podpowiedź dla zespołu lub recepcji",
+          "paragraphs": [
+            "„Aby podzielić się wrażeniami, wystarczy zbliżyć telefon do karty”. Bez proszenia o konkretną ocenę i bez wywierania presji na kliencie."
+          ]
+        },
+        {
+          "id": "value",
+          "heading": "Niech doświadczenia klientów będą widoczne dla kolejnych osób",
+          "paragraphs": [
+            "Przed pierwszą rezerwacją klient może sprawdzić wizytówkę salonu w Google: ocenę, liczbę i aktualność opinii oraz doświadczenia innych osób. Beauty Review Card Mini ułatwia dotarcie do formularza takiej opinii.",
+            "Opinie mogą wspierać lokalną widoczność obok innych czynników. Karta nie gwarantuje pierwszego miejsca w Google, nowych rezerwacji ani określonej oceny i nie zastępuje reklamy."
+          ]
+        },
+        {
+          "id": "design_workflow",
+          "heading": "Twój projekt: od wstępnych wariantów do akceptacji",
+          "paragraphs": [
+            "Prześlij logo oraz link do strony lub Instagrama, a także wskazówki dotyczące stylu i kolorów. Bezpłatnie przygotujemy 3–4 wstępne warianty projektu. Wybierzesz kierunek, zgłosisz potrzebne poprawki i zaakceptujesz finalny projekt przed produkcją. Materiały możesz przekazać teraz lub po pierwszym kontakcie."
+          ]
+        },
+        {
+          "id": "design_split",
+          "heading": "Kilka projektów w jednym nakładzie",
+          "paragraphs": [
+            "Jeden nakład można podzielić między zaakceptowane końcowe projekty. Na przykład 10 kart może powstać jako 5 + 5 w dwóch projektach bez zmiany ceny pakietu 10 kart. Projekty i poprawki uzgadniamy przed produkcją."
+          ]
+        },
+        {
+          "id": "included",
+          "heading": "Co obejmuje zamówienie",
+          "paragraphs": [
+            "Zamówienie obejmuje karty Mini w zaakceptowanym projekcie, ustawienie linku NFC do Twojej wizytówki Google, wskazówki dotyczące rozmieszczenia i krótką podpowiedź dla zespołu. Pierwsze 3–4 warianty projektu są bezpłatne."
+          ]
+        },
+        {
+          "id": "quantity_logic",
+          "heading": "Ile kart zamówić",
+          "paragraphs": [
+            "Ceny Branded Mini w Polsce ustalamy indywidualnie. Podaj orientacyjną liczbę kart i liczbę projektów, a prześlemy wycenę przed potwierdzeniem zamówienia."
+          ]
+        },
+        {
+          "id": "quality",
+          "heading": "Jak działa karta",
+          "paragraphs": [
+            "Karta działa ze smartfonem obsługującym NFC. Gość otwiera odnośnik zaproponowany przez telefon; Google może poprosić o zalogowanie. Klient sam wybiera ocenę, treść i publikację. Karta nie gwarantuje liczby opinii ani pozycji w wyszukiwarce."
+          ]
+        },
+        {
+          "id": "specs",
+          "heading": "Format Mini",
+          "paragraphs": [
+            "To fizyczna karta NFC w formacie Mini. Dokładne wymiary i grubość potwierdzimy przed zamówieniem; parametry większej Branded Review Card nie przechodzą na Mini."
+          ]
+        },
+        {
+          "id": "order_process",
+          "heading": "Jak zamówić",
+          "paragraphs": [
+            "Wyślij zapytanie z logo, linkiem do strony lub Instagrama i wskazówkami dotyczącymi stylu. Przygotujemy bezpłatnie 3–4 wstępne warianty; wybierzesz kierunek i zaakceptujesz finalny projekt. Liczbę kart, indywidualną cenę i termin uzgodnimy przed zaliczką 20 PLN wliczoną w cenę zamówienia."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Jak działa karta?",
+          "answer": "Klient zbliża smartfon z NFC i otwiera odnośnik do formularza opinii właściwej wizytówki Google. Google może poprosić o zalogowanie. Klient sam wybiera ocenę i decyduje o publikacji."
+        },
+        {
+          "question": "Jak uzgadnia się projekt?",
+          "answer": "Prześlij logo, stronę lub Instagram oraz wskazówki dotyczące stylu. Przygotujemy bezpłatnie 3–4 wstępne warianty; wybierzesz kierunek, zgłosisz potrzebne poprawki i zatwierdzisz finalny projekt przed produkcją."
+        },
+        {
+          "question": "Ile kart można zamówić?",
+          "answer": "Liczbę kart dobieramy do zastosowania. Każdą ilość Mini w Polsce wyceniamy indywidualnie przed zamówieniem."
+        },
+        {
+          "question": "Czy w jednym nakładzie mogą być różne projekty?",
+          "answer": "Tak, po zatwierdzeniu projektów końcowych. Na przykład 10 kart można podzielić 5 + 5 między dwa projekty bez zmiany ceny pakietu 10 kart."
+        },
+        {
+          "question": "Kiedy wpłaca się zaliczkę?",
+          "answer": "Dopiero po uzgodnieniu zamówienia fizycznego. Zaliczka 20 PLN jest wpłacana raz i wliczona w uzgodnioną cenę."
+        },
+        {
+          "question": "Co widać na zdjęciach?",
+          "answer": "Pokazany nadruk to gotowy projekt Mini. Na stronach Branded Mini zdjęcia pokazują format fizyczny; własny projekt uzgadniamy osobno."
+        },
+        {
+          "question": "Jakie wymiary ma Mini?",
+          "answer": "Dokładne wymiary i grubość Mini potwierdzimy przed zamówieniem. Parametry większej Branded Review Card nie przechodzą na Mini."
+        },
+        {
+          "question": "Czy można dodać kod QR?",
+          "answer": "W Branded Mini możliwość dodania kodu QR omówimy podczas uzgadniania projektu. Gotowy projekt pozostaje taki jak na zdjęciach."
+        }
+      ],
+      "cross_sell": {
+        "heading": "Opinia Google i Instagram to różne działania",
+        "body": "Beauty Review Card Mini otwiera formularz opinii Google. Do wygodnego otwierania profilu salonu na Instagramie służy osobna NFC Instagram Card. Nie jest wliczona w cenę tego rozwiązania.",
+        "label": "Zobacz NFC Instagram Card",
+        "target": "/solutions/instagram-card"
+      },
+      "final_heading": "Omów Branded Mini",
+      "final_body": "Prześlij logo oraz link do strony lub Instagrama, a także wskazówki dotyczące stylu i kolorów. Bezpłatnie przygotujemy 3–4 wstępne warianty projektu. Wybierzesz kierunek, zgłosisz potrzebne poprawki i zaakceptujesz finalny projekt przed produkcją. Materiały możesz przekazać teraz lub po pierwszym kontakcie.",
+      "form_heading": "Omów Branded Mini",
+      "form_intro": "Zostaw dane kontaktowe. Materiały marki możesz przesłać teraz lub później; przygotujemy 3–4 wstępne warianty bezpłatnie.",
+      "form_submit": "Poproś o warianty projektu",
+      "form_success_heading": "Branded Beauty Review Card Mini",
+      "form_success_body": "Otrzymaliśmy zapytanie. Napiszemy, aby potwierdzić wizytówkę Google, liczbę kart i warunki. Nie jest to jeszcze potwierdzone zamówienie fizyczne.",
+      "seo_title": "Branded Beauty Review Card Mini | NFC CARD",
+      "seo_description": "Branded Mini do opinii Google: styl Twojej marki, 3–4 bezpłatne wstępne warianty i akceptacja finalnego projektu."
     },
     "restaurant": {
-      "name": "Restaurant Review Card",
-      "descriptor": "Karta NFC do opinii Google w restauracjach",
-      "eyebrow": "DLA RESTAURACJI · INDYWIDUALNY PROJEKT",
-      "h1": "Restaurant Review Card — karta NFC dla restauracji",
-      "headline": "Od prośby kelnera do formularza opinii Google, gdy gość jest jeszcze w lokalu.",
-      "catalog_description": "Karta NFC z brandingiem restauracji: na stoliku lub podawana z rachunkiem. Gość otwiera formularz opinii właściwej wizytówki Google, a kelner od razu wskazuje prosty sposób podzielenia się wrażeniami.",
+      "name": "Restaurant Review Card Mini",
+      "descriptor": "Gotowa zielona karta NFC Mini do opinii Google w restauracji. Można postawić ją na stoliku albo podać z rachunkiem; ustawiamy link do Twojej wizytówki Google.",
+      "eyebrow": "DLA RESTAURACJI · MINI · GOTOWY PROJEKT",
+      "h1": "Restaurant Review Card Mini",
+      "headline": "Gotowa zielona karta NFC Mini do opinii Google w restauracji. Można postawić ją na stoliku albo podać z rachunkiem; ustawiamy link do Twojej wizytówki Google.",
+      "catalog_description": "Gotowa zielona karta NFC Mini do opinii Google w restauracji. Można postawić ją na stoliku albo podać z rachunkiem; ustawiamy link do Twojej wizytówki Google.",
       "catalog_benefits": [
-        "Na stolikach lub razem z rachunkiem.",
-        "Twój projekt i krótka podpowiedź dla kelnera.",
-        "Pierwsza indywidualna wizualizacja gratis."
+        "Gotowy zielony projekt.",
+        "Na stoliku lub z rachunkiem.",
+        "Link do Twojej wizytówki Google."
       ],
-      "lead": "Gość poznał już kuchnię, atmosferę i obsługę. Restaurant Review Card zmienia prośbę o opinię w konkretny następny krok: zbliżenie smartfona z NFC i otwarcie formularza właściwej wizytówki Google.",
-      "summary": "Projektujemy kartę w stylu restauracji, konfigurujemy link i pomagamy wybrać zastosowanie: na stolikach, przy barze lub z rachunkiem. Przed zamówieniem otrzymujesz pierwszą bezpłatną wizualizację i propozycję wykorzystania kart w lokalu.",
-      "cta_primary": "Otrzymaj bezpłatną wizualizację",
-      "cta_secondary": "Omów zastosowanie w restauracji",
-      "cta_sticky": "Wizualizacja dla restauracji",
-      "cta_note": "Pierwsza indywidualna wizualizacja jest bezpłatna i nie zobowiązuje do zamówienia kart.",
-      "details_label": "Więcej o Restaurant Review Card",
+      "lead": "Gotowa zielona karta NFC Mini do opinii Google w restauracji. Można postawić ją na stoliku albo podać z rachunkiem; ustawiamy link do Twojej wizytówki Google.",
+      "summary": "Karta zachowuje projekt pokazany na zdjęciach; nie dodajemy logo ani nie zmieniamy kolorów. Ustawiamy link NFC do formularza opinii Twojej wizytówki Google. Wybierz Branded Mini, jeśli potrzebujesz własnego projektu.",
+      "cta_primary": "Zapytaj o gotową kartę",
+      "cta_secondary": "Omów liczbę i rozmieszczenie",
+      "cta_sticky": "Zapytaj o gotową kartę",
+      "cta_note": "Projekt ze zdjęć jest stały. Zapytanie jest bezpłatne; cenę i termin potwierdzimy przed zamówieniem.",
+      "details_label": "Restaurant Review Card Mini",
       "sections": [
         {
           "id": "situation",
           "heading": "Prośba była. Opinia nie powstała.",
           "paragraphs": [
             "Kelner prosi o opinię. Gość odpowiada „oczywiście”, płaci i wychodzi. Musi jeszcze pamiętać o prośbie, znaleźć restaurację w Google, wybrać właściwy adres i otworzyć formularz.",
-            "Restaurant Review Card usuwa przerwę między prośbą a działaniem. Kelner nie tylko przypomina o opinii — od razu pokazuje, jak otworzyć formularz."
+            "Restaurant Review Card Mini usuwa przerwę między prośbą a działaniem. Kelner nie tylko przypomina o opinii — od razu pokazuje, jak otworzyć formularz."
           ]
         },
         {
           "id": "table_scenario",
           "heading": "Scenariusz 1. Karta na stoliku",
           "paragraphs": [
-            "Gość widzi Review Card podczas wizyty. Pod koniec obsługi kelner zwraca na nią uwagę, a gość zbliża smartfon z NFC i otwiera zaproponowany link.",
-            "Karta tworzy stale dostępny punkt kontaktu na stoliku. Przygotowujemy projekt z Twoim logo, kolorami i czytelnym zaproszeniem do podzielenia się wrażeniami."
+            "Gość widzi Review Card podczas wizyty. Pod koniec obsługi kelner zwraca na nią uwagę, a gość zbliża smartfon z NFC i otwiera zaproponowany link."
           ]
         },
         {
@@ -259,7 +389,7 @@
           "heading": "Nie zamiast każdego kodu QR — inny sposób otwarcia linku",
           "paragraphs": [
             "QR to znane narzędzie: gość otwiera aparat, kieruje go na kod i przechodzi do linku. Przy NFC zbliża zgodny smartfon do karty i otwiera zaproponowany odnośnik.",
-            "Nie twierdzimy, że QR nie działa ani że każdy telefon obsługuje NFC. Proponujemy inną interakcję, którą można naturalnie połączyć z prośbą kelnera. Kod QR można dodać do karty po uzgodnieniu."
+            "QR i NFC to różne sposoby otwierania linku. Gotowy projekt jest stały; dodanie kodu QR do Branded Mini można omówić podczas uzgadniania projektu."
           ]
         },
         {
@@ -267,232 +397,365 @@
           "heading": "Wrażenia dzisiejszych gości — informacje dla kolejnych",
           "paragraphs": [
             "Wybierając restaurację, klient może sprawdzić ocenę, liczbę i aktualność opinii Google oraz doświadczenia innych gości. Prywatne podziękowanie kelnerowi nie jest widoczne w tej wizytówce.",
-            "Restaurant Review Card ułatwia przejście od doświadczenia w lokalu do możliwości podzielenia się nim. Opinie mogą wspierać lokalną widoczność obok innych czynników, ale karta nie gwarantuje pierwszego miejsca w Google, rezerwacji ani określonej oceny."
+            "Restaurant Review Card Mini ułatwia przejście od doświadczenia w lokalu do możliwości podzielenia się nim. Opinie mogą wspierać lokalną widoczność obok innych czynników, ale karta nie gwarantuje pierwszego miejsca w Google, rezerwacji ani określonej oceny."
+          ]
+        },
+        {
+          "id": "ready_design",
+          "heading": "Gotowy projekt widoczny przed zamówieniem",
+          "paragraphs": [
+            "Karta zachowuje projekt pokazany na zdjęciach; nie dodajemy logo ani nie zmieniamy kolorów. Ustawiamy link NFC do formularza opinii Twojej wizytówki Google. Wybierz Branded Mini, jeśli potrzebujesz własnego projektu."
           ]
         },
         {
           "id": "included",
-          "heading": "Co obejmuje rozwiązanie",
+          "heading": "Co obejmuje zamówienie",
           "paragraphs": [
-            "Przygotowujemy kartę i praktyczny sposób wykorzystania jej w Twojej restauracji."
-          ],
-          "items": [
-            "Indywidualny projekt z Twoim logo, kolorami marki, tekstem i uzgodnionym wezwaniem do działania. Pierwsza wizualizacja gratis.",
-            "Akceptacja projektu przed produkcją i przygotowanie pliku do druku.",
-            "Wykonanie karty przez naszego partnera poligraficznego w Kijowie.",
-            "Konfiguracja NFC do formularza opinii właściwej wizytówki Google oraz sprawdzenie przejścia.",
-            "Propozycja rozmieszczenia i liczby kart: stoliki, bar, kasa lub przenośne karty dla kelnerów — zgodnie z pracą lokalu.",
-            "Krótka podpowiedź dla kelnera i zdjęcie gotowej karty przed wysyłką.",
-            "Pomoc w kwestiach technicznych po otrzymaniu karty. Wysyłkę z Ukrainy organizujemy na uzgodnionych warunkach; dostawa jest płatna osobno przez klienta."
+            "Zamówienie obejmuje karty Mini w projekcie pokazanym na zdjęciach, ustawienie linku NFC do Twojej wizytówki Google, wskazówki dotyczące rozmieszczenia i krótką podpowiedź dla zespołu."
           ]
         },
         {
           "id": "quantity_logic",
-          "heading": "Liczbę określa zastosowanie, nie chęć sprzedania więcej",
+          "heading": "Ile kart zamówić",
           "paragraphs": [
-            "W jednej restauracji sprawdzą się karty na stolikach. W innej — kilka przenośnych kart podawanych z rachunkiem. Dodatkowe miejsca przy barze lub kasie mają sens tam, gdzie goście mogą wygodnie z nich skorzystać.",
-            "Pomożemy wybrać użyteczne punkty kontaktu. Nie ma obowiązkowego zestawu; zamówienia od trzech kart wyceniamy indywidualnie."
-          ]
-        },
-        {
-          "id": "alternatives",
-          "heading": "Znacznik NFC i gotowe rozwiązanie to nie to samo",
-          "paragraphs": [
-            "Na rynku są tańsze karty i znaczniki NFC. Mogą odpowiadać Twoim potrzebom, gdy samodzielnie przygotujesz projekt, skonfigurujesz link i ustalisz sposób użycia przez zespół.",
-            "Restaurant Review Card obejmuje indywidualny projekt, przygotowanie do druku, konfigurację, sprawdzenie i wskazówki dla lokalu. Dostajesz kartę z jasnym zastosowaniem, a nie element, który trzeba jeszcze wdrożyć."
-          ]
-        },
-        {
-          "id": "free_value",
-          "heading": "Zobacz kartę i sposób użycia przed zamówieniem",
-          "paragraphs": [
-            "Bezpłatnie przygotujemy pierwszą indywidualną wizualizację i zaproponujemy odpowiedni scenariusz: stoliki lub rachunek, dodatkowe miejsca i krótką prośbę dla kelnera.",
-            "Zacznij od zapytania. Materiały do projektu, wizytówkę Google i przebieg obsługi ustalimy w wybranym komunikatorze. Wizualizacja nie zobowiązuje do zamówienia."
+            "Ceny Mini w Polsce ustalamy indywidualnie. Podaj orientacyjną liczbę kart, a prześlemy wycenę przed potwierdzeniem zamówienia."
           ]
         },
         {
           "id": "quality",
-          "heading": "Akceptacja przed produkcją. Sprawdzenie przed wysyłką.",
+          "heading": "Jak działa karta",
           "paragraphs": [
-            "Akceptujesz cyfrową wizualizację przed produkcją. Sprawdzamy nazwę, logo, projekt, wizytówkę Google, zapisany link NFC i faktyczne przejście. Przed wysyłką otrzymujesz zdjęcie gotowej karty.",
-            "Po otrzymaniu pomagamy w kwestiach technicznych. Dla karty z wadą obowiązuje procedura zwrotu karty i pieniędzy z sekcji „Gwarancja i zwroty”."
+            "Karta działa ze smartfonem obsługującym NFC. Gość otwiera odnośnik zaproponowany przez telefon; Google może poprosić o zalogowanie. Klient sam wybiera ocenę, treść i publikację. Karta nie gwarantuje liczby opinii ani pozycji w wyszukiwarce."
           ]
         },
         {
           "id": "specs",
-          "heading": "Format i personalizacja",
+          "heading": "Format Mini",
           "paragraphs": [
-            "Restaurant Review Card to rozwiązanie dla restauracji oparte na Branded Review Card. Fizyczna karta i funkcja NFC są takie same; zastosowanie dopasowujemy do obsługi w lokalu."
-          ],
-          "items": [
-            "Wymiary: 10 × 10 cm. Grubość: 3 mm.",
-            "Twoje logo, kolory marki, tekst i uzgodnione wezwanie do działania.",
-            "Kod QR po uzgodnieniu.",
-            "Potrzebny jest smartfon obsługujący NFC; otwarcie linku nie wymaga osobnej aplikacji.",
-            "Jedno czytelne działanie: otwarcie formularza opinii Google Twojej restauracji."
+            "To fizyczna karta NFC w formacie Mini. Dokładne wymiary i grubość potwierdzimy przed zamówieniem; parametry większej Branded Review Card nie przechodzą na Mini."
           ]
         },
         {
           "id": "order_process",
-          "heading": "Jak złożyć zamówienie",
+          "heading": "Jak zamówić",
           "paragraphs": [
-            "Od pierwszej rozmowy do skonfigurowanych kart."
-          ],
-          "items": [
-            "Zostaw dane kontaktowe i wybierz wygodny komunikator.",
-            "Ustalimy wizytówkę Google, logo, kolory i przebieg obsługi.",
-            "Przygotujemy pierwszą bezpłatną wizualizację i propozycję rozmieszczenia.",
-            "Przed zaliczką uzgodnimy projekt, liczbę kart, cenę, termin oraz sposób i koszt dostawy.",
-            "Wykonamy, skonfigurujemy i sprawdzimy karty, prześlemy zdjęcie gotowego zamówienia i wyślemy je."
+            "Wybierz liczbę kart i wyślij zapytanie. Potwierdzimy wizytówkę Google, indywidualną cenę i termin, a potem przygotujemy karty w projekcie ze zdjęć. Zaliczka 20 PLN dotyczy tylko uzgodnionego zamówienia fizycznego i jest wliczona w cenę."
           ]
         }
       ],
       "faq": [
         {
-          "question": "Czym Restaurant Review Card różni się od Branded Review Card?",
-          "answer": "To ta sama karta NFC z indywidualnym projektem, ale z zastosowaniem dla restauracji: na stolikach, z rachunkiem lub w innych odpowiednich miejscach, z doborem liczby kart i krótką podpowiedzią dla kelnera."
+          "question": "Jak działa karta?",
+          "answer": "Klient zbliża smartfon z NFC i otwiera odnośnik do formularza opinii właściwej wizytówki Google. Google może poprosić o zalogowanie. Klient sam wybiera ocenę i decyduje o publikacji."
         },
         {
-          "question": "Lepiej umieścić karty na stolikach czy podawać z rachunkiem?",
-          "answer": "Zależy to od obsługi. Karta na stoliku jest stale dostępna; karta z rachunkiem pojawia się na zakończenie wizyty. Pomożemy wybrać jeden scenariusz lub je połączyć."
+          "question": "Czy można zmienić projekt?",
+          "answer": "Gotowa Mini zachowuje projekt pokazany na zdjęciach. Aby dodać logo i kolory marki, wybierz Branded Mini."
         },
         {
-          "question": "Czy każdy stolik potrzebuje karty?",
-          "answer": "Nie. Można zacząć od przenośnych kart dla kelnerów lub wybranych miejsc. Liczbę dopasowujemy do restauracji, bez obowiązkowego dużego zestawu."
+          "question": "Ile kart można zamówić?",
+          "answer": "Liczbę kart dobieramy do zastosowania. Każdą ilość Mini w Polsce wyceniamy indywidualnie przed zamówieniem."
         },
         {
-          "question": "Co z gościem, który nie korzysta z NFC?",
-          "answer": "NFC wymaga zgodnego smartfona. Do karty można po uzgodnieniu dodać kod QR jako inny sposób otwarcia linku."
+          "question": "Kiedy wpłaca się zaliczkę?",
+          "answer": "Dopiero po uzgodnieniu zamówienia fizycznego. Zaliczka 20 PLN jest wpłacana raz i wliczona w uzgodnioną cenę."
         },
         {
-          "question": "Czy gość potrzebuje aplikacji?",
-          "answer": "Otwarcie odnośnika NFC nie wymaga osobnej aplikacji. Przed dodaniem opinii Google może poprosić o zalogowanie."
+          "question": "Co widać na zdjęciach?",
+          "answer": "Pokazany nadruk to gotowy projekt Mini. Na stronach Branded Mini zdjęcia pokazują format fizyczny; własny projekt uzgadniamy osobno."
         },
         {
-          "question": "Czy jedna karta może otwierać menu i formularz opinii?",
-          "answer": "W tym rozwiązaniu rozdzielamy działania. Restaurant Review Card otwiera formularz opinii Google, a osobna NFC Menu Card — Twoje publiczne menu online. Menu Card nie jest wliczona w cenę Review Card."
+          "question": "Jakie wymiary ma Mini?",
+          "answer": "Dokładne wymiary i grubość Mini potwierdzimy przed zamówieniem. Parametry większej Branded Review Card nie przechodzą na Mini."
         },
         {
-          "question": "Czy karta gwarantuje pięć gwiazdek lub automatyczną opinię?",
-          "answer": "Nie. Gość sam wybiera ocenę, treść i decyduje o publikacji. Karta tylko otwiera właściwy formularz."
-        },
-        {
-          "question": "Jakie ma wymiary i czy będzie na niej nasze logo?",
-          "answer": "Obecny format to 10 × 10 cm i 3 mm grubości. Logo, kolory, tekst i wezwanie do działania uzgadniamy w indywidualnej wizualizacji przed produkcją."
-        },
-        {
-          "question": "Co jest potrzebne do wizualizacji i wyceny?",
-          "answer": "Zostaw dane kontaktowe. W rozmowie ustalimy logo lub adres strony/Instagrama, wizytówkę Google i sposób użycia. Pierwsza wizualizacja jest bezpłatna; zamówienia od trzech kart wyceniamy indywidualnie."
+          "question": "Czy można dodać kod QR?",
+          "answer": "W Branded Mini możliwość dodania kodu QR omówimy podczas uzgadniania projektu. Gotowy projekt pozostaje taki jak na zdjęciach."
         }
       ],
       "cross_sell": {
         "heading": "Do menu — osobna NFC Menu Card",
-        "body": "Masz już publiczne menu online? NFC Menu Card otworzy je na telefonie gościa przy stoliku lub barze. Restaurant Review Card pozostaje przeznaczona do opinii Google: dwie karty, dwa czytelne działania. Menu Card zamawia się osobno.",
+        "body": "Masz już publiczne menu online? NFC Menu Card otworzy je na telefonie gościa przy stoliku lub barze. Restaurant Review Card Mini pozostaje przeznaczona do opinii Google: dwie karty, dwa czytelne działania. Menu Card zamawia się osobno.",
         "label": "Zobacz NFC Menu Card",
         "target": "/solutions/menu-card"
       },
-      "final_heading": "Zobacz, jak Review Card może działać w Twojej restauracji",
-      "final_body": "Otrzymaj pierwszą bezpłatną wizualizację i wskazówki: gdzie umieścić karty, kiedy zaproponować je gościowi i co może powiedzieć kelner. Liczbę kart i zamówienie omówimy później.",
-      "form_heading": "Otrzymaj wizualizację dla restauracji",
-      "form_intro": "Zostaw dane kontaktowe. Napiszemy w wybranym komunikatorze, aby ustalić projekt, wizytówkę Google i scenariusz: stoliki, rachunek lub oba warianty.",
-      "form_submit": "Poproś o wizualizację dla restauracji",
-      "form_success_heading": "Otrzymaliśmy zapytanie o Restaurant Review Card",
-      "form_success_body": "Napiszemy w wybranym komunikatorze, aby omówić projekt i zastosowanie w restauracji. Zapytanie nie jest płatnością ani automatycznym potwierdzeniem zamówienia.",
-      "seo_title": "Restaurant Review Card dla restauracji | NFC CARD",
-      "seo_description": "Karta NFC do opinii Google w restauracji: na stolikach lub z rachunkiem. Twój projekt, krótka podpowiedź dla kelnera i pierwsza indywidualna wizualizacja gratis."
+      "final_heading": "Zapytaj o gotową kartę Mini",
+      "final_body": "Karta zachowuje projekt pokazany na zdjęciach; nie dodajemy logo ani nie zmieniamy kolorów. Ustawiamy link NFC do formularza opinii Twojej wizytówki Google. Wybierz Branded Mini, jeśli potrzebujesz własnego projektu.",
+      "form_heading": "Zapytaj o gotową kartę Mini",
+      "form_intro": "Zostaw dane kontaktowe. Potwierdzimy wizytówkę Google, liczbę kart, indywidualną cenę i termin. Projekt jest taki jak na zdjęciach.",
+      "form_submit": "Wyślij zapytanie",
+      "form_success_heading": "Restaurant Review Card Mini",
+      "form_success_body": "Otrzymaliśmy zapytanie. Napiszemy, aby potwierdzić wizytówkę Google, liczbę kart i warunki. Nie jest to jeszcze potwierdzone zamówienie fizyczne.",
+      "seo_title": "Restaurant Review Card Mini | NFC CARD",
+      "seo_description": "Gotowa karta NFC Mini do opinii Google: projekt ze zdjęć, ustawienie linku do Twojej wizytówki i wskazówki dotyczące rozmieszczenia."
+    },
+    "brandedRestaurant": {
+      "name": "Branded Restaurant Review Card Mini",
+      "descriptor": "Karta NFC Mini dla restauracji z Twoim logo i identyfikacją wizualną. Bezpłatnie przygotujemy 3–4 wstępne warianty i uzgodnimy końcowy projekt.",
+      "eyebrow": "DLA RESTAURACJI · MINI · TWÓJ PROJEKT",
+      "h1": "Branded Restaurant Review Card Mini",
+      "headline": "Karta NFC Mini dla restauracji z Twoim logo i identyfikacją wizualną. Bezpłatnie przygotujemy 3–4 wstępne warianty i uzgodnimy końcowy projekt.",
+      "catalog_description": "Karta NFC Mini dla restauracji z Twoim logo i identyfikacją wizualną. Bezpłatnie przygotujemy 3–4 wstępne warianty i uzgodnimy końcowy projekt.",
+      "catalog_benefits": [
+        "Logo i styl Twojej restauracji.",
+        "3–4 wstępne warianty bezpłatnie.",
+        "Podział nakładu między zaakceptowane projekty."
+      ],
+      "lead": "Karta NFC Mini dla restauracji z Twoim logo i identyfikacją wizualną. Bezpłatnie przygotujemy 3–4 wstępne warianty i uzgodnimy końcowy projekt.",
+      "summary": "Prześlij logo oraz link do strony lub Instagrama, a także wskazówki dotyczące stylu i kolorów. Bezpłatnie przygotujemy 3–4 wstępne warianty projektu. Wybierzesz kierunek, zgłosisz potrzebne poprawki i zaakceptujesz finalny projekt przed produkcją. Materiały możesz przekazać teraz lub po pierwszym kontakcie.",
+      "cta_primary": "Poproś o 3–4 warianty projektu",
+      "cta_secondary": "Omów liczbę i rozmieszczenie",
+      "cta_sticky": "Poproś o 3–4 warianty projektu",
+      "cta_note": "3–4 wstępne warianty są bezpłatne. Zamówienie fizyczne potwierdzamy osobno.",
+      "details_label": "Branded Restaurant Review Card Mini",
+      "sections": [
+        {
+          "id": "situation",
+          "heading": "Prośba była. Opinia nie powstała.",
+          "paragraphs": [
+            "Kelner prosi o opinię. Gość odpowiada „oczywiście”, płaci i wychodzi. Musi jeszcze pamiętać o prośbie, znaleźć restaurację w Google, wybrać właściwy adres i otworzyć formularz.",
+            "Restaurant Review Card Mini usuwa przerwę między prośbą a działaniem. Kelner nie tylko przypomina o opinii — od razu pokazuje, jak otworzyć formularz."
+          ]
+        },
+        {
+          "id": "table_scenario",
+          "heading": "Scenariusz 1. Karta na stoliku",
+          "paragraphs": [
+            "Gość widzi Review Card podczas wizyty. Pod koniec obsługi kelner zwraca na nią uwagę, a gość zbliża smartfon z NFC i otwiera zaproponowany link."
+          ]
+        },
+        {
+          "id": "bill_scenario",
+          "heading": "Scenariusz 2. Karta podawana z rachunkiem",
+          "paragraphs": [
+            "Kelner przynosi rachunek lub terminal i proponuje gościowi Review Card. Wrażenia z wizyty są już ukształtowane, a możliwość dodania opinii pojawia się od razu, zamiast zamieniać się w zadanie na później.",
+            "Zespół może używać przenośnych kart przy zakończeniu obsługi. Nie trzeba zaczynać od karty na każdym stoliku — liczbę dobieramy do pracy restauracji."
+          ]
+        },
+        {
+          "id": "staff_script",
+          "heading": "Jedna krótka podpowiedź dla kelnera",
+          "paragraphs": [
+            "„Aby podzielić się wrażeniami, wystarczy zbliżyć telefon do karty”. Bez proszenia o konkretną ocenę i bez wywierania presji na gościu."
+          ]
+        },
+        {
+          "id": "mechanism",
+          "heading": "Zbliżenie → właściwa wizytówka Google → formularz opinii",
+          "paragraphs": [
+            "Karta daje dostęp do formularza, ale nie publikuje opinii za gościa."
+          ],
+          "items": [
+            "Gość zbliża smartfon obsługujący NFC do karty.",
+            "Otwiera odnośnik zaproponowany przez telefon.",
+            "Trafia do formularza opinii właściwej wizytówki Google. Google może poprosić o zalogowanie.",
+            "Sam wybiera ocenę, treść i decyduje o publikacji."
+          ]
+        },
+        {
+          "id": "qr_comparison",
+          "heading": "Nie zamiast każdego kodu QR — inny sposób otwarcia linku",
+          "paragraphs": [
+            "QR to znane narzędzie: gość otwiera aparat, kieruje go na kod i przechodzi do linku. Przy NFC zbliża zgodny smartfon do karty i otwiera zaproponowany odnośnik.",
+            "QR i NFC to różne sposoby otwierania linku. Gotowy projekt jest stały; dodanie kodu QR do Branded Mini można omówić podczas uzgadniania projektu."
+          ]
+        },
+        {
+          "id": "value",
+          "heading": "Wrażenia dzisiejszych gości — informacje dla kolejnych",
+          "paragraphs": [
+            "Wybierając restaurację, klient może sprawdzić ocenę, liczbę i aktualność opinii Google oraz doświadczenia innych gości. Prywatne podziękowanie kelnerowi nie jest widoczne w tej wizytówce.",
+            "Restaurant Review Card Mini ułatwia przejście od doświadczenia w lokalu do możliwości podzielenia się nim. Opinie mogą wspierać lokalną widoczność obok innych czynników, ale karta nie gwarantuje pierwszego miejsca w Google, rezerwacji ani określonej oceny."
+          ]
+        },
+        {
+          "id": "design_workflow",
+          "heading": "Twój projekt: od wstępnych wariantów do akceptacji",
+          "paragraphs": [
+            "Prześlij logo oraz link do strony lub Instagrama, a także wskazówki dotyczące stylu i kolorów. Bezpłatnie przygotujemy 3–4 wstępne warianty projektu. Wybierzesz kierunek, zgłosisz potrzebne poprawki i zaakceptujesz finalny projekt przed produkcją. Materiały możesz przekazać teraz lub po pierwszym kontakcie."
+          ]
+        },
+        {
+          "id": "design_split",
+          "heading": "Kilka projektów w jednym nakładzie",
+          "paragraphs": [
+            "Jeden nakład można podzielić między zaakceptowane końcowe projekty. Na przykład 10 kart może powstać jako 5 + 5 w dwóch projektach bez zmiany ceny pakietu 10 kart. Projekty i poprawki uzgadniamy przed produkcją."
+          ]
+        },
+        {
+          "id": "included",
+          "heading": "Co obejmuje zamówienie",
+          "paragraphs": [
+            "Zamówienie obejmuje karty Mini w zaakceptowanym projekcie, ustawienie linku NFC do Twojej wizytówki Google, wskazówki dotyczące rozmieszczenia i krótką podpowiedź dla zespołu. Pierwsze 3–4 warianty projektu są bezpłatne."
+          ]
+        },
+        {
+          "id": "quantity_logic",
+          "heading": "Ile kart zamówić",
+          "paragraphs": [
+            "Ceny Branded Mini w Polsce ustalamy indywidualnie. Podaj orientacyjną liczbę kart i liczbę projektów, a prześlemy wycenę przed potwierdzeniem zamówienia."
+          ]
+        },
+        {
+          "id": "quality",
+          "heading": "Jak działa karta",
+          "paragraphs": [
+            "Karta działa ze smartfonem obsługującym NFC. Gość otwiera odnośnik zaproponowany przez telefon; Google może poprosić o zalogowanie. Klient sam wybiera ocenę, treść i publikację. Karta nie gwarantuje liczby opinii ani pozycji w wyszukiwarce."
+          ]
+        },
+        {
+          "id": "specs",
+          "heading": "Format Mini",
+          "paragraphs": [
+            "To fizyczna karta NFC w formacie Mini. Dokładne wymiary i grubość potwierdzimy przed zamówieniem; parametry większej Branded Review Card nie przechodzą na Mini."
+          ]
+        },
+        {
+          "id": "order_process",
+          "heading": "Jak zamówić",
+          "paragraphs": [
+            "Wyślij zapytanie z logo, linkiem do strony lub Instagrama i wskazówkami dotyczącymi stylu. Przygotujemy bezpłatnie 3–4 wstępne warianty; wybierzesz kierunek i zaakceptujesz finalny projekt. Liczbę kart, indywidualną cenę i termin uzgodnimy przed zaliczką 20 PLN wliczoną w cenę zamówienia."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Jak działa karta?",
+          "answer": "Klient zbliża smartfon z NFC i otwiera odnośnik do formularza opinii właściwej wizytówki Google. Google może poprosić o zalogowanie. Klient sam wybiera ocenę i decyduje o publikacji."
+        },
+        {
+          "question": "Jak uzgadnia się projekt?",
+          "answer": "Prześlij logo, stronę lub Instagram oraz wskazówki dotyczące stylu. Przygotujemy bezpłatnie 3–4 wstępne warianty; wybierzesz kierunek, zgłosisz potrzebne poprawki i zatwierdzisz finalny projekt przed produkcją."
+        },
+        {
+          "question": "Ile kart można zamówić?",
+          "answer": "Liczbę kart dobieramy do zastosowania. Każdą ilość Mini w Polsce wyceniamy indywidualnie przed zamówieniem."
+        },
+        {
+          "question": "Czy w jednym nakładzie mogą być różne projekty?",
+          "answer": "Tak, po zatwierdzeniu projektów końcowych. Na przykład 10 kart można podzielić 5 + 5 między dwa projekty bez zmiany ceny pakietu 10 kart."
+        },
+        {
+          "question": "Kiedy wpłaca się zaliczkę?",
+          "answer": "Dopiero po uzgodnieniu zamówienia fizycznego. Zaliczka 20 PLN jest wpłacana raz i wliczona w uzgodnioną cenę."
+        },
+        {
+          "question": "Co widać na zdjęciach?",
+          "answer": "Pokazany nadruk to gotowy projekt Mini. Na stronach Branded Mini zdjęcia pokazują format fizyczny; własny projekt uzgadniamy osobno."
+        },
+        {
+          "question": "Jakie wymiary ma Mini?",
+          "answer": "Dokładne wymiary i grubość Mini potwierdzimy przed zamówieniem. Parametry większej Branded Review Card nie przechodzą na Mini."
+        },
+        {
+          "question": "Czy można dodać kod QR?",
+          "answer": "W Branded Mini możliwość dodania kodu QR omówimy podczas uzgadniania projektu. Gotowy projekt pozostaje taki jak na zdjęciach."
+        }
+      ],
+      "cross_sell": {
+        "heading": "Do menu — osobna NFC Menu Card",
+        "body": "Masz już publiczne menu online? NFC Menu Card otworzy je na telefonie gościa przy stoliku lub barze. Restaurant Review Card Mini pozostaje przeznaczona do opinii Google: dwie karty, dwa czytelne działania. Menu Card zamawia się osobno.",
+        "label": "Zobacz NFC Menu Card",
+        "target": "/solutions/menu-card"
+      },
+      "final_heading": "Omów Branded Mini",
+      "final_body": "Prześlij logo oraz link do strony lub Instagrama, a także wskazówki dotyczące stylu i kolorów. Bezpłatnie przygotujemy 3–4 wstępne warianty projektu. Wybierzesz kierunek, zgłosisz potrzebne poprawki i zaakceptujesz finalny projekt przed produkcją. Materiały możesz przekazać teraz lub po pierwszym kontakcie.",
+      "form_heading": "Omów Branded Mini",
+      "form_intro": "Zostaw dane kontaktowe. Materiały marki możesz przesłać teraz lub później; przygotujemy 3–4 wstępne warianty bezpłatnie.",
+      "form_submit": "Poproś o warianty projektu",
+      "form_success_heading": "Branded Restaurant Review Card Mini",
+      "form_success_body": "Otrzymaliśmy zapytanie. Napiszemy, aby potwierdzić wizytówkę Google, liczbę kart i warunki. Nie jest to jeszcze potwierdzone zamówienie fizyczne.",
+      "seo_title": "Branded Restaurant Review Card Mini | NFC CARD",
+      "seo_description": "Branded Mini do opinii Google: styl Twojej marki, 3–4 bezpłatne wstępne warianty i akceptacja finalnego projektu."
     }
   },
   "shared": {
     "price_rows": [
       [
-        "1 karta",
-        "169 PLN"
+        "Gotowa Mini",
+        "Wycena indywidualna"
       ],
       [
-        "2 karty",
-        "299 PLN"
-      ],
-      [
-        "Od 3 kart",
+        "Branded Mini",
         "Wycena indywidualna"
       ]
     ],
-    "price_note": "Beauty Review Card i Restaurant Review Card korzystają z cen Branded Review Card. Liczbę kart i końcową kwotę uzgadniamy przed zaliczką. Dostawa jest płatna osobno.",
+    "price_note": "Ceny wszystkich czterech produktów Mini w Polsce ustalamy indywidualnie przed zamówieniem. Zaliczka 20 PLN jest płatna raz po uzgodnieniu zamówienia fizycznego i wliczona w cenę.",
     "delivery_short": "Wysyłka z Ukrainy. Dostawa płatna osobno przez klienta.",
     "payment_heading": "Płatność i dostawa",
-    "payment_body": "Pierwsza indywidualna wizualizacja jest bezpłatna. Po uzgodnieniu zamówienia zaliczka 20 PLN jest pobierana raz za fizyczne zamówienie i wliczana w jego wartość. Pozostałą kwotę płacisz po wysyłce i potwierdzeniu numeru śledzenia. Termin wykonania oraz koszt i sposób dostawy potwierdzamy przed zaliczką. Wysyłamy z Ukrainy; koszt dostawy pokrywa klient.",
+    "payment_body": "Konsultacja i zapytanie są bezpłatne. Dla Branded Mini bezpłatnie przygotowujemy 3–4 wstępne warianty. Zaliczka 20 PLN jest wpłacana raz po uzgodnieniu zamówienia fizycznego i wliczona w jego cenę. Pozostałą kwotę i termin dostawy potwierdzamy w indywidualnej wycenie.",
     "other_markets": "Koszt dostawy do innych krajów i przewoźnika ustalamy indywidualnie przed płatnością.",
     "proof_heading": "Od materiałów marki do gotowej karty",
     "proof_body": "NFC CARD zamawiały już lokalne firmy z różnych branż, między innymi pracownia ceramiczna Glynar w Kijowie oraz salony samochodowe Ford i MG „Velet Avto” we Lwowie. Dla Velet Avto otrzymaliśmy materiały marek, przygotowaliśmy warianty projektu, uzgodniliśmy wygląd, a następnie wykonaliśmy i skonfigurowaliśmy karty. Ten przykład pokazuje nasz proces personalizacji i przygotowania zamówienia.",
     "proof_note": "Przykłady realizacji pokazują produkt i projekt, a nie zmierzony wzrost liczby opinii w salonie lub restauracji.",
     "menu_group": "Rozwiązania dla firm",
-    "nav_beauty": "Dla salonów urody",
-    "nav_restaurant": "Dla restauracji",
-    "footer_beauty": "Beauty Review Card — dla salonów",
-    "footer_restaurant": "Restaurant Review Card — dla restauracji",
-    "home_catalog_intro": "Karty NFC do opinii Google, Instagrama i menu online. Wybierz działanie klienta, projekt i zastosowanie dla swojej firmy. Dla salonów urody i restauracji przygotowaliśmy osobne rozwiązania z indywidualnym projektem i wskazówkami użycia.",
-    "catalog_extension": "Do opinii Google dostępne są gotowa Review Card, indywidualna Branded Review Card i NFC Review Card 3D. Beauty Review Card i Restaurant Review Card to osobne rozwiązania branżowe oparte na karcie z brandingiem. NFC Instagram Card otwiera profil Instagram, a NFC Menu Card — menu online.",
+    "nav_beauty": "Beauty Review Card Mini",
+    "nav_restaurant": "Restaurant Review Card Mini",
+    "footer_beauty": "Beauty Review Card Mini",
+    "footer_restaurant": "Restaurant Review Card Mini",
+    "home_catalog_intro": "Karty NFC do opinii Google, Instagrama i menu online. Karty Mini dla salonów i restauracji są dostępne w gotowym projekcie lub jako Branded Mini z Twoim wzorem.",
+    "catalog_extension": "Beauty i Restaurant Review Card Mini mają stałe projekty pokazane na zdjęciach. Branded Beauty i Branded Restaurant Review Card Mini powstają w zaakceptowanym stylu marki. Wszystkie cztery prowadzą do formularza opinii Google; karty Instagram i Menu służą do innych działań.",
     "niche_heading": "Wybierz nie tylko kartę, ale też zastosowanie dla swojej firmy",
-    "niche_intro": "Review Card ma jedną funkcję: otworzyć formularz opinii Google. Moment, miejsce i sposób zaproponowania jej klientowi zależą od firmy. Dlatego przygotowaliśmy osobne rozwiązania dla salonów urody i restauracji.",
-    "home_beauty_heading": "Dla salonu: przy stanowisku i w recepcji",
-    "home_beauty_body": "Beauty Review Card pomaga zaprosić klienta do dodania opinii Google, gdy widzi już efekt zabiegu i nadal jest w salonie. Przygotujemy projekt, zaproponujemy rozmieszczenie i krótką podpowiedź dla zespołu.",
-    "home_beauty_cta": "Zobacz Beauty Review Card",
-    "home_restaurant_heading": "Dla restauracji: na stoliku lub z rachunkiem",
-    "home_restaurant_body": "Restaurant Review Card łączy prośbę kelnera z możliwością natychmiastowego otwarcia formularza opinii Google. Pomożemy wybrać karty na stolikach lub przenośne karty podawane na zakończenie wizyty.",
-    "home_restaurant_cta": "Zobacz Restaurant Review Card",
+    "niche_intro": "Dla salonu lub restauracji wybierz gotową kartę Mini albo Branded Mini z własnym projektem. Podpowiemy rozmieszczenie i krótką prośbę dla zespołu oraz ustawimy właściwą wizytówkę Google.",
+    "home_beauty_heading": "Beauty Review Card Mini / Branded Beauty Review Card Mini",
+    "home_beauty_body": "Umieść Beauty Review Card Mini przy stanowisku lub w recepcji. Gotowa różowa karta ma stały projekt; Branded Beauty Mini otrzyma styl Twojego salonu.",
+    "home_beauty_cta": "Beauty Review Card Mini",
+    "home_restaurant_heading": "Restaurant Review Card Mini / Branded Restaurant Review Card Mini",
+    "home_restaurant_body": "Restaurant Review Card Mini może stać na stoliku lub być podawana z rachunkiem. Wybierz gotową zieloną kartę albo Branded Restaurant Mini w stylu lokalu.",
+    "home_restaurant_cta": "Restaurant Review Card Mini",
     "problem_addition": "W salonie prośba o opinię może zniknąć między zakończeniem zabiegu a wyjściem klienta. W restauracji — między słowami kelnera a działaniem gościa. Branżowe Review Card ułatwiają otwarcie formularza właśnie w tym momencie.",
     "how_addition": "W salonie klient korzysta z karty przy stanowisku lub w recepcji. W restauracji — na stoliku lub z rachunkiem. Przejście NFC jest takie samo: zgodny smartfon → zaproponowany link → formularz opinii właściwej wizytówki Google.",
-    "facts_addition": "Beauty Review Card i Restaurant Review Card mają ten sam format co Branded Review Card: 10 × 10 cm, 3 mm grubości i indywidualny projekt. Kod QR można dodać po uzgodnieniu.",
-    "included_addition": "Oprócz indywidualnego projektu i konfiguracji Beauty Review Card i Restaurant Review Card obejmują propozycję rozmieszczenia oraz krótką podpowiedź dla zespołu: osoby wykonującej zabieg, recepcji lub kelnera.",
-    "process_addition": "Na etapie bezpłatnej wizualizacji omawiamy stanowiska i recepcję w salonie lub stoliki i podawanie karty z rachunkiem w restauracji. Liczbę kart i ostateczną cenę dopasowujemy do zastosowania.",
+    "facts_addition": "Beauty i Restaurant Review Card Mini mają odrębny format fizyczny Mini. Wersje gotowe zachowują projekt ze zdjęć; Branded Mini powstaje według zaakceptowanego projektu. Dokładne wymiary i grubość potwierdzamy przed zamówieniem.",
+    "included_addition": "Wszystkie karty Mini dla salonów i restauracji kierują do właściwej wizytówki Google oraz obejmują wskazówki rozmieszczenia i krótką podpowiedź dla zespołu. Branded Mini obejmuje 3–4 bezpłatne wstępne warianty projektu.",
+    "process_addition": "Dla gotowej Mini potwierdzamy wizytówkę Google, liczbę kart i wycenę. Dla Branded Mini zbieramy logo, stronę lub Instagram i styl, przedstawiamy 3–4 wstępne warianty i zatwierdzamy finalny projekt przed produkcją.",
     "bulk_heading": "Kilka kart w kilku odpowiednich miejscach",
-    "bulk_body": "Stanowiska i recepcja w salonie; stoliki, bar lub przenośne karty dla kelnerów w restauracji. Pomożemy dobrać liczbę według zastosowania, bez obowiązkowego dużego zestawu. Od trzech kart — wycena indywidualna.",
+    "bulk_body": "Karty można umieścić przy stanowiskach i w recepcji albo na stolikach i przy rachunku. Cenę gotowej i Branded Mini w Polsce wyceniamy indywidualnie dla każdej uzgodnionej liczby kart.",
     "bulk_cta": "Omów liczbę i rozmieszczenie",
     "final_heading": "Wybierz działanie i zastosowanie dla swojej firmy",
-    "final_body": "Opinie Google, Instagram lub menu online. Dla salonu lub restauracji zacznij od rozwiązania branżowego Review: Twój projekt, czytelne rozmieszczenie i pierwsza wizualizacja gratis.",
+    "final_body": "Wybierz opinie Google, Instagram lub menu online. Salony i restauracje mogą zamówić gotową kartę Mini albo Branded Mini z własnym projektem.",
     "final_cta": "Wybierz rozwiązanie",
     "review_cross_heading": "Szukasz zastosowania dla swojej branży?",
-    "review_cross_body": "Beauty Review Card służy do użycia przy stanowiskach i w recepcji salonu. Restaurant Review Card — na stolikach lub z rachunkiem. Oba rozwiązania bazują na karcie z brandingiem i obejmują wskazówki dla zespołu.",
-    "branded_cross_body": "Beauty Review Card i Restaurant Review Card to ta sama spersonalizowana karta z osobnymi zastosowaniami dla salonu i restauracji. Otwórz swoje rozwiązanie, aby zobaczyć rozmieszczenie, podpowiedź dla zespołu i formularz bezpłatnej wizualizacji.",
+    "review_cross_body": "Beauty i Restaurant Review Card Mini mają dwie wersje: stały gotowy projekt albo Branded Mini z projektem Twojej firmy. Każda ma wskazówki rozmieszczenia i podpowiedź dla zespołu.",
+    "branded_cross_body": "Dla salonów i restauracji są osobne karty Branded Mini z własnym projektem oraz gotowe karty Mini. Porównaj projekt, wycenę i sposób użycia na ich stronach.",
     "menu_cross_heading": "Menu na początku wizyty. Opinia po wrażeniach.",
-    "menu_cross_body": "NFC Menu Card otwiera menu online. Osobna Restaurant Review Card ułatwia gościowi przejście do opinii Google na koniec wizyty — na stoliku lub z rachunkiem. To różne produkty i oddzielne działania.",
+    "menu_cross_body": "NFC Menu Card otwiera menu online. Gotowa i Branded Restaurant Review Card Mini ułatwiają gościowi przejście do opinii Google na koniec wizyty — na stoliku lub z rachunkiem. To różne produkty i oddzielne działania.",
     "menu_cross_cta": "Zobacz rozwiązanie do opinii dla restauracji",
     "instagram_cross_heading": "Dla salonu: Instagram i opinie Google osobno",
-    "instagram_cross_body": "NFC Instagram Card otwiera profil salonu. Beauty Review Card prowadzi do formularza opinii Google i ma osobny scenariusz dla stanowisk i recepcji. Wybierz kartę według działania, które chcesz zaproponować klientowi.",
+    "instagram_cross_body": "NFC Instagram Card otwiera profil salonu. Gotowa i Branded Beauty Review Card Mini prowadzą do formularza opinii Google przy stanowisku lub w recepcji. Wybierz kartę według działania, które chcesz zaproponować klientowi.",
     "instagram_cross_cta": "Zobacz rozwiązanie do opinii dla salonu",
-    "review3d_cross_body": "Potrzebujesz indywidualnego projektu i zastosowania w salonie lub restauracji? Zobacz Beauty Review Card i Restaurant Review Card oparte na Branded Review Card. To osobne rozwiązania, nie wersja 3D.",
-    "about_addition": "NFC CARD to więcej niż wybór fizycznej karty. Przygotowujemy ją do pracy w konkretnej firmie: Beauty Review Card uwzględnia stanowiska i recepcję, a Restaurant Review Card — stoliki i zakończenie obsługi. Projekt, konfiguracja i wskazówki tworzą jedno rozwiązanie.",
-    "contact_intro": "Pomożemy wybrać kartę NFC do opinii Google, Instagrama lub menu online. Dla salonów urody i restauracji przygotujemy pierwszą bezpłatną wizualizację i podpowiemy, gdzie oraz jak używać Review Card.",
-    "contact_prompt": "Pytasz o rozwiązanie dla salonu lub restauracji? Wybierz Beauty Review Card albo Restaurant Review Card, abyśmy od początku uwzględnili właściwe zastosowanie.",
-    "delivery_addition": "Beauty Review Card i Restaurant Review Card wykonujemy z indywidualnym projektem na warunkach Branded Review Card. Pierwsza wizualizacja jest bezpłatna. Projekt, liczbę kart, cenę, termin oraz koszt i sposób dostawy uzgadniamy przed zaliczką. Zaliczka 20 PLN jest pobierana raz za zamówienie i wliczana w jego wartość. Wysyłamy z Ukrainy; dostawę opłaca klient.",
-    "terms_addition": "Beauty Review Card i Restaurant Review Card to branżowe rozwiązania oparte na Branded Review Card z indywidualnym projektem. Zapytanie o bezpłatną wizualizację nie jest płatnością ani automatycznym potwierdzeniem zamówienia. Projekt, liczbę kart, cenę, termin oraz sposób i koszt dostawy uzgadniamy przed zaliczką.",
-    "warranty_addition": "Dla Beauty Review Card i Restaurant Review Card obowiązuje procedura pomocy z NFC, sprawdzenia wad i zwrotu pieniędzy dotycząca kart z brandingiem. W kwestiach technicznych skontaktuj się z nami przez stronę. Warunki zwrotu spersonalizowanej karty i koszty przesyłki uzgadniamy przed płatnością.",
-    "privacy_addition": "W zapytaniu o Beauty Review Card lub Restaurant Review Card zapisujemy również wybrane rozwiązanie branżowe, aby odpowiedzieć w kontekście salonu urody lub restauracji. Zgoda na obsługę zapytania nie jest zgodą na komunikację marketingową.",
-    "footer_description": "Karty NFC do opinii Google, Instagrama i menu online. Osobne rozwiązania Review dla salonów urody i restauracji.",
+    "review3d_cross_body": "Dla salonu lub restauracji porównaj gotową Mini i Branded Mini z własnym projektem. Obie są osobne od produktu 3D.",
+    "about_addition": "Przygotowujemy karty Mini do konkretnego zastosowania w salonie lub restauracji: przy stanowisku lub w recepcji, na stoliku lub przy rachunku. Wybierz gotowy projekt albo zatwierdź własny dla Branded Mini.",
+    "contact_intro": "Pomożemy wybrać kartę NFC do opinii Google, Instagrama lub menu online. Dla salonów i restauracji jest gotowa Mini i Branded Mini; konsultacja jest bezpłatna.",
+    "contact_prompt": "Dla salonu lub restauracji wybierz gotową albo Branded Mini, abyśmy uwzględnili właściwy projekt i zastosowanie.",
+    "delivery_addition": "Gotowe Beauty i Restaurant Review Card Mini zachowują stały projekt; Branded Mini powstaje według zaakceptowanego wzoru. Liczbę kart, indywidualną cenę, termin i dostawę uzgadniamy przed zaliczką. Zaliczka 20 PLN jest wliczona w cenę potwierdzonego zamówienia fizycznego.",
+    "terms_addition": "Zapytanie i konsultacja nie są płatnością ani automatycznym potwierdzeniem zamówienia. Dla Branded Mini przygotowujemy bezpłatnie 3–4 wstępne warianty; finalny projekt, liczbę kart, cenę, termin i dostawę uzgadniamy przed produkcją.",
+    "warranty_addition": "W sprawie NFC, wad i zwrotów skontaktuj się z nami przez stronę. Zasady zwrotu spersonalizowanej Branded Mini i koszty przesyłki uzgadniamy przed płatnością.",
+    "privacy_addition": "W zapytaniu zapisujemy wybrany produkt Mini dla salonu lub restauracji oraz wersję gotową albo Branded, aby odpowiedzieć na zapytanie. Zgoda na jego obsługę nie oznacza zgody na wiadomości marketingowe.",
+    "footer_description": "Karty NFC do opinii Google, Instagrama i menu online. Gotowe i personalizowane karty Mini dla salonów i restauracji.",
     "home_seo_title": "NFC CARD — karty NFC dla firm, salonów i restauracji",
-    "home_seo_description": "Karty NFC do opinii Google, Instagrama i menu online. Wersje gotowe i z brandingiem oraz osobne rozwiązania dla salonów urody i restauracji.",
+    "home_seo_description": "Karty NFC do opinii Google, Instagrama i menu online. Gotowe i personalizowane karty Mini dla salonów urody i restauracji.",
     "catalog_seo_title": "Katalog kart NFC i rozwiązań branżowych | NFC CARD",
-    "catalog_seo_description": "Porównaj Review Card, Branded, 3D, Instagram i Menu Card. Dla salonów i restauracji: osobne rozwiązania z indywidualnym projektem i scenariuszami użycia.",
+    "catalog_seo_description": "Porównaj gotowe i personalizowane karty Mini dla salonów i restauracji z innymi rozwiązaniami NFC do opinii, Instagrama i menu.",
     "global_faq": [
       {
-        "question": "Czy jest osobne rozwiązanie dla salonu urody?",
-        "answer": "Tak. Beauty Review Card to karta NFC do opinii Google z Twoim brandingiem, propozycją rozmieszczenia przy stanowiskach i w recepcji, doborem liczby kart oraz krótką podpowiedzią dla zespołu."
+        "question": "Jak działa karta?",
+        "answer": "Klient zbliża smartfon z NFC i otwiera odnośnik do formularza opinii właściwej wizytówki Google. Google może poprosić o zalogowanie. Klient sam wybiera ocenę i decyduje o publikacji."
       },
       {
-        "question": "Co oferujecie restauracjom do opinii Google?",
-        "answer": "Restaurant Review Card — kartę NFC z brandingiem do użycia na stolikach lub z rachunkiem. Pomagamy dobrać scenariusz i liczbę kart oraz przygotowujemy krótką podpowiedź dla kelnera."
+        "question": "Czy można zmienić projekt?",
+        "answer": "Gotowa Mini zachowuje projekt pokazany na zdjęciach. Aby dodać logo i kolory marki, wybierz Branded Mini."
       },
       {
-        "question": "Czy Beauty i Restaurant wykorzystują inną technologię?",
-        "answer": "Nie. Bazują na Branded Review Card i tak samo otwierają formularz opinii Google. Różnią się zastosowaniem i wskazówkami dla konkretnej branży."
+        "question": "Jak uzgadnia się projekt?",
+        "answer": "Prześlij logo, stronę lub Instagram oraz wskazówki dotyczące stylu. Przygotujemy bezpłatnie 3–4 wstępne warianty; wybierzesz kierunek, zgłosisz potrzebne poprawki i zatwierdzisz finalny projekt przed produkcją."
       },
       {
-        "question": "Czy najpierw mogę otrzymać wizualizację i poradę dotyczącą rozmieszczenia?",
-        "answer": "Tak. Pierwsza indywidualna wizualizacja Beauty Review Card i Restaurant Review Card jest bezpłatna. Przed zamówieniem proponujemy też rozmieszczenie i krótką podpowiedź dla zespołu."
+        "question": "Ile kart można zamówić?",
+        "answer": "Liczbę kart dobieramy do zastosowania. Każdą ilość Mini w Polsce wyceniamy indywidualnie przed zamówieniem."
       },
       {
-        "question": "Czy Restaurant Review Card obejmuje menu online?",
-        "answer": "Nie. Restaurant Review Card służy do opinii Google. Do otwierania publicznego menu online przeznaczona jest osobna NFC Menu Card."
+        "question": "Kiedy wpłaca się zaliczkę?",
+        "answer": "Dopiero po uzgodnieniu zamówienia fizycznego. Zaliczka 20 PLN jest wpłacana raz i wliczona w uzgodnioną cenę."
       }
     ],
     "form_labels": {
@@ -500,18 +763,20 @@
       "phone": "Numer telefonu",
       "messenger": "Preferowany komunikator",
       "solution": "Co Cię interesuje?",
-      "beauty_option": "Beauty Review Card — dla salonu urody",
-      "restaurant_option": "Restaurant Review Card — dla restauracji",
+      "beauty_option": "Beauty Review Card Mini",
+      "restaurant_option": "Restaurant Review Card Mini",
       "quantity": "Orientacyjna liczba kart",
       "quantity_options": [
         "1 karta",
         "2 karty",
-        "Od 3 kart — wycena indywidualna",
-        "Potrzebuję porady dotyczącej liczby kart"
+        "4 karty",
+        "10 kart",
+        "Inna ilość — wycena indywidualna",
+        "Potrzebuję pomocy w wyborze liczby kart"
       ],
       "quantity_help": "Nie wiesz, ile kart wybrać? Poproś o poradę — dobierzemy liczbę do rozmieszczenia.",
-      "materials_hint": "Logo, link do wizytówki Google i szczegóły rozmieszczenia ustalimy w komunikatorze.",
-      "free_request_note": "Zapytanie o pierwszą wizualizację jest bezpłatne. Zaliczka dotyczy tylko uzgodnionego zamówienia fizycznych kart.",
+      "materials_hint": "Dla Branded Mini podaj logo, stronę lub Instagram i styl teraz albo później. Dla gotowej Mini potrzebna jest wizytówka Google.",
+      "free_request_note": "Zapytanie jest bezpłatne. Branded Mini obejmuje 3–4 bezpłatne warianty wstępne. Zaliczka 20 PLN dotyczy tylko potwierdzonego zamówienia fizycznego i jest wliczona w cenę.",
       "phone_help": "Numer wykorzystamy wyłącznie do kontaktu w sprawie zapytania.",
       "consent": "Akceptuję Politykę prywatności i przetwarzanie danych w celu odpowiedzi na zapytanie.",
       "sending": "Wysyłamy zapytanie…",
@@ -521,27 +786,36 @@
       "validation_messenger": "Wybierz komunikator.",
       "validation_consent": "Potwierdź zgodę na obsługę zapytania.",
       "validation_solution": "Wybierz rozwiązanie.",
-      "validation_quantity": "Wybierz liczbę kart lub poproś o poradę."
+      "validation_quantity": "Wybierz liczbę kart lub poproś o poradę.",
+      "branded_beauty_option": "Branded Beauty Review Card Mini",
+      "branded_restaurant_option": "Branded Restaurant Review Card Mini"
     },
     "notification_labels": {
       "solution": "Rozwiązanie",
-      "base": "Produkt bazowy",
+      "base": "Produkt Mini",
       "scenario": "Zastosowanie",
       "quantity": "Orientacyjna liczba kart",
       "request": "Rodzaj zapytania",
-      "request_value": "Pierwsza bezpłatna wizualizacja i propozycja rozmieszczenia",
+      "request_value": "Zapytanie o kartę Mini: gotowa lub Branded",
       "beauty_scenario": "Salon urody: stanowiska / recepcja",
       "restaurant_scenario": "Restauracja: stoliki / z rachunkiem",
       "quantity_unknown": "Potrzebna porada; liczba kart i kwota nie zostały uzgodnione"
     },
     "media_labels": {
-      "physical_example": "Fizyczny format Branded Review Card. Projekt dla Twojej firmy uzgadniamy osobno.",
-      "mockup": "Wizualizacja indywidualnego projektu, nie zdjęcie gotowego zamówienia.",
+      "physical_example": "Zdjęcie pokazuje gotową kartę Mini o stałym projekcie.",
+      "mockup": "Wizualizacja wariantu projektu Branded Mini, nie zdjęcie gotowego zamówienia.",
       "process_example": "Przykład zrealizowanego zamówienia NFC CARD z brandingiem.",
       "beauty_context": "Przykład rozmieszczenia Beauty Review Card w salonie.",
       "restaurant_table": "Przykład umieszczenia Restaurant Review Card na stoliku.",
       "restaurant_bill": "Przykład użycia Restaurant Review Card z rachunkiem.",
-      "tap_demo": "Demonstracja przejścia NFC do formularza opinii. Klient wybiera ocenę i decyduje o publikacji."
-    }
+      "tap_demo": "Demonstracja przejścia NFC do formularza opinii. Klient wybiera ocenę i decyduje o publikacji.",
+      "branded_physical_reference": "Zdjęcie pokazuje fizyczny format Mini na przykładzie gotowej karty. Własny projekt Branded Mini uzgadniamy osobno."
+    },
+    "nav_branded_beauty": "Branded Beauty Review Card Mini",
+    "nav_branded_restaurant": "Branded Restaurant Review Card Mini",
+    "footer_branded_beauty": "Branded Beauty Review Card Mini",
+    "footer_branded_restaurant": "Branded Restaurant Review Card Mini",
+    "price_rows_ready": [],
+    "price_rows_branded": []
   }
 }

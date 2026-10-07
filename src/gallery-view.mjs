@@ -1,5 +1,5 @@
 // Shared gallery: approved image treatment plus manual video playback.
-export function galleryView({variant,names,title,locale,P,esc,picture,asset,temporaryNote}) {
+export function galleryView({variant,names,title,locale,P,esc,picture,asset,temporaryNote,captionMode}) {
   const suffix={uk:'ua',en:'en',pl:'pl'}[locale];
   if(!suffix)throw Error('Unsupported gallery locale: '+locale);
   const mediaText=(entry,field)=>{
@@ -12,6 +12,15 @@ export function galleryView({variant,names,title,locale,P,esc,picture,asset,temp
   const video=name=>asset(name).media_type==='video';
   const caption=name=>{
     const m=asset(name);
+    if(captionMode==='physical-mini-example'){
+      const kind=m.product_id==='beauty-review-card'?'beauty':m.product_id==='restaurant-review-card'?'restaurant':null;
+      if(!kind)throw Error('Physical Mini example requires a niche photo: '+name);
+      return {
+        uk:kind==='beauty'?'Приклад фізичного формату Beauty Review Card Mini: на фото готовий рожевий дизайн. Ваш персональний дизайн підготуємо окремо.':'Приклад фізичного формату Restaurant Review Card Mini: на фото готовий зелено-бежевий дизайн. Ваш персональний дизайн підготуємо окремо.',
+        en:kind==='beauty'?'Beauty Review Card Mini physical-format example: the photo shows the ready-made pink design. Your custom design is prepared separately.':'Restaurant Review Card Mini physical-format example: the photo shows the ready-made green and beige design. Your custom design is prepared separately.',
+        pl:kind==='beauty'?'Przykład fizycznego formatu Beauty Review Card Mini: zdjęcie pokazuje gotowy różowy wzór. Indywidualny projekt przygotujemy osobno.':'Przykład fizycznego formatu Restaurant Review Card Mini: zdjęcie pokazuje gotowy zielono-beżowy wzór. Indywidualny projekt przygotujemy osobno.'
+      }[locale];
+    }
     if(m.caption_ua&&m.caption_en)return mediaText(m,'caption');
     if(variant==='menu')return P('Візуалізація NFC Menu Card; форма та колір показані для вибору виконання.','NFC Menu Card visualization showing a format and colour option.');
     return variant==='branded'?temporaryNote:name.startsWith('05')?P('Промоілюстрація переходу до форми. Оцінку, текст і публікацію обирає клієнт.','An illustration of the path to the form. The customer chooses the rating, text and publication.'):name.startsWith('01')?P('Візуалізація готового дизайну Review Card.','A render of the ready-made Review Card design.'):P('Реальне фото поточної Review Card: формат, масштаб і поверхня.','An actual photo of the current Review Card: format, scale and finish.');

@@ -1,5 +1,6 @@
 // Shared Pages build/client boundary. Only explicit public configuration belongs here.
 import {instagramProfileURL} from './commerce-contract.mjs';
+import {MINI_PRODUCTS,MINI_QUANTITIES,miniQuote} from './mini-contract.mjs';
 export function publicBasePath(value = '') {
   if (value === '' || value === '/') return '';
   if (typeof value !== 'string' || !/^\/(?:[A-Za-z0-9_-]+\/)*[A-Za-z0-9_-]+\/?$/.test(value)) {
@@ -66,6 +67,14 @@ export const unavailable = locale => localized(locale,
 export const previewCSS = '.header .preview-brand{display:flex;flex-direction:column;justify-content:center;gap:2px;flex-shrink:0}.preview-badge{display:block;width:max-content;font-size:9px;line-height:1.1;letter-spacing:.08em;font-weight:600;color:var(--nfc-steel-700)}';
 
 export function submissionNotice(locale,selection){
+ if(selection==='mini-ready')return localized(locale,
+  'Надсилаємо контакт, готовий дизайн Mini та кількість або запит поради. Заявка без оплати.',
+  'We send your contact, ready-made Mini selection and quantity or advice request. No payment is due for the enquiry.',
+  'Przesyłamy kontakt, gotowy wzór Mini oraz liczbę kart lub prośbę o poradę. Zapytanie jest bezpłatne.');
+ if(selection==='mini-branded')return localized(locale,
+  'Надсилаємо контакт, Branded Mini, матеріали бренду та кількість або запит безкоштовних концепцій. Заявка без оплати.',
+  'We send your contact, Branded Mini, brand details and quantity or free concepts request. No payment is due for the enquiry.',
+  'Przesyłamy kontakt, wybór Branded Mini, materiały marki oraz liczbę kart lub prośbę o bezpłatne projekty. Zapytanie jest bezpłatne.');
  if(selection==='niche')return localized(locale,
   'Надсилаємо ім’я, контакт, обране рішення, тип запиту та кількість або запит поради. Перший макет безкоштовний.',
   'We send your name, contact, selected solution, request type and quantity or advice request. The first mockup is free.',
@@ -75,7 +84,8 @@ export function submissionNotice(locale,selection){
   : localized(locale,'Надсилаємо лише ім’я, контакт, картку та кількість. Коментар і додаткові деталі погодимо в месенджері.','We send only your name, contact, card and quantity. Please share comments and additional details in a messenger.','Przesyłamy tylko imię, dane kontaktowe, wybraną kartę i liczbę sztuk. Komentarz oraz pozostałe szczegóły ustalimy w komunikatorze.');
 }
 export function pagesFormHTML(html, {endpoint = '', locale, esc}) {
-  const notice = endpoint ? submissionNotice(locale,html.includes('data-niche-form')?'niche':html.includes('data-commerce-form data-variant="instagram"')?'instagram':'') : unavailable(locale);
+  const nicheType=html.includes('data-niche-form')?(html.includes('data-design-mode="branded"')?'mini-branded':'mini-ready'):null;
+  const notice = endpoint ? submissionNotice(locale,nicheType|| (html.includes('data-commerce-form data-variant="instagram"')?'instagram':'')) : unavailable(locale);
   // Native submission is inert even if either client script fails to load. Only
   // the mounted JSON client may enable the submit control after initialization.
   return html.replace(/action="\/api\/leads" method="post"/g, 'data-pages-form action="" method="dialog"')
@@ -90,18 +100,28 @@ const solutions = Object.freeze({
   'beauty-review-card': {niche:'beauty_salon',route:'/solutions/beauty-review-card'},
   'restaurant-review-card': {niche:'restaurant',route:'/solutions/restaurant-review-card'}
 });
+const miniRoutes=Object.freeze(Object.fromEntries(Object.keys(MINI_PRODUCTS).map(id=>[id,'/solutions/'+id])));
 const channels = ['telegram', 'whatsapp', 'viber'];
 const idempotencyKey = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/;
 export function leadPayload(input, {basePath = '', pathname, utm = {}}) {
   basePath = publicBasePath(basePath);
   const solutionId=typeof input.solution==='string'?input.solution:'';
-  const solution=solutionId?solutions[solutionId]:null;
-  if(solutionId&&!solution)throw Error('invalid_fields');
+  const mini=MINI_PRODUCTS[solutionId]&&(input.productFamily==='nfc-review-card-mini'||solutionId.startsWith('branded-'))?MINI_PRODUCTS[solutionId]:null;
+  const solution=mini?null:solutionId?solutions[solutionId]:null;
+  if(solutionId&&!solution&&!mini)throw Error('invalid_fields');
   const advice=solution&&input.quantity==='advice';
+  const miniAdvice=mini&&input.quantity==='advice',miniConcepts=mini&&input.quantity==='concepts';
+  const miniPhysical=mini&&!miniAdvice&&!miniConcepts;
+  const miniQuantity=miniPhysical?(input.quantity==='other'?Number(input.customQuantity):Number(input.quantity)):null;
+  if(mini&&(miniConcepts&&mini.designMode!=='branded'||miniPhysical&&(!Number.isSafeInteger(miniQuantity)||miniQuantity<1||miniQuantity>10000)||
+    input.quantity==='other'&&MINI_QUANTITIES.includes(miniQuantity)||
+    !['1','2','4','10','other','advice','concepts'].includes(input.quantity)||
+    ['logoNote','brandLink','brandStyle','designSplitNote'].some(key=>typeof (input[key]??'')!=='string'||(input[key]??'').length>300)||
+    (mini.designMode==='ready'&&['logoNote','brandLink','brandStyle','designSplitNote'].some(key=>input[key]))))throw Error('invalid_fields');
   if(input.variant==='instagram'&&!instagramProfileURL(input.instagramUrl))throw Error('invalid_instagram_url');
   const name = String(input.name || '').trim().normalize('NFC'), phone = String(input.phone || '').trim();
-  if (!['uk', 'en', 'pl'].includes(input.locale) || !products.includes(input.variant) || !(quantities.includes(input.quantity)||advice) ||
-      (solution&&input.variant!=='branded') ||
+  if (!['uk', 'en', 'pl'].includes(input.locale) || !products.includes(input.variant) || !(quantities.includes(input.quantity)||advice||mini) ||
+      (solution&&input.variant!=='branded') ||(mini&&input.variant!==(mini.designMode==='branded'?'branded':'standard')) ||
       (input.variant === 'instagram' && (!['1','2'].includes(input.quantity)||!instagramProfileURL(input.instagramUrl)||typeof input.comment!=='string'||input.comment.length>2000)) ||
       (input.variant === 'bulk' && input.quantity !== 'more') || !name || name.length > 100 || /[\x00-\x1f\x7f\u202a-\u202e\u2066-\u2069]/u.test(name) ||
       !/^\+?[\d ()-]+$/.test(phone) || phone.replace(/\D/g, '').length < 7 || phone.replace(/\D/g, '').length > 15 ||
@@ -109,14 +129,25 @@ export function leadPayload(input, {basePath = '', pathname, utm = {}}) {
   const route = String(pathname || '').split(/[?#]/)[0].replace(/\/$/, '') || '/';
   const sourcePage = route === basePath ? basePath + '/' : route;
   const relative = sourcePage.slice(basePath.length);
-  if (!sourcePage.startsWith(basePath + '/') || !['/', '/en', '/pl', ...['order','contact','about','solutions/review-card','solutions/branded-review-card','solutions/instagram-card','instagram-card','solutions/beauty-review-card','solutions/restaurant-review-card'].flatMap(r=>['/'+r,'/en/'+r,'/pl/'+r])].includes(relative) ||
-      (solution&&!['', '/en', '/pl'].some(prefix=>relative===prefix+solution.route))) throw Error('invalid_source_page');
-  const payload = {language: input.locale, product: input.variant === 'instagram' ? 'nfc-instagram-card' : input.variant === 'branded' ? 'branded-review-card' : 'review-card',
-    ...(!advice?{quantity:input.quantity === 'more' ? 3 : Number(input.quantity)}:{}), customerName: name,
+  if (!sourcePage.startsWith(basePath + '/') || !['/', '/en', '/pl', ...['order','contact','about','solutions/review-card','solutions/branded-review-card','solutions/instagram-card','instagram-card',...Object.keys(miniRoutes).map(id=>'solutions/'+id)].flatMap(r=>['/'+r,'/en/'+r,'/pl/'+r])].includes(relative) ||
+      (solution&&!['', '/en', '/pl'].some(prefix=>relative===prefix+solution.route)) ||
+      (mini&&!['', '/en', '/pl'].some(prefix=>relative===prefix+miniRoutes[solutionId]))) throw Error('invalid_source_page');
+  const payload = {language: input.locale, product: mini?'nfc-review-card-mini':input.variant === 'instagram' ? 'nfc-instagram-card' : input.variant === 'branded' ? 'branded-review-card' : 'review-card',
+    ...(miniPhysical?{quantity:miniQuantity}:!advice&&!mini?{quantity:input.quantity === 'more' ? 3 : Number(input.quantity)}:{}), customerName: name,
     contact: {phone: phone.replace(/[ ()-]/g, ''), preferredMethod: input.messenger}, sourcePage,
     selection: {variant: input.variant, quantity: input.quantity}};
   if(input.variant==='instagram')Object.assign(payload,{productSchemaVersion:1,product_id:'nfc-instagram-card',sku:'NFC-IG-READY',offer:'ready',instagramUrl:instagramProfileURL(input.instagramUrl),comment:input.comment.trim(),consent:true});
   if(solution)payload.solution={schemaVersion:1,solution_id:solutionId,niche:solution.niche,request_type:'free_first_mockup'};
+  if(mini){
+    const quantityMode=miniAdvice?'advice':miniConcepts?'free_design_concepts':input.locale!=='pl'&&MINI_QUANTITIES.includes(miniQuantity)?'fixed_bundle':'custom_quote';
+    payload.solution={schemaVersion:2,product_family:'nfc-review-card-mini',solution_id:solutionId,niche:mini.niche,design_mode:mini.designMode,quantity_mode:quantityMode};
+    if(mini.designMode==='branded'){
+      const inputs={logo_note:(input.logoNote??'').trim(),website_or_instagram:(input.brandLink??'').trim(),style_note:(input.brandStyle??'').trim()};
+      const used=Object.fromEntries(Object.entries(inputs).filter(([,value])=>value));
+      if(Object.keys(used).length)payload.solution.brand_inputs=used;
+      if((input.designSplitNote??'').trim())payload.solution.design_split_note=input.designSplitNote.trim();
+    }
+  }
   const attribution = {};
   for (const key of ['source', 'medium', 'campaign', 'term', 'content']) {
     const value = utm['utm_' + key];
@@ -178,7 +209,7 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
     form.dataset.enhanced = 'true';
     return;
   }
-  const updateNotice=()=>{form.querySelector('.preview-notice').textContent=submissionNotice(locale,form.dataset.solution?'niche':selection().variant);};
+  const updateNotice=()=>{form.querySelector('.preview-notice').textContent=submissionNotice(locale,form.dataset.solution?(form.dataset.designMode==='branded'?'mini-branded':'mini-ready'):selection().variant);};
   updateNotice();
   let busy = false, pending = null;
   const storageKey = `nfc-public-attempt:${basePath}:${endpoint}:${pathname.replace(/\/$/, '')}`;
@@ -195,7 +226,11 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
   function clearProfileError(){const input=q('instagramUrl'),error=form.querySelector('#e-instagramUrl');if(input){input.removeAttribute('aria-invalid');input.setAttribute('aria-describedby','instagram-help');}if(error){error.hidden=true;error.textContent='';}}
   q('instagramUrl')?.addEventListener('input',clearProfileError);
   const snapshot = () => ({name: q('name').value, phone: q('phone').value, messenger: q('messenger').value,
-    consent: q('consent').checked, instagramUrl:q('instagramUrl')?.value.trim(),comment:q('comment')?.value||'', ...selection(),...(form.dataset.solution?{solution:form.dataset.solution}:{})});
+    consent: q('consent').checked, instagramUrl:q('instagramUrl')?.value.trim(),comment:q('comment')?.value||'',
+    customQuantity:q('customQuantity')?.value||'',brandLink:q('brandLink')?.value||'',logoNote:q('logoNote')?.value||'',
+    brandStyle:q('brandStyle')?.value||'',designSplitNote:q('designSplitNote')?.value||'',
+    ...selection(),...(form.dataset.solution?{solution:form.dataset.solution}:{}),
+    ...(form.dataset.productFamily?{productFamily:form.dataset.productFamily}:{})});
   function lock(locked) {
     for (const el of form.elements) if (!['hidden', 'submit', 'button'].includes(el.type)) el.disabled = locked;
     lockSelection(locked);
@@ -246,10 +281,18 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
       }
       lock(true);
       const receipt = await submitLead(endpoint, pending);
+      if(form.dataset.productFamily==='nfc-review-card-mini'&&MINI_PRODUCTS[form.dataset.solution]){
+        const sent=pending.payload,mode=sent.solution.quantity_mode;
+        const expected=miniQuote(sent.solution.solution_id,sent.quantity,locale,mode==='advice'?'quantity_advice':mode==='free_design_concepts'?'free_design_concepts':'physical_order');
+        if(receipt.quote?.currency!==expected.currency||receipt.quote?.amount!==expected.amount||
+           receipt.quote?.deposit!==expected.deposit)throw Error('request_unconfirmed');
+      }
       if(locale==='pl'){
-        const expected=quoteForSelection?.(pending.payload.selection?.variant,pending.payload.selection?.quantity);
-        if(!expected||receipt.quote?.currency!=='PLN'||receipt.quote.amount!==expected.amount||
-          (expected.amount!==null&&receipt.quote.deposit!==expected.deposit))throw Error('request_unconfirmed');
+        if(form.dataset.productFamily!=='nfc-review-card-mini'||!MINI_PRODUCTS[form.dataset.solution]){
+          const expected=quoteForSelection?.(pending.payload.selection?.variant,pending.payload.selection?.quantity);
+          if(!expected||receipt.quote?.currency!=='PLN'||receipt.quote.amount!==expected.amount||
+            (expected.amount!==null&&receipt.quote.deposit!==expected.deposit))throw Error('request_unconfirmed');
+        }
       }
       completed(receipt.leadId,false,receipt.quote);
       event('order_submit_success', selection());

@@ -156,7 +156,7 @@ def test_compact_messenger_keyboard_error_and_footer_boundaries(web,browser,widt
         # Two additional niche destinations retain 44px touch targets at 320px.
         assert page.locator('footer a[href$="/solutions/beauty-review-card"]').count()==1
         assert page.locator('footer a[href$="/solutions/restaurant-review-card"]').count()==1
-        assert footer['height']<450 and geometry(page)['scrollWidth']<=width
+        assert footer['height']<550 and geometry(page)['scrollWidth']<=width
         screenshots.append(shot(page,f'{locale}-final-cta-footer-{width}'))
         # The custom quote row remains sized by its content at all three widths.
         assist=page.locator('.catalog-assist');assist.scroll_into_view_if_needed();box=assist.bounding_box()

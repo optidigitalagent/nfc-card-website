@@ -9,7 +9,9 @@ import os
 PREVIEW = 'PUBLIC_PREVIEW'
 INDEXABLE = 'PUBLIC_INDEXABLE'
 BASE_ROUTES = ('/', '/about', '/solutions', '/solutions/review-card',
-               '/solutions/branded-review-card', '/solutions/beauty-review-card', '/solutions/restaurant-review-card', '/solutions/review-card-3d', '/solutions/instagram-card', '/instagram-card',
+               '/solutions/branded-review-card', '/solutions/beauty-review-card', '/solutions/branded-beauty-review-card',
+               '/solutions/restaurant-review-card', '/solutions/branded-restaurant-review-card',
+               '/solutions/review-card-3d', '/solutions/instagram-card', '/instagram-card',
                '/solutions/menu-card', '/menu-card', '/delivery-and-payment',
                '/warranty-and-returns', '/privacy', '/terms')
 PUBLIC_ROUTES = frozenset(p for route in BASE_ROUTES for p in

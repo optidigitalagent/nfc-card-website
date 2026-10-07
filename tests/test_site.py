@@ -11,7 +11,10 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / 'site'
-BASE_ROUTES = ['/', '/about', '/solutions', '/solutions/review-card', '/solutions/branded-review-card', '/solutions/beauty-review-card', '/solutions/restaurant-review-card', '/solutions/review-card-3d', '/solutions/instagram-card', '/instagram-card', '/solutions/menu-card', '/menu-card', '/reviews/new', '/order',
+BASE_ROUTES = ['/', '/about', '/solutions', '/solutions/review-card', '/solutions/branded-review-card',
+               '/solutions/beauty-review-card', '/solutions/branded-beauty-review-card',
+               '/solutions/restaurant-review-card', '/solutions/branded-restaurant-review-card',
+               '/solutions/review-card-3d', '/solutions/instagram-card', '/instagram-card', '/solutions/menu-card', '/menu-card', '/reviews/new', '/order',
                '/delivery-and-payment', '/warranty-and-returns', '/contact',
                '/thank-you', '/privacy', '/terms']
 ROUTES = BASE_ROUTES + ['/en' + ('' if r == '/' else r) for r in BASE_ROUTES] + ['/pl' + ('/' if r == '/' else r) for r in BASE_ROUTES]
@@ -40,7 +43,7 @@ def node(script):
     return result.stdout
 
 
-def test_exact_fifty_four_localized_routes():
+def test_exact_sixty_six_localized_routes():
     actual = {'/' + p.parent.relative_to(SITE).as_posix() for p in SITE.rglob('index.html')}
     actual.discard('/.')
     actual.add('/')
@@ -103,13 +106,22 @@ def test_canonical_hreflang_are_bidirectional_and_current(route):
 
 
 @pytest.mark.parametrize('route', ['/', '/en', '/solutions', '/en/solutions'])
-def test_catalog_is_first_meaningful_section_with_two_variants_and_exact_prices(route):
+def test_catalog_is_first_meaningful_section_with_four_mini_products_and_original_prices(route):
     soup = soup_at(route)
     assert soup.main.find('section')['id'] == 'catalog'
     cards = soup.select('.commerce-card')
-    assert [c.get('data-variant', 'review_3d') for c in cards] == ['standard', 'branded', 'review_3d', 'review_3d', 'review_3d', 'instagram', 'menu']
-    assert [c['data-solution'] for c in cards[2:4]] == ['beauty-review-card', 'restaurant-review-card']
-    assert cards[4]['data-product-id'] == 'nfc-review-card-3d'
+    assert len(cards) == 9
+    assert [c.get('data-variant') for c in cards[:2]] == ['standard', 'branded']
+    assert [c['data-solution'] for c in cards[2:6]] == [
+        'beauty-review-card', 'branded-beauty-review-card',
+        'restaurant-review-card', 'branded-restaurant-review-card']
+    assert cards[6]['data-product-id'] == 'nfc-review-card-3d'
+    assert cards[7].get('data-variant') == 'instagram'
+    assert cards[8].get('data-variant') == 'menu'
+    for index, kind in ((2, 'beauty'), (4, 'restaurant')):
+        assert kind in cards[index].select_one('img.catalog-product-image')['src']
+        assert cards[index + 1].select_one('[data-design-role="custom_layout_example"]')
+        assert not cards[index + 1].select_one('img.catalog-product-image')
     # These original assertions continue to protect the two Review Card offers.
     cards = cards[:2]
     for card, prices in zip(cards, [(1500, 2600), (2000, 3600)]):
