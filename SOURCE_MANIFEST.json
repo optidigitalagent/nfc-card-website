@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
-  "file_count_including_manifest": 613,
+  "file_count_including_manifest": 614,
   "release_source": {
     "handoff_archive_sha256": "9cf61bc26214321d296adeae4c63eb21a5b624bfa9f8849797bcb51c66ff5de0",
     "handoff_manifest": "docs/release/v1.0.0/source-handoff-manifest.json",
@@ -2798,8 +2798,8 @@
     },
     {
       "path": "src/model.mjs",
-      "bytes": 80037,
-      "sha256": "a5b1bfc24b33daa2822734abab6b1b35b49787acc23e5b548a9ad444072011db"
+      "bytes": 80197,
+      "sha256": "c515d62ff5855ab2b63f7acbe358fd5ddfe57ca2102287a83991114dd8dd087d"
     },
     {
       "path": "src/niche-client.mjs",
@@ -2853,8 +2853,8 @@
     },
     {
       "path": "src/pl-model.json",
-      "bytes": 25788,
-      "sha256": "b6514af843e25789f71d767a97d138180ae9236364a92f3323e30ea70993f963"
+      "bytes": 25862,
+      "sha256": "79a44fb475f76619363f0fadb1782902c283ca3c87cfe23531072e4eedeca982"
     },
     {
       "path": "src/pl-review3d.json",
@@ -2884,7 +2884,7 @@
     {
       "path": "src/publication-approval.json",
       "bytes": 2008,
-      "sha256": "b25fcce2e1511a54b4d70c742673dfac1706996f8e66fab46fd99a9cc7c640ca"
+      "sha256": "db970e6498bbb1277d9315dfc9a8d6cb3a7c796d6679de461e350c22fbc93f45"
     },
     {
       "path": "src/publication.mjs",
@@ -3045,6 +3045,11 @@
       "path": "tests/test_review3d_v26.py",
       "bytes": 6575,
       "sha256": "314a9bcbae54a51701cccf9e87dedbb75f7c7b5fcd042bc59391f14870eef629"
+    },
+    {
+      "path": "tests/test_shared_faq_design_v32.py",
+      "bytes": 4817,
+      "sha256": "811cca6e15dd48ae7f3a7cec13086e2bb50f8c080af7071d9ada4fe2578e6587"
     },
     {
       "path": "tests/test_site.py",
