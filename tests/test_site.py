@@ -124,15 +124,15 @@ def test_catalog_is_first_meaningful_section_with_four_mini_products_and_origina
         assert not cards[index + 1].select_one('img.catalog-product-image')
     # These original assertions continue to protect the two Review Card offers.
     cards = cards[:2]
-    for card, prices in zip(cards, [(1500, 2600), (2000, 3600)]):
+    for card, prices in zip(cards, [(1500, 2600), (2000, 2600)]):
         amounts = [int(re.sub(r'[^0-9]', '', value.get_text())) for value in card.select('.commerce-card-prices dd')]
         assert amounts == list(prices)
     for card in cards:
         link = card.select_one('h2 a.commerce-card-link')
         assert link and link['href'].endswith('/solutions/'+('branded-review-card' if card['data-variant']=='branded' else 'review-card'))
         assert not link.select('button,a,input')
-        assert card.select_one('.commerce-card-cta') and len(card.select('a'))==1
-        assert card.select_one('.delivery-line')
+        assert card.select_one('.catalog-card-actions .button') and card.select_one('.catalog-card-actions .text-action')
+        assert card.select_one('.catalog-card-proof')
     branded_src=cards[1].select_one('img')['src']
     media=json.loads((ROOT/'src/media-manifest.json').read_text('utf-8'))
     branded_asset=next(item for item in media if item['url']==branded_src)
@@ -179,7 +179,7 @@ def test_dedicated_product_schema_two_canonical_package_offers_no_invented_proof
     products = [d for d in data if d.get('@type') == 'Product']
     assert len(products) == 1
     product = products[0]
-    assert product['name'] == 'Review Card'
+    assert product['name'] == 'Google Review Card'
     offers = product['offers']
     assert len(offers) == 2
     config = load_commerce()

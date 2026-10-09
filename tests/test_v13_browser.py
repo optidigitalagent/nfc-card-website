@@ -250,7 +250,9 @@ def test_catalog_reserves_delayed_media_before_first_paint(web,browser,locale,ro
         assert image.evaluate('(e)=>!e.complete&&e.naturalWidth===0')
         assert before['image'] and before['copy']
         reserved=before['image']
-        assert reserved['height']>400 and abs(reserved['height']-reserved['width']*1.25)<=1
+        # v33 uses the shared square media frame on narrow catalog cards.
+        # Its reserved box must exist before the delayed image arrives.
+        assert reserved['height']>300 and abs(reserved['height']-reserved['width'])<=1
         assert abs(before['copy']['y']-(reserved['y']+reserved['height']))<=1
         name=f'{locale}-{("home" if route=="/" else "catalog")}-delayed-media-390'
         # Do not use shot(): its image.decode() wait must not release this deliberate delay.

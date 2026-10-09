@@ -16,8 +16,8 @@ from test_pages_v17 import BASE, ORIGIN, build, source
 ROOT = Path(__file__).resolve().parents[1]
 
 P1 = {
-    "uk": "NFC Instagram Card працює за тим самим принципом, що й NFC Review Card: клієнт торкається картки смартфоном і натискає сповіщення. Відрізняються дизайн і призначення: замість форми Google-відгуку відкривається Instagram-профіль вашого бізнесу. Ми налаштовуємо картку на ваш профіль і передаємо готовою до використання.",
-    "en": "NFC Instagram Card works the same way as NFC Review Card: the customer taps the card with a smartphone, then taps the notification. The design and purpose are different: it opens your business’s Instagram profile instead of a Google review form. We configure the card for your profile and deliver it ready to use.",
+    "uk": "NFC Instagram Card працює за тим самим принципом, що й Google Review Card: клієнт торкається картки смартфоном і натискає сповіщення. Відрізняються дизайн і призначення: замість форми Google-відгуку відкривається Instagram-профіль вашого бізнесу. Ми налаштовуємо картку на ваш профіль і передаємо готовою до використання.",
+    "en": "NFC Instagram Card works the same way as Google Review Card: the customer taps the card with a smartphone, then taps the notification. The design and purpose are different: it opens your business’s Instagram profile instead of a Google review form. We configure the card for your profile and deliver it ready to use.",
 }
 
 BRIDGE = {
@@ -42,13 +42,13 @@ P4 = {
 
 P3 = {
     "uk": {
-        "destination": ("Куди саме переходить клієнт?", "Залежить від картки. Review Card, Branded Review Card і NFC Review Card 3D відкривають форму Google-відгуку конкретної локації. NFC Instagram Card відкриває Instagram-профіль, а NFC Menu Card — онлайн-меню закладу. Це окремі продукти; подальшу дію клієнт обирає сам."),
-        "difference": ("Чим NFC Instagram Card відрізняється від NFC Review Card?", "Спосіб використання однаковий: дотик смартфоном, сповіщення й перехід. Відрізняються дизайн і призначення: NFC Instagram Card відкриває Instagram-профіль, а NFC Review Card — форму Google-відгуку. Це окремі картки для різних дій."),
+        "destination": ("Куди саме переходить клієнт?", "Залежить від картки. Google Review Card, Branded Review Card і NFC Review Card 3D відкривають форму Google-відгуку конкретної локації. NFC Instagram Card відкриває Instagram-профіль, а NFC Menu Card — онлайн-меню закладу. Це окремі продукти; подальшу дію клієнт обирає сам."),
+        "difference": ("Чим NFC Instagram Card відрізняється від Google Review Card?", "Спосіб використання однаковий: дотик смартфоном, сповіщення й перехід. Відрізняються дизайн і призначення: NFC Instagram Card відкриває Instagram-профіль, а Google Review Card — форму Google-відгуку. Це окремі картки для різних дій."),
         "monthly": ("Чи є щомісячна плата?", "Обов’язкової щомісячної плати за використання самих NFC-карток немає. Якщо потрібна розробка онлайн-меню, деталі обговорюємо на консультації."),
     },
     "en": {
-        "destination": ("Where does the customer go?", "It depends on the card. Review Card, Branded Review Card and NFC Review Card 3D open the Google review form for a specific location. NFC Instagram Card opens the Instagram profile, and NFC Menu Card opens the venue’s online menu. These are separate products; the customer chooses the next action."),
-        "difference": ("How is NFC Instagram Card different from NFC Review Card?", "They work the same way: a smartphone tap, a notification and a link. The design and purpose differ: NFC Instagram Card opens an Instagram profile, while NFC Review Card opens a Google review form. They are separate cards for different actions."),
+        "destination": ("Where does the customer go?", "It depends on the card. Google Review Card, Branded Review Card and NFC Review Card 3D open the Google review form for a specific location. NFC Instagram Card opens the Instagram profile, and NFC Menu Card opens the venue’s online menu. These are separate products; the customer chooses the next action."),
+        "difference": ("How is NFC Instagram Card different from Google Review Card?", "They work the same way: a smartphone tap, a notification and a link. The design and purpose differ: NFC Instagram Card opens an Instagram profile, while Google Review Card opens a Google review form. They are separate cards for different actions."),
         "monthly": ("Is there a monthly fee?", "There is no mandatory monthly fee for using the physical NFC cards themselves. If online-menu development is needed, we discuss the details in a consultation."),
     },
 }
@@ -85,7 +85,7 @@ def test_p3_faqs_process_and_legacy_anchor(source, locale):
     assert P3[locale]["destination"] in visible
     assert P3[locale]["difference"] in visible
     assert home.select_one("#faq-instagram-subscription") is not None
-    difference = home.find("summary", string=re.compile("Instagram Card.*Review Card|відрізняється"))
+    difference = home.find("summary", string=re.compile("Instagram Card.*Google Review Card|відрізняється"))
     assert difference is not None
     process = home.select("#process .steps>li")
     assert len(process) == 5
@@ -106,7 +106,7 @@ def test_only_five_approved_sources_are_public_and_optimized():
     records = [item for item in manifest if item.get("managed_by") == "scripts/update_instagram_media.py:v22"]
     baseline = []
     for item in manifest:
-        if item.get("managed_by") in {"scripts/update_instagram_media.py:v22", "scripts/update_menu_media.py:v23", "v26_review_3d_media_import", "v29_niche_media_import"} or item.get("source", "").endswith("-pl.vtt"):
+        if item.get("managed_by") in {"scripts/update_instagram_media.py:v22", "scripts/update_menu_media.py:v23", "v26_review_3d_media_import", "v29_niche_media_import", "v33_niche_crop"} or item.get("source", "").endswith("-pl.vtt"):
             continue
         # v27 adds Polish descriptive metadata and one timed subtitle track.
         # Verify that the previously accepted asset/provenance contract is intact.

@@ -12,8 +12,8 @@ from test_v12_browser import browser, web, repo, service, block_external, ready
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / 'site'
 PRODUCTS = ('review-card', 'instagram-card', 'menu-card')
-LABELS = {'review-card': 'NFC Review Card', 'instagram-card': 'NFC Instagram Card', 'menu-card': 'NFC Menu Card'}
-HEADINGS = {'review-card': 'Review Card', 'instagram-card': 'NFC Instagram Card', 'menu-card': 'NFC Menu Card'}
+LABELS = {'review-card': 'Google Review Card', 'instagram-card': 'NFC Instagram Card', 'menu-card': 'NFC Menu Card'}
+HEADINGS = {'review-card': 'Google Review Card', 'instagram-card': 'NFC Instagram Card', 'menu-card': 'NFC Menu Card'}
 
 
 @pytest.mark.parametrize('prefix,locale', [('', 'uk'), ('/en', 'en')])
@@ -35,12 +35,12 @@ def test_direct_product_navigation_and_targeted_copy(prefix, locale):
         assert not product_page.select('[data-lightbox-zoom], [data-lightbox-to], .thumb-index, .thumb-check')
     privacy = (ROOT / 'src/public-legal.mjs').read_text()
     if locale == 'uk':
-        assert 'Коментар із форми Review Card або Branded Review Card не передається' in privacy
+        assert 'Коментар із форми Google Review Card або Branded Review Card не передається' in privacy
         assert 'Для NFC Instagram Card також передаємо посилання на Instagram-профіль і необов’язковий коментар' in privacy
         assert 'Будемо вдячні, якщо поділитеся враженнями про візит у Google' in home.get_text(' ', strip=True)
         assert 'потрібну форму Google-відгуку, Instagram-профіль або онлайн-меню' in page('/delivery-and-payment').get_text(' ', strip=True)
     else:
-        assert 'The Review Card or Branded Review Card form comment is not transmitted' in privacy
+        assert 'The Google Review Card or Branded Review Card form comment is not transmitted' in privacy
         assert 'For NFC Instagram Card, we also send the Instagram profile URL and optional comment' in privacy
         assert 'We would appreciate your feedback about your visit on Google' in home.get_text(' ', strip=True)
         assert 'intended Google review form, Instagram profile or online menu' in page('/delivery-and-payment').get_text(' ', strip=True)

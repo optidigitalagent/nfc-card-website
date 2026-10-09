@@ -13,7 +13,7 @@
   "/config/disclaimer": "NFC CARD jest niezależnym produktem. Nie jest powiązany z Google ani przez Google zatwierdzony czy sponsorowany. Google, Google Maps i odpowiadające im logotypy są znakami towarowymi ich właścicieli.",
   "/config/seo/homeTitle": "Karty NFC dla firm: opinie Google, Instagram i menu | NFC CARD",
   "/config/seo/homeDescription": "Gotowe karty NFC do opinii w Google, profilu na Instagramie i menu online. Konfiguracja właściwego linku, personalizacja, wsparcie i wysyłka do Polski.",
-  "/config/seo/productTitle": "Review Card — karta NFC do opinii w Google | NFC CARD",
+  "/config/seo/productTitle": "Google Review Card — karta NFC do opinii w Google | NFC CARD",
   "/config/seo/productDescription": "Gotowa karta NFC, która otwiera formularz opinii w Google dla właściwej lokalizacji firmy. Konfiguracja linku i wsparcie są w cenie.",
   "/config/production/deposit/value": "20 PLN raz za fizyczne zamówienie, po uzgodnieniu szczegółów. Zaliczka jest wliczona w cenę produktów. Nie pobieramy jej za samą konsultację w sprawie menu online.",
   "/config/production/deposit/label": "Zaliczka",
@@ -39,7 +39,7 @@
     "Kontakt"
   ],
   "/ui/order": "Zamów",
-  "/ui/orderStandard": "Zamów Review Card",
+  "/ui/orderStandard": "Zamów Google Review Card",
   "/ui/quote": "Poproś o wycenę",
   "/ui/free": "Poproś o bezpłatną wizualizację",
   "/ui/mockup": "Poproś o bezpłatną wizualizację",
@@ -68,7 +68,7 @@
   "/ui/errorBody": "Jeśli widzisz numer zgłoszenia, Twoje dane zostały zapisane. Jeśli nie ma numeru, napisz do nas na Telegramie lub zadzwoń pod +380 98 042 16 19.",
   "/ui/errorText": "Jeśli widzisz numer zgłoszenia, Twoje dane zostały zapisane. Jeśli nie ma numeru, napisz do nas na Telegramie lub zadzwoń pod +380 98 042 16 19.",
   "/ui/retry": "Spróbuj ponownie",
-  "/ui/formTitle": "Zamów NFC Review Card dla swojej firmy",
+  "/ui/formTitle": "Zamów Google Review Card dla swojej firmy",
   "/ui/formIntro": "Zostaw dane kontaktowe. Potwierdzimy lokalizację firmy w Google, liczbę kart i wybrany wariant. Dla Branded Review Card przygotujemy pierwszą wizualizację projektu bezpłatnie.",
   "/ui/responseTime": "Codziennie 07:00–23:00. Zwykle odpowiadamy w ciągu 45 minut.",
   "/ui/quantity": "Liczba kart",
@@ -117,7 +117,7 @@
   "/fields/businessUrl": "Instagram lub strona firmy",
   "/fields/comment": "Uwagi",
   "/fields/consent": "Zgadzam się na przetwarzanie danych, aby NFC CARD mógł odpowiedzieć na moje zgłoszenie.",
-  "/fields/standard": "Review Card — gotowy projekt",
+  "/fields/standard": "Google Review Card — gotowy projekt",
   "/fields/branded": "Branded Review Card — indywidualny projekt",
   "/fields/bulk": "Karty dla kilku oddziałów lub zespołu",
   "/fields/consultation": "Potrzebuję konsultacji",
@@ -142,7 +142,7 @@
   "/errors/maps": "Sprawdź link do Google Maps lub pozostaw pole puste.",
   "/variants/0/label": "Gotowy projekt",
   "/variants/0/description": "Gotowa karta NFC, która po zbliżeniu smartfona otwiera formularz oceny i opinii o Twojej firmie w Google.",
-  "/variants/0/cta": "Zamów Review Card",
+  "/variants/0/cta": "Zamów Google Review Card",
   "/variants/0/note": "Standardowa karta nie zawiera kodu QR.",
   "/variants/0/benefits": [
     "Konfiguracja dla właściwej lokalizacji firmy w Google",
@@ -167,11 +167,11 @@
   "/copy/problem/heading": "Zadowoleni klienci nie zawsze zostawiają opinię",
   "/copy/problem/paragraphs": [
     "Po zakupie lub usłudze klienci często dziękują i wychodzą. Gdy mają później samodzielnie znaleźć firmę w Google, łatwo odkładają napisanie opinii na później.",
-    "NFC Review Card skraca tę drogę. Klient zbliża telefon, otwiera powiadomienie i przechodzi do formularza, w którym sam wybiera ocenę i pisze szczerą opinię.",
+    "Google Review Card skraca tę drogę. Klient zbliża telefon, otwiera powiadomienie i przechodzi do formularza, w którym sam wybiera ocenę i pisze szczerą opinię.",
     "Karta nie pisze opinii za klienta ani nie wpływa na ocenę. Pomaga wykorzystać moment, w którym doświadczenie jest jeszcze świeże."
   ],
   "/copy/problem/eyebrow": "DLACZEGO TO POMAGA",
-  "/copy/how/heading": "Jak działa NFC Review Card",
+  "/copy/how/heading": "Jak działa Google Review Card",
   "/copy/how/eyebrow": "OD ZBLIŻENIA TELEFONU DO FORMULARZA OPINII",
   "/copy/how/items": [
     [
@@ -201,12 +201,12 @@
     "grubość: 3 mm",
     "gotowy lub indywidualny projekt",
     "link można zmienić za pomocą zgodnego smartfona",
-    "standardowa Review Card nie zawiera kodu QR",
+    "standardowa Google Review Card nie zawiera kodu QR",
     "w Branded Review Card kod QR można dodać po uzgodnieniu"
   ],
   "/copy/audience/heading": "Dla firm, które mają bezpośredni kontakt z klientem",
   "/copy/audience/paragraphs": [
-    "NFC Review Card najlepiej sprawdza się tam, gdzie po zakupie lub usłudze pojawia się naturalna okazja, aby zaprosić klienta do podzielenia się wrażeniami."
+    "Google Review Card najlepiej sprawdza się tam, gdzie po zakupie lub usłudze pojawia się naturalna okazja, aby zaprosić klienta do podzielenia się wrażeniami."
   ],
   "/copy/audience/eyebrow": "GDZIE SPRAWDZA SIĘ NAJLEPIEJ",
   "/copy/audience/script": "Będzie nam miło, jeśli podzielisz się opinią o wizycie w Google. Zbliż telefon do karty, otwórz powiadomienie i, jeśli chcesz, napisz opinię.",
@@ -256,7 +256,7 @@
     ],
     [
       "Przygotowujemy kartę",
-      "Standardową Review Card i Instagram Card przygotowujemy zwykle w ciągu pięciu dni roboczych od uzgodnienia szczegółów. Czas wykonania NFC Review Card 3D ustalamy osobno przed wpłatą zaliczki. Czas przygotowania Menu Card potwierdzamy przy uzgadnianiu zamówienia."
+      "Standardową Google Review Card i Instagram Card przygotowujemy zwykle w ciągu pięciu dni roboczych od uzgodnienia szczegółów. Czas wykonania NFC Review Card 3D ustalamy osobno przed wpłatą zaliczki. Czas przygotowania Menu Card potwierdzamy przy uzgadnianiu zamówienia."
     ],
     [
       "Wysyłamy zamówienie",
@@ -299,13 +299,13 @@
     ]
   ],
   "/copy/payment/cta": "Więcej o płatności i dostawie",
-  "/copy/bulk/heading": "Więcej kart Review Card dla Twojej firmy",
-  "/copy/bulk/body": "Dla zamówień od trzech Review Card lub Branded Review Card przygotujemy indywidualną wycenę. NFC Review Card 3D ma stałą cenę za każdą kartę, bez rabatu ilościowego. NFC Menu Card ma osobne progi cenowe zależne od łącznej liczby kart Menu w zamówieniu.",
+  "/copy/bulk/heading": "Więcej kart Google Review Card dla Twojej firmy",
+  "/copy/bulk/body": "Dla zamówień od trzech Google Review Card lub Branded Review Card przygotujemy indywidualną wycenę. NFC Review Card 3D ma stałą cenę za każdą kartę, bez rabatu ilościowego. NFC Menu Card ma osobne progi cenowe zależne od łącznej liczby kart Menu w zamówieniu.",
   "/copy/bulk/cta": "Poproś o wycenę",
   "/copy/included/heading": "Co otrzymujesz w ramach zamówienia",
   "/copy/included/body": "Otrzymujesz kartę skonfigurowaną dla konkretnej lokalizacji firmy w Google, sprawdzony link i jasną instrukcję dla zespołu. Nie ma obowiązkowego miesięcznego abonamentu.",
   "/copy/included/standard": [
-    "Review Card w gotowym projekcie",
+    "Google Review Card w gotowym projekcie",
     "Konfiguracja dla właściwej lokalizacji Twojej firmy w Google",
     "Sprawdzenie NFC i poprawności linku",
     "Krótka instrukcja i wskazówki dla personelu",
@@ -370,17 +370,17 @@
   "/faqs/1/question": "Czy klient potrzebuje aplikacji?",
   "/faqs/1/answer": "Nie. Do otwarcia linku nie jest potrzebna osobna aplikacja.",
   "/faqs/2/question": "Dokąd trafia klient po zbliżeniu telefonu?",
-  "/faqs/2/answer": "To zależy od karty. Review Card, Branded Review Card i NFC Review Card 3D otwierają formularz opinii w Google dla konkretnej lokalizacji. NFC Instagram Card otwiera profil na Instagramie, a NFC Menu Card — menu online lokalu. To osobne produkty; klient sam decyduje, co zrobi dalej.",
+  "/faqs/2/answer": "To zależy od karty. Google Review Card, Branded Review Card i NFC Review Card 3D otwierają formularz opinii w Google dla konkretnej lokalizacji. NFC Instagram Card otwiera profil na Instagramie, a NFC Menu Card — menu online lokalu. To osobne produkty; klient sam decyduje, co zrobi dalej.",
   "/faqs/3/question": "Czy po zakupie można zmienić link?",
-  "/faqs/3/answer": "Link na Review Card i Instagram Card można ponownie zapisać za pomocą zgodnego smartfona. Jeśli zmieni się adres menu online, skontaktuj się z nami, aby ustalić konfigurację Menu Card.",
+  "/faqs/3/answer": "Link na Google Review Card i Instagram Card można ponownie zapisać za pomocą zgodnego smartfona. Jeśli zmieni się adres menu online, skontaktuj się z nami, aby ustalić konfigurację Menu Card.",
   "/faqs/4/question": "Czy jest opłata miesięczna?",
   "/faqs/4/answer": "Nie ma obowiązkowej opłaty miesięcznej za korzystanie z samych kart NFC. Jeśli potrzebujesz przygotowania menu online, omówimy szczegóły podczas konsultacji.",
   "/faqs/5/question": "Czy karta ma kod QR?",
-  "/faqs/5/answer": "Standardowa Review Card, NFC Instagram Card i NFC Menu Card w tych ofertach nie mają kodu QR. Indywidualny projekt jest dostępny dla Branded Review Card, Branded Beauty Review Card Mini i Branded Restaurant Review Card Mini. Dodanie kodu QR do Branded Review Card można uzgodnić osobno. Karty Instagram i Menu mają gotowe projekty.",
+  "/faqs/5/answer": "Standardowa Google Review Card, NFC Instagram Card i NFC Menu Card w tych ofertach nie mają kodu QR. Indywidualny projekt jest dostępny dla Branded Review Card, Branded Beauty Review Card Mini i Branded Restaurant Review Card Mini. Dodanie kodu QR do Branded Review Card można uzgodnić osobno. Karty Instagram i Menu mają gotowe projekty.",
   "/faqs/6/question": "Jaki rozmiar ma karta?",
-  "/faqs/6/answer": "Review Card i NFC Instagram Card mają 10 × 10 cm i grubość 3 mm. Menu Card jest kwadratem 10 × 10 lub 6 × 6 cm albo kołem o średnicy 7 cm; jej grubość wynosi około 3–4 mm. Dokładny wariant wybierzesz na stronie produktu.",
+  "/faqs/6/answer": "Google Review Card i NFC Instagram Card mają 10 × 10 cm i grubość 3 mm. Menu Card jest kwadratem 10 × 10 lub 6 × 6 cm albo kołem o średnicy 7 cm; jej grubość wynosi około 3–4 mm. Dokładny wariant wybierzesz na stronie produktu.",
   "/faqs/7/question": "Ile trwa realizacja zamówienia?",
-  "/faqs/7/answer": "Standardową Review Card i Instagram Card przygotowujemy zwykle w ciągu pięciu dni roboczych od uzgodnienia szczegółów. Czas wykonania NFC Review Card 3D ustalamy osobno przed wpłatą zaliczki, a czas przygotowania Menu Card potwierdzamy przy uzgadnianiu zamówienia.",
+  "/faqs/7/answer": "Standardową Google Review Card i Instagram Card przygotowujemy zwykle w ciągu pięciu dni roboczych od uzgodnienia szczegółów. Czas wykonania NFC Review Card 3D ustalamy osobno przed wpłatą zaliczki, a czas przygotowania Menu Card potwierdzamy przy uzgadnianiu zamówienia.",
   "/faqs/8/question": "Ile wynosi zaliczka?",
   "/faqs/8/answer": "20 PLN raz za fizyczne zamówienie. Zaliczka jest wliczona w cenę produktów. Sama konsultacja w sprawie menu online nie wymaga zaliczki.",
   "/faqs/9/question": "Ile kosztuje dostawa do Polski?",
@@ -390,6 +390,6 @@
   "/faqs/11/question": "Co zrobić, jeśli telefon nie odczytuje NFC?",
   "/faqs/11/answer": "Najpierw sprawdzimy model telefonu, ustawienia NFC, miejsce zbliżenia i zapisany link. Jeśli potwierdzi się wada techniczna, której nie da się rozwiązać zdalnie, uzgodnimy bezpłatną wymianę lub zwrot pieniędzy.",
   "/faqs/12/question": "Jak zamówić więcej kart?",
-  "/faqs/12/answer": "Dla zamówień od trzech Review Card lub Branded Review Card przygotujemy indywidualną wycenę. NFC Review Card 3D ma stałą cenę za każdą kartę, bez rabatu ilościowego. NFC Instagram Card można obecnie zamówić w liczbie jednej lub dwóch sztuk. Różne warianty NFC Menu Card sumują się w jednym zamówieniu i wspólnie wyznaczają próg cenowy. Ceny sprawdzisz na stronach produktów.",
+  "/faqs/12/answer": "Dla zamówień od trzech Google Review Card lub Branded Review Card przygotujemy indywidualną wycenę. NFC Review Card 3D ma stałą cenę za każdą kartę, bez rabatu ilościowego. NFC Instagram Card można obecnie zamówić w liczbie jednej lub dwóch sztuk. Różne warianty NFC Menu Card sumują się w jednym zamówieniu i wspólnie wyznaczają próg cenowy. Ceny sprawdzisz na stronach produktów.",
   "/leadTime": "Zwykle do pięciu dni roboczych od uzgodnienia szczegółów"
 }

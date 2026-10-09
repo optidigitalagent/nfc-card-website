@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
     "locale,expected",
     [
         ("uk", [
-            "NFC Instagram Card працює за тим самим принципом, що й NFC Review Card",
+            "NFC Instagram Card працює за тим самим принципом, що й Google Review Card",
             "Що стає простішим",
             "Від посилання до готової картки",
             "Що входить",
@@ -23,10 +23,10 @@ ROOT = Path(__file__).resolve().parents[1]
             "Чесне уточнення",
             "Оплата й доставка",
             "FAQ — NFC Instagram Card",
-            "NFC Review Card відкриває форму відгуку конкретної Google-точки",
+            "Google Review Card відкриває форму відгуку конкретної Google-точки",
         ]),
         ("en", [
-            "NFC Instagram Card works the same way as NFC Review Card",
+            "NFC Instagram Card works the same way as Google Review Card",
             "What becomes easier",
             "From your link to a ready-to-use card",
             "What is included",
@@ -35,7 +35,7 @@ ROOT = Path(__file__).resolve().parents[1]
             "An honest clarification",
             "Payment and delivery",
             "FAQ — NFC Instagram Card",
-            "NFC Review Card opens the review form for a specific Google location",
+            "Google Review Card opens the review form for a specific Google location",
         ]),
     ],
 )

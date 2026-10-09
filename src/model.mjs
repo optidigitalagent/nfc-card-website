@@ -22,7 +22,7 @@ const source = {
   "config": {
     "schemaVersion": 6,
     "brand": "NFC CARD",
-    "productName": "NFC Review Card",
+    "productName": "Google Review Card",
     "parentBrand": "Antonov Digital",
     "defaultLocale": "uk",
     "locales": [
@@ -146,16 +146,16 @@ const source = {
         "en": "NFC Google Review Cards for Business | NFC CARD"
       },
       "homeDescription": {
-        "uk": "NFC Review Card для бізнесу: прямий перехід до форми Google-відгуку, готовий або індивідуальний дизайн, формат 10 × 10 см і безкоштовна доставка по Україні.",
+        "uk": "Google Review Card для бізнесу: прямий перехід до форми Google-відгуку, готовий або індивідуальний дизайн, формат 10 × 10 см і безкоштовна доставка по Україні.",
         "en": "NFC Review Cards for local businesses, configured for a direct path to the Google review form, available in ready-made or custom-branded versions."
       },
       "productTitle": {
-        "uk": "NFC Review Card — картка для Google-відгуків | NFC CARD",
-        "en": "NFC Review Card — Google review card for business | NFC CARD"
+        "uk": "Google Review Card — картка для Google-відгуків | NFC CARD",
+        "en": "Google Review Card — Google review card for business | NFC CARD"
       },
       "productDescription": {
-        "uk": "NFC Review Card для локального бізнесу. 1 картка — 1500 грн, 2 — 2600 грн; брендований дизайн — від 2000 грн. Налаштування, підтримка й доставка по Україні включені.",
-        "en": "NFC Review Card for local businesses. One card is UAH 1,500 and two are UAH 2,600; custom branding starts at UAH 2,000. Setup, support and delivery within Ukraine are included."
+        "uk": "Google Review Card для локального бізнесу. 1 картка — 1500 грн, 2 — 2600 грн; брендований дизайн — від 2000 грн. Налаштування, підтримка й доставка по Україні включені.",
+        "en": "Google Review Card for local businesses. One card is UAH 1,500 and two are UAH 2,600; custom branding starts at UAH 2,000. Setup, support and delivery within Ukraine are included."
       }
     },
     "production": {
@@ -271,8 +271,8 @@ const source = {
       "en": "Order"
     },
     "orderStandard": {
-      "uk": "Замовити Review Card",
-      "en": "Order Review Card"
+      "uk": "Замовити Google Review Card",
+      "en": "Order Google Review Card"
     },
     "quote": {
       "uk": "Запросити прорахунок",
@@ -387,8 +387,8 @@ const source = {
       "en": "Try again"
     },
     "formTitle": {
-      "uk": "Замовте NFC Review Card для вашого бізнесу",
-      "en": "Order an NFC Review Card for your business"
+      "uk": "Замовте Google Review Card для вашого бізнесу",
+      "en": "Order an Google Review Card for your business"
     },
     "formIntro": {
       "uk": "Залиште контакти — ми уточнимо Google-точку, кількість і потрібний варіант. Для Branded Review Card підготуємо перший макет безкоштовно.",
@@ -585,8 +585,8 @@ const source = {
       "en": "I agree to the processing of my data so NFC CARD can respond to my request."
     },
     "standard": {
-      "uk": "Review Card — готовий дизайн",
-      "en": "Review Card — ready-made design"
+      "uk": "Google Review Card — готовий дизайн",
+      "en": "Google Review Card — ready-made design"
     },
     "branded": {
       "uk": "Branded Review Card — індивідуальний дизайн",
@@ -658,7 +658,7 @@ const source = {
   "variants": [
     {
       "id": "standard",
-      "name": "Review Card",
+      "name": "Google Review Card",
       "label": {
         "uk": "Готовий дизайн",
         "en": "Ready-made design"
@@ -668,8 +668,8 @@ const source = {
         "en": "A ready NFC card that opens the rating and review interface for your Google business location after the customer taps it with a phone."
       },
       "cta": {
-        "uk": "Замовити Review Card",
-        "en": "Order Review Card"
+        "uk": "Замовити Google Review Card",
+        "en": "Order Google Review Card"
       },
       "note": {
         "uk": "QR-код у стандартну версію не входить.",
@@ -720,7 +720,7 @@ const source = {
       "qr": "optional",
       "prices": {
         "1": 2000,
-        "2": 3600
+        "2": 2600
       },
       "provenance": "NFC_CARD_Site_Rebuild_Master_Brief_v9.md §3; NFC_CARD_Copy_UA_EN_v9.md §1",
       "benefits": {
@@ -764,12 +764,12 @@ const source = {
       "paragraphs": {
         "uk": [
           "Після покупки або послуги люди часто дякують і йдуть. Якщо попросити знайти бізнес у Google пізніше, відгук легко відкладається й забувається.",
-          "NFC Review Card прибирає зайві кроки. Клієнт підносить телефон, відкриває повідомлення й переходить до форми, де може самостійно поставити оцінку та написати чесний відгук.",
+          "Google Review Card прибирає зайві кроки. Клієнт підносить телефон, відкриває повідомлення й переходить до форми, де може самостійно поставити оцінку та написати чесний відгук.",
           "Картка не пише відгук замість людини й не впливає на оцінку. Вона допомагає не втрачати момент, коли враження ще свіже."
         ],
         "en": [
           "After a purchase or service, people often say thank you and leave. If they are asked to find the business on Google later, writing a review is easy to postpone and forget.",
-          "NFC Review Card removes the unnecessary steps. The customer taps the card, opens the notification and goes to the interface where they can choose a rating and write an honest review.",
+          "Google Review Card removes the unnecessary steps. The customer taps the card, opens the notification and goes to the interface where they can choose a rating and write an honest review.",
           "The card does not write a review or influence the rating. It simply makes the path shorter while the experience is still fresh."
         ]
       },
@@ -780,7 +780,7 @@ const source = {
     },
     "how": {
       "heading": {
-        "uk": "Як працює NFC Review Card",
+        "uk": "Як працює Google Review Card",
         "en": "From a tap to the review form"
       },
       "eyebrow": {
@@ -859,7 +859,7 @@ const source = {
           "товщина: 3 мм",
           "готовий або індивідуальний дизайн",
           "посилання можна змінити через сумісний смартфон",
-          "стандартна Review Card — без QR-коду",
+          "стандартна Google Review Card — без QR-коду",
           "у Branded Review Card QR-код можна додати за домовленістю."
         ],
         "en": [
@@ -867,7 +867,7 @@ const source = {
           "thickness: 3 mm",
           "ready-made or custom visual design",
           "the link can be rewritten with a compatible smartphone",
-          "no QR code in the standard Review Card",
+          "no QR code in the standard Google Review Card",
           "an optional QR code can be added to the Branded Review Card by agreement."
         ]
       }
@@ -879,10 +879,10 @@ const source = {
       },
       "paragraphs": {
         "uk": [
-          "NFC Review Card найкраще працює там, де після покупки або послуги є природний момент попросити людину поділитися враженням."
+          "Google Review Card найкраще працює там, де після покупки або послуги є природний момент попросити людину поділитися враженням."
         ],
         "en": [
-          "NFC Review Card works best when there is a natural moment after a purchase or service to invite a customer to share their experience."
+          "Google Review Card works best when there is a natural moment after a purchase or service to invite a customer to share their experience."
         ]
       },
       "eyebrow": {
@@ -1136,7 +1136,7 @@ const source = {
       },
       "standard": {
         "uk": [
-          "Review Card у готовому дизайні",
+          "Google Review Card у готовому дизайні",
           "Налаштування на точну Google-точку вашого бізнесу",
           "Перевірка NFC та правильності посилання",
           "Коротка інструкція й сценарій для персоналу",
@@ -1144,7 +1144,7 @@ const source = {
           "Стандартна доставка Новою поштою по Україні"
         ],
         "en": [
-          "Review Card in a ready-made design",
+          "Google Review Card in a ready-made design",
           "Setup for the exact Google location of your business",
           "NFC and destination-link testing",
           "Brief instructions and a staff script",
@@ -1322,8 +1322,8 @@ const source = {
         "en": "Where does the customer go?"
       },
       "answer": {
-        "uk": "Залежить від картки. Review Card і Branded Review Card відкривають форму Google-відгуку конкретної локації. NFC Instagram Card відкриває Instagram-профіль вашого бізнесу. Після переходу клієнт сам обирає наступну дію. Google може попросити увійти в акаунт.",
-        "en": "It depends on the card. Review Card and Branded Review Card open the Google review form for a specific location. NFC Instagram Card opens your business’s Instagram profile. After the link opens, the customer chooses what to do next. Google may ask them to sign in."
+        "uk": "Залежить від картки. Google Review Card і Branded Review Card відкривають форму Google-відгуку конкретної локації. NFC Instagram Card відкриває Instagram-профіль вашого бізнесу. Після переходу клієнт сам обирає наступну дію. Google може попросити увійти в акаунт.",
+        "en": "It depends on the card. Google Review Card and Branded Review Card open the Google review form for a specific location. NFC Instagram Card opens your business’s Instagram profile. After the link opens, the customer chooses what to do next. Google may ask them to sign in."
       }
     },
     {
@@ -1344,8 +1344,8 @@ const source = {
         "en": "Is there a monthly fee?"
       },
       "answer": {
-        "uk": "Обов’язкової щомісячної плати за використання Review Card, Branded Review Card або NFC Instagram Card немає.",
-        "en": "There is no mandatory monthly fee to use Review Card, Branded Review Card or NFC Instagram Card."
+        "uk": "Обов’язкової щомісячної плати за використання Google Review Card, Branded Review Card або NFC Instagram Card немає.",
+        "en": "There is no mandatory monthly fee to use Google Review Card, Branded Review Card or NFC Instagram Card."
       }
     },
     {
@@ -1355,8 +1355,8 @@ const source = {
         "en": "Is a QR code included?"
       },
       "answer": {
-        "uk": "У стандартній Review Card QR-коду немає. Для Branded Review Card його можна додати за домовленістю.",
-        "en": "Not in the standard Review Card. It can be added to a Branded Review Card by agreement."
+        "uk": "У стандартній Google Review Card QR-коду немає. Для Branded Review Card його можна додати за домовленістю.",
+        "en": "Not in the standard Google Review Card. It can be added to a Branded Review Card by agreement."
       }
     },
     {
@@ -1488,18 +1488,18 @@ export function resolveContent(overrides = {}) {
   result.config.seo.homeDescription = pair('Готові NFC-картки для Google-відгуків, Instagram та онлайн-меню. Налаштування потрібного посилання, оптові ціни Menu Card та доставка по Україні.','Ready-to-use NFC cards for Google reviews, Instagram and online menus. Link setup, Menu Card volume pricing and delivery within Ukraine.');
   result.copy.process.items.uk[1][1] = 'Уточнюємо посилання для обраної картки — Google-відгук, Instagram-профіль або онлайн-меню — та дані доставки. Якщо меню ще немає, обговоримо його розробку окремо. Для Branded Review Card готуємо перший макет безкоштовно.';
   result.copy.process.items.en[1][0] = 'We confirm the link for the chosen card — a Google review form, an Instagram profile or an online menu — and delivery details. If there is no menu yet, we discuss its development separately. For Branded Review Card, we prepare the first mockup free of charge.';
-  result.copy.process.items.uk[3][1] = 'Для стандартної Review Card та Instagram Card орієнтовний строк — до 5 робочих днів після погодження. Строк виготовлення NFC Review Card 3D погоджуємо окремо до передоплати. Строк підготовки Menu Card підтвердимо під час узгодження.';
+  result.copy.process.items.uk[3][1] = 'Для стандартної Google Review Card та Instagram Card орієнтовний строк — до 5 робочих днів після погодження. Строк виготовлення NFC Review Card 3D погоджуємо окремо до передоплати. Строк підготовки Menu Card підтвердимо під час узгодження.';
   result.copy.process.items.en[3][0] = 'For standard Review and Instagram cards, preparation is normally within five business days after approval. We agree the NFC Review Card 3D production timeline separately before the deposit. We confirm Menu Card preparation time when agreeing the order.';
-  result.copy.bulk.heading = pair('Більше Review Card для бізнесу','More Review Cards for your business');
-  result.copy.bulk.body = pair('Для стандартної Review Card і Branded Review Card від трьох штук підготуємо індивідуальний розрахунок. NFC Review Card 3D коштує 4 000 грн за кожну картку без знижки. Для Menu Card діє окрема оптова сітка.','Standard Review Card and Branded Review Card orders of three or more receive an individual quote. NFC Review Card 3D costs UAH 4,000 per card without a quantity discount. Menu Card has its own volume pricing.');
+  result.copy.bulk.heading = pair('Більше Google Review Card для бізнесу','More Review Cards for your business');
+  result.copy.bulk.body = pair('Для стандартної Google Review Card і Branded Review Card від трьох штук підготуємо індивідуальний розрахунок. NFC Review Card 3D коштує 4 000 грн за кожну картку без знижки. Для Menu Card діє окрема оптова сітка.','Standard Google Review Card and Branded Review Card orders of three or more receive an individual quote. NFC Review Card 3D costs UAH 4,000 per card without a quantity discount. Menu Card has its own volume pricing.');
   const faqAnswers={
-    destination:pair('Залежить від картки. Review Card, Branded Review Card і NFC Review Card 3D відкривають форму Google-відгуку конкретної локації. NFC Instagram Card відкриває Instagram-профіль, а NFC Menu Card — онлайн-меню закладу. Це окремі продукти; подальшу дію клієнт обирає сам.','It depends on the card. Review Card, Branded Review Card and NFC Review Card 3D open the Google review form for a specific location. NFC Instagram Card opens the Instagram profile, and NFC Menu Card opens the venue’s online menu. These are separate products; the customer chooses the next action.'),
-    dimensions:pair('Review Card та NFC Instagram Card — 10 × 10 см, товщина 3 мм. Menu Card — квадрат 10 × 10 або 6 × 6 см чи круг діаметром 7 см; товщина приблизно 3–4 мм. Точне виконання обирайте на сторінці товару.','Review Card and NFC Instagram Card are 10 × 10 cm and 3 mm thick. Menu Card comes as a 10 × 10 or 6 × 6 cm square or a 7 cm diameter circle, approximately 3–4 mm thick. Choose the format on the product page.'),
-    qr:pair('Стандартна Review Card, NFC Instagram Card і NFC Menu Card у цих пропозиціях не мають QR-коду. Персональний дизайн доступний для Branded Review Card, Branded Beauty Review Card Mini та Branded Restaurant Review Card Mini. QR-код для Branded Review Card можна погодити окремо. Instagram і Menu доступні у готових дизайнах.','The standard Review Card, NFC Instagram Card and NFC Menu Card in these offers do not have QR codes. Custom design is available for Branded Review Card, Branded Beauty Review Card Mini and Branded Restaurant Review Card Mini. A QR code for Branded Review Card can be agreed separately. Instagram and Menu cards use ready-made designs.'),
+    destination:pair('Залежить від картки. Google Review Card, Branded Review Card і NFC Review Card 3D відкривають форму Google-відгуку конкретної локації. NFC Instagram Card відкриває Instagram-профіль, а NFC Menu Card — онлайн-меню закладу. Це окремі продукти; подальшу дію клієнт обирає сам.','It depends on the card. Google Review Card, Branded Review Card and NFC Review Card 3D open the Google review form for a specific location. NFC Instagram Card opens the Instagram profile, and NFC Menu Card opens the venue’s online menu. These are separate products; the customer chooses the next action.'),
+    dimensions:pair('Google Review Card та NFC Instagram Card — 10 × 10 см, товщина 3 мм. Menu Card — квадрат 10 × 10 або 6 × 6 см чи круг діаметром 7 см; товщина приблизно 3–4 мм. Точне виконання обирайте на сторінці товару.','Google Review Card and NFC Instagram Card are 10 × 10 cm and 3 mm thick. Menu Card comes as a 10 × 10 or 6 × 6 cm square or a 7 cm diameter circle, approximately 3–4 mm thick. Choose the format on the product page.'),
+    qr:pair('Стандартна Google Review Card, NFC Instagram Card і NFC Menu Card у цих пропозиціях не мають QR-коду. Персональний дизайн доступний для Branded Review Card, Branded Beauty Review Card Mini та Branded Restaurant Review Card Mini. QR-код для Branded Review Card можна погодити окремо. Instagram і Menu доступні у готових дизайнах.','The standard Google Review Card, NFC Instagram Card and NFC Menu Card in these offers do not have QR codes. Custom design is available for Branded Review Card, Branded Beauty Review Card Mini and Branded Restaurant Review Card Mini. A QR code for Branded Review Card can be agreed separately. Instagram and Menu cards use ready-made designs.'),
     subscription:pair('Обов’язкової щомісячної плати за використання самих NFC-карток немає. Якщо потрібна розробка онлайн-меню, деталі обговорюємо на консультації.','There is no mandatory monthly fee for using the physical NFC cards themselves. If online-menu development is needed, we discuss the details in a consultation.'),
-    bulk:pair('Для Review Card і Branded Review Card від трьох штук — індивідуальний розрахунок. NFC Review Card 3D коштує 4 000 грн за кожну картку без знижки; передоплата 200 грн — один раз за замовлення та входить у суму. NFC Instagram Card у поточній пропозиції замовляється по одній або дві. Для Menu Card діє оптова сітка від 5, 10 і 25 штук; різні її виконання можна поєднувати. Оберіть потрібний товар у каталозі.','Review Card and Branded Review Card orders of three or more are quoted individually. NFC Review Card 3D costs UAH 4,000 per card without a quantity discount; the UAH 200 deposit is paid once per order and included in the total. The current NFC Instagram Card offer supports one or two cards. Menu Card has volume tiers at 5, 10 and 25 cards; its formats can be mixed. Choose the product in the catalog.'),
-    'change-link':pair('Для Review Card та Instagram Card посилання можна переписати зі сумісного смартфона. Якщо адреса онлайн-меню зміниться, зверніться до нас, щоб уточнити налаштування Menu Card.','For Review and Instagram cards, the link can be rewritten from a compatible smartphone. If your online-menu address changes, contact us to clarify Menu Card setup.'),
-    'lead-time':pair('Для стандартної Review Card та Instagram Card орієнтовно до п’яти робочих днів після погодження деталей. Строк виготовлення NFC Review Card 3D погоджуємо окремо до передоплати; строк підготовки Menu Card підтвердимо під час узгодження замовлення.','The standard Review Card and Instagram Card are normally prepared within five business days after approval. We agree the NFC Review Card 3D production timeline separately before the deposit and confirm Menu Card preparation time when agreeing the order.')
+    bulk:pair('Для Google Review Card і Branded Review Card від трьох штук — індивідуальний розрахунок. NFC Review Card 3D коштує 4 000 грн за кожну картку без знижки; передоплата 200 грн — один раз за замовлення та входить у суму. NFC Instagram Card у поточній пропозиції замовляється по одній або дві. Для Menu Card діє оптова сітка від 5, 10 і 25 штук; різні її виконання можна поєднувати. Оберіть потрібний товар у каталозі.','Google Review Card and Branded Review Card orders of three or more are quoted individually. NFC Review Card 3D costs UAH 4,000 per card without a quantity discount; the UAH 200 deposit is paid once per order and included in the total. The current NFC Instagram Card offer supports one or two cards. Menu Card has volume tiers at 5, 10 and 25 cards; its formats can be mixed. Choose the product in the catalog.'),
+    'change-link':pair('Для Google Review Card та Instagram Card посилання можна переписати зі сумісного смартфона. Якщо адреса онлайн-меню зміниться, зверніться до нас, щоб уточнити налаштування Menu Card.','For Review and Instagram cards, the link can be rewritten from a compatible smartphone. If your online-menu address changes, contact us to clarify Menu Card setup.'),
+    'lead-time':pair('Для стандартної Google Review Card та Instagram Card орієнтовно до п’яти робочих днів після погодження деталей. Строк виготовлення NFC Review Card 3D погоджуємо окремо до передоплати; строк підготовки Menu Card підтвердимо під час узгодження замовлення.','The standard Google Review Card and Instagram Card are normally prepared within five business days after approval. We agree the NFC Review Card 3D production timeline separately before the deposit and confirm Menu Card preparation time when agreeing the order.')
   };
   for(const faq of result.faqs)if(faqAnswers[faq.id])faq.answer=faqAnswers[faq.id];
   const bulkFaq=result.faqs.find(f=>f.id==='bulk');
@@ -1568,7 +1568,7 @@ export const caseTemplate = resolved.caseTemplate;
 export function validateModel(model = resolved) {
   validateInstagramContent({instagram,instagramGlobalFAQs,instagramProductFAQs});
   if (model.variants.length !== 2 || model.variants.map(v => v.id).join(',') !== 'standard,branded') throw new Error('Expected two variants of one card');
-  const expected = { standard: { '1': 1500, '2': 2600 }, branded: { '1': 2000, '2': 3600 } };
+  const expected = { standard: { '1': 1500, '2': 2600 }, branded: { '1': 2000, '2': 2600 } };
   for (const variant of model.variants) {
     if (JSON.stringify(variant.prices) !== JSON.stringify(expected[variant.id])) throw new Error('Canonical price mismatch');
     if (!variant.provenance || !variant.name || !variant.slot) throw new Error('Missing variant evidence');

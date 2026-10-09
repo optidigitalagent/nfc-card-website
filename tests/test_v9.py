@@ -20,7 +20,7 @@ def native(route, query=''):
     return BeautifulSoup(hydrate_native_form(source,route+query,load_commerce(),content),'html.parser')
 
 @pytest.mark.parametrize('prefix',['','/en'])
-@pytest.mark.parametrize('variant,prices',[('standard',{'1':1500,'2':2600}),('branded',{'1':2000,'2':3600})])
+@pytest.mark.parametrize('variant,prices',[('standard',{'1':1500,'2':2600}),('branded',{'1':2000,'2':2600})])
 @pytest.mark.parametrize('quantity',['1','2','more'])
 def test_native_pdp_and_lead_selection_agree(prefix,variant,prices,quantity):
     route=prefix+'/solutions/'+('branded-review-card' if variant=='branded' else 'review-card')
@@ -35,7 +35,7 @@ def test_native_pdp_and_lead_selection_agree(prefix,variant,prices,quantity):
         digits=''.join(c for c in summary.get_text() if c.isdigit())
         assert digits==str(prices[quantity]) if quantity in prices else not digits
     assert not form.select('select[name=variant]') and not page.select('.product-order')
-    assert page.h1.get_text()==('Review Card' if variant=='standard' else 'Branded Review Card')
+    assert page.h1.get_text()==('Google Review Card' if variant=='standard' else 'Branded Review Card')
 
 def test_native_links_carry_only_bounded_utm_and_source():
     page=native('/','?utm_campaign=synthetic&phone=%2B12025550123&source=https%3A%2F%2Fevil.test&variant=%22%3E%3Cscript%3E')
@@ -71,12 +71,12 @@ def test_snapshot_and_notification_keep_observation_separate(service):
     first=service.submit(data)
     retry=service.submit({**data,'displayed_price':'UAH 999,999'})
     lead=stored(service)
-    assert first['receipt']['quote']['amount']==3600
+    assert first['receipt']['quote']['amount']==2600
     assert retry['receipt']['duplicate'] and retry['receipt']['id']==first['receipt']['id']
     assert lead['displayed_price']=='UAH 0.01' and len(service.telegram.calls)==1
     message=telegram_message(first['receipt']['id'],0,lead)
     assert 'Displayed price (untrusted): UAH 0.01' in message
-    assert '3600' in message and '/solutions/review-card' in message and 'synthetic' in message
+    assert '2600' in message and '/solutions/review-card' in message and 'synthetic' in message
 
 def test_public_media_exact_allowlist_and_original_hashes():
     media=json.loads((ROOT/'src/media-manifest.json').read_text('utf-8'))
@@ -107,6 +107,12 @@ def test_public_media_exact_allowlist_and_original_hashes():
                      item['product_id'] in {'beauty-review-card','restaurant-review-card'} and
                      item['requirements_source']=='NFC_CARD_BEAUTY_RESTAURANT_IMPLEMENTATION_PACK_v29' and
                      item.get('managed_by')=='v29_niche_media_import') or
+                    (item['url'].startswith('/assets/media/niche-v33/') and
+                     item['product_id'] in {'beauty-review-card','restaurant-review-card'} and
+                     item['requirements_source']=='NFC_CARD_BEAUTY_RESTAURANT_IMPLEMENTATION_PACK_v29' and
+                     item.get('managed_by')=='v33_niche_crop' and
+                     item.get('derivative_of','').startswith('/assets/media/niche-v29/') and
+                     item.get('source_asset_id','').startswith(('BEAUTY','RESTAURANT'))) or
                     (item['url'].startswith('/assets/media/review-3d/') and
                      item['product_id']=='nfc-review-card-3d' and
                      item['requirements_source']=='NFC_CARD_Review_3D_Website_Pack_v1 + NFC_CARD_REVIEW_3D_MEDIA_MANIFEST_v26' and

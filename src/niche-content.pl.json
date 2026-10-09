@@ -4,7 +4,7 @@
   "products": {
     "beauty": {
       "name": "Beauty Review Card Mini",
-      "eyebrow": "DLA SALONÓW URODY · MINI · GOTOWY PROJEKT",
+      "eyebrow": "DLA BRANŻY BEAUTY · MINI · GOTOWY PROJEKT",
       "h1": "Beauty Review Card Mini",
       "catalog_description": "Gotowa różowa karta NFC Mini do opinii Google w salonie. Ustawiamy link do Twojej wizytówki Google; projekt pozostaje taki jak na zdjęciach.",
       "catalog_benefits": [
@@ -97,7 +97,7 @@
           "id": "specs",
           "heading": "Format Mini",
           "paragraphs": [
-            "To fizyczna karta NFC w formacie Mini. Dokładne wymiary i grubość potwierdzimy przed zamówieniem; parametry większej Branded Review Card nie przechodzą na Mini."
+            "Beauty Review Card Mini ma wymiary 6 × 6 cm. To fizyczna karta NFC; grubość i inne niepotwierdzone parametry ustalamy przed zamówieniem."
           ]
         },
         {
@@ -131,7 +131,7 @@
         },
         {
           "question": "Jakie wymiary ma Mini?",
-          "answer": "Dokładne wymiary i grubość Mini potwierdzimy przed zamówieniem. Parametry większej Branded Review Card nie przechodzą na Mini."
+          "answer": "Beauty Review Card Mini ma wymiary 6 × 6 cm. Grubość potwierdzimy przed zamówieniem."
         },
         {
           "question": "Czy można dodać kod QR?",
@@ -156,20 +156,20 @@
     },
     "brandedBeauty": {
       "name": "Branded Beauty Review Card Mini",
-      "eyebrow": "DLA SALONÓW URODY · MINI · TWÓJ PROJEKT",
+      "eyebrow": "DLA BRANŻY BEAUTY · MINI · TWÓJ PROJEKT",
       "h1": "Branded Beauty Review Card Mini",
-      "catalog_description": "Karta NFC Mini w stylu Twojego salonu. Bezpłatnie przygotujemy 3–4 wstępne warianty projektu, uzgodnimy wygląd i ustawimy link do Twojej wizytówki Google.",
+      "catalog_description": "Karta NFC Mini w stylu Twojego salonu. Bezpłatnie przygotujemy wstępne warianty projektu, uzgodnimy wygląd i ustawimy link do Twojej wizytówki Google.",
       "catalog_benefits": [
         "Twoje logo i styl marki.",
-        "3–4 wstępne warianty bezpłatnie.",
+        "wstępne warianty bezpłatnie.",
         "Podział nakładu między zaakceptowane projekty."
       ],
-      "lead": "Karta NFC Mini w stylu Twojego salonu. Bezpłatnie przygotujemy 3–4 wstępne warianty projektu, uzgodnimy wygląd i ustawimy link do Twojej wizytówki Google.",
-      "summary": "Prześlij logo oraz link do strony lub Instagrama, a także wskazówki dotyczące stylu i kolorów. Bezpłatnie przygotujemy 3–4 wstępne warianty projektu. Wybierzesz kierunek, zgłosisz potrzebne poprawki i zaakceptujesz finalny projekt przed produkcją. Materiały możesz przekazać teraz lub po pierwszym kontakcie.",
-      "cta_primary": "Poproś o 3–4 warianty projektu",
+      "lead": "Karta NFC Mini w stylu Twojego salonu. Bezpłatnie przygotujemy wstępne warianty projektu, uzgodnimy wygląd i ustawimy link do Twojej wizytówki Google.",
+      "summary": "Prześlij logo oraz link do strony lub Instagrama, a także wskazówki dotyczące stylu i kolorów. Bezpłatnie przygotujemy wstępne warianty projektu. Wybierzesz kierunek, zgłosisz potrzebne poprawki i zaakceptujesz finalny projekt przed produkcją. Materiały możesz przekazać teraz lub po pierwszym kontakcie.",
+      "cta_primary": "Poproś o warianty projektu",
       "cta_secondary": "Omów liczbę i rozmieszczenie",
-      "cta_sticky": "Poproś o 3–4 warianty projektu",
-      "cta_note": "3–4 wstępne warianty są bezpłatne. Zamówienie fizyczne potwierdzamy osobno.",
+      "cta_sticky": "Poproś o warianty projektu",
+      "cta_note": "wstępne warianty są bezpłatne. Zamówienie fizyczne potwierdzamy osobno.",
       "details_label": "Branded Beauty Review Card Mini",
       "sections": [
         {
@@ -221,21 +221,21 @@
           "id": "design_workflow",
           "heading": "Twój projekt: od wstępnych wariantów do akceptacji",
           "paragraphs": [
-            "Prześlij logo oraz link do strony lub Instagrama, a także wskazówki dotyczące stylu i kolorów. Bezpłatnie przygotujemy 3–4 wstępne warianty projektu. Wybierzesz kierunek, zgłosisz potrzebne poprawki i zaakceptujesz finalny projekt przed produkcją. Materiały możesz przekazać teraz lub po pierwszym kontakcie."
+            "Prześlij logo oraz link do strony lub Instagrama, a także wskazówki dotyczące stylu i kolorów. Bezpłatnie przygotujemy wstępne warianty projektu. Wybierzesz kierunek, zgłosisz potrzebne poprawki i zaakceptujesz finalny projekt przed produkcją. Materiały możesz przekazać teraz lub po pierwszym kontakcie."
           ]
         },
         {
           "id": "design_split",
           "heading": "Kilka projektów w jednym nakładzie",
           "paragraphs": [
-            "Jeden nakład można podzielić między zaakceptowane końcowe projekty. Na przykład 10 kart może powstać jako 5 + 5 w dwóch projektach bez zmiany ceny pakietu 10 kart. Projekty i poprawki uzgadniamy przed produkcją."
+            "Jeden nakład można podzielić między zaakceptowane projekty końcowe. Na przykład 10 kart może powstać jako 5 + 5 w dwóch projektach. Projekty, poprawki i indywidualną cenę uzgadniamy przed produkcją."
           ]
         },
         {
           "id": "included",
           "heading": "Co obejmuje zamówienie",
           "paragraphs": [
-            "Zamówienie obejmuje karty Mini w zaakceptowanym projekcie, ustawienie linku NFC do Twojej wizytówki Google, wskazówki dotyczące rozmieszczenia i krótką podpowiedź dla zespołu. Pierwsze 3–4 warianty projektu są bezpłatne."
+            "Zamówienie obejmuje karty Mini w zaakceptowanym projekcie, ustawienie linku NFC do Twojej wizytówki Google, wskazówki dotyczące rozmieszczenia i krótką podpowiedź dla zespołu. Pierwsze warianty projektu są bezpłatne."
           ]
         },
         {
@@ -256,14 +256,14 @@
           "id": "specs",
           "heading": "Format Mini",
           "paragraphs": [
-            "To fizyczna karta NFC w formacie Mini. Dokładne wymiary i grubość potwierdzimy przed zamówieniem; parametry większej Branded Review Card nie przechodzą na Mini."
+            "Beauty Review Card Mini ma wymiary 6 × 6 cm. To fizyczna karta NFC; grubość i inne niepotwierdzone parametry ustalamy przed zamówieniem."
           ]
         },
         {
           "id": "order_process",
           "heading": "Jak zamówić",
           "paragraphs": [
-            "Wyślij zapytanie z logo, linkiem do strony lub Instagrama i wskazówkami dotyczącymi stylu. Przygotujemy bezpłatnie 3–4 wstępne warianty; wybierzesz kierunek i zaakceptujesz finalny projekt. Liczbę kart, indywidualną cenę i termin uzgodnimy przed zaliczką 20 PLN wliczoną w cenę zamówienia."
+            "Wyślij zapytanie z logo, linkiem do strony lub Instagrama i wskazówkami dotyczącymi stylu. Przygotujemy bezpłatnie wstępne warianty; wybierzesz kierunek i zaakceptujesz finalny projekt. Liczbę kart, indywidualną cenę i termin uzgodnimy przed zaliczką 20 PLN wliczoną w cenę zamówienia."
           ]
         }
       ],
@@ -274,7 +274,7 @@
         },
         {
           "question": "Jak uzgadnia się projekt?",
-          "answer": "Prześlij logo, stronę lub Instagram oraz wskazówki dotyczące stylu. Przygotujemy bezpłatnie 3–4 wstępne warianty; wybierzesz kierunek, zgłosisz potrzebne poprawki i zatwierdzisz finalny projekt przed produkcją."
+          "answer": "Prześlij logo, stronę lub Instagram oraz wskazówki dotyczące stylu. Przygotujemy bezpłatnie wstępne warianty; wybierzesz kierunek, zgłosisz potrzebne poprawki i zatwierdzisz finalny projekt przed produkcją."
         },
         {
           "question": "Ile kart można zamówić?",
@@ -282,7 +282,7 @@
         },
         {
           "question": "Czy w jednym nakładzie mogą być różne projekty?",
-          "answer": "Tak, po zatwierdzeniu projektów końcowych. Na przykład 10 kart można podzielić 5 + 5 między dwa projekty bez zmiany ceny pakietu 10 kart."
+          "answer": "Tak, po zatwierdzeniu projektów końcowych. Na przykład 10 kart można podzielić 5 + 5 między dwa projekty; cenę takiego zamówienia ustalamy indywidualnie."
         },
         {
           "question": "Kiedy wpłaca się zaliczkę?",
@@ -294,7 +294,7 @@
         },
         {
           "question": "Jakie wymiary ma Mini?",
-          "answer": "Dokładne wymiary i grubość Mini potwierdzimy przed zamówieniem. Parametry większej Branded Review Card nie przechodzą na Mini."
+          "answer": "Beauty Review Card Mini ma wymiary 6 × 6 cm. Grubość potwierdzimy przed zamówieniem."
         },
         {
           "question": "Czy można dodać kod QR?",
@@ -308,18 +308,18 @@
         "target": "/solutions/instagram-card"
       },
       "final_heading": "Omów Branded Mini",
-      "final_body": "Prześlij logo oraz link do strony lub Instagrama, a także wskazówki dotyczące stylu i kolorów. Bezpłatnie przygotujemy 3–4 wstępne warianty projektu. Wybierzesz kierunek, zgłosisz potrzebne poprawki i zaakceptujesz finalny projekt przed produkcją. Materiały możesz przekazać teraz lub po pierwszym kontakcie.",
+      "final_body": "Prześlij logo oraz link do strony lub Instagrama, a także wskazówki dotyczące stylu i kolorów. Bezpłatnie przygotujemy wstępne warianty projektu. Wybierzesz kierunek, zgłosisz potrzebne poprawki i zaakceptujesz finalny projekt przed produkcją. Materiały możesz przekazać teraz lub po pierwszym kontakcie.",
       "form_heading": "Omów Branded Mini",
-      "form_intro": "Zostaw dane kontaktowe. Materiały marki możesz przesłać teraz lub później; przygotujemy 3–4 wstępne warianty bezpłatnie.",
+      "form_intro": "Zostaw dane kontaktowe. Materiały marki możesz przesłać teraz lub później; przygotujemy wstępne warianty bezpłatnie.",
       "form_submit": "Poproś o warianty projektu",
       "form_success_heading": "Branded Beauty Review Card Mini",
       "form_success_body": "Otrzymaliśmy zapytanie. Napiszemy, aby potwierdzić wizytówkę Google, liczbę kart i warunki. Nie jest to jeszcze potwierdzone zamówienie fizyczne.",
       "seo_title": "Branded Beauty Review Card Mini | NFC CARD",
-      "seo_description": "Branded Mini do opinii Google: styl Twojej marki, 3–4 bezpłatne wstępne warianty i akceptacja finalnego projektu."
+      "seo_description": "Branded Mini do opinii Google: styl Twojej marki, bezpłatne wstępne warianty i akceptacja finalnego projektu."
     },
     "restaurant": {
       "name": "Restaurant Review Card Mini",
-      "eyebrow": "DLA RESTAURACJI · MINI · GOTOWY PROJEKT",
+      "eyebrow": "DLA HORECA · MINI · GOTOWY PROJEKT",
       "h1": "Restaurant Review Card Mini",
       "catalog_description": "Gotowa zielona karta NFC Mini do opinii Google w restauracji. Można postawić ją na stoliku albo podać z rachunkiem; ustawiamy link do Twojej wizytówki Google.",
       "catalog_benefits": [
@@ -426,7 +426,7 @@
           "id": "specs",
           "heading": "Format Mini",
           "paragraphs": [
-            "To fizyczna karta NFC w formacie Mini. Dokładne wymiary i grubość potwierdzimy przed zamówieniem; parametry większej Branded Review Card nie przechodzą na Mini."
+            "To fizyczna karta NFC w formacie Mini. Wymiary i grubość ustalamy przed zamówieniem; parametry większej Branded Review Card nie przechodzą na Mini."
           ]
         },
         {
@@ -460,7 +460,7 @@
         },
         {
           "question": "Jakie wymiary ma Mini?",
-          "answer": "Dokładne wymiary i grubość Mini potwierdzimy przed zamówieniem. Parametry większej Branded Review Card nie przechodzą na Mini."
+          "answer": "Wymiary i grubość Restaurant Review Card Mini potwierdzimy przed zamówieniem; wartości liczbowe nie zostały jeszcze zatwierdzone."
         },
         {
           "question": "Czy można dodać kod QR?",
@@ -485,20 +485,20 @@
     },
     "brandedRestaurant": {
       "name": "Branded Restaurant Review Card Mini",
-      "eyebrow": "DLA RESTAURACJI · MINI · TWÓJ PROJEKT",
+      "eyebrow": "DLA HORECA · MINI · TWÓJ PROJEKT",
       "h1": "Branded Restaurant Review Card Mini",
-      "catalog_description": "Karta NFC Mini dla restauracji z Twoim logo i identyfikacją wizualną. Bezpłatnie przygotujemy 3–4 wstępne warianty i uzgodnimy końcowy projekt.",
+      "catalog_description": "Karta NFC Mini dla restauracji z Twoim logo i identyfikacją wizualną. Bezpłatnie przygotujemy wstępne warianty i uzgodnimy końcowy projekt.",
       "catalog_benefits": [
         "Logo i styl Twojej restauracji.",
-        "3–4 wstępne warianty bezpłatnie.",
+        "wstępne warianty bezpłatnie.",
         "Podział nakładu między zaakceptowane projekty."
       ],
-      "lead": "Karta NFC Mini dla restauracji z Twoim logo i identyfikacją wizualną. Bezpłatnie przygotujemy 3–4 wstępne warianty i uzgodnimy końcowy projekt.",
-      "summary": "Prześlij logo oraz link do strony lub Instagrama, a także wskazówki dotyczące stylu i kolorów. Bezpłatnie przygotujemy 3–4 wstępne warianty projektu. Wybierzesz kierunek, zgłosisz potrzebne poprawki i zaakceptujesz finalny projekt przed produkcją. Materiały możesz przekazać teraz lub po pierwszym kontakcie.",
-      "cta_primary": "Poproś o 3–4 warianty projektu",
+      "lead": "Karta NFC Mini dla restauracji z Twoim logo i identyfikacją wizualną. Bezpłatnie przygotujemy wstępne warianty i uzgodnimy końcowy projekt.",
+      "summary": "Prześlij logo oraz link do strony lub Instagrama, a także wskazówki dotyczące stylu i kolorów. Bezpłatnie przygotujemy wstępne warianty projektu. Wybierzesz kierunek, zgłosisz potrzebne poprawki i zaakceptujesz finalny projekt przed produkcją. Materiały możesz przekazać teraz lub po pierwszym kontakcie.",
+      "cta_primary": "Poproś o warianty projektu",
       "cta_secondary": "Omów liczbę i rozmieszczenie",
-      "cta_sticky": "Poproś o 3–4 warianty projektu",
-      "cta_note": "3–4 wstępne warianty są bezpłatne. Zamówienie fizyczne potwierdzamy osobno.",
+      "cta_sticky": "Poproś o warianty projektu",
+      "cta_note": "wstępne warianty są bezpłatne. Zamówienie fizyczne potwierdzamy osobno.",
       "details_label": "Branded Restaurant Review Card Mini",
       "sections": [
         {
@@ -564,21 +564,21 @@
           "id": "design_workflow",
           "heading": "Twój projekt: od wstępnych wariantów do akceptacji",
           "paragraphs": [
-            "Prześlij logo oraz link do strony lub Instagrama, a także wskazówki dotyczące stylu i kolorów. Bezpłatnie przygotujemy 3–4 wstępne warianty projektu. Wybierzesz kierunek, zgłosisz potrzebne poprawki i zaakceptujesz finalny projekt przed produkcją. Materiały możesz przekazać teraz lub po pierwszym kontakcie."
+            "Prześlij logo oraz link do strony lub Instagrama, a także wskazówki dotyczące stylu i kolorów. Bezpłatnie przygotujemy wstępne warianty projektu. Wybierzesz kierunek, zgłosisz potrzebne poprawki i zaakceptujesz finalny projekt przed produkcją. Materiały możesz przekazać teraz lub po pierwszym kontakcie."
           ]
         },
         {
           "id": "design_split",
           "heading": "Kilka projektów w jednym nakładzie",
           "paragraphs": [
-            "Jeden nakład można podzielić między zaakceptowane końcowe projekty. Na przykład 10 kart może powstać jako 5 + 5 w dwóch projektach bez zmiany ceny pakietu 10 kart. Projekty i poprawki uzgadniamy przed produkcją."
+            "Jeden nakład można podzielić między zaakceptowane projekty końcowe. Na przykład 10 kart może powstać jako 5 + 5 w dwóch projektach. Projekty, poprawki i indywidualną cenę uzgadniamy przed produkcją."
           ]
         },
         {
           "id": "included",
           "heading": "Co obejmuje zamówienie",
           "paragraphs": [
-            "Zamówienie obejmuje karty Mini w zaakceptowanym projekcie, ustawienie linku NFC do Twojej wizytówki Google, wskazówki dotyczące rozmieszczenia i krótką podpowiedź dla zespołu. Pierwsze 3–4 warianty projektu są bezpłatne."
+            "Zamówienie obejmuje karty Mini w zaakceptowanym projekcie, ustawienie linku NFC do Twojej wizytówki Google, wskazówki dotyczące rozmieszczenia i krótką podpowiedź dla zespołu. Pierwsze warianty projektu są bezpłatne."
           ]
         },
         {
@@ -599,14 +599,14 @@
           "id": "specs",
           "heading": "Format Mini",
           "paragraphs": [
-            "To fizyczna karta NFC w formacie Mini. Dokładne wymiary i grubość potwierdzimy przed zamówieniem; parametry większej Branded Review Card nie przechodzą na Mini."
+            "To fizyczna karta NFC w formacie Mini. Wymiary i grubość ustalamy przed zamówieniem; parametry większej Branded Review Card nie przechodzą na Mini."
           ]
         },
         {
           "id": "order_process",
           "heading": "Jak zamówić",
           "paragraphs": [
-            "Wyślij zapytanie z logo, linkiem do strony lub Instagrama i wskazówkami dotyczącymi stylu. Przygotujemy bezpłatnie 3–4 wstępne warianty; wybierzesz kierunek i zaakceptujesz finalny projekt. Liczbę kart, indywidualną cenę i termin uzgodnimy przed zaliczką 20 PLN wliczoną w cenę zamówienia."
+            "Wyślij zapytanie z logo, linkiem do strony lub Instagrama i wskazówkami dotyczącymi stylu. Przygotujemy bezpłatnie wstępne warianty; wybierzesz kierunek i zaakceptujesz finalny projekt. Liczbę kart, indywidualną cenę i termin uzgodnimy przed zaliczką 20 PLN wliczoną w cenę zamówienia."
           ]
         }
       ],
@@ -617,7 +617,7 @@
         },
         {
           "question": "Jak uzgadnia się projekt?",
-          "answer": "Prześlij logo, stronę lub Instagram oraz wskazówki dotyczące stylu. Przygotujemy bezpłatnie 3–4 wstępne warianty; wybierzesz kierunek, zgłosisz potrzebne poprawki i zatwierdzisz finalny projekt przed produkcją."
+          "answer": "Prześlij logo, stronę lub Instagram oraz wskazówki dotyczące stylu. Przygotujemy bezpłatnie wstępne warianty; wybierzesz kierunek, zgłosisz potrzebne poprawki i zatwierdzisz finalny projekt przed produkcją."
         },
         {
           "question": "Ile kart można zamówić?",
@@ -625,7 +625,7 @@
         },
         {
           "question": "Czy w jednym nakładzie mogą być różne projekty?",
-          "answer": "Tak, po zatwierdzeniu projektów końcowych. Na przykład 10 kart można podzielić 5 + 5 między dwa projekty bez zmiany ceny pakietu 10 kart."
+          "answer": "Tak, po zatwierdzeniu projektów końcowych. Na przykład 10 kart można podzielić 5 + 5 między dwa projekty; cenę takiego zamówienia ustalamy indywidualnie."
         },
         {
           "question": "Kiedy wpłaca się zaliczkę?",
@@ -637,7 +637,7 @@
         },
         {
           "question": "Jakie wymiary ma Mini?",
-          "answer": "Dokładne wymiary i grubość Mini potwierdzimy przed zamówieniem. Parametry większej Branded Review Card nie przechodzą na Mini."
+          "answer": "Wymiary i grubość Restaurant Review Card Mini potwierdzimy przed zamówieniem; wartości liczbowe nie zostały jeszcze zatwierdzone."
         },
         {
           "question": "Czy można dodać kod QR?",
@@ -651,14 +651,14 @@
         "target": "/solutions/menu-card"
       },
       "final_heading": "Omów Branded Mini",
-      "final_body": "Prześlij logo oraz link do strony lub Instagrama, a także wskazówki dotyczące stylu i kolorów. Bezpłatnie przygotujemy 3–4 wstępne warianty projektu. Wybierzesz kierunek, zgłosisz potrzebne poprawki i zaakceptujesz finalny projekt przed produkcją. Materiały możesz przekazać teraz lub po pierwszym kontakcie.",
+      "final_body": "Prześlij logo oraz link do strony lub Instagrama, a także wskazówki dotyczące stylu i kolorów. Bezpłatnie przygotujemy wstępne warianty projektu. Wybierzesz kierunek, zgłosisz potrzebne poprawki i zaakceptujesz finalny projekt przed produkcją. Materiały możesz przekazać teraz lub po pierwszym kontakcie.",
       "form_heading": "Omów Branded Mini",
-      "form_intro": "Zostaw dane kontaktowe. Materiały marki możesz przesłać teraz lub później; przygotujemy 3–4 wstępne warianty bezpłatnie.",
+      "form_intro": "Zostaw dane kontaktowe. Materiały marki możesz przesłać teraz lub później; przygotujemy wstępne warianty bezpłatnie.",
       "form_submit": "Poproś o warianty projektu",
       "form_success_heading": "Branded Restaurant Review Card Mini",
       "form_success_body": "Otrzymaliśmy zapytanie. Napiszemy, aby potwierdzić wizytówkę Google, liczbę kart i warunki. Nie jest to jeszcze potwierdzone zamówienie fizyczne.",
       "seo_title": "Branded Restaurant Review Card Mini | NFC CARD",
-      "seo_description": "Branded Mini do opinii Google: styl Twojej marki, 3–4 bezpłatne wstępne warianty i akceptacja finalnego projektu."
+      "seo_description": "Branded Mini do opinii Google: styl Twojej marki, bezpłatne wstępne warianty i akceptacja finalnego projektu."
     }
   },
   "shared": {
@@ -675,7 +675,7 @@
     "price_note": "Ceny wszystkich czterech produktów Mini w Polsce ustalamy indywidualnie przed zamówieniem. Zaliczka 20 PLN jest płatna raz po uzgodnieniu zamówienia fizycznego i wliczona w cenę.",
     "delivery_short": "Wysyłka z Ukrainy. Dostawa płatna osobno przez klienta.",
     "payment_heading": "Płatność i dostawa",
-    "payment_body": "Cenę kart Mini ustalamy indywidualnie. Zamówienie wysyłamy z Ukrainy. Koszt i sposób dostawy potwierdzamy przed wpłatą zaliczki. Koszt dostawy pokrywa klient i nie jest on wliczony w cenę kart. Po uzgodnieniu fizycznego zamówienia wpłacasz zaliczkę 20 PLN raz za całe zamówienie; jest wliczona w cenę kart. Pozostałą kwotę płacisz po wysyłce i otrzymaniu potwierdzenia nadania oraz numeru przesyłki. Termin wykonania uzgadniamy przed zaliczką. Zapytanie i konsultacja są bezpłatne. Dla Branded Mini przygotowujemy bezpłatnie 3–4 wstępne warianty projektu, bez obowiązku zamówienia kart.",
+    "payment_body": "Cenę kart Mini ustalamy indywidualnie. Zamówienie wysyłamy z Ukrainy. Koszt i sposób dostawy potwierdzamy przed wpłatą zaliczki. Koszt dostawy pokrywa klient i nie jest on wliczony w cenę kart. Po uzgodnieniu fizycznego zamówienia wpłacasz zaliczkę 20 PLN raz za całe zamówienie; jest wliczona w cenę kart. Pozostałą kwotę płacisz po wysyłce i otrzymaniu potwierdzenia nadania oraz numeru przesyłki. Termin wykonania uzgadniamy przed zaliczką. Zapytanie i konsultacja są bezpłatne. Dla Branded Mini przygotowujemy bezpłatnie wstępne warianty projektu, bez obowiązku zamówienia kart.",
     "other_markets": "Koszt dostawy do innych krajów i przewoźnika ustalamy indywidualnie przed płatnością.",
     "proof_heading": "Od materiałów marki do gotowej karty",
     "proof_body": "NFC CARD zamawiały już lokalne firmy z różnych branż, między innymi pracownia ceramiczna Glynar w Kijowie oraz salony samochodowe Ford i MG „Velet Avto” we Lwowie. Dla Velet Avto otrzymaliśmy materiały marek, przygotowaliśmy warianty projektu, uzgodniliśmy wygląd, a następnie wykonaliśmy i skonfigurowaliśmy karty. Ten przykład pokazuje nasz proces personalizacji i przygotowania zamówienia.",
@@ -697,9 +697,9 @@
     "home_restaurant_cta": "Restaurant Review Card Mini",
     "problem_addition": "W salonie prośba o opinię może zniknąć między zakończeniem zabiegu a wyjściem klienta. W restauracji — między słowami kelnera a działaniem gościa. Branżowe Review Card ułatwiają otwarcie formularza właśnie w tym momencie.",
     "how_addition": "W salonie klient korzysta z karty przy stanowisku lub w recepcji. W restauracji — na stoliku lub z rachunkiem. Przejście NFC jest takie samo: zgodny smartfon → zaproponowany link → formularz opinii właściwej wizytówki Google.",
-    "facts_addition": "Beauty i Restaurant Review Card Mini mają odrębny format fizyczny Mini. Wersje gotowe zachowują projekt ze zdjęć; Branded Mini powstaje według zaakceptowanego projektu. Dokładne wymiary i grubość potwierdzamy przed zamówieniem.",
-    "included_addition": "Wszystkie karty Mini dla salonów i restauracji kierują do właściwej wizytówki Google oraz obejmują wskazówki rozmieszczenia i krótką podpowiedź dla zespołu. Branded Mini obejmuje 3–4 bezpłatne wstępne warianty projektu.",
-    "process_addition": "Dla gotowej Mini potwierdzamy wizytówkę Google, liczbę kart i wycenę. Dla Branded Mini zbieramy logo, stronę lub Instagram i styl, przedstawiamy 3–4 wstępne warianty i zatwierdzamy finalny projekt przed produkcją.",
+    "facts_addition": "Beauty Review Card Mini ma wymiary 6 × 6 cm. Wymiary Restaurant Mini potwierdzamy przed zamówieniem. Wersje gotowe zachowują projekt ze zdjęć; Branded Mini powstaje według zaakceptowanego projektu.",
+    "included_addition": "Wszystkie karty Mini dla salonów i restauracji kierują do właściwej wizytówki Google oraz obejmują wskazówki rozmieszczenia i krótką podpowiedź dla zespołu. Branded Mini obejmuje bezpłatne wstępne warianty projektu.",
+    "process_addition": "Dla gotowej Mini potwierdzamy wizytówkę Google, liczbę kart i wycenę. Dla Branded Mini zbieramy logo, stronę lub Instagram i styl, przedstawiamy wstępne warianty i zatwierdzamy finalny projekt przed produkcją.",
     "bulk_heading": "Kilka kart w kilku odpowiednich miejscach",
     "bulk_body": "Karty można umieścić przy stanowiskach i w recepcji albo na stolikach i przy rachunku. Cenę gotowej i Branded Mini w Polsce wyceniamy indywidualnie dla każdej uzgodnionej liczby kart.",
     "bulk_cta": "Omów liczbę i rozmieszczenie",
@@ -720,7 +720,7 @@
     "contact_intro": "Pomożemy wybrać kartę NFC do opinii Google, Instagrama lub menu online. Dla salonów i restauracji jest gotowa Mini i Branded Mini; konsultacja jest bezpłatna.",
     "contact_prompt": "Dla salonu lub restauracji wybierz gotową albo Branded Mini, abyśmy uwzględnili właściwy projekt i zastosowanie.",
     "delivery_addition": "Gotowe Beauty i Restaurant Review Card Mini zachowują stały projekt; Branded Mini powstaje według zaakceptowanego wzoru. Liczbę kart, indywidualną cenę, termin i dostawę uzgadniamy przed zaliczką. Zaliczka 20 PLN jest wliczona w cenę potwierdzonego zamówienia fizycznego.",
-    "terms_addition": "Zapytanie i konsultacja nie są płatnością ani automatycznym potwierdzeniem zamówienia. Dla Branded Mini przygotowujemy bezpłatnie 3–4 wstępne warianty; finalny projekt, liczbę kart, cenę, termin i dostawę uzgadniamy przed produkcją.",
+    "terms_addition": "Zapytanie i konsultacja nie są płatnością ani automatycznym potwierdzeniem zamówienia. Dla Branded Mini przygotowujemy bezpłatnie wstępne warianty; finalny projekt, liczbę kart, cenę, termin i dostawę uzgadniamy przed produkcją.",
     "warranty_addition": "W sprawie NFC, wad i zwrotów skontaktuj się z nami przez stronę. Zasady zwrotu spersonalizowanej Branded Mini i koszty przesyłki uzgadniamy przed płatnością.",
     "privacy_addition": "W zapytaniu Mini przekazujemy wybrany produkt dla salonu lub restauracji, gotowy albo Branded wzór oraz rodzaj zapytania. Liczbę kart przekazujemy tylko przy zapytaniu o fizyczne zamówienie; porada lub bezpłatne projekty nie oznaczają zakupu. Dla Branded Mini, jeśli je podasz, przekazujemy też opis logo, stronę lub Instagram, preferencje stylu i uwagi o podziale nakładu między zaakceptowane projekty. Zgoda na obsługę zapytania nie oznacza zgody na wiadomości marketingowe.",
     "footer_description": "Karty NFC do opinii Google, Instagrama i menu online. Gotowe i personalizowane karty Mini dla salonów i restauracji.",
@@ -739,11 +739,11 @@
       },
       {
         "question": "Jak uzgadnia się projekt?",
-        "answer": "Prześlij logo, stronę lub Instagram oraz wskazówki dotyczące stylu. Przygotujemy bezpłatnie 3–4 wstępne warianty; wybierzesz kierunek, zgłosisz potrzebne poprawki i zatwierdzisz finalny projekt przed produkcją."
+        "answer": "Prześlij logo, stronę lub Instagram oraz wskazówki dotyczące stylu. Przygotujemy bezpłatnie wstępne warianty; wybierzesz kierunek, zgłosisz potrzebne poprawki i zatwierdzisz finalny projekt przed produkcją."
       },
       {
         "question": "Ile kart można zamówić?",
-        "answer": "Liczbę kart dobieramy do zastosowania. Każdą ilość Mini w Polsce wyceniamy indywidualnie przed zamówieniem."
+        "answer": "W Polsce każdą liczbę kart Mini wyceniamy indywidualnie przed potwierdzeniem zamówienia."
       },
       {
         "question": "Kiedy wpłaca się zaliczkę?",
@@ -768,7 +768,7 @@
       ],
       "quantity_help": "Nie wiesz, ile kart wybrać? Poproś o poradę — dobierzemy liczbę do rozmieszczenia.",
       "materials_hint": "Dla Branded Mini podaj logo, stronę lub Instagram i styl teraz albo później. Dla gotowej Mini potrzebna jest wizytówka Google.",
-      "free_request_note": "Zapytanie jest bezpłatne. Branded Mini obejmuje 3–4 bezpłatne warianty wstępne. Zaliczka 20 PLN dotyczy tylko potwierdzonego zamówienia fizycznego i jest wliczona w cenę.",
+      "free_request_note": "Zapytanie jest bezpłatne. Branded Mini obejmuje bezpłatne warianty wstępne. Zaliczka 20 PLN dotyczy tylko potwierdzonego zamówienia fizycznego i jest wliczona w cenę.",
       "phone_help": "Numer wykorzystamy wyłącznie do kontaktu w sprawie zapytania.",
       "consent": "Akceptuję Politykę prywatności i przetwarzanie danych w celu odpowiedzi na zapytanie.",
       "sending": "Wysyłamy zapytanie…",

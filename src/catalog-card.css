@@ -1,0 +1,33 @@
+/* v33 shared external product-card geometry; the existing graphite system supplies colours. */
+.header-actions>.header-order-cta,.mobile-menu .header-order-cta{min-height:48px;height:48px;padding:10px 17px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;line-height:1.15}
+.catalog .product-rows{align-items:stretch}
+.catalog-card{grid-template-columns:minmax(0,43%) minmax(0,57%);min-height:552px}
+.catalog-card .catalog-card-media{height:100%;max-height:none;overflow:hidden}
+.catalog-card .catalog-card-media>picture{width:100%;height:100%;display:block}
+.catalog-card .catalog-product-image{width:100%;height:100%;max-height:none;aspect-ratio:auto;object-fit:contain;object-position:center}
+.catalog-card.niche-card .catalog-product-image{max-height:none;object-fit:contain}
+.catalog-card .branded-concept{width:100%;height:100%;min-height:0}
+.catalog-card .catalog-card-copy{display:grid;grid-template-rows:auto auto auto minmax(0,1fr) auto auto;align-content:stretch;align-items:start;gap:10px;padding:clamp(24px,2.8vw,38px)}
+.catalog-card .catalog-card-copy>.eyebrow,.catalog-card .catalog-card-copy>h2,.catalog-card .catalog-card-copy>p,.catalog-card .catalog-card-copy>.catalog-card-proof,.catalog-card .catalog-card-copy>.catalog-card-prices{margin:0}
+.catalog-card .catalog-card-copy>h2{font-size:clamp(1.5rem,2.5vw,2.25rem);line-height:1.13}
+.catalog-card .commerce-card-link::after{content:none}
+.catalog-card .catalog-card-description{line-height:1.45;max-width:62ch}
+.catalog-card .catalog-card-proof{font-size:.88rem;color:var(--muted);line-height:1.45;min-width:0}
+.catalog-card .catalog-card-proof p,.catalog-card .catalog-card-proof ul{margin:0}
+.catalog-card .catalog-card-proof ul{padding-left:20px}
+.catalog-card .catalog-card-prices{align-self:end;width:100%;gap:20px}
+.catalog-card .catalog-card-prices dd{font-size:clamp(1.1rem,1.8vw,1.4rem)}
+.catalog-card .catalog-card-actions{display:flex;align-items:center;gap:20px;width:100%;min-height:48px;margin-top:4px}
+.catalog-card .catalog-card-actions>.button{position:relative;z-index:1;min-height:48px;display:inline-flex;align-items:center;justify-content:center;text-align:center;max-width:65%}
+.catalog-card .catalog-card-actions>.text-action{position:relative;z-index:1;min-height:44px;display:inline-flex;align-items:center}
+.catalog-card .commerce-card-link:focus-visible,.catalog-card .catalog-card-actions a:focus-visible{outline:3px solid #555c64;outline-offset:3px}
+.catalog-card.review3d-card .catalog-card-copy{gap:10px}
+.catalog-card.review3d-card .catalog-card-prices dd{font-size:clamp(1.1rem,1.8vw,1.4rem)}
+.catalog-card.review3d-card .catalog-product-image{object-fit:contain}
+@media(max-width:768px){.catalog-card{display:grid;grid-template-columns:1fr;min-height:0}.catalog-card .catalog-card-media{height:auto;aspect-ratio:1;max-height:none}.catalog-card .catalog-product-image,.catalog-card.niche-card .catalog-product-image{height:100%;max-height:none;aspect-ratio:auto;object-fit:contain}.catalog-card .catalog-card-copy{padding:24px;grid-template-rows:auto auto auto minmax(0,1fr) auto auto}.catalog-card .catalog-card-actions{flex-wrap:wrap}.catalog-card .catalog-card-actions>.button{max-width:none;flex:1 1 180px}}
+@media(max-width:430px){.catalog-card .catalog-card-media{height:auto;aspect-ratio:1}.catalog-card .catalog-card-copy{padding:20px}.catalog-card .catalog-card-actions>.button{width:100%}}
+@media(prefers-reduced-motion:reduce){.catalog-card,.catalog-card *,.header-order-cta{transition:none!important;animation:none!important}}
+@media(max-width:600px){.header-actions>.header-order-cta{display:inline-flex}.header-actions>.locale{display:none}.header-inner{gap:6px}.header-actions{gap:6px}.header .brand{width:clamp(135px,40vw,176px)}}
+@media(max-width:359px){.header-inner{padding-inline:12px}.header .brand{width:135px}.header-actions>.header-order-cta{padding-inline:10px}.header-actions{gap:4px}}
+@media(min-width:769px){.catalog-card .catalog-card-media{position:relative;min-height:0}.catalog-card .catalog-card-media>picture,.catalog-card .catalog-card-media>img,.catalog-card .catalog-card-media>.branded-concept{position:absolute;inset:0;width:100%;height:100%}.catalog-card .catalog-card-media>picture>img{width:100%;height:100%}}
+@media(min-width:601px) and (max-width:768px){.catalog-card .catalog-card-media{height:360px;aspect-ratio:auto}}

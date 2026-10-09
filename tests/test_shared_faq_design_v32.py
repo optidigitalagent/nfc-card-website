@@ -21,19 +21,19 @@ PRODUCTS = {
     "menu-card",
 }
 EXPECTED_ANSWERS = {
-    "uk": "Стандартна Review Card, NFC Instagram Card і NFC Menu Card у цих пропозиціях не мають QR-коду. Персональний дизайн доступний для Branded Review Card, Branded Beauty Review Card Mini та Branded Restaurant Review Card Mini. QR-код для Branded Review Card можна погодити окремо. Instagram і Menu доступні у готових дизайнах.",
-    "en": "The standard Review Card, NFC Instagram Card and NFC Menu Card in these offers do not have QR codes. Custom design is available for Branded Review Card, Branded Beauty Review Card Mini and Branded Restaurant Review Card Mini. A QR code for Branded Review Card can be agreed separately. Instagram and Menu cards use ready-made designs.",
-    "pl": "Standardowa Review Card, NFC Instagram Card i NFC Menu Card w tych ofertach nie mają kodu QR. Indywidualny projekt jest dostępny dla Branded Review Card, Branded Beauty Review Card Mini i Branded Restaurant Review Card Mini. Dodanie kodu QR do Branded Review Card można uzgodnić osobno. Karty Instagram i Menu mają gotowe projekty.",
+    "uk": "Стандартна Google Review Card, NFC Instagram Card і NFC Menu Card у цих пропозиціях не мають QR-коду. Персональний дизайн доступний для Branded Review Card, Branded Beauty Review Card Mini та Branded Restaurant Review Card Mini. QR-код для Branded Review Card можна погодити окремо. Instagram і Menu доступні у готових дизайнах.",
+    "en": "The standard Google Review Card, NFC Instagram Card and NFC Menu Card in these offers do not have QR codes. Custom design is available for Branded Review Card, Branded Beauty Review Card Mini and Branded Restaurant Review Card Mini. A QR code for Branded Review Card can be agreed separately. Instagram and Menu cards use ready-made designs.",
+    "pl": "Standardowa Google Review Card, NFC Instagram Card i NFC Menu Card w tych ofertach nie mają kodu QR. Indywidualny projekt jest dostępny dla Branded Review Card, Branded Beauty Review Card Mini i Branded Restaurant Review Card Mini. Dodanie kodu QR do Branded Review Card można uzgodnić osobno. Karty Instagram i Menu mają gotowe projekty.",
 }
 PRICES = {
     "uk": {
-        "review-card": (1500, 2600), "branded-review-card": (2000, 3600),
+        "review-card": (1500, 2600), "branded-review-card": (2000, 2600),
         "instagram-card": (1500, 2600), "review-card-3d": (4000,),
         "menu-card": (1000,),
-        "beauty-review-card": (900, 1440, 2600, 4400),
-        "restaurant-review-card": (900, 1440, 2600, 4400),
-        "branded-beauty-review-card": (900, 1800, 3000, 5000),
-        "branded-restaurant-review-card": (900, 1800, 3000, 5000),
+        "beauty-review-card": (800, 1400),
+        "restaurant-review-card": (),
+        "branded-beauty-review-card": (800, 1600),
+        "branded-restaurant-review-card": (),
     },
     "pl": {
         "review-card": (129, 219), "branded-review-card": (169, 299),

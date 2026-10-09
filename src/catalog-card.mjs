@@ -1,0 +1,4 @@
+// Shared anatomy for every external catalog product card.
+export function catalogCard({className='',attributes='',media,eyebrow,title,href,titleAttributes='',description,proof,prices,primary,secondary}){
+ return `<article class="commerce-card catalog-card ${className}" ${attributes}><div class="commerce-card-media catalog-card-media">${media}</div><div class="commerce-card-copy catalog-card-copy"><p class="eyebrow catalog-card-eyebrow">${eyebrow}</p><h2><a class="commerce-card-link" href="${href}" ${titleAttributes}>${title}</a></h2><p class="catalog-card-description">${description}</p><div class="catalog-card-proof">${proof}</div><dl class="commerce-card-prices catalog-card-prices">${prices}</dl><div class="catalog-card-actions"><a class="button" href="${primary.href}" ${primary.attributes||''}>${primary.label}</a><a class="text-action" href="${secondary.href}" ${secondary.attributes||''}>${secondary.label}</a></div></div></article>`;
+}

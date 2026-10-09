@@ -115,7 +115,7 @@ export function leadPayload(input, {basePath = '', pathname, utm = {}}) {
   const miniQuantity=miniPhysical?(input.quantity==='other'?Number(input.customQuantity):Number(input.quantity)):null;
   if(mini&&(miniConcepts&&mini.designMode!=='branded'||miniPhysical&&(!Number.isSafeInteger(miniQuantity)||miniQuantity<1||miniQuantity>10000)||
     input.quantity==='other'&&MINI_QUANTITIES.includes(miniQuantity)||
-    !['1','2','4','10','other','advice','concepts'].includes(input.quantity)||
+    !['1','2','other','advice','concepts'].includes(input.quantity)||
     ['logoNote','brandLink','brandStyle','designSplitNote'].some(key=>typeof (input[key]??'')!=='string'||(input[key]??'').length>300)||
     (mini.designMode==='ready'&&['logoNote','brandLink','brandStyle','designSplitNote'].some(key=>input[key]))))throw Error('invalid_fields');
   if(input.variant==='instagram'&&!instagramProfileURL(input.instagramUrl))throw Error('invalid_instagram_url');
@@ -139,7 +139,7 @@ export function leadPayload(input, {basePath = '', pathname, utm = {}}) {
   if(input.variant==='instagram')Object.assign(payload,{productSchemaVersion:1,product_id:'nfc-instagram-card',sku:'NFC-IG-READY',offer:'ready',instagramUrl:instagramProfileURL(input.instagramUrl),comment:input.comment.trim(),consent:true});
   if(solution)payload.solution={schemaVersion:1,solution_id:solutionId,niche:solution.niche,request_type:'free_first_mockup'};
   if(mini){
-    const quantityMode=miniAdvice?'advice':miniConcepts?'free_design_concepts':input.locale!=='pl'&&MINI_QUANTITIES.includes(miniQuantity)?'fixed_bundle':'custom_quote';
+    const quantityMode=miniAdvice?'advice':miniConcepts?'free_design_concepts':miniQuote(solutionId,miniQuantity,input.locale).quantityMode;
     payload.solution={schemaVersion:2,product_family:'nfc-review-card-mini',solution_id:solutionId,niche:mini.niche,design_mode:mini.designMode,quantity_mode:quantityMode};
     if(mini.designMode==='branded'){
       const inputs={logo_note:(input.logoNote??'').trim(),website_or_instagram:(input.brandLink??'').trim(),style_note:(input.brandStyle??'').trim()};
@@ -222,7 +222,7 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
   form.dataset.attemptState = recovered ? stored.state : 'draft';
   form.applyNicheIntent = quantity => {
     if (form.dataset.productFamily !== 'nfc-review-card-mini' || busy || pending || inheritedUncertainty || form.dataset.complete) return false;
-    if (!['1','2','4','10','other','advice','concepts'].includes(quantity) || quantity === 'concepts' && form.dataset.designMode !== 'branded') return false;
+    if (!['1','2','other','advice','concepts'].includes(quantity) || quantity === 'concepts' && form.dataset.designMode !== 'branded') return false;
     select({variant: q('variant').value, quantity});
     updateNotice();
     return true;
@@ -255,9 +255,9 @@ export function mountPagesForm(form, {endpoint, basePath, locale, pathname, attr
     form.dataset.complete = 'true'; submit.hidden = true; submit.disabled = true; note.hidden = true;
     form.dataset.attemptState = 'complete';
     const successBody = pending?.payload?.solution?.quantity_mode === 'free_design_concepts'
-      ? P('Запит на 3–4 безкоштовні початкові концепції збережено. Фізичне замовлення не оформлено.',
-          'Your request for 3–4 free initial concepts is saved. No physical order was placed.',
-          'Zapisaliśmy prośbę o 3–4 bezpłatne wstępne projekty. Nie złożono zamówienia na karty.')
+      ? P('Запит на безкоштовні варіанти дизайну збережено. Фізичне замовлення не оформлено.',
+          'Your request for free design options is saved. No physical order was placed.',
+          'Zapisaliśmy prośbę o bezpłatne warianty projektu. Nie złożono zamówienia na karty.')
       : form.dataset.successBody;
     status((previous ? P('Попередню заявку вже збережено. Нові дані не надсилалися. Номер: ', 'Your previous enquiry is already saved. The new details were not submitted. Reference: ', 'Poprzednie zgłoszenie zostało już zapisane. Nie wysłano nowych danych. Numer: ') :form.dataset.solution?form.dataset.successHeading+' — '+successBody+' ' :
       selection().variant==='instagram'?P('Дякуємо! Заявку отримано. Я зв’яжуся з вами, перевірю Instagram-посилання та уточню деталі замовлення. Номер: ','Thank you! Your enquiry has been received. I will contact you, check the Instagram link and confirm your order details. Reference: ','Dziękuję! Otrzymałem zgłoszenie. Skontaktuję się z Tobą, sprawdzę link do profilu na Instagramie i ustalę szczegóły zamówienia. Numer: '):P('Дякуємо! Заявку збережено. Деталі погодимо у вибраному месенджері. Номер: ', 'Thank you! Your request is saved. We will agree the details in your selected messenger. Reference: ', 'Dziękujemy! Zgłoszenie zostało zapisane. Szczegóły ustalimy w wybranym komunikatorze. Numer: ')) + leadId + (locale==='pl'&&Number.isSafeInteger(serverQuote?.amount)?` · Cena produktów: ${serverQuote.amount} PLN. Zaliczka: ${serverQuote.deposit} PLN.`:''), previous ? 'existing' : 'success');

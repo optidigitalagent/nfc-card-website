@@ -130,7 +130,7 @@ def test_review_intent_fingerprint_shape_and_destination_preserved():
     for variant in ['standard','branded','bulk','consultation']:
         with pytest.raises(LeadError):
             normalize({**p,'variant':variant,'instagramUrl':'https://instagram.com/example/'})
-    for variant,q,amount in [('standard','1',1500),('standard','2',2600),('branded','1',2000),('branded','2',3600),('bulk','more',None),('consultation','1',None)]:
+    for variant,q,amount in [('standard','1',1500),('standard','2',2600),('branded','1',2000),('branded','2',2600),('bulk','more',None),('consultation','1',None)]:
         assert canonical_quote(variant,q,load_commerce())['amount']==amount
 
 

@@ -19,10 +19,10 @@ PRODUCTS = {
     'restaurant': ('restaurant-review-card', 'restaurant', 'ready'),
     'brandedRestaurant': ('branded-restaurant-review-card', 'restaurant', 'branded'),
 }
-QUANTITIES = (1, 2, 4, 10)
+QUANTITIES = (1, 2)
 TOTALS = {
-    'ready': (900, 1440, 2600, 4400),
-    'branded': (900, 1800, 3000, 5000),
+    'ready': (800, 1400),
+    'branded': (800, 1600),
 }
 PHOTOS = {
     'beauty': ('front-hand', 'group-hand', 'group-front', 'edge-thickness', 'back-mounting'),
@@ -72,13 +72,16 @@ def test_twelve_mini_pages_keep_distinct_products_and_exact_market_prices():
                 assert not schema.get('offers')
                 assert 'UAH' not in text and 'грн' not in text
                 assert main.select_one('.niche-pricing .price-rows dd').get_text(' ', strip=True) == 'Wycena indywidualna'
+            elif niche == 'restaurant':
+                assert not schema.get('offers')
+                assert len(main.select('.niche-pricing .price-rows dd')) == 1
             else:
                 offers = schema['offers']
                 assert [o['eligibleQuantity']['minValue'] for o in offers] == list(QUANTITIES)
                 assert [(int(o['price']), o['priceCurrency']) for o in offers] == [
                     (amount, 'UAH') for amount in TOTALS[design]]
                 pricing = main.select('.niche-pricing .price-rows dd')
-                assert len(pricing) == 5
+                assert len(pricing) == 3
                 for amount, row in zip(TOTALS[design], pricing):
                     assert str(amount) in row.get_text(' ', strip=True)
             assert len(soup.select('link[hreflang]')) == 4
@@ -86,7 +89,7 @@ def test_twelve_mini_pages_keep_distinct_products_and_exact_market_prices():
             assert form['data-solution'] == slug and form['data-design-mode'] == design
             assert form['data-product-family'] == 'nfc-review-card-mini'
             assert form.select_one('[name=variant]')['value'] == ('branded' if design == 'branded' else 'standard')
-            expected_options = (['concepts'] if design == 'branded' else []) + ['1', '2', '4', '10', 'other', 'advice']
+            expected_options = (['concepts'] if design == 'branded' else []) + ['1', '2', 'other', 'advice']
             assert [option['value'] for option in form.select('[name=quantity] option')] == expected_options
             if design == 'ready':
                 assert not form.select('[name=brandLink],[name=logoNote],[name=brandStyle],[name=designSplitNote]')
@@ -96,8 +99,11 @@ def test_twelve_mini_pages_keep_distinct_products_and_exact_market_prices():
             else:
                 assert {node['name'] for node in form.select('input[name]')} >= {
                     'brandLink', 'logoNote', 'brandStyle', 'designSplitNote'}
-                assert '3–4' in text
-            assert not re.search(r'(?:10\s*[×x]\s*10|6\s*[×x]\s*6)\s*(?:cm|см)', text, re.I)
+                assert '3–4' not in text and '3-4' not in text
+            if niche == 'restaurant':
+                assert not re.search(r'(?:10\s*[×x]\s*10|6\s*[×x]\s*6)\s*(?:cm|см)', text, re.I)
+            else:
+                assert re.search(r'6\s*[×x]\s*6\s*(?:cm|см)', text, re.I)
             assert not re.search(r'\+\s*40\s*%|50\s*%\s*(?:refund|повернен|zwrot)', text, re.I)
 
 
@@ -138,16 +144,29 @@ def test_ten_owner_photos_are_separated_and_branded_gallery_marks_ready_artwork_
         assert [item['url'].split('/')[-1] for item in primaries] == names
         assert all(item['provenance'] == 'user_provided_business_asset' and
                    item['not_customer_case_evidence'] and item['responsive'] and item['avif'] for item in primaries)
+        crop_names = [f'{niche}-review-card-{suffix}-crop-960.webp' for suffix in PHOTOS[niche]]
+        crops = [next(item for item in manifest if item['url'].endswith('/' + name)) for name in crop_names]
+        for original, crop in zip(primaries, crops):
+            assert crop['managed_by'] == 'v33_niche_crop'
+            assert crop['derivative_of'] == original['url']
+            assert crop['source_asset_id'] == original['source_asset_id']
+            assert crop['original_sha256'] == original['original_sha256']
+            assert crop['provenance'] == original['provenance']
+            assert crop['claim_role'] == original['claim_role']
+            assert crop['width'] == crop['height'] == 960
+            assert [variant['width'] for variant in crop['responsive']] == [320, 640]
+            assert crop['thumbnail_url'].endswith('-crop-320.webp')
         for lang in LANGS:
             for design in ('ready', 'branded'):
                 slug = f'{"branded-" if design == "branded" else ""}{niche}-review-card'
                 soup = soup_at(lang, slug)
                 slides = soup.select('.niche-hero .commerce-gallery [data-slide]')
                 assert len(slides) == 5
-                assert [slide.img['src'].split('/')[-1] for slide in slides] == names
-                for item, slide in zip(primaries, slides):
-                    assert slide.select_one('source[type="image/avif"]')
+                assert [slide.img['src'].split('/')[-1] for slide in slides] == crop_names
+                for item, crop, slide in zip(primaries, crops, slides):
                     assert slide.img['srcset']
+                    assert slide.img['width'] == slide.img['height'] == '960'
+                    assert slide.img['data-media-provenance'] == crop['provenance']
                     assert slide.img['alt'] == item['alt_' + ('ua' if lang == 'uk' else lang)]
                     caption = slide['data-caption']
                     if design == 'ready':
@@ -191,7 +210,7 @@ def test_mini_quote_and_payload_preserve_niche_design_quantity_mode_without_clie
       import assert from 'node:assert/strict';
       import {miniQuote,MINI_PRODUCTS} from './src/mini-contract.mjs';
       import {leadPayload} from './src/pages.mjs';
-      const totals={ready:{1:900,2:1440,4:2600,10:4400},branded:{1:900,2:1800,4:3000,10:5000}};
+      const totals={ready:{1:800,2:1400},branded:{1:800,2:1600}};
       for(const [id,product] of Object.entries(MINI_PRODUCTS))for(const locale of ['uk','en','pl']){
         const prefix=locale==='uk'?'':'/'+locale;
         const pathname='/nfc-card-website'+prefix+'/solutions/'+id+'/';
@@ -202,8 +221,8 @@ def test_mini_quote_and_payload_preserve_niche_design_quantity_mode_without_clie
         const make=fields=>leadPayload({...base,...fields},{basePath:'/nfc-card-website',pathname});
         for(const [quantity,amount] of Object.entries(totals[product.designMode])){
           const quote=miniQuote(id,Number(quantity),locale);
-          assert.equal(quote.amount,locale==='pl'?null:amount);
-          assert.equal(quote.deposit,locale==='pl'?null:200);
+          assert.equal(quote.amount,locale==='pl'||product.niche==='restaurant'?null:amount);
+          assert.equal(quote.deposit,locale==='pl'||product.niche==='restaurant'?null:200);
           assert.equal(quote.depositDueNow,false);
           const payload=make({quantity});
           assert.equal(payload.product,'nfc-review-card-mini');
@@ -212,7 +231,7 @@ def test_mini_quote_and_payload_preserve_niche_design_quantity_mode_without_clie
           assert.equal(payload.solution.solution_id,id);
           assert.equal(payload.solution.niche,product.niche);
           assert.equal(payload.solution.design_mode,product.designMode);
-          assert.equal(payload.solution.quantity_mode,locale==='pl'?'custom_quote':'fixed_bundle');
+          assert.equal(payload.solution.quantity_mode,locale==='pl'||product.niche==='restaurant'?'custom_quote':'fixed_bundle');
           for(const key of ['amount','unitPrice','currency','deposit','total'])assert.equal(Object.hasOwn(payload,key),false);
         }
         for(const quantity of [3,5,9,11]){
@@ -276,25 +295,25 @@ def test_mini_pages_browser_selector_and_layout_without_external_requests():
                 page.on('pageerror', lambda error: errors.append(str(error)))
                 for lang in LANGS:
                     prefix = '' if lang == 'uk' else '/' + lang
-                    for slug, _, design in PRODUCTS.values():
+                    for slug, niche, design in PRODUCTS.values():
                         response = page.goto(origin + prefix + '/solutions/' + slug + '/', wait_until='networkidle')
                         assert response.status == 200
                         form = page.locator('[data-niche-form]')
                         assert form.get_attribute('data-enhanced') == 'true'
                         assert page.locator('.commerce-gallery [data-slide]').count() == 5
                         assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'), (lang, slug, width)
-                        form.locator('[name=quantity]').select_option('10')
+                        form.locator('[name=quantity]').select_option('2')
                         summary = form.locator('[data-niche-price]').inner_text()
-                        assert ('5000' if design == 'branded' else '4400') in summary if lang != 'pl' else 'Wycena' in summary
+                        assert ('Wycena' in summary if lang == 'pl' else 'quote' in summary.lower() if lang == 'en' and niche == 'restaurant' else 'розрахунок' in summary.lower() if lang == 'uk' and niche == 'restaurant' else ('1600' if design == 'branded' else '1400') in ''.join(c for c in summary if c.isdigit()))
                         form.locator('[name=quantity]').select_option('other')
                         custom = form.locator('[name=customQuantity]')
                         assert custom.is_visible() and custom.is_enabled()
                         assert 'quote' in form.locator('[data-niche-price]').inner_text().lower() if lang == 'en' else True
                         if design == 'branded':
                             form.locator('[name=quantity]').select_option('concepts')
-                            assert '3–4' in form.locator('[data-niche-price]').inner_text()
+                            assert '3–4' not in form.locator('[data-niche-price]').inner_text()
                             form.locator('[name=name]').fill('Synthetic draft')
-                            form.locator('[name=quantity]').select_option('10')
+                            form.locator('[name=quantity]').select_option('2')
                             page.locator('.niche-hero [data-niche-intent=concepts]').click()
                             assert form.locator('[name=quantity]').input_value() == 'concepts'
                             assert form.locator('[name=name]').input_value() == 'Synthetic draft'

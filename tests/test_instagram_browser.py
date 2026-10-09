@@ -210,7 +210,9 @@ def test_instagram_header_order_and_preselection(pages_web,browser,locale,width)
     assert page.locator('#f-quantity').input_value()=='2'
     assert 'Review Card' not in page.locator('h1').inner_text()
     target_locale = 'en' if locale == 'uk' else 'uk'
-    page.locator(f'.header-actions .locale-switch[lang="{target_locale}"]').click();ready(page)
+    if width<601:page.locator('.menu-toggle').click();page.locator(f'#mobile-menu .locale-switch[lang="{target_locale}"]').click()
+    else:page.locator(f'.header-actions .locale-switch[lang="{target_locale}"]').click()
+    ready(page)
     assert page.locator('[name=variant]').input_value()=='instagram' and page.locator('#f-quantity').input_value()=='2'
     assert not blocked
     context.close()

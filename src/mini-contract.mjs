@@ -1,14 +1,14 @@
-// v31 Mini pricing is a separate contract from the original Review Card range.
+// Mini pricing is separate from the original Review Card range and from each niche.
 export const MINI_PRODUCTS = Object.freeze({
   'beauty-review-card': {niche:'beauty',designMode:'ready'},
   'branded-beauty-review-card': {niche:'beauty',designMode:'branded'},
   'restaurant-review-card': {niche:'restaurant',designMode:'ready'},
   'branded-restaurant-review-card': {niche:'restaurant',designMode:'branded'}
 });
-export const MINI_QUANTITIES = Object.freeze([1,2,4,10]);
-const TIERS = Object.freeze({
-  ready:{1:900,2:720,4:650,10:440},
-  branded:{1:900,2:900,4:750,10:500}
+export const MINI_QUANTITIES = Object.freeze([1,2]);
+const FIXED_TOTALS = Object.freeze({
+  'beauty-review-card':Object.freeze({1:800,2:1400}),
+  'branded-beauty-review-card':Object.freeze({1:800,2:1600})
 });
 export function miniQuote(solutionId, quantity, locale='uk', mode='physical_order') {
   const product=MINI_PRODUCTS[solutionId];
@@ -17,10 +17,11 @@ export function miniQuote(solutionId, quantity, locale='uk', mode='physical_orde
   if(!active || (mode==='free_design_concepts'&&product.designMode!=='branded'))throw Error('invalid_mini_request');
   const number=Number(quantity);
   if(mode==='physical_order'&&(!Number.isSafeInteger(number)||number<1||number>10000))throw Error('invalid_mini_quantity');
-  const fixed=mode==='physical_order'&&locale!=='pl'&&MINI_QUANTITIES.includes(number);
-  const unitPrice=fixed?TIERS[product.designMode][number]:null;
+  const total=mode==='physical_order'&&locale!=='pl'?FIXED_TOTALS[solutionId]?.[number]:undefined;
+  const fixed=Number.isFinite(total);
+  const unitPrice=fixed?total/number:null;
   return {productFamily:'nfc-review-card-mini',solutionId,niche:product.niche,designMode:product.designMode,
     quantity:mode==='physical_order'?number:null,quantityMode:mode==='physical_order'?(fixed?'fixed_bundle':'custom_quote'):mode,
-    unitPrice,amount:fixed?unitPrice*number:null,currency:locale==='pl'?'PLN':'UAH',
-    deposit:fixed?200:null,depositDueNow:false,pricingRevision:'NFC-CARD-BEAUTY-RESTAURANT-MINI-PRICE-v31'};
+    unitPrice,amount:fixed?total:null,currency:locale==='pl'?'PLN':'UAH',
+    deposit:fixed?200:null,depositDueNow:false,pricingRevision:'NFC-CARD-CONTENT-TRUTH-PRICE-v33'};
 }

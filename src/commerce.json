@@ -1,6 +1,6 @@
 {
   "schemaVersion": 6,
-  "revision": "NFC-CARD-UA-2026-09-v11",
+  "revision": "NFC-CARD-CONTENT-TRUTH-PRICE-v33",
   "physicalProduct": {
     "id": "nfc-review-card",
     "name": "NFC Review Card"
@@ -11,7 +11,7 @@
   "depositIncluded": true,
   "variants": {
     "standard": {
-      "name": "Review Card",
+      "name": "Google Review Card",
       "prices": {
         "1": 1500,
         "2": 2600
@@ -24,7 +24,7 @@
       "name": "Branded Review Card",
       "prices": {
         "1": 2000,
-        "2": 3600
+        "2": 2600
       },
       "qr": "optional",
       "customDesign": true,
@@ -48,7 +48,7 @@
     "consultation"
   ],
   "bulkQuantity": "more",
-  "evidence": "NFC_CARD_Approved_Facts_v11.md; Product_Commerce_UX_Master_Brief_v11 §§5,9",
+  "evidence": "NFC_CARD_CONTENT_TRUTH_CONTRACT_v33.json; OWNER_CONTENT_AUDIT_v33.txt; preserved v11 offer identities",
   "productSchemaVersion": 1,
   "products": {
     "nfc-review-card": {

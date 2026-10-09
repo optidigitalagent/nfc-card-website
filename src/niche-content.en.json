@@ -4,7 +4,7 @@
   "products": {
     "beauty": {
       "name": "Beauty Review Card Mini",
-      "eyebrow": "FOR BEAUTY SALONS · MINI · READY-MADE DESIGN",
+      "eyebrow": "FOR BEAUTY · MINI · READY-MADE DESIGN",
       "h1": "Beauty Review Card Mini",
       "catalog_description": "A ready-made pink Mini NFC card for Google reviews in your salon. We set the link to your Google business location; the pictured design stays the same.",
       "catalog_benefits": [
@@ -83,7 +83,7 @@
           "id": "quantity_logic",
           "heading": "Choosing a quantity",
           "paragraphs": [
-            "In Ukraine, bundles of 1, 2, 4 and 10 cards cost 900, 1,440, 2,600 and 4,400 UAH per bundle respectively. Other quantities receive an individual quote."
+            "In Ukraine, 1 Beauty Review Card Mini costs UAH 800 and 2 cost UAH 1,400 total. We quote 3 or more cards individually."
           ]
         },
         {
@@ -97,7 +97,7 @@
           "id": "specs",
           "heading": "Mini format",
           "paragraphs": [
-            "This is a physical NFC card in Mini format. We confirm its exact dimensions and thickness before ordering; specifications from the larger Branded Review Card do not carry over."
+            "Beauty Review Card Mini measures 6 × 6 cm. It is a physical NFC card; thickness and other unconfirmed specifications are clarified before ordering."
           ]
         },
         {
@@ -119,7 +119,7 @@
         },
         {
           "question": "How many cards can I order?",
-          "answer": "Fixed bundles are 1, 2, 4 and 10 cards. Other quantities receive an individual quote."
+          "answer": "One card costs UAH 800; two cost UAH 1,400 total. We quote 3 or more individually."
         },
         {
           "question": "When is a deposit due?",
@@ -131,7 +131,7 @@
         },
         {
           "question": "What are the Mini dimensions?",
-          "answer": "We confirm the exact Mini dimensions and thickness before ordering. Specifications of the larger Branded Review Card do not carry over."
+          "answer": "Beauty Review Card Mini measures 6 × 6 cm. We confirm its thickness before ordering."
         },
         {
           "question": "Can you add a QR code?",
@@ -156,20 +156,20 @@
     },
     "brandedBeauty": {
       "name": "Branded Beauty Review Card Mini",
-      "eyebrow": "FOR BEAUTY SALONS · MINI · YOUR DESIGN",
+      "eyebrow": "FOR BEAUTY · MINI · YOUR DESIGN",
       "h1": "Branded Beauty Review Card Mini",
-      "catalog_description": "A Mini NFC card in your salon’s style. We prepare 3–4 initial design concepts free of charge, agree on the artwork and set the link to your Google business location.",
+      "catalog_description": "A Mini NFC card in your salon’s style. We prepare initial design options free of charge, agree on the artwork and set the link to your Google business location.",
       "catalog_benefits": [
         "Your logo and brand style.",
-        "3–4 initial design concepts free of charge.",
+        "initial design options free of charge.",
         "Split an order between approved designs."
       ],
-      "lead": "A Mini NFC card in your salon’s style. We prepare 3–4 initial design concepts free of charge, agree on the artwork and set the link to your Google business location.",
-      "summary": "Send your logo and a link to your website or Instagram, plus any style or colour preferences. We prepare 3–4 initial design concepts free of charge. You choose a direction, request the necessary edits and approve the final artwork before production. You can provide the materials now or after your first enquiry.",
-      "cta_primary": "Get 3–4 design concepts",
+      "lead": "A Mini NFC card in your salon’s style. We prepare initial design options free of charge, agree on the artwork and set the link to your Google business location.",
+      "summary": "Send your logo and a link to your website or Instagram, plus any style or colour preferences. We prepare initial design options free of charge. You choose a direction, request the necessary edits and approve the final artwork before production. You can provide the materials now or after your first enquiry.",
+      "cta_primary": "Get design options",
       "cta_secondary": "Discuss quantity and placement",
-      "cta_sticky": "Get 3–4 design concepts",
-      "cta_note": "The 3–4 initial concepts are free. We confirm a physical order separately.",
+      "cta_sticky": "Get design options",
+      "cta_note": "The initial design options are free. We confirm a physical order separately.",
       "details_label": "Branded Beauty Review Card Mini",
       "sections": [
         {
@@ -221,28 +221,28 @@
           "id": "design_workflow",
           "heading": "Your design, from first concepts to approved artwork",
           "paragraphs": [
-            "Send your logo and a link to your website or Instagram, plus any style or colour preferences. We prepare 3–4 initial design concepts free of charge. You choose a direction, request the necessary edits and approve the final artwork before production. You can provide the materials now or after your first enquiry."
+            "Send your logo and a link to your website or Instagram, plus any style or colour preferences. We prepare initial design options free of charge. You choose a direction, request the necessary edits and approve the final artwork before production. You can provide the materials now or after your first enquiry."
           ]
         },
         {
           "id": "design_split",
           "heading": "More than one design in an order",
           "paragraphs": [
-            "You can split one order between approved final designs. For example, 10 cards can be produced as 5 + 5 in two designs at the same 10-card bundle price. We agree on the designs and edits before production."
+            "You can split one order between approved final designs. For example, 10 cards can be produced as 5 + 5 in two designs. We agree on the designs, edits and individual price before production."
           ]
         },
         {
           "id": "included",
           "heading": "What is included",
           "paragraphs": [
-            "Your order includes Mini cards in the approved design, an NFC link to your Google business location, placement suggestions and a short staff prompt. The initial 3–4 design concepts are free of charge."
+            "Your order includes Mini cards in the approved design, an NFC link to your Google business location, placement suggestions and a short staff prompt. The initial design options are free of charge."
           ]
         },
         {
           "id": "quantity_logic",
           "heading": "Choosing a quantity",
           "paragraphs": [
-            "In Ukraine, bundles of 1, 2, 4 and 10 cards cost 900, 1,800, 3,000 and 5,000 UAH per bundle respectively. Other quantities receive an individual quote."
+            "In Ukraine, 1 Branded Beauty Review Card Mini costs UAH 800 and 2 cost UAH 1,600 total. Other quantities receive an individual quote."
           ]
         },
         {
@@ -256,14 +256,14 @@
           "id": "specs",
           "heading": "Mini format",
           "paragraphs": [
-            "This is a physical NFC card in Mini format. We confirm its exact dimensions and thickness before ordering; specifications from the larger Branded Review Card do not carry over."
+            "Beauty Review Card Mini measures 6 × 6 cm. It is a physical NFC card; thickness and other unconfirmed specifications are clarified before ordering."
           ]
         },
         {
           "id": "order_process",
           "heading": "How to order",
           "paragraphs": [
-            "Send an enquiry with your logo, website or Instagram and style preferences. We prepare 3–4 free initial concepts; you select a direction and approve the final artwork before production. We confirm quantity, price and lead time before a 200 UAH deposit, which is included in the physical order price."
+            "Send an enquiry with your logo, website or Instagram and style preferences. We prepare free initial design options; you select a direction and approve the final artwork before production. We confirm quantity, price and lead time before a 200 UAH deposit, which is included in the physical order price."
           ]
         }
       ],
@@ -274,15 +274,15 @@
         },
         {
           "question": "How is the design agreed?",
-          "answer": "Send your logo, website or Instagram and style preferences. We prepare 3–4 initial concepts free of charge; you choose a direction, request necessary edits and approve final artwork before production."
+          "answer": "Send your logo, website or Instagram and style preferences. We prepare initial design options free of charge; you choose a direction, request necessary edits and approve final artwork before production."
         },
         {
           "question": "How many cards can I order?",
-          "answer": "Fixed bundles are 1, 2, 4 and 10 cards. Other quantities receive an individual quote."
+          "answer": "One card costs UAH 800; two cost UAH 1,600 total. We quote other quantities individually."
         },
         {
           "question": "Can I use more than one design in an order?",
-          "answer": "Yes, once the final designs are approved. For example, 10 cards can be split 5 + 5 between two designs without changing the 10-card bundle price."
+          "answer": "Yes, once the final designs are approved. For example, 10 cards can be split 5 + 5 between two designs; we quote that order individually."
         },
         {
           "question": "When is a deposit due?",
@@ -294,7 +294,7 @@
         },
         {
           "question": "What are the Mini dimensions?",
-          "answer": "We confirm the exact Mini dimensions and thickness before ordering. Specifications of the larger Branded Review Card do not carry over."
+          "answer": "Beauty Review Card Mini measures 6 × 6 cm. We confirm its thickness before ordering."
         },
         {
           "question": "Can you add a QR code?",
@@ -308,18 +308,18 @@
         "target": "/solutions/instagram-card"
       },
       "final_heading": "Discuss Branded Mini",
-      "final_body": "Send your logo and a link to your website or Instagram, plus any style or colour preferences. We prepare 3–4 initial design concepts free of charge. You choose a direction, request the necessary edits and approve the final artwork before production. You can provide the materials now or after your first enquiry.",
+      "final_body": "Send your logo and a link to your website or Instagram, plus any style or colour preferences. We prepare initial design options free of charge. You choose a direction, request the necessary edits and approve the final artwork before production. You can provide the materials now or after your first enquiry.",
       "form_heading": "Discuss Branded Mini",
-      "form_intro": "Leave your details. You can send brand materials now or later; we prepare 3–4 initial concepts free of charge.",
+      "form_intro": "Leave your details. You can send brand materials now or later; we prepare initial design options free of charge.",
       "form_submit": "Request design concepts",
       "form_success_heading": "Branded Beauty Review Card Mini",
       "form_success_body": "We received your enquiry. We will message you to confirm the Google location, quantity and terms. This is not yet a confirmed physical order.",
       "seo_title": "Branded Beauty Review Card Mini | NFC CARD",
-      "seo_description": "Branded Mini NFC card for Google reviews, with your style, 3–4 free initial concepts and final artwork approval."
+      "seo_description": "Branded Mini NFC card for Google reviews, with your style, free initial design options and final artwork approval."
     },
     "restaurant": {
       "name": "Restaurant Review Card Mini",
-      "eyebrow": "FOR RESTAURANTS · MINI · READY-MADE DESIGN",
+      "eyebrow": "FOR HORECA · MINI · READY-MADE DESIGN",
       "h1": "Restaurant Review Card Mini",
       "catalog_description": "A ready-made green Mini NFC card for restaurant Google reviews. Use it on a table or present it with the bill; we set the link to your Google business location.",
       "catalog_benefits": [
@@ -412,7 +412,7 @@
           "id": "quantity_logic",
           "heading": "Choosing a quantity",
           "paragraphs": [
-            "In Ukraine, bundles of 1, 2, 4 and 10 cards cost 900, 1,440, 2,600 and 4,400 UAH per bundle respectively. Other quantities receive an individual quote."
+            "We quote Restaurant Review Card Mini individually for the required quantity before confirming an order."
           ]
         },
         {
@@ -426,7 +426,7 @@
           "id": "specs",
           "heading": "Mini format",
           "paragraphs": [
-            "This is a physical NFC card in Mini format. We confirm its exact dimensions and thickness before ordering; specifications from the larger Branded Review Card do not carry over."
+            "This is a physical NFC card in Mini format. We confirm its size and thickness before ordering; dimensions of the larger Branded Review Card do not carry over."
           ]
         },
         {
@@ -448,7 +448,7 @@
         },
         {
           "question": "How many cards can I order?",
-          "answer": "Fixed bundles are 1, 2, 4 and 10 cards. Other quantities receive an individual quote."
+          "answer": "Every Restaurant Review Card Mini quantity receives an individual quote before the order is confirmed."
         },
         {
           "question": "When is a deposit due?",
@@ -460,7 +460,7 @@
         },
         {
           "question": "What are the Mini dimensions?",
-          "answer": "We confirm the exact Mini dimensions and thickness before ordering. Specifications of the larger Branded Review Card do not carry over."
+          "answer": "We confirm Restaurant Review Card Mini size and thickness before ordering; numeric dimensions are not yet approved."
         },
         {
           "question": "Can you add a QR code?",
@@ -485,20 +485,20 @@
     },
     "brandedRestaurant": {
       "name": "Branded Restaurant Review Card Mini",
-      "eyebrow": "FOR RESTAURANTS · MINI · YOUR DESIGN",
+      "eyebrow": "FOR HORECA · MINI · YOUR DESIGN",
       "h1": "Branded Restaurant Review Card Mini",
-      "catalog_description": "A Mini NFC card for your restaurant with your logo and style. We prepare 3–4 initial design concepts free of charge and agree on the final artwork.",
+      "catalog_description": "A Mini NFC card for your restaurant with your logo and style. We prepare initial design options free of charge and agree on the final artwork.",
       "catalog_benefits": [
         "Your restaurant’s logo and style.",
-        "3–4 initial design concepts free of charge.",
+        "initial design options free of charge.",
         "Split an order between approved designs."
       ],
-      "lead": "A Mini NFC card for your restaurant with your logo and style. We prepare 3–4 initial design concepts free of charge and agree on the final artwork.",
-      "summary": "Send your logo and a link to your website or Instagram, plus any style or colour preferences. We prepare 3–4 initial design concepts free of charge. You choose a direction, request the necessary edits and approve the final artwork before production. You can provide the materials now or after your first enquiry.",
-      "cta_primary": "Get 3–4 design concepts",
+      "lead": "A Mini NFC card for your restaurant with your logo and style. We prepare initial design options free of charge and agree on the final artwork.",
+      "summary": "Send your logo and a link to your website or Instagram, plus any style or colour preferences. We prepare initial design options free of charge. You choose a direction, request the necessary edits and approve the final artwork before production. You can provide the materials now or after your first enquiry.",
+      "cta_primary": "Get design options",
       "cta_secondary": "Discuss quantity and placement",
-      "cta_sticky": "Get 3–4 design concepts",
-      "cta_note": "The 3–4 initial concepts are free. We confirm a physical order separately.",
+      "cta_sticky": "Get design options",
+      "cta_note": "The initial design options are free. We confirm a physical order separately.",
       "details_label": "Branded Restaurant Review Card Mini",
       "sections": [
         {
@@ -564,28 +564,28 @@
           "id": "design_workflow",
           "heading": "Your design, from first concepts to approved artwork",
           "paragraphs": [
-            "Send your logo and a link to your website or Instagram, plus any style or colour preferences. We prepare 3–4 initial design concepts free of charge. You choose a direction, request the necessary edits and approve the final artwork before production. You can provide the materials now or after your first enquiry."
+            "Send your logo and a link to your website or Instagram, plus any style or colour preferences. We prepare initial design options free of charge. You choose a direction, request the necessary edits and approve the final artwork before production. You can provide the materials now or after your first enquiry."
           ]
         },
         {
           "id": "design_split",
           "heading": "More than one design in an order",
           "paragraphs": [
-            "You can split one order between approved final designs. For example, 10 cards can be produced as 5 + 5 in two designs at the same 10-card bundle price. We agree on the designs and edits before production."
+            "You can split one order between approved final designs. For example, 10 cards can be produced as 5 + 5 in two designs. We agree on the designs, edits and individual price before production."
           ]
         },
         {
           "id": "included",
           "heading": "What is included",
           "paragraphs": [
-            "Your order includes Mini cards in the approved design, an NFC link to your Google business location, placement suggestions and a short staff prompt. The initial 3–4 design concepts are free of charge."
+            "Your order includes Mini cards in the approved design, an NFC link to your Google business location, placement suggestions and a short staff prompt. The initial design options are free of charge."
           ]
         },
         {
           "id": "quantity_logic",
           "heading": "Choosing a quantity",
           "paragraphs": [
-            "In Ukraine, bundles of 1, 2, 4 and 10 cards cost 900, 1,800, 3,000 and 5,000 UAH per bundle respectively. Other quantities receive an individual quote."
+            "We quote Restaurant Review Card Mini individually for the required quantity before confirming an order."
           ]
         },
         {
@@ -599,14 +599,14 @@
           "id": "specs",
           "heading": "Mini format",
           "paragraphs": [
-            "This is a physical NFC card in Mini format. We confirm its exact dimensions and thickness before ordering; specifications from the larger Branded Review Card do not carry over."
+            "This is a physical NFC card in Mini format. We confirm its size and thickness before ordering; dimensions of the larger Branded Review Card do not carry over."
           ]
         },
         {
           "id": "order_process",
           "heading": "How to order",
           "paragraphs": [
-            "Send an enquiry with your logo, website or Instagram and style preferences. We prepare 3–4 free initial concepts; you select a direction and approve the final artwork before production. We confirm quantity, price and lead time before a 200 UAH deposit, which is included in the physical order price."
+            "Send an enquiry with your logo, website or Instagram and style preferences. We prepare free initial design options; you select a direction and approve the final artwork before production. We confirm quantity, price and lead time before a 200 UAH deposit, which is included in the physical order price."
           ]
         }
       ],
@@ -617,15 +617,15 @@
         },
         {
           "question": "How is the design agreed?",
-          "answer": "Send your logo, website or Instagram and style preferences. We prepare 3–4 initial concepts free of charge; you choose a direction, request necessary edits and approve final artwork before production."
+          "answer": "Send your logo, website or Instagram and style preferences. We prepare initial design options free of charge; you choose a direction, request necessary edits and approve final artwork before production."
         },
         {
           "question": "How many cards can I order?",
-          "answer": "Fixed bundles are 1, 2, 4 and 10 cards. Other quantities receive an individual quote."
+          "answer": "Every Restaurant Review Card Mini quantity receives an individual quote before the order is confirmed."
         },
         {
           "question": "Can I use more than one design in an order?",
-          "answer": "Yes, once the final designs are approved. For example, 10 cards can be split 5 + 5 between two designs without changing the 10-card bundle price."
+          "answer": "Yes, once the final designs are approved. For example, 10 cards can be split 5 + 5 between two designs; we quote that order individually."
         },
         {
           "question": "When is a deposit due?",
@@ -637,7 +637,7 @@
         },
         {
           "question": "What are the Mini dimensions?",
-          "answer": "We confirm the exact Mini dimensions and thickness before ordering. Specifications of the larger Branded Review Card do not carry over."
+          "answer": "We confirm Restaurant Review Card Mini size and thickness before ordering; numeric dimensions are not yet approved."
         },
         {
           "question": "Can you add a QR code?",
@@ -651,39 +651,39 @@
         "target": "/solutions/menu-card"
       },
       "final_heading": "Discuss Branded Mini",
-      "final_body": "Send your logo and a link to your website or Instagram, plus any style or colour preferences. We prepare 3–4 initial design concepts free of charge. You choose a direction, request the necessary edits and approve the final artwork before production. You can provide the materials now or after your first enquiry.",
+      "final_body": "Send your logo and a link to your website or Instagram, plus any style or colour preferences. We prepare initial design options free of charge. You choose a direction, request the necessary edits and approve the final artwork before production. You can provide the materials now or after your first enquiry.",
       "form_heading": "Discuss Branded Mini",
-      "form_intro": "Leave your details. You can send brand materials now or later; we prepare 3–4 initial concepts free of charge.",
+      "form_intro": "Leave your details. You can send brand materials now or later; we prepare initial design options free of charge.",
       "form_submit": "Request design concepts",
       "form_success_heading": "Branded Restaurant Review Card Mini",
       "form_success_body": "We received your enquiry. We will message you to confirm the Google location, quantity and terms. This is not yet a confirmed physical order.",
       "seo_title": "Branded Restaurant Review Card Mini | NFC CARD",
-      "seo_description": "Branded Mini NFC card for Google reviews, with your style, 3–4 free initial concepts and final artwork approval."
+      "seo_description": "Branded Mini NFC card for Google reviews, with your style, free initial design options and final artwork approval."
     }
   },
   "shared": {
     "price_rows": [
       [
-        "1 card",
-        "900 UAH ready / 900 UAH branded"
+        "Beauty Mini · 1 card",
+        "UAH 800 ready / UAH 800 branded"
       ],
       [
-        "2 cards",
-        "1,440 UAH ready / 1,800 UAH branded"
+        "Beauty Mini · 2 cards",
+        "UAH 1,400 ready / UAH 1,600 branded"
       ],
       [
-        "4 cards",
-        "2,600 UAH ready / 3,000 UAH branded"
+        "Beauty Mini · 3+",
+        "Individual quote"
       ],
       [
-        "10 cards",
-        "4,400 UAH ready / 5,000 UAH branded"
+        "Restaurant Mini",
+        "Individual quote"
       ]
     ],
-    "price_note": "Ready-made and Branded Mini have separate bundle schedules. Fixed bundles are 1, 2, 4 or 10 cards; other quantities receive an individual quote. The 200 UAH deposit applies only after confirming a physical order and is included in the total.",
+    "price_note": "Beauty Mini has separate fixed prices for ready-made and Branded designs at 1 and 2 cards; 3 or more receive an individual quote. Restaurant Mini is quoted individually at every quantity. The UAH 200 deposit is paid once after confirming a physical order and is included in its price.",
     "delivery_short": "Free Nova Poshta delivery within Ukraine.",
     "payment_heading": "Payment and delivery",
-    "payment_body": "Consultation and enquiries are free. For Branded Mini we prepare 3–4 initial concepts free of charge. A 200 UAH deposit is paid once after a physical order is agreed and is included in the total. The balance is paid after dispatch and tracking number. Lead time is agreed before the deposit. Nova Poshta delivery in Ukraine is free.",
+    "payment_body": "Consultation and enquiries are free. For Branded Mini we prepare initial design options free of charge. A 200 UAH deposit is paid once after a physical order is agreed and is included in the total. The balance is paid after dispatch and tracking number. Lead time is agreed before the deposit. Nova Poshta delivery in Ukraine is free.",
     "other_markets": "The Polish website version has separate pricing and delivery terms for Poland. Delivery to other countries is agreed individually.",
     "proof_heading": "From brand materials to a finished card",
     "proof_body": "NFC CARD has been ordered by local businesses across different sectors, including Glynar pottery studio in Kyiv and the Ford and MG “Velet Avto” dealerships in Lviv. For Velet Avto, we received brand materials, prepared design options, agreed the artwork, then produced and configured the cards. This example illustrates our personalisation and order-preparation process.",
@@ -705,11 +705,11 @@
     "home_restaurant_cta": "Restaurant Review Card Mini",
     "problem_addition": "In a salon, a review request can get lost between the end of a treatment and the client leaving. In a restaurant, it can get lost between the waiter’s words and the guest taking action. These niche Review Cards make the form easy to open at that moment.",
     "how_addition": "In a salon, the client uses the card at a treatment station or reception. In a restaurant, it is on the table or offered with the bill. The NFC journey is the same: compatible smartphone → offered link → the correct Google review form.",
-    "facts_addition": "Beauty and Restaurant Review Card Mini use a separate Mini physical format. Ready-made versions retain the pictured design; Branded Mini has approved custom artwork. We confirm exact size and thickness before ordering.",
-    "included_addition": "Every niche Mini card links to the correct Google location and comes with placement suggestions and a staff prompt. Branded Mini includes 3–4 free initial design concepts.",
-    "process_addition": "For ready-made Mini we confirm the Google location, quantity and terms. For Branded Mini we collect your logo, website or Instagram and style, show 3–4 initial concepts and approve final artwork before production.",
+    "facts_addition": "Beauty Review Card Mini measures 6 × 6 cm. We confirm Restaurant Mini size before ordering. Ready-made versions retain the pictured design; Branded Mini uses approved custom artwork.",
+    "included_addition": "Every niche Mini card links to the correct Google location and comes with placement suggestions and a staff prompt. Branded Mini includes free initial design concepts.",
+    "process_addition": "For ready-made Mini we confirm the Google location, quantity and terms. For Branded Mini we collect your logo, website or Instagram and style, show initial design options and approve final artwork before production.",
     "bulk_heading": "Several cards for several useful points of contact",
-    "bulk_body": "Place cards at treatment stations and reception, or on tables and with the bill. Bundles of 1, 2, 4 and 10 have separate ready-made and Branded Mini prices; other quantities receive an individual quote.",
+    "bulk_body": "Beauty Mini has fixed prices for 1 or 2 cards and an individual quote from 3. Restaurant Mini is quoted individually for every quantity. Place cards at treatment stations or reception, or on tables and with the bill.",
     "bulk_cta": "Discuss quantity and placement",
     "final_heading": "Choose the action and use case for your business",
     "final_body": "Choose Google reviews, Instagram or an online menu. Salons and restaurants can select a ready-made Mini card or Branded Mini with their own design.",
@@ -728,7 +728,7 @@
     "contact_intro": "We can help you choose an NFC card for Google reviews, Instagram or an online menu. Salons and restaurants can choose ready-made Mini or Branded Mini; consultation is free.",
     "contact_prompt": "For a salon or restaurant, select ready-made or Branded Mini so we can address the right use case and design.",
     "delivery_addition": "Ready-made Beauty and Restaurant Review Card Mini retain their fixed designs; Branded Mini uses approved artwork. We agree on quantity, price, lead time and delivery before the deposit. The 200 UAH deposit is included in a confirmed physical order. Nova Poshta delivery in Ukraine is free.",
-    "terms_addition": "An enquiry or consultation is not payment or automatic order confirmation. For Branded Mini we prepare 3–4 initial concepts free of charge; final artwork, quantity, price, lead time and delivery are agreed before production.",
+    "terms_addition": "An enquiry or consultation is not payment or automatic order confirmation. For Branded Mini we prepare initial design options free of charge; final artwork, quantity, price, lead time and delivery are agreed before production.",
     "warranty_addition": "Contact us through the site for help with NFC, defects or refunds. We agree on return terms for personalised Branded Mini cards and shipping costs before payment.",
     "privacy_addition": "For Mini enquiries we also transmit the niche product, ready-made or branded design, and enquiry type. We transmit card quantity only for a physical order; advice or free concepts are not a card purchase. For Branded Mini, if you provide them, we also send the logo description, website or Instagram, style preferences, and notes on splitting a batch across approved designs. Enquiry consent does not authorise marketing messages.",
     "footer_description": "NFC cards for Google reviews, Instagram and online menus. Ready-made and branded Mini options for salons and restaurants.",
@@ -747,11 +747,11 @@
       },
       {
         "question": "How is the design agreed?",
-        "answer": "Send your logo, website or Instagram and style preferences. We prepare 3–4 initial concepts free of charge; you choose a direction, request necessary edits and approve final artwork before production."
+        "answer": "Send your logo, website or Instagram and style preferences. We prepare initial design options free of charge; you choose a direction, request necessary edits and approve final artwork before production."
       },
       {
         "question": "How many cards can I order?",
-        "answer": "Fixed bundles are 1, 2, 4 and 10 cards. Other quantities receive an individual quote."
+        "answer": "In Ukraine, Beauty Mini has fixed prices for 1 or 2 cards and an individual quote from 3. Restaurant Mini receives an individual quote at every quantity. Mini cards in Poland are quoted individually."
       },
       {
         "question": "When is a deposit due?",
@@ -776,7 +776,7 @@
       ],
       "quantity_help": "Not sure how many? Choose advice and we will match the quantity to placement.",
       "materials_hint": "For Branded Mini, share your logo, website or Instagram and style preferences now or later. A ready-made Mini needs your Google business location.",
-      "free_request_note": "Enquiries are free. Branded Mini includes 3–4 free initial concepts. A 200 UAH deposit applies only to a confirmed physical order and is included in the price.",
+      "free_request_note": "Enquiries are free. Branded Mini includes free initial design options. A 200 UAH deposit applies only to a confirmed physical order and is included in the price.",
       "phone_help": "We will use your number only to contact you about this enquiry.",
       "consent": "I agree to the Privacy Policy and processing of my details to respond to this enquiry.",
       "sending": "Sending your enquiry…",
@@ -818,45 +818,25 @@
     "price_rows_ready": [
       {
         "quantity": 1,
-        "total": 900,
-        "unit": 900
+        "total": 800,
+        "unit": 800
       },
       {
         "quantity": 2,
-        "total": 1440,
-        "unit": 720
-      },
-      {
-        "quantity": 4,
-        "total": 2600,
-        "unit": 650
-      },
-      {
-        "quantity": 10,
-        "total": 4400,
-        "unit": 440
+        "total": 1400,
+        "unit": 700
       }
     ],
     "price_rows_branded": [
       {
         "quantity": 1,
-        "total": 900,
-        "unit": 900
+        "total": 800,
+        "unit": 800
       },
       {
         "quantity": 2,
-        "total": 1800,
-        "unit": 900
-      },
-      {
-        "quantity": 4,
-        "total": 3000,
-        "unit": 750
-      },
-      {
-        "quantity": 10,
-        "total": 5000,
-        "unit": 500
+        "total": 1600,
+        "unit": 800
       }
     ]
   }

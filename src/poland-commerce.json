@@ -36,7 +36,7 @@
   },
   "products": {
     "review-card": {
-      "publicName": "Review Card",
+      "publicName": "Google Review Card",
       "offer": "standard",
       "fixedPrices": {
         "1": 129,

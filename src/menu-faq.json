@@ -15,14 +15,14 @@
   {
     "id": "menu-faq-2",
     "question": {
-      "uk": "Чим вона відрізняється від Review Card та Instagram Card?",
-      "en": "How is it different from Review Card and Instagram Card?",
-      "pl": "Czym różni się od Review Card i Instagram Card?"
+      "uk": "Чим вона відрізняється від Google Review Card та Instagram Card?",
+      "en": "How is it different from Google Review Card and Instagram Card?",
+      "pl": "Czym różni się od Google Review Card i Instagram Card?"
     },
     "answer": {
-      "uk": "Принцип використання той самий. Review Card веде до форми Google-відгуку, Instagram Card — до Instagram-профілю, а Menu Card — до онлайн-меню. Це окремі картки з відповідним дизайном; їхні фізичні характеристики можуть відрізнятися.",
-      "en": "They use the same interaction. Review Card opens a Google review form, Instagram Card opens an Instagram profile, and Menu Card opens an online menu. They are separate cards with suitable designs; their physical specifications can differ.",
-      "pl": "Sposób użycia jest podobny. Review Card prowadzi do formularza opinii Google, Instagram Card do profilu na Instagramie, a Menu Card do menu online. To osobne karty o odpowiednich wzorach; ich parametry fizyczne mogą się różnić."
+      "uk": "Принцип використання той самий. Google Review Card веде до форми Google-відгуку, Instagram Card — до Instagram-профілю, а Menu Card — до онлайн-меню. Це окремі картки з відповідним дизайном; їхні фізичні характеристики можуть відрізнятися.",
+      "en": "They use the same interaction. Google Review Card opens a Google review form, Instagram Card opens an Instagram profile, and Menu Card opens an online menu. They are separate cards with suitable designs; their physical specifications can differ.",
+      "pl": "Sposób użycia jest podobny. Google Review Card prowadzi do formularza opinii Google, Instagram Card do profilu na Instagramie, a Menu Card do menu online. To osobne karty o odpowiednich wzorach; ich parametry fizyczne mogą się różnić."
     }
   },
   {

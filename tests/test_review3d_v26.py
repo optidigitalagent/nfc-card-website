@@ -42,7 +42,7 @@ def test_quantity_and_payload_are_distinct_from_legacy_review():
       }
       for(const bad of [0,-1,1.5,'2',10001,true])assert.equal(review3dQuote(commerce,bad).valid,false);
       assert.equal(selectionQuote(commerce,'standard','2').amount,2600);
-      assert.equal(selectionQuote(commerce,'branded','2').amount,3600);
+      assert.equal(selectionQuote(commerce,'branded','2').amount,2600);
       assert.equal(selectionQuote(commerce,'instagram','2').amount,2600);
       for(const bad of ['http://google.com/maps','https://google.com:443/maps','https://evil.google.com.evil.test/maps',
         'https://'+'user:pass@google.com/maps','https://127.0.0.1/maps','javascript:alert(1)'])assert.equal(googleLocationURL(bad),null);
@@ -75,7 +75,7 @@ def test_bilingual_product_routes_gallery_catalog_and_schema():
         assert product.select_one('[data-review3d-form] [type=submit]').has_attr('disabled')
         assert len(catalog.select('.product-rows>article')) == 9
         assert catalog.select_one('.review3d-card') is not None
-        assert catalog.select_one('.review3d-card .review3d-status') is not None
+        assert catalog.select_one('.review3d-card .review3d-media-label') is not None
         assert product.select_one('.commerce-purchase .review3d-status') is not None
         assert product.select_one('[data-review3d-form] .review3d-status') is not None
         assert product.select_one('.desktop-nav a[href$="/solutions/review-card-3d"]')
