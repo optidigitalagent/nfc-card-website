@@ -1,0 +1,14 @@
+(()=>{'use strict';
+const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)'),finePointer=matchMedia('(hover: hover) and (pointer: fine)');
+const clamp=(v,min,max)=>Math.min(max,Math.max(min,v));
+function findSurface(stage){return stage.matches('.gallery-frame')?(stage.querySelector(':scope > figure:not([hidden])')||stage.querySelector(':scope > figure')):stage.querySelector(':scope > picture, :scope > img, :scope > .branded-concept, :scope > .instagram-placeholder, :scope > figure:not([hidden]), :scope > figure')}
+function reset(stage){stage.style.setProperty('--mouse-x','50%');stage.style.setProperty('--mouse-y','50%');stage.style.setProperty('--rotate-x','0deg');stage.style.setProperty('--rotate-y','0deg');stage.classList.remove('is-3d-active')}
+function initNfcCard3D(stage){if(!stage||stage.dataset.nfc3dReady==='true')return;const surface=findSurface(stage);if(!surface)return;stage.dataset.nfc3dReady='true';stage.classList.add('nfc-3d-stage');surface.classList.add('nfc-3d-surface');let frame=0,nextX=0,nextY=0;
+const paint=()=>{frame=0;const rect=stage.getBoundingClientRect();if(!rect.width||!rect.height)return;const px=clamp((nextX-rect.left)/rect.width,0,1),py=clamp((nextY-rect.top)/rect.height,0,1),nx=px*2-1,ny=py*2-1,rotateY=clamp(nx*8.5,-8.5,8.5),rotateX=clamp(-ny*7,-7,7);stage.style.setProperty('--mouse-x',`${(px*100).toFixed(2)}%`);stage.style.setProperty('--mouse-y',`${(py*100).toFixed(2)}%`);stage.style.setProperty('--rotate-x',`${rotateX.toFixed(2)}deg`);stage.style.setProperty('--rotate-y',`${rotateY.toFixed(2)}deg`)};
+const onMove=e=>{if(!finePointer.matches||reduceMotion.matches)return;nextX=e.clientX;nextY=e.clientY;if(!frame)frame=requestAnimationFrame(paint)},onEnter=e=>{if(!finePointer.matches||reduceMotion.matches)return;stage.classList.add('is-3d-active');onMove(e)},onLeave=()=>{if(frame){cancelAnimationFrame(frame);frame=0}reset(stage)};
+stage.addEventListener('pointerenter',onEnter,{passive:true});stage.addEventListener('pointermove',onMove,{passive:true});stage.addEventListener('pointerleave',onLeave,{passive:true});stage.addEventListener('pointercancel',onLeave,{passive:true});
+const motionChanged=()=>{if(reduceMotion.matches||!finePointer.matches)reset(stage)};reduceMotion.addEventListener('change',motionChanged);finePointer.addEventListener('change',motionChanged)}
+function mountAll(){document.querySelectorAll('.catalog-card-media, .gallery-frame').forEach(initNfcCard3D)}
+window.initNfcCard3D=initNfcCard3D;if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mountAll,{once:true});else mountAll();
+window.addEventListener('nfc:gallery',()=>{document.querySelectorAll('.gallery-frame').forEach(frame=>{frame.querySelectorAll(':scope > figure').forEach(figure=>figure.classList.toggle('nfc-3d-surface',!figure.hidden))})});
+})();
