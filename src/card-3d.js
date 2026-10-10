@@ -4,30 +4,31 @@ const finePointer=matchMedia('(hover: hover) and (pointer: fine)');
 const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)');
 const clamp=(value,min,max)=>Math.min(max,Math.max(min,value));
 
-function reset(host){
-  host.style.setProperty('--nfc-card-rx','0deg');
-  host.style.setProperty('--nfc-card-ry','0deg');
-  host.style.setProperty('--nfc-card-scale','1');
+function resting(host){
+  host.style.setProperty('--nfc-card-rx','4deg');
+  host.style.setProperty('--nfc-card-ry','-7deg');
+  host.style.setProperty('--nfc-card-scale','.94');
+  host.style.setProperty('--nfc-card-lift','18px');
   delete host.dataset.nfcCard3d;
 }
 
-function initCatalogCard3D(host){
+function initNfcCard3D(host){
   if(!host||host.dataset.nfcCard3dReady==='true')return;
 
-  const image=host.querySelector('.catalog-product-image');
+  const image=host.querySelector(':scope > .catalog-product-image, :scope > picture > .catalog-product-image, :scope .catalog-product-image');
   if(!image)return;
-
-  /* Only real existing catalog images get the effect. */
   if(image.closest('.branded-concept,.instagram-placeholder'))return;
 
   host.dataset.nfcCard3dReady='true';
-  let raf=0;
+  resting(host);
+
+  let frame=0;
   let clientX=0;
   let clientY=0;
 
   const paint=()=>{
-    raf=0;
-    if(!finePointer.matches||reduceMotion.matches)return reset(host);
+    frame=0;
+    if(!finePointer.matches||reduceMotion.matches)return resting(host);
 
     const rect=host.getBoundingClientRect();
     if(!rect.width||!rect.height)return;
@@ -35,19 +36,20 @@ function initCatalogCard3D(host){
     const x=clamp((clientX-rect.left)/rect.width,0,1);
     const y=clamp((clientY-rect.top)/rect.height,0,1);
 
-    const ry=(x-.5)*12;
-    const rx=(.5-y)*9;
+    const ry=(x-.5)*18;
+    const rx=(.5-y)*14;
 
     host.style.setProperty('--nfc-card-rx',rx.toFixed(2)+'deg');
     host.style.setProperty('--nfc-card-ry',ry.toFixed(2)+'deg');
-    host.style.setProperty('--nfc-card-scale','1.018');
+    host.style.setProperty('--nfc-card-scale','.97');
+    host.style.setProperty('--nfc-card-lift','26px');
   };
 
   const move=event=>{
     if(!finePointer.matches||reduceMotion.matches)return;
     clientX=event.clientX;
     clientY=event.clientY;
-    if(!raf)raf=requestAnimationFrame(paint);
+    if(!frame)frame=requestAnimationFrame(paint);
   };
 
   const enter=event=>{
@@ -57,8 +59,8 @@ function initCatalogCard3D(host){
   };
 
   const leave=()=>{
-    if(raf){cancelAnimationFrame(raf);raf=0;}
-    reset(host);
+    if(frame){cancelAnimationFrame(frame);frame=0;}
+    resting(host);
   };
 
   host.addEventListener('pointerenter',enter,{passive:true});
@@ -68,10 +70,10 @@ function initCatalogCard3D(host){
 }
 
 function mount(){
-  document.querySelectorAll('.catalog-card-media').forEach(initCatalogCard3D);
+  document.querySelectorAll('.catalog-card-media').forEach(initNfcCard3D);
 }
 
-window.initNfcCard3D=initCatalogCard3D;
+window.initNfcCard3D=initNfcCard3D;
 
 if(document.readyState==='loading'){
   document.addEventListener('DOMContentLoaded',mount,{once:true});
