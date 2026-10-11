@@ -8,23 +8,6 @@ function event(name,data={}){if(pages&&document.documentElement.dataset.publicat
 document.querySelectorAll('[data-event]').forEach(el=>{if(allowedEvents.has(el.dataset.event))el.addEventListener('click',()=>{event(el.dataset.event,el.dataset);if(el.dataset.event==='catalog_product_open')event('product_row_click',el.dataset);});});
 const gallery=document.querySelector('[data-commerce-gallery]');
 if(gallery)window.NFCGallery.mount(gallery,event);
-const modelStage=document.querySelector('[data-review-card-model-stage]'),modelObject=document.querySelector('[data-review-card-model-object]');
-if(modelStage&&modelObject){
- let rx=-8,ry=-28,dragging=false,startX=0,startY=0,startRx=rx,startRy=ry;
- const clampModel=(value,min,max)=>Math.min(max,Math.max(min,value));
- const renderModel=()=>{modelObject.style.setProperty('--model-rx',rx.toFixed(2)+'deg');modelObject.style.setProperty('--model-ry',ry.toFixed(2)+'deg');};
- const setView=(nextRx,nextRy)=>{rx=nextRx;ry=nextRy;renderModel();};
- modelStage.addEventListener('pointerdown',e=>{dragging=true;startX=e.clientX;startY=e.clientY;startRx=rx;startRy=ry;modelStage.classList.add('is-dragging');modelStage.setPointerCapture?.(e.pointerId);});
- modelStage.addEventListener('pointermove',e=>{if(!dragging)return;ry=startRy+(e.clientX-startX)*.42;rx=clampModel(startRx-(e.clientY-startY)*.32,-48,48);renderModel();});
- const stopModelDrag=e=>{if(!dragging)return;dragging=false;modelStage.classList.remove('is-dragging');try{modelStage.releasePointerCapture?.(e.pointerId)}catch{}};
- modelStage.addEventListener('pointerup',stopModelDrag);
- modelStage.addEventListener('pointercancel',stopModelDrag);
- modelStage.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home'].includes(e.key))return;e.preventDefault();if(e.key==='ArrowLeft')ry-=10;if(e.key==='ArrowRight')ry+=10;if(e.key==='ArrowUp')rx=clampModel(rx-8,-48,48);if(e.key==='ArrowDown')rx=clampModel(rx+8,-48,48);if(e.key==='Home'){rx=-8;ry=-28;}renderModel();});
- document.querySelector('[data-model-front]')?.addEventListener('click',()=>setView(-4,0));
- document.querySelector('[data-model-back]')?.addEventListener('click',()=>setView(-4,180));
- document.querySelector('[data-model-reset]')?.addEventListener('click',()=>setView(-8,-28));
- renderModel();
-}
 const disclosure=document.querySelector('#product-details');disclosure?.addEventListener('toggle',()=>{const summary=disclosure.querySelector('summary');summary.textContent=disclosure.open?P('Згорнути деталі','Collapse details'):document.querySelector('[data-product]')?.dataset.product==='branded'?P('Детальніше про брендовану картку','More about the branded card'):P('Детальніше про картку','More about the card');if(disclosure.open){event('product_details_expand');}});
 const pendingStore={key:'general',async act(action,value){const db=await new Promise((resolve,reject)=>{const r=indexedDB.open('nfc-commerce-v11',1);r.onupgradeneeded=()=>r.result.createObjectStore('pending');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)});try{return await new Promise((resolve,reject)=>{const tx=db.transaction('pending',action==='get'?'readonly':'readwrite'),store=tx.objectStore('pending'),r=action==='get'?store.get('order:'+this.key):action==='delete'?store.delete('order:'+this.key):store.put(value,'order:'+this.key);let output;r.onsuccess=()=>output=r.result;tx.oncomplete=()=>resolve(output);tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error);});}finally{db.close();}}};
 async function boot(){
