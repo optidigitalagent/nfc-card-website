@@ -109,23 +109,16 @@ scene.add_geometry(face(perimeter, half+0.00001, True, front_texture), node_name
 scene.add_geometry(face(perimeter, -half-0.00001, False, back_texture), node_name="Back", geom_name="Back")
 scene.add_geometry(edge(perimeter, half), node_name="Edge", geom_name="Edge")
 
-# Raised adhesive strips on the rear side.
-# 2 mm real extrusion with a visible darker side wall and chamfer so the
-# thickness remains readable even when the rear face is viewed almost head-on.
+# Two separate rear adhesive strips, each exactly 1 mm high.
 adhesive_top_material = PBRMaterial(
-    baseColorFactor=[0.015, 0.62, 1.0, 1.0],
+    baseColorFactor=[0.02, 0.60, 0.98, 1.0],
     metallicFactor=0.0,
-    roughnessFactor=0.34,
-)
-adhesive_bevel_material = PBRMaterial(
-    baseColorFactor=[0.01, 0.46, 0.88, 1.0],
-    metallicFactor=0.0,
-    roughnessFactor=0.38,
+    roughnessFactor=0.36,
 )
 adhesive_side_material = PBRMaterial(
-    baseColorFactor=[0.005, 0.30, 0.68, 1.0],
+    baseColorFactor=[0.01, 0.40, 0.82, 1.0],
     metallicFactor=0.0,
-    roughnessFactor=0.44,
+    roughnessFactor=0.42,
 )
 
 def material_face(perimeter, z, negative_z, material):
@@ -171,44 +164,31 @@ def ring_surface(a, za, b, zb, material):
 
 strip_width = 0.0155
 strip_height = 0.078
-strip_thickness = 0.00200
-strip_radius = 0.0019
-bevel = 0.00032
+strip_thickness = 0.00100  # 1 mm
+strip_radius = 0.0018
+
 base_z = -half - 0.00004
 top_z = base_z - strip_thickness
-shoulder_z = top_z + bevel
 
-strip_outer = rounded_rect(
+strip_shape = rounded_rect(
     width=strip_width,
     height=strip_height,
     radius=strip_radius,
     segments=10,
 )
-strip_top = rounded_rect(
-    width=strip_width - 0.00075,
-    height=strip_height - 0.00075,
-    radius=max(0.0008, strip_radius - 0.00038),
-    segments=10,
-)
 
 for idx, x in enumerate((-0.0335, 0.0335), start=1):
-    outer = strip_outer.copy()
-    top = strip_top.copy()
-    outer[:, 0] += x
-    top[:, 0] += x
+    shape = strip_shape.copy()
+    shape[:, 0] += x
 
     side = ring_surface(
-        outer, base_z,
-        outer, shoulder_z,
+        shape, base_z,
+        shape, top_z,
         adhesive_side_material
     )
-    chamfer = ring_surface(
-        outer, shoulder_z,
-        top, top_z,
-        adhesive_bevel_material
-    )
     cap = material_face(
-        top, top_z,
+        shape,
+        top_z,
         True,
         adhesive_top_material
     )
@@ -217,11 +197,6 @@ for idx, x in enumerate((-0.0335, 0.0335), start=1):
         side,
         node_name=f"RearAdhesiveStrip{idx}Side",
         geom_name=f"RearAdhesiveStrip{idx}Side"
-    )
-    scene.add_geometry(
-        chamfer,
-        node_name=f"RearAdhesiveStrip{idx}Bevel",
-        geom_name=f"RearAdhesiveStrip{idx}Bevel"
     )
     scene.add_geometry(
         cap,
