@@ -211,10 +211,16 @@ function webSafeReviewCardGlb(source){
  if(jsonType!=='JSON')throw Error('Review card GLB missing JSON chunk');
  const jsonStart=20,jsonEnd=jsonStart+jsonLength;
  const doc=JSON.parse(input.subarray(jsonStart,jsonEnd).toString('utf8').replace(/\u0000+$/,'').trimEnd());
- doc.extensionsUsed=[...new Set([...(doc.extensionsUsed||[]),'KHR_materials_unlit'])];
  for(const material of doc.materials||[]){
   material.doubleSided=true;
-  material.extensions={...(material.extensions||{}),KHR_materials_unlit:{}};
+  if(material.extensions?.KHR_materials_unlit){
+   delete material.extensions.KHR_materials_unlit;
+   if(Object.keys(material.extensions).length===0)delete material.extensions;
+  }
+ }
+ if(Array.isArray(doc.extensionsUsed)){
+  doc.extensionsUsed=doc.extensionsUsed.filter(name=>name!=='KHR_materials_unlit');
+  if(doc.extensionsUsed.length===0)delete doc.extensionsUsed;
  }
  const encoded=Buffer.from(JSON.stringify(doc),'utf8');
  const paddedLength=Math.ceil(encoded.length/4)*4;
