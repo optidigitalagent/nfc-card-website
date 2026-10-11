@@ -109,99 +109,34 @@ scene.add_geometry(face(perimeter, half+0.00001, True, front_texture), node_name
 scene.add_geometry(face(perimeter, -half-0.00001, False, back_texture), node_name="Back", geom_name="Back")
 scene.add_geometry(edge(perimeter, half), node_name="Edge", geom_name="Edge")
 
-# Two separate rear adhesive strips, each exactly 1 mm high.
-adhesive_top_material = PBRMaterial(
+# Two independent rear adhesive strips: one on the left and one on the right.
+# Each strip protrudes exactly 1 mm from the rear surface.
+adhesive_material = PBRMaterial(
     baseColorFactor=[0.02, 0.60, 0.98, 1.0],
     metallicFactor=0.0,
-    roughnessFactor=0.36,
+    roughnessFactor=0.38,
 )
-adhesive_side_material = PBRMaterial(
-    baseColorFactor=[0.01, 0.40, 0.82, 1.0],
-    metallicFactor=0.0,
-    roughnessFactor=0.42,
-)
-
-def material_face(perimeter, z, negative_z, material):
-    count = len(perimeter)
-    vertices = np.vstack([
-        [0, 0, z],
-        np.column_stack([perimeter, np.full(count, z)])
-    ])
-    faces = []
-    for i in range(count):
-        j = (i + 1) % count
-        faces.append([0, 1+j, 1+i] if negative_z else [0, 1+i, 1+j])
-    mesh = trimesh.Trimesh(
-        vertices=vertices,
-        faces=np.asarray(faces),
-        visual=trimesh.visual.TextureVisuals(material=material),
-        process=False,
-    )
-    _ = mesh.vertex_normals
-    return mesh
-
-def ring_surface(a, za, b, zb, material):
-    count = len(a)
-    vertices = np.vstack([
-        np.column_stack([a, np.full(count, za)]),
-        np.column_stack([b, np.full(count, zb)]),
-    ])
-    faces = []
-    for i in range(count):
-        j = (i + 1) % count
-        faces.extend([
-            [i, count+i, count+j],
-            [i, count+j, j],
-        ])
-    mesh = trimesh.Trimesh(
-        vertices=vertices,
-        faces=np.asarray(faces),
-        visual=trimesh.visual.TextureVisuals(material=material),
-        process=False,
-    )
-    _ = mesh.vertex_normals
-    return mesh
 
 strip_width = 0.0155
 strip_height = 0.078
 strip_thickness = 0.00100  # 1 mm
-strip_radius = 0.0018
-
-base_z = -half - 0.00004
-top_z = base_z - strip_thickness
-
-strip_shape = rounded_rect(
-    width=strip_width,
-    height=strip_height,
-    radius=strip_radius,
-    segments=10,
-)
+rear_surface_z = -half - 0.00004
 
 for idx, x in enumerate((-0.0335, 0.0335), start=1):
-    shape = strip_shape.copy()
-    shape[:, 0] += x
-
-    side = ring_surface(
-        shape, base_z,
-        shape, top_z,
-        adhesive_side_material
+    strip = trimesh.creation.box(
+        extents=[strip_width, strip_height, strip_thickness]
     )
-    cap = material_face(
-        shape,
-        top_z,
-        True,
-        adhesive_top_material
-    )
-
+    strip.apply_translation([
+        x,
+        0.0,
+        rear_surface_z - strip_thickness / 2
+    ])
+    strip.visual = trimesh.visual.TextureVisuals(material=adhesive_material)
+    _ = strip.vertex_normals
     scene.add_geometry(
-        side,
-        node_name=f"RearAdhesiveStrip{idx}Side",
-        geom_name=f"RearAdhesiveStrip{idx}Side"
-    )
-    scene.add_geometry(
-        cap,
-        node_name=f"RearAdhesiveStrip{idx}Top",
-        geom_name=f"RearAdhesiveStrip{idx}Top"
+        strip,
+        node_name=f"RearAdhesiveStrip{idx}",
+        geom_name=f"RearAdhesiveStrip{idx}"
     )
 
 MODEL.write_bytes(scene.export(file_type="glb"))
