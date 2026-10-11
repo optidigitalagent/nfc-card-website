@@ -117,8 +117,8 @@ adhesive_material = PBRMaterial(
     roughnessFactor=0.38,
 )
 
-strip_width = 0.0155
-strip_height = 0.078
+strip_width = 0.0212
+strip_height = 0.0940
 strip_thickness = 0.00100  # 1 mm
 rear_surface_z = -half - 0.00004
 
