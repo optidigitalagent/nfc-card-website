@@ -119,7 +119,7 @@ adhesive_material = PBRMaterial(
 
 strip_width = 0.0155
 strip_height = 0.078
-strip_thickness = 0.00050
+strip_thickness = 0.00200
 
 for idx, x in enumerate((-0.0335, 0.0335), start=1):
     strip = trimesh.creation.box(
