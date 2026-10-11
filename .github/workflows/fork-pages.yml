@@ -31,6 +31,9 @@ jobs:
           npm install --no-save @google/model-viewer@4.4.0
           cp node_modules/@google/model-viewer/dist/model-viewer.min.js src/model-viewer.min.js
           test -s src/model-viewer.min.js
+          python -m pip install --disable-pip-version-check numpy Pillow trimesh
+          python scripts/build_review_card_fullbleed.py
+          test -s src/nfc-review-card-3d.glb
       - name: Build fork preview
         env:
           NFC_ENV: production
