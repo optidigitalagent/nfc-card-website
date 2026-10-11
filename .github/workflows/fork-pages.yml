@@ -26,7 +26,11 @@ jobs:
           node-version: '24'
           package-manager-cache: false
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm ci
+          npm install --no-save @google/model-viewer@4.4.0
+          cp node_modules/@google/model-viewer/dist/model-viewer.min.js src/model-viewer.min.js
+          test -s src/model-viewer.min.js
       - name: Build fork preview
         env:
           NFC_ENV: production
