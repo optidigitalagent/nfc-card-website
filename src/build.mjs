@@ -203,12 +203,42 @@ const redirectEntries=[...existingRedirects,...existingRedirects.filter(([from])
 for(const [from]of redirectEntries){const file=path.resolve(output,from.replace(/^\//,''),'index.html');if(!file.startsWith(path.resolve(output)+path.sep))throw Error('Unsafe retired path');if(fs.existsSync(file))fs.unlinkSync(file);}
 if(!pages)fs.writeFileSync(path.join(output,'_redirects'),redirectEntries.map(([from,to])=>`${publicURL(from,publication)} ${publicURL(to,publication)} 301\n${publicURL(from,publication)}/ ${publicURL(to,publication)} 301`).join('\n')+'\n');
 fs.writeFileSync(path.join(output,'assets/style.css'),publicCSS(fs.readFileSync(path.join(root,'src/style.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'src/commerce.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'src/about.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'src/visual-v13.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'src/instagram.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'src/menu.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'src/gallery-polish.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'src/review3d.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'src/niche.css'),'utf8')+'\n'+fs.readFileSync(path.join(root,'src/catalog-card.css'),'utf8')+(pagesPreview?'\n'+previewCSS:''),publication));
+function webSafeReviewCardGlb(source){
+ const input=Buffer.from(source);
+ if(input.length<28||input.toString('ascii',0,4)!=='glTF'||input.readUInt32LE(4)!==2)throw Error('Invalid review card GLB');
+ const jsonLength=input.readUInt32LE(12);
+ const jsonType=input.toString('ascii',16,20);
+ if(jsonType!=='JSON')throw Error('Review card GLB missing JSON chunk');
+ const jsonStart=20,jsonEnd=jsonStart+jsonLength;
+ const doc=JSON.parse(input.subarray(jsonStart,jsonEnd).toString('utf8').replace(/\u0000+$/,'').trimEnd());
+ doc.extensionsUsed=[...new Set([...(doc.extensionsUsed||[]),'KHR_materials_unlit'])];
+ for(const material of doc.materials||[]){
+  material.doubleSided=true;
+  material.extensions={...(material.extensions||{}),KHR_materials_unlit:{}};
+ }
+ const encoded=Buffer.from(JSON.stringify(doc),'utf8');
+ const paddedLength=Math.ceil(encoded.length/4)*4;
+ const jsonChunk=Buffer.alloc(paddedLength,0x20);
+ encoded.copy(jsonChunk);
+ const tail=input.subarray(jsonEnd);
+ const output=Buffer.alloc(20+paddedLength+tail.length);
+ output.write('glTF',0,'ascii');
+ output.writeUInt32LE(2,4);
+ output.writeUInt32LE(output.length,8);
+ output.writeUInt32LE(paddedLength,12);
+ output.write('JSON',16,'ascii');
+ jsonChunk.copy(output,20);
+ tail.copy(output,20+paddedLength);
+ return output;
+}
 for(const file of ['commerce-contract.mjs','pl-commerce.mjs','mini-contract.mjs','menu-contract.mjs','menu-client.mjs','review3d-client.mjs','niche-client.mjs','pages.mjs','app.js','nfc-review-card-3d.glb','commerce.js','gallery.js','reviews.js','reviews-renderer.js','admin-reviews.js','reviews.css','Onest.ttf','Onest-OFL.txt','IBMPlexMono.ttf','IBMPlexMono-OFL.txt']){
  if(pages&&['reviews.js','reviews-renderer.js','admin-reviews.js','reviews.css'].includes(file))continue;
  if(pages&&['app.js','commerce.js'].includes(file)){
   const source=fs.readFileSync(path.join(root,'src',file),'utf8');
   if(source.split('/* NFC_FULLSTACK_START */').length!==2||source.split('/* NFC_FULLSTACK_END */').length!==2)throw Error('Missing fullstack client boundary');
   fs.writeFileSync(path.join(output,'assets',file),source.replace(/\/\* NFC_FULLSTACK_START \*\/[\s\S]*?\/\* NFC_FULLSTACK_END \*\//g,''));
+ }else if(file==='nfc-review-card-3d.glb'){
+  fs.writeFileSync(path.join(output,'assets',file),webSafeReviewCardGlb(fs.readFileSync(path.join(root,'src',file))));
  }else fs.copyFileSync(path.join(root,'src',file),path.join(output,'assets',file));
 }
 const localeClient=fs.readFileSync(path.join(root,'src/localization-client.js'),'utf8');
