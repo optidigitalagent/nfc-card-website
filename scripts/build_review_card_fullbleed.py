@@ -109,5 +109,34 @@ scene.add_geometry(face(perimeter, half+0.00001, True, front_texture), node_name
 scene.add_geometry(face(perimeter, -half-0.00001, False, back_texture), node_name="Back", geom_name="Back")
 scene.add_geometry(edge(perimeter, half), node_name="Edge", geom_name="Edge")
 
+# Raised adhesive strips on the rear side.
+# They sit on top of the rear print instead of being only part of the texture.
+adhesive_material = PBRMaterial(
+    baseColorFactor=[0.02, 0.56, 0.96, 1.0],
+    metallicFactor=0.0,
+    roughnessFactor=0.46,
+)
+
+strip_width = 0.0155
+strip_height = 0.078
+strip_thickness = 0.00050
+
+for idx, x in enumerate((-0.0335, 0.0335), start=1):
+    strip = trimesh.creation.box(
+        extents=[strip_width, strip_height, strip_thickness]
+    )
+    strip.apply_translation([
+        x,
+        0.0,
+        -half - strip_thickness / 2 - 0.00003
+    ])
+    strip.visual = trimesh.visual.TextureVisuals(material=adhesive_material)
+    _ = strip.vertex_normals
+    scene.add_geometry(
+        strip,
+        node_name=f"RearAdhesiveStrip{idx}",
+        geom_name=f"RearAdhesiveStrip{idx}"
+    )
+
 MODEL.write_bytes(scene.export(file_type="glb"))
 print(f"Rebuilt full-bleed review card model: {MODEL.stat().st_size} bytes")
