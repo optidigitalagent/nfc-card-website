@@ -11,7 +11,8 @@ from .review_config import configure
 from .review_http import ReviewHTTP,Request,Response,json_response,unique
 from .commerce_repository import PostgresLeadService
 from .leads import LeadError
-from .routing import product_redirect,model_viewer_script_policy
+from .routing import product_redirect
+from .model_viewer_policy import model_viewer_script_policy
 from .publication import PublicationPolicy,cache_control
 
 ROOT=Path(__file__).resolve().parents[1]

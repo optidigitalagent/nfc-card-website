@@ -5,6 +5,11 @@ for (const demo of document.querySelectorAll('[data-nfc-demo]')) {
  const card=demo.querySelector('[data-demo-card-tap]');
  const open=demo.querySelector('[data-demo-open]');
  const home=demo.querySelector('[data-demo-home]');
+ const off=demo.querySelector('[data-demo-off]');
+ const boot=demo.querySelector('[data-demo-boot]');
+ const power=demo.querySelector('[data-demo-power]');
+ const phone=demo.querySelector('.nfc-demo-phone');
+ const stage=demo.querySelector('.nfc-demo-stage');
  const review=demo.querySelector('[data-demo-review]');
  const complete=demo.querySelector('[data-demo-complete]');
  const status=demo.querySelector('[data-demo-status]');
@@ -23,31 +28,59 @@ for (const demo of document.querySelectorAll('[data-nfc-demo]')) {
   status.textContent=status.dataset[state];
   tap.replaceChildren(document.createTextNode(state==='review'&&rating?finish.textContent:tap.dataset[state]));
   const arrow=document.createElement('span');arrow.setAttribute('aria-hidden','true');arrow.textContent='↗';tap.append(arrow);
-  tap.disabled=state==='approaching';
+  tap.disabled=['booting','approaching','contact'].includes(state);
   reset.disabled=state==='idle';
-  card.disabled=state!=='idle';
-  home.hidden=state==='review'||state==='done';
+  card.disabled=state!=='desktop';
+  off.hidden=state!=='idle';
+  boot.hidden=state!=='booting';
+  home.hidden=!['desktop','approaching','contact','notified'].includes(state);
   open.hidden=state!=='notified';
   review.hidden=state!=='review';
   complete.hidden=state!=='done';
-  const current=state==='review'||state==='done'?2:state==='notified'?1:0;
+  const current=state==='review'||state==='done'?3:state==='notified'?2:['approaching','contact'].includes(state)?1:0;
   for (const step of demo.querySelectorAll('[data-demo-step]')) {
    const index=Number(step.dataset.demoStep);
    step.classList.toggle('is-complete',index<current||state==='done');
    if(index===current)step.setAttribute('aria-current','step');else step.removeAttribute('aria-current');
   }
-  connection.querySelector('span').textContent=state==='idle'||state==='approaching'?connection.dataset.idle:connection.dataset.connected;
+  connection.querySelector('span').textContent=connection.dataset[state]||(state==='approaching'?connection.dataset.desktop:connection.dataset.connected);
  }
  function showReview() {
   if(demo.dataset.state!=='notified')return;
   setState('review');review.scrollTop=0;stars[0].focus({preventScroll:true});
  }
+ function schedule(callback,delay) {
+  clearTimeout(timer);
+  timer=setTimeout(callback,reduced.matches?Math.min(delay,180):delay);
+ }
+ function placeOnCard() {
+  const bounds=stage.getBoundingClientRect();
+  const target=card.getBoundingClientRect();
+  const scale=.72;
+  const x=target.left+target.width*.58-bounds.left;
+  const y=target.top+target.height*.36-bounds.top;
+  stage.style.setProperty('--demo-contact-x',`${x-phone.offsetLeft-phone.offsetWidth/2}px`);
+  stage.style.setProperty('--demo-contact-y',`${y-phone.offsetTop-phone.offsetHeight*.13*scale}px`);
+  stage.style.setProperty('--demo-signal-x',`${x-32}px`);
+  stage.style.setProperty('--demo-signal-y',`${y-32}px`);
+ }
+ function approach() {
+  if(demo.dataset.state!=='desktop')return;
+  placeOnCard();setState('approaching');
+  schedule(()=>{
+   setState('contact');
+   schedule(()=>{setState('notified');open.focus({preventScroll:true});},700);
+  },1200);
+ }
  function start() {
   if(demo.dataset.state!=='idle')return;
-  setState('approaching');
-  if(matchMedia('(max-width: 900px)').matches)demo.querySelector('.nfc-demo-phone').scrollIntoView({block:'center',behavior:reduced.matches?'instant':'smooth'});
-  timer=setTimeout(()=>{setState('notified');open.focus({preventScroll:true});},reduced.matches?0:1050);
+  setState('booting');
+  if(matchMedia('(max-width: 900px)').matches)phone.scrollIntoView({block:'center',behavior:reduced.matches?'instant':'smooth'});
+  schedule(()=>{setState('desktop');schedule(approach,1400);},1000);
  }
+ new ResizeObserver(()=>{
+  if(['approaching','contact'].includes(demo.dataset.state))placeOnCard();
+ }).observe(stage);
  function restart() {
   clearTimeout(timer);rating=0;finish.disabled=true;
   for(const star of stars){star.classList.remove('is-filled');star.setAttribute('aria-pressed','false');}
@@ -66,11 +99,11 @@ for (const demo of document.querySelectorAll('[data-nfc-demo]')) {
  }
  tap.addEventListener('click',()=>{
   const state=demo.dataset.state;
-  if(state==='idle')start();else if(state==='notified')showReview();else if(state==='review'){
+  if(state==='idle')start();else if(state==='desktop')approach();else if(state==='notified')showReview();else if(state==='review'){
    if(rating)finishDemo();else stars[0].focus();
   }else if(state==='done')restart();
  });
- card.addEventListener('click',start);open.addEventListener('click',showReview);
+ card.addEventListener('click',approach);power.addEventListener('click',start);open.addEventListener('click',showReview);
  finish.addEventListener('click',finishDemo);reset.addEventListener('click',restart);
  for(const star of stars){
   star.addEventListener('click',()=>selectRating(Number(star.dataset.demoStar)));

@@ -8,7 +8,8 @@ import sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from server.review_http import ReviewHTTP,Request as ReviewRequest
 from server.review_config import configure
-from server.routing import product_redirect,model_viewer_script_policy
+from server.routing import product_redirect
+from server.model_viewer_policy import model_viewer_script_policy
 from server.pricing import canonical_quote
 import html
 import io

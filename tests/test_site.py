@@ -88,7 +88,9 @@ def test_rendered_route_integrity(route):
         assert (field.get('id') and soup.find('label', attrs={'for': field['id']})) or field.find_parent('label'), field
     for asset in soup.select('script[src],link[rel=stylesheet],img[src],source[src]'):
         src = asset.get('src') or asset.get('href')
-        assert src.startswith('/') and (SITE / src.lstrip('/')).is_file(), src
+        parsed = urlsplit(src)
+        assert src.startswith('/') and not parsed.scheme and not parsed.netloc, src
+        assert (SITE / unquote(parsed.path).lstrip('/')).is_file(), src
 
 
 @pytest.mark.parametrize('route', ROUTES)

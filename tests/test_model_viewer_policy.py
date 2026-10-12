@@ -1,7 +1,7 @@
 """Keep the model decoder's WASM permission off forms and unrelated routes."""
 import pytest
 
-from server.routing import model_viewer_script_policy
+from server.model_viewer_policy import model_viewer_script_policy
 
 
 @pytest.mark.parametrize('path', [

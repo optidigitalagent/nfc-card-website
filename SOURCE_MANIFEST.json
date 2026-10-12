@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
-  "file_count_including_manifest": 655,
+  "file_count_including_manifest": 656,
   "release_source": {
     "handoff_archive_sha256": "9cf61bc26214321d296adeae4c63eb21a5b624bfa9f8849797bcb51c66ff5de0",
     "handoff_manifest": "docs/release/v1.0.0/source-handoff-manifest.json",
@@ -877,9 +877,14 @@
       "sha256": "513097d70ad842fcafd281174aac7d075e5c23ffe30cf6e215e1b4785af1202a"
     },
     {
+      "path": "server/model_viewer_policy.py",
+      "bytes": 456,
+      "sha256": "289e132db409bbf8696b896af64763adab861bc0ee9140b29bda1a4618c804ef"
+    },
+    {
       "path": "server/preview.py",
-      "bytes": 30063,
-      "sha256": "911aa2958ec3f4520600771e1eaf4802c447671339ec5ed2d5ae34097392e74f"
+      "bytes": 30101,
+      "sha256": "ada9cfa44493614cfc55e4323962efba9fa7c1692620622756b603b5aaad213f"
     },
     {
       "path": "server/pricing.py",
@@ -933,8 +938,8 @@
     },
     {
       "path": "server/routing.py",
-      "bytes": 1552,
-      "sha256": "43ee5c5c7438df0a8377ae37709aa9f8b320f8956459f308a0a24ce412aea165"
+      "bytes": 1200,
+      "sha256": "7c3ad76847ae4a7ec45d70bc32386b9f5c59f628e04031c3648824bd753dd99f"
     },
     {
       "path": "server/set_admin_password.py",
@@ -943,8 +948,8 @@
     },
     {
       "path": "server/wsgi.py",
-      "bytes": 7491,
-      "sha256": "8b383ddbbe3368c55e537eba7aa1c06d4b25eb520d20d8a82a6067475137abf4"
+      "bytes": 7524,
+      "sha256": "b669884cd8d929f1c540bf3391c1eda1da306ef71b72f746832b3067bf63175a"
     },
     {
       "path": "src/IBMPlexMono-OFL.txt",
@@ -2983,18 +2988,18 @@
     },
     {
       "path": "src/nfc-demo-client.mjs",
-      "bytes": 4823,
-      "sha256": "ff79613f5cbe7c5accbc07607df6177f3a5223cbe5c639a961a167dbc21db0b1"
+      "bytes": 6325,
+      "sha256": "7c4151af3cfe60ea4724085020fc95e3fc29dfbe727ccf1fc6a9c95e9f6ff217"
     },
     {
       "path": "src/nfc-demo-view.mjs",
-      "bytes": 11568,
-      "sha256": "b0721946410945ae3d6897eb5301226b09a172f5ac0f9b4fbed96b7c6d85a7d8"
+      "bytes": 14060,
+      "sha256": "be2e58194c221758b993655fb0a069f8f0fa91a7e818f3a416f3ec3e6b7e9edf"
     },
     {
       "path": "src/nfc-demo.css",
-      "bytes": 15036,
-      "sha256": "67893c1d62fe2324eeafe8a40e062d03b8604f78abdee39770b4a55b97d38cfd"
+      "bytes": 19894,
+      "sha256": "0386c9cfe098a311e7db13f4e3ef7d84c5e66ac5f72011512eefdcee30807275"
     },
     {
       "path": "src/nfc-review-card-3d.glb",
@@ -3083,8 +3088,8 @@
     },
     {
       "path": "src/publication-approval.json",
-      "bytes": 2273,
-      "sha256": "06ee834732119fbdaf491d749b0485073f5b99c1be61f335910646bc747ad5c3"
+      "bytes": 2388,
+      "sha256": "f897e7058a0699e8e91cb68a0076b008c7032093d006b94472b2551c84bde98b"
     },
     {
       "path": "src/publication.mjs",
@@ -3198,8 +3203,8 @@
     },
     {
       "path": "tests/test_model_viewer_policy.py",
-      "bytes": 1054,
-      "sha256": "2b8b0d15469f3ecbfedc6cdf7126ed676f37185a055182a74c90070221e23cbd"
+      "bytes": 1066,
+      "sha256": "b5eb524659888c4ef10783356b94aaab37ef0313c68942e243fe8cb8f732561b"
     },
     {
       "path": "tests/test_niche_v31.py",
@@ -3258,8 +3263,8 @@
     },
     {
       "path": "tests/test_site.py",
-      "bytes": 16269,
-      "sha256": "b1292891dfba3fc2177810d8cb324d10f7c90839d89eb18ecb5baf8706d3a2eb"
+      "bytes": 16377,
+      "sha256": "09378f6ffc98e788c25429b1f11d1ad2bc0003b8119d955c955e72df660e6a02"
     },
     {
       "path": "tests/test_v12_browser.py",
@@ -3273,8 +3278,8 @@
     },
     {
       "path": "tests/test_v13.py",
-      "bytes": 17637,
-      "sha256": "d5e515e9018ec9d7c95405e95f8eacfb51b9ee19593b8cf120d816f1e47e83b4"
+      "bytes": 19383,
+      "sha256": "01abed89b88073a5b922d2fa0915106dd751e444d4a42d0c31c79ec19d5c2024"
     },
     {
       "path": "tests/test_v13_browser.py",
