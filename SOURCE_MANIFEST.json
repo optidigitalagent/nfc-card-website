@@ -1013,8 +1013,8 @@
     },
     {
       "path": "src/build.mjs",
-      "bytes": 60600,
-      "sha256": "fa176f2c96357b5f4122a4a9e0d71217b63811d2bb6a64988e32aa9b0e60ee45"
+      "bytes": 60870,
+      "sha256": "3b372f5944cfe332dab0b6b765da142959432a5a4a6c6960cc505457a098910c"
     },
     {
       "path": "src/card-3d.css",
@@ -3084,7 +3084,7 @@
     {
       "path": "src/publication-approval.json",
       "bytes": 2273,
-      "sha256": "d9688c9c1577f8d402addf823ba77b68fb013fa99d6addbc882f459ee7d20aea"
+      "sha256": "06ee834732119fbdaf491d749b0485073f5b99c1be61f335910646bc747ad5c3"
     },
     {
       "path": "src/publication.mjs",
