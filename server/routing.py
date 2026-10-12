@@ -2,6 +2,12 @@
 from urllib.parse import urlsplit,parse_qsl,urlencode,unquote
 import re
 PRODUCTS={'standard':'/solutions/review-card','branded':'/solutions/branded-review-card'}
+def model_viewer_script_policy(target):
+    # Permit the model decoder only on localized product pages using the viewer.
+    path=urlsplit(target).path.rstrip('/')
+    routes={'/solutions/review-card','/en/solutions/review-card','/pl/solutions/review-card'}
+    return "script-src 'self' 'wasm-unsafe-eval'" if path in routes else "script-src 'self'"
+
 def product_redirect(target):
     parts=urlsplit(target);path=unquote(parts.path).rstrip('/');prefix='/en' if path.startswith('/en/') else '';route=path.removeprefix(prefix)
     if route not in PRODUCTS.values():return None
