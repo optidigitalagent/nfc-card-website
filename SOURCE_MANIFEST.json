@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
-  "file_count_including_manifest": 646,
+  "file_count_including_manifest": 654,
   "release_source": {
     "handoff_archive_sha256": "9cf61bc26214321d296adeae4c63eb21a5b624bfa9f8849797bcb51c66ff5de0",
     "handoff_manifest": "docs/release/v1.0.0/source-handoff-manifest.json",
@@ -40,6 +40,11 @@
       "path": ".github/workflows/ci.yml",
       "bytes": 6718,
       "sha256": "f69587d96fce3ff83ae5ad301bee55d88c0cb765b059efe3fc522b786ebc5dfc"
+    },
+    {
+      "path": ".github/workflows/fork-pages.yml",
+      "bytes": 1857,
+      "sha256": "09f5202bc7bb20080e6c2d0a530ee3174cdd799246d3b3b295c1b9ed3662b944"
     },
     {
       "path": ".gitignore",
@@ -188,13 +193,13 @@
     },
     {
       "path": "package-lock.json",
-      "bytes": 218,
-      "sha256": "321288aed44b1b2786cc50269c340f20d8766e2c90e0d453e7661f7e0bc8c527"
+      "bytes": 5180,
+      "sha256": "7b4eae3ae3a7f1351fe24db641495ff3e46356637cc5f5945b1e69355a1e4c3c"
     },
     {
       "path": "package.json",
-      "bytes": 362,
-      "sha256": "d77d4daf1e632fa034852e64173a72112d17764ca10bb39a629e291e912d7ef1"
+      "bytes": 408,
+      "sha256": "601bb96365fbfcaba22c6087db04b5ccf5e54ff1c20dd385b04832ac4dfd38ee"
     },
     {
       "path": "refinements/instagram-v18/ACCEPTANCE_REPORT.md",
@@ -777,14 +782,19 @@
       "sha256": "ba81a0a343ce36d61b9a301fdbc994340f48007d7468e634b4f01694bc752f70"
     },
     {
+      "path": "scripts/build_review_card_fullbleed.py",
+      "bytes": 4700,
+      "sha256": "c15a9812b523893e595967c774474cc13000c7c2aa69c403873edba79ce9891e"
+    },
+    {
       "path": "scripts/release_guard.py",
       "bytes": 14630,
       "sha256": "698b62a37ddf3f335a81041137453a45e45baee32c629713a98dbb062928e4da"
     },
     {
       "path": "scripts/run_tests.py",
-      "bytes": 3505,
-      "sha256": "eec09e14e54b123dfa3256e480b65c7a29a90082b81048ca2fcf66f76f5ede8f"
+      "bytes": 3642,
+      "sha256": "3249bee56b6b9d64fef912eeab14e9e1378995c9061749048ed68fda7938c8a0"
     },
     {
       "path": "scripts/start.py",
@@ -1003,8 +1013,18 @@
     },
     {
       "path": "src/build.mjs",
-      "bytes": 58371,
-      "sha256": "bf6a5000e97e2e56b95cfdf3a48114b29a756d66b50dcd766b28e4902701886b"
+      "bytes": 60559,
+      "sha256": "4d2eaaf6ae10f804a5c6516548aa9a4155fc9ba47972658c98ca496e845d7727"
+    },
+    {
+      "path": "src/card-3d.css",
+      "bytes": 2949,
+      "sha256": "ef7cce8653be2de970594c74d743525b0234734a862600d6837618494ac2f690"
+    },
+    {
+      "path": "src/card-3d.js",
+      "bytes": 2451,
+      "sha256": "d817333381cc9bbfb4b28fa128a6ca238132de93ed4e5d792aa9c0687713f828"
     },
     {
       "path": "src/catalog-card.css",
@@ -1023,13 +1043,13 @@
     },
     {
       "path": "src/commerce-view.mjs",
-      "bytes": 27257,
-      "sha256": "0cd301ec2b28d0adaf34bf426704b9a7cf1375e4a59e3fd110a5399160a70ce2"
+      "bytes": 29191,
+      "sha256": "55cdbe3921b763a3467bd6a4f1285a0aee3f2e3cc1d49e188558e857808d4949"
     },
     {
       "path": "src/commerce.css",
-      "bytes": 11447,
-      "sha256": "a5dc2fef32eec891120986b8428b95871bf6a5d90927dc6c00833a4364c73bd0"
+      "bytes": 13732,
+      "sha256": "46057004095896d99b45c97aad5bcfce47d12695971e96827563da891512985c"
     },
     {
       "path": "src/commerce.js",
@@ -2960,6 +2980,26 @@
       "path": "src/model.mjs",
       "bytes": 80460,
       "sha256": "289a574886e7bf3fbedd2bb345979026dfaa9247f373b664c1ea25cabfd02779"
+    },
+    {
+      "path": "src/nfc-demo-client.mjs",
+      "bytes": 2511,
+      "sha256": "a84c0ccd53ed757416429132b447d340c5533c94807ff7d60d9e10dda33d44ac"
+    },
+    {
+      "path": "src/nfc-demo-view.mjs",
+      "bytes": 7482,
+      "sha256": "46ef0fa41cf8c90c0d89c6432adceb7a26f5b49f5c2352183281e3f9f4c5a0ac"
+    },
+    {
+      "path": "src/nfc-demo.css",
+      "bytes": 7930,
+      "sha256": "03cb854ae29b2472bd7706c2be4d12cad201df4c5c796577e1c6c6bca3b2324f"
+    },
+    {
+      "path": "src/nfc-review-card-3d.glb",
+      "bytes": 91324,
+      "sha256": "499546bd8ba402a80d6a7ff8b766fc7ba2c477b211f5daeabbf7bbb0711a88b0"
     },
     {
       "path": "src/niche-client.mjs",

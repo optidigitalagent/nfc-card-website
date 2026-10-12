@@ -1,0 +1,58 @@
+.nfc-demo{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin:48px 0;padding:40px;border:1px solid var(--nfc-border-soft);border-radius:24px;background:var(--nfc-surface-soft);overflow:hidden}
+.nfc-demo [hidden]{display:none!important}
+.nfc-demo-copy,.nfc-demo-visual{min-width:0}
+.nfc-demo-copy h2{font-size:clamp(1.75rem,3vw,2.8rem);line-height:1.1;letter-spacing:-.045em;margin:0 0 18px;max-width:430px}
+.nfc-demo-intro{font-size:1rem;line-height:1.65;color:var(--nfc-text-secondary);max-width:430px}
+.nfc-demo-steps{list-style:none;padding:0;margin:26px 0;display:grid;gap:13px}
+.nfc-demo-steps li{display:flex;align-items:center;gap:12px;font-size:.875rem;color:var(--nfc-text-secondary)}
+.nfc-demo-steps li>span{display:grid;place-items:center;flex:0 0 32px;height:32px;border:1px solid var(--nfc-border);border-radius:50%;font:11px monospace;transition:background .2s,color .2s}
+.nfc-demo-steps li[aria-current]{color:var(--nfc-ink);font-weight:600}
+.nfc-demo-steps li[aria-current]>span{background:var(--nfc-graphite);color:white;border-color:var(--nfc-graphite)}
+.nfc-demo-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;min-height:48px}
+.nfc-demo-actions .button{min-height:48px}
+.nfc-demo-actions .text-action{border:0;background:transparent;font:inherit;cursor:pointer;padding:8px 0;min-height:44px}
+.nfc-demo-status{font-size:.8125rem;color:var(--nfc-text-secondary);min-height:42px;margin:14px 0 8px;line-height:1.5}
+.nfc-demo-disclaimer{font-size:.75rem;color:var(--nfc-text-secondary);line-height:1.55;margin:0;border-top:1px solid var(--nfc-border-soft);padding-top:14px}
+.nfc-demo-stage{position:relative;height:410px;max-width:480px;margin:0 auto;isolation:isolate}
+.nfc-demo-stage::before{content:'';position:absolute;inset:25px 0 12px;border-radius:50%;background:radial-gradient(ellipse,#fff 10%,#d5dadf66 45%,transparent 70%);z-index:-1}
+.nfc-demo-card{position:absolute;left:5%;top:125px;width:172px;aspect-ratio:1;background:#fff;border:1px solid #d5dadf;border-radius:12px;box-shadow:0 15px 30px #181b1f18;transform:rotate(-12deg);overflow:hidden}
+.nfc-demo-card img{display:block;object-fit:cover;width:100%;height:100%}
+.nfc-demo-card>span{position:absolute;bottom:8px;left:0;right:0;text-align:center;font:9px monospace;letter-spacing:.12em;color:#555c64;background:#ffffffdd;padding:4px}
+.nfc-demo-phone{position:absolute;right:5%;top:5px;width:226px;height:390px;background:#e5e8eb;border:6px solid #202428;border-radius:34px;box-shadow:inset 0 0 0 1px #fff9,0 22px 35px #181b1f24;overflow:hidden;transition:transform .85s cubic-bezier(.2,.65,.2,1);transform:translateX(12px) rotate(5deg)}
+.nfc-demo[data-state="approaching"] .nfc-demo-phone,.nfc-demo[data-state="notified"] .nfc-demo-phone{transform:translate(-35px,10px) rotate(-5deg)}
+.nfc-demo[data-state="review"] .nfc-demo-phone,.nfc-demo[data-state="done"] .nfc-demo-phone{transform:rotate(0);background:#fff}
+.nfc-demo-phone-top{height:35px;display:flex;justify-content:space-between;align-items:center;padding:0 14px;font-size:10px;font-weight:600;color:#181b1f}
+.nfc-demo-island{width:66px;height:17px;background:#202428;border-radius:20px}
+.nfc-demo-phone-bottom{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:72px;height:4px;border-radius:4px;background:#202428}
+.nfc-demo-home{padding:26px 12px;background:radial-gradient(ellipse at 10% 80%,#858c9570,transparent 70%);height:calc(100% - 35px)}
+.nfc-demo-clock{display:block;text-align:center;font-size:48px;letter-spacing:-.08em;font-weight:600;line-height:1.2}
+.nfc-demo-home>p{text-align:center;color:#555c64;font-size:11px;margin:10px 0 24px}
+.nfc-demo-notification{display:flex;gap:9px;align-items:center;width:100%;text-align:left;padding:14px 11px;min-height:76px;background:#fffffff2;border:1px solid #d5dadf;border-radius:16px;color:#181b1f;box-shadow:0 6px 16px #181b1f0d;cursor:pointer;font:inherit;animation:nfc-demo-reveal .25s ease-out}
+.nfc-demo-notification-icon{display:grid;place-items:center;flex:0 0 27px;height:27px;border-radius:8px;background:#181b1f;color:white;font-size:17px}
+.nfc-demo-notification strong{display:block;font-size:12px;line-height:1.35;margin-bottom:4px}
+.nfc-demo-notification small{display:block;font-size:10px;line-height:1.4;color:#555c64}
+.nfc-demo-signal{position:absolute;left:32%;top:120px;z-index:2;pointer-events:none;opacity:0}
+.nfc-demo-signal i{position:absolute;inset:0;width:60px;height:60px;border:1px solid #555c64;border-radius:50%;animation:nfc-demo-wave 1.5s ease-out infinite}
+.nfc-demo-signal i:nth-child(2){animation-delay:.4s}.nfc-demo-signal i:nth-child(3){animation-delay:.8s}
+.nfc-demo[data-state="approaching"] .nfc-demo-signal{opacity:1}
+.nfc-demo-review,.nfc-demo-complete{padding:18px 15px;max-height:calc(100% - 51px);overflow-y:auto;box-sizing:border-box;overscroll-behavior:contain}
+.nfc-demo-badge{font:9px monospace;letter-spacing:.1em;background:#eff1f2;color:#555c64;padding:4px 7px;border-radius:4px}
+.nfc-demo-review h3,.nfc-demo-complete h3{font-size:18px;letter-spacing:-.025em;line-height:1.2;margin:14px 0 6px;color:#181b1f}
+.nfc-demo-review>p,.nfc-demo-complete>p{font-size:11px;color:#555c64;line-height:1.55;margin:0 0 12px}
+.nfc-demo-stars{display:flex;justify-content:space-between;margin:10px -3px 14px}
+.nfc-demo-stars button{font:25px/1 sans-serif;color:#858c95;background:none;border:none;width:36px;height:44px;cursor:pointer;padding:0}
+.nfc-demo-stars button.is-filled{color:#8a5a00}
+.nfc-demo-review label{font-size:11px;font-weight:500;display:block;margin-bottom:6px;color:#181b1f}
+.nfc-demo-review textarea{width:100%;min-height:68px;resize:none;border:1px solid #bec4ca;border-radius:8px;padding:8px;font-family:inherit;font-size:12px;line-height:1.4;box-sizing:border-box;color:#181b1f;background:#fff}
+.nfc-demo-review textarea::placeholder{color:#555c64}
+.nfc-demo-finish{display:flex;justify-content:center;align-items:center;text-align:center;width:100%;min-height:40px;margin-top:12px;padding:8px;border-radius:8px;background:#181b1f;color:white;border:0;font-family:inherit;font-weight:600;font-size:11px;line-height:1.35;cursor:pointer;text-decoration:none}
+.nfc-demo-finish:disabled{background:#dde1e4;color:#555c64;cursor:default}
+.nfc-demo-complete{padding-top:38px;text-align:center}
+.nfc-demo-complete-icon{display:grid;place-items:center;width:56px;height:56px;margin:0 auto 22px;border-radius:50%;background:#eff1f2;color:#181b1f;font-size:28px}
+.nfc-demo-footnote{font-size:.75rem;line-height:1.55;color:var(--nfc-text-secondary);text-align:center;max-width:380px;margin:12px auto 0}
+.nfc-demo button:focus-visible,.nfc-demo a:focus-visible,.nfc-demo textarea:focus-visible{outline:3px solid #555c64;outline-offset:3px}
+@keyframes nfc-demo-wave{from{transform:scale(.4);opacity:.6}to{transform:scale(1.8);opacity:0}}
+@keyframes nfc-demo-reveal{from{transform:translateY(-8px);opacity:0}to{transform:none;opacity:1}}
+@media(max-width:900px){.nfc-demo{grid-template-columns:1fr;gap:16px;padding:28px}.nfc-demo-copy h2,.nfc-demo-intro{max-width:none}.nfc-demo-visual{width:100%}.nfc-demo-stage{width:100%;max-width:440px}}
+@media(max-width:480px){.nfc-demo{padding:20px 16px;border-radius:18px;margin:32px 0}.nfc-demo-stage{height:365px;max-width:320px}.nfc-demo-phone{width:200px;height:350px;right:7px;top:5px;transform:rotate(4deg);border-width:5px;border-radius:29px}.nfc-demo-card{width:134px;left:3px;top:115px}.nfc-demo[data-state="approaching"] .nfc-demo-phone,.nfc-demo[data-state="notified"] .nfc-demo-phone{transform:translate(-15px,6px) rotate(-5deg)}.nfc-demo-review,.nfc-demo-complete{padding:12px}.nfc-demo-review h3{font-size:17px;margin-top:11px}.nfc-demo-stars{margin:4px -3px 9px}.nfc-demo-stars button{width:32px}.nfc-demo-home{padding-top:22px}.nfc-demo-complete{padding-top:30px}}
+@media(prefers-reduced-motion:reduce){.nfc-demo *{animation:none!important;transition:none!important}}
