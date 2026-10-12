@@ -22,7 +22,7 @@
 .nfc-demo-stage{position:relative;height:468px;width:100%;max-width:490px;margin:auto;isolation:isolate}
 .nfc-demo-orbit{position:absolute;left:-30%;top:20%;width:110%;height:65%;border:1px solid #ffffff0c;border-radius:50%;transform:rotate(-30deg);z-index:-1}.nfc-demo-orbit::before,.nfc-demo-orbit::after{content:'';position:absolute;border:1px solid #ffffff08;border-radius:50%}.nfc-demo-orbit::before{inset:-24px}.nfc-demo-orbit::after{inset:-48px}
 .nfc-demo-card{position:absolute;left:1%;top:155px;width:176px;aspect-ratio:1;padding:0;border:1px solid #ffffff40;border-radius:16px;background:#fff;box-shadow:0 25px 30px #0006,inset 0 0 0 2px #fff;transform:perspective(600px) rotateY(12deg) rotateZ(-13deg);cursor:pointer;transition:transform .65s cubic-bezier(.2,.7,.2,1);z-index:1;overflow:visible}
-.nfc-demo-card img{display:block;object-fit:cover;width:100%;height:100%;border-radius:15px;pointer-events:none}.nfc-demo-card:not(:disabled):hover{transform:perspective(600px) rotateY(4deg) rotateZ(-8deg) translateY(-6px)}.nfc-demo-card:disabled{cursor:default}
+.nfc-demo-card img{display:block;object-fit:cover;width:100%;height:100%;border-radius:15px;pointer-events:none}.nfc-demo-card:disabled{cursor:default}
 .nfc-demo-card-cue{position:absolute;left:12px;bottom:-17px;display:flex;align-items:center;gap:7px;padding:7px 11px;border:1px solid #ffffff40;border-radius:100px;background:#262a2f;color:#fff;box-shadow:0 8px 15px #0004;font:10px monospace}.nfc-demo-card-cue svg{width:17px;height:17px}
 .nfc-demo-phone{position:absolute;right:5px;top:16px;width:242px;height:424px;box-sizing:border-box;border:5px solid #16181b;outline:1px solid #bcc3ca77;border-radius:38px;background:#fff;box-shadow:inset 0 0 0 1px #fff,0 24px 45px #0006,3px 0 0 #555c64;overflow:hidden;transform:translate(0,-2px) rotate(5deg);transition:transform 1.05s cubic-bezier(.2,.75,.2,1);z-index:3}
 .nfc-demo-phone::after{content:'';position:absolute;inset:0;border-radius:30px;box-shadow:inset 0 0 0 1px #ffffff22;pointer-events:none}
@@ -44,7 +44,7 @@
 .nfc-demo-review-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;color:#555c64}.nfc-demo-badge{display:inline-block;font:8px monospace;letter-spacing:.08em;background:#eff1f2;color:#555c64;padding:4px 6px;border-radius:5px}
 .nfc-demo-business-symbol{display:grid;place-items:center;width:30px;height:30px;background:#eff1f2;border:1px solid #dde1e4;border-radius:9px;font:16px sans-serif;margin-bottom:8px;color:#181b1f}
 .nfc-demo-review h3,.nfc-demo-complete h3{font-size:17px;font-weight:600;letter-spacing:-.03em;line-height:1.2;margin:0 0 5px;color:#181b1f}.nfc-demo-review>p,.nfc-demo-complete>p{font-size:10px;color:#555c64;line-height:1.4;margin:0 0 8px}
-.nfc-demo-stars{display:flex;justify-content:space-between;margin:3px -4px 0}.nfc-demo-stars button{font:26px/1 sans-serif;color:#858c95;background:none;border:0;flex:1;min-width:28px;height:42px;cursor:pointer;padding:0;transition:color .15s,transform .15s}.nfc-demo-stars button.is-filled{color:#8a5a00}.nfc-demo-stars button:hover{transform:translateY(-2px)}
+.nfc-demo-stars{display:flex;justify-content:space-between;margin:3px -4px 0}.nfc-demo-stars [data-demo-star]{font:26px/1 sans-serif;color:#858c95;background:none;border:0;flex:1;min-width:28px;height:42px;cursor:pointer;padding:0;transition:color .15s,transform .15s}.nfc-demo-stars [data-demo-star].is-filled{color:#8a5a00}.nfc-demo-stars [data-demo-star]:hover{transform:translateY(-2px)}
 .nfc-demo-review .nfc-demo-rating-note{font-size:10px;min-height:14px;margin:0 0 11px;color:#555c64}
 .nfc-demo-review label{font-size:10px;font-weight:500;display:block;margin-bottom:5px;color:#181b1f}.nfc-demo-review textarea{width:100%;height:60px;min-height:60px;resize:none;border:1px solid #bec4ca;border-radius:8px;padding:8px;font-family:inherit;font-size:12px;line-height:1.4;box-sizing:border-box;color:#181b1f;background:#fff}.nfc-demo-review textarea::placeholder{color:#555c64}
 .nfc-demo-finish{display:flex;justify-content:center;align-items:center;gap:10px;text-align:center;width:100%;min-height:40px;margin-top:9px;padding:8px;border-radius:9px;background:#181b1f;color:#fff;border:0;font-family:inherit;font-weight:600;font-size:11px;line-height:1.35;cursor:pointer;text-decoration:none}.nfc-demo-finish:disabled{background:#dde1e4;color:#555c64;cursor:default}.nfc-demo-phone-note{display:block;text-align:center;margin:7px 0 0;font-size:8px;line-height:1.5;color:#555c64}
@@ -54,26 +54,18 @@
 @keyframes nfc-demo-wave{from{transform:scale(.4);opacity:.65}to{transform:scale(1.8);opacity:0}}@keyframes nfc-demo-reveal{from{transform:translateY(7px);opacity:0}to{transform:none;opacity:1}}
 @media(max-width:1100px) and (min-width:901px){.nfc-demo{padding:26px;gap:0 24px}.nfc-demo-visual{padding:16px 12px}.nfc-demo-card{width:146px;left:-1%}.nfc-demo-phone{width:220px;right:0}}
 @media(max-width:900px){.nfc-demo{grid-template-columns:minmax(0,1fr);grid-template-areas:'intro' 'visual' 'steps' 'controls' 'note';gap:0;padding:26px;max-width:650px;margin:36px auto}.nfc-demo-copy h2,.nfc-demo-intro{max-width:none}.nfc-demo-copy .eyebrow{margin-bottom:14px}.nfc-demo-visual{width:100%;box-sizing:border-box;margin-bottom:20px}.nfc-demo-stage{max-width:460px}.nfc-demo-steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 20px}.nfc-demo-steps li{display:flex;flex-direction:column;align-items:flex-start;gap:8px;font-size:11px}.nfc-demo-step-number{flex-basis:auto;width:27px;height:27px;font-size:9px}.nfc-demo-actions{max-width:none}.nfc-demo-status{min-height:0}.nfc-demo-disclaimer{padding-top:12px}}
-@media(max-width:480px){.nfc-demo{padding:18px 14px;border-radius:22px;margin:30px 0}.nfc-demo-copy h2{font-size:29px;margin-bottom:12px}.nfc-demo-intro{font-size:14px;line-height:1.55;margin-bottom:15px}.nfc-demo-situations{gap:5px;margin-bottom:17px}.nfc-demo-situations button{font-size:10px;gap:4px;padding:7px 9px;min-height:35px}.nfc-demo-situations button>span{font-size:11px}.nfc-demo-visual{padding:13px 10px 12px;border-radius:16px}.nfc-demo-scene-heading{font-size:9px;gap:6px}.nfc-demo-stage{height:420px;max-width:330px}.nfc-demo-phone{width:min(218px,86%);height:388px;right:3px;top:16px;border-width:4px;border-radius:32px}.nfc-demo-card{width:138px;left:0;top:158px}.nfc-demo[data-state=approaching] .nfc-demo-phone,.nfc-demo[data-state=notified] .nfc-demo-phone{transform:translate(-14px,7px) rotate(-4deg)}.nfc-demo-review{padding:10px 11px}.nfc-demo-review-top{margin-bottom:7px}.nfc-demo-business-symbol{width:26px;height:26px;font-size:14px;margin-bottom:6px}.nfc-demo-review h3{font-size:16px}.nfc-demo-review>p{font-size:9px;margin-bottom:5px}.nfc-demo-review .nfc-demo-rating-note{margin-bottom:8px}.nfc-demo-stars button{font-size:25px;height:39px}.nfc-demo-home{padding-top:19px}.nfc-demo-clock{font-size:48px}.nfc-demo-notification{padding:11px 8px;gap:6px}.nfc-demo-notification strong{font-size:11px}.nfc-demo-notification small{font-size:9px}.nfc-demo-notification-icon{flex-basis:26px;height:26px}.nfc-demo-footnote{font-size:9px;margin-top:10px}.nfc-demo-complete{padding-top:34px}.nfc-demo-complete h3{font-size:19px}.nfc-demo-complete>p{font-size:10px}.nfc-demo-steps{gap:9px;margin-bottom:16px}.nfc-demo-actions .button{font-size:12px}.nfc-demo-status{font-size:11px;margin-bottom:12px}.nfc-demo-disclaimer{font-size:10px}}
+@media(max-width:480px){.nfc-demo{padding:18px 14px;border-radius:22px;margin:30px 0}.nfc-demo-copy h2{font-size:29px;margin-bottom:12px}.nfc-demo-intro{font-size:14px;line-height:1.55;margin-bottom:15px}.nfc-demo-situations{gap:5px;margin-bottom:17px}.nfc-demo-situations button{font-size:10px;gap:4px;padding:7px 9px;min-height:35px}.nfc-demo-situations button>span{font-size:11px}.nfc-demo-visual{padding:13px 10px 12px;border-radius:16px}.nfc-demo-scene-heading{font-size:9px;gap:6px}.nfc-demo-stage{height:420px;max-width:330px}.nfc-demo-phone{width:min(218px,86%);height:388px;right:3px;top:16px;border-width:4px;border-radius:32px}.nfc-demo-card{width:138px;left:0;top:158px}.nfc-demo[data-state=approaching] .nfc-demo-phone,.nfc-demo[data-state=notified] .nfc-demo-phone{transform:translate(-14px,7px) rotate(-4deg)}.nfc-demo-review{padding:10px 11px}.nfc-demo-review-top{margin-bottom:7px}.nfc-demo-business-symbol{width:26px;height:26px;font-size:14px;margin-bottom:6px}.nfc-demo-review h3{font-size:16px}.nfc-demo-review>p{font-size:9px;margin-bottom:5px}.nfc-demo-review .nfc-demo-rating-note{margin-bottom:8px}.nfc-demo-stars [data-demo-star]{font-size:25px;height:39px}.nfc-demo-home{padding-top:19px}.nfc-demo-clock{font-size:48px}.nfc-demo-notification{padding:11px 8px;gap:6px}.nfc-demo-notification strong{font-size:11px}.nfc-demo-notification small{font-size:9px}.nfc-demo-notification-icon{flex-basis:26px;height:26px}.nfc-demo-footnote{font-size:9px;margin-top:10px}.nfc-demo-complete{padding-top:34px}.nfc-demo-complete h3{font-size:19px}.nfc-demo-complete>p{font-size:10px}.nfc-demo-steps{gap:9px;margin-bottom:16px}.nfc-demo-actions .button{font-size:12px}.nfc-demo-status{font-size:11px;margin-bottom:12px}.nfc-demo-disclaimer{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.nfc-demo *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 /* Clipped scene edges must never become focus-driven scroll containers. */
 .nfc-demo,.nfc-demo-visual{overflow:clip}
 .nfc-demo-card:disabled{opacity:1;filter:none}
 .nfc-demo-review textarea{font-size:16px}
 .nfc-demo-review{padding-bottom:12px}
-/* Power on, show the home screen, then place the phone's upper antenna on the card. */
+/* Place the phone's upper antenna on the card. */
 .nfc-demo-phone{transform-origin:50% 0;transition:transform 1.2s cubic-bezier(.22,.7,.2,1)}
 .nfc-demo-card{top:92px}
 .nfc-demo[data-state=approaching] .nfc-demo-phone,.nfc-demo[data-state=contact] .nfc-demo-phone{transform:translate(var(--demo-contact-x,0px),var(--demo-contact-y,0px)) scale(.72)}
 .nfc-demo[data-state=notified] .nfc-demo-phone{transform:rotate(0)}
-.nfc-demo[data-state=idle] .nfc-demo-phone,.nfc-demo[data-state=booting] .nfc-demo-phone{background:#07090c}
-.nfc-demo[data-state=idle] .nfc-demo-phone-top,.nfc-demo[data-state=booting] .nfc-demo-phone-top,.nfc-demo[data-state=idle] .nfc-demo-phone-bottom,.nfc-demo[data-state=booting] .nfc-demo-phone-bottom{display:none}
-.nfc-demo-off,.nfc-demo-boot{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;background:radial-gradient(ellipse at 20% 0%,#262a2f 0%,#0d0f12 35%,#07090c 65%);color:#e5e8eb}
-.nfc-demo-off>span{font-size:11px;line-height:1.4;text-align:center;padding:0 16px;color:#bec4ca}
-.nfc-demo-power{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;border:1px solid #858c9559;background:#ffffff07;color:#e5e8eb;cursor:pointer;transition:background .2s,box-shadow .2s}
-.nfc-demo-power svg{width:28px;height:28px}.nfc-demo-power:hover{background:#ffffff12;box-shadow:0 0 0 8px #ffffff05}
-.nfc-demo-boot-logo{display:grid;place-items:center;width:54px;height:54px;border:1px solid #bec4ca;border-radius:16px;font-size:30px;font-weight:600;letter-spacing:-.05em;color:#fff}
-.nfc-demo-boot-progress{width:66px;height:3px;border-radius:4px;background:#353a40;overflow:hidden}.nfc-demo-boot-progress::after{content:'';display:block;width:100%;height:100%;background:#e5e8eb;transform-origin:left;animation:nfc-demo-startup 1s ease-out both}
 .nfc-demo-home{padding:15px 12px;background:radial-gradient(ellipse at 0% 90%,#aeb7c4 0%,#697788 45%,#354151 100%)}
 .nfc-demo-clock-widget{display:flex;align-items:center;justify-content:space-between;gap:7px;padding:12px 11px;border:1px solid #ffffff26;border-radius:16px;background:#ffffff0c}
 .nfc-demo-clock-widget .nfc-demo-clock{font-size:35px;line-height:1.1;font-weight:500}.nfc-demo-clock-widget>span:last-child{font-size:9px;line-height:1.4;color:#e5e8eb;max-width:64px;text-align:right}
@@ -86,9 +78,25 @@
 .nfc-demo-home .nfc-demo-notification{position:absolute;top:12px;left:8px;right:8px;width:auto;z-index:3;box-shadow:0 10px 26px #0004}
 .nfc-demo-signal{left:var(--demo-signal-x,33%);top:var(--demo-signal-y,160px);z-index:4}.nfc-demo-signal i{animation-play-state:paused}
 .nfc-demo[data-state=approaching] .nfc-demo-signal{opacity:0}.nfc-demo[data-state=contact] .nfc-demo-signal{opacity:1}.nfc-demo[data-state=contact] .nfc-demo-signal i{animation-play-state:running}
-@keyframes nfc-demo-startup{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @media(max-width:900px){.nfc-demo-steps{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}}
 @media(max-width:480px){.nfc-demo-card{top:86px}.nfc-demo-app-grid{gap:14px 7px;margin-top:20px}.nfc-demo-clock-widget{padding:10px 8px}.nfc-demo-clock-widget .nfc-demo-clock{font-size:29px}.nfc-demo-app-icon{width:31px;height:31px;font-size:19px}.nfc-demo-steps li{font-size:10px}.nfc-demo[data-state=approaching] .nfc-demo-phone,.nfc-demo[data-state=contact] .nfc-demo-phone{transform:translate(var(--demo-contact-x,0px),var(--demo-contact-y,0px)) scale(.72)}.nfc-demo[data-state=notified] .nfc-demo-phone{transform:rotate(0)}}
 @media(prefers-reduced-motion:reduce){.nfc-demo *,.nfc-demo *::after{animation:none!important;transition:none!important}}
 
 .nfc-demo-app-icon svg{width:21px;height:21px}
+
+/* Automatic demo: simulated controls never submit a form. */
+.nfc-demo-card,.nfc-demo-notification,.nfc-demo-finish,.nfc-demo-stars [data-demo-star]{cursor:default}
+.nfc-demo-stars [data-demo-star]{display:grid;place-items:center}
+.nfc-demo-stars [data-demo-star].is-selected{transform:scale(1.12)}
+.nfc-demo[data-state=review] .nfc-demo-phone,.nfc-demo[data-state=rating] .nfc-demo-phone,.nfc-demo[data-state=typing] .nfc-demo-phone,.nfc-demo[data-state=sending] .nfc-demo-phone,.nfc-demo[data-state=done] .nfc-demo-phone{transform:rotate(0)}
+.nfc-demo-browser-bar{display:flex;justify-content:space-between;align-items:center;gap:6px;padding:5px 7px;margin:-7px -6px 8px;background:#eff1f2;border-radius:6px;font-size:11px;color:#555c64}
+.nfc-demo-browser-bar span{font-size:9px}
+.nfc-demo-review textarea{height:65px;min-height:65px;font-size:13px;line-height:1.4}
+.nfc-demo[data-state=typing] textarea{border-color:#555c64;box-shadow:0 0 0 2px #555c641a}
+.nfc-demo[data-state=sending] .nfc-demo-finish{background:#555c64}
+.nfc-demo[data-paused=true] *{animation-play-state:paused!important}
+.nfc-demo[data-paused=true] .nfc-demo-phone{transition:none}
+
+.nfc-demo-finish{box-sizing:border-box}
+.nfc-demo-review textarea{height:60px;min-height:60px}
+.nfc-demo-review-top.nfc-demo-browser-bar{margin-bottom:9px}

@@ -93,7 +93,10 @@ def test_protected_v11_implementation_matches_recovery_bytes():
                     expected_csp = ast.parse(
                         repr("default-src 'self'; ") +
                         "+model_viewer_script_policy(environ.get('PATH_INFO','/'))+" +
-                        repr("; style-src 'self'; img-src 'self' blob:; media-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'"),
+                        repr("; ") + "+model_viewer_style_policy(environ.get('PATH_INFO','/'))+" +
+                        repr("; img-src 'self' blob:; media-src 'self'; font-src 'self'; ") +
+                        "+model_viewer_connect_policy(environ.get('PATH_INFO','/'))+" +
+                        repr("; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'"),
                         mode='eval').body
                     for index, key in enumerate(headers.keys):
                         if key.value == 'Content-Security-Policy':

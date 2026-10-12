@@ -1,13 +1,10 @@
-// Everything in this demo stays in memory. No NFC permission or form submission.
+// Automatic illustration only: no NFC permission, requests, storage or real reviews.
 for (const demo of document.querySelectorAll('[data-nfc-demo]')) {
- const tap=demo.querySelector('[data-demo-tap]');
+ const pause=demo.querySelector('[data-demo-pause]');
  const reset=demo.querySelector('[data-demo-reset]');
  const card=demo.querySelector('[data-demo-card-tap]');
- const open=demo.querySelector('[data-demo-open]');
+ const notification=demo.querySelector('[data-demo-open]');
  const home=demo.querySelector('[data-demo-home]');
- const off=demo.querySelector('[data-demo-off]');
- const boot=demo.querySelector('[data-demo-boot]');
- const power=demo.querySelector('[data-demo-power]');
  const phone=demo.querySelector('.nfc-demo-phone');
  const stage=demo.querySelector('.nfc-demo-stage');
  const review=demo.querySelector('[data-demo-review]');
@@ -17,41 +14,39 @@ for (const demo of document.querySelectorAll('[data-nfc-demo]')) {
  const ratingNote=demo.querySelector('[data-demo-rating-note]');
  const connection=demo.querySelector('[data-demo-connection]');
  const stars=[...demo.querySelectorAll('[data-demo-star]')];
- const situations=[...demo.querySelectorAll('[data-demo-situation]')];
+ const starGroup=demo.querySelector('.nfc-demo-stars');
  const comment=demo.querySelector('#nfc-demo-comment');
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- let timer;
- let rating=0;
+ let timer, pending, remaining=0, deadline=0, visible=false, paused=false;
+ const active=()=>visible&&!document.hidden&&!paused;
 
  function setState(state) {
   demo.dataset.state=state;
   status.textContent=status.dataset[state];
-  tap.replaceChildren(document.createTextNode(state==='review'&&rating?finish.textContent:tap.dataset[state]));
-  const arrow=document.createElement('span');arrow.setAttribute('aria-hidden','true');arrow.textContent='↗';tap.append(arrow);
-  tap.disabled=['booting','approaching','contact'].includes(state);
-  reset.disabled=state==='idle';
-  card.disabled=state!=='desktop';
-  off.hidden=state!=='idle';
-  boot.hidden=state!=='booting';
-  home.hidden=!['desktop','approaching','contact','notified'].includes(state);
-  open.hidden=state!=='notified';
-  review.hidden=state!=='review';
+  home.hidden=!['desktop','approaching','contact','notified','returning'].includes(state);
+  notification.hidden=state!=='notified';
+  review.hidden=!['review','rating','typing','sending'].includes(state);
   complete.hidden=state!=='done';
-  const current=state==='review'||state==='done'?3:state==='notified'?2:['approaching','contact'].includes(state)?1:0;
-  for (const step of demo.querySelectorAll('[data-demo-step]')) {
+  finish.textContent=state==='sending'?finish.dataset.sending:finish.dataset.label;
+  const current=['desktop','approaching','contact'].includes(state)?0:state==='notified'||state==='review'?1:state==='returning'?3:2;
+  for(const step of demo.querySelectorAll('[data-demo-step]')) {
    const index=Number(step.dataset.demoStep);
-   step.classList.toggle('is-complete',index<current||state==='done');
+   step.classList.toggle('is-complete',index<current);
    if(index===current)step.setAttribute('aria-current','step');else step.removeAttribute('aria-current');
   }
-  connection.querySelector('span').textContent=connection.dataset[state]||(state==='approaching'?connection.dataset.desktop:connection.dataset.connected);
+  connection.querySelector('span').textContent=['desktop','returning','approaching'].includes(state)?connection.dataset.desktop:state==='contact'?connection.dataset.contact:connection.dataset.connected;
  }
- function showReview() {
-  if(demo.dataset.state!=='notified')return;
-  setState('review');review.scrollTop=0;stars[0].focus({preventScroll:true});
+ function syncTimer() {
+  if(!active()) {
+   if(timer!==undefined){clearTimeout(timer);timer=undefined;remaining=Math.max(0,deadline-performance.now());}
+  } else if(pending&&timer===undefined) {
+   deadline=performance.now()+remaining;
+   timer=setTimeout(()=>{timer=undefined;const callback=pending;pending=undefined;callback();},remaining);
+  }
+  demo.dataset.paused=String(!active());
  }
  function schedule(callback,delay) {
-  clearTimeout(timer);
-  timer=setTimeout(callback,reduced.matches?Math.min(delay,180):delay);
+  clearTimeout(timer);timer=undefined;pending=callback;remaining=delay;syncTimer();
  }
  function placeOnCard() {
   const bounds=stage.getBoundingClientRect();
@@ -64,59 +59,65 @@ for (const demo of document.querySelectorAll('[data-nfc-demo]')) {
   stage.style.setProperty('--demo-signal-x',`${x-32}px`);
   stage.style.setProperty('--demo-signal-y',`${y-32}px`);
  }
+ function clearReview() {
+  for(const star of stars)star.classList.remove('is-filled','is-selected');
+  starGroup.setAttribute('aria-label',ratingNote.dataset.empty);
+  ratingNote.textContent=ratingNote.dataset.empty;comment.value='';review.scrollTop=0;complete.scrollTop=0;
+ }
+ function returnHome() {
+  setState('returning');
+  schedule(()=>{clearReview();setState('desktop');schedule(approach,2600);},1200);
+ }
+ function send() {
+  setState('sending');
+  schedule(()=>{setState('done');schedule(returnHome,2000);},1200);
+ }
+ function typeComment() {
+  setState('typing');
+  const text=Array.from(comment.dataset.example);let index=0;
+  if(reduced.matches){comment.value=text.join('');schedule(send,2300);return;}
+  const type=()=>{
+   comment.value=text.slice(0,++index).join('');
+   if(index<text.length)schedule(type,65);else schedule(send,1100);
+  };
+  schedule(type,400);
+ }
+ function rate() {
+  setState('rating');
+  for(const star of stars)star.classList.add('is-filled');
+  stars[4].classList.add('is-selected');
+  starGroup.setAttribute('aria-label',starGroup.dataset.label);
+  ratingNote.textContent=ratingNote.dataset.selected.replace('{n}','5');
+  schedule(typeComment,1100);
+ }
  function approach() {
-  if(demo.dataset.state!=='desktop')return;
   placeOnCard();setState('approaching');
   schedule(()=>{
    setState('contact');
-   schedule(()=>{setState('notified');open.focus({preventScroll:true});},700);
-  },1200);
+   schedule(()=>{
+    setState('notified');
+    schedule(()=>{setState('review');schedule(rate,1200);},1500);
+   },1000);
+  },1300);
  }
- function start() {
-  if(demo.dataset.state!=='idle')return;
-  setState('booting');
-  if(matchMedia('(max-width: 900px)').matches)phone.scrollIntoView({block:'center',behavior:reduced.matches?'instant':'smooth'});
-  schedule(()=>{setState('desktop');schedule(approach,1400);},1000);
- }
- new ResizeObserver(()=>{
-  if(['approaching','contact'].includes(demo.dataset.state))placeOnCard();
- }).observe(stage);
  function restart() {
-  clearTimeout(timer);rating=0;finish.disabled=true;
-  for(const star of stars){star.classList.remove('is-filled');star.setAttribute('aria-pressed','false');}
-  ratingNote.textContent=ratingNote.dataset.empty;comment.value='';
-  review.scrollTop=0;complete.scrollTop=0;setState('idle');tap.focus({preventScroll:true});
+  clearReview();setState('desktop');schedule(approach,1800);
  }
- function selectRating(value) {
-  rating=value;
-  for(const star of stars){star.classList.toggle('is-filled',Number(star.dataset.demoStar)<=value);star.setAttribute('aria-pressed',String(Number(star.dataset.demoStar)===value));}
-  ratingNote.textContent=ratingNote.dataset.selected.replace('{n}',String(value));finish.disabled=false;
-  setState('review');
- }
- function finishDemo() {
-  if(demo.dataset.state!=='review'||!rating)return;
-  comment.value='';setState('done');complete.querySelector('a').focus({preventScroll:true});
- }
- tap.addEventListener('click',()=>{
-  const state=demo.dataset.state;
-  if(state==='idle')start();else if(state==='desktop')approach();else if(state==='notified')showReview();else if(state==='review'){
-   if(rating)finishDemo();else stars[0].focus();
-  }else if(state==='done')restart();
+ pause.addEventListener('click',()=>{
+  paused=!paused;pause.setAttribute('aria-pressed',String(paused));
+  pause.replaceChildren(document.createTextNode(paused?pause.dataset.resume:pause.dataset.pause));
+  const icon=document.createElement('span');icon.setAttribute('aria-hidden','true');icon.textContent=paused?'▷':'Ⅱ';pause.append(icon);syncTimer();
  });
- card.addEventListener('click',approach);power.addEventListener('click',start);open.addEventListener('click',showReview);
- finish.addEventListener('click',finishDemo);reset.addEventListener('click',restart);
- for(const star of stars){
-  star.addEventListener('click',()=>selectRating(Number(star.dataset.demoStar)));
-  star.addEventListener('keydown',event=>{
-   const value=Number(star.dataset.demoStar);
-   const next={ArrowRight:Math.min(5,value+1),ArrowUp:Math.min(5,value+1),ArrowLeft:Math.max(1,value-1),ArrowDown:Math.max(1,value-1),Home:1,End:5}[event.key];
-   if(next===undefined)return;event.preventDefault();selectRating(next);stars[next-1].focus({preventScroll:true});
-  });
- }
- for(const option of situations)option.addEventListener('click',()=>{
+ reset.addEventListener('click',restart);
+ for(const option of demo.querySelectorAll('[data-demo-situation]'))option.addEventListener('click',()=>{
   demo.dataset.situation=option.dataset.demoSituation;
-  for(const item of situations)item.setAttribute('aria-pressed',String(item===option));
+  for(const item of demo.querySelectorAll('[data-demo-situation]'))item.setAttribute('aria-pressed',String(item===option));
   demo.querySelector('[data-demo-business]').textContent=option.dataset.business;
   demo.querySelector('[data-demo-symbol]').textContent=option.dataset.symbol;
  });
+ new ResizeObserver(()=>{if(['approaching','contact'].includes(demo.dataset.state))placeOnCard();}).observe(stage);
+ // Observe the scene itself: a tall mobile section can exceed the viewport.
+ new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;syncTimer();},{threshold:0}).observe(stage);
+ document.addEventListener('visibilitychange',syncTimer);
+ restart();
 }

@@ -878,13 +878,13 @@
     },
     {
       "path": "server/model_viewer_policy.py",
-      "bytes": 456,
-      "sha256": "289e132db409bbf8696b896af64763adab861bc0ee9140b29bda1a4618c804ef"
+      "bytes": 1055,
+      "sha256": "4c943d9cafbdae5ec8999111421f1affe4463c712487d181ec0e56533f177b18"
     },
     {
       "path": "server/preview.py",
-      "bytes": 30101,
-      "sha256": "ada9cfa44493614cfc55e4323962efba9fa7c1692620622756b603b5aaad213f"
+      "bytes": 30267,
+      "sha256": "96e3dd292584719a8fa46bf10decb729c1a794550a5e406f01492d23810eb398"
     },
     {
       "path": "server/pricing.py",
@@ -948,8 +948,8 @@
     },
     {
       "path": "server/wsgi.py",
-      "bytes": 7524,
-      "sha256": "b669884cd8d929f1c540bf3391c1eda1da306ef71b72f746832b3067bf63175a"
+      "bytes": 7666,
+      "sha256": "a556684c4559b1de93a5a6e5c39e5b988e1fe31f8a92b1241cae63b78f267660"
     },
     {
       "path": "src/IBMPlexMono-OFL.txt",
@@ -2988,18 +2988,18 @@
     },
     {
       "path": "src/nfc-demo-client.mjs",
-      "bytes": 6325,
-      "sha256": "7c4151af3cfe60ea4724085020fc95e3fc29dfbe727ccf1fc6a9c95e9f6ff217"
+      "bytes": 6118,
+      "sha256": "97b2439701f65c36e8437802c74e3b60389be98f083cafed0364cb1c5ae07662"
     },
     {
       "path": "src/nfc-demo-view.mjs",
-      "bytes": 14060,
-      "sha256": "be2e58194c221758b993655fb0a069f8f0fa91a7e818f3a416f3ec3e6b7e9edf"
+      "bytes": 13620,
+      "sha256": "edb036a0a7212d451dc53f9d5ed38d5bb0b70313dcf604aabf1964eb0725e28e"
     },
     {
       "path": "src/nfc-demo.css",
-      "bytes": 19894,
-      "sha256": "0386c9cfe098a311e7db13f4e3ef7d84c5e66ac5f72011512eefdcee30807275"
+      "bytes": 19591,
+      "sha256": "41d632cf27dc5eb44aaf6300a25403f54ae9626a2571c8568af7a331bd605d62"
     },
     {
       "path": "src/nfc-review-card-3d.glb",
@@ -3088,8 +3088,8 @@
     },
     {
       "path": "src/publication-approval.json",
-      "bytes": 2388,
-      "sha256": "f897e7058a0699e8e91cb68a0076b008c7032093d006b94472b2551c84bde98b"
+      "bytes": 2477,
+      "sha256": "2445366db5ec976d1536fbdf4b54dcd0ec22cc8bf701ac60b92941eaaa53d89d"
     },
     {
       "path": "src/publication.mjs",
@@ -3203,8 +3203,8 @@
     },
     {
       "path": "tests/test_model_viewer_policy.py",
-      "bytes": 1066,
-      "sha256": "b5eb524659888c4ef10783356b94aaab37ef0313c68942e243fe8cb8f732561b"
+      "bytes": 3058,
+      "sha256": "da05ad9d8c6caba5f15f385009bb05fb937522266e5a38e0728d05c6b1b3e38f"
     },
     {
       "path": "tests/test_niche_v31.py",
@@ -3278,8 +3278,8 @@
     },
     {
       "path": "tests/test_v13.py",
-      "bytes": 19383,
-      "sha256": "01abed89b88073a5b922d2fa0915106dd751e444d4a42d0c31c79ec19d5c2024"
+      "bytes": 19569,
+      "sha256": "d1b9d7e5e7ef958712d64b6714e5bd851919a6f2e39baa2de0b6b6cd5dc5b2c8"
     },
     {
       "path": "tests/test_v13_browser.py",
