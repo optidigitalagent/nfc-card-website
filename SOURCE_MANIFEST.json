@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
-  "file_count_including_manifest": 646,
+  "file_count_including_manifest": 649,
   "release_source": {
     "handoff_archive_sha256": "9cf61bc26214321d296adeae4c63eb21a5b624bfa9f8849797bcb51c66ff5de0",
     "handoff_manifest": "docs/release/v1.0.0/source-handoff-manifest.json",
@@ -1003,8 +1003,8 @@
     },
     {
       "path": "src/build.mjs",
-      "bytes": 58371,
-      "sha256": "bf6a5000e97e2e56b95cfdf3a48114b29a756d66b50dcd766b28e4902701886b"
+      "bytes": 58392,
+      "sha256": "8f82021b6010ccb1b047e0a983178b8d8e6b6ef272e0982c85e936ec27faa066"
     },
     {
       "path": "src/catalog-card.css",
@@ -1065,6 +1065,11 @@
       "path": "src/gallery.js",
       "bytes": 11126,
       "sha256": "2c9df3e007d9a751400d2835f82d55bb1490cff7f6f8cc4cad0208ddef9e25b3"
+    },
+    {
+      "path": "src/inbound-notice.mjs",
+      "bytes": 309,
+      "sha256": "feb5e05d2b45a1ad3e57b61a0386d28805836ba3c31acd28ddf6e8665ffbccd9"
     },
     {
       "path": "src/instagram-claims.mjs",
@@ -2923,8 +2928,8 @@
     },
     {
       "path": "src/menu-client.mjs",
-      "bytes": 17091,
-      "sha256": "1f0f8bf2cfe76a07ffcfed357832acbf167e905e3a4564daf2ecd764f3fb11a1"
+      "bytes": 17147,
+      "sha256": "384e1f145d1dd616c1b349a7b4cd718dfbd7f7d59ee74ec2ce5cea90dec639ca"
     },
     {
       "path": "src/menu-contract.mjs",
@@ -2993,8 +2998,8 @@
     },
     {
       "path": "src/pages.mjs",
-      "bytes": 29987,
-      "sha256": "f934ba24fc1c7632d65628774c26b648e6bc413007377fb19d03e1788a0effed"
+      "bytes": 30057,
+      "sha256": "6ecf9da32d524161b2dc5091b07a371fe0fee94f851abfce4ca616d19c5e8e49"
     },
     {
       "path": "src/pl-clients.json",
@@ -3043,8 +3048,8 @@
     },
     {
       "path": "src/publication-approval.json",
-      "bytes": 2134,
-      "sha256": "236946917c9935b3a63fca7ed9f314a664a3013e687b265267ba661fe9c26b1f"
+      "bytes": 2264,
+      "sha256": "0bb6810f27a3b45f01ffa2c60cd959ed871d1f8d6cf3118eca521f23931483cf"
     },
     {
       "path": "src/publication.mjs",
@@ -3063,8 +3068,8 @@
     },
     {
       "path": "src/review3d-client.mjs",
-      "bytes": 12073,
-      "sha256": "5cdf3b7ef95f9a4c7b86f44061c45cfce5ff0fdae4f9ae96500ac97f50aab54c"
+      "bytes": 12129,
+      "sha256": "c3509c3b3d4e66c4d00cf5a1392daae19eb1c597655a337f4c3cfabc35b0b706"
     },
     {
       "path": "src/review3d-view.mjs",
@@ -3117,6 +3122,11 @@
       "sha256": "85a866dd6970a2b151375c4748b3df9ce0b3ef1573df7a7de5e29f676ec4d236"
     },
     {
+      "path": "tests/staging_inbound_e2e.mjs",
+      "bytes": 1959,
+      "sha256": "758da8e2e0b5548d2268abd3e3ab4bab64c00e6e1f4d6c3857e19a852d969186"
+    },
+    {
       "path": "tests/test_gallery_media.py",
       "bytes": 4820,
       "sha256": "79dc01b5a3874ed23db68c771babf9b666ba5cc0bc41ebc51d1ae02bc83e785d"
@@ -3125,6 +3135,11 @@
       "path": "tests/test_http.py",
       "bytes": 10651,
       "sha256": "651ac35fd626ba662a1a34cac779fba10c66c1d763419a83bdc583cf6e3325ce"
+    },
+    {
+      "path": "tests/test_inbound_notice.py",
+      "bytes": 1676,
+      "sha256": "7c97863f2f1afddadd2eddf1e7366a2a9ae0f29fbda77657816f6a9dd1dd0beb"
     },
     {
       "path": "tests/test_instagram_browser.py",

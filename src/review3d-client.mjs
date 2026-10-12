@@ -1,5 +1,6 @@
 import {leadEndpoint,submitLead,publicBasePath,unavailable} from './pages.mjs';
 import {review3dQuote,validateCommerce} from './commerce-contract.mjs';
+import {requestNotice} from './inbound-notice.mjs';
 
 const methods=new Set(['telegram','whatsapp','viber']);
 const uuid=/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/;
@@ -48,7 +49,7 @@ export function review3dLeadPayload(input,{basePath='',pathname}={}){
   const payload={language:input.locale,product:'review-card-3d',productSchemaVersion:1,
     product_id:'nfc-review-card-3d',design:'fixed_shown_design',quantity,
     customerName:name,contact:{phone:phone.replace(/[ ()-]/g,''),preferredMethod:input.messenger},
-    sourcePage:route,consent:true};
+    sourcePage:route,...requestNotice};
   if(google)payload.google_location_url=google;
   if(comment)payload.comment=comment;
   return payload;

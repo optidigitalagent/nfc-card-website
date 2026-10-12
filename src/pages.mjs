@@ -1,6 +1,7 @@
 // Shared Pages build/client boundary. Only explicit public configuration belongs here.
 import {instagramProfileURL} from './commerce-contract.mjs';
 import {MINI_PRODUCTS,MINI_QUANTITIES,miniQuote} from './mini-contract.mjs';
+import {requestNotice} from './inbound-notice.mjs';
 export function publicBasePath(value = '') {
   if (value === '' || value === '/') return '';
   if (typeof value !== 'string' || !/^\/(?:[A-Za-z0-9_-]+\/)*[A-Za-z0-9_-]+\/?$/.test(value)) {
@@ -134,7 +135,7 @@ export function leadPayload(input, {basePath = '', pathname, utm = {}}) {
       (mini&&!['', '/en', '/pl'].some(prefix=>relative===prefix+miniRoutes[solutionId]))) throw Error('invalid_source_page');
   const payload = {language: input.locale, product: mini?'nfc-review-card-mini':input.variant === 'instagram' ? 'nfc-instagram-card' : input.variant === 'branded' ? 'branded-review-card' : 'review-card',
     ...(miniPhysical?{quantity:miniQuantity}:!advice&&!mini?{quantity:input.quantity === 'more' ? 3 : Number(input.quantity)}:{}), customerName: name,
-    contact: {phone: phone.replace(/[ ()-]/g, ''), preferredMethod: input.messenger}, sourcePage,
+    contact: {phone: phone.replace(/[ ()-]/g, ''), preferredMethod: input.messenger}, sourcePage, ...requestNotice,
     selection: {variant: input.variant, quantity: input.quantity}};
   if(input.variant==='instagram')Object.assign(payload,{productSchemaVersion:1,product_id:'nfc-instagram-card',sku:'NFC-IG-READY',offer:'ready',instagramUrl:instagramProfileURL(input.instagramUrl),comment:input.comment.trim(),consent:true});
   if(solution)payload.solution={schemaVersion:1,solution_id:solutionId,niche:solution.niche,request_type:'free_first_mockup'};
