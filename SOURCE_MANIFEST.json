@@ -1048,8 +1048,8 @@
     },
     {
       "path": "src/commerce-view.mjs",
-      "bytes": 32290,
-      "sha256": "935533d0f305563952a6cc14c57794e2c4f4af83b6280e59b44e82e5b45f83b3"
+      "bytes": 29191,
+      "sha256": "6d187ef9e835f98ddf4cff1b0add6912e85f97cc327379727375125e1543450f"
     },
     {
       "path": "src/commerce.css",
@@ -2998,8 +2998,8 @@
     },
     {
       "path": "src/nfc-demo.css",
-      "bytes": 23468,
-      "sha256": "736316e6b7b0325bb546d558e94831cc440451a3bc3a93400dfea5f5a7455374"
+      "bytes": 19591,
+      "sha256": "41d632cf27dc5eb44aaf6300a25403f54ae9626a2571c8568af7a331bd605d62"
     },
     {
       "path": "src/nfc-review-card-3d.glb",
