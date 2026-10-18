@@ -100,3 +100,7 @@
 .nfc-demo-finish{box-sizing:border-box}
 .nfc-demo-review textarea{height:60px;min-height:60px}
 .nfc-demo-review-top.nfc-demo-browser-bar{margin-bottom:9px}
+
+.home-demo-section.section{padding-top:18px;padding-bottom:52px}
+.home-demo-section .nfc-demo{margin:0}
+@media(max-width:600px){.home-demo-section.section{padding-top:20px;padding-bottom:40px}}
