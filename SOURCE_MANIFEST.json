@@ -1018,8 +1018,8 @@
     },
     {
       "path": "src/build.mjs",
-      "bytes": 60959,
-      "sha256": "f297da61411433e2826389cb35a461c1ed8c4a6e79ebfcad896c8ac3797527a6"
+      "bytes": 60911,
+      "sha256": "167a2a0669451a4288ffb471760d83f7aaa6c12d9b86ad563757aa942165d760"
     },
     {
       "path": "src/card-3d.css",
@@ -2998,8 +2998,8 @@
     },
     {
       "path": "src/nfc-demo.css",
-      "bytes": 19786,
-      "sha256": "b9e3c167287c5d69b927021f29ea3f2a9fd7f488d698625afc36a2a9d2161a15"
+      "bytes": 19708,
+      "sha256": "f10f3c9c8c5ad0316f579a9b0a68f86f22125a52c5a60b3a712d9b9e76e5eab4"
     },
     {
       "path": "src/nfc-review-card-3d.glb",
