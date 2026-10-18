@@ -101,5 +101,7 @@
 .nfc-demo-review textarea{height:60px;min-height:60px}
 .nfc-demo-review-top.nfc-demo-browser-bar{margin-bottom:9px}
 
-.catalog .nfc-demo{margin:24px 0 42px}
-@media(max-width:600px){.catalog .nfc-demo{margin:18px 0 30px;padding:18px}}
+.home-top-demo.section{padding-top:16px;padding-bottom:0}
+.home-top-demo .nfc-demo{margin:0}
+@media(max-width:900px){.home-top-demo .nfc-demo{grid-template-areas:"visual" "intro" "steps" "controls" "note"}}
+@media(max-width:600px){.home-top-demo.section{padding:12px 20px 0}.home-top-demo .nfc-demo{padding:14px}.home-top-demo .nfc-demo-visual{margin-bottom:16px}}
