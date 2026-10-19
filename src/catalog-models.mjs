@@ -2,9 +2,10 @@
 const models=new Set(['review-standard','review-branded','beauty','beauty-branded','restaurant','restaurant-branded','review-acrylic','instagram','menu-square-black','menu-square-white','menu-round-black','menu-round-white']);
 const base=document.documentElement.dataset.publicBasePath||'';
 const locale=document.documentElement.lang;
-const words=locale==='pl'?{close:'Zamknij',hint:'Przeciągnij, aby obrócić kartę',example:'Przykładowy projekt — Twoja karta otrzyma indywidualną grafikę.',error:'Nie udało się załadować modelu 3D.'}:locale==='en'?{close:'Close',hint:'Drag to rotate the card',example:'Example design — your card will use your own artwork.',error:'The 3D model could not be loaded.'}:{close:'Закрити',hint:'Потягніть, щоб обертати картку',example:'Приклад дизайну — ваша картка матиме власне оформлення.',error:'Не вдалося завантажити 3D-модель.'};
+const words=locale==='pl'?{close:'Zamknij',hint:'Przeciągnij, aby obrócić kartę',example:'Przykładowy projekt — Twoja karta otrzyma indywidualną grafikę.',error:'Podgląd 3D nie jest dostępny w tej przeglądarce.'}:locale==='en'?{close:'Close',hint:'Drag to rotate the card',example:'Example design — your card will use your own artwork.',error:'3D preview is unavailable in this browser.'}:{close:'Закрити',hint:'Потягніть, щоб обертати картку',example:'Приклад дизайну — ваша картка матиме власне оформлення.',error:'3D-перегляд недоступний у цьому браузері.'};
 let dialog;
 let rendererPromise;
+let requestId=0;
 function ensureDialog(){
  if(dialog)return dialog;
  dialog=document.createElement('dialog');
@@ -13,7 +14,7 @@ function ensureDialog(){
  dialog.setAttribute('aria-labelledby','catalog-model-title');
  dialog.querySelector('.catalog-model-close').addEventListener('click',()=>dialog.close());
  dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
- dialog.addEventListener('close',()=>{dialog.querySelector('.catalog-model-stage').replaceChildren()});
+ dialog.addEventListener('close',()=>{requestId++;dialog.querySelector('.catalog-model-stage').replaceChildren()});
  document.body.append(dialog);
  return dialog;
 }
@@ -27,12 +28,17 @@ document.addEventListener('click',async event=>{
  modal.querySelector('#catalog-model-title').textContent=title;
  modal.querySelector('.catalog-model-caption').textContent=id.includes('branded')?words.example:words.hint;
  const stage=modal.querySelector('.catalog-model-stage');
- stage.textContent='…';
+ const poster=button.closest('.catalog-card-media')?.querySelector('picture, img, .branded-concept')?.cloneNode(true);
+ stage.replaceChildren();
+ if(poster){poster.classList.add('catalog-model-poster');stage.append(poster)}
  modal.showModal();
+ const current=++requestId;
  try{
+  const canvas=document.createElement('canvas');
+  if(!canvas.getContext('webgl2')&&!canvas.getContext('webgl'))throw Error('WebGL unavailable');
   rendererPromise ||= import(`${base}/assets/model-viewer.min.js`);
   await rendererPromise;
-  if(!modal.open)return;
+  if(!modal.open||current!==requestId)return;
   const viewer=document.createElement('model-viewer');
   viewer.className='catalog-model-viewer';
   viewer.setAttribute('src',`${base}/assets/models/${id}.glb`);
@@ -44,9 +50,11 @@ document.addEventListener('click',async event=>{
   viewer.setAttribute('environment-image','neutral');
   viewer.setAttribute('shadow-intensity','1');
   viewer.setAttribute('touch-action','pan-y');
-  stage.replaceChildren(viewer);
+  viewer.addEventListener('load',()=>{if(current===requestId)poster?.remove()},{once:true});
+  viewer.addEventListener('error',()=>{if(current===requestId)modal.querySelector('.catalog-model-caption').textContent=words.error},{once:true});
+  stage.append(viewer);
  }catch{
   rendererPromise=undefined;
-  if(modal.open)stage.textContent=words.error;
+  if(modal.open&&current===requestId)modal.querySelector('.catalog-model-caption').textContent=words.error;
  }
 });

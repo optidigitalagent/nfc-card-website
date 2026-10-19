@@ -1018,8 +1018,8 @@
     },
     {
       "path": "src/build.mjs",
-      "bytes": 61428,
-      "sha256": "af13d7a28171cae78b1c9aca7ed38a62cbae41b6483b7c5f2f37cdff7e92aeff"
+      "bytes": 61559,
+      "sha256": "417af52fe4335a49280d1c38ffe6753b660d0992f2f87c7caad0c35a85b98451"
     },
     {
       "path": "src/card-3d.css",
@@ -1033,8 +1033,8 @@
     },
     {
       "path": "src/catalog-card.css",
-      "bytes": 6173,
-      "sha256": "cb84397b0bf63dc2dc0dc715daee5e40ddd9796712ac79778876fbd3e39e2e87"
+      "bytes": 6435,
+      "sha256": "f4b8a63e92be265ca2339b1dc547c57af18d88cf881e611699172e8cda901e0a"
     },
     {
       "path": "src/catalog-card.mjs",
@@ -1043,8 +1043,8 @@
     },
     {
       "path": "src/catalog-models.mjs",
-      "bytes": 3397,
-      "sha256": "52a27116138707d6e515af87c16f6d1d23765d29b03c786b53237573e54d64a4"
+      "bytes": 4148,
+      "sha256": "62c26e0dea42b8c572ba8d31c016cd2cf217fde47262a7e29bf2e71e35af9c1d"
     },
     {
       "path": "src/commerce-contract.mjs",

@@ -14,8 +14,10 @@
 .catalog-model-dialog-head h2{margin:4px 0 0;font-size:clamp(1.25rem,3vw,2rem)}
 .catalog-model-dialog-head .eyebrow{margin:0;color:#b7c0c8}
 .catalog-model-close{flex:none;width:44px;height:44px;border:1px solid #626b73;border-radius:50%;background:#30363c;color:white;font-family:inherit;font-size:28px;line-height:1;cursor:pointer}
-.catalog-model-stage{display:grid;place-items:center;min-height:min(58vh,530px);margin-top:16px;border-radius:14px;background:radial-gradient(circle at 50% 43%,#737a80 0,#3a4148 48%,#22282e 100%);overflow:hidden}
-.catalog-model-viewer{display:block;width:100%;height:min(58vh,530px);--poster-color:transparent}
+.catalog-model-stage{position:relative;display:grid;place-items:center;min-height:min(58vh,530px);margin-top:16px;border-radius:14px;background:radial-gradient(circle at 50% 43%,#737a80 0,#3a4148 48%,#22282e 100%);overflow:hidden}
+.catalog-model-poster{position:absolute!important;inset:0;width:100%!important;height:100%!important;max-height:none!important;object-fit:contain!important}
+.catalog-model-poster img{width:100%;height:100%;object-fit:contain}
+.catalog-model-viewer{position:relative;display:block;width:100%;height:min(58vh,530px);--poster-color:transparent}
 .catalog-model-caption{margin:14px 2px 0;color:#c4cbd1;font-size:.91rem}
 .catalog-card .catalog-card-media>picture{width:100%;height:100%;display:block}
 .catalog-card .catalog-product-image{width:100%;height:100%;max-height:none;aspect-ratio:auto;object-fit:contain;object-position:center}
