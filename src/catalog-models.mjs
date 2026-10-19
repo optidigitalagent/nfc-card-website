@@ -1,0 +1,52 @@
+// One viewer for the entire catalog. The model and its renderer are loaded on demand.
+const models=new Set(['review-standard','review-branded','beauty','beauty-branded','restaurant','restaurant-branded','review-acrylic','instagram','menu-square-black','menu-square-white','menu-round-black','menu-round-white']);
+const base=document.documentElement.dataset.publicBasePath||'';
+const locale=document.documentElement.lang;
+const words=locale==='pl'?{close:'Zamknij',hint:'Przeciągnij, aby obrócić kartę',example:'Przykładowy projekt — Twoja karta otrzyma indywidualną grafikę.',error:'Nie udało się załadować modelu 3D.'}:locale==='en'?{close:'Close',hint:'Drag to rotate the card',example:'Example design — your card will use your own artwork.',error:'The 3D model could not be loaded.'}:{close:'Закрити',hint:'Потягніть, щоб обертати картку',example:'Приклад дизайну — ваша картка матиме власне оформлення.',error:'Не вдалося завантажити 3D-модель.'};
+let dialog;
+let rendererPromise;
+function ensureDialog(){
+ if(dialog)return dialog;
+ dialog=document.createElement('dialog');
+ dialog.className='catalog-model-dialog';
+ dialog.innerHTML=`<div class="catalog-model-dialog-inner"><div class="catalog-model-dialog-head"><div><p class="eyebrow">3D MODEL</p><h2 id="catalog-model-title"></h2></div><button type="button" class="catalog-model-close" aria-label="${words.close}">×</button></div><div class="catalog-model-stage" aria-live="polite"></div><p class="catalog-model-caption"></p></div>`;
+ dialog.setAttribute('aria-labelledby','catalog-model-title');
+ dialog.querySelector('.catalog-model-close').addEventListener('click',()=>dialog.close());
+ dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
+ dialog.addEventListener('close',()=>{dialog.querySelector('.catalog-model-stage').replaceChildren()});
+ document.body.append(dialog);
+ return dialog;
+}
+document.addEventListener('click',async event=>{
+ const button=event.target.closest('[data-card-model]');
+ if(!button)return;
+ const id=button.dataset.cardModel;
+ if(!models.has(id))return;
+ const modal=ensureDialog();
+ const title=button.closest('.catalog-card')?.querySelector('h2')?.textContent?.trim()||'NFC CARD';
+ modal.querySelector('#catalog-model-title').textContent=title;
+ modal.querySelector('.catalog-model-caption').textContent=id.includes('branded')?words.example:words.hint;
+ const stage=modal.querySelector('.catalog-model-stage');
+ stage.textContent='…';
+ modal.showModal();
+ try{
+  rendererPromise ||= import(`${base}/assets/model-viewer.min.js`);
+  await rendererPromise;
+  if(!modal.open)return;
+  const viewer=document.createElement('model-viewer');
+  viewer.className='catalog-model-viewer';
+  viewer.setAttribute('src',`${base}/assets/models/${id}.glb`);
+  viewer.setAttribute('alt',`3D: ${title}`);
+  viewer.setAttribute('camera-controls','');
+  viewer.setAttribute('auto-rotate','');
+  viewer.setAttribute('auto-rotate-delay','600');
+  viewer.setAttribute('rotation-per-second','10deg');
+  viewer.setAttribute('environment-image','neutral');
+  viewer.setAttribute('shadow-intensity','1');
+  viewer.setAttribute('touch-action','pan-y');
+  stage.replaceChildren(viewer);
+ }catch{
+  rendererPromise=undefined;
+  if(modal.open)stage.textContent=words.error;
+ }
+});

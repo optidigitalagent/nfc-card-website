@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
-  "file_count_including_manifest": 656,
+  "file_count_including_manifest": 669,
   "release_source": {
     "handoff_archive_sha256": "9cf61bc26214321d296adeae4c63eb21a5b624bfa9f8849797bcb51c66ff5de0",
     "handoff_manifest": "docs/release/v1.0.0/source-handoff-manifest.json",
@@ -1018,8 +1018,8 @@
     },
     {
       "path": "src/build.mjs",
-      "bytes": 60955,
-      "sha256": "35a90ab1261dc8bc95748c1ddb09a7b79d4ac9da8692601d51ce4c8368432445"
+      "bytes": 61428,
+      "sha256": "af13d7a28171cae78b1c9aca7ed38a62cbae41b6483b7c5f2f37cdff7e92aeff"
     },
     {
       "path": "src/card-3d.css",
@@ -1033,13 +1033,18 @@
     },
     {
       "path": "src/catalog-card.css",
-      "bytes": 4402,
-      "sha256": "1ba4f2c582a80fe4559eca21f8ca45c91a675876b8a2b4d57e16b0e9d9aaf3df"
+      "bytes": 6173,
+      "sha256": "cb84397b0bf63dc2dc0dc715daee5e40ddd9796712ac79778876fbd3e39e2e87"
     },
     {
       "path": "src/catalog-card.mjs",
-      "bytes": 953,
-      "sha256": "9538bcd29679a3b284094702fb133a18fa8c9de295cec8a86684c8550a37c3c3"
+      "bytes": 1228,
+      "sha256": "04ba962602d05ba5a44426e6c731b9c6222ed2972a326966a92a9537892d74c0"
+    },
+    {
+      "path": "src/catalog-models.mjs",
+      "bytes": 3397,
+      "sha256": "52a27116138707d6e515af87c16f6d1d23765d29b03c786b53237573e54d64a4"
     },
     {
       "path": "src/commerce-contract.mjs",
@@ -1048,8 +1053,8 @@
     },
     {
       "path": "src/commerce-view.mjs",
-      "bytes": 29084,
-      "sha256": "1b9df93778deeb142f324d75da358ecb192c1153e5d7949b39e102084bac0200"
+      "bytes": 29150,
+      "sha256": "dcd1af630220f4935494c9d26333c5a7d09560874795b9fc367b87e361906386"
     },
     {
       "path": "src/commerce.css",
@@ -2963,8 +2968,8 @@
     },
     {
       "path": "src/menu-view.mjs",
-      "bytes": 29777,
-      "sha256": "15742bdaf4031f9fa9bb43e3482ff4a1adc0f8b7b368d2b0731aa11260642669"
+      "bytes": 29803,
+      "sha256": "8f8b8052d63943a209e6ab96d1d9f87e8ab2fe1d668c93891def0665686118eb"
     },
     {
       "path": "src/menu.css",
@@ -2985,6 +2990,66 @@
       "path": "src/model.mjs",
       "bytes": 80460,
       "sha256": "289a574886e7bf3fbedd2bb345979026dfaa9247f373b664c1ea25cabfd02779"
+    },
+    {
+      "path": "src/models/beauty-branded.glb",
+      "bytes": 45556,
+      "sha256": "4c75f256c45ca1ea26126fb6236c04a93f318d85103ce62fefd77726544d061e"
+    },
+    {
+      "path": "src/models/beauty.glb",
+      "bytes": 267556,
+      "sha256": "5ae944cc49b6df4a4a2ef3600439b13f5538decaf8c8bad82320e9148d8a6ac0"
+    },
+    {
+      "path": "src/models/instagram.glb",
+      "bytes": 135548,
+      "sha256": "504411eb523935280a50de90f3a99499774824d32b8579e48ed3296046da34fe"
+    },
+    {
+      "path": "src/models/menu-round-black.glb",
+      "bytes": 106468,
+      "sha256": "51fd61dd12f8eae6efe5f6b2c0c1ace607d4466d0ce29c8c167589e00754e248"
+    },
+    {
+      "path": "src/models/menu-round-white.glb",
+      "bytes": 107796,
+      "sha256": "e78df80d44dc5a029c7c9ba80e9f30d853d497a74d64bc9cfad279f753817ff8"
+    },
+    {
+      "path": "src/models/menu-square-black.glb",
+      "bytes": 121204,
+      "sha256": "7208b67413abdd4a66b83a49afaae853e0b992206744645b946c22a8868ef26f"
+    },
+    {
+      "path": "src/models/menu-square-white.glb",
+      "bytes": 131980,
+      "sha256": "4fb14c2e5b7d7ed959ca85cbebebb86bc5221e710cb25ade3b53694cb9e052a3"
+    },
+    {
+      "path": "src/models/restaurant-branded.glb",
+      "bytes": 45724,
+      "sha256": "9aacbc91cd75d94bbbeff1b3584353c05d3a6610ab1b57d838dad955a3a7f92f"
+    },
+    {
+      "path": "src/models/restaurant.glb",
+      "bytes": 270960,
+      "sha256": "0b7e7dce3d19c5e0b3011aa07d2bf46978285b760101088254715bc6cc7e9823"
+    },
+    {
+      "path": "src/models/review-acrylic.glb",
+      "bytes": 245816,
+      "sha256": "53447b4b34464964924ae4fa0255e0dd40060dd2fd139eb9195958be354350d7"
+    },
+    {
+      "path": "src/models/review-branded.glb",
+      "bytes": 44172,
+      "sha256": "12fe368469db1a1515628e37a78152a4c31310a422f8975bd80608dccb9694c1"
+    },
+    {
+      "path": "src/models/review-standard.glb",
+      "bytes": 195548,
+      "sha256": "2c9c34fed96dbb9994a0bf3edf266da7f9669e5f9302851928fe3045aeac54ac"
     },
     {
       "path": "src/nfc-demo-client.mjs",
@@ -3028,8 +3093,8 @@
     },
     {
       "path": "src/niche-view.mjs",
-      "bytes": 15511,
-      "sha256": "d3bdedde0c22de0c75581ae90d55be59a4cf3a1bd3d01b7b76496f82f95dc7d9"
+      "bytes": 15636,
+      "sha256": "6aab52e7d3cf63212bf4519efc0d81333b79c0a43c21f1422180eaf030b653cb"
     },
     {
       "path": "src/niche.css",
@@ -3113,8 +3178,8 @@
     },
     {
       "path": "src/review3d-view.mjs",
-      "bytes": 11992,
-      "sha256": "0966b2d40f946a44d825ce1d75fd6ea82b4e2cc427910917fe79504c64327dec"
+      "bytes": 12015,
+      "sha256": "e595fca672afb16ec8ad1379d5aa800424539121c6b5f779a71293697b4fdbfa"
     },
     {
       "path": "src/review3d.css",
