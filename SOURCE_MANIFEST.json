@@ -1033,13 +1033,13 @@
     },
     {
       "path": "src/catalog-card.css",
-      "bytes": 6435,
-      "sha256": "f4b8a63e92be265ca2339b1dc547c57af18d88cf881e611699172e8cda901e0a"
+      "bytes": 6967,
+      "sha256": "28c4c28171947899301ccdfc3c854919769d1fd1ce1da70654e4f634520d15d5"
     },
     {
       "path": "src/catalog-card.mjs",
-      "bytes": 1228,
-      "sha256": "04ba962602d05ba5a44426e6c731b9c6222ed2972a326966a92a9537892d74c0"
+      "bytes": 1619,
+      "sha256": "180ec872230a734a3815526561dda91b5e4b7a90688e10834f0b0aa265d37cf0"
     },
     {
       "path": "src/catalog-models.mjs",
@@ -1053,8 +1053,8 @@
     },
     {
       "path": "src/commerce-view.mjs",
-      "bytes": 29150,
-      "sha256": "a846688b518e37a3c33a5f07180ab9382907bd37797500163dd335c76a21c88f"
+      "bytes": 29183,
+      "sha256": "b404de6d228785c72e8c9be17cc4f4d32fd630fb318b703a6eedf4e4c700e3e1"
     },
     {
       "path": "src/commerce.css",
@@ -3113,8 +3113,8 @@
     },
     {
       "path": "src/niche-view.mjs",
-      "bytes": 15636,
-      "sha256": "6aab52e7d3cf63212bf4519efc0d81333b79c0a43c21f1422180eaf030b653cb"
+      "bytes": 15665,
+      "sha256": "884f128332fc3e491f9dc63908b386801bb3f6ff2fa182a522db3f587d05a055"
     },
     {
       "path": "src/niche.css",
@@ -3198,8 +3198,8 @@
     },
     {
       "path": "src/review3d-view.mjs",
-      "bytes": 12015,
-      "sha256": "e595fca672afb16ec8ad1379d5aa800424539121c6b5f779a71293697b4fdbfa"
+      "bytes": 12058,
+      "sha256": "3f67d61925f4794b442daa6c96b7b022c15318066f190af704ea586206002aef"
     },
     {
       "path": "src/review3d.css",
