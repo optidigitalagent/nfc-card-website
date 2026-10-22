@@ -993,8 +993,8 @@
     },
     {
       "path": "src/about-view.mjs",
-      "bytes": 5997,
-      "sha256": "c0e55a01e70213e6681681cd7d85133617a6c7c30516b78cc8d66bf8cc8757a5"
+      "bytes": 6311,
+      "sha256": "697d59acaf95cba2d56bc41f528e329e1a7864f095b50a1a05d17acb4c059a66"
     },
     {
       "path": "src/about.css",
@@ -1018,8 +1018,8 @@
     },
     {
       "path": "src/build.mjs",
-      "bytes": 61895,
-      "sha256": "946187ac828be6c08bf1029099293e8768d39422966d90ec4b930cbe9cc22d30"
+      "bytes": 66847,
+      "sha256": "ddbae78a3e8846f894de78893830700840e7f0fef3f16d268b9f85de7f3f4ed4"
     },
     {
       "path": "src/card-3d.css",
@@ -3238,8 +3238,8 @@
     },
     {
       "path": "src/visual-v13.css",
-      "bytes": 12570,
-      "sha256": "fecfa5799dfd26165bc9cdd0c5b2f10a71105392b7cef6d9d2a4133e53641601"
+      "bytes": 19661,
+      "sha256": "7f80f0a427cd64c4770136d953cf324ee23969aeaa35b9c44133e510cc52725e"
     },
     {
       "path": "tests/browser_qa.py",

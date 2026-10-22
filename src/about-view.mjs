@@ -24,6 +24,7 @@ export function aboutPage({locale,esc,url,finalCTA}) {
       <p class="eyebrow">${esc(c.behind.eyebrow)}</p><h1 id="about-title">${esc(c.behind.title)}</h1>
       <div class="about-intro-copy">${paragraphs(c.behind.paragraphs)}</div>
       <a class="about-story-link" href="#about-founder-story">${esc(c.behind.link)} <span aria-hidden="true">↓</span></a>
+      <nav class="about-quicknav" aria-label="${locale==='uk'?'Розділи сторінки':locale==='pl'?'Sekcje strony':'Page sections'}"><a href="#about-founder-story"><span>01</span>${esc(l.founder)}</a><a href="#company-principles"><span>02</span>${esc(f.principlesTitle)}</a><a href="#why-nfc-card"><span>03</span>${esc(c.why.title)}</a></nav>
     </div></section>
     <section class="section about-founder about-chapter" id="about-founder-story" aria-labelledby="about-founder-story-title">
       ${photo('portrait','about-portrait','(max-width:767px) min(100vw - 40px, 360px), (max-width:1440px) 33vw, 440px')}
