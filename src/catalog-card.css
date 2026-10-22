@@ -84,8 +84,9 @@
 .catalog-card .catalog-card-media.catalog-card-with-photos .review3d-media-label{z-index:2}
 .catalog-photo-choices{
   grid-row:2;min-width:0;width:100%;height:72px;display:flex;align-items:center;justify-content:flex-start;
-  gap:8px;overflow-x:auto;scrollbar-width:thin;overscroll-behavior-x:contain;z-index:3;
+  gap:8px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;overscroll-behavior-x:contain;z-index:3;
 }
+.catalog-photo-choices::-webkit-scrollbar{display:none}
 .catalog-photo-choices a{
   flex:0 0 64px;width:64px;height:64px;display:block;border:2px solid transparent;
   border-radius:9px;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(20,28,36,.1);
