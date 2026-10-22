@@ -1043,8 +1043,8 @@
     },
     {
       "path": "src/catalog-card.css",
-      "bytes": 7522,
-      "sha256": "1d986dc556a8c0267e49f8d4698f78e6050c266b4e5739dcb8dad2a58a96dbbc"
+      "bytes": 7613,
+      "sha256": "984864e52b605f713e0bddb01a730e5609ff75c0cd349234398c2bc906295adb"
     },
     {
       "path": "src/catalog-card.mjs",

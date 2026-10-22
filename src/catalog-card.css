@@ -48,17 +48,18 @@
 @media(min-width:769px){.catalog-card .catalog-card-media{position:relative;min-height:0}.catalog-card .catalog-card-media>picture,.catalog-card .catalog-card-media>img,.catalog-card .catalog-card-media>.branded-concept{position:absolute;inset:0;width:100%;height:100%}.catalog-card .catalog-card-media>picture>img{width:100%;height:100%}}
 @media(min-width:601px) and (max-width:768px){.catalog-card .catalog-card-media{height:360px;aspect-ratio:auto}}
 
-/* Show the supplied artwork on catalog cards without loading twelve WebGL scenes. */
-.catalog-card .catalog-card-media>.catalog-artwork-poster{position:relative;inset:auto;width:min(78%,420px);height:auto;max-height:calc(100% - 64px);aspect-ratio:1;object-fit:cover;border-radius:14px;box-shadow:18px 26px 38px rgba(20,28,36,.23),-4px 0 0 rgba(59,72,89,.28);transform:perspective(850px) rotateY(-7deg) rotateX(3deg)}
-@media(max-width:768px){.catalog-card .catalog-card-media>.catalog-artwork-poster{max-height:calc(100% - 48px)}}
+/* Keep supplied front artwork centered and fully visible in every catalog card. */
+.catalog-card .catalog-card-media:has(>.catalog-artwork-poster){display:flex;align-items:center;justify-content:center;padding:clamp(24px,3.5vw,44px)}
+.catalog-card .catalog-card-media>.catalog-artwork-poster{display:block;flex:none;position:relative;inset:auto;width:min(100%,390px);height:auto;max-width:100%;max-height:100%;aspect-ratio:1;object-fit:contain;object-position:center;border-radius:12px;box-shadow:0 20px 36px rgba(20,28,36,.21);transform:none}
+@media(max-width:768px){.catalog-card .catalog-card-media:has(>.catalog-artwork-poster){padding:clamp(20px,7vw,36px)}.catalog-card .catalog-card-media>.catalog-artwork-poster{width:min(100%,390px)}}
 .catalog-card:hover .catalog-card-media>.catalog-artwork-poster,
 .catalog-card:focus-within .catalog-card-media>.catalog-artwork-poster{
-  transform:perspective(850px) rotateY(-3deg) rotateX(1deg) translateY(-7px) scale(1.025);
-  box-shadow:21px 30px 45px rgba(20,28,36,.29),-4px 0 0 rgba(59,72,89,.28);
+  transform:translateY(-5px) scale(1.012);
+  box-shadow:0 25px 43px rgba(20,28,36,.26);
 }
 @media(prefers-reduced-motion:reduce){
   .catalog-card:hover .catalog-card-media>.catalog-artwork-poster,
   .catalog-card:focus-within .catalog-card-media>.catalog-artwork-poster{
-    transform:perspective(850px) rotateY(-7deg) rotateX(3deg);
+    transform:none;
   }
 }
