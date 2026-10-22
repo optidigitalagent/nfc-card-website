@@ -1,5 +1,6 @@
 // One viewer for the entire catalog. The model and its renderer are loaded on demand.
 const models=new Set(['review-standard','review-branded','beauty','beauty-branded','restaurant','restaurant-branded','review-acrylic','instagram','menu-square-black','menu-square-white','menu-round-black','menu-round-white']);
+const updatedPosters=new Set(['beauty','restaurant','review-acrylic','instagram']);
 const base=document.documentElement.dataset.publicBasePath||'';
 const locale=document.documentElement.lang;
 const words=locale==='pl'?{close:'Zamknij',hint:'Przeciągnij, aby obrócić kartę',example:'Przykładowy projekt — Twoja karta otrzyma indywidualną grafikę.',error:'Podgląd 3D nie jest dostępny w tej przeglądarce.'}:locale==='en'?{close:'Close',hint:'Drag to rotate the card',example:'Example design — your card will use your own artwork.',error:'3D preview is unavailable in this browser.'}:{close:'Закрити',hint:'Потягніть, щоб обертати картку',example:'Приклад дизайну — ваша картка матиме власне оформлення.',error:'3D-перегляд недоступний у цьому браузері.'};
@@ -28,7 +29,8 @@ document.addEventListener('click',async event=>{
  modal.querySelector('#catalog-model-title').textContent=title;
  modal.querySelector('.catalog-model-caption').textContent=id.includes('branded')?words.example:words.hint;
  const stage=modal.querySelector('.catalog-model-stage');
- const poster=button.closest('.catalog-card-media')?.querySelector('picture, img, .branded-concept')?.cloneNode(true);
+ const poster=updatedPosters.has(id)?document.createElement('img'):button.closest('.catalog-card-media')?.querySelector('picture, img, .branded-concept')?.cloneNode(true);
+ if(updatedPosters.has(id)){poster.src=`${base}/assets/model-posters/${id}.webp?v=20261022-ribbons`;poster.alt=title}
  stage.replaceChildren();
  if(poster){poster.classList.add('catalog-model-poster');stage.append(poster)}
  modal.showModal();
@@ -41,7 +43,7 @@ document.addEventListener('click',async event=>{
   if(!modal.open||current!==requestId)return;
   const viewer=document.createElement('model-viewer');
   viewer.className='catalog-model-viewer';
-  viewer.setAttribute('src',`${base}/assets/models/${id}.glb`);
+  viewer.setAttribute('src',`${base}/assets/models/${id}.glb?v=20261022-ribbons`);
   viewer.setAttribute('alt',`3D: ${title}`);
   viewer.setAttribute('camera-controls','');
   viewer.setAttribute('auto-rotate','');

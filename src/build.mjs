@@ -257,6 +257,11 @@ for(const file of fs.readdirSync(path.join(root,'src/models'))){
  if(!/^[a-z-]+\.glb$/.test(file))throw Error('Unexpected 3D model name: '+file);
  fs.writeFileSync(path.join(output,'assets/models',file),webSafeReviewCardGlb(fs.readFileSync(path.join(root,'src/models',file))));
 }
+fs.mkdirSync(path.join(output,'assets/model-posters'),{recursive:true});
+for(const file of fs.readdirSync(path.join(root,'src/model-posters'))){
+ if(!/^[a-z-]+\.webp$/.test(file))throw Error('Unexpected 3D poster name: '+file);
+ fs.copyFileSync(path.join(root,'src/model-posters',file),path.join(output,'assets/model-posters',file));
+}
 const localeClient=fs.readFileSync(path.join(root,'src/localization-client.js'),'utf8');
 if(localeClient.split('/*POLISH_UI_DICTIONARY*/').length!==2)throw Error('Missing Polish dictionary marker');
 fs.writeFileSync(path.join(output,'assets/localization-client.js'),localeClient.replace('/*POLISH_UI_DICTIONARY*/ {}',JSON.stringify(polishUI).replaceAll('<','\\u003c')));
