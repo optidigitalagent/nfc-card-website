@@ -256,7 +256,7 @@ function webSafeReviewCardGlb(source){
  tail.copy(output,20+paddedLength);
  return output;
 }
-for(const file of ['commerce-contract.mjs','pl-commerce.mjs','mini-contract.mjs','menu-contract.mjs','menu-client.mjs','review3d-client.mjs','niche-client.mjs','nfc-demo-client.mjs','catalog-models.mjs','pages.mjs','app.js','model-viewer.min.js','nfc-review-card-3d.glb','commerce.js','gallery.js','reviews.js','reviews-renderer.js','admin-reviews.js','reviews.css','Onest.ttf','Onest-OFL.txt','IBMPlexMono.ttf','IBMPlexMono-OFL.txt']){
+for(const file of ['commerce-contract.mjs','pl-commerce.mjs','mini-contract.mjs','menu-contract.mjs','menu-client.mjs','review3d-client.mjs','niche-client.mjs','nfc-demo-client.mjs','catalog-models.mjs','pages.mjs','app.js','model-viewer.min.js','nfc-review-card-3d.glb','commerce.js','gallery.js','reviews.js','reviews-renderer.js','admin-reviews.js','reviews.css','Onest.ttf','Onest-OFL.txt','IBMPlexMono.ttf','IBMPlexMono-OFL.txt','KyivTypeSans-Black.woff2','KyivTypeSans-LICENSE.txt']){
  if(pages&&['reviews.js','reviews-renderer.js','admin-reviews.js','reviews.css'].includes(file))continue;
  if(pages&&['app.js','commerce.js'].includes(file)){
   const source=fs.readFileSync(path.join(root,'src',file),'utf8');

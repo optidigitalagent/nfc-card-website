@@ -112,3 +112,65 @@
 /* Editorial hierarchy for the founder introduction. */
 @media(min-width:1025px){.about-intro-copy{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:14px 56px;max-width:1130px}.about-intro-copy p:first-child{grid-row:1/3;max-width:460px;font-size:1.13rem;line-height:1.7}.about-intro-copy p:not(:first-child){padding-left:22px;border-left:1px solid #616d75}}
 @media(max-width:767px){.about-intro-copy p:not(:first-child){padding-left:16px;border-left:1px solid #616d75}}
+
+/* Display lettering inspired by the supplied Ukrainian type reference: large,
+   closely spaced and heavy, while body text remains the existing Onest. */
+@font-face{font-family:'KyivType Sans';src:url('./KyivTypeSans-Black.woff2') format('woff2');font-weight:900;font-style:normal;font-display:swap}
+.home-top-demo .nfc-demo-copy h2,.catalog-intro h1,.about-intro h1,
+.delivery-hero h1,.client-proof h2{
+  font-family:'KyivType Sans','Onest',Inter,system-ui,sans-serif;
+  font-weight:900;
+  letter-spacing:-.065em;
+  line-height:.99;
+  text-wrap:balance;
+}
+.home-top-demo .nfc-demo-copy h2{font-size:clamp(3rem,4.4vw,5.25rem)}
+.catalog-intro h1{max-width:15ch;font-size:clamp(2.8rem,4.6vw,5rem)}
+.about-intro h1{max-width:18ch}
+.client-proof h2{letter-spacing:-.06em}
+
+/* Motion is momentary and only starts on hover or entry. Ten product cards
+   remain static until used, so the catalog does not keep a GPU loop running. */
+.catalog-card .catalog-card-media{perspective:1100px;isolation:isolate}
+.catalog-card .catalog-card-media>picture,
+.catalog-card .catalog-card-media>.catalog-product-image,
+.catalog-card .catalog-card-media>.branded-concept{
+  transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .55s ease;
+  transform-origin:50% 50%;
+}
+.catalog-card .catalog-card-media::after{
+  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(112deg,transparent 32%,rgba(255,255,255,.19) 47%,transparent 62%);
+  transform:translateX(-130%);opacity:0;
+}
+.catalog-card:hover .catalog-card-media>picture,
+.catalog-card:hover .catalog-card-media>.catalog-product-image,
+.catalog-card:hover .catalog-card-media>.branded-concept,
+.catalog-card:focus-within .catalog-card-media>picture,
+.catalog-card:focus-within .catalog-card-media>.catalog-product-image,
+.catalog-card:focus-within .catalog-card-media>.branded-concept{
+  transform:translateY(-4px) rotateY(-3deg) scale(1.025);
+  filter:drop-shadow(0 15px 19px rgba(17,22,27,.12));
+}
+.catalog-card:hover .catalog-card-media::after,
+.catalog-card:focus-within .catalog-card-media::after{opacity:1;animation:card-light-sweep .75s ease-out both}
+@keyframes card-light-sweep{to{transform:translateX(130%)}}
+.catalog-model-button{transition:background .2s,transform .25s,box-shadow .25s}
+.catalog-model-button:hover,.catalog-model-button:focus-visible{box-shadow:0 12px 28px rgba(0,0,0,.38)}
+.catalog-model-stage{background:radial-gradient(ellipse at 53% 42%,#939ca4 0%,#55606a 42%,#252c33 100%)}
+.catalog-model-stage::before{content:'';position:absolute;width:min(60%,430px);height:14%;left:20%;bottom:8%;border-radius:50%;background:#0b1119;filter:blur(25px);opacity:.43;pointer-events:none}
+.catalog-model-viewer{z-index:1;filter:drop-shadow(0 24px 27px rgba(8,13,19,.33))}
+@media(prefers-reduced-motion:no-preference){
+  .catalog-model-dialog[open]{animation:model-dialog-enter .3s cubic-bezier(.2,.7,.2,1) both}
+  .delivery-terms-grid>.delivery-term{animation:experience-enter .55s both}
+  .delivery-terms-grid>.delivery-term:nth-child(2){animation-delay:.08s}
+  .delivery-terms-grid>.delivery-term:nth-child(3){animation-delay:.16s}
+}
+@keyframes model-dialog-enter{from{opacity:0;transform:translateY(18px) scale(.975)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  .catalog-card .catalog-card-media>picture,
+  .catalog-card .catalog-card-media>.catalog-product-image,
+  .catalog-card .catalog-card-media>.branded-concept{transition:none!important;transform:none!important;filter:none!important}
+  .catalog-card .catalog-card-media::after{display:none}
+  .catalog-model-dialog,.delivery-terms-grid>.delivery-term{animation:none!important}
+}

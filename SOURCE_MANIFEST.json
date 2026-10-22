@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
-  "file_count_including_manifest": 673,
+  "file_count_including_manifest": 675,
   "release_source": {
     "handoff_archive_sha256": "9cf61bc26214321d296adeae4c63eb21a5b624bfa9f8849797bcb51c66ff5de0",
     "handoff_manifest": "docs/release/v1.0.0/source-handoff-manifest.json",
@@ -962,6 +962,16 @@
       "sha256": "a9b4c49bb299e05b5f6c481e7fb5e78943d2793249a0c8874ab574a2d1ea6755"
     },
     {
+      "path": "src/KyivTypeSans-Black.woff2",
+      "bytes": 30088,
+      "sha256": "5eb1ee6d1838a39aa4fcbedb402f32aad3d4d04db1792f71436b27c6c8095f45"
+    },
+    {
+      "path": "src/KyivTypeSans-LICENSE.txt",
+      "bytes": 667,
+      "sha256": "c6e3707f74d6828589399e4bfbb0cc00625c878949af1d90b4cb2cc858d0d462"
+    },
+    {
       "path": "src/Manrope-OFL.txt",
       "bytes": 4384,
       "sha256": "e01b637272e0cbdfb240184dd98ea5cc671556d9894dae2668d92ab2c906787c"
@@ -1018,8 +1028,8 @@
     },
     {
       "path": "src/build.mjs",
-      "bytes": 66847,
-      "sha256": "ddbae78a3e8846f894de78893830700840e7f0fef3f16d268b9f85de7f3f4ed4"
+      "bytes": 66901,
+      "sha256": "fbcdc17c3eccf61dc16260014795020b1a5b80c7346e2f7c98dcea3d4d1a9158"
     },
     {
       "path": "src/card-3d.css",
@@ -1033,8 +1043,8 @@
     },
     {
       "path": "src/catalog-card.css",
-      "bytes": 6967,
-      "sha256": "28c4c28171947899301ccdfc3c854919769d1fd1ce1da70654e4f634520d15d5"
+      "bytes": 7522,
+      "sha256": "1d986dc556a8c0267e49f8d4698f78e6050c266b4e5739dcb8dad2a58a96dbbc"
     },
     {
       "path": "src/catalog-card.mjs",
@@ -1043,8 +1053,8 @@
     },
     {
       "path": "src/catalog-models.mjs",
-      "bytes": 4422,
-      "sha256": "95aff7ee01acdb0dfdc9074a2bf60469ff9226b5ae71fb49d49ee7fde8e4c762"
+      "bytes": 4568,
+      "sha256": "eb3376763ccbb37c9d507cf057ab87cc3e5a726380a941bd6b57aed68e3cb86c"
     },
     {
       "path": "src/commerce-contract.mjs",
@@ -3013,63 +3023,63 @@
     },
     {
       "path": "src/models/beauty-branded.glb",
-      "bytes": 24232,
-      "sha256": "0651ca167faf62a80b69168575a10c839a6821bf3eadc9310a0ac978e7a32dba"
+      "bytes": 31116,
+      "sha256": "53d18009340ef096088982a1113a7ed929b36e4395630012186b87c04a0ffb76"
     },
     {
       "path": "src/models/beauty.glb",
-      "bytes": 294708,
-      "sha256": "bba5b4db9a838011a2246540c1bee9567bbb5e0f54f3235059fe26bd29b6b90d"
+      "bytes": 301596,
+      "sha256": "b02d93c441a83f7fa9da29413fecf27b1b320b92475fcccd987da23dda22fee2"
     },
     {
       "path": "src/models/instagram.glb",
-      "bytes": 215888,
-      "sha256": "12c58ac2fc60f07c8ff8d4c3f8bf0264074a4f220a2790bb467edc72314646a5"
+      "bytes": 222784,
+      "sha256": "90321195af4293b4f54028351fba7c7dff9d5e075fe9a915c536e32716c4451e"
     },
     {
       "path": "src/models/menu-round-black.glb",
-      "bytes": 111992,
-      "sha256": "45b543ee2934df7dc32beb3e8817ee28363cdae50fa816d94a34227b4f5b1fc9"
+      "bytes": 118900,
+      "sha256": "1c561af82975b0a044e1de111b4ff3eacb30f6303b76b4ada65508bc075cf8a6"
     },
     {
       "path": "src/models/menu-round-white.glb",
-      "bytes": 113320,
-      "sha256": "935a5baa28e9484ba64e417a9c7f03eb828ab3e3287cdf2354dfedef89bc7a70"
+      "bytes": 120228,
+      "sha256": "da9f6d57b71d608eee535e66d8ee2b205c799a67c952f5190c87e43bfad30b4c"
     },
     {
       "path": "src/models/menu-square-black.glb",
-      "bytes": 126156,
-      "sha256": "ed4f5d27bb559cb20b8a5250469b0f0d18225fa702345789ff5233f42eae32ad"
+      "bytes": 133052,
+      "sha256": "abb260014a026ff2f3e3048a88aac22795fa900a91b21bc29414baaa258b060e"
     },
     {
       "path": "src/models/menu-square-white.glb",
-      "bytes": 137200,
-      "sha256": "3c4ccd468d3532e4c32bdd54f15296b7ac07899a080261cd16e0834b358239a2"
+      "bytes": 144096,
+      "sha256": "4dcf3a460f9efa057068284afa699ac8bec76d86f8fbeec801c95dcb9babb5c4"
     },
     {
       "path": "src/models/restaurant-branded.glb",
-      "bytes": 24400,
-      "sha256": "62cdc60d1bec3e68c7d05f1f739fce5b21210192841a2ee3d7c9f47b7647705f"
+      "bytes": 31284,
+      "sha256": "3fde3307bd09f7990942b1da0f4673a9665e734019f18c87acf8682ef6e57507"
     },
     {
       "path": "src/models/restaurant.glb",
-      "bytes": 252916,
-      "sha256": "a70cd5f48a7a5e624ea4ad33d917400a0ed9cefe8a7588e589793ff86a003b4f"
+      "bytes": 259804,
+      "sha256": "b8f7f370c262daf617b837defc288aada7f3b2f488b1a9fa74cb4de0101dc044"
     },
     {
       "path": "src/models/review-acrylic.glb",
-      "bytes": 324556,
-      "sha256": "5428656bef3aa6f513653f770614f50bf4a1e64dde79a7f9f1fc11f50cae8304"
+      "bytes": 331468,
+      "sha256": "be7b995f8747a854c712cbb19fbe65d50b2f9209e5d0befc53c861e030a0dda1"
     },
     {
       "path": "src/models/review-branded.glb",
-      "bytes": 22844,
-      "sha256": "210557f63faeb3bdad64494f87ddd1efcb6134d381c8d64a318234c95a4c7be9"
+      "bytes": 29732,
+      "sha256": "32f2e73f4257a6cd0a08130036ba053704626d64b3b27dc616293041b0d88cef"
     },
     {
       "path": "src/models/review-standard.glb",
-      "bytes": 174220,
-      "sha256": "35a7b979f9e84df665379421cd4db6e03f7303da05b3f9ad174439f65ccebea8"
+      "bytes": 181116,
+      "sha256": "5b8bda0d434b564566def79f90add8235a79f200f290e7e1ae87204f239f2975"
     },
     {
       "path": "src/nfc-demo-client.mjs",
@@ -3238,8 +3248,8 @@
     },
     {
       "path": "src/visual-v13.css",
-      "bytes": 19661,
-      "sha256": "7f80f0a427cd64c4770136d953cf324ee23969aeaa35b9c44133e510cc52725e"
+      "bytes": 23325,
+      "sha256": "8096c451af9d2ea4ad3e92ec01993517930f7679a528e71beaf1ddcac1d4553a"
     },
     {
       "path": "tests/browser_qa.py",

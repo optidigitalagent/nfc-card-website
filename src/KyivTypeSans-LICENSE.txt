@@ -1,0 +1,8 @@
+Kyiv*Type Sans Black by Dmytro Rastvortsev (2019–2020).
+Created for Kyiv city identification with Projector, Dmytro Bulanov Creative Büro and Banda Agency.
+
+The designer states that Kyiv*Type is free for commercial and non-commercial use under CC BY-ND 4.0. The font file must not be decompiled or modified. This site embeds an unmodified KyivType Sans Black WOFF2 for selected headings.
+
+Designer and font information: https://www.behance.net/gallery/90690285/KyivType-variable-superfamily
+License: https://creativecommons.org/licenses/by-nd/4.0/
+Font file source: https://github.com/z9877969/brush_buddy_front/blob/main/src/shared/fonts/KyivTypeSans-Black.woff2

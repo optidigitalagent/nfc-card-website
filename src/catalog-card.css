@@ -51,3 +51,14 @@
 /* Show the supplied artwork on catalog cards without loading twelve WebGL scenes. */
 .catalog-card .catalog-card-media>.catalog-artwork-poster{position:relative;inset:auto;width:min(78%,420px);height:auto;max-height:calc(100% - 64px);aspect-ratio:1;object-fit:cover;border-radius:14px;box-shadow:18px 26px 38px rgba(20,28,36,.23),-4px 0 0 rgba(59,72,89,.28);transform:perspective(850px) rotateY(-7deg) rotateX(3deg)}
 @media(max-width:768px){.catalog-card .catalog-card-media>.catalog-artwork-poster{max-height:calc(100% - 48px)}}
+.catalog-card:hover .catalog-card-media>.catalog-artwork-poster,
+.catalog-card:focus-within .catalog-card-media>.catalog-artwork-poster{
+  transform:perspective(850px) rotateY(-3deg) rotateX(1deg) translateY(-7px) scale(1.025);
+  box-shadow:21px 30px 45px rgba(20,28,36,.29),-4px 0 0 rgba(59,72,89,.28);
+}
+@media(prefers-reduced-motion:reduce){
+  .catalog-card:hover .catalog-card-media>.catalog-artwork-poster,
+  .catalog-card:focus-within .catalog-card-media>.catalog-artwork-poster{
+    transform:perspective(850px) rotateY(-7deg) rotateX(3deg);
+  }
+}

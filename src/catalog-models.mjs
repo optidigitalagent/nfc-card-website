@@ -30,7 +30,7 @@ document.addEventListener('click',async event=>{
  modal.querySelector('.catalog-model-caption').textContent=id.includes('branded')?words.example:words.hint;
  const stage=modal.querySelector('.catalog-model-stage');
  const poster=updatedPosters.has(id)?document.createElement('img'):button.closest('.catalog-card-media')?.querySelector('picture, img, .branded-concept')?.cloneNode(true);
- if(updatedPosters.has(id)){poster.src=`${base}/assets/model-posters/${id}.webp?v=20261022-ribbons`;poster.alt=title}
+  if(updatedPosters.has(id)){poster.src=`${base}/assets/model-posters/${id}.webp?v=20261022-ribbons`;poster.alt=title}
  stage.replaceChildren();
  if(poster){poster.classList.add('catalog-model-poster');stage.append(poster)}
  modal.showModal();
@@ -43,14 +43,17 @@ document.addEventListener('click',async event=>{
   if(!modal.open||current!==requestId)return;
   const viewer=document.createElement('model-viewer');
   viewer.className='catalog-model-viewer';
-  viewer.setAttribute('src',`${base}/assets/models/${id}.glb?v=20261022-ribbons`);
+  viewer.setAttribute('src',`${base}/assets/models/${id}.glb?v=20261022-polished`);
   viewer.setAttribute('alt',`3D: ${title}`);
   viewer.setAttribute('camera-controls','');
   viewer.setAttribute('auto-rotate','');
-  viewer.setAttribute('auto-rotate-delay','600');
-  viewer.setAttribute('rotation-per-second','10deg');
+  viewer.setAttribute('auto-rotate-delay','1000');
+  viewer.setAttribute('rotation-per-second','7deg');
   viewer.setAttribute('environment-image','neutral');
-  viewer.setAttribute('shadow-intensity','1');
+  viewer.setAttribute('exposure','1.18');
+  viewer.setAttribute('shadow-intensity','1.2');
+  viewer.setAttribute('shadow-softness','0.8');
+  viewer.setAttribute('interaction-prompt','none');
   viewer.setAttribute('touch-action','pan-y');
   viewer.addEventListener('load',()=>{if(current===requestId)poster?.remove()},{once:true});
   viewer.addEventListener('error',()=>{if(current===requestId)modal.querySelector('.catalog-model-caption').textContent=words.error},{once:true});
