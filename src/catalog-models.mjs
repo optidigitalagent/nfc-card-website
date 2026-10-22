@@ -7,6 +7,24 @@ const words=locale==='pl'?{close:'Zamknij',hint:'Przeciągnij, aby obrócić kar
 let dialog;
 let rendererPromise;
 let requestId=0;
+document.addEventListener('click',event=>{
+ const choice=event.target.closest('[data-catalog-photo]');
+ if(!choice)return;
+ const media=choice.closest('.catalog-card-media');
+ const image=media?.querySelector(':scope > picture img, :scope > img.catalog-product-image');
+ if(!image)return;
+ event.preventDefault();
+ const photo=choice.dataset.photoSrc;
+ if(!photo?.startsWith('/assets/'))return;
+ const picture=image.closest('picture');
+ picture?.querySelectorAll('source').forEach(source=>source.remove());
+ image.removeAttribute('srcset');
+ image.removeAttribute('sizes');
+ image.src=base+photo;
+ image.alt=choice.dataset.photoAlt||'';
+ media.querySelectorAll('[data-catalog-photo]').forEach(item=>item.removeAttribute('aria-current'));
+ choice.setAttribute('aria-current','true');
+});
 function ensureDialog(){
  if(dialog)return dialog;
  dialog=document.createElement('dialog');

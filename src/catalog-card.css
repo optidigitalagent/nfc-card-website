@@ -63,3 +63,43 @@
     transform:none;
   }
 }
+
+/* Keep the full photo upright while showing every approved product angle. */
+.catalog-card .catalog-card-media.catalog-card-with-photos{
+  display:grid;grid-template-rows:minmax(0,1fr) 72px;gap:12px;
+  align-items:center;justify-items:center;padding:18px;min-width:0;
+}
+.catalog-card .catalog-card-media.catalog-card-with-photos>picture,
+.catalog-card .catalog-card-media.catalog-card-with-photos>.catalog-product-image{
+  position:relative;inset:auto;grid-row:1;min-width:0;max-width:100%;max-height:100%;
+  width:100%;height:100%;object-fit:contain;object-position:center;transform:none;
+}
+.catalog-card .catalog-card-media.catalog-card-with-photos>.catalog-artwork-poster{
+  width:min(100%,390px);height:min(100%,390px);aspect-ratio:1;
+}
+.catalog-card .catalog-card-media.catalog-card-with-photos>picture>img{
+  display:block;width:100%;height:100%;object-fit:contain;object-position:center;
+}
+.catalog-card .catalog-card-media.catalog-card-with-photos .catalog-model-button{bottom:106px}
+.catalog-card .catalog-card-media.catalog-card-with-photos .review3d-media-label{z-index:2}
+.catalog-photo-choices{
+  grid-row:2;width:100%;height:72px;display:flex;align-items:center;justify-content:flex-start;
+  gap:8px;overflow-x:auto;scrollbar-width:thin;overscroll-behavior-x:contain;z-index:3;
+}
+.catalog-photo-choices a{
+  flex:0 0 64px;width:64px;height:64px;display:block;border:2px solid transparent;
+  border-radius:9px;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(20,28,36,.1);
+}
+.catalog-photo-choices a[aria-current="true"]{border-color:#272e35}
+.catalog-photo-choices a:focus-visible{outline:3px solid #555c64;outline-offset:2px}
+.catalog-photo-choices img{display:block;width:100%;height:100%;object-fit:cover}
+.catalog-card:hover .catalog-card-media.catalog-card-with-photos>picture,
+.catalog-card:hover .catalog-card-media.catalog-card-with-photos>.catalog-product-image,
+.catalog-card:focus-within .catalog-card-media.catalog-card-with-photos>picture,
+.catalog-card:focus-within .catalog-card-media.catalog-card-with-photos>.catalog-product-image{transform:none;filter:none}
+@media(max-width:768px){
+  .catalog-card .catalog-card-media.catalog-card-with-photos{aspect-ratio:1;min-height:300px;padding:14px;grid-template-rows:minmax(0,1fr) 64px;gap:8px}
+  .catalog-card .catalog-card-media.catalog-card-with-photos .catalog-model-button{bottom:86px}
+  .catalog-photo-choices{height:64px}
+  .catalog-photo-choices a{flex-basis:56px;width:56px;height:56px}
+}

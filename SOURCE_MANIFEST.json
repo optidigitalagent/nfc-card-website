@@ -1043,18 +1043,18 @@
     },
     {
       "path": "src/catalog-card.css",
-      "bytes": 7613,
-      "sha256": "984864e52b605f713e0bddb01a730e5609ff75c0cd349234398c2bc906295adb"
+      "bytes": 10095,
+      "sha256": "a6bd1ccfc03547d07b6e26019d2c2c0493f40cf6b8451a126132893712b2776f"
     },
     {
       "path": "src/catalog-card.mjs",
-      "bytes": 1619,
-      "sha256": "180ec872230a734a3815526561dda91b5e4b7a90688e10834f0b0aa265d37cf0"
+      "bytes": 2543,
+      "sha256": "cef704c1b3dfce4389b00daabcccb1c6161369a28046c801adb43a7f0516f597"
     },
     {
       "path": "src/catalog-models.mjs",
-      "bytes": 4568,
-      "sha256": "eb3376763ccbb37c9d507cf057ab87cc3e5a726380a941bd6b57aed68e3cb86c"
+      "bytes": 5355,
+      "sha256": "398f73953cee4801e0e4fdc224979585e5e3a45c891c5808edb60d63c5ea0b98"
     },
     {
       "path": "src/commerce-contract.mjs",
@@ -1063,8 +1063,8 @@
     },
     {
       "path": "src/commerce-view.mjs",
-      "bytes": 29183,
-      "sha256": "b404de6d228785c72e8c9be17cc4f4d32fd630fb318b703a6eedf4e4c700e3e1"
+      "bytes": 29658,
+      "sha256": "247dddca04f1c400c924299aa6e2e66263f9f66f253e4f28cb1d2411f1a72317"
     },
     {
       "path": "src/commerce.css",
@@ -2978,8 +2978,8 @@
     },
     {
       "path": "src/menu-view.mjs",
-      "bytes": 29803,
-      "sha256": "8f8b8052d63943a209e6ab96d1d9f87e8ab2fe1d668c93891def0665686118eb"
+      "bytes": 29871,
+      "sha256": "cf49d8bc6cb5c58eaf97912f43a16b9796b89bd259cea7515fed37abe3f9e7f8"
     },
     {
       "path": "src/menu.css",
@@ -3123,8 +3123,8 @@
     },
     {
       "path": "src/niche-view.mjs",
-      "bytes": 15665,
-      "sha256": "884f128332fc3e491f9dc63908b386801bb3f6ff2fa182a522db3f587d05a055"
+      "bytes": 15855,
+      "sha256": "c2ba9b30707de6ff8eeac4d1cff034766312da9151ff2cfe7e34a935c9169bde"
     },
     {
       "path": "src/niche.css",
@@ -3208,8 +3208,8 @@
     },
     {
       "path": "src/review3d-view.mjs",
-      "bytes": 12058,
-      "sha256": "3f67d61925f4794b442daa6c96b7b022c15318066f190af704ea586206002aef"
+      "bytes": 12243,
+      "sha256": "22109d1ea442076ab1cb619f75b80ad15b5e51ded4b2e187ebb908c9f270136f"
     },
     {
       "path": "src/review3d.css",
