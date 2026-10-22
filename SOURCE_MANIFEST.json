@@ -1053,8 +1053,8 @@
     },
     {
       "path": "src/catalog-models.mjs",
-      "bytes": 5355,
-      "sha256": "398f73953cee4801e0e4fdc224979585e5e3a45c891c5808edb60d63c5ea0b98"
+      "bytes": 5429,
+      "sha256": "245bfa2aceed21caa1d4d13332e7bb47a13c76fd48ba0549047c88b661d10916"
     },
     {
       "path": "src/commerce-contract.mjs",

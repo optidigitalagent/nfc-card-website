@@ -15,12 +15,12 @@ document.addEventListener('click',event=>{
  if(!image)return;
  event.preventDefault();
  const photo=choice.dataset.photoSrc;
- if(!photo?.startsWith('/assets/'))return;
+ if(!photo?.startsWith('/assets/')&&!photo?.startsWith(`${base}/assets/`))return;
  const picture=image.closest('picture');
  picture?.querySelectorAll('source').forEach(source=>source.remove());
  image.removeAttribute('srcset');
  image.removeAttribute('sizes');
- image.src=base+photo;
+ image.src=photo.startsWith('/assets/')?base+photo:photo;
  image.alt=choice.dataset.photoAlt||'';
  media.querySelectorAll('[data-catalog-photo]').forEach(item=>item.removeAttribute('aria-current'));
  choice.setAttribute('aria-current','true');
