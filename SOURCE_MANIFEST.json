@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
-  "file_count_including_manifest": 649,
+  "file_count_including_manifest": 651,
   "release_source": {
     "handoff_archive_sha256": "9cf61bc26214321d296adeae4c63eb21a5b624bfa9f8849797bcb51c66ff5de0",
     "handoff_manifest": "docs/release/v1.0.0/source-handoff-manifest.json",
@@ -185,6 +185,11 @@
       "path": "docs/release/v1.0.0/source-handoff-manifest.json",
       "bytes": 35204,
       "sha256": "7d6db6f7b5c6d911cbdae2a8eed4a94568fc300ffd1f699bdf49b1b92427bf68"
+    },
+    {
+      "path": "docs/release/website-email-20261026.md",
+      "bytes": 2912,
+      "sha256": "c724fa2f21365769433130434f5ca8c8e275a6906f093c22d1fa6c4981f5a16b"
     },
     {
       "path": "package-lock.json",
@@ -2998,8 +3003,8 @@
     },
     {
       "path": "src/pages.mjs",
-      "bytes": 30057,
-      "sha256": "6ecf9da32d524161b2dc5091b07a371fe0fee94f851abfce4ca616d19c5e8e49"
+      "bytes": 36232,
+      "sha256": "5f1bb5478300fbf9e98226c7610e4239d538ffa54d264422d97ab6b006b6a49e"
     },
     {
       "path": "src/pl-clients.json",
@@ -3043,13 +3048,13 @@
     },
     {
       "path": "src/public-legal.mjs",
-      "bytes": 11839,
-      "sha256": "da915c8ed7ef5b7ebe2c1a90faef856ec7a1e875b60d7104dd12c88cdbe5b0d7"
+      "bytes": 13294,
+      "sha256": "1d3d572f307c709e6afc1011b08af8a51113b4c0f73d3e7fd2b0659adfe1fe3c"
     },
     {
       "path": "src/publication-approval.json",
-      "bytes": 2264,
-      "sha256": "0bb6810f27a3b45f01ffa2c60cd959ed871d1f8d6cf3118eca521f23931483cf"
+      "bytes": 2409,
+      "sha256": "8ad4f2acc8a720fc7a321735b7456a00f56f31264f73d98b85669a6a01a5713d"
     },
     {
       "path": "src/publication.mjs",
@@ -3125,6 +3130,11 @@
       "path": "tests/staging_inbound_e2e.mjs",
       "bytes": 1959,
       "sha256": "758da8e2e0b5548d2268abd3e3ab4bab64c00e6e1f4d6c3857e19a852d969186"
+    },
+    {
+      "path": "tests/test_email_proposal.py",
+      "bytes": 5523,
+      "sha256": "1a7327b1ac92a9d01efa9da63e5d02e641d6b56f5f1261171d6af2c306aa0b89"
     },
     {
       "path": "tests/test_gallery_media.py",
