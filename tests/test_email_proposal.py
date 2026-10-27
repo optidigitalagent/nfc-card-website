@@ -22,7 +22,7 @@ const common={locale:'uk',name:'Synthetic fixture',phone:'',variant:'branded',qu
 const context={basePath:'/nfc-card-website',pathname:'/nfc-card-website/solutions/branded-review-card'};
 const lead=leadPayload(common,context);
 assert.equal(lead.contact.email,common.proposalEmail);assert.equal(lead.contact.phone,undefined);
-assert.equal(lead.emailProposal.intent,'commercial_offer_by_email');assert.equal(lead.formVersion,'NFC-CARD-FORM-V35');
+assert.equal(lead.emailProposal.intent,'commercial_offer_by_email');assert.equal(lead.formVersion,'NFC-CARD-FORM-V36');
 for(const patch of [{proposalRequested:false},{proposalEmail:'invalid'},{proposalBusiness:''},{proposalNiche:'unknown'},{consent:false},{variant:'standard'}])assert.throws(()=>leadPayload({...common,...patch},context));
 const old=leadPayload({...common,messenger:'viber',phone:'+380671234567'},context);
 assert.equal(old.contact.preferredMethod,'viber');assert.equal(old.emailProposal,undefined);assert.equal(old.contact.email,undefined);assert.equal(old.formVersion,'NFC-CARD-FORM-V34');

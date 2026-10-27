@@ -153,7 +153,7 @@ export function leadPayload(input, {basePath = '', pathname, utm = {}}) {
       (mini&&!['', '/en', '/pl'].some(prefix=>relative===prefix+miniRoutes[solutionId]))) throw Error('invalid_source_page');
   const payload = {language: input.locale, product: mini?'nfc-review-card-mini':input.variant === 'instagram' ? 'nfc-instagram-card' : input.variant === 'branded' ? 'branded-review-card' : 'review-card',
     ...(miniPhysical?{quantity:miniQuantity}:!advice&&!mini?{quantity:input.quantity === 'more' ? 3 : Number(input.quantity)}:{}), customerName: name,
-    contact: {...(phone?{phone:phone.replace(/[ ()-]/g, '')}:{}), ...(emailRoute?{email}:{}), preferredMethod: input.messenger}, sourcePage, ...requestNotice, ...(emailRoute?{formVersion:'NFC-CARD-FORM-V35',privacyNoticeVersion:'NFC-CARD-PRIVACY-V35'}:{}),
+    contact: {...(phone?{phone:phone.replace(/[ ()-]/g, '')}:{}), ...(emailRoute?{email}:{}), preferredMethod: input.messenger}, sourcePage, ...requestNotice, ...(emailRoute?{formVersion:'NFC-CARD-FORM-V36',privacyNoticeVersion:'NFC-CARD-PRIVACY-V35'}:{}),
     selection: {variant: input.variant, quantity: input.quantity}};
   if(emailRoute)payload.emailProposal={intent:'commercial_offer_by_email',businessName:input.proposalBusiness.trim(),niche:input.proposalNiche,...(String(input.proposalUrl||'').trim()?{businessUrl:input.proposalUrl.trim()}:{}),requested:true};
   if(input.variant==='instagram')Object.assign(payload,{productSchemaVersion:1,product_id:'nfc-instagram-card',sku:'NFC-IG-READY',offer:'ready',instagramUrl:instagramProfileURL(input.instagramUrl),comment:input.comment.trim(),consent:true});
