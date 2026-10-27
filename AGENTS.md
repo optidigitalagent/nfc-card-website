@@ -1,3 +1,11 @@
+# Designer source branch — owner scope v36.2
+
+On `design/nfc-card-v36-2` and designer child branches, use `docs/designer-handoff/DESIGNER_START_HERE.md` first. This branch contains the approved new storefront in `src/v36_2` alongside the unchanged original production application. Use only the explicit `designer:*` commands for the synthetic local preview.
+
+The latest owner instruction authorizes commit/push of the designer branch only. It overrides the default main-release workflow below: **do not merge/push main, deploy Pages/Railway, trigger production requests or send real notifications.** Do not change backend, prices, product meaning, historical receipts, UA/EN/PL or media HOLD states. Future visual work needs owner acceptance before publication. Designer PRs target the handoff branch, never main by default.
+
+---
+
 # NFC CARD repository workflow
 
 This repository is the source of truth for `optidigitalagent/nfc-card-website`.

@@ -1,3 +1,9 @@
+> **NFC CARD v36.2 designer source branch — PRODUCTION HOLD**
+>
+> Start with [Designer Handoff](docs/designer-handoff/DESIGNER_START_HERE.md). Node24: `npm run designer:build` then `npm run designer:preview`; open `http://127.0.0.1:4196/nfc-card-website/`. No npm install, secrets or Docker needed. Use synthetic data only; no real sends. Editable storefront: `src/v36_2/`.
+>
+> The original application and its `npm run build`/`npm test` workflow below remain preserved. Those commands are **not** the new storefront preview. This branch does not authorize production publication.
+
 # NFC CARD by Antonov Digital
 
 Source repository: https://github.com/optidigitalagent/nfc-card-website
