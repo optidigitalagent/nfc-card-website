@@ -3368,8 +3368,8 @@
     },
     {
       "path": "tests/test_v12_browser.py",
-      "bytes": 31651,
-      "sha256": "81784100704f421b6c6eddd0765c1486f6766bbd87fa3afaeea012080eda8820"
+      "bytes": 31741,
+      "sha256": "2072c11459fea99b768b7c2d052fd8b2f88e5bbec898e15d5014ac725a4e96b7"
     },
     {
       "path": "tests/test_v12_reviews.py",
