@@ -112,7 +112,8 @@ def test_catalog_is_first_meaningful_section_with_four_mini_products_and_origina
     soup = soup_at(route)
     first = soup.main.find('section')
     if route in ('/', '/en'):
-        assert 'home-top-demo' in first.get('class', [])
+        assert 'nfc-demo' in first.get('class', [])
+        assert 'home-top-demo' in first.parent.get('class', [])
         assert soup.main.find('section', id='catalog')
     else:
         assert first.get('id') == 'catalog'
