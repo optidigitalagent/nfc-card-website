@@ -1,0 +1,57 @@
+/* A restrained visual pass for the owner's site. Layout only: no product, form or price changes. */
+:root{--refresh-border:#cbd1d5;--refresh-paper:#f4f5f3}
+
+/* The phone demonstration remains the first content on the home page. */
+.home-top-demo{background:linear-gradient(180deg,#f2f3f0 0%,#fff 100%)}
+.home-top-demo .nfc-demo{border-color:#c7cdd0;box-shadow:0 20px 64px rgba(20,28,32,.08);background:#fff}
+.home-top-demo .nfc-demo-copy h2{max-width:11ch}
+.home-top-demo .nfc-demo-visual{background:radial-gradient(ellipse at 55% 32%,#424a52 0%,#262d34 48%,#171b20 100%);box-shadow:inset 0 1px 0 #ffffff24,0 24px 48px #1b242b23}
+.home-top-demo .nfc-demo-situations button{min-height:44px;padding-inline:14px}
+.home-top-demo .nfc-demo-situations button:hover{border-color:#707d86}
+
+/* A clear visual rhythm makes the long catalog easier to scan. */
+.catalog{background:var(--refresh-paper)}
+.catalog-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.65fr);column-gap:clamp(24px,6vw,92px);align-items:end;margin-bottom:38px}
+.catalog-intro .eyebrow,.catalog-intro h1{grid-column:1}
+.catalog-intro .lede{grid-column:2;grid-row:1/3;max-width:48ch;margin-bottom:4px}
+.catalog .product-rows{gap:24px}
+.catalog-card{min-height:490px;border:1px solid var(--refresh-border);border-radius:18px;background:#fff;box-shadow:0 10px 30px #1c2a340a;transition:border-color .22s,box-shadow .22s,transform .22s}
+.catalog-card:hover{border-color:#9ca9b1;box-shadow:0 22px 50px #1c2a3418;transform:translateY(-2px)}
+.catalog-card .catalog-card-media{min-height:490px;background:radial-gradient(circle at 52% 40%,#fff 0%,#eef1f1 68%,#e4e9e9 100%)}
+.catalog-card .catalog-card-media.catalog-card-with-photos{height:auto;min-height:490px;grid-template-rows:minmax(0,1fr) 68px;gap:10px;padding:22px}
+.catalog-card .catalog-card-media.catalog-card-with-photos>picture,
+.catalog-card .catalog-card-media.catalog-card-with-photos>.catalog-product-image{border-radius:12px}
+.catalog-card .catalog-card-media.catalog-card-with-photos .catalog-model-button{bottom:100px}
+.catalog-card .catalog-card-copy{padding:clamp(28px,3.2vw,48px);gap:13px}
+.catalog-card .catalog-card-copy>h2{font-size:clamp(1.65rem,2.65vw,2.65rem);line-height:1.1;max-width:23ch}
+.catalog-card .catalog-card-description{max-width:55ch;line-height:1.55}
+.catalog-card .catalog-card-prices{padding-top:18px;border-top:1px solid #e0e5e7}
+.catalog-card .catalog-card-actions{gap:18px;flex-wrap:wrap}
+.catalog-card .catalog-card-actions>.button{max-width:none;border-radius:9px}
+.catalog-photo-choices a{border-radius:10px;transition:transform .18s,border-color .18s}
+.catalog-photo-choices a:hover{transform:translateY(-2px)}
+
+@media(max-width:1000px){
+ .catalog-intro{grid-template-columns:minmax(0,1fr)}
+ .catalog-intro .lede{grid-column:1;grid-row:auto;max-width:70ch}
+ .catalog-card .catalog-card-copy{padding:28px}
+}
+@media(max-width:768px){
+ .catalog-card{min-height:0;border-radius:16px}
+ .catalog-card .catalog-card-media{min-height:0}
+ .catalog-card .catalog-card-media.catalog-card-with-photos{height:clamp(330px,80vw,520px);min-height:0;grid-template-rows:minmax(0,1fr) 64px;padding:16px}
+ .catalog-card .catalog-card-media.catalog-card-with-photos .catalog-model-button{bottom:90px}
+ .catalog-card .catalog-card-copy>h2{font-size:clamp(1.6rem,6vw,2.25rem)}
+}
+@media(max-width:480px){
+ .home-top-demo .nfc-demo{box-shadow:none}
+ .catalog-intro{margin-bottom:28px}
+ .catalog .product-rows{gap:18px}
+ .catalog-card .catalog-card-media.catalog-card-with-photos{height:clamp(320px,94vw,430px);padding:12px}
+ .catalog-card .catalog-card-copy{padding:22px}
+ .catalog-card .catalog-card-actions>.button{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+ .catalog-card,.catalog-photo-choices a{transition:none!important}
+ .catalog-card:hover,.catalog-photo-choices a:hover{transform:none!important}
+}

@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
-  "file_count_including_manifest": 675,
+  "file_count_including_manifest": 676,
   "release_source": {
     "handoff_archive_sha256": "9cf61bc26214321d296adeae4c63eb21a5b624bfa9f8849797bcb51c66ff5de0",
     "handoff_manifest": "docs/release/v1.0.0/source-handoff-manifest.json",
@@ -1028,8 +1028,8 @@
     },
     {
       "path": "src/build.mjs",
-      "bytes": 66901,
-      "sha256": "fbcdc17c3eccf61dc16260014795020b1a5b80c7346e2f7c98dcea3d4d1a9158"
+      "bytes": 67045,
+      "sha256": "bc46cfb2c104c41ba30dca9825e64b0c8ca45c7ac1c859232b903b982e28ee39"
     },
     {
       "path": "src/card-3d.css",
@@ -3130,6 +3130,11 @@
       "path": "src/niche.css",
       "bytes": 3053,
       "sha256": "fe675189229ed99c98531d7b7de827f4b5585ce324675ba64def4b6332067b11"
+    },
+    {
+      "path": "src/our-visual-refresh.css",
+      "bytes": 3867,
+      "sha256": "9fd2a5c0bbb61db498e31471d57adfce65863732089ec702e8462c8b16387bf2"
     },
     {
       "path": "src/pages.mjs",
