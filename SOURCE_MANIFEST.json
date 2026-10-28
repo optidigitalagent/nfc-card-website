@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 30582)
+Total output lines: 3400
+
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
@@ -1694,67 +1697,7 @@
     {
       "path": "src/media/instagram/instagram-card-real-front-window-320.avif",
       "bytes": 16942,
-      "sha256": "79ae76587d900605f5ea7d3cc282d385f6eed5498ba4f3c0b185273da319c325"
-    },
-    {
-      "path": "src/media/instagram/instagram-card-real-front-window-320.webp",
-      "bytes": 19460,
-      "sha256": "3e5f4b9f611b439bf018c8998c010370244f4f23eec24391cfb44ac0b988abd3"
-    },
-    {
-      "path": "src/media/instagram/instagram-card-real-front-window-640.avif",
-      "bytes": 41635,
-      "sha256": "cdbeecd0afa0db58efccb160b24c07be95162112c4339f326d522c4e45c184f6"
-    },
-    {
-      "path": "src/media/instagram/instagram-card-real-front-window-640.webp",
-      "bytes": 47512,
-      "sha256": "306f68bb50a4e0abec61bd3a4d6fd44ee9337e4e4df3f72393f2d87b90e7691b"
-    },
-    {
-      "path": "src/media/instagram/instagram-card-real-front-window-960.avif",
-      "bytes": 74192,
-      "sha256": "3c1c6f52c3b302a2543c8fc2e884f1a126e958269dd234fa41c4871413961afa"
-    },
-    {
-      "path": "src/media/instagram/instagram-card-real-front-window-960.webp",
-      "bytes": 79814,
-      "sha256": "c6afff3183c5c1fae60dcf2236a08d2f7c20d53332c7ab13b2bb048415d072e9"
-    },
-    {
-      "path": "src/media/instagram/instagram-card-real-front-window.avif",
-      "bytes": 88370,
-      "sha256": "20af6522245fa579e54d5ab66b73ec99deeb1924c13009f36e88ce6576080ff4"
-    },
-    {
-      "path": "src/media/instagram/instagram-card-real-front-window.webp",
-      "bytes": 93312,
-      "sha256": "e617240a1a5d322e7402e27eeef54654a258db773a95c2c695bcc695545fa272"
-    },
-    {
-      "path": "src/media/menu/menu-card-round-black-desk-320.avif",
-      "bytes": 10701,
-      "sha256": "46e072f0cbe3d9b614d8e2405f56c946d56e99b2dbb99f51fc409c3b9916231f"
-    },
-    {
-      "path": "src/media/menu/menu-card-round-black-desk-320.webp",
-      "bytes": 11570,
-      "sha256": "f4330b13110616a388ccb933f75a510995bc4c1c276bd1308c64ba49ef12584d"
-    },
-    {
-      "path": "src/media/menu/menu-card-round-black-desk-640.avif",
-      "bytes": 25549,
-      "sha256": "024625e14545f552590bd3dee32f162738f6911d3cc9abf4d261a3a65a4f4ab3"
-    },
-    {
-      "path": "src/media/menu/menu-card-round-black-desk-640.webp",
-      "bytes": 27566,
-      "sha256": "f2b7b55df6bfe5010a5a788cb792762c08d81885ddf4507ed3103858a06b3d9b"
-    },
-    {
-      "path": "src/media/menu/menu-card-round-black-desk-960.avif",
-      "bytes": 45577,
-      "sha256": "aff1842d04e8d3dd78b2a9b926777ecbe56441090aea128b9c45da7b6b9d1be8"
+      "sha256": "79ae765…582 tokens truncated…be56441090aea128b9c45da7b6b9d1be8"
     },
     {
       "path": "src/media/menu/menu-card-round-black-desk-960.webp",
@@ -3383,8 +3326,8 @@
     },
     {
       "path": "tests/test_v13_browser.py",
-      "bytes": 21278,
-      "sha256": "26415802a2713ba458e4624fc3ccb2ab0c4f23c582c85b2a60acb10d21687a82"
+      "bytes": 21408,
+      "sha256": "810e937e006400c4d27a5a3bb9c735c88a42bb2fee73e72bc87d23538c4d0a54"
     },
     {
       "path": "tests/test_v25_followup.py",
