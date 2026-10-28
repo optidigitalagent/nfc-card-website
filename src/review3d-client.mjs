@@ -91,6 +91,15 @@ export async function mountReview3dForm(form,{endpoint='',basePath='',locale='uk
   else if(stored?.state==='uncertain'){submit.disabled=true;show(P('Попередня заявка могла бути збережена. Дані не зберігаються у браузері; уточніть статус у нас або свідомо створіть нову заявку.','A previous enquiry may have been saved. Details are not stored in this browser; ask us to check its status or explicitly start a new enquiry.'),'uncertain');newRequest.hidden=false;}
 }
 if(typeof document!=='undefined'){
+  // The product page loads its viewer eagerly; keep it still for visitors who
+  // request reduced motion, including when the preference changes mid-session.
+  const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  const syncViewerMotion=()=>{const viewer=document.querySelector('.review-card-model');if(viewer){
+    if(motion.matches)viewer.removeAttribute('auto-rotate');
+    else viewer.setAttribute('auto-rotate','');
+  }};
+  motion.addEventListener('change',syncViewerMotion);
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',syncViewerMotion,{once:true});else syncViewerMotion();
   const start=async()=>{const form=document.querySelector('[data-review3d-form]');if(!form)return;
     const basePath=document.documentElement.dataset.publicBasePath||'',endpoint=document.documentElement.dataset.leadEndpoint||'';
     let commerce;try{const response=await fetch(basePath+'/assets/content.json');if(!response.ok)throw Error('content_unavailable');commerce=validateCommerce((await response.json()).commerce);}catch{return;}

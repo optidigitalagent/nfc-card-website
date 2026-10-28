@@ -1068,8 +1068,8 @@
     },
     {
       "path": "src/commerce-view.mjs",
-      "bytes": 29658,
-      "sha256": "247dddca04f1c400c924299aa6e2e66263f9f66f253e4f28cb1d2411f1a72317"
+      "bytes": 29656,
+      "sha256": "7790e5769fb05a7aef4cfa1353cfd2e3e4cdc1942ab40f36789ba8f914ae422c"
     },
     {
       "path": "src/commerce.css",
@@ -3213,8 +3213,8 @@
     },
     {
       "path": "src/review3d-client.mjs",
-      "bytes": 12073,
-      "sha256": "5cdf3b7ef95f9a4c7b86f44061c45cfce5ff0fdae4f9ae96500ac97f50aab54c"
+      "bytes": 12708,
+      "sha256": "d785b1478ebbefa94ce7094b8b2b9190029c2620fee98513bb3c433ed719c21a"
     },
     {
       "path": "src/review3d-view.mjs",
