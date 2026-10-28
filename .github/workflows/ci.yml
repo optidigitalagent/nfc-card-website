@@ -83,6 +83,23 @@ jobs:
         run: |
           python -B scripts/verify_manifest.py
           python -B scripts/release_guard.py --history
+      - name: Collect public-page design previews
+        if: github.event_name == 'pull_request'
+        run: |
+          mkdir -p work/design-preview
+          for name in uk-home-390 uk-home-1440 en-home-390 uk-solutions-390 uk-solutions-1440 uk-solutions-review-card-390 uk-about-390 uk-order-390; do
+            source="work/qa/v12/screenshots/verified/${name}-top.png"
+            test -s "$source"
+            cp "$source" "work/design-preview/${name}.png"
+          done
+      - name: Upload public-page design previews
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: nfc-card-design-preview
+          path: work/design-preview/*.png
+          if-no-files-found: error
+          retention-days: 7
       - name: Prepare concise failure diagnostics
         if: failure()
         env:

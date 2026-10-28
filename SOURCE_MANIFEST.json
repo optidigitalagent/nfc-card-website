@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
-  "file_count_including_manifest": 676,
+  "file_count_including_manifest": 677,
   "release_source": {
     "handoff_archive_sha256": "9cf61bc26214321d296adeae4c63eb21a5b624bfa9f8849797bcb51c66ff5de0",
     "handoff_manifest": "docs/release/v1.0.0/source-handoff-manifest.json",
@@ -38,8 +38,8 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "bytes": 6718,
-      "sha256": "f69587d96fce3ff83ae5ad301bee55d88c0cb765b059efe3fc522b786ebc5dfc"
+      "bytes": 7537,
+      "sha256": "5f78c014bde6f9a56291c933ca3ce5e05478c5ab2ac89d385a4c77f290af11e6"
     },
     {
       "path": ".github/workflows/fork-pages.yml",
@@ -110,6 +110,11 @@
       "path": "SECURITY.md",
       "bytes": 1659,
       "sha256": "fde4e9ded5cd94817b583639a35ad1078ed44710345402ee7c5248ccf4c8bc02"
+    },
+    {
+      "path": "docs/DESIGN_REVIEW.md",
+      "bytes": 1858,
+      "sha256": "36565aa049104a7bc96c43c03cee87394c68a232ff4431f7a43044cb00af1af2"
     },
     {
       "path": "docs/pages-v17/ACCEPTANCE.md",
@@ -1028,8 +1033,8 @@
     },
     {
       "path": "src/build.mjs",
-      "bytes": 67045,
-      "sha256": "bc46cfb2c104c41ba30dca9825e64b0c8ca45c7ac1c859232b903b982e28ee39"
+      "bytes": 67049,
+      "sha256": "30985f06c8815ece15921dd09903e5db5918457a4d1dc5fe17315908d7878fdc"
     },
     {
       "path": "src/card-3d.css",
@@ -1053,8 +1058,8 @@
     },
     {
       "path": "src/catalog-models.mjs",
-      "bytes": 5429,
-      "sha256": "245bfa2aceed21caa1d4d13332e7bb47a13c76fd48ba0549047c88b661d10916"
+      "bytes": 5646,
+      "sha256": "d0b58cba5977e45212631cc7d46cab884c758128b8b5b9de607d63b4e304d506"
     },
     {
       "path": "src/commerce-contract.mjs",
@@ -3088,8 +3093,8 @@
     },
     {
       "path": "src/nfc-demo-view.mjs",
-      "bytes": 13620,
-      "sha256": "edb036a0a7212d451dc53f9d5ed38d5bb0b70313dcf604aabf1964eb0725e28e"
+      "bytes": 13857,
+      "sha256": "c54dc9993b39841b273f6ed7367b74c14d2cbfd0f3b4cdd3f86e6d7c6bfbc9c7"
     },
     {
       "path": "src/nfc-demo.css",
@@ -3133,8 +3138,8 @@
     },
     {
       "path": "src/our-visual-refresh.css",
-      "bytes": 3867,
-      "sha256": "9fd2a5c0bbb61db498e31471d57adfce65863732089ec702e8462c8b16387bf2"
+      "bytes": 10496,
+      "sha256": "f292e72da783fc1d873f304912e106e2469aba9064c0d6f1518f49ea3ddbd8bc"
     },
     {
       "path": "src/pages.mjs",
