@@ -3273,8 +3273,8 @@
     },
     {
       "path": "tests/test_instagram_browser.py",
-      "bytes": 18685,
-      "sha256": "27b8d2da4e93c53831afb370cb216b9f5cc9eb3dbeb50bc5e135c131136506ad"
+      "bytes": 18703,
+      "sha256": "ff6cd7c0e2798daf2be4775c3507d2b4ddc5511917c75ca557b1fa8e6f081cc7"
     },
     {
       "path": "tests/test_instagram_v18.py",
