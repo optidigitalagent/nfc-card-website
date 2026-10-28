@@ -3278,8 +3278,8 @@
     },
     {
       "path": "tests/test_instagram_v18.py",
-      "bytes": 18587,
-      "sha256": "01ef8aa9fce9c6deef7291a937e00c9bc7bf8a29004f04df67f461ee2927d427"
+      "bytes": 19169,
+      "sha256": "293d04a81cd7e14ec519e564c84ea6e707bb12c1fc9d8f6bd4c26011cb28eb88"
     },
     {
       "path": "tests/test_instagram_v20.py",
@@ -3288,8 +3288,8 @@
     },
     {
       "path": "tests/test_instagram_v22.py",
-      "bytes": 14133,
-      "sha256": "2b84b2763bb677b90e70725ac0de1e51df6ef209b54339fdd48f0771892a0736"
+      "bytes": 14151,
+      "sha256": "2d0b42271ce4ef0beb0c289e1617737b36a8ad92f24da632ae940cc7f81b5683"
     },
     {
       "path": "tests/test_leads.py",
@@ -3363,8 +3363,8 @@
     },
     {
       "path": "tests/test_site.py",
-      "bytes": 16377,
-      "sha256": "09378f6ffc98e788c25429b1f11d1ad2bc0003b8119d955c955e72df660e6a02"
+      "bytes": 16555,
+      "sha256": "5e943e32a3cdb5e8bc6e229e9ff6bc8e413d1a88a0f2e49a1426174036dbb053"
     },
     {
       "path": "tests/test_v12_browser.py",
