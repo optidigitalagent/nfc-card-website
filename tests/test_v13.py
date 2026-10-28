@@ -44,6 +44,27 @@ def leaves(value):
             yield from leaves(child)
 
 
+def full_ast_dump(node):
+    """Keep the same strict, empty-field-inclusive fingerprint on Python3.12–3.14."""
+    import ast
+    import inspect
+    options = {'include_attributes': False}
+    # Python3.14 changed the default to omit empty lists. Python3.12 has no
+    # show_empty parameter and already includes them; explicitly retain them.
+    if 'show_empty' in inspect.signature(ast.dump).parameters:
+        options['show_empty'] = True
+    return ast.dump(node, **options)
+
+
+def test_wsgi_ast_fingerprint_retains_empty_fields_and_detects_body_changes():
+    import ast
+    original = ast.parse('def route(self):\n    return {"ok": True}\n').body[0]
+    changed = ast.parse('def route(self):\n    return {"ok": False}\n').body[0]
+    assert 'decorator_list=[]' in full_ast_dump(original)
+    assert 'defaults=[]' in full_ast_dump(original)
+    assert full_ast_dump(original) != full_ast_dump(changed)
+
+
 def test_protected_v11_implementation_matches_recovery_bytes():
     snapshot = read_json(TASK / 'RECOVERY_SNAPSHOT.json')['files']
     protected = [p for p in snapshot if p.startswith('server/') and not p.startswith('server/templates/')]
@@ -94,14 +115,16 @@ def test_protected_v11_implementation_matches_recovery_bytes():
                         return None
                     return self.generic_visit(node)
             NativeSchema().visit(methods['route'])
-            # Independently derived from the sealed handoff's original WSGI AST,
-            # with exactly those same release-only positions normalized.
+            # Same sealed WSGI AST and release-only normalization as before.
+            # The complete-field serialization was independently checked on
+            # unchanged main source with both Python3.12 and Python3.14. The
+            # former pins used Python3.14's empty-list-omitting default.
             expected = {
-                '__init__': 'f9c6d9dc37da67bb4b813f26a672544a3e8d8fd72c3cc0b9e25af8933772a34f',
-                'route': '21983e1da9d1b3a0d5b1b8f2f526329f06a96bfc60a0d843d0bf866ebdebff11',
-                '__call__': '4c404b229cf59d86e272d3810c32a99b1317fc9e5bc381a4ed87375a9117cd6d',
+                '__init__': 'c7da000956b63cd45ca09599b0f15220ebba682ca14a56e0d27a1f883f7967ef',
+                'route': '23656dc615bd24289344004f77700c04728ef2ae87ed88c28d2a3772f6eea6fd',
+                '__call__': 'c1f263b7015455281ad69d3338107211ac8e315f9eb3ddd9cbdfebfb05274748',
             }
-            assert {name: hashlib.sha256(ast.dump(node, include_attributes=False).encode()).hexdigest()
+            assert {name: hashlib.sha256(full_ast_dump(node).encode()).hexdigest()
                     for name, node in methods.items()} == expected
             continue
         assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == snapshot[path], path
