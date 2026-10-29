@@ -1,6 +1,10 @@
+# Production-base update
+
+Read [CURRENT_BASE_2026-10-29.md](CURRENT_BASE_2026-10-29.md). New design work starts from production v36.2 `main` (`d0e79aa`), not the old handoff branch. The old PR base instruction below is superseded. The fork owner has read-only access to `optidigitalagent`; push to the existing fork design branch and propose upstream changes only after design review.
+
 # Designer branch and PR workflow
 
-Repository: https://github.com/optidigitalagent/nfc-card-website . Handoff branch: `design/nfc-card-v36-2`. Start at the immutable handoff commit supplied by the owner; verify `git rev-parse HEAD`.
+Production repository: https://github.com/optidigitalagent/nfc-card-website . Current design branch: `design/visual-refresh-2026-10-28` in https://github.com/zaffirax55/nfc-card-website . Start from the merged production base; verify `git rev-parse HEAD`.
 
 Create a child branch for each design iteration:
 
@@ -8,7 +12,7 @@ Create a child branch for each design iteration:
 git switch -c design/your-visual-iteration
 ```
 
-If you have repository write access, push that child branch normally and open a PR **into `design/nfc-card-v36-2`**, with before/after screenshots, changed-file list, owner direction, test evidence, content-count/route/price/media non-regression and known limits. No force push. If you do not have write access, use a fork and fetch the exact upstream handoff branch rather than starting from stale main. No fork or account access is created by this handoff. The designer's GitHub username and collaborator permissions are not known or verified.
+If you have repository write access, push that child branch normally and open a reviewed PR against the current production code after owner visual approval, with before/after screenshots, changed-file list, owner direction, test evidence, content-count/route/price/media non-regression and known limits. No force push. If you do not have write access, use a fork and fetch the exact current upstream production main and integrate it into the fork design branch. No fork or account access is created by this handoff. The designer's GitHub username and collaborator permissions are not known or verified.
 
 Read root `AGENTS.md` together with the explicit designer-only override and this handoff. Earlier default main/deployment directions do not authorize release of this branch. The owner permits source-branch transfer only.
 

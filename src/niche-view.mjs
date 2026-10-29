@@ -1,4 +1,4 @@
-import {catalogCard} from './catalog-card.mjs';
+import {catalogCard,catalogPhotos} from './catalog-card.mjs';
 import uk from './niche-content.uk.json' with {type:'json'};
 import en from './niche-content.en.json' with {type:'json'};
 import pl from './niche-content.pl.json' with {type:'json'};
@@ -31,7 +31,7 @@ export function nicheViews({locale,esc,url,picture,asset}){
  function card(kind){
   const p=data.products[kind],route=nicheRoutes[kind],branded=MINI_PRODUCTS[miniId(kind)].designMode==='branded';
   const href=url(route),prices=rows(kind),primaryHref=url(route+(branded?'/?intent=concepts#request':'/#request'));
-  return catalogCard({className:'niche-card',attributes:`data-solution="${miniId(kind)}"`,media:branded?concept():picture(nicheMedia[miniMediaKind(kind)][0],'catalog-product-image'),eyebrow:esc(p.eyebrow),title:esc(p.name),href,description:esc(p.catalog_description),proof:`<ul class="clean-list">${p.catalog_benefits.slice(0,2).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`,prices,primary:{href:primaryHref,label:esc(p.cta_primary),attributes:branded?'data-niche-intent="concepts"':''},secondary:{href,label:esc(p.details_label)+' ↗'}});
+  return catalogCard({className:'niche-card',attributes:`data-solution="${miniId(kind)}"`,model:kind==='beauty'?'beauty':kind==='restaurant'?'restaurant':kind==='brandedBeauty'?'beauty-branded':'restaurant-branded',media:branded?concept():picture(nicheMedia[miniMediaKind(kind)][0],'catalog-product-image'),artworkModel:branded?'':kind,galleryPhotos:branded?[]:[{src:`/assets/model-posters/${kind}.webp?v=20261022-ribbons`,alt:p.name,label:p.name},...catalogPhotos(nicheMedia[miniMediaKind(kind)],asset,locale)],eyebrow:esc(p.eyebrow),title:esc(p.name),href,description:esc(p.catalog_description),proof:`<ul class="clean-list">${p.catalog_benefits.slice(0,2).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`,prices,primary:{href:primaryHref,label:esc(p.cta_primary),attributes:branded?'data-niche-intent="concepts"':''},secondary:{href,label:esc(p.details_label)+' ↗'}});
  }
   function form(kind){
   const p=data.products[kind],fields=data.shared.form_labels,route=nicheRoutes[kind],solution=miniId(kind),branded=MINI_PRODUCTS[solution].designMode==='branded';

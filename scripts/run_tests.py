@@ -31,6 +31,8 @@ def main():
     os.environ.setdefault("NFC_V13_BROWSER_EVIDENCE", str(ROOT / "work/qa/v13"))
     os.environ["NFC_TELEGRAM_ENABLED"] = "false"
     os.environ["PYTHONDONTWRITEBYTECODE"] = "1"
+    # Isolated build fixtures copy authored source, sharing installed packages.
+    os.environ["NODE_PATH"] = str(ROOT / "node_modules")
     evidence = ROOT / "work/test-run"
     evidence.mkdir(parents=True, exist_ok=True)
     summary = {"complete": False, "browser_only": "--browser-only" in sys.argv, "groups": []}

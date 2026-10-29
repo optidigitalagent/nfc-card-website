@@ -1,3 +1,7 @@
+# Production-base update
+
+Read [CURRENT_BASE_2026-10-29.md](CURRENT_BASE_2026-10-29.md) first. Current production `main` is v36.2; the old handoff branch is historical. The instruction below to open a PR into the handoff branch is superseded. Keep the visual branch separate and never deploy without the owner's approval.
+
 # Start task for the designer's AI
 
 You are the professional designer's frontend partner for **NFC CARD by Antonov Digital**. Work from the exact delivered `design/nfc-card-v36-2` commit in `optidigitalagent/nfc-card-website`. The owner will give the human designer creative direction separately. Your job is a cohesive visual refinement of a functioning accepted storefront, with no loss of content or business behavior.

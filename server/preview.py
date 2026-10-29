@@ -9,6 +9,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from server.review_http import ReviewHTTP,Request as ReviewRequest
 from server.review_config import configure
 from server.routing import product_redirect
+from server.model_viewer_policy import model_viewer_connect_policy, model_viewer_script_policy, model_viewer_style_policy, model_viewer_preview_image_policy
 from server.pricing import canonical_quote
 import html
 import io
@@ -220,7 +221,7 @@ class Handler(SimpleHTTPRequestHandler):
         self.send_header('X-Content-Type-Options', 'nosniff')
         self.send_header('Referrer-Policy', 'same-origin')
         self.send_header('Cache-Control', 'no-store')
-        self.send_header('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'")
+        self.send_header('Content-Security-Policy', "default-src 'self'; "+model_viewer_script_policy(self.path)+"; "+model_viewer_style_policy(self.path)+"; "+model_viewer_preview_image_policy(self.path)+"; media-src 'self'; font-src 'self'; "+model_viewer_connect_policy(self.path)+"; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'")
         super().end_headers()
 
     def response_json(self, status, value):

@@ -12,6 +12,7 @@ from .review_http import ReviewHTTP,Request,Response,json_response,unique
 from .commerce_repository import PostgresLeadService
 from .leads import LeadError
 from .routing import product_redirect
+from .model_viewer_policy import model_viewer_connect_policy, model_viewer_script_policy, model_viewer_style_policy
 from .publication import PublicationPolicy,cache_control
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -71,7 +72,7 @@ class Application:
         except LeadError as e:response=json_response({'ok':False,'code':e.code,'errors':e.fields},e.status)
         except (ValueError,TypeError,UnicodeError,RecursionError):response=json_response({'ok':False,'code':'invalid_payload'},400)
         except Exception:response=json_response({'ok':False,'code':'service_unavailable'},503)
-        response.headers.update({'X-Content-Type-Options':'nosniff','Cache-Control':cache_control(environ.get('PATH_INFO','/'),response),'X-Robots-Tag':self.publication.robots(environ.get('PATH_INFO','/'),response.status,response.headers.get('Content-Type','')),'Referrer-Policy':'same-origin','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob:; media-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'"})
+        response.headers.update({'X-Content-Type-Options':'nosniff','Cache-Control':cache_control(environ.get('PATH_INFO','/'),response),'X-Robots-Tag':self.publication.robots(environ.get('PATH_INFO','/'),response.status,response.headers.get('Content-Type','')),'Referrer-Policy':'same-origin','Content-Security-Policy':"default-src 'self'; "+model_viewer_script_policy(environ.get('PATH_INFO','/'))+"; "+model_viewer_style_policy(environ.get('PATH_INFO','/'))+"; img-src 'self' blob:; media-src 'self'; font-src 'self'; "+model_viewer_connect_policy(environ.get('PATH_INFO','/'))+"; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'"})
         response.headers['Content-Length']=str(len(response.body));start_response(f'{response.status} {HTTPStatus(response.status).phrase}',list(response.headers.items()))
         return [b'' if method=='HEAD' else response.body]
 

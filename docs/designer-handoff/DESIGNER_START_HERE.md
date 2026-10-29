@@ -1,15 +1,19 @@
+# Production-base update
+
+Read [CURRENT_BASE_2026-10-29.md](CURRENT_BASE_2026-10-29.md) first. The older clone command and claims that default build still targets the legacy site are obsolete. Use the existing fork designer branch after its integration commit, or fetch current `optidigitalagent/main` into a separate design branch. The `designer:*` commands remain the safe local preview path.
+
 # NFC CARD v36.2 — designer source handoff
 
-This is the editable designer version in the **existing** `optidigitalagent/nfc-card-website` repository. The owner approved this transfer to `design/nfc-card-v36-2`; `main`, GitHub Pages and Railway must remain unchanged. This branch is not a production release.
+The current v36.2 source was merged from `optidigitalagent/main` into the existing fork designer branch. Design work stays in the branch; production, GitHub Pages and Railway remain unchanged by this iteration.
 
-The complete source is **`src/v36_2/`**. The older root `src/build.mjs` and default npm commands still belong to the preserved main site. Use the explicit `designer:*` commands below for this storefront.
+The active storefront source is **`src/v36_2/`**. The default build now builds the production v36.2 storefront. Use the explicit `designer:*` commands below for safe local preview.
 
 ## Clone and run
 
 Install Node.js **24** from its official distribution. These designer commands use Node built-ins; no npm install, Docker, Python, database service, `.env` or credentials are needed.
 
 ```sh
-git clone --branch design/nfc-card-v36-2 --single-branch https://github.com/optidigitalagent/nfc-card-website.git
+git clone --branch design/visual-refresh-2026-10-28 --single-branch https://github.com/zaffirax55/nfc-card-website.git
 cd nfc-card-website
 git rev-parse HEAD
 node --version
@@ -38,7 +42,7 @@ npm run designer:check
 - Contract tests: wire/normalization/digest/prices/immutable receipts/challenge recovery. Transport tests: local persistence/replay/error and V36 safety. These test groups overlap; do not add them into a claimed unique test total.
 - `designer:check`: branch-specific deterministic source/static/compatibility checks. Actual completed checks and independent review are in the evidence index delivered with this branch.
 
-There is no hot reload. After editing source, run `designer:build` again and refresh the page. Generated `work/` files are not source and must not be committed. Do not use `npm run build` or `npm start` to preview this new storefront: those commands intentionally preserve the existing main workflow.
+There is no hot reload. After editing source, run `designer:build` again and refresh the page. Generated `work/` files are not source and must not be committed. Use the `designer:*` path for local work. `npm run build` now compiles the production v36.2 storefront and is not a preview command.
 
 ## Read before editing
 

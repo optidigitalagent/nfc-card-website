@@ -88,7 +88,9 @@ def test_rendered_route_integrity(route):
         assert (field.get('id') and soup.find('label', attrs={'for': field['id']})) or field.find_parent('label'), field
     for asset in soup.select('script[src],link[rel=stylesheet],img[src],source[src]'):
         src = asset.get('src') or asset.get('href')
-        assert src.startswith('/') and (SITE / src.lstrip('/')).is_file(), src
+        parsed = urlsplit(src)
+        assert src.startswith('/') and not parsed.scheme and not parsed.netloc, src
+        assert (SITE / unquote(parsed.path).lstrip('/')).is_file(), src
 
 
 @pytest.mark.parametrize('route', ROUTES)
@@ -108,7 +110,13 @@ def test_canonical_hreflang_are_bidirectional_and_current(route):
 @pytest.mark.parametrize('route', ['/', '/en', '/solutions', '/en/solutions'])
 def test_catalog_is_first_meaningful_section_with_four_mini_products_and_original_prices(route):
     soup = soup_at(route)
-    assert soup.main.find('section')['id'] == 'catalog'
+    first = soup.main.find('section')
+    if route in ('/', '/en'):
+        assert 'nfc-demo' in first.get('class', [])
+        assert 'home-top-demo' in first.parent.get('class', [])
+        assert soup.main.find('section', id='catalog')
+    else:
+        assert first.get('id') == 'catalog'
     cards = soup.select('.commerce-card')
     assert len(cards) == 9
     assert [c.get('data-variant') for c in cards[:2]] == ['standard', 'branded']
