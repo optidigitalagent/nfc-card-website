@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
+import {createRequire} from 'node:module';
 import {catalog,OWNER_UA_PRICING_REVISION,OWNER_UA_SOURCE_REVISION} from '../src/v36_2/commerce.mjs';
 import {BASE,PUBLIC_ORIGIN,LOCALES,LEGACY_ALIASES,FAQ_SCHEMA_POLICY,QUOTE_SCHEMA_POLICY,publicPath,pageMetadata} from '../src/v36_2/seo.mjs';
 import {renderStaticDocument} from '../src/v36_2/static-render.mjs';
@@ -35,6 +36,7 @@ for(const file of fs.readdirSync(source))if(/\.(mjs|css)$/.test(file)&&file!=='b
 fs.writeFileSync(path.join(site,'build-config.mjs'),'// Public build configuration. No secrets.\nexport const BUILD_CONFIG=Object.freeze('+JSON.stringify(config).replaceAll('<','\\u003c')+');\n');
 fs.cpSync(path.join(source,'legacy-v36'),path.join(site,'legacy-v36'),{recursive:true});
 fs.cpSync(path.join(source,'assets'),path.join(site,'assets'),{recursive:true});
+fs.copyFileSync(createRequire(import.meta.url).resolve('@google/model-viewer/dist/model-viewer.min.js'),path.join(site,'model-viewer.min.js'));
 const indexable=[],htmlProof=[];
 for(const [url,{locale,route}]of routes){
  const dest=path.join(output,url,'index.html'),html=renderStaticDocument(locale,route,{config});

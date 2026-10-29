@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
-  "file_count_including_manifest": 859,
+  "file_count_including_manifest": 871,
   "release_source": {
     "handoff_archive_sha256": "9cf61bc26214321d296adeae4c63eb21a5b624bfa9f8849797bcb51c66ff5de0",
     "handoff_manifest": "docs/release/v1.0.0/source-handoff-manifest.json",
@@ -118,8 +118,8 @@
     },
     {
       "path": "designer/VISUAL_CHANGE_REGISTER.json",
-      "bytes": 1298,
-      "sha256": "30b6436ac44b3f19d30f8909e61d6f830f1bbba156770c0cf7dceff5d65a9c07"
+      "bytes": 1316,
+      "sha256": "505bddc566de799f66e6fe1bc0333d4e5492f3fc678c8b8de9bf557df60b8aa6"
     },
     {
       "path": "designer/fixtures/gateway-contract/contact.ts",
@@ -1178,8 +1178,8 @@
     },
     {
       "path": "scripts/build-v36_2.mjs",
-      "bytes": 7346,
-      "sha256": "135fba5145ee56717682498c79321fd0f73d9b6659f024e1974eb4364342a398"
+      "bytes": 7533,
+      "sha256": "2b285b25bb767be6a915b783aeb131686fac93bbc6629e2a0272032b84abdaed"
     },
     {
       "path": "scripts/build_review_card_fullbleed.py",
@@ -3668,8 +3668,8 @@
     },
     {
       "path": "src/v36_2/app.mjs",
-      "bytes": 80230,
-      "sha256": "2d0a0273d39784122adced500e37e40ca8f13c2639ae4d8a4a2e69383b18b391"
+      "bytes": 80870,
+      "sha256": "d960619231de94e76e234a1b3b62da179fc1ae09fc078e699ed0cef9037aa31c"
     },
     {
       "path": "src/v36_2/assets/IBMPlexMono-OFL.txt",
@@ -3792,6 +3792,51 @@
       "sha256": "448ddbf9233876019d355f155b03ac6fe87e479d877ddccae80dc6f5caa8980f"
     },
     {
+      "path": "src/v36_2/assets/models/beauty.glb",
+      "bytes": 301596,
+      "sha256": "b02d93c441a83f7fa9da29413fecf27b1b320b92475fcccd987da23dda22fee2"
+    },
+    {
+      "path": "src/v36_2/assets/models/instagram.glb",
+      "bytes": 222784,
+      "sha256": "90321195af4293b4f54028351fba7c7dff9d5e075fe9a915c536e32716c4451e"
+    },
+    {
+      "path": "src/v36_2/assets/models/menu-round-black.glb",
+      "bytes": 118900,
+      "sha256": "1c561af82975b0a044e1de111b4ff3eacb30f6303b76b4ada65508bc075cf8a6"
+    },
+    {
+      "path": "src/v36_2/assets/models/menu-round-white.glb",
+      "bytes": 120228,
+      "sha256": "da9f6d57b71d608eee535e66d8ee2b205c799a67c952f5190c87e43bfad30b4c"
+    },
+    {
+      "path": "src/v36_2/assets/models/menu-square-black.glb",
+      "bytes": 133052,
+      "sha256": "abb260014a026ff2f3e3048a88aac22795fa900a91b21bc29414baaa258b060e"
+    },
+    {
+      "path": "src/v36_2/assets/models/menu-square-white.glb",
+      "bytes": 144096,
+      "sha256": "4dcf3a460f9efa057068284afa699ac8bec76d86f8fbeec801c95dcb9babb5c4"
+    },
+    {
+      "path": "src/v36_2/assets/models/restaurant.glb",
+      "bytes": 259804,
+      "sha256": "b8f7f370c262daf617b837defc288aada7f3b2f488b1a9fa74cb4de0101dc044"
+    },
+    {
+      "path": "src/v36_2/assets/models/review-acrylic.glb",
+      "bytes": 331468,
+      "sha256": "be7b995f8747a854c712cbb19fbe65d50b2f9209e5d0befc53c861e030a0dda1"
+    },
+    {
+      "path": "src/v36_2/assets/models/review-standard.glb",
+      "bytes": 181116,
+      "sha256": "5b8bda0d434b564566def79f90add8235a79f200f290e7e1ae87204f239f2975"
+    },
+    {
       "path": "src/v36_2/assets/restaurant-back.webp",
       "bytes": 58920,
       "sha256": "b276415d90efba5e6434ffb546a9b397868d2b49c2cf7e06b6fa02df1aa5c5e5"
@@ -3860,6 +3905,21 @@
       "path": "src/v36_2/build-config.mjs",
       "bytes": 350,
       "sha256": "ef43680bcf4ef304def797fad181c2efd1ffd45203ce956319e5916f79c6b0af"
+    },
+    {
+      "path": "src/v36_2/card-models-client.mjs",
+      "bytes": 4618,
+      "sha256": "d131141d0f7103989b44eb2055a544ccdb8836527df511113babe9ffb97c30a4"
+    },
+    {
+      "path": "src/v36_2/card-models.css",
+      "bytes": 2312,
+      "sha256": "0c4f928f60ab7137ffdf13d4f1c43d635d2a48f30e9e1488b3984002421cd667"
+    },
+    {
+      "path": "src/v36_2/card-models.mjs",
+      "bytes": 912,
+      "sha256": "856c6f5a903e256225e08aeff0d7dfea103c83a1ea6d7fa5e9a214fc21a76a89"
     },
     {
       "path": "src/v36_2/commerce.mjs",
@@ -4088,8 +4148,8 @@
     },
     {
       "path": "src/v36_2/static-render.mjs",
-      "bytes": 3261,
-      "sha256": "9f8f1bada97660fb425eceecee415d2d0fa118d715e3891904e993cdbe71b298"
+      "bytes": 3315,
+      "sha256": "7f9aa0e4bc5e15fa01e18c7de4e88f6d8f0ef87fc2e10cf200e214ac8bc1846d"
     },
     {
       "path": "src/v36_2/styles.css",

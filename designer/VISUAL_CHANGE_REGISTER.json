@@ -5,8 +5,8 @@
     {
       "path": "src/v36_2/app.mjs",
       "productionSHA256": "a85f269110044649701540bd8f5215614c851516d76a6c928775dc556e06b09e",
-      "designerSHA256": "2d0a0273d39784122adced500e37e40ca8f13c2639ae4d8a4a2e69383b18b391",
-      "reason": "Mount and statically render the existing localized NFC phone demonstration without changing request or commerce logic."
+      "designerSHA256": "d960619231de94e76e234a1b3b62da179fc1ae09fc078e699ed0cef9037aa31c",
+      "reason": "Add localized, lazy 3D viewing to the six approved retail cards and galleries without changing commerce or request logic."
     },
     {
       "path": "src/v36_2/home-composition.mjs",
@@ -17,8 +17,8 @@
     {
       "path": "src/v36_2/static-render.mjs",
       "productionSHA256": "12201670102697b17fc17a91ac31187ae1311529ed2fac7d5fe6376ef653b9a2",
-      "designerSHA256": "9f8f1bada97660fb425eceecee415d2d0fa118d715e3891904e993cdbe71b298",
-      "reason": "Include the isolated demonstration stylesheet in static and hydrated pages."
+      "designerSHA256": "7f9aa0e4bc5e15fa01e18c7de4e88f6d8f0ef87fc2e10cf200e214ac8bc1846d",
+      "reason": "Include the locally hosted 3D viewer presentation stylesheet in static and hydrated pages."
     }
   ]
 }
