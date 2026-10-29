@@ -43,8 +43,8 @@
     },
     {
       "path": ".github/workflows/fork-pages.yml",
-      "bytes": 1857,
-      "sha256": "09f5202bc7bb20080e6c2d0a530ee3174cdd799246d3b3b295c1b9ed3662b944"
+      "bytes": 1348,
+      "sha256": "0a4feb8f870fef18061215e43533dcd34a45958d678ee3a50cd52ad3c985ba1b"
     },
     {
       "path": ".gitignore",
