@@ -1,0 +1,24 @@
+{
+  "productionBase": "d0e79aab9717b3bb569325f249164a72bc5acd64",
+  "scope": "Visual-only designer branch; the original archive and B05 production adaptation register remain immutable.",
+  "files": [
+    {
+      "path": "src/v36_2/app.mjs",
+      "productionSHA256": "a85f269110044649701540bd8f5215614c851516d76a6c928775dc556e06b09e",
+      "designerSHA256": "2d0a0273d39784122adced500e37e40ca8f13c2639ae4d8a4a2e69383b18b391",
+      "reason": "Mount and statically render the existing localized NFC phone demonstration without changing request or commerce logic."
+    },
+    {
+      "path": "src/v36_2/home-composition.mjs",
+      "productionSHA256": "31ba26eba2d99be375b89d73359306bae6cf242f01ed3daecdd4ff54e2267c33",
+      "designerSHA256": "b9fd7eb34d2bff672ebfe718dd04573e3282c681406710cd692167f05b1b4a1d",
+      "reason": "Mount and statically render the existing localized NFC phone demonstration without changing request or commerce logic."
+    },
+    {
+      "path": "src/v36_2/static-render.mjs",
+      "productionSHA256": "12201670102697b17fc17a91ac31187ae1311529ed2fac7d5fe6376ef653b9a2",
+      "designerSHA256": "9f8f1bada97660fb425eceecee415d2d0fa118d715e3891904e993cdbe71b298",
+      "reason": "Include the isolated demonstration stylesheet in static and hydrated pages."
+    }
+  ]
+}

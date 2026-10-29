@@ -1,35 +1,41 @@
-# NFC CARD visual review
+# NFC CARD v36.2 visual review
 
-This review belongs to `design/visual-refresh-2026-10-28` in
-`zaffirax55/nfc-card-website`. It is a proposed update to the existing site.
-The pull request stays in draft until the owner has inspected the result.
+This design candidate is in `design/visual-refresh-2026-10-28` in the existing
+`zaffirax55/nfc-card-website` fork. It includes upstream production frontend
+`d0e79aab9717b3bb569325f249164a72bc5acd64` and preserves the v36.2 store,
+B05, V36 email proposal, cart, and API contracts. It is not published.
 
-## Preview from a fresh checkout
+## Fresh checkout preview
 
 ```sh
-npm ci
-NFC_ENV=production NFC_PUBLIC_ORIGIN=https://nfc-card.example NFC_PUBLICATION_MODE=PUBLIC_PREVIEW npm run build
-python -m http.server 8765 --directory site
+git clone --branch design/visual-refresh-2026-10-28 https://github.com/zaffirax55/nfc-card-website.git
+cd nfc-card-website
+node --version # Node 24
+npm run designer:build
+npm run designer:preview
 ```
 
-Open `http://localhost:8765/`. The catalog is at `/solutions/`; the
-English and Polish versions are at `/en/` and `/pl/`. The local static
-preview does not submit real orders. Do not use customer details for QA.
+Open `http://127.0.0.1:4196/nfc-card-website/`. This loopback preview accepts
+synthetic contacts only and sends no production requests. Use `demo@example.invalid`
+for any form test. Never enter real customer information.
 
-## What to inspect
+## Visual and functional checks
 
-| View | Desktop | Phone |
-| --- | --- | --- |
-| Home | The phone demo, readable copy and catalog link share the first screen | The heading and catalog link lead into the visible phone without horizontal scrolling |
-| Catalog | Nine cards show full product imagery, prices, 3D buttons and photo choices | The main photo fits inside its frame; thumbnails are not cropped; actions remain reachable |
-| Product | Gallery and purchase details are aligned | Gallery sits above purchase details; all images fit and the lightbox closes by keyboard |
-| About, delivery and order | Typography and spacing remain consistent | Content, links and form controls fit at 320–390 px |
+- Home: approved six-product storefront, four home priorities and a clearly
+  labelled, localized NFC phone demonstration. Its review example is not a
+  customer testimonial and never submits a review. Reduced-motion visitors
+  start with the demonstration paused and may choose to resume.
+- Catalog: six discoverable products, existing search and filters, full
+  photos inside each frame, approved business/service descriptions.
+- Product: local galleries, configuration, in-place tabs, approved prices,
+  cart links and all long-form text remain intact.
+- About, delivery, privacy and order: three-language content, accessible
+  navigation and synthetic-only preview form.
 
-The 3D renderer loads only after a visitor opens one card. Reduced-motion
-visitors do not get automatic model rotation. The customer review section
-shows an honest empty state until verified reviews are available.
+Use desktop and phone widths, keyboard, 200% zoom, reduced motion and the
+full `designer:*` checks. The original 3D models and artwork remain in the
+legacy source/history; they are not asserted as evidence for the six v36.2
+product identities. No new product, testimonial or media claim was invented.
 
-GitHub Actions validates the full route and browser matrix. On this pull
-request it also saves a short-lived `nfc-card-design-preview` artifact with
-screenshots of public pages at 390 px and 1440 px. The current live Pages site,
-production gateway and `main` are outside this visual review.
+Production `main`, GitHub Pages, Gateway, PostgreSQL and Owner Desk are out of
+scope. The PR remains unmerged pending owner review.

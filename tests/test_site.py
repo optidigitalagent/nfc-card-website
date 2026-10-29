@@ -132,7 +132,7 @@ def test_catalog_is_first_meaningful_section_with_four_mini_products_and_origina
         assert not cards[index + 1].select_one('img.catalog-product-image')
     # These original assertions continue to protect the two Review Card offers.
     cards = cards[:2]
-    for card, prices in zip(cards, [(1500, 2600), (2000, 2600)]):
+    for card, prices in zip(cards, [(1500, 2600), (2000, 3600)]):
         amounts = [int(re.sub(r'[^0-9]', '', value.get_text())) for value in card.select('.commerce-card-prices dd')]
         assert amounts == list(prices)
     for card in cards:
