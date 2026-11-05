@@ -1,3 +1,16 @@
+# Approved new-enquiry Telegram route — owner scope 2026-11-05
+
+The owner's direct `SITE ORDERS ROUTING / APPROVED` request permits the narrow
+new-application route through the existing Telegram ORDERS groups into the
+existing CRM consumer. Authority and exact policy binding are recorded in
+`release/SITE_ROUTING_OWNER_APPROVAL.json`. This supersedes the earlier B05
+transfer restriction only for that checked route. Direct website writes to the
+CRM database, historical resend, production QA submissions, new services/costs,
+financial operations and unrelated policy changes remain prohibited. Preserve
+V37/B05 evidence, prices, HOLD and existing private owner notifications. Gateway
+release/readiness still precedes dependent Pages publication; live PASS requires
+real new events on every used route, not membership or a fake delivery test.
+
 # Production integration — owner scope v36.2 (2026-10-28)
 
 The latest direct owner request authorizes integration into the existing main and release at the existing GitHub Pages URL after safety acceptance. B05 D1–D3 are approved with the exact DP03 hashes in `release/B05_OWNER_APPROVAL.json`. Use `docs/release/v36.2/PRODUCTION_RELEASE.md` for the current gate. Preserve the separate designer branch. No production QA submissions, notifications, new infrastructure, destructive data changes or automatic separate Cloud CRM enrolment.

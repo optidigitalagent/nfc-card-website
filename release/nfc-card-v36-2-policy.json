@@ -4,8 +4,8 @@
   "v2Endpoint": "https://lead-gateway-production-6c25.up.railway.app/v2/public/requests/nfc-card",
   "policy": {
     "scope": "NFC_CARD_V2_RICH_REQUEST",
-    "formVersion": "NFC-CARD-FORM-V37",
-    "privacyNoticeVersion": "NFC-CARD-PRIVACY-V37",
+    "formVersion": "NFC-CARD-FORM-V38",
+    "privacyNoticeVersion": "NFC-CARD-PRIVACY-V38",
     "legacyNoticeSha256": "1d3d572f307c709e6afc1011b08af8a51113b4c0f73d3e7fd2b0659adfe1fe3c",
     "checkbox": {
       "uk": "Погоджуюся на обробку даних цієї заявки та її конфігурацій для відповіді, погодження й виконання запиту, як описано в Політиці конфіденційності. Це не згода на маркетингові розсилки.",
@@ -32,7 +32,7 @@
         },
         {
           "heading": "Зберігання, доступ та повідомлення",
-          "text": "Заявка спочатку зберігається у приватній базі PostgreSQL gateway у Railway. Разом із нею зберігаємо отриману конфігурацію, час отримання, версії згоди, розрахунок і підтвердження. GitHub Pages розміщує сайт, Railway обробляє заявки; поточний регіон бази заявок — US West, США. Для розгляду й відповіді продавець може використовувати свою закриту робочу систему з доступом лише для продавця; це не підписка на розсилки та не автоматичне створення продажу. Автоматична передача нових заявок кошика в іншу CRM не вмикається фактом згоди: для неї потрібна окремо перевірена сумісна інтеграція. Автоматичні Telegram-повідомлення gateway про заявки сайту зараз вимкнені. Підтвердження форми означає збереження заявки, а не доставку Telegram або Gmail. Обраний вами контакт використовуємо для відповіді на цей запит. Окрема email-пропозиція описана нижче."
+          "text": "Заявка спочатку зберігається у приватній базі PostgreSQL gateway у Railway. Разом із нею зберігаємо отриману конфігурацію, час отримання, версії згоди, розрахунок і підтвердження. GitHub Pages розміщує сайт, Railway обробляє заявки; поточний регіон бази заявок — US West, США. Нові заявки та фактично надані в них дані, контакти, конфігурації й розрахунок автоматично передаються за погодженим маршрутом у закриті робочі групи замовлень Telegram і через них у робочу CRM NFC CARD. Доступ до відповідної заявки мають продавець і уповноважені учасники групи замовлень для розгляду, відповіді та виконання запиту. Якщо для змішаної заявки маршрут не погоджений, вона зберігається в очікуванні маршрутизації. Це не підписка на розсилки, не підтвердження оплати й не автоматичне створення погодженого продажу. Підтвердження форми означає збереження заявки, а не гарантовану доставку Telegram або Gmail. Обраний вами контакт використовуємо для відповіді на цей запит. Окрема email-пропозиція описана нижче."
         },
         {
           "heading": "Пропозиція на email — чинний окремий сценарій V36",
@@ -74,7 +74,7 @@
         },
         {
           "heading": "Storage, access and messages",
-          "text": "Your enquiry is first saved in the gateway’s private PostgreSQL database on Railway. We also save the supplied configuration, receipt time, consent versions, quote and confirmation. GitHub Pages hosts the site and Railway processes enquiries; the enquiry database’s current region is US West, USA. To review and respond, the seller may use a private working system accessible only to the seller; this does not subscribe you to marketing or automatically create a sale. Consent itself does not enable automatic transfer of new cart enquiries to another CRM: a separately verified compatible integration is required. Automatic gateway Telegram notifications for website enquiries are currently disabled. A form confirmation means that the enquiry was saved, not that a Telegram or Gmail message was delivered. We use your selected contact to respond to this request. The separate email proposal is described below."
+          "text": "The enquiry is saved first in the gateway’s private PostgreSQL database on Railway, together with the submitted configuration, receipt time, consent versions, quote and confirmation. GitHub Pages hosts the site and Railway processes enquiries; the current enquiry database region is US West, USA. New enquiries and their actually submitted details, contacts, configurations and quote are automatically routed to the approved closed Telegram order groups and through them to the NFC CARD working CRM. The seller and authorised members of the relevant order group can access the enquiry to review, respond to and fulfil the request. A mixed enquiry without an approved route is saved awaiting routing. This is not a marketing subscription, proof of payment or automatic confirmation of a sale. Form confirmation means the enquiry was saved, not guaranteed Telegram or Gmail delivery. Your selected contact is used to respond to this request. The separate email-offer flow is described below."
         },
         {
           "heading": "Email proposal — existing separate V36 scenario",
@@ -116,7 +116,7 @@
         },
         {
           "heading": "Przechowywanie, dostęp i wiadomości",
-          "text": "Zgłoszenie jest najpierw zapisywane w prywatnej bazie PostgreSQL gateway w Railway. Zapisujemy też podaną konfigurację, czas otrzymania, wersje zgody, wycenę i potwierdzenie. GitHub Pages hostuje stronę, a Railway przetwarza zgłoszenia; obecny region bazy zgłoszeń to US West, USA. Do rozpatrzenia zgłoszenia i odpowiedzi sprzedawca może użyć prywatnego systemu obsługi zgłoszeń, do którego dostęp ma wyłącznie sprzedawca; nie oznacza to zapisu do marketingu ani automatycznego utworzenia sprzedaży. Sama zgoda nie włącza automatycznego przekazywania nowych zgłoszeń koszyka do innego CRM: wymagana jest osobno sprawdzona, zgodna integracja. Automatyczne powiadomienia Telegram gateway o zgłoszeniach strony są obecnie wyłączone. Potwierdzenie formularza oznacza zapis zgłoszenia, a nie dostarczenie wiadomości Telegram lub Gmail. Wybrany kontakt wykorzystujemy do odpowiedzi na to zapytanie. Odrębna oferta email jest opisana poniżej."
+          "text": "Zgłoszenie jest najpierw zapisywane w prywatnej bazie PostgreSQL gateway w Railway wraz z podaną konfiguracją, czasem otrzymania, wersjami zgody, wyceną i potwierdzeniem. GitHub Pages hostuje stronę, a Railway przetwarza zgłoszenia; obecny region bazy zgłoszeń to US West, USA. Nowe zgłoszenia oraz faktycznie podane dane, kontakty, konfiguracje i wycena są automatycznie kierowane do uzgodnionych zamkniętych grup zamówień Telegram, a przez nie do roboczego CRM NFC CARD. Dostęp do odpowiedniego zgłoszenia mają sprzedawca i upoważnieni członkowie grupy zamówień w celu rozpatrzenia, odpowiedzi i realizacji zapytania. Zgłoszenie mieszane bez uzgodnionej trasy jest zapisywane i oczekuje na ustalenie trasy. Nie oznacza to zapisu do marketingu, potwierdzenia płatności ani automatycznego uzgodnienia sprzedaży. Potwierdzenie formularza oznacza zapis zgłoszenia, a nie gwarancję dostarczenia wiadomości Telegram lub Gmail. Wybrany kontakt wykorzystujemy do odpowiedzi na to zapytanie. Odrębna oferta email jest opisana poniżej."
         },
         {
           "heading": "Oferta na email — istniejący osobny scenariusz V36",
@@ -141,9 +141,10 @@
       ]
     },
     "ownerApproved": true,
-    "approvalReference": "NFC-CARD-B05-DP03-OWNER-D1-D3-2026-10-28",
-    "policySha256": "d76bda8aff9b69e79731a2a536254e8c6e6b9d8b62faa986407f06e3e05806b4",
-    "sourceApprovalSha256": "a761169434cf3ff9fc4cc5b57be5ef4c03531e54ef16f29cd167b93f973286a7",
-    "publicTextSha256": "9a247e3320c0b1594374efd103b2e139d344b6b4eff26318c18f0dbe6ca2cb8f"
-  }
+    "approvalReference": "NFC-CARD-SITE-ORDERS-OWNER-20261105",
+    "policySha256": "38e50676b7b5dc0149cb4f0bdbeb878d75add296da7274b4d509124f6c78c8e0",
+    "sourceApprovalSha256": "44c639b4dbb9261447cbbfe21a059bd2168777340e24fe7ebd2ec1a400a0feb6",
+    "publicTextSha256": "93f3f4076208c624ee9c0933e7aa535b4e07b04c5065fb68f7ccb8a6f503c02e"
+  },
+  "approvalFile": "release/SITE_ROUTING_OWNER_APPROVAL.json"
 }

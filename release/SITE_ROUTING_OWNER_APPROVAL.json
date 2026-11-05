@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "decisionId": "NFC-CARD-SITE-ORDERS-OWNER-20261105",
+  "authority": "Direct explicit owner request SITE ORDERS ROUTING / APPROVED on 2026-11-05; no repeat scope approval required.",
+  "ownerRequestSha256": "0f2e0eacbb6d39dde7b7d36336b2c578362783f8902caf7a0880f7416c6f5dae",
+  "supersedesOnly": "B05 D2 delivery restriction for NEW site applications routed through the existing Telegram ORDERS groups; necessary storage/notification paragraph and version identifiers.",
+  "decisions": {
+    "D1": "Keep all existing text/checkbox/rights/retention/email restrictions except the route-specific storage and notification disclosure in UA/EN/PL.",
+    "D2": "Approve new-only site -> existing Telegram ORDERS groups -> existing CRM consumer. Direct site writes to CRM DB remain prohibited. Sender is not seller. No payment/sale/commission confirmation.",
+    "D3": "Original purpose-based retention, manual case-bound rights and backup restrictions remain unchanged."
+  },
+  "routing": {
+    "sourceBotId": 8722696590,
+    "ORIG": -5531022071,
+    "BRAND": -5441287655,
+    "mixedWithoutApprovedSplit": "WAIT_ROUTING",
+    "newOnly": true,
+    "directCrmDatabaseWrites": false,
+    "historicalResend": false
+  },
+  "publicTextSHA256": "93f3f4076208c624ee9c0933e7aa535b4e07b04c5065fb68f7ccb8a6f503c02e",
+  "policyBodySHA256": "38e50676b7b5dc0149cb4f0bdbeb878d75add296da7274b4d509124f6c78c8e0",
+  "publicTextHashFormat": "SHA256 canonical JSON {checkbox,sections}, UTF-8, sorted keys, no whitespace",
+  "previousPolicySHA256": "d76bda8aff9b69e79731a2a536254e8c6e6b9d8b62faa986407f06e3e05806b4",
+  "publicationCondition": "Successful isolated route/retry/failure tests and verified source backup restoration; live acceptance only on real new events; no production QA leads or notification tests."
+}

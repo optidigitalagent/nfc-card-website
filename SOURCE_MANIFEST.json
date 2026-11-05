@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
-  "file_count_including_manifest": 823,
+  "file_count_including_manifest": 824,
   "release_source": {
     "handoff_archive_sha256": "9cf61bc26214321d296adeae4c63eb21a5b624bfa9f8849797bcb51c66ff5de0",
     "handoff_manifest": "docs/release/v1.0.0/source-handoff-manifest.json",
@@ -48,8 +48,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 3973,
-      "sha256": "abb05b5c459bee132872e365a804458fa8c17a850f61e423a5840a01e337ecdf"
+      "bytes": 4820,
+      "sha256": "02cc522473412f21e377db7ff68911671840597ae99e175bb929b801a8890ab1"
     },
     {
       "path": "DEPLOYMENT.md",
@@ -533,8 +533,8 @@
     },
     {
       "path": "docs/release/v36.2/PRODUCTION_RELEASE.md",
-      "bytes": 5142,
-      "sha256": "e69aece8e4cc9c36ea585a3f22f3ecbbf1ed1e8e104799259175c00cc8c3b1b4"
+      "bytes": 6781,
+      "sha256": "befa97be99fbc49fd28743b83f8b9767b9810220d8b851fffa971347ef9adad4"
     },
     {
       "path": "docs/release/website-email-20261026.md",
@@ -1122,14 +1122,19 @@
       "sha256": "48baa50080285e4f9801e4880068d94592f85b23a931033dac669034c19a2d37"
     },
     {
+      "path": "release/SITE_ROUTING_OWNER_APPROVAL.json",
+      "bytes": 1816,
+      "sha256": "44c639b4dbb9261447cbbfe21a059bd2168777340e24fe7ebd2ec1a400a0feb6"
+    },
+    {
       "path": "release/gateway-release.json",
       "bytes": 431,
-      "sha256": "477a51bb6b94358b5e7bfa1f99240c85098b62b48470c0be9d94f7777130b9b5"
+      "sha256": "67de96309433157c1228a2436ecd5b07469904a105c9855217e9f26a47cce91a"
     },
     {
       "path": "release/nfc-card-v36-2-policy.json",
-      "bytes": 24140,
-      "sha256": "f9196cf0721e2dd8aa47da248150ef978a388611f8ac286cf12d5ef44f6a22c6"
+      "bytes": 24639,
+      "sha256": "c1d126a3124e1794ba2ee3f7ea422746c237cc926c4f1930bd30b22ab0fab79a"
     },
     {
       "path": "requirements-test.in",
@@ -1153,8 +1158,8 @@
     },
     {
       "path": "scripts/build-public.mjs",
-      "bytes": 3395,
-      "sha256": "d66b2c9f2818ecac5d4df3a3931e0477f0c1a03dbbc5851336af9ecf0635bf4f"
+      "bytes": 3577,
+      "sha256": "866678d6abd0299be65d5c52ff836d041aea3ac7e8e0486c00e11e58632412b9"
     },
     {
       "path": "scripts/build-v36_2.mjs",
@@ -4108,8 +4113,8 @@
     },
     {
       "path": "tests/v36_2-production.test.mjs",
-      "bytes": 5819,
-      "sha256": "c9d899d835ec0a58c1a02f9a99e1f92005fc45e0c9849c49a2e98fba3a7d3b7d"
+      "bytes": 6163,
+      "sha256": "8fcc8aafe32a6512fa0d455177c3d33286cc1f1251a13052a9b0d5d759214270"
     },
     {
       "path": "tests/v36_2-readiness.test.mjs",

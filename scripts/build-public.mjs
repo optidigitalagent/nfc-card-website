@@ -10,10 +10,12 @@ if(process.env.NFC_PUBLIC_ORIGIN&&process.env.NFC_PUBLIC_ORIGIN!==origin)throw E
 if(process.env.NFC_PUBLIC_BASE_PATH&&process.env.NFC_PUBLIC_BASE_PATH!==base)throw Error('existing_production_base_required');
 if(process.env.NFC_PUBLICATION_MODE&&process.env.NFC_PUBLICATION_MODE!=='PUBLIC')throw Error('root_build_is_production_use_explicit_designer_commands_for_preview');
 const approved=path.join(root,'release/nfc-card-v36-2-policy.json');
-const owner=JSON.parse(fs.readFileSync(path.join(root,'release/B05_OWNER_APPROVAL.json'),'utf8'));
 const input=JSON.parse(fs.readFileSync(approved,'utf8'));
+const approvalFile=input.approvalFile??'release/B05_OWNER_APPROVAL.json';
+if(!['release/B05_OWNER_APPROVAL.json','release/SITE_ROUTING_OWNER_APPROVAL.json'].includes(approvalFile))throw Error('invalid_owner_approval_path');
+const owner=JSON.parse(fs.readFileSync(path.join(root,approvalFile),'utf8'));
 if(owner.policyBodySHA256!==input.policy?.policySha256||owner.publicTextSHA256!==input.policy?.publicTextSha256||
- input.policy?.sourceApprovalSha256!==createHash('sha256').update(fs.readFileSync(path.join(root,'release/B05_OWNER_APPROVAL.json'))).digest('hex'))throw Error('owner_approval_artifact_binding_required');
+ input.policy?.sourceApprovalSha256!==createHash('sha256').update(fs.readFileSync(path.join(root,approvalFile))).digest('hex'))throw Error('owner_approval_artifact_binding_required');
 if(process.env.NFC_REQUIRE_GATEWAY_READY==='true'){const {checkConfiguredGateway}=await import('./check-gateway-ready.mjs');console.log(JSON.stringify(await checkConfiguredGateway()));}
 const r=spawnSync(process.execPath,['scripts/build-v36_2.mjs','production',approved],{cwd:root,env:process.env,stdio:'inherit'});
 if(r.status!==0)process.exit(r.status||1);

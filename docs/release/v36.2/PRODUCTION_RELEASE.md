@@ -30,3 +30,30 @@ On failure, disable new intake/configuration and restore the previous applicatio
 ## Rights operations addendum to immutable DP03
 
 The original DP03 runbook's exact approved bytes remain historical evidence, including its then-current topology and defects. Current implementation has distinct restriction and case-bound physical scrub helpers in both Gateway and native Owner Desk. General D3 approval is not approval to delete a particular customer's data. Each operation requires verified identity, purpose/order-retention review, exact state fingerprints, an explicit owner case record and paired backup/recovery restrictions. No customer erasure is run by this release. Retention remains purpose-based without invented deadlines or promises to erase all backups instantly.
+
+
+## Approved Telegram order routing — 2026-11-05
+
+Direct owner authority is preserved in `release/SITE_ROUTING_OWNER_APPROVAL.json`.
+V38 changes only the storage/notification paragraph in UA/EN/PL and its
+version/approval bindings. Original V37/B05, checkbox, rights/retention, email
+rules, product meanings, prices and HOLD are retained. Direct website writes to
+CRM are still prohibited; new applications use the existing Telegram ORDERS
+route and CRM consumer. The actual gateway sender is bot8722696590; ORIG and
+BRAND are exact verified IDs, not title-based guesses. Mixed cross-route carts
+without an approved split remain saved awaiting routing.
+
+The pinned compatible gateway commit is in `release/gateway-release.json`.
+Additive013 extends existing outboxes; guarded explicit migration requires a
+verified encrypted source backup, actual isolated restore and exact deployed
+commit. It does not run in startup/predeploy or enqueue historical records.
+Normal forms and their replays retain their original source, quote and consent;
+previous V37 open tabs remain accepted by the verified previous-policy profile.
+
+New-only routing is separately enabled with an explicit UTC boundary. The old
+NFC notification switch and personal owner target are preserved. Official
+Bot-to-Bot Communication Mode at TRACKER is a distinct prerequisite. Source
+commit, membership, fake isolated delivery and HTTP200 are not live acceptance.
+Only actual new source applications correlated through outbox/Telegram/raw/CRM
+and authenticated UI may receive live PASS. No production test POST or real QA
+Telegram messages are authorised by this release.
