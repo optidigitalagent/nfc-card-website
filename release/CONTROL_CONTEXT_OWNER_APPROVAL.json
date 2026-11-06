@@ -1,0 +1,18 @@
+{
+  "decisionId": "NFC-CONTROL-CONTEXT-OWNER-20261106",
+  "authority": "Direct owner request in Codex on 2026-11-06; minimal existing test-context patch and deployment, then same four-case batch.",
+  "taskSha256": "2736c6d77d02a7d6ce4ba6e50d17ff0cda6272c1570ab9cb5dfdab75273ec272",
+  "runId": "NFC-E2E-20261106T113357Z-69d56f61",
+  "caseIds": [
+    "NFC-E2E-20261106T113357Z-69d56f61-WEB-BRAND",
+    "NFC-E2E-20261106T113357Z-69d56f61-WEB-ORIG",
+    "NFC-E2E-20261106T113357Z-69d56f61-HUMAN-BRAND",
+    "NFC-E2E-20261106T113357Z-69d56f61-HUMAN-ORIG"
+  ],
+  "productionFormsAuthorized": 2,
+  "humanPostsByOwner": 2,
+  "newAuthProvider": false,
+  "newServices": false,
+  "financialEnable": false,
+  "legacyCompatibilityRequired": true
+}

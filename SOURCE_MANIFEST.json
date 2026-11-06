@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
-  "file_count_including_manifest": 824,
+  "file_count_including_manifest": 827,
   "release_source": {
     "handoff_archive_sha256": "9cf61bc26214321d296adeae4c63eb21a5b624bfa9f8849797bcb51c66ff5de0",
     "handoff_manifest": "docs/release/v1.0.0/source-handoff-manifest.json",
@@ -48,8 +48,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 4820,
-      "sha256": "02cc522473412f21e377db7ff68911671840597ae99e175bb929b801a8890ab1"
+      "bytes": 5745,
+      "sha256": "c9adc84447550f11bd6e9e6db8394e0b76307ca5e38de62d57e95a289ac5e96b"
     },
     {
       "path": "DEPLOYMENT.md",
@@ -1117,6 +1117,11 @@
       "sha256": "a761169434cf3ff9fc4cc5b57be5ef4c03531e54ef16f29cd167b93f973286a7"
     },
     {
+      "path": "release/CONTROL_CONTEXT_OWNER_APPROVAL.json",
+      "bytes": 735,
+      "sha256": "27547c6536ae21312d1d4bf8ad118f4715a9fe8a16a6b998e3605063c423e819"
+    },
+    {
       "path": "release/PRODUCTION_ADAPTATIONS.json",
       "bytes": 1789,
       "sha256": "48baa50080285e4f9801e4880068d94592f85b23a931033dac669034c19a2d37"
@@ -1129,7 +1134,7 @@
     {
       "path": "release/gateway-release.json",
       "bytes": 431,
-      "sha256": "67de96309433157c1228a2436ecd5b07469904a105c9855217e9f26a47cce91a"
+      "sha256": "847f27b4c1639a208dc21bbe36d873202b604feb89a19d7213edd17e2fae5d5a"
     },
     {
       "path": "release/nfc-card-v36-2-policy.json",
@@ -3508,13 +3513,13 @@
     },
     {
       "path": "src/v36_2/api-client.mjs",
-      "bytes": 12161,
-      "sha256": "47e9265e7a533ad40a4bf8e15921747dd7ef267626b50ea270ea14367ef098c0"
+      "bytes": 12445,
+      "sha256": "80845f297d7383174b381a651172d0c2fdc7d629953f647f453bfb9a395debc1"
     },
     {
       "path": "src/v36_2/app.mjs",
-      "bytes": 80161,
-      "sha256": "a85f269110044649701540bd8f5215614c851516d76a6c928775dc556e06b09e"
+      "bytes": 81243,
+      "sha256": "51ef32ecee6308547ec58516794df5d99a0e3028e675ab69e643809beb85e2f6"
     },
     {
       "path": "src/v36_2/assets/IBMPlexMono-OFL.txt",
@@ -3715,6 +3720,11 @@
       "path": "src/v36_2/contacts.mjs",
       "bytes": 834,
       "sha256": "ddd9ac1ccea733760800d9342b693c453311a6d9583be5eedea81610abda696b"
+    },
+    {
+      "path": "src/v36_2/control-context.mjs",
+      "bytes": 2177,
+      "sha256": "8ca7e3f362f55d8ae31521da50ac1727a4a083eb99410cfaf0ec4334265709df"
     },
     {
       "path": "src/v36_2/delivery-content.mjs",
@@ -4105,6 +4115,11 @@
       "path": "tests/v36_2-client.test.mjs",
       "bytes": 3837,
       "sha256": "e5e9f23ef38a4b1d070c2cc9b883f49f098529803f5aa0d9f19804165e0cd450"
+    },
+    {
+      "path": "tests/v36_2-control-context.test.mjs",
+      "bytes": 3136,
+      "sha256": "04f260f12ab7c0b13cb8f9a0f31db7a3be9c155b8a2308405d0cb21754614352"
     },
     {
       "path": "tests/v36_2-price.test.mjs",

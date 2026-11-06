@@ -1,3 +1,17 @@
+# Control-context patch — direct owner scope 2026-11-06
+
+The owner explicitly authorizes the minimal existing-path control-context patch,
+its deployment and exactly the saved four-case batch
+NFC-E2E-20261106T113357Z-69d56f61. Authority is recorded in
+`release/CONTROL_CONTEXT_OWNER_APPROVAL.json`. This narrowly supersedes ordinary no-production-QA rules for two real website
+form submissions with owner contacts and two HUMAN messages sent only by the
+owner. No new batch, direct CRM DB ingestion, new authentication provider,
+service, billing, financial enablement or legacy-test bypass. Reuse existing
+HMAC/idempotency and owner binding; only a run-scoped verifier is passed to CRM.
+Protect originals/edits/audit and stop consequences before accounting. Normal
+requests and legacy #CRM_TEST retain their behavior. Release gates below still
+apply; preserve old BLOCKED evidence, HOLD, budgets, one consumer and backups.
+
 # Approved new-enquiry Telegram route — owner scope 2026-11-05
 
 The owner's direct `SITE ORDERS ROUTING / APPROVED` request permits the narrow
