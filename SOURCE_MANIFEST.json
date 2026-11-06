@@ -3448,8 +3448,8 @@
     },
     {
       "path": "src/publication-approval.json",
-      "bytes": 2957,
-      "sha256": "6fe4ae8b498461a431c325ec636f18da38c771a268517220d0aec56f222881cd"
+      "bytes": 3255,
+      "sha256": "26d1175f6a30c10f56755ca79de94ad7d10a74bda9396a5eaca69fd9c51c7ef7"
     },
     {
       "path": "src/publication.mjs",
