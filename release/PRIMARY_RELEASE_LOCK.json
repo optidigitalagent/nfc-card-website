@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "status": "PENDING_INDEPENDENT_ACCEPTANCE_AND_GIT_INTEGRATION",
+  "source_repository": "zaffirax55/nfc-card-website",
+  "origin": "https://optidigitalagent.github.io",
+  "base": "/nfc-card-website",
+  "source_main_commit": "9aa2f27b5592fed18bc43d5eca73232397e67874",
+  "source_main_tree": "6d4d78f02c863f707e07792e2097f071b884c0dc",
+  "storefront_commit": null,
+  "storefront_tree": "b86e8e5b2c92ba3667b14b35d945e58183ac2a68",
+  "accepted_ru_input_tree": "98977a119e508663074939cd2320a94c91f8dea8",
+  "approval_reference": null,
+  "reason": "Local reconciliation provenance finalized under NFC-PRIMARY-RELEASE-01-INDEPENDENT-REVIEW-20261112. Final post-binding tree recorded for review; no deployable source commit, Git integration, final PUBLIC approval, complete fresh regression/CI or cutover authority exists."
+}

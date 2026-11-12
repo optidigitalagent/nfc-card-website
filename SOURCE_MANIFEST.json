@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "manifest_self_excluded": "Self-hashing is circular; Git commit/release archive seals this manifest.",
-  "file_count_including_manifest": 827,
+  "file_count_including_manifest": 831,
   "release_source": {
     "handoff_archive_sha256": "9cf61bc26214321d296adeae4c63eb21a5b624bfa9f8849797bcb51c66ff5de0",
     "handoff_manifest": "docs/release/v1.0.0/source-handoff-manifest.json",
@@ -38,8 +38,13 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "bytes": 7061,
-      "sha256": "6a01d4ee1995d009bf787795c0e38167adfe080777843d6944190dcb3e8ab59f"
+      "bytes": 7198,
+      "sha256": "03adf183c50c352b18f91bbc7619bae340859e10e64b66b1153af00342169936"
+    },
+    {
+      "path": ".github/workflows/fork-pages.yml",
+      "bytes": 4855,
+      "sha256": "4d841d97c2acf148536f8b3bd5317a8f0923939e3648965a66c06d1f94ed3dbc"
     },
     {
       "path": ".gitignore",
@@ -1122,6 +1127,11 @@
       "sha256": "27547c6536ae21312d1d4bf8ad118f4715a9fe8a16a6b998e3605063c423e819"
     },
     {
+      "path": "release/PRIMARY_RELEASE_LOCK.json",
+      "bytes": 843,
+      "sha256": "32d40f16a931c6a08be0a0cda49662bc4203d012e36884a0d74b5e8aef06b9c4"
+    },
+    {
       "path": "release/PRODUCTION_ADAPTATIONS.json",
       "bytes": 1789,
       "sha256": "48baa50080285e4f9801e4880068d94592f85b23a931033dac669034c19a2d37"
@@ -1177,6 +1187,11 @@
       "sha256": "2110bfd610e83b121875d49f7ef44707c5a88d6e4a7dd9ddb8ae2af3c8b16ac2"
     },
     {
+      "path": "scripts/primary_release.py",
+      "bytes": 5855,
+      "sha256": "dd71b0b413c90b39815830bb3ff610ae21c479660e972521ec67196af081803a"
+    },
+    {
       "path": "scripts/release_guard.py",
       "bytes": 15278,
       "sha256": "a79e03ceaf953efdec981b823765735b31269fdf9e598ac48c9733f59c599d47"
@@ -1210,6 +1225,11 @@
       "path": "scripts/verify_manifest.py",
       "bytes": 7883,
       "sha256": "03c9c1352fd616d99509a844fc66b0f9a67830f3892cb61e1f55a2f4a9aaed69"
+    },
+    {
+      "path": "scripts/verify_storefront_lineage.py",
+      "bytes": 3107,
+      "sha256": "31725c5245decb917785ab152119a66855195bb6216d1713067bbee7d53f98e6"
     },
     {
       "path": "server/adapters.py",
