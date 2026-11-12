@@ -1,0 +1,131 @@
+name: Publish accepted primary source
+# PROPOSAL ONLY. Pending lock makes publication fail closed.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: nfc-github-pages
+  cancel-in-progress: false
+
+jobs:
+  sources:
+    if: >-
+      github.event_name == 'workflow_dispatch' &&
+      github.ref == 'refs/heads/main' &&
+      github.repository == 'optidigitalagent/nfc-card-website' &&
+      vars.NFC_PAGES_DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-24.04
+    outputs:
+      source_main_commit: ${{ steps.lock.outputs.source_main_commit }}
+      source_main_tree: ${{ steps.lock.outputs.source_main_tree }}
+      storefront_commit: ${{ steps.lock.outputs.storefront_commit }}
+      storefront_tree: ${{ steps.lock.outputs.storefront_tree }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Require accepted immutable release lock
+        id: lock
+        run: |
+          test "$GITHUB_WORKFLOW_SHA" = "$GITHUB_SHA"
+          python3 -B scripts/primary_release.py lock
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          repository: zaffirax55/nfc-card-website
+          ref: ${{ steps.lock.outputs.storefront_commit }}
+          path: storefront
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Verify integrated source, lineage and real approval before validation
+        run: python3 -B scripts/primary_release.py validate --source storefront
+
+  validate-main:
+    needs: sources
+    uses: ./.github/workflows/ci.yml
+    with:
+      source_sha: ${{ needs.sources.outputs.source_main_commit }}
+      source_tree: ${{ needs.sources.outputs.source_main_tree }}
+      source_role: source-main
+
+  validate-storefront:
+    needs: sources
+    uses: ./.github/workflows/ci.yml
+    with:
+      source_sha: ${{ needs.sources.outputs.storefront_commit }}
+      source_tree: ${{ needs.sources.outputs.storefront_tree }}
+      source_role: storefront
+
+  build:
+    needs: [sources, validate-main, validate-storefront]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          repository: zaffirax55/nfc-card-website
+          ref: ${{ needs.sources.outputs.storefront_commit }}
+          path: storefront
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Recheck lineage and content authority immediately before build
+        run: python3 -B scripts/primary_release.py validate --source storefront
+      - name: Build approved PUBLIC storefront at the existing primary base
+        working-directory: storefront
+        env:
+          NFC_ENV: production
+          NFC_DEPLOYMENT_TARGET: github-pages
+          NFC_PUBLIC_ORIGIN: https://optidigitalagent.github.io
+          NFC_PUBLIC_BASE_PATH: /nfc-card-website
+          NFC_PUBLICATION_MODE: PUBLIC
+          NFC_REQUIRE_GATEWAY_READY: 'true'
+          NFC_TELEGRAM_ENABLED: 'false'
+          NFC_RELEASE_COMMIT: ${{ needs.sources.outputs.storefront_commit }}
+          NFC_PUBLISHER_WORKFLOW_COMMIT: ${{ github.sha }}
+        run: |
+          npm ci
+          npm run build
+          python3 -B scripts/verify_manifest.py
+          python3 -B scripts/release_guard.py --history
+      - name: Verify PUBLIC artifact and retain both identities/checksums
+        run: python3 -B scripts/primary_release.py artifact --source storefront
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        with:
+          name: primary-source-and-artifact-identity
+          path: work/publication-evidence
+          if-no-files-found: error
+          retention-days: 30
+      - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
+        with:
+          path: storefront/site
+          retention-days: 1
+
+  deploy:
+    needs: build
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
+        id: deployment
