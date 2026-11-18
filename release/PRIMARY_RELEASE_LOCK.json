@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "status": "ACCEPTED_FOR_PUBLIC_RELEASE",
+  "source_repository": "zaffirax55/nfc-card-website",
+  "origin": "https://optidigitalagent.github.io",
+  "base": "/nfc-card-website",
+  "source_main_commit": "1bc5b8ee5df01c6b12de76df7886162bc9d70386",
+  "source_main_tree": "56dbdfb6fcf8344291e2e885597a02d8e4dd4abb",
+  "storefront_commit": "f6cd3d0d7ce78a0c1916bd21a2431eb09ecc17e7",
+  "storefront_tree": "0213687b857855864a37a531bf5e84fd170656db",
+  "accepted_ru_input_tree": "98977a119e508663074939cd2320a94c91f8dea8",
+  "approval_reference": "NFC-PRIMARY-RELEASE-01 / PUBLISHER-LOCK-CANDIDATE-01 | RELEASE_INPUT_ACCEPTANCE.json SHA256=2bfce47aea87da953409a01358b5e3d9464a128d865729241b17383ddef9a255 | OWNER_INSTRUCTION.txt SHA256=1c988362108360112a8f3036c90f0153995466f533d599475fd5fcffa8e2e135",
+  "reason": "Exact source inputs accepted by the independent release-input acceptance and direct owner instruction referenced above. This is a Draft lock candidate for independent review, not final publication acceptance. No Ready, merge, workflow dispatch, deployment or cutover authority is granted. Final dual-source validation and final public artifact remain NOT_RUN."
+}

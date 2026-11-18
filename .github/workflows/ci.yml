@@ -6,12 +6,23 @@ on:
     tags: ['v*']
   pull_request:
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      source_sha:
+        required: true
+        type: string
+      source_tree:
+        required: true
+        type: string
+      source_role:
+        required: true
+        type: string
 
 permissions:
   contents: read
 
 concurrency:
-  group: nfc-release-${{ github.workflow }}-${{ github.ref }}
+  group: nfc-validation-${{ github.workflow }}-${{ github.ref }}-${{ inputs.source_role || 'destination' }}-${{ inputs.source_sha || github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
   cancel-in-progress: true
 
 jobs:
@@ -41,6 +52,8 @@ jobs:
       # Exact upstream tag refs verified 2026-09-12; see PACKAGING.md.
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
+          repository: ${{ inputs.source_sha && 'zaffirax55/nfc-card-website' || github.repository }}
+          ref: ${{ inputs.source_sha || github.sha }}
           fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
@@ -50,6 +63,24 @@ jobs:
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: '3.14'
+      - name: Require an explicit supported source role for reusable validation
+        env:
+          SOURCE_ROLE: ${{ inputs.source_role }}
+          SOURCE_SHA: ${{ inputs.source_sha }}
+        run: |
+          if [ -n "$SOURCE_SHA" ]; then
+            case "$SOURCE_ROLE" in source-main|storefront) ;; *) exit 1 ;; esac
+          else
+            test -z "$SOURCE_ROLE"
+          fi
+      - name: Verify immutable reusable validation source
+        if: github.event_name == 'workflow_call' || inputs.source_sha != ''
+        env:
+          EXPECTED_COMMIT: ${{ inputs.source_sha }}
+          EXPECTED_TREE: ${{ inputs.source_tree }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_COMMIT"
+          test "$(git rev-parse 'HEAD^{tree}')" = "$EXPECTED_TREE"
       - name: Verify clean checkout manifest
         id: initial_manifest
         run: python -B scripts/verify_manifest.py
@@ -71,9 +102,29 @@ jobs:
       - name: Run complete sequential test suite
         id: tests
         run: npm test
-      - name: Test new store production policy, layout and gateway gate
+      - name: Complete storefront contracts, provenance and transport
+        if: inputs.source_role == 'storefront'
+        run: |
+          npm run designer:build
+          npm run designer:seo
+          npm run designer:test:contracts
+          npm run designer:test:transport
+          npm run designer:check
+          npm run test:production
+      - name: Retain ordinary destination policy validation
+        if: inputs.source_role == ''
         run: npm run designer:test:contracts && npm run test:production
-      - name: Build the new v36.2 production shop after verified gateway release
+      - name: Build source main with its accepted PUBLIC_PREVIEW profile
+        if: inputs.source_role == 'source-main'
+        id: main_build
+        env:
+          NFC_ENV: production
+          NFC_PUBLIC_ORIGIN: https://nfc-card.example
+          NFC_PUBLICATION_MODE: PUBLIC_PREVIEW
+          GITHUB_SHA: ${{ inputs.source_sha }}
+        run: npm run build
+      - name: Build storefront or ordinary destination after verified PUBLIC gate
+        if: inputs.source_role != 'source-main'
         id: build
         env:
           NFC_ENV: production
@@ -82,6 +133,8 @@ jobs:
           NFC_DEPLOYMENT_TARGET: github-pages
           NFC_PUBLICATION_MODE: PUBLIC
           NFC_REQUIRE_GATEWAY_READY: 'true'
+          NFC_RELEASE_COMMIT: ${{ inputs.source_sha || github.sha }}
+          NFC_PUBLISHER_WORKFLOW_COMMIT: ${{ github.sha }}
         run: npm run build
       - name: Verify source after tests and build
         id: final_manifest
@@ -98,13 +151,14 @@ jobs:
           INSTALLED_MANIFEST: ${{ steps.installed_manifest.outcome }}
           TESTS: ${{ steps.tests.outcome }}
           BUILD: ${{ steps.build.outcome }}
+          MAIN_BUILD: ${{ steps.main_build.outcome }}
           FINAL_MANIFEST: ${{ steps.final_manifest.outcome }}
         run: |
           python - <<'PY'
           import json, os
           from pathlib import Path
           names = ('INITIAL_MANIFEST', 'RELEASE_GUARD', 'NODE_INSTALL', 'PYTHON_INSTALL',
-                   'INSTALLED_MANIFEST', 'TESTS', 'BUILD', 'FINAL_MANIFEST')
+                   'INSTALLED_MANIFEST', 'TESTS', 'BUILD', 'MAIN_BUILD', 'FINAL_MANIFEST')
           allowed = {'success', 'failure', 'cancelled', 'skipped', ''}
           statuses = {name: os.environ.get(name, '') for name in names}
           assert all(value in allowed for value in statuses.values())
@@ -123,64 +177,3 @@ jobs:
           path: work/ci-diagnostics/summary.json
           if-no-files-found: ignore
           retention-days: 7
-
-  pages-build:
-    # The owner-controlled switch is enabled only after the Pages publication
-    # boundary is accepted. A successful validation of this exact SHA is required.
-    if: >-
-      github.ref == 'refs/heads/main' &&
-      (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
-      vars.NFC_PAGES_DEPLOY_ENABLED == 'true'
-    needs: validate
-    runs-on: ubuntu-24.04
-    timeout-minutes: 10
-    permissions:
-      contents: read
-      pages: read
-    env:
-      NFC_ENV: production
-      NFC_DEPLOYMENT_TARGET: github-pages
-      NFC_PUBLIC_ORIGIN: https://optidigitalagent.github.io
-      NFC_PUBLIC_BASE_PATH: /nfc-card-website
-      NFC_PUBLICATION_MODE: PUBLIC
-      NFC_TELEGRAM_ENABLED: 'false'
-      NFC_REQUIRE_GATEWAY_READY: 'true'
-      # Public browser endpoint only; source secrets stay on the existing gateway.
-      NFC_LEAD_ENDPOINT: ${{ vars.NFC_LEAD_ENDPOINT }}
-    steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
-        with:
-          persist-credentials: false
-      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
-        with:
-          node-version: '24'
-          package-manager-cache: false
-      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
-      - run: npm ci
-      - name: Build only the public Pages artifact
-        run: npm run build
-      - name: Disable Jekyll
-        run: touch site/.nojekyll
-      - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
-        with:
-          path: site
-          retention-days: 1
-
-  pages-deploy:
-    needs: pages-build
-    runs-on: ubuntu-24.04
-    timeout-minutes: 10
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    concurrency:
-      group: nfc-github-pages
-      cancel-in-progress: false
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Publish the CI-validated Pages artifact
-        id: deployment
-        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
