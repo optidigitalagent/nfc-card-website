@@ -1128,8 +1128,8 @@
     },
     {
       "path": "release/PRIMARY_RELEASE_LOCK.json",
-      "bytes": 843,
-      "sha256": "32d40f16a931c6a08be0a0cda49662bc4203d012e36884a0d74b5e8aef06b9c4"
+      "bytes": 1196,
+      "sha256": "61c61c3d142bc99d520c04b3fb408c4292afb60c79e22767a0b641eaa287f583"
     },
     {
       "path": "release/PRODUCTION_ADAPTATIONS.json",
